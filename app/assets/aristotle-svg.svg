@@ -1,18 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1024px" height="768px" viewBox="0 0 1024 768" style="enable-background:new 0 0 1024 768;" xml:space="preserve">
+	 viewBox="212 -184 1024 768" style="enable-background:new 212 -184 1024 768;" xml:space="preserve">
 <style type="text/css">
-<![CDATA[
 	.st0{fill:#FFFFFF;stroke:#231F20;stroke-miterlimit:10;}
-]]>
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+	.st2{fill:#FFB81A;}
+	.st3{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-linecap:square;stroke-miterlimit:10;}
 </style>
-<symbol  id="New_Symbol" viewBox="-10.27 -10.27 20.54 20.54">
-	<polygon class="st0" points="9.77,-9.77 -9.77,-9.77 -9.77,9.77 9.77,9.77 	"/>
+<symbol  id="New_Symbol" viewBox="-10.3 -10.3 20.5 20.5">
+	<polygon class="st0" points="9.8,-9.8 -9.8,-9.8 -9.8,9.8 9.8,9.8 	"/>
 </symbol>
 <g id="first">
 	
-		<use xlink:href="#New_Symbol"  width="20.54" height="20.54" x="-10.27" y="-10.27" transform="matrix(1 0 0 -1 33.1724 38.3447)" style="overflow:visible;"/>
+		<use xlink:href="#New_Symbol"  width="20.5" height="20.5" x="-10.3" y="-10.3" transform="matrix(1 0 0 -1 245.1724 -145.6553)" style="overflow:visible;"/>
+</g>
+<g id="ep4-badge">
+	<g id="_x3E_white_3_">
+		<path id="XMLID_93_" class="st1" d="M466.2-141.9h4.5c5,0,4.5-6,4.5-6h-15.7v10l10.2,2.8"/>
+		<polyline id="XMLID_92_" class="st1" points="467.1,-141.9 480.4,-141.9 480.4,-154.2 459.4,-154.2 459.4,-145.9 		"/>
+		<line id="XMLID_91_" class="st1" x1="475.1" y1="-141.9" x2="475.1" y2="-154.2"/>
+		<line id="XMLID_90_" class="st1" x1="477.6" y1="-135.2" x2="477.6" y2="-141.7"/>
+		<line id="XMLID_89_" class="st1" x1="469.9" y1="-148.4" x2="469.9" y2="-154.2"/>
+		<line id="XMLID_88_" class="st1" x1="464.7" y1="-148.4" x2="464.7" y2="-154.2"/>
+	</g>
+	<g id="XMLID_94_">
+		<path class="st2" d="M469.9-164.3l17,8.9v19.4l-17,8.9l-17-8.9v-19.4L469.9-164.3 M469.9-167.7l-20,10.5v23.1l20,10.5l20-10.5
+			v-23.1L469.9-167.7L469.9-167.7z"/>
+	</g>
+</g>
+<g id="ep3-badge">
+	<g id="_x3E_white_2_">
+		<polyline id="XMLID_74_" class="st3" points="398.1,-152.9 411.9,-160.1 425.6,-152.9 425.6,-146 411.9,-138.8 		"/>
+		<polyline id="XMLID_73_" class="st3" points="425.6,-146.4 425.6,-139.6 411.9,-132.4 		"/>
+		<line id="XMLID_72_" class="st1" x1="425.6" y1="-139" x2="425.6" y2="-132.7"/>
+		<line id="XMLID_71_" class="st3" x1="424.8" y1="-152.3" x2="411.9" y2="-145.5"/>
+	</g>
+	<g>
+		<g id="XMLID_69_">
+			<g>
+				<path class="st2" d="M394.9-152.2l14,7.3l0,16.3l-14-7.3V-152.2 M391.9-157.2v23.1l20,10.5v0l0-23.1L391.9-157.2L391.9-157.2
+					L391.9-157.2z"/>
+			</g>
+		</g>
+		<path id="XMLID_68_" class="st2" d="M422.7-147.4c-0.1,0.6-0.6,1-1.1,1c-0.5,0-0.8-0.4-0.7-1c0.1-0.6,0.6-1,1.1-1
+			C422.6-148.4,422.8-148,422.7-147.4z"/>
+		<path id="XMLID_67_" class="st2" d="M422.7-141c-0.1,0.6-0.6,1-1.1,1c-0.5,0-0.8-0.4-0.7-1c0.1-0.6,0.6-1,1.1-1
+			C422.5-142,422.8-141.5,422.7-141z"/>
+		<path id="XMLID_66_" class="st2" d="M422.7-134.3c-0.1,0.6-0.6,1-1.1,1c-0.5,0-0.8-0.4-0.7-1c0.1-0.6,0.6-1,1.1-1
+			C422.6-135.3,422.8-134.9,422.7-134.3z"/>
+		<g id="XMLID_59_">
+			<path class="st2" d="M411.9-164.3l17,8.9v19.4l-17,8.9l-17-8.9v-19.4L411.9-164.3 M411.9-167.7l-20,10.5v23.1l20,10.5l20-10.5
+				v-23.1L411.9-167.7L411.9-167.7z"/>
+		</g>
+	</g>
+</g>
+<g id="ep2-badge">
+	<g id="_x3E_white_1_">
+		<line id="XMLID_333_" class="st1" x1="365.8" y1="-152.3" x2="355.9" y2="-146.5"/>
+		<line id="XMLID_332_" class="st1" x1="353.9" y1="-132" x2="353.9" y2="-143.5"/>
+		<line id="XMLID_330_" class="st1" x1="351.9" y1="-146.5" x2="341.9" y2="-152.3"/>
+		<polyline id="XMLID_329_" class="st1" points="363.1,-136.2 353.9,-131.4 344.6,-136.2 		"/>
+		<polyline id="XMLID_328_" class="st1" points="357.5,-157.8 366.7,-153 366.7,-142.4 		"/>
+		<polyline id="XMLID_327_" class="st1" points="341,-142.4 341,-153 350.2,-157.8 		"/>
+	</g>
+	<g id="XMLID_335_">
+		<path class="st2" d="M353.9-164.3l17,8.9v19.4l-17,8.9l-17-8.9v-19.4L353.9-164.3 M353.9-167.7l-20,10.5v23.1l20,10.5l20-10.5
+			v-23.1L353.9-167.7L353.9-167.7z"/>
+	</g>
+</g>
+<g id="ep1-badge">
+	<g id="_x3E_white">
+		<polyline id="XMLID_108_" class="st1" points="285.9,-151.3 291.5,-145.7 285.9,-140 		"/>
+		<polyline id="XMLID_107_" class="st1" points="305.9,-140 300.2,-145.7 305.9,-151.3 		"/>
+		<polyline id="XMLID_105_" class="st1" points="301.5,-155.7 295.9,-150 290.2,-155.7 		"/>
+		<polyline id="XMLID_104_" class="st1" points="290.2,-135.7 295.9,-141.3 301.5,-135.7 		"/>
+		<line id="XMLID_102_" class="st1" x1="295.9" y1="-151.7" x2="295.9" y2="-164.7"/>
+		<line id="XMLID_101_" class="st1" x1="295.9" y1="-126.7" x2="295.9" y2="-139.7"/>
+		<line id="XMLID_100_" class="st1" x1="301.9" y1="-145.7" x2="314.9" y2="-145.7"/>
+		<line id="XMLID_98_" class="st1" x1="277.9" y1="-145.7" x2="290.9" y2="-145.7"/>
+	</g>
+	<g id="XMLID_60_">
+		<path class="st2" d="M295.9-164.3l17,8.9v19.4l-17,8.9l-17-8.9v-19.4L295.9-164.3 M295.9-167.7l-20,10.5v23.1l20,10.5l20-10.5
+			v-23.1L295.9-167.7L295.9-167.7z"/>
+	</g>
 </g>
 </svg>
