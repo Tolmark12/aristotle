@@ -1,0 +1,21 @@
+{
+  "title":"Training One",
+  "slides":[
+    {
+      "svga":"addon-fan.json",
+      "sound":"short.mp3"
+    },
+    {
+      "svga":"addon-wires.json",
+      "sound":"short2.mp3"
+    },
+    {
+      "svga":"addon-fan.json",
+      "sound":"short3.mp3"
+    },
+    {
+      "svga":"prototype.json",
+      "sound":"nothin-special.mp3"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "aristotle",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "jquery.easing": "~1.3.0",
+    "pubsub-js": "~1.5.0",
+    "velocity": "~1.1.0",
+    "shadow-icons-library": "https://tolmark12@bitbucket.org/pagodabox-js-libs/shadow-icons-library.git",
+    "bodymovin": "bodymovin/bodymovin",
+    "createjs-soundjs": "~0.6.1"
+  },
+  "ignore": [
+    "app",
+    "bower_components",
+    "node_modules",
+    "server",
+    "stage",
+    ".gitignore",
+    "gulpfile.*",
+    "package.json",
+    "**/.*"
+  ],
+  "devDependencies": {
+    "jade": "~1.6.0"
+  }
+}

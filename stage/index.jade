@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  
+  head
+    title ELB - Aristotle
+
+    link(href="stage/css/stage.css", rel="stylesheet")
+      
+    // build:css style.css
+    link(href="css/main.css", rel="stylesheet")
+    link(href="css/aristotle-svg.css", rel="stylesheet")
+    // endbuild
+    
+  body
+    #slide
+    // build:js js/libs.js
+    script(src="bower-libs/jquery/dist/jquery.js")
+    script(src="bower-libs/jade/runtime.js")
+    script(src="bower-libs/shadow-icons-library/rel/app.js")
+    script(src="bower-libs/createjs-soundjs/lib/soundjs-0.6.1.min.js")
+    script(src="bower-libs/bodymovin/build/player/bodymovin.js")
+    // endbuild
+
+    // build:js2 js/app.js
+    script(src="js/jade-templates.js")
+    script(src="js/aristotle-svg.js")
+    script(src="js/aristotle.js")
+    // endbuild
+    
+    // build:remove 
+    script(src="stage/js/index.js")
+    script(src="http://localhost:35729/livereload.js")
+    // endbuild
