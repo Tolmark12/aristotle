@@ -5,8 +5,8 @@ module.exports = class AudioTrack
 
     @ppc = new createjs.PlayPropsConfig().set
       interrupt: createjs.Sound.INTERRUPT_ANY,
-      # volume: 0.005
-      volume: 1
+      volume: 0.005
+      # volume: 1
       pan:1
       # loop: -1,
 

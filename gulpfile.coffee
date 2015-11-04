@@ -35,9 +35,9 @@ cssPath           = 'app/scss/**/*.scss'
 cssStagePath      = 'stage/stage.scss'
 coffeePath        = 'app/coffee/**/*.coffee'
 coffeeStagePath   = 'stage/**/*.coffee'
-assetPath         = ['stage/**/*.json', 'stage/**/*.mp3', 'app/images/**/*']
+assetPath         = ['episodes/**/*', 'app/images/**/*']
 svgPath           = 'app/assets/compiled/*.svg'
-
+fontPath          = 'app/fonts/**/*.@(ttf|svg|eot|ttf|woff|woff2)'
 
 parseSVG = (cb)->
   gulp.src svgPath
@@ -100,6 +100,11 @@ jsStage = (cb)->
 
 copyAssets = (destination, cb) ->
   gulp.src assetPath
+    .pipe gulp.dest(destination)
+    .on('end', cb)
+
+fonts = (destination, cb) ->
+  gulp.src fontPath
     .pipe gulp.dest(destination)
     .on('end', cb)
 
@@ -170,16 +175,18 @@ compileFiles = (doWatch=false, cb) ->
     {meth:cssStage,   glob:cssStagePath}
     {meth:htmlStage,  glob:jadeStagePath}
     {meth:parseSVG,   glob:svgPath}
-    {meth:copyAssets, glob:assetPath, params:['server/', onComplete]}
+    {meth:fonts,      glob:fontPath,  params:['server/assets/fonts', onComplete], dontWatch:true }
+    {meth:copyAssets, glob:assetPath, params:['server/assets/', onComplete]}
   ]
 
   createWatcher = (item, params)-> watch( { glob:item.glob }, => item.meth.apply(null, params).pipe( livereload() ) )
 
   for item in ar
     params = if item.params? then item.params else [onComplete]
-    if doWatch
+    if doWatch && !item.dontWatch
       createWatcher(item, params)
     else
+      console.log "no watchr for fonts :-P"
       item.meth.apply null, params
 
 # ----------- MAIN ----------- #

@@ -1,0 +1,14 @@
+// book
+@include include-font($fun,      'functionpro_book_macroman/FunctionPro-Book', 'function_probook', 100, normal);
+// medium
+@include include-font($fun,      'functionpro_medium_macroman/FunctionPro-Medium', 'function_promedium', 200, normal);
+// medium condensed
+@include include-font($fun_cond, 'functionpro_mediumcondensed_macroman/FunctionPro-Condensed', 'function_promedium_condensed', 200, normal);
+// medium condensed oblique MISSING
+// @include include-font($fun, 'functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique', 'function_proMdCnOb', 300, italic);
+// demi
+@include include-font($fun,      'functionpro_demi/FunctionPro-DEMI', 'function_prodemi', 400, normal);
+// bold
+@include include-font($fun,      'functionpro_bold/FunctionPro-Bold', 'function_pro_bookbold', 500, normal);
+// bold condensed
+@include include-font($fun_cond, 'functionpro_boldcondensed/FunctionPro-CondensedBold', 'function_probold_condensed', 500, normal);

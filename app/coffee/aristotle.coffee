@@ -1,8 +1,19 @@
-Episode = require "episode"
+Episode  = require "episode"
+ChromeUI = require "chrome/chrome-ui"
 
 class Aristotle
 
-  constructor: (el, episodeRoot) ->
+  constructor: ($el, episodeRoot) ->
+    shadowIcons  = new pxicons.ShadowIcons();
+    @build($el)
+
+  build : ($el) ->
+    $base = $ jadeTemplate['aristotle']( {} )
+    $el.append $base
+    shadowIconsInstance.svgReplaceWithString pxSvgIconString, $base
+    @chromeUI = new ChromeUI $(".chrome", $base)
+
+  loadEpisode: (episodeRoot)->
     Aristotle.episodeRoot = episodeRoot
     @loadJson Aristotle.episodeRoot + "/map.json", (result)=>
       episode = new Episode el, JSON.parse(result)
