@@ -1,14 +1,21 @@
 .top
-  .status-badge
-    img.shadow-icon(data-src="ep1-badge")
-  .identity
-    h1.name John "Deadeye" Nimbus
-    h2.rank Cadet First Class
-  .episodes
-    img.shadow-icon(data-src="ep1-badge")
-    img.shadow-icon(data-src="ep1-badge")
-    img.shadow-icon(data-src="ep1-badge")
-    img.shadow-icon(data-src="ep1-badge")
+  .main
+    .status-badge
+      img.shadow-icon(data-src="#{badge}")
+    .divider
+    .identity
+      h1.name #{name}
+      h2.rank #{rank}
+    .divider
+    .episodes(class="#{episode}")
+      .badge(class="#{episode == '1' ? 'active' : ''}")
+        img.shadow-icon(data-src="ep1-badge")
+      .badge(class="#{episode == '2' ? 'active' : ''}")
+        img.shadow-icon(data-src="ep2-badge")
+      .badge(class="#{episode == '3' ? 'active' : ''}")
+        img.shadow-icon(data-src="ep3-badge")
+      .badge(class="#{episode == '4' ? 'active' : ''}")
+        img.shadow-icon(data-src="ep4-badge")
   .learn-mode
     h2 [ Warcore ]
     h1 Learn Mode
