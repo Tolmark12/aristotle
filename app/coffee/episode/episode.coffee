@@ -1,12 +1,15 @@
-Slide = require 'slide'
+Slide = require 'episode/slide'
 
 module.exports = class Episode
 
-  constructor: (el, trainingData) ->
+  constructor: (trainingData, movie) ->
+    @temp trainingData, movie
+
+  temp : (trainingData, movie) ->
     @slides   = []
 
     for slide in trainingData.slides
-      slide = new Slide el, slide
+      slide = new Slide movie, slide
       @slides.push slide
 
     setTimeout @nextSlide, 1000, @slideComplete

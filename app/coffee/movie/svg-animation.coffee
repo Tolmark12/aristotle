@@ -1,13 +1,12 @@
 module.exports = class SVGAnimation
 
   constructor: ( el, json, doLoop=true ) ->
-    doLoop = true
     @animation = bodymovin.loadAnimation {
-             wrapper   : el
+             wrapper   : el[0]
              animType  : 'svg'
              loop      : doLoop
              prerender : true
-             autoplay  : false
+             autoplay  : true
              path      : json
            }
 

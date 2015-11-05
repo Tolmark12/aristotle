@@ -2,19 +2,14 @@
   "title":"Training One",
   "slides":[
     {
-      "svga":"addon-fan.json",
-      "sound":"short.mp3"
-    },
-    {
-      "svga":"addon-wires.json",
-      "sound":"short2.mp3"
-    },
-    {
-      "svga":"addon-fan.json",
-      "sound":"short3.mp3"
-    },
-    {
-      "svga":"prototype.json",
+      "movie":{
+        "layers":[
+          {"depth":0, "content":"c1-sky.svg"},
+          {"depth":1, "content":"c1-background-clouds-loop.json", "loop":true},
+          {"depth":2, "content":"c1-background-buildin.json", "loop":false},
+          {"depth":3, "content":"addon-fan-1.json", "loop":true}
+        ]
+      },
       "sound":"nothin-special.mp3"
     }
   ]
