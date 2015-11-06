@@ -3,10 +3,11 @@ SVGAnimation = require "movie/svg-animation"
 
 module.exports = class Slide
 
-  constructor: (@movie, @slideData) ->
+  constructor: (@movie, @slideData, @onSlideComplete) ->
 
   play : (onComplete) =>
     @movie.populate @slideData.movie
+    @setDuration()
     # @animation  = new SVGAnimation @el, "#{Aristotle.episodeRoot}/animations/#{@slideData.svga}"
     # @audio      = new AudioTrack "#{Aristotle.episodeRoot}/sounds/#{@slideData.sound}"
     # @animation.play()
@@ -15,10 +16,16 @@ module.exports = class Slide
     # ,
     #   500
 
-  stop : ()->
-    @animation.stop()
-    @audio.stop()
+  setDuration : () ->
+    if !@slideData.duration? then return
+    switch @slideData.duration.kind
+      when "time"
+        setTimeout @onSlideComplete, @slideData.duration.seconds * 1000
 
-  destroy : ()->
-    @animation.destroy()
-    @audio.destroy()
+  # stop : ()->
+  #   @animation.stop()
+  #   @audio.stop()
+  #
+  # destroy : ()->
+  #   @animation.destroy()
+  #   @audio.destroy()

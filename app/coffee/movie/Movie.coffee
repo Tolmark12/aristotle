@@ -6,8 +6,20 @@ module.exports = class Movie
     @layers = []
 
   populate: (data)->
-    for layerData in data.layers
+    for depthId, layerData of data.layers
       @addLayer layerData
+
+    if data.position?
+      @position data.position
+
+  position : (position) ->
+    console.log @$el.css "transform"
+    if position.center?
+      @$el.css "transform-origin":"(#{position.center[0]} #{position.center[1]})"
+
+    if position.scale?
+      @$el.css transform:"scale(#{position.scale})"
+
 
   addLayer : (layerData) ->
     depth = layerData.depth
@@ -18,13 +30,11 @@ module.exports = class Movie
         @layers[i] = new Layer @$el, depth
 
     layer = @getOrCreateLayer depth
-    layer.populate layerData
+    layer.update layerData
 
   getOrCreateLayer : (depth) ->
-    # Layer exists, empty and return it:
-    if @layers[depth]?
-      @layers[depth].empty()
-      return @layers[depth]
+    # Layer exists, return it:
+    if @layers[depth]? then return @layers[depth]
 
     # Layer doesn't exist, create it:
     layer = new Layer @$el, depth

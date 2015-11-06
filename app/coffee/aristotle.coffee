@@ -8,6 +8,7 @@ class Aristotle
   constructor: ($el, episodeRoot) ->
     shadowIcons  = new pxicons.ShadowIcons();
     @build($el)
+    @loadEpisode episodeRoot
     devTools = new DevTools()
 
   build : ($el) ->
@@ -17,8 +18,6 @@ class Aristotle
 
     @chromeUI = new ChromeUI $(".chrome", $base)
     @movie    = new Movie    $(".movie",  $base)
-
-    @loadEpisode "/assets/episode1"
 
   loadEpisode: (episodeRoot)->
     Aristotle.episodeRoot = episodeRoot

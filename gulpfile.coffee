@@ -25,6 +25,9 @@ usemin       = require 'gulp-usemin'
 watch        = require 'gulp-watch'
 wrap         = require 'gulp-wrap'
 
+yaml    = require('gulp-yaml')
+yamlinc = require('gulp-yaml-include')
+
 
 # Paths to source files
 
@@ -35,9 +38,11 @@ cssPath           = 'app/scss/**/*.scss'
 cssStagePath      = 'stage/stage.scss'
 coffeePath        = 'app/coffee/**/*.coffee'
 coffeeStagePath   = 'stage/**/*.coffee'
-assetPath         = ['episodes/**/*', 'app/images/**/*']
+assetPath         = ['app/images/**/*']
 svgPath           = 'app/assets/compiled/*.svg'
 fontPath          = 'app/fonts/**/*.@(ttf|svg|eot|ttf|woff|woff2)'
+episodeScriptPath = 'episodes/**/*.yml'
+episodeAssetPath  = 'episodes/**/*.!(yml|yaml)'
 
 parseSVG = (cb)->
   gulp.src svgPath
@@ -108,6 +113,19 @@ fonts = (destination, cb) ->
     .pipe gulp.dest(destination)
     .on('end', cb)
 
+episodeAssets = (cb)->
+  gulp.src episodeAssetPath
+    .pipe gulp.dest("server/episodes")
+    .on('end', cb)
+
+episodeScript = (cb) ->
+  gulp.src episodeScriptPath
+    .pipe yamlinc()
+    .pipe yaml()
+    .pipe gulp.dest("server/episodes")
+    .on('end', cb)
+
+
 copyBowerLibs = ()->
   bower().pipe gulp.dest('./server/bower-libs/')
 
@@ -141,6 +159,7 @@ minifyAndJoin = () ->
   )
 
 
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Livereload Server
@@ -168,15 +187,17 @@ compileFiles = (doWatch=false, cb) ->
   count       = 0
   onComplete = ()=> if ++count == ar.length then cb()
   ar         = [
-    {meth:js,         glob:coffeePath}
-    {meth:css,        glob:cssPath}
-    {meth:html,       glob:jadePath}
-    {meth:jsStage,    glob:coffeeStagePath}
-    {meth:cssStage,   glob:cssStagePath}
-    {meth:htmlStage,  glob:jadeStagePath}
-    {meth:parseSVG,   glob:svgPath}
-    {meth:fonts,      glob:fontPath,  params:['server/assets/fonts', onComplete], dontWatch:true }
-    {meth:copyAssets, glob:assetPath, params:['server/assets/', onComplete]}
+    {meth:js,            glob:coffeePath}
+    {meth:css,           glob:cssPath}
+    {meth:html,          glob:jadePath}
+    {meth:jsStage,       glob:coffeeStagePath}
+    {meth:cssStage,      glob:cssStagePath}
+    {meth:htmlStage,     glob:jadeStagePath}
+    {meth:parseSVG,      glob:svgPath}
+    {meth:episodeAssets, glob:episodeAssetPath}
+    {meth:episodeScript, glob:[episodeScriptPath, 'episodes/**/*.yaml']}
+    {meth:fonts,         glob:fontPath,  params:['server/assets/fonts', onComplete], dontWatch:true }
+    {meth:copyAssets,    glob:assetPath, params:['server/assets/', onComplete]}
   ]
 
   createWatcher = (item, params)-> watch( { glob:item.glob }, => item.meth.apply(null, params).pipe( livereload() ) )
@@ -186,7 +207,6 @@ compileFiles = (doWatch=false, cb) ->
     if doWatch && !item.dontWatch
       createWatcher(item, params)
     else
-      console.log "no watchr for fonts :-P"
       item.meth.apply null, params
 
 # ----------- MAIN ----------- #

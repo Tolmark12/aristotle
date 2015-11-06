@@ -8,13 +8,14 @@ module.exports = class Episode
   temp : (trainingData, movie) ->
     @slides   = []
 
-    for slide in trainingData.slides
-      slide = new Slide movie, slide
+    for key, slide of trainingData.slides
+      slide = new Slide movie, slide, @slideComplete
       @slides.push slide
 
-    setTimeout @nextSlide, 1000, @slideComplete
+    setTimeout @nextSlide, 1000
 
   slideComplete : () =>
+    console.log "slide complete"
     @nextSlide()
 
 
@@ -23,11 +24,9 @@ module.exports = class Episode
     if @currentSlideIndex == @slides.length - 1
       @trainingComplete()
       return
-    @currentSlide?.destroy()
     @currentSlide = @slides[++@currentSlideIndex]
     @currentSlide.play @slideComplete
 
   trainingComplete : () ->
-    @currentSlide.stop()
     console.log "alll slides have been played"
 

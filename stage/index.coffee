@@ -1,4 +1,1 @@
-slideHolder  = document.getElementById( "slide")
-trainingPath = "/assets/episode1"
-
-aristotle = new Aristotle $(".holder")
+aristotle = new Aristotle $(".holder"), "/episodes/episode1"
