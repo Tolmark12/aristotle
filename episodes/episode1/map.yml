@@ -1,6 +1,4 @@
 title: Training One
-test: [0,1]
-test2: {a:1, b:2}
 chapter: !!inc/file episodes/episode1/yaml/_chapter1.yaml
 slides:
   -
