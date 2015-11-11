@@ -27,10 +27,10 @@ module.exports = class Layer
         @$layer.addClass effect
 
   addAnimation : (layerData) ->
-    @animation  = new SVGAnimation @$layer, "#{Aristotle.episodeRoot}/animations/#{layerData.content}", layerData.loop
+    @animation  = new SVGAnimation @$layer, "#{aristotle.episodeRoot}/animations/#{layerData.content}", layerData.loop
     @animation.play()
 
   addImage : (layerData) ->
-    @$layer.load "#{Aristotle.episodeRoot}/animations/#{layerData.content}"
+    @$layer.load "#{aristotle.episodeRoot}/animations/#{layerData.content}"
 
   empty : () ->

@@ -1,36 +1,30 @@
-Episode  = require "episode/episode"
-ChromeUI = require "chrome/chrome-ui"
-DevTools = require 'misc/dev-tools'
-Movie    = require 'movie/movie'
+Episode       = require "episode/episode"
+ChromeUI      = require "chrome/chrome-ui"
+DevTools      = require 'misc/dev-tools'
+Movie         = require 'movie/movie'
+EpisodeLoader = require 'misc/episode-loader'
+SlideUX       = require 'slide-ux/slide-ux'
 
 class Aristotle
 
-  constructor: ($el, episodeRoot) ->
-    shadowIcons  = new pxicons.ShadowIcons();
-    @build($el)
-    @loadEpisode episodeRoot
-    devTools = new DevTools()
+  constructor: ($el, @episodeRoot) ->
+    window.aristotle = @
+    @build $el
+    episodeLoader = new EpisodeLoader @onJsonLoaded
+    devTools      = new DevTools()
+
+  onJsonLoaded : (json) =>
+    episode = new Episode JSON.parse(json), @movie
 
   build : ($el) ->
     $base = $ jadeTemplate['aristotle']( {} )
     $el.append $base
+    shadowIcons = new pxicons.ShadowIcons();
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, $base
 
-    @chromeUI = new ChromeUI $(".chrome", $base)
-    @movie    = new Movie    $(".movie",  $base)
+    @chromeUI = new ChromeUI $(".chrome",   $base)
+    @slideUI  = new SlideUX  $(".slide-ux", $base)
+    @movie    = new Movie    $(".movie",    $base)
 
-  loadEpisode: (episodeRoot)->
-    Aristotle.episodeRoot = episodeRoot
-    @loadJson Aristotle.episodeRoot + "/map.json", (result)=>
-      episode = new Episode JSON.parse(result), @movie
-
-  loadJson : (path, onComplete) ->
-    xobj = new XMLHttpRequest()
-    xobj.overrideMimeType 'application/json'
-    xobj.open 'GET', path, true
-    xobj.onreadystatechange = ()=>
-      if xobj.readyState == 4 && xobj.status == 200
-        onComplete xobj.responseText
-    xobj.send(null)
 
 window.Aristotle = Aristotle

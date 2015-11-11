@@ -13,7 +13,6 @@ module.exports = class Movie
       @position data.position
 
   position : (position) ->
-    console.log @$el.css "transform"
     if position.center?
       @$el.css "transform-origin":"(#{position.center[0]} #{position.center[1]})"
 

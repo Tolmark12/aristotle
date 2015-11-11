@@ -8,19 +8,22 @@ module.exports = class Slide
   play : (onComplete) =>
     @movie.populate @slideData.movie
     @setDuration()
-    # @animation  = new SVGAnimation @el, "#{Aristotle.episodeRoot}/animations/#{@slideData.svga}"
-    # @audio      = new AudioTrack "#{Aristotle.episodeRoot}/sounds/#{@slideData.sound}"
-    # @animation.play()
-    # setTimeout ()=>
-    #   @audio.play onComplete
-    # ,
-    #   500
+    @runCtanlee @slideData.ctanlee
+
 
   setDuration : () ->
     if !@slideData.duration? then return
     switch @slideData.duration.kind
       when "time"
         setTimeout @onSlideComplete, @slideData.duration.seconds * 1000
+      when "user"
+        console.log "waiting on the user"
+      when "ctanlee"
+        PubSub.subscribe 'ctanlee.complete', ()=> @onSlideComplete()
+
+  runCtanlee : (data) ->
+    if data? then aristotle.ctanlee.activate data
+
 
   # stop : ()->
   #   @animation.stop()

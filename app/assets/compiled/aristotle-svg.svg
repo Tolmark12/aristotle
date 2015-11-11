@@ -2,110 +2,127 @@
 <!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1024px" height="768px" viewBox="0 0 1024 768" style="enable-background:new 0 0 1024 768;" xml:space="preserve">
-<style type="text/css">
-<![CDATA[
-	.st0{fill:#53848C;}
-	.st1{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-linecap:square;stroke-miterlimit:10;}
-	.st2{fill:#F9773E;}
-	.st3{opacity:0.5;fill:#6B989F;enable-background:new    ;}
-	.st4{fill:#FFB81A;}
-	.st5{fill:#FFFFFF;}
-	.st6{fill:#6B989F;}
-	.st7{fill:none;stroke:#FFB81A;stroke-width:2.9184;stroke-miterlimit:10;}
-	.st8{fill:#71A8A8;}
-	.st9{fill:#FFFFFF;stroke:#231F20;stroke-miterlimit:10;}
-	.st10{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
-]]>
-</style>
+	 width="725px" height="612px" viewBox="0 0 725 612" enable-background="new 0 0 725 612" xml:space="preserve">
 <symbol  id="New_Symbol" viewBox="-10.3 -10.3 20.6 20.6">
-	<polygon class="st9" points="9.8,-9.8 -9.8,-9.8 -9.8,9.8 9.8,9.8 	"/>
+	<polygon fill="#FFFFFF" stroke="#231F20" stroke-miterlimit="10" points="9.8,-9.8 -9.8,-9.8 -9.8,9.8 9.8,9.8 	"/>
 </symbol>
 <g id="first">
 	
-		<use xlink:href="#New_Symbol"  width="20.6" height="20.6" x="-10.3" y="-10.3" transform="matrix(0.9952 0 0 -0.9952 14.25 14.25)" style="overflow:visible;"/>
+		<use xlink:href="#New_Symbol"  width="20.6" height="20.6" x="-10.3" y="-10.3" transform="matrix(0.7046 0 0 -0.7046 11.2568 11.2568)" overflow="visible"/>
 </g>
 <g id="ep4-badge">
 	<g id="_x3E_white_3_">
-		<path id="XMLID_93_" class="st10" d="M20.3,29.8h4.5c5,0,4.5-6,4.5-6H13.6v10l10.2,2.8"/>
-		<polyline id="XMLID_92_" class="st10" points="21.199,29.8 34.5,29.8 34.5,17.5 13.5,17.5 13.5,25.8 		"/>
-		<line id="XMLID_91_" class="st10" x1="29.199" y1="29.8" x2="29.199" y2="17.5"/>
-		<line id="XMLID_90_" class="st10" x1="31.699" y1="36.5" x2="31.699" y2="30"/>
-		<line id="XMLID_89_" class="st10" x1="24" y1="23.3" x2="24" y2="17.5"/>
-		<line id="XMLID_88_" class="st10" x1="18.8" y1="23.3" x2="18.8" y2="17.5"/>
+		<path id="XMLID_93_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M15.54,22.267h3.187
+			c3.539,0,3.186-4.248,3.186-4.248H10.797v7.08l7.221,1.982"/>
+		<polyline id="XMLID_92_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="16.178,22.267 
+			25.594,22.267 25.594,13.558 10.726,13.558 10.726,19.435 		"/>
+		
+			<line id="XMLID_91_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="21.842" y1="22.267" x2="21.842" y2="13.558"/>
+		
+			<line id="XMLID_90_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="23.611" y1="27.01" x2="23.611" y2="22.408"/>
+		
+			<line id="XMLID_89_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="18.16" y1="17.665" x2="18.16" y2="13.558"/>
+		
+			<line id="XMLID_88_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="14.479" y1="17.665" x2="14.479" y2="13.558"/>
 	</g>
 	<g id="XMLID_94_">
-		<path class="st4" d="M24,7.4l17,8.9v19.4l-17,8.9L7,35.7V16.3L24,7.4 M24,4L4,14.5v23.1l20,10.5l20-10.5V14.5L24,4L24,4z"/>
+		<path fill="#FFB81A" d="M18.16,6.407l12.035,6.301v13.735L18.16,32.745L6.123,26.444V12.708L18.16,6.407 M18.16,4L4,11.434v16.355
+			l14.16,7.434l14.16-7.434V11.434L18.16,4L18.16,4z"/>
 	</g>
 </g>
 <g id="ep3-badge">
 	<g id="_x3E_white_2_">
-		<polyline id="XMLID_74_" class="st1" points="10.2,18.8 24,11.6 37.7,18.8 37.7,25.7 24,32.9 		"/>
-		<polyline id="XMLID_73_" class="st1" points="37.7,25.3 37.7,32.1 24,39.3 		"/>
-		<line id="XMLID_72_" class="st10" x1="37.7" y1="32.7" x2="37.7" y2="39"/>
-		<line id="XMLID_71_" class="st1" x1="36.9" y1="19.4" x2="24" y2="26.2"/>
+		<polyline id="XMLID_74_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="square" stroke-miterlimit="10" points="
+			8.39,14.479 18.16,9.381 27.86,14.479 27.86,19.364 18.16,24.461 		"/>
+		<polyline id="XMLID_73_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="square" stroke-miterlimit="10" points="
+			27.86,19.081 27.86,23.895 18.16,28.993 		"/>
+		
+			<line id="XMLID_72_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="27.86" y1="24.32" x2="27.86" y2="28.78"/>
+		
+			<line id="XMLID_71_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="square" stroke-miterlimit="10" x1="27.293" y1="14.903" x2="18.16" y2="19.718"/>
 	</g>
 	<g>
 		<g id="XMLID_69_">
 			<g>
-				<path class="st4" d="M7,19.5l14,7.3v16.3L7,35.8V19.5 M4,14.5v23.1l20,10.5l0,0V25L4,14.5L4,14.5L4,14.5z"/>
+				<path fill="#FFB81A" d="M6.124,14.974l9.912,5.168v11.541l-9.912-5.168V14.974 M4,11.434v16.355l14.16,7.434l0,0V18.868
+					L4,11.434L4,11.434L4,11.434z"/>
 			</g>
 		</g>
-		<path id="XMLID_68_" class="st4" d="M34.8,24.3c-0.101,0.6-0.601,1-1.101,1s-0.8-0.4-0.699-1c0.1-0.6,0.6-1,1.1-1
-			C34.7,23.3,34.9,23.7,34.8,24.3z"/>
-		<path id="XMLID_67_" class="st4" d="M34.8,30.7c-0.101,0.6-0.601,1-1.101,1s-0.8-0.4-0.699-1c0.1-0.6,0.6-1,1.1-1
-			S34.9,30.2,34.8,30.7z"/>
-		<path id="XMLID_66_" class="st4" d="M34.8,37.4c-0.101,0.6-0.601,1-1.101,1S32.9,38,33,37.4c0.1-0.6,0.6-1,1.1-1
-			C34.7,36.4,34.9,36.8,34.8,37.4z"/>
+		<path id="XMLID_68_" fill="#FFB81A" d="M25.807,18.373c-0.071,0.425-0.425,0.708-0.779,0.708s-0.566-0.283-0.496-0.708
+			s0.425-0.708,0.779-0.708C25.736,17.665,25.877,17.948,25.807,18.373z"/>
+		<path id="XMLID_67_" fill="#FFB81A" d="M25.807,22.904c-0.071,0.425-0.425,0.708-0.779,0.708s-0.566-0.283-0.496-0.708
+			s0.425-0.708,0.779-0.708S25.877,22.55,25.807,22.904z"/>
+		<path id="XMLID_66_" fill="#FFB81A" d="M25.807,27.647c-0.071,0.425-0.425,0.708-0.779,0.708s-0.566-0.283-0.496-0.708
+			s0.425-0.708,0.779-0.708C25.736,26.939,25.877,27.223,25.807,27.647z"/>
 		<g id="XMLID_59_">
-			<path class="st4" d="M24,7.4l17,8.9v19.4l-17,8.9L7,35.7V16.3L24,7.4 M24,4L4,14.5v23.1l20,10.5l20-10.5V14.5L24,4L24,4z"/>
+			<path fill="#FFB81A" d="M18.16,6.407l12.036,6.301v13.735L18.16,32.745L6.124,26.444V12.708L18.16,6.407 M18.16,4L4,11.434
+				v16.355l14.16,7.434l14.161-7.434V11.434L18.16,4L18.16,4z"/>
 		</g>
 	</g>
 </g>
 <g id="ep2-badge">
 	<g id="_x3E_white_1_">
-		<line id="XMLID_333_" class="st10" x1="35.9" y1="19.4" x2="26" y2="25.2"/>
-		<line id="XMLID_332_" class="st10" x1="24" y1="39.7" x2="24" y2="28.2"/>
-		<line id="XMLID_330_" class="st10" x1="22" y1="25.2" x2="12" y2="19.4"/>
-		<polyline id="XMLID_329_" class="st10" points="33.2,35.5 24,40.3 14.7,35.5 		"/>
-		<polyline id="XMLID_328_" class="st10" points="27.6,13.9 36.8,18.7 36.8,29.3 		"/>
-		<polyline id="XMLID_327_" class="st10" points="11.1,29.3 11.1,18.7 20.3,13.9 		"/>
+		
+			<line id="XMLID_333_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="26.585" y1="14.903" x2="19.576" y2="19.01"/>
+		
+			<line id="XMLID_332_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="18.16" y1="29.276" x2="18.16" y2="21.134"/>
+		
+			<line id="XMLID_330_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="16.744" y1="19.01" x2="9.664" y2="14.903"/>
+		<polyline id="XMLID_329_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="24.674,26.302 
+			18.16,29.701 11.576,26.302 		"/>
+		<polyline id="XMLID_328_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="20.709,11.009 
+			27.223,14.408 27.223,21.913 		"/>
+		<polyline id="XMLID_327_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="9.027,21.913 
+			9.027,14.408 15.541,11.009 		"/>
 	</g>
 	<g id="XMLID_335_">
-		<path class="st4" d="M24,7.4l17,8.9v19.4l-17,8.9L7,35.7V16.3L24,7.4 M24,4L4,14.5v23.1l20,10.5l20-10.5V14.5L24,4L24,4z"/>
+		<path fill="#FFB81A" d="M18.16,6.407l12.036,6.301v13.735L18.16,32.745L6.124,26.444V12.708L18.16,6.407 M18.16,4L4,11.434v16.355
+			l14.16,7.434l14.16-7.434V11.434L18.16,4L18.16,4z"/>
 	</g>
 </g>
 <g id="ep1-badge">
 	<g id="_x3E_white">
-		<polyline id="XMLID_108_" class="st10" points="14,20.4 19.6,26 14,31.7 		"/>
-		<polyline id="XMLID_107_" class="st10" points="34,31.7 28.3,26 34,20.4 		"/>
-		<polyline id="XMLID_105_" class="st10" points="29.6,16 24,21.7 18.3,16 		"/>
-		<polyline id="XMLID_104_" class="st10" points="18.3,36 24,30.4 29.6,36 		"/>
-		<line id="XMLID_102_" class="st10" x1="24" y1="20" x2="24" y2="7"/>
-		<line id="XMLID_101_" class="st10" x1="24" y1="45" x2="24" y2="32"/>
-		<line id="XMLID_100_" class="st10" x1="30" y1="26" x2="43" y2="26"/>
-		<line id="XMLID_98_" class="st10" x1="6" y1="26" x2="19" y2="26"/>
+		<polyline id="XMLID_108_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="11.08,15.611 
+			15.045,19.576 11.08,23.612 		"/>
+		<polyline id="XMLID_107_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="25.24,23.612 
+			21.205,19.576 25.24,15.611 		"/>
+		<polyline id="XMLID_105_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="22.125,12.496 
+			18.16,16.532 14.125,12.496 		"/>
+		<polyline id="XMLID_104_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="14.125,26.656 
+			18.16,22.691 22.125,26.656 		"/>
+		
+			<line id="XMLID_102_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="18.16" y1="15.328" x2="18.16" y2="6.124"/>
+		
+			<line id="XMLID_101_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="18.16" y1="33.028" x2="18.16" y2="23.824"/>
+		
+			<line id="XMLID_100_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="22.408" y1="19.576" x2="31.612" y2="19.576"/>
+		
+			<line id="XMLID_98_" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="5.416" y1="19.576" x2="14.62" y2="19.576"/>
 	</g>
 	<g id="XMLID_60_">
-		<path class="st4" d="M24,7.4l17,8.9v19.4l-17,8.9L7,35.7V16.3L24,7.4 M24,4L4,14.5v23.1l20,10.5l20-10.5V14.5L24,4L24,4z"/>
+		<path fill="#FFB81A" d="M18.16,6.407l12.036,6.301v13.735L18.16,32.745L6.124,26.444V12.708L18.16,6.407 M18.16,4L4,11.434v16.355
+			l14.16,7.434l14.16-7.434V11.434L18.16,4L18.16,4z"/>
 	</g>
 </g>
 <g id="rank-badge-cyber-cadet">
-	<polygon class="st5" points="41.5,4 42.6,6.3 45,6.7 43.3,8.5 43.7,11 41.5,9.8 39.4,11 39.8,8.5 38,6.7 40.5,6.3 	"/>
-	<polygon class="st5" points="7.5,4 8.6,6.3 11,6.7 9.3,8.5 9.7,11 7.5,9.8 5.4,11 5.8,8.5 4,6.7 6.5,6.3 	"/>
-	<polygon class="st4" points="20.2,45.3 17,43.6 16.7,43.8 16.8,43.5 9.5,39.7 9.5,22.3 21.1,16.2 21.8,12.5 6.5,20.5 6.5,41.5 
-		19.5,48.3 	"/>
-	<polygon class="st4" points="27.3,12.5 27.9,16.2 39.5,22.3 39.5,39.7 29.6,44.9 28.4,49 42.5,41.5 42.5,20.5 	"/>
+	<polygon fill="#FFFFFF" points="30.55,4 31.328,5.628 33.027,5.912 31.824,7.186 32.107,8.956 30.55,8.106 29.062,8.956 
+		29.346,7.186 28.072,5.912 29.842,5.628 	"/>
+	<polygon fill="#FFFFFF" points="6.478,4 7.256,5.628 8.955,5.912 7.752,7.186 8.035,8.956 6.478,8.106 4.99,8.956 5.273,7.186 
+		4,5.912 5.77,5.628 	"/>
+	<polygon fill="#FFB81A" points="15.469,33.241 13.203,32.037 12.991,32.179 13.062,31.966 7.894,29.276 7.894,16.957 
+		16.106,12.638 16.602,10.018 5.77,15.682 5.77,30.55 14.974,35.365 	"/>
+	<polygon fill="#FFB81A" points="20.496,10.018 20.921,12.638 29.134,16.957 29.134,29.276 22.125,32.958 21.275,35.86 
+		31.258,30.55 31.258,15.682 	"/>
 	<g>
-		<polygon class="st5" points="25.5,45.3 21.5,48.2 24.5,35 19.5,39 22.5,21 27.5,21 25.5,29 29.5,26 26,40.1 29.7,37.3 23.3,59.2 
-					"/>
-		<rect x="17.5" y="20" class="st5" width="14" height="2"/>
-		<polygon class="st5" points="24.5,8 22.5,20 26.5,20 		"/>
+		<polygon fill="#FFFFFF" points="19.222,33.241 16.39,35.294 18.514,25.948 14.974,28.78 17.098,16.036 20.638,16.036 19.222,21.7 
+			22.054,19.576 19.576,29.559 22.195,27.577 17.664,43.082 		"/>
+		<rect x="13.558" y="15.328" fill="#FFFFFF" width="9.912" height="1.416"/>
+		<polygon fill="#FFFFFF" points="18.514,6.832 17.098,15.328 19.93,15.328 		"/>
 		<g id="XMLID_45_">
 			<g id="XMLID_157_">
 				<g id="XMLID_185_">
 					<g id="XMLID_229_">
-						<polygon class="st5" points="24.5,6 22.5,7.2 22.5,9.8 24.5,11 26.5,9.8 26.5,7.2 						"/>
+						<polygon fill="#FFFFFF" points="18.514,5.416 17.098,6.266 17.098,8.106 18.514,8.956 19.93,8.106 19.93,6.266 						"/>
 					</g>
 				</g>
 			</g>
@@ -113,97 +130,122 @@
 	</g>
 </g>
 <g id="rank-badge-technical-cadet">
-	<polygon class="st4" points="27.6,14 28.1,17 37.5,17 37.5,39.2 28.1,45.8 27.6,49.8 40.5,40.8 40.5,14 	"/>
-	<polygon class="st4" points="21,45.9 11.7,39.6 11.6,17 21,17 21.5,14 8.5,14 8.7,41.2 21.5,49.9 	"/>
+	<polygon fill="#FFB81A" points="20.709,11.08 21.063,13.204 27.719,13.204 27.719,28.922 21.063,33.595 20.709,36.427 
+		29.843,30.055 29.843,11.08 	"/>
+	<polygon fill="#FFB81A" points="16.037,33.666 9.452,29.205 9.381,13.204 16.037,13.204 16.391,11.08 7.187,11.08 7.328,30.338 
+		16.391,36.498 	"/>
 	<g>
 		<g>
 			<g>
-				<polygon class="st5" points="24.5,21 20.5,25 24.5,59 28.5,25 				"/>
+				<polygon fill="#FFFFFF" points="18.515,16.036 15.683,18.868 18.515,42.94 21.347,18.868 				"/>
 			</g>
 		</g>
-		<rect x="17.5" y="20" class="st5" width="14" height="2"/>
-		<polygon class="st5" points="24.5,8 22.5,20 26.5,20 		"/>
+		<rect x="13.559" y="15.328" fill="#FFFFFF" width="9.912" height="1.416"/>
+		<polygon fill="#FFFFFF" points="18.515,6.832 17.099,15.328 19.931,15.328 		"/>
 		<g id="XMLID_166_">
 			<g id="XMLID_168_">
 				<g id="XMLID_169_">
 					<g id="XMLID_170_">
-						<polygon class="st5" points="24.5,6 22.5,7.2 22.5,9.8 24.5,11 26.5,9.8 26.5,7.2 						"/>
+						<polygon fill="#FFFFFF" points="18.515,5.416 17.099,6.266 17.099,8.106 18.515,8.956 19.931,8.106 19.931,6.266 						"/>
 					</g>
 				</g>
 			</g>
 		</g>
 	</g>
-	<polygon class="st5" points="41.5,4 42.6,6.3 45,6.7 43.3,8.5 43.7,11 41.5,9.8 39.4,11 39.8,8.5 38,6.7 40.5,6.3 	"/>
-	<polygon class="st5" points="7.5,4 8.6,6.3 11,6.7 9.3,8.5 9.7,11 7.5,9.8 5.4,11 5.8,8.5 4,6.7 6.5,6.3 	"/>
+	<polygon fill="#FFFFFF" points="30.551,4 31.33,5.628 33.029,5.912 31.825,7.186 32.108,8.956 30.551,8.106 29.064,8.956 
+		29.348,7.186 28.072,5.912 29.843,5.628 	"/>
+	<polygon fill="#FFFFFF" points="6.479,4 7.257,5.628 8.957,5.912 7.753,7.186 8.036,8.956 6.479,8.106 4.992,8.956 5.275,7.186 
+		4,5.912 5.771,5.628 	"/>
 </g>
 <g id="rank-badge-cadet-first-class">
 	<g>
-		<path class="st4" d="M37.5,17v22.2l-13,9.1l-12.9-8.7L11.5,17H37.5 M40.5,14h-32l0.1,27.2L24.5,52l16-11.2V14L40.5,14z"/>
+		<path fill="#FFB81A" d="M27.718,13.204v15.718l-9.204,6.443l-9.134-6.16L9.31,13.204H27.718 M29.842,11.08H7.186l0.07,19.258
+			l11.258,7.646l11.328-7.93V11.08L29.842,11.08z"/>
 	</g>
-	<line class="st7" x1="9.4" y1="28" x2="39.7" y2="28"/>
-	<polygon class="st5" points="41.5,4 42.6,6.3 45,6.7 43.3,8.5 43.7,11 41.5,9.8 39.4,11 39.8,8.5 38,6.7 40.5,6.3 	"/>
-	<polygon class="st5" points="7.5,4 8.6,6.3 11,6.7 9.3,8.5 9.7,11 7.5,9.8 5.4,11 5.8,8.5 4,6.7 6.5,6.3 	"/>
+	
+		<line fill="none" stroke="#FFB81A" stroke-width="2.9184" stroke-miterlimit="10" x1="7.823" y1="20.992" x2="29.275" y2="20.992"/>
+	<polygon fill="#FFFFFF" points="30.55,4 31.328,5.628 33.027,5.912 31.824,7.186 32.107,8.956 30.55,8.106 29.063,8.956 
+		29.346,7.186 28.072,5.912 29.842,5.628 	"/>
+	<polygon fill="#FFFFFF" points="6.478,4 7.256,5.628 8.955,5.912 7.752,7.186 8.035,8.956 6.478,8.106 4.991,8.956 5.273,7.186 
+		4,5.912 5.77,5.628 	"/>
 </g>
 <g id="rank-badge-cadet">
 	<g>
-		<path class="st4" d="M33,7v22.2l-13,9.1L7.1,29.6L7,7H33 M36,4H4l0.1,27.2L20,42l16-11.2V4L36,4z"/>
+		<path fill="#FFB81A" d="M24.531,6.124v15.718l-9.203,6.443l-9.134-6.16L6.123,6.124H24.531 M26.656,4H4l0.07,19.258l11.258,7.646
+			l11.328-7.93V4L26.656,4z"/>
 	</g>
-	<line class="st7" x1="4.9" y1="18" x2="35.2" y2="18"/>
+	<line fill="none" stroke="#FFB81A" stroke-width="2.9184" stroke-miterlimit="10" x1="4.637" y1="13.912" x2="26.09" y2="13.912"/>
 </g>
 <g id="rank-badge-recruit">
 	<g>
-		<path class="st4" d="M33,7v22.2l-13,9.1L7.1,29.6L7,7H33 M36,4H4l0.1,27.2L20,42l16-11.2V4L36,4z"/>
+		<path fill="#FFB81A" d="M24.531,6.124v15.718l-9.203,6.443l-9.134-6.16L6.123,6.124H24.531 M26.656,4H4l0.07,19.258l11.258,7.646
+			l11.328-7.93V4L26.656,4z"/>
 	</g>
 </g>
 <g id="chapter-progress-chapter">
 	<g id="XMLID_150_">
-		<path class="st6" d="M12,7.4l5,2.7v5.8l-5,2.7l-5-2.7v-5.8L12,7.4 M12,4L4,8.3v9.4l8,4.3l8-4.3V8.3L12,4L12,4z"/>
+		<path fill="#6B989F" d="M9.664,6.407l3.54,1.912v4.106l-3.54,1.912l-3.54-1.912V8.319L9.664,6.407 M9.664,4L4,7.044V13.7
+			l5.664,3.044l5.664-3.044V7.044L9.664,4L9.664,4z"/>
 	</g>
 </g>
 <g id="chapter-progress-slide">
-	<rect x="4" y="4" class="st6" width="9" height="9"/>
+	<rect x="4" y="4" fill="#6B989F" width="6.372" height="6.372"/>
 </g>
 <g id="chapter-progress-test">
-	<polygon class="st3" points="23.7,28.1 17.8,31.2 6.5,25.4 6.5,12.7 10.2,10.8 8.3,8.9 4,11.2 4,26.9 17.8,34 26.1,29.7 	"/>
-	<polygon class="st3" points="17.8,4 11.4,7.3 13.9,8.9 17.8,6.9 29,12.7 29,25.4 27.2,26.3 29.1,28.2 31.5,26.9 31.5,11.2 	"/>
+	<polygon opacity="0.5" fill="#6B989F" enable-background="new    " points="17.948,21.063 13.771,23.258 5.77,19.151 5.77,10.16 
+		8.39,8.814 7.044,7.469 4,9.098 4,20.213 13.771,25.24 19.647,22.196 	"/>
+	<polygon opacity="0.5" fill="#6B989F" enable-background="new    " points="13.771,4 9.239,6.336 11.009,7.469 13.771,6.053 
+		21.7,10.16 21.7,19.151 20.426,19.789 21.771,21.134 23.47,20.213 23.47,9.098 	"/>
 	<g>
-		<polygon class="st2" points="7.8,6.5 20.7,14.6 16.7,14.5 27.5,23.7 22.8,23.8 29.7,30.5 15.9,21.7 21.1,21.6 9.6,12.8 13.7,12.6 
-					"/>
+		<polygon fill="#F9773E" points="6.69,5.77 15.824,11.505 12.992,11.434 20.638,17.948 17.311,18.019 22.196,22.762 12.425,16.532 
+			16.107,16.461 7.965,10.23 10.868,10.089 		"/>
 	</g>
 </g>
 <g id="chapter-progress-duties">
-	<circle class="st6" cx="8.5" cy="8.5" r="4.5"/>
+	<circle fill="#6B989F" cx="7.186" cy="7.186" r="3.186"/>
 </g>
 <g id="list-progress-base">
 	<g id="hex-outer_1_">
 		<g id="XMLID_1080_">
-			<path class="st2" d="M24,8.5l16,8.4v18.2l-16,8.4L8,35.1V16.9L24,8.5 M24,4L4,14.5v23.1l20,10.5l20-10.5V14.5L24,4L24,4z"/>
+			<path fill="#F9773E" d="M18.16,7.186l11.328,5.947v12.886L18.16,31.966L6.832,26.019V13.133L18.16,7.186 M18.16,4L4,11.434
+				v16.355l14.16,7.434l14.16-7.434V11.434L18.16,4L18.16,4z"/>
 		</g>
 	</g>
 	<g id="hex-inner_1_">
 		<g id="XMLID_2384_">
-			<polygon class="st4" points="24,40.6 11.2,33.7 11.2,18.3 24,11.3 36.8,18.3 36.8,33.5 			"/>
+			<polygon fill="#FFB81A" points="18.16,29.913 9.098,25.028 9.098,14.125 18.16,9.168 27.223,14.125 27.223,24.886 			"/>
 		</g>
 	</g>
 </g>
 <g id="list-progress-complete">
 	<g id="hex-inner">
 		<g>
-			<polygon class="st8" points="29.2,17.8 34.7,21.2 28.3,21.2 27.4,21.2 36.8,29.3 36.8,18.3 24,11.3 21.2,12.8 			"/>
+			<polygon fill="#71A8A8" points="21.842,13.771 25.736,16.178 21.205,16.178 20.567,16.178 27.223,21.913 27.223,14.125 
+				18.16,9.168 16.178,10.23 			"/>
 		</g>
 		<g>
-			<polygon class="st8" points="20.3,31.5 15.2,28.2 21.2,28.1 23.6,28 11.2,18.5 11.2,33.7 24,40.6 29.7,37.5 			"/>
+			<polygon fill="#71A8A8" points="15.541,23.47 11.93,21.134 16.178,21.063 17.877,20.992 9.098,14.266 9.098,25.028 18.16,29.913 
+				22.196,27.718 			"/>
 		</g>
 	</g>
 	<g id="hex-outer">
-		<polygon class="st0" points="32.3,39.1 24,43.5 8,35.1 8,16.9 13.1,14.2 10.2,11.2 4,14.4 4,37.5 24,48 36.2,41.6 		"/>
-		<polygon class="st0" points="24,4 14.7,8.8 18.7,11.3 24,8.5 40,16.9 40,35.1 37.5,36.4 40.6,39.3 44,37.5 44,14.4 		"/>
+		<polygon fill="#53848C" points="24.037,28.851 18.16,31.966 6.832,26.019 6.832,13.133 10.443,11.222 8.39,9.098 4,11.363 
+			4,27.718 18.16,35.152 26.798,30.621 		"/>
+		<polygon fill="#53848C" points="18.16,4 11.576,7.398 14.408,9.168 18.16,7.186 29.488,13.133 29.488,26.019 27.718,26.939 
+			29.913,28.993 32.32,27.718 32.32,11.363 		"/>
 	</g>
 	<g id="lightning_1_">
 		<g id="lightning">
-			<polygon class="st4" points="9.3,7.6 28.3,19.4 22.5,19.4 38.3,32.9 31.4,33 41.5,42.8 21.3,29.9 28.9,29.8 12,16.8 18.1,16.6 
-							"/>
+			<polygon fill="#FFB81A" points="7.752,6.549 21.205,14.903 17.098,14.903 28.285,24.461 23.399,24.532 30.55,31.471 
+				16.249,22.337 21.629,22.267 9.664,13.062 13.983,12.921 			"/>
 		</g>
 	</g>
+</g>
+<g id="ctanlee">
+	<circle fill="#FFFFFF" cx="21" cy="21" r="6.371"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="6" stroke-miterlimit="10" d="M25.451,37.391C32.678,35.432,38,28.846,38,21"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="6" stroke-miterlimit="10" d="M4,21c0,7.846,5.322,14.432,12.549,16.391"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="6" stroke-miterlimit="10" d="M32.785,8.765C29.729,5.82,25.58,4,21,4
+		c-4.678,0-8.913,1.891-11.987,4.949"/>
 </g>
 </svg>

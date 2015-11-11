@@ -1,5 +1,7 @@
 title: Training One
-chapter: !!inc/file episodes/episode1/yaml/_chapter1.yaml
+chapters:
+  - !!inc/file ./episodes/episode1/yaml/_chapter1.yaml
+  - !!inc/file ./episodes/episode1/yaml/_chapter1.yaml
 slides:
   -
     movie:
@@ -12,7 +14,28 @@ slides:
         - {depth: 2, content: c1-background-buildin.json, loop: false }
         - {depth: 3, content: addon-fan-1.json, loop: true }
     sound: nothin-special.mp3
-    duration: {kind: time, seconds: 2}
+    duration: {kind: ctanlee}
+    ctanlee:
+      timeline:
+        - {action: intro}
+        - {action: a }
+        - {action: b }
+      actions:
+        intro:
+          pos: [200, 200]
+          emo: 'happy'
+          text: "I'm really happy with how things are turning out"
+          audio: nothin-special.mp3
+        a:
+          pos: [300, 200, 2000, 1000]
+          emo: 'sad'
+          text: "I'm turning out"
+          audio: nothin-special.mp3
+        b:
+          pos: [300, 100]
+          emo: 'surprize'
+          text: " are turning out"
+          audio: nothin-special.mp3
   -
     movie:
       layers: [ {depth: 3, fx: {effects: [blur]}} ]

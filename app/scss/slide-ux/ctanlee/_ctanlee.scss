@@ -1,0 +1,9 @@
+.ctanlee        { position:absolute;
+  svg.defs      { width:0; height:0; }
+  .face         {
+    svg#ctanlee { filter:url(#dropshadow) }
+  }
+  .text         { width:300px; background:rgba(black, 0.77); padding:10px; color:white; font-style:italic;
+  span.next     { cursor:pointer; width: 20px; height: 11px; background: #e68536; display: inline-block; margin-left: 10px; }
+  }
+}
