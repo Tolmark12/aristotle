@@ -40,7 +40,7 @@ slides:
             click:
               - {cmd: slides.next-slide}
               - {cmd: movie.load-layer, data: {depth: 3, content: semi-final-assets/facility-type-generator-build.json, loop: false } }
-            intro: The Standa
+            intro: The Standards require we protect significant control centers, generation plants, and substations on the Bulk Electric System. Per the Standards, we will classify them as High Impact (big control centers), Medium Impact (significant transmission substations and generation plants) and Low Impact (everything else). Most of the Standards apply to High and Medium impact facilities, so we'll add one of those facilities to our simulator. Let's configure the simulator with one of these facilities. Click on a facility to choose it. This is a simulator after all, so pick whichever one you like! We'll teach the same principles with each facility.
             title: Choose your pac defense
             subTitle: Select a physical access control device to add to your facility-type-generator-build
             submitBtn: {txt: Install, icon: action-btn-fist}
