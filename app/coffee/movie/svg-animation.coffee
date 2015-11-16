@@ -1,16 +1,31 @@
 module.exports = class SVGAnimation
 
-  constructor: ( el, json, doLoop=true ) ->
+  constructor: ( el, json, data ) ->
     @animation = bodymovin.loadAnimation {
              wrapper   : el[0]
              animType  : 'svg'
-             loop      : doLoop
+             loop      : data.loop
              prerender : true
-             autoplay  : true
+             autoplay  : false
              path      : json
            }
 
-  play   : () -> @animation.play()#; @traceFrames()
+    if data.delay?
+      setTimeout @play, data.delay
+    else
+      @play()
+
+    @addEvents data
+
+
+  addEvents : (data) ->
+    if data.events?
+      for event in data.events
+        @animation.addEventListener event, ()=>
+          PubSub.publish "layer.#{data.depth}.#{event}"
+
+
+  play   : () => @animation.play()#; @traceFrames()
   stop   : () -> @animation.stop()
   destroy: () ->
     @animation.destroy()

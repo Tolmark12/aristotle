@@ -5,37 +5,82 @@ chapters:
 slides:
   -
     movie:
-      position:
-        scale: 1.5
-        center: [top, left]
       layers:
         - {depth: 0, content: c1-sky.svg}
-        - {depth: 1, content: c1-background-clouds-loop.json, loop: true }
-        - {depth: 2, content: c1-background-buildin.json, loop: false }
-        - {depth: 3, content: addon-fan-1.json, loop: true }
+        - {depth: 2, content: semi-final-assets/c1-background-buildin.json, loop: false, events: [complete] }
     sound: nothin-special.mp3
-    duration: {kind: ctanlee}
+    duration: {kind: pubsub, event: layer.2.complete}
+  -
+    movie:
+      layers:
+        - {depth: 1, content: semi-final-assets/c1-background-clouds-loop.json, loop: true }
+    duration: {kind: ux}
+    ctanlee:
+      defaults:
+        next: none
+        pos: [200, 50]
+      actions:
+        a:
+          emo: happy
+          text: "My grandfather twice removed was a circuit breaker."
+          audio: ctanlee/1.mp3
+        b:
+          emo: sad
+          text: "I dated a boiler once. She was hot."
+          audio: ctanlee/2.mp3
+        c:
+          emo: surprize
+          text: "The nerve center of the BES. My 1s and 0s are tingling."
+          audio: ctanlee/3.mp3
+    ux:
+      components:
+        -
+          kind: selection-dialogue
+          config:
+            click:
+              - {cmd: slides.next-slide}
+              - {cmd: movie.load-layer, data: {depth: 3, content: semi-final-assets/facility-type-generator-build.json, loop: false } }
+            intro: The Standa
+            title: Choose your pac defense
+            subTitle: Select a physical access control device to add to your facility-type-generator-build
+            submitBtn: {txt: Install, icon: action-btn-fist}
+            items:
+              - { click: {cmd: ctanlee.activate, data: a}, btnTxt: Substation, icon: mini-preview-test, blurb: "I’m sorry Dave but I can’t let you in without proper access.", details: "+2 Style Points, Eye of the Beholder Bonus, +5 Robot Recognition"  }
+              - { click: {cmd: ctanlee.activate, data: b}, btnTxt: Generation Plant, icon: mini-preview-test, blurb: "I’m sorry Dave but I can’t let you in without proper access.", details: "+2 Style Points, Eye of the Beholder Bonus, +5 Robot Recognition"  }
+              - { click: {cmd: ctanlee.activate, data: c}, btnTxt: Control Center, icon: mini-preview-test, blurb: "I’m sorry Dave but I can’t let you in without proper access.", details: "+2 Style Points, Eye of the Beholder Bonus, +5 Robot Recognition"  }
+  -
+    movie:
+      zoom: {}
+      layers:
+        - {depth: 4, content: semi-final-assets/warcore-base-build.json, loop: false, events: [complete] }
+    duration: {kind: pubsub, event: layer.4.complete}
+  -
     ctanlee:
       timeline:
-        - {action: intro}
         - {action: a }
         - {action: b }
+        - {action: c }
+      defaults:
+        next: audio
       actions:
-        intro:
-          pos: [200, 200]
-          emo: 'happy'
-          text: "I'm really happy with how things are turning out"
-          audio: nothin-special.mp3
         a:
-          pos: [300, 200, 2000, 1000]
-          emo: 'sad'
-          text: "I'm turning out"
-          audio: nothin-special.mp3
+          pos: [200, 200]
+          emo: happy
+          text: "Excellent choice cadet! This is one fine building"
+          audio: ctanlee/4.mp3
         b:
-          pos: [300, 100]
-          emo: 'surprize'
-          text: " are turning out"
-          audio: nothin-special.mp3
+          pos: [500, 350]
+          emo: happy
+          text: "CIP requires us to protect the facility because it has important components of the Bulk Electric System like this."
+          audio: ctanlee/5.mp3
+          action: {cmd: movie.zoom, data: {scale: 2, x: 680, y: 635} }
+        c:
+          pos: [700, 500]
+          emo: happy
+          text: "CIP is especially interested in the programmable devices in the facility like these. If they can be programed, we call them Cyber Assets."
+          audio: ctanlee/6.mp3
+          action: {cmd: movie.zoom, data: {scale: 1, x: 680, y: 635} }
+
   -
     movie:
       layers: [ {depth: 3, fx: {effects: [blur]}} ]

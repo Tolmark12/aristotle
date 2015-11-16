@@ -3,10 +3,11 @@ SVGAnimation = require "movie/svg-animation"
 
 module.exports = class Slide
 
-  constructor: (@movie, @slideData, @onSlideComplete) ->
+  constructor: (@movie, @slideUX, @slideData, @onSlideComplete) ->
 
   play : (onComplete) =>
     @movie.populate @slideData.movie
+    @slideUX.populate @slideData.ux
     @setDuration()
     @runCtanlee @slideData.ctanlee
 
@@ -18,8 +19,12 @@ module.exports = class Slide
         setTimeout @onSlideComplete, @slideData.duration.seconds * 1000
       when "user"
         console.log "waiting on the user"
+      when "ux"
+        PubSub.subscribe 'ux.complete', ()=> @onSlideComplete()
       when "ctanlee"
         PubSub.subscribe 'ctanlee.complete', ()=> @onSlideComplete()
+      when "pubsub"
+        PubSub.subscribe @slideData.duration.event, ()=> @onSlideComplete()
 
   runCtanlee : (data) ->
     if data? then aristotle.ctanlee.activate data

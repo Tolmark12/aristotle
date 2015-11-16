@@ -1,4 +1,4 @@
-.ctanlee        { position:absolute;
+.ctanlee        { position:absolute; z-index:1;
   svg.defs      { width:0; height:0; }
   .face         {
     svg#ctanlee { filter:url(#dropshadow) }

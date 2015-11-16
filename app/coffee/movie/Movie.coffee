@@ -3,21 +3,26 @@ Layer = require 'movie/Layer'
 module.exports = class Movie
 
   constructor: (@$el) ->
+    @$wrapper = $ '.wrapper', @$el
     @layers = []
 
+    PubSub.subscribe 'movie.load-layer', (m, data)=> @addLayer data
+    PubSub.subscribe 'movie.zoom',       (m, data)=>
+      console.log "hmmmm"
+      @zoom data.scale, data.x, data.y
+
   populate: (data)->
+    if !data? then return
     for depthId, layerData of data.layers
       @addLayer layerData
 
-    if data.position?
-      @position data.position
+    if data.zoom?
+      console.log data.zoom
+      @zoom data.zoom.scale, data.zoom.x, data.zoom.y
 
-  position : (position) ->
-    if position.center?
-      @$el.css "transform-origin":"(#{position.center[0]} #{position.center[1]})"
-
-    if position.scale?
-      @$el.css transform:"scale(#{position.scale})"
+  zoom : (scale=1, x=0, y=0) ->
+    @$el.css "transform-origin": "#{x}px #{y}px"
+    @$el.css transform: "scale(#{scale})"
 
 
   addLayer : (layerData) ->
@@ -26,7 +31,7 @@ module.exports = class Movie
     # fill the space between with empty layers
     if depth > @layers.length
       for i in [@layers.length..depth]
-        @layers[i] = new Layer @$el, depth
+        @layers[i] = new Layer @$wrapper, depth
 
     layer = @getOrCreateLayer depth
     layer.update layerData
@@ -36,6 +41,6 @@ module.exports = class Movie
     if @layers[depth]? then return @layers[depth]
 
     # Layer doesn't exist, create it:
-    layer = new Layer @$el, depth
+    layer = new Layer @$wrapper, depth
     @layers[depth] = layer
     return layer

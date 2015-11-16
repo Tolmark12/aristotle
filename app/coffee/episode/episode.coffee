@@ -2,8 +2,8 @@ Slides = require 'episode/slides'
 
 module.exports = class Episode
 
-  constructor: (trainingData, movie) ->
-    @slides = new Slides trainingData, movie, @onSlidesComplete
+  constructor: (trainingData, movie, ux) ->
+    @slides = new Slides trainingData, movie, ux, @onSlidesComplete
     @slides.start()
 
   onSlidesComplete : () =>

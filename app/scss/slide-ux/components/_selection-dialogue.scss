@@ -1,0 +1,40 @@
+@mixin blue-border($border:bottom){
+  @if $border == bottom{
+    border-bottom:solid 2px #6B989F;
+  }@else{
+    border-top:solid 2px #6B989F;
+  }
+}
+.selection-dialogue   { display:flex; color:white;  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  *                   { font-weight:100; font-size:16px;}
+  .preview, .dialogue { display:flex; flex-direction:column; background:rgba(#020308, 0.8); width:340px;  padding:20px;}
+  .preview            { margin-right:5px; border:3px solid $orange;
+    .item-info        { display:none; }
+    .mini-icon        { text-align:center;
+      .icon           { display:none;
+        &.active      { display:block; }
+      }
+    }
+    .header           { display:flex; align-items:center;
+      .line           { width:50%; content:""; @include blue-border; display:inline-block; height:2px; }
+      h1              { margin:0 5px; text-align:center; display:inline; font-size:18px;  }
+    }
+    .action           { @include blue-border(top); text-align:center;
+      .btn            { display:flex;  color:$orange; align-items:center; text-transform:uppercase; justify-content:center; margin-top:10px; cursor:pointer;
+        &:hover .txt  { background:$orange; color:white; }
+      }
+      .txt            { font-family:$fun_cond; font-size:24px; letter-spacing:0.09em; border:2px solid white; padding:3px 20px; }
+      &.fist .txt     { margin:13px 0 0 -7px;}
+    }
+  }
+  .dialogue           {
+    h1                { @include blue-border; text-align:center; letter-spacing:0.1em; font-size:22px; }
+    p                 { }
+    .buttons          {
+
+    }
+  }
+}

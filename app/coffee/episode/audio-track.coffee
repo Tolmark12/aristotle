@@ -1,19 +1,11 @@
 module.exports = class AudioTrack
 
-  constructor: (src) ->
-    # TODO - I probably need to preload the sounds, or wait until they are done..
-
-    @ppc = new createjs.PlayPropsConfig().set
-      interrupt: createjs.Sound.INTERRUPT_ANY,
-      volume: 0
-      # volume: 1
-      pan:1
-      # loop: -1,
-
-    createjs.Sound.registerSound src, "sound"
+  constructor: (@src) ->
+    @initSoundSettings()
 
   play : (onComplete) ->
-    @sound = createjs.Sound.play "sound", @ppc
+    # createjs.Sound.play("mySound");
+    @sound = createjs.Sound.play @src, AudioTrack.ppc
     @sound.addEventListener "complete", ()-> onComplete()
 
   stop : ()-> @sound.stop()
@@ -21,3 +13,11 @@ module.exports = class AudioTrack
   destroy : ()->
     @sound.removeEventListener "complete"
     @sound.destroy()
+
+  initSoundSettings : () ->
+    return if AudioTrack.ppc?
+    AudioTrack.ppc = new createjs.PlayPropsConfig().set
+      interrupt: createjs.Sound.INTERRUPT_ANY
+      volume: 1
+      pan:1
+      # loop: -1,

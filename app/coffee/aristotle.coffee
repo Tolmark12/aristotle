@@ -13,8 +13,8 @@ class Aristotle
     episodeLoader = new EpisodeLoader @onJsonLoaded
     devTools      = new DevTools()
 
-  onJsonLoaded : (json) =>
-    episode = new Episode JSON.parse(json), @movie
+  onJsonLoaded : (episodeData) =>
+    episode = new Episode episodeData, @movie, @slideUX
 
   build : ($el) ->
     $base = $ jadeTemplate['aristotle']( {} )
@@ -23,7 +23,7 @@ class Aristotle
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, $base
 
     @chromeUI = new ChromeUI $(".chrome",   $base)
-    @slideUI  = new SlideUX  $(".slide-ux", $base)
+    @slideUX  = new SlideUX  $(".slide-ux", $base)
     @movie    = new Movie    $(".movie",    $base)
 
 

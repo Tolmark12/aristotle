@@ -2,16 +2,17 @@ Slide = require 'episode/slide'
 
 module.exports = class Slides
 
-  constructor: (trainingData, movie, @onComplete) ->
+  constructor: (trainingData, movie, ux, @onComplete) ->
     @slides            = []
     @currentSlideIndex = -1
-    @createSlides trainingData, movie
+    @createSlides trainingData, movie, ux
+    PubSub.subscribe 'slides.next-slide', ()=> @nextSlide() 
 
   start : () -> @nextSlide()
 
-  createSlides : (trainingData, movie) ->
+  createSlides : (trainingData, movie, ux) ->
     for key, slide of trainingData.slides
-      slide = new Slide movie, slide, @slideComplete
+      slide = new Slide movie, ux, slide, @slideComplete
       @slides.push slide
 
   slideComplete : () => @nextSlide()

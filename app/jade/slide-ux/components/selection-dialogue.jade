@@ -1,0 +1,26 @@
+.selection-dialogue
+  .preview
+    p.intro=intro
+    .item-info
+      .mini-icon
+        each item in items
+          .icon(id="icon-#{item.id}")
+            img.shadow-icon(data-src="#{item.icon}")
+      .blurb
+      .callout
+        .header
+          .line
+          h1 Buffs
+          .line
+        p.details
+      .action.fist
+        .btn#action-btn
+          img.shadow-icon(data-src="#{btnIcon}")
+          .txt=btnTxt
+  .dialogue
+    h1=title
+    p=subTitle
+    .buttons
+      each btn in items
+        .button(id="#{btn.id}")=btn.txt
+  
