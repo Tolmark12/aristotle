@@ -1,3 +1,5 @@
+dev:
+  startSlideIndex: 3
 title: Training One
 chapters:
   - !!inc/file ./episodes/episode1/yaml/_chapter1.yaml

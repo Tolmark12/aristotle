@@ -1,15 +1,4 @@
 .ctanlee
-  svg.defs
-    defs
-      filter#dropshadow(height='200%')
-        fegaussianblur(in='SourceGraphic', stddeviation='1.5')
-        feComponentTransfer
-          //- opacity of the glow
-          feFuncA(type="linear" slope="0.5") 
-        femerge
-          femergenode
-          femergenode(in='SourceGraphic')
-
   .face
     img.shadow-icon(data-src="ctanlee")
   .speech-box 

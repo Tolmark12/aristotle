@@ -6,14 +6,19 @@ module.exports = class Slides
     @slides            = []
     @currentSlideIndex = -1
     @createSlides trainingData, movie, ux
-    PubSub.subscribe 'slides.next-slide', ()=> @nextSlide() 
+    PubSub.subscribe 'slides.next-slide', ()=> @nextSlide()
 
-  start : () -> @nextSlide()
+  start : () ->
+    @nextSlide()
 
   createSlides : (trainingData, movie, ux) ->
-    for key, slide of trainingData.slides
-      slide = new Slide movie, ux, slide, @slideComplete
+    startIndex = if trainingData.dev.startSlideIndex? then trainingData.dev.startSlideIndex else 0
+    for i in [startIndex..trainingData.slides.length]
+      slide
+      slide = new Slide movie, ux, trainingData.slides[i], @slideComplete
       @slides.push slide
+
+
 
   slideComplete : () => @nextSlide()
 

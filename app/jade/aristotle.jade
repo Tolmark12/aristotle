@@ -3,4 +3,39 @@
   .movie
     .wrapper
   .slide-ux
-      
+
+svg.defs
+  defs
+    filter#glow
+      fegaussianblur(in='SourceGraphic', stddeviation='1.5')
+      feComponentTransfer
+        //- opacity of the glow
+        feFuncA(type="linear" slope="0.5") 
+      femerge
+        femergenode
+        femergenode(in='SourceGraphic')
+
+    filter#highlight
+      feColorMatrix(type="matrix" values= "0 0 0 0   0\
+                                           1 0 0 0   0\
+                                           1 0 0 0   0\
+                                           0 0 0 0.8 0")
+      feComponentTransfer
+        //- opacity of the glow
+        feFuncA(type="linear" slope="1") 
+          animate(attributeName="slope" attributeType="XML" begin="0s" dur="1s" repeatCount="indefinite" values="0;1;0")
+      fegaussianblur(stddeviation='4' result='coloredBlur')
+      femerge
+        femergenode(in='SourceGraphic')
+        feMergeNode(in='coloredBlur')
+
+
+    filter#black-glow
+      feColorMatrix(type="matrix" values="0 0 0 0   0\
+                                          0 0 0 0   0\
+                                          0 0 0 0   0\
+                                          0 0 0 0.7 0")
+      feGaussianBlur(stdDeviation="2.5" result="coloredBlurs")
+      feMerge
+          feMergeNode(in="coloredBlurs")
+          feMergeNode(in="SourceGraphic")
