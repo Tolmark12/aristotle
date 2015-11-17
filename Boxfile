@@ -1,0 +1,3 @@
+web1:
+  type: php
+  httpd_document_root: rel
