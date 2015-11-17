@@ -41,7 +41,7 @@ coffeeStagePath   = 'stage/**/*.coffee'
 assetPath         = ['app/images/**/*']
 svgPath           = 'app/assets/compiled/*.svg'
 fontPath          = 'app/fonts/**/*.@(ttf|svg|eot|ttf|woff|woff2)'
-episodeScriptPath = 'episodes/**/*.yml'
+episodeScriptPath = ['episodes/**/*.yml','episodes/**/*.yaml']
 episodeAssetPath  = 'episodes/**/*.!(yml|yaml)'
 
 parseSVG = (cb)->
@@ -113,16 +113,16 @@ fonts = (destination, cb) ->
     .pipe gulp.dest(destination)
     .on('end', cb)
 
-episodeAssets = (cb)->
+episodeAssets = (destination, cb)->
   gulp.src episodeAssetPath
-    .pipe gulp.dest("server/episodes")
+    .pipe gulp.dest(destination)
     .on('end', cb)
 
-episodeScript = (cb) ->
+episodeScript = (destination, cb) ->
   gulp.src episodeScriptPath
     .pipe yamlinc()
     .pipe yaml()
-    .pipe gulp.dest("server/episodes")
+    .pipe gulp.dest(destination)
     .on('end', cb)
 
 
@@ -194,10 +194,10 @@ compileFiles = (doWatch=false, cb) ->
     {meth:cssStage,      glob:cssStagePath}
     {meth:htmlStage,     glob:jadeStagePath}
     {meth:parseSVG,      glob:svgPath}
-    {meth:episodeAssets, glob:episodeAssetPath}
-    {meth:episodeScript, glob:[episodeScriptPath, 'episodes/**/*.yaml']}
-    {meth:fonts,         glob:fontPath,  params:['server/assets/fonts', onComplete], dontWatch:true }
-    {meth:copyAssets,    glob:assetPath, params:['server/assets/', onComplete]}
+    {meth:episodeAssets, glob:episodeAssetPath,   params:['server/episodes', onComplete]}
+    {meth:episodeScript, glob:episodeScriptPath,  params:['server/episodes', onComplete] }
+    {meth:fonts,         glob:fontPath,           params:['server/assets/fonts', onComplete], dontWatch:true }
+    {meth:copyAssets,    glob:assetPath,          params:['server/assets/', onComplete]}
   ]
 
   createWatcher = (item, params)-> watch( { glob:item.glob }, => item.meth.apply(null, params).pipe( livereload() ) )
@@ -219,9 +219,12 @@ gulp.task 'default', ['server']
 
 # ----------- BUILD (rel) ----------- #
 
-gulp.task 'rel:clean',                                 (cb)  -> rimraf './rel', cb
-gulp.task 'bumpVersion',                               ()    -> bumpBowerVersion()
-gulp.task 'copyStatics', ['bowerLibs'],                ()    -> copyAssets('rel/assets', ->)
-gulp.task 'releaseCompile', ['copyStatics'],           (cb)  -> compileFiles(false, cb)
-gulp.task 'minify',['releaseCompile'],                 ()    -> minifyAndJoin();
-gulp.task 'rel', ['rel:clean', 'bumpVersion', 'minify'],     -> #pushViaGit()
+gulp.task 'rel:clean',                                  (cb)  -> rimraf './rel', cb
+gulp.task 'bumpVersion',                                ()    -> bumpBowerVersion()
+gulp.task 'copyFonts', ['bowerLibs'],                   ()    -> fonts('rel/assets/fonts', ->)
+gulp.task 'copyEpisodeScripts', ['copyFonts'],          ()    -> episodeScript('rel/episodes', ->)
+gulp.task 'copyEpisodeAssets', ['copyEpisodeScripts'],  ()    -> episodeAssets('rel/episodes', ->)
+gulp.task 'copyStatics', ['copyEpisodeAssets'],         ()    -> copyAssets('rel/assets', ->)
+gulp.task 'releaseCompile', ['copyStatics'],            (cb)  -> compileFiles(false, cb)
+gulp.task 'minify',['releaseCompile'],                  ()    -> minifyAndJoin();
+gulp.task 'rel', ['rel:clean', 'bumpVersion', 'minify'],      -> #pushViaGit()
