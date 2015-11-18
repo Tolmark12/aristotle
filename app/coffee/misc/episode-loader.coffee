@@ -26,6 +26,7 @@ module.exports = class EpisodeLoader
 
     # On load progress
     preloadQueue.on "progress", (e)=>
+      console.log e.loaded
       e.loaded
 
     # On load complete
