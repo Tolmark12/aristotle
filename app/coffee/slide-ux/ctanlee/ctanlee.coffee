@@ -8,7 +8,9 @@ module.exports = class Ctanlee
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
     @$speechBox = $ ".speech-box", @$el
     @$text      = $ ".text span.content", @$speechBox
-    $( ".text span.next", @$speechBox).on "click", ()=> @playNextAction()
+    @$nextBtn   = $ ".text span.next", @$speechBox
+
+    @$nextBtn.on "click", ()=> @playNextAction()
 
     PubSub.subscribe 'ctanlee.activate', (a, action)=> @playAction(action)
 
@@ -33,6 +35,9 @@ module.exports = class Ctanlee
       track.play ()=>
         if next == 'audio' then @playNextAction()
 
+    if next == 'click' then @showNext() else @hideNext()
+
+
   setEmotion : (emotion) ->
 
   goto : (x=960, y=0, duration=600, delay=0) ->
@@ -56,7 +61,13 @@ module.exports = class Ctanlee
     if action.pos?
       @goto action.pos[0], action.pos[1], action.pos[2], action.pos[3]
     if action.action?
-      PubSub.publish action.action.cmd, action.action.data
+      # TODO : should I move global command handling to a single location? Prbly
+      if Array.isArray action.action
+        for item in action.action
+          PubSub.publish item.cmd, item.data
+      else
+        PubSub.publish action.action.cmd, action.action.data
+
     @say action.text, action.audio, action.next
 
   complete : () ->
@@ -67,8 +78,11 @@ module.exports = class Ctanlee
     @hideText()
     @goto()
 
-  hideText : () -> @$speechBox.css opacity: 0, "pointer-events": "none"
   showText : () -> @$speechBox.css opacity: 1, "pointer-events": "all"
+  hideText : () -> @$speechBox.css opacity: 0, "pointer-events": "none"
+
+  showNext : () -> @$nextBtn.css opacity:1, 'pointer-events': 'all'
+  hideNext : () -> @$nextBtn.css opacity:0, 'pointer-events': 'none'
 
   # ------------------------------------ HELPERS
 

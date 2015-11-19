@@ -1,10 +1,9 @@
 module.exports = class AudioTrack
 
   constructor: (@src) ->
-    @initSoundSettings()
+    AudioTrack.initSoundSettings()
 
   play : (onComplete) ->
-    # createjs.Sound.play("mySound");
     @sound = createjs.Sound.play @src, AudioTrack.ppc
     @sound.addEventListener "complete", ()-> onComplete()
 
@@ -14,10 +13,10 @@ module.exports = class AudioTrack
     @sound.removeEventListener "complete"
     @sound.destroy()
 
-  initSoundSettings : () ->
+  @initSoundSettings : (volume=1) ->
     return if AudioTrack.ppc?
     AudioTrack.ppc = new createjs.PlayPropsConfig().set
       interrupt: createjs.Sound.INTERRUPT_ANY
-      volume: 1
+      volume: volume
       pan:1
       # loop: -1,

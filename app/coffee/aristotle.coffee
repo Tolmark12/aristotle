@@ -11,9 +11,10 @@ class Aristotle
     window.aristotle = @
     @build $el
     episodeLoader = new EpisodeLoader @onJsonLoaded
-    devTools      = new DevTools()
+    @devTools      = new DevTools()
 
   onJsonLoaded : (episodeData) =>
+    @devTools.setDefaults episodeData
     episode = new Episode episodeData, @movie, @slideUX
 
   build : ($el) ->

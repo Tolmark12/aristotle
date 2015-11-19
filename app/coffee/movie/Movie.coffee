@@ -1,10 +1,12 @@
-Layer = require 'movie/Layer'
+Layer       = require 'movie/Layer'
+Highlighter = require 'movie/Highlighter'
 
 module.exports = class Movie
 
   constructor: (@$el) ->
-    @$wrapper = $ '.wrapper', @$el
-    @layers = []
+    @$wrapper     = $ '.wrapper', @$el
+    @layers      = []
+    @highlighter = new Highlighter @$wrapper
 
     PubSub.subscribe 'movie.load-layer', (m, data)=> @addLayer data
     PubSub.subscribe 'movie.zoom',       (m, data)=>

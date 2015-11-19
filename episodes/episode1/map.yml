@@ -1,10 +1,19 @@
 dev:
-  startSlideIndex: 0
+  volume: 0
+  startSlideIndex: 5
+  # skipSlides: [4]
 title: Training One
-chapters:
-  - !!inc/file ./episodes/episode1/yaml/_chapter1.yaml
-  - !!inc/file ./episodes/episode1/yaml/_chapter1.yaml
 slides:
+  -
+    movie:
+      layers:
+        - {depth: 0, content: steve/smoke.json, events: [complete], loop: false}
+    duration: {kind: pubsub, event: layer.0.complete}
+  -
+    movie:
+      layers:
+        - {depth: 0, content: steve/digitalchip.json, events: [complete], loop: false}
+    duration: {kind: pubsub, event: layer.0.complete}
   -
     movie:
       layers:

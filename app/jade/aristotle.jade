@@ -11,7 +11,7 @@
           fegaussianblur(in='SourceGraphic', stddeviation='1.5')
           feComponentTransfer
             //- opacity of the glow
-            feFuncA(type="linear" slope="0.5") 
+            feFuncA(type="linear" slope="0.8") 
           femerge
             femergenode
             femergenode(in='SourceGraphic')
@@ -27,8 +27,7 @@
           femerge
             femergenode(in='SourceGraphic')
             feMergeNode(in='coloredBlur')
-
-
+              
         filter#black-glow
           feColorMatrix(type="matrix" values="0 0 0 0   0\
                                               0 0 0 0   0\

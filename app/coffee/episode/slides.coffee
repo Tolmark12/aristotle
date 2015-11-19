@@ -12,11 +12,9 @@ module.exports = class Slides
     @nextSlide()
 
   createSlides : (trainingData, movie, ux) ->
-    startIndex = if trainingData.dev.startSlideIndex? then trainingData.dev.startSlideIndex else 0
-    for i in [startIndex..trainingData.slides.length]
-      slide
-      slide = new Slide movie, ux, trainingData.slides[i], @slideComplete
-      @slides.push slide
+    # startIndex = if trainingData.dev.startSlideIndex? then trainingData.dev.startSlideIndex else 0
+    for slideData in trainingData.slides
+      @slides.push new Slide(movie, ux, slideData, @slideComplete)
 
 
 
