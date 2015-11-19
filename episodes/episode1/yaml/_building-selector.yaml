@@ -32,6 +32,6 @@ ux:
         subTitle: Let's configure the simulator with one of these facilities. Click on a facility to choose it. This is a simulator after all, so pick whichever one you like! We'll teach the same principles with each facility.
         submitBtn: {txt: Load Facility, icon: action-btn-fist}
         items:
-          - { click: {cmd: ctanlee.activate, data: a}, btnTxt: Substation, icon: mini-preview-test, blurb: "I’m sorry Dave but I can’t let you in without proper access.", details: "+2 Style Points, Eye of the Beholder Bonus, +5 Robot Recognition"  }
-          - { click: {cmd: ctanlee.activate, data: b}, btnTxt: Generation Plant, icon: mini-preview-test, blurb: "I’m sorry Dave but I can’t let you in without proper access.", details: "+2 Style Points, Eye of the Beholder Bonus, +5 Robot Recognition"  }
-          - { click: {cmd: ctanlee.activate, data: c}, btnTxt: Control Center, icon: mini-preview-test, blurb: "I’m sorry Dave but I can’t let you in without proper access.", details: "+2 Style Points, Eye of the Beholder Bonus, +5 Robot Recognition"  }
+          - { click: {cmd: ctanlee.activate, data: a}, btnTxt: Substation, icon: mini-substation, blurb: "I’m sorry Dave but I can’t let you in without proper access.", details: "+2 Style Points, Eye of the Beholder Bonus, +5 Robot Recognition"  }
+          - { click: {cmd: ctanlee.activate, data: b}, btnTxt: Generation Plant, icon: mini-generation, blurb: "I’m sorry Dave but I can’t let you in without proper access.", details: "+2 Style Points, Eye of the Beholder Bonus, +5 Robot Recognition"  }
+          - { click: {cmd: ctanlee.activate, data: c}, btnTxt: Control Center, icon: mini-control-center, blurb: "I’m sorry Dave but I can’t let you in without proper access.", details: "+2 Style Points, Eye of the Beholder Bonus, +5 Robot Recognition"  }
