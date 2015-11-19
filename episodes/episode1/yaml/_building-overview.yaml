@@ -1,7 +1,7 @@
+duration: {kind: ux}
 movie:
   layers:
-    - {depth: 4, content: testing/warcore-base-loop-hl.json, loop: false, events: [complete] }
-
+    - {depth: 4, content: testing/warcore-base-loop-hl.json, loop: false }
 ctanlee:
   timeline:
     - {action: a }

@@ -1,5 +1,5 @@
 dev:
-  startSlideIndex: 3
+  startSlideIndex: 0
 title: Training One
 chapters:
   - !!inc/file ./episodes/episode1/yaml/_chapter1.yaml
@@ -18,7 +18,7 @@ slides:
   -
     movie:
       layers:
-        - {depth: 0, content: testing/quarantine.json}
+        - {depth: 0, content: testing/quarantine.json, events: [complete], loop: false }
     duration: {kind: pubsub, event: layer.0.complete}
   -
     movie:
@@ -38,7 +38,7 @@ slides:
   -
     movie:
       layers: [ {depth: 3, fx: {effects: [blur]}} ]
-    duration: { kind: time, seconds: 4 }
+    duration: { kind: ux }
   -
     movie:
       position: {scale: 2, center: [0, 0] }

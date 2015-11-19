@@ -8,7 +8,6 @@ module.exports = class Movie
 
     PubSub.subscribe 'movie.load-layer', (m, data)=> @addLayer data
     PubSub.subscribe 'movie.zoom',       (m, data)=>
-      console.log "hmmmm"
       @zoom data.scale, data.x, data.y
 
   populate: (data)->
@@ -17,7 +16,6 @@ module.exports = class Movie
       @addLayer layerData
 
     if data.zoom?
-      console.log data.zoom
       @zoom data.zoom.scale, data.zoom.x, data.zoom.y
 
   zoom : (scale=1, x=0, y=0) ->

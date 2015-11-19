@@ -24,7 +24,9 @@ module.exports = class Slide
       when "ctanlee"
         PubSub.subscribe 'ctanlee.complete', ()=> @onSlideComplete()
       when "pubsub"
-        PubSub.subscribe @slideData.duration.event, ()=> @onSlideComplete()
+        PubSub.subscribe @slideData.duration.event, ()=>
+          PubSub.unsubscribe @slideData.duration.event
+          @onSlideComplete()
 
   runCtanlee : (data) ->
     if data? then aristotle.ctanlee.activate data

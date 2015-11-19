@@ -5,7 +5,9 @@ module.exports = class EpisodeLoader
 
   loadEpisode: ()->
     @loadJson aristotle.episodeRoot + "/map.json", (json)=>
+      # @callback JSON.parse(json)
       @preloadAssets JSON.parse(json)
+
 
   loadJson : (path, onComplete) ->
     xobj = new XMLHttpRequest()
@@ -18,7 +20,7 @@ module.exports = class EpisodeLoader
 
   preloadAssets: (data)->
     assets = []
-    regex = /.+\.(mp3|json|svg)/
+    regex = /.+\.(svg)/
     @lookForFiles data, assets, regex
     createjs.Sound.alternateExtensions = ["mp3"]
     preloadQueue = new createjs.LoadQueue()
@@ -26,8 +28,7 @@ module.exports = class EpisodeLoader
 
     # On load progress
     preloadQueue.on "progress", (e)=>
-      console.log e.loaded
-      e.loaded
+      # console.log e.loaded
 
     # On load complete
     preloadQueue.on "complete", ()=>

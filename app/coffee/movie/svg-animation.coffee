@@ -1,6 +1,8 @@
 module.exports = class SVGAnimation
 
   constructor: ( el, json, data ) ->
+    window.fixSVGS = ()->
+      $("svg").css width:"initial", height:"initial"
     @animation = bodymovin.loadAnimation {
              wrapper   : el[0]
              animType  : 'svg'
@@ -14,7 +16,6 @@ module.exports = class SVGAnimation
       setTimeout @play, data.delay
     else
       @play()
-
     @addEvents data
 
 
@@ -22,6 +23,7 @@ module.exports = class SVGAnimation
     if data.events?
       for event in data.events
         @animation.addEventListener event, ()=>
+          @animation.removeEventListener event
           PubSub.publish "layer.#{data.depth}.#{event}"
 
 
