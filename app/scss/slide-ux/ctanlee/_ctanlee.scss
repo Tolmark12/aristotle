@@ -1,7 +1,8 @@
-.ctanlee            { position:absolute; z-index:1;
-  svg.defs          { width:0; height:0; }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.ctanlee            { position:absolute; animation:spin 4s linear infinite;
   .face             {
-    svg#ctanlee     { filter:url(#glow) }
+    svg             {  }
   }
   $xtra-padding:15px;
   .text             { width:300px; background:rgba(black, 0.77); padding:10px; color:white; font-style:italic; line-height:1.6;
@@ -11,3 +12,4 @@
     }
   }
 }
+

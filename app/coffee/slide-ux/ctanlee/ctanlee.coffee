@@ -12,7 +12,9 @@ module.exports = class Ctanlee
 
     @$nextBtn.on "click", ()=> @playNextAction()
 
-    PubSub.subscribe 'ctanlee.activate', (a, action)=> @playAction(action)
+    PubSub.subscribe 'ctanlee.activate',  (a, action)=> @playAction(action)
+    PubSub.subscribe 'ctanlee.clear',     (a, action)=> @hideText(); console.log "clear it!"
+    PubSub.subscribe 'ctanlee.gohome',    (a, action)=> @returnToStation()
 
     $parent.append @$el
     @returnToStation()
@@ -40,7 +42,7 @@ module.exports = class Ctanlee
 
   setEmotion : (emotion) ->
 
-  goto : (x=960, y=0, duration=600, delay=0) ->
+  goto : (x=970, y=10, duration=600, delay=0) ->
     @$el.velocity "stop", true
     @$el.velocity {top:y, left:x}, {delay:delay, duration:duration, easing:"easeInOutQuint"}
 
@@ -54,6 +56,7 @@ module.exports = class Ctanlee
 
   # Play the specified action and set the action index to that action's index
   playAction : (actionId) ->
+    @setFilter 'black-glow'
     @currentActionIndex = @getIndexOfAction(actionId)
     action = @overlayDefaults actionId
     if action.emo?
@@ -77,6 +80,7 @@ module.exports = class Ctanlee
   returnToStation : () ->
     @hideText()
     @goto()
+    @setFilter 'glow'
 
   showText : () -> @$speechBox.css opacity: 1, "pointer-events": "all"
   hideText : () -> @$speechBox.css opacity: 0, "pointer-events": "none"
@@ -85,6 +89,10 @@ module.exports = class Ctanlee
   hideNext : () -> @$nextBtn.css opacity:0, 'pointer-events': 'none'
 
   # ------------------------------------ HELPERS
+
+  setFilter : (kind) ->
+    console.log "url(##{kind})"
+    $('#ctanlee').css filter:"url('##{kind}')"
 
   getIndexOfAction : (action) ->
     if !@timeline? then return 0

@@ -1,5 +1,5 @@
 dev:
-  volume: 0
+  volume: 1
   startSlideIndex: 5
   # skipSlides: [4]
 title: Training One
@@ -7,28 +7,30 @@ slides:
   -
     movie:
       layers:
-        - {depth: 0, content: steve/smoke.json, events: [complete], loop: false}
-    duration: {kind: pubsub, event: layer.0.complete}
+        - {depth: 0, content: smoke-bg.svg }
+        - {depth: 1, content: steve/smoke.json, events: [complete], loop: false}
+    duration: {kind: pubsub, event: layer.1.complete}
   -
     movie:
       layers:
-        - {depth: 0, content: steve/digitalchip.json, events: [complete], loop: false}
-    duration: {kind: pubsub, event: layer.0.complete}
+        - {depth: 0, content: digitalchip-bg.svg }
+        - {depth: 1, content: steve/digitalchip.json, events: [complete], loop: false}
+    duration: {kind: pubsub, event: layer.1.complete}
   -
     movie:
       layers:
-        - {depth: 0, content: testing/earth.json, events: [complete], loop: false}
-    duration: {kind: pubsub, event: layer.0.complete}
+        - {depth: 1, content: testing/earth.json, events: [complete], loop: false}
+    duration: {kind: pubsub, event: layer.1.complete}
   -
     movie:
       layers:
-        - {depth: 0, content: testing/septimus.json, events: [complete], loop: false}
-    duration: {kind: pubsub, event: layer.0.complete}
+        - {depth: 1, content: testing/septimus.json, events: [complete], loop: false}
+    duration: {kind: pubsub, event: layer.1.complete}
   -
     movie:
       layers:
-        - {depth: 0, content: testing/quarantine.json, events: [complete], loop: false }
-    duration: {kind: pubsub, event: layer.0.complete}
+        - {depth: 1, content: testing/quarantine.json, events: [complete], loop: false }
+    duration: {kind: pubsub, event: layer.1.complete}
   -
     movie:
       layers:
@@ -43,6 +45,7 @@ slides:
       layers:
         - {depth: 4, content: semi-final-assets/warcore-base-build.json, loop: false, events: [complete] }
     duration: {kind: pubsub, event: layer.4.complete}
+    action: {cmd: ctanlee.clear}
   - !!inc/file ./episodes/episode1/yaml/_building-overview.yaml
   -
     movie:

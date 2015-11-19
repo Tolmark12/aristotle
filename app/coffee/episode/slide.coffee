@@ -10,7 +10,11 @@ module.exports = class Slide
     @slideUX.populate @slideData.ux
     @setDuration()
     @runCtanlee @slideData.ctanlee
+    @runActions @slideData.action
 
+  runActions : (action) ->
+    return if !action?
+    PubSub.publish action.cmd, action.data
 
   setDuration : () ->
     if !@slideData.duration? then return
