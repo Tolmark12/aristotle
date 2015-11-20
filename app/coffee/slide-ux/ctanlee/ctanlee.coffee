@@ -1,4 +1,5 @@
 AudioTrack = require 'episode/audio-track'
+Sequence   = require 'misc/sequence'
 
 module.exports = class Ctanlee
 
@@ -24,8 +25,8 @@ module.exports = class Ctanlee
   activate : (@data) ->
     if !@data.timeline? then return
 
-    @currentActionIndex = -1
     @timeline = @data.timeline
+    @sequence = new Sequence @timeline
     @playNextAction()
 
   say : (text, audio, next) ->
@@ -49,20 +50,26 @@ module.exports = class Ctanlee
   # ------------------------------------ MEAT
 
   playNextAction : () ->
-    if @currentActionIndex == @timeline.length - 1
+    if @sequence.isAtLastItem()
       @complete()
-      return
-    @playAction @timeline[ ++@currentActionIndex ].action
+    else
+      @sequence.next()
+      @playAction @sequence.getCurrentItem().action
 
   # Play the specified action and set the action index to that action's index
   playAction : (actionId) ->
     @setFilter 'black-glow'
-    @currentActionIndex = @getIndexOfAction(actionId)
     action = @overlayDefaults actionId
+
+    # Emotion
     if action.emo?
       @setEmotion action.emo
+
+    # Position
     if action.pos?
       @goto action.pos[0], action.pos[1], action.pos[2], action.pos[3]
+
+    # Action
     if action.action?
       # TODO : should I move global command handling to a single location? Prbly
       if Array.isArray action.action

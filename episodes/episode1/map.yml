@@ -1,6 +1,6 @@
 title: Training One
 dev:
-  startIndex: 0
+  startIndex: 1
 chapters:
   -
     kind: intro
@@ -35,7 +35,7 @@ chapters:
         duration: {kind: pubsub, event: layer.1.complete}
   -
     dev:
-      volume: 1
+      volume: 0
       startIndex: 0
       # skip: [4]
     kind: chapter
