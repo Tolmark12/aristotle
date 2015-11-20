@@ -15,10 +15,16 @@ module.exports = class Layer
 
   updateContent : (layerData) ->
     @empty()
-    fileExt = layerData.content.split(".")[1]
-    switch fileExt
-      when "json" then @addAnimation layerData
-      when "svg"  then @addImage layerData
+    if layerData.content == "clear"
+      kind = "clear"
+    else
+      kind = layerData.content.split(".")[1]
+    switch kind
+      when "json"  then @addAnimation layerData
+      when "svg"   then @addSvg layerData
+      when "gif", "jpg", "jpeg","png"
+                        @addImage layerData.content, layerData.repeat, layerData.position
+      when "clear" then @empty()
 
   updateEffects : (fx) ->
     if fx.clear then @$layer.attr class:'layer'
@@ -29,8 +35,13 @@ module.exports = class Layer
   addAnimation : (layerData) ->
     @animation  = new SVGAnimation @$layer, "#{aristotle.episodeRoot}/animations/#{layerData.content}", layerData
 
-
-  addImage : (layerData) ->
+  addSvg : (layerData) ->
     @$layer.load "#{aristotle.episodeRoot}/assets/#{layerData.content}"
+
+  addImage : (file, repeat="no-repeat", position="left") ->
+    @$layer.css background: "url(#{aristotle.episodeRoot}/assets/#{file}) #{repeat} #{position}"
+
+  destroy : () ->
+    @$layer.remove()
 
   empty : () -> @$layer.empty()

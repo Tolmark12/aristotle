@@ -1,31 +1,27 @@
-Slide = require 'episode/slide'
+Slide    = require 'episode/slide'
+Sequence = require 'misc/sequence'
 
 module.exports = class Slides
 
-  constructor: (trainingData, movie, ux, @onComplete) ->
+  constructor: (trainingData, movie, ux, @onShowComplete) ->
     @slides            = []
     @currentSlideIndex = -1
     @createSlides trainingData, movie, ux
     PubSub.subscribe 'slides.next-slide', ()=> @nextSlide()
 
-  start : () ->
-    @nextSlide()
-
   createSlides : (trainingData, movie, ux) ->
-    # startIndex = if trainingData.dev.startSlideIndex? then trainingData.dev.startSlideIndex else 0
     for slideData in trainingData.slides
       @slides.push new Slide(movie, ux, slideData, @slideComplete)
-
-
-
-  slideComplete : () => @nextSlide()
+    @sequence = new Sequence @slides
 
   nextSlide : () =>
-    if @currentSlideIndex == @slides.length - 1
-      @trainingComplete()
-      return
-    @currentSlide = @slides[ ++@currentSlideIndex ]
-    @currentSlide.play @slideComplete
+    if @sequence.isAtLastItem()
+      @slideShowComplete()
+    else
+      @sequence.next()
+      @playSlide()
 
-  trainingComplete : () ->
-    @onComplete()
+  start             : () -> @playSlide()
+  slideComplete     : () => @nextSlide()
+  playSlide         : () -> @sequence.getCurrentItem().play @slideComplete
+  slideShowComplete : () -> @onShowComplete()

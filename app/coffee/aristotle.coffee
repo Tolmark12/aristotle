@@ -9,12 +9,11 @@ class Aristotle
 
   constructor: ($el, @episodeRoot) ->
     window.aristotle = @
+    @setDevMode true
     @build $el
     episodeLoader = new EpisodeLoader @onJsonLoaded
-    @devTools      = new DevTools()
 
   onJsonLoaded : (episodeData) =>
-    @devTools.setDefaults episodeData
     episode = new Episode episodeData, @movie, @slideUX
 
   build : ($el) ->
@@ -26,6 +25,9 @@ class Aristotle
     @chromeUI = new ChromeUI $(".chrome",   $base)
     @slideUX  = new SlideUX  $(".slide-ux", $base)
     @movie    = new Movie    $(".movie",    $base)
+
+  setDevMode : (devMode) ->
+    aristotle.devTools = new DevTools devMode
 
 
 window.Aristotle = Aristotle

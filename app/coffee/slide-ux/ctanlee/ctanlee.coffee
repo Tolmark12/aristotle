@@ -13,7 +13,7 @@ module.exports = class Ctanlee
     @$nextBtn.on "click", ()=> @playNextAction()
 
     PubSub.subscribe 'ctanlee.activate',  (a, action)=> @playAction(action)
-    PubSub.subscribe 'ctanlee.clear',     (a, action)=> @hideText(); console.log "clear it!"
+    PubSub.subscribe 'ctanlee.clear',     (a, action)=> @hideText()
     PubSub.subscribe 'ctanlee.gohome',    (a, action)=> @returnToStation()
 
     $parent.append @$el
@@ -91,7 +91,6 @@ module.exports = class Ctanlee
   # ------------------------------------ HELPERS
 
   setFilter : (kind) ->
-    console.log "url(##{kind})"
     $('#ctanlee').css filter:"url('##{kind}')"
 
   getIndexOfAction : (action) ->

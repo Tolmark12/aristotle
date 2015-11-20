@@ -1,63 +1,71 @@
-dev:
-  volume: 1
-  startSlideIndex: 5
-  # skipSlides: [4]
 title: Training One
-slides:
+dev:
+  startIndex: 1
+chapters:
   -
-    movie:
-      layers:
-        - {depth: 0, content: smoke-bg.svg }
-        - {depth: 1, content: steve/smoke.json, events: [complete], loop: false}
-    duration: {kind: pubsub, event: layer.1.complete}
+    kind: intro
+    slides:
+      -
+        movie:
+          layers:
+            - {depth: 0, content: smoke-bg.svg }
+            - {depth: 1, content: steve/smoke.json, events: [complete], loop: false}
+        duration: {kind: pubsub, event: layer.1.complete}
+      -
+        movie:
+          layers:
+            - {depth: 0, content: digitalchip-bg.svg }
+            - {depth: 1, content: steve/digitalchip.json, events: [complete], loop: false}
+        duration: {kind: pubsub, event: layer.1.complete}
+      -
+        movie:
+          layers:
+            - {depth: 0, content: clear }
+            - {depth: 1, content: testing/earth.json, events: [complete], loop: false}
+        duration: {kind: pubsub, event: layer.1.complete}
+      -
+        movie:
+          layers:
+            - {depth: 1, content: testing/septimus.json, events: [complete], loop: false}
+        duration: {kind: pubsub, event: layer.1.complete}
+      -
+        movie:
+          layers:
+            - {depth: 1, content: testing/quarantine.json, events: [complete], loop: false }
+        duration: {kind: pubsub, event: layer.1.complete}
   -
-    movie:
-      layers:
-        - {depth: 0, content: digitalchip-bg.svg }
-        - {depth: 1, content: steve/digitalchip.json, events: [complete], loop: false}
-    duration: {kind: pubsub, event: layer.1.complete}
-  -
-    movie:
-      layers:
-        - {depth: 1, content: testing/earth.json, events: [complete], loop: false}
-    duration: {kind: pubsub, event: layer.1.complete}
-  -
-    movie:
-      layers:
-        - {depth: 1, content: testing/septimus.json, events: [complete], loop: false}
-    duration: {kind: pubsub, event: layer.1.complete}
-  -
-    movie:
-      layers:
-        - {depth: 1, content: testing/quarantine.json, events: [complete], loop: false }
-    duration: {kind: pubsub, event: layer.1.complete}
-  -
-    movie:
-      layers:
-        - {depth: 0, content: c1-sky.svg}
-        - {depth: 2, content: semi-final-assets/c1-background-buildin.json, loop: false, events: [complete] }
-    sound: nothin-special.mp3
-    duration: {kind: pubsub, event: layer.2.complete}
-  - !!inc/file ./episodes/episode1/yaml/_building-selector.yaml
-  -
-    movie:
-      zoom: {}
-      layers:
-        - {depth: 4, content: semi-final-assets/warcore-base-build.json, loop: false, events: [complete] }
-    duration: {kind: pubsub, event: layer.4.complete}
-    action: {cmd: ctanlee.clear}
-  - !!inc/file ./episodes/episode1/yaml/_building-overview.yaml
-  -
-    movie:
-      layers: [ {depth: 3, fx: {effects: [blur]}} ]
-    duration: { kind: ux }
-  -
-    movie:
-      position: {scale: 2, center: [0, 0] }
-      layers: [ { depth: 3, fx: {clear: true} } ]
-    duration: {kind: time, seconds: 2}
-  -
-    movie:
-      position: {scale: 1}
-      layers: []
-    duration: {kind: time, seconds: 2}
+    dev:
+      volume: 1
+      startIndex: 0
+      # skip: [4]
+    kind: chapter
+    slides:
+      -
+        movie:
+          layers:
+            - {depth: 0, content: c1-sky.svg}
+            - {depth: 2, content: semi-final-assets/c1-background-buildin.json, loop: false, events: [complete] }
+        duration: {kind: pubsub, event: layer.2.complete}
+      - !!inc/file ./episodes/episode1/yaml/_building-selector.yaml
+      -
+        movie:
+          zoom: {}
+          layers:
+            - {depth: 4, content: semi-final-assets/warcore-base-build.json, loop: false, events: [complete] }
+        duration: {kind: pubsub, event: layer.4.complete}
+        action: {cmd: ctanlee.clear}
+      - !!inc/file ./episodes/episode1/yaml/_building-overview.yaml
+      -
+        movie:
+          layers: [ {depth: 3, fx: {effects: [blur]}} ]
+        duration: { kind: ux }
+      -
+        movie:
+          position: {scale: 2, center: [0, 0] }
+          layers: [ { depth: 3, fx: {clear: true} } ]
+        duration: {kind: time, seconds: 2}
+      -
+        movie:
+          position: {scale: 1}
+          layers: []
+        duration: {kind: time, seconds: 2}

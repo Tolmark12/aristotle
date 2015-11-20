@@ -12,6 +12,10 @@ module.exports = class Movie
     PubSub.subscribe 'movie.zoom',       (m, data)=>
       @zoom data.scale, data.x, data.y
 
+  reset : () ->
+    layer.destroy() for layer in @layers
+    @layers = []
+
   populate: (data)->
     if !data? then return
     for depthId, layerData of data.layers
@@ -24,14 +28,13 @@ module.exports = class Movie
     @$el.css "transform-origin": "#{x}px #{y}px"
     @$el.css transform: "scale(#{scale})"
 
-
   addLayer : (layerData) ->
     depth = layerData.depth
     # If we are placing at a depth higher than the current
     # fill the space between with empty layers
     if depth > @layers.length
       for i in [@layers.length..depth]
-        @layers[i] = new Layer @$wrapper, depth
+        @layers[i] = new Layer @$wrapper, i
 
     layer = @getOrCreateLayer depth
     layer.update layerData
