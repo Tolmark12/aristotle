@@ -1,8 +1,10 @@
 module.exports = class SVGAnimation
 
   constructor: ( el, json, data ) ->
-    window.fixSVGS = ()->
-      $("svg").css width:"initial", height:"initial"
+    # window.fixSVGS = ()->
+      # $("svg").css width:"initial", height:"initial"
+    if !data.loop? then data.loop = false
+
     @animation = bodymovin.loadAnimation {
              wrapper   : el[0]
              animType  : 'svg'
@@ -12,10 +14,19 @@ module.exports = class SVGAnimation
              path      : json
            }
 
-    if data.delay?
-      setTimeout @play, data.delay
+
+    if data.jumpToEnd?
+      interval  = setInterval ()=>
+        if @animation.totalFrames != 0
+          clearInterval interval
+          @animation.setCurrentRawFrameValue @animation.totalFrames
+      ,
+        100
     else
-      @play()
+      if data.delay?
+        setTimeout @play, data.delay
+      else
+        @play()
     @addEvents data
 
 
@@ -27,7 +38,7 @@ module.exports = class SVGAnimation
           PubSub.publish "layer.#{data.depth}.#{event}"
 
 
-  play   : () => @animation.play()#; @traceFrames()
+  play   : () => @animation.play();
   stop   : () -> @animation.stop()
   destroy: () ->
     @animation.destroy()
@@ -36,6 +47,6 @@ module.exports = class SVGAnimation
 
   traceFrames : () ->
     @interval = setInterval ()=>
-      console.log @animation.currentFrame, @animation.totalFrames
+      console.log @animation.currentRawFrame, @animation.currentFrame, @animation.totalFrames
     ,
       500

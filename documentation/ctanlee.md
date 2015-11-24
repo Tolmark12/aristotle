@@ -1,29 +1,33 @@
-## Ctanlee
+# Ctanlee
 
-### Config Options
+## Config Options
 
 
 #### actions
 An array of actions that ctanlee can run, each action can be configured via the attributes listed below:
 #### text (required)
 Written Text
-```text: I once dated a boiler, she was hot.```
+```text: I once dated a boiler, she was hot.
+```
 
 #### audio (required)
 MP3 File :
-```audio: some-audio-file.mp3_```
+```audio: some-audio-file.mp3_
+```
 
 #### pos (optional)
 Position (params optional) _[x, y, delay, duration]_ :
-```pos: [100,100,1000,500]```
+```pos: [100,100,1000,500]
+```
 
 #### emo (optional)
 Emotion : _happy, sad, surprize_
-```emo: happy```
+```emo: happy
+```
 
 
 
-### EX : Running with no timeline:
+## EX : Running with no timeline:
 
 ```yaml
 ctanlee:
@@ -43,28 +47,28 @@ ctanlee:
       audio: nothin-special.mp3
 ```
 
-### EX : Running with a timeline:
+## EX : Running with a timeline:
 
 Running with a timeline causes ctanlee to automatically play each action in the order specified.
 
 ```yaml
 ctanlee:
   timeline:
-    - {action: a}
-    - {action: b}
-    - {action: c}
+    - {action: first}
+    - {action: second}
+    - {action: later}
   actions:
-    a:
+    first:
       pos: [200, 200]
       emo: happy
       text: "I'm really happy with how things are turning out"
       audio: nothin-special.mp3
-    b:
+    second:
       pos: [300, 200, 2000, 1000]
       emo: sad
       text: "I'm turning out"
       audio: nothin-special.mp3
-    c:
+    later:
       pos: [300, 100]
       emo: surprize
       text: " are turning out"

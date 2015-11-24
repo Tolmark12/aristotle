@@ -9,6 +9,7 @@ module.exports = class DevTools
   go : (devConfig, items) ->
     if !@isDevMode or !devConfig? then return
     @skip devConfig, items
+    @preventAnimationAsNeeded devConfig, items
     if devConfig.volume?
       AudioTrack.initSoundSettings devConfig.volume
 
@@ -45,6 +46,26 @@ module.exports = class DevTools
     document.body.appendChild( @stats.domElement )
     requestAnimationFrame( @update )
 
+  preventAnimationAsNeeded : (devConfig, items) ->
+    return if !devConfig.dontAnimate?
+    for slide, i in devConfig.dontAnimate
+      @addSkipToEnds items[i]
+
+  addSkipToEnds : (obj) ->
+    for key, item of obj
+      if typeof item == "object"
+        @addSkipToEnds(item, obj)
+      if typeof item == "string"
+        if item.match /.json/g
+          obj.jumpToEnd = true
+
+   ######  ########    ###    ########  ######
+  ##    ##    ##      ## ##      ##    ##    ##
+  ##          ##     ##   ##     ##    ##
+   ######     ##    ##     ##    ##     ######
+        ##    ##    #########    ##          ##
+  ##    ##    ##    ##     ##    ##    ##    ##
+   ######     ##    ##     ##    ##     ######
   update :()=>
     @stats.end()
     @stats.begin()

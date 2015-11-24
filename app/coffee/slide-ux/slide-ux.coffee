@@ -15,4 +15,5 @@ module.exports = class SlideUX
     switch componentData.kind
       when "selection-dialogue"
         component = new SelectionDialogue @$el, componentData.config
-
+      when "dialogue"
+        component = new Dialogue @$el, componentData.config

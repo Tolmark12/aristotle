@@ -10,20 +10,19 @@ module.exports = class Episode
     chapters = []
     for chapterData in trainingData.chapters
       chapters.push new Chapter( chapterData, @movie, ux, @chapterComplete )
-    @sequence = new Sequence chapters
+    @chapters = new Sequence chapters
     @playChapter()
 
   nextChapter : () =>
-    if @sequence.isAtLastItem()
+    if @chapters.isAtLastItem()
       @episodeComplete()
     else
-      @sequence.next()
+      @chapters.next()
       @playChapter()
 
   start           : () -> @playChapter()
   chapterComplete : () => @nextChapter()
   playChapter     : () ->
     @movie.reset()
-    console.log "movieReset"
-    @sequence.getCurrentItem().start @chapterComplete
+    @chapters.getCurrentItem().start @chapterComplete
   episodeComplete : () -> console.log "episode complete"

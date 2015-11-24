@@ -27,7 +27,7 @@ module.exports = class Slide
         PubSub.subscribe 'ux.complete', ()=> @onSlideComplete()
       when "ctanlee"
         PubSub.subscribe 'ctanlee.complete', ()=> @onSlideComplete()
-      when "pubsub"
+      when "listen"
         PubSub.subscribe @slideData.duration.event, ()=>
           PubSub.unsubscribe @slideData.duration.event
           @onSlideComplete()

@@ -10,33 +10,34 @@ chapters:
           layers:
             - {depth: 0, content: smoke-bg.svg }
             - {depth: 1, content: steve/smoke.json, events: [complete], loop: false}
-        duration: {kind: pubsub, event: layer.1.complete}
+        duration: {kind: listen, event: layer.1.complete}
       -
         movie:
           layers:
             - {depth: 0, content: digitalchip-bg.svg }
             - {depth: 1, content: steve/digitalchip.json, events: [complete], loop: false}
-        duration: {kind: pubsub, event: layer.1.complete}
+        duration: {kind: listen, event: layer.1.complete}
       -
         movie:
           layers:
             - {depth: 0, content: clear }
             - {depth: 1, content: testing/earth.json, events: [complete], loop: false}
-        duration: {kind: pubsub, event: layer.1.complete}
+        duration: {kind: listen, event: layer.1.complete}
       -
         movie:
           layers:
             - {depth: 1, content: testing/septimus.json, events: [complete], loop: false}
-        duration: {kind: pubsub, event: layer.1.complete}
+        duration: {kind: listen, event: layer.1.complete}
       -
         movie:
           layers:
             - {depth: 1, content: testing/quarantine.json, events: [complete], loop: false }
-        duration: {kind: pubsub, event: layer.1.complete}
+        duration: {kind: listen, event: layer.1.complete}
   -
     dev:
       volume: 0
       startIndex: 0
+      # dontAnimate: [0, 1, 2, 3]
       # skip: [4]
     kind: chapter
     slides:
@@ -44,17 +45,29 @@ chapters:
         movie:
           layers:
             - {depth: 0, content: c1-sky.svg}
-            - {depth: 2, content: semi-final-assets/c1-background-buildin.json, loop: false, events: [complete] }
-        duration: {kind: pubsub, event: layer.2.complete}
+            - {depth: 2, content: semi-final-assets/c1-background-buildin.json, events: [complete]  }
+        duration: {kind: listen, event: layer.2.complete}
       - !!inc/file ./episodes/episode1/yaml/_building-selector.yaml
       -
         movie:
           zoom: {}
           layers:
-            - {depth: 4, content: semi-final-assets/warcore-base-build.json, loop: false, events: [complete] }
-        duration: {kind: pubsub, event: layer.4.complete}
+            - {depth: 4, content: keith/interior_build.json, events: [complete] }
+            - {depth: 6, content: keith/control_facility_loop.json, wait: 500, loop: false }
+        duration: {kind: listen, event: layer.4.complete}
         action: {cmd: ctanlee.clear}
       - !!inc/file ./episodes/episode1/yaml/_building-overview.yaml
+      -
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                click:
+                  - {cmd: slides.next-slide}
+                  - {cmd: movie.load-layer, data: {depth: 3, content: semi-final-assets/facility-type-generator-build.json, loop: false } }
+                intro: The Standards require we protect significant control centers, generation plants, and substations on the Bulk Electric System. Per the Standards, we will classify them as High Impact (big control centers), Medium Impact (significant transmission substations and generation plants) and Low Impact (everything else). Most of the Standards apply to High and Medium impact facilities, so we'll add one of those facilities to our simulator.
+                title: Pick Your Facility
       -
         movie:
           layers: [ {depth: 3, fx: {effects: [blur]}} ]

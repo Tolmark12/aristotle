@@ -7,23 +7,37 @@ module.exports = class Layer
     $el.append @$layer
 
 
-  update : (layerData) ->
-    if layerData.content?
-      @updateContent layerData
-    if layerData.fx?
-      @updateEffects layerData.fx
+  update : (@layerData) =>
+    if @layerData.wait?
+      setTimeout @createContent, @layerData.wait
+      return
+
+    @createContent()
+
+  createContent : () =>
+    if @layerData.content?
+      @updateContent( @layerData )
+    if @layerData.fx?
+      @updateEffects( @layerData.fx )
 
   updateContent : (layerData) ->
-    @empty()
+    if @currentOnionLayer?
+      oldOnionLayer = @currentOnionLayer
+      setTimeout ()=>
+        oldOnionLayer.velocity {opacity:0}, {duration:200, complete:()=> oldOnionLayer.remove(); console.log "complete.." }
+      ,
+        200
+
+    @currentOnionLayer = @addOnionLayer()
     if layerData.content == "clear"
       kind = "clear"
     else
       kind = layerData.content.split(".")[1]
     switch kind
-      when "json"  then @addAnimation layerData
-      when "svg"   then @addSvg layerData
+      when "json"  then @addAnimation( @currentOnionLayer, layerData )
+      when "svg"   then @addSvg( @currentOnionLayer, layerData )
       when "gif", "jpg", "jpeg","png"
-                        @addImage layerData.content, layerData.repeat, layerData.position
+                        @addImage( @currentOnionLayer, layerData.content, layerData.repeat, layerData.position )
       when "clear" then @empty()
 
   updateEffects : (fx) ->
@@ -32,16 +46,22 @@ module.exports = class Layer
       for effect in fx.effects
         @$layer.addClass effect
 
-  addAnimation : (layerData) ->
-    @animation  = new SVGAnimation @$layer, "#{aristotle.episodeRoot}/animations/#{layerData.content}", layerData
+  addAnimation : ($holder, layerData) ->
+    @animation  = new SVGAnimation $holder, "#{aristotle.episodeRoot}/animations/#{layerData.content}", layerData
 
-  addSvg : (layerData) ->
-    @$layer.load "#{aristotle.episodeRoot}/assets/#{layerData.content}"
+  addSvg : ($holder, layerData) ->
+    $holder.load "#{aristotle.episodeRoot}/assets/#{layerData.content}"
 
-  addImage : (file, repeat="no-repeat", position="left") ->
-    @$layer.css background: "url(#{aristotle.episodeRoot}/assets/#{file}) #{repeat} #{position}"
+  addImage : ($holder, file, repeat="no-repeat", position="left") ->
+    $holder.css background: "url(#{aristotle.episodeRoot}/assets/#{file}) #{repeat} #{position}"
 
   destroy : () ->
     @$layer.remove()
+
+  addOnionLayer : () ->
+    $onionLayer = $ jadeTemplate['movie/onion-layer']( {} )
+    @$layer.prepend $onionLayer
+    $onionLayer
+
 
   empty : () -> @$layer.empty()

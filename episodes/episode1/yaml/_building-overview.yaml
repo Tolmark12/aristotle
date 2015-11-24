@@ -1,8 +1,7 @@
 duration: {kind: ux}
 movie:
   layers:
-    - {depth: 4, content: testing/warcore-base-loop-hl.json, loop: false }
-    - {depth: 5, content: testing/graphs-loop.json, loop: true }
+    - {depth: 5, content: keith/interior_loop.json, loop: true }
 ctanlee:
   timeline:
     - {action: a }
@@ -27,7 +26,7 @@ ctanlee:
     c:
       pos: [700, 500]
       emo: happy
-      text: "CIP is especially interested in the programmable devices in the facility like these. If they can be programed, we call them Cyber Assets."
+      text: "CIP is especially interested in the programmable devices in the facility like these. If they can be programed, we call them <span id='cyber-assets'>Cyber Assets.</span>"
       audio: ctanlee/6.mp3
       action:
         - {cmd: unhighlight, data: server2 }

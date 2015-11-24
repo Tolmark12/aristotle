@@ -4,24 +4,24 @@ Sequence = require 'misc/sequence'
 module.exports = class Slides
 
   constructor: (trainingData, movie, ux, @onShowComplete) ->
-    @slides            = []
     @currentSlideIndex = -1
     @createSlides trainingData, movie, ux
     PubSub.subscribe 'slides.next-slide', ()=> @nextSlide()
 
   createSlides : (trainingData, movie, ux) ->
+    slides = []
     for slideData in trainingData.slides
-      @slides.push new Slide(movie, ux, slideData, @slideComplete)
-    @sequence = new Sequence @slides
+      slides.push new Slide(movie, ux, slideData, @slideComplete)
+    @slides = new Sequence slides
 
   nextSlide : () =>
-    if @sequence.isAtLastItem()
+    if @slides.isAtLastItem()
       @slideShowComplete()
     else
-      @sequence.next()
+      @slides.next()
       @playSlide()
 
   start             : () -> @playSlide()
   slideComplete     : () => @nextSlide()
-  playSlide         : () -> @sequence.getCurrentItem().play @slideComplete
+  playSlide         : () -> @slides.getCurrentItem().play @slideComplete
   slideShowComplete : () -> @onShowComplete()
