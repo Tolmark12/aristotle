@@ -1,4 +1,4 @@
-duration: {kind: ux}
+duration: {kind: ctanlee}
 movie:
   layers:
     - {depth: 5, content: keith/interior_loop.json, loop: true }
@@ -14,20 +14,14 @@ ctanlee:
       pos: [200, 200]
       emo: happy
       text: "Excellent choice cadet! This is one fine building"
-      audio: ctanlee/4.mp3
+      audio: ctanlee/Story_2_Ctanlee_4.m4a
     b:
       pos: [500, 350]
       emo: happy
       text: "CIP requires us to protect the facility because it has important components of the Bulk Electric System like this."
-      audio: ctanlee/5.mp3
-      action:
-        - {cmd: highlight,  data: {id: server2, level: green}}
-        - {cmd: movie.zoom, data: {scale: 2, x: 680, y: 635} }
+      audio: ctanlee/Story_2_Ctanlee_5.m4a
     c:
-      pos: [700, 500]
+      pos: [200, 200]
       emo: happy
       text: "CIP is especially interested in the programmable devices in the facility like these. If they can be programed, we call them <span id='cyber-assets'>Cyber Assets.</span>"
-      audio: ctanlee/6.mp3
-      action:
-        - {cmd: unhighlight, data: server2 }
-        - {cmd: movie.zoom, data: {scale: 1, x: 680, y: 635} }
+      audio: ctanlee/Story_2_Ctanlee_6.m4a

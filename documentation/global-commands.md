@@ -1,6 +1,12 @@
 # Global commands
 Global commands can be fired from many different locations. They are useful for controlling aristotle.
 
+## Todo
+```
+set.variable
+read.variable
+```
+
 ## Movie
 
 #### movie.load-layer

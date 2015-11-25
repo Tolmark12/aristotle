@@ -24,18 +24,18 @@ module.exports = class Ctanlee
 
   activate : (@data) ->
     if !@data.timeline? then return
-
     @timeline = @data.timeline
     @sequence = new Sequence @timeline
-    @playNextAction()
+    @playAction @sequence.getCurrentItem().action
 
   say : (text, audio, next) ->
     if text?
       @showText()
       @$text.html text
     if audio?
-      track = new AudioTrack(audio)
-      track.play ()=>
+      if @track? then @track.stop()
+      @track = new AudioTrack(audio)
+      @track.play ()=>
         if next == 'audio' then @playNextAction()
 
     if next == 'click' then @showNext() else @hideNext()
@@ -43,13 +43,27 @@ module.exports = class Ctanlee
 
   setEmotion : (emotion) ->
 
-  goto : (x=970, y=10, duration=600, delay=0) ->
+  gotoPos : (x=970, y=10, duration=600, delay=0) ->
     @$el.velocity "stop", true
     @$el.velocity {top:y, left:x}, {delay:delay, duration:duration, easing:"easeInOutQuint"}
+
+  gotoItem : (id) ->
+    pos = $("##{id}").offset()
+    @gotoPos pos.left-100, pos.top-80
+
+  goto : (data) ->
+    # If it is an id
+    if typeof data == "string"
+      @gotoItem data
+
+    # else it's a position
+    else
+      @gotoPos data[0], data[1], data[2], data[3]
 
   # ------------------------------------ MEAT
 
   playNextAction : () ->
+    if @track? then @track.stop()
     if @sequence.isAtLastItem()
       @complete()
     else
@@ -67,7 +81,7 @@ module.exports = class Ctanlee
 
     # Position
     if action.pos?
-      @goto action.pos[0], action.pos[1], action.pos[2], action.pos[3]
+      @goto action.pos
 
     # Action
     if action.action?
@@ -86,7 +100,7 @@ module.exports = class Ctanlee
 
   returnToStation : () ->
     @hideText()
-    @goto()
+    @gotoPos()
     @setFilter 'glow'
 
   showText : () -> @$speechBox.css opacity: 1, "pointer-events": "all"

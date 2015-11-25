@@ -7,7 +7,7 @@ module.exports = class AssetPreploader
     assets = []
     regex = /.+\.(svg)/
     @lookForFiles data, assets, regex
-    createjs.Sound.alternateExtensions = ["mp3"]
+    createjs.Sound.alternateExtensions = ["mp3", "m4a"]
     preloadQueue = new createjs.LoadQueue()
     preloadQueue.installPlugin createjs.Sound
 
@@ -25,9 +25,9 @@ module.exports = class AssetPreploader
   lookForFiles : (item, storage, regex)->
     type = typeof item
     if type == "string"
-      if      /.mp3/.test(item)  then storage.push {src:"#{aristotle.episodeRoot}/sounds/#{item}",      id:item}
-      else if /.json/.test(item) then storage.push {src:"#{aristotle.episodeRoot}/animations/#{item}",  id:item}
-      else if /.svg/.test(item)  then storage.push {src:"#{aristotle.episodeRoot}/assets/#{item}",      id:item}
+      if      /.mp3|.m4a/.test(item)            then storage.push {src:"#{aristotle.episodeRoot}/sounds/#{item}",      id:item}
+      else if /.json/.test(item)                then storage.push {src:"#{aristotle.episodeRoot}/animations/#{item}",  id:item}
+      else if /.svg|.jpg|.jpeg|.png/.test(item) then storage.push {src:"#{aristotle.episodeRoot}/assets/#{item}",      id:item}
 
     else if type == "object"
       if Array.isArray(item)

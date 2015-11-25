@@ -10,7 +10,7 @@ module.exports = class Movie
 
     PubSub.subscribe 'movie.load-layer', (m, data)=> @addLayer data
     PubSub.subscribe 'movie.zoom',       (m, data)=>
-      @zoom data.scale, data.x, data.y
+      @zoom data
 
   reset : () ->
     layer.destroy() for layer in @layers
@@ -22,11 +22,20 @@ module.exports = class Movie
       @addLayer layerData
 
     if data.zoom?
-      @zoom data.zoom.scale, data.zoom.x, data.zoom.y
+      @zoom data.zoom
 
-  zoom : (scale=1, x=0, y=0) ->
+  zoom : (data) ->
+    if data.id?
+      pos = $("##{data.id}").offset()
+      @zoomTo data.scale, pos.left, pos.top
+    else
+      @zoomTo data.scale, data.x, data.y
+
+
+  zoomTo : (scale=1, x=0, y=0) ->
     @$el.css "transform-origin": "#{x}px #{y}px"
     @$el.css transform: "scale(#{scale})"
+
 
   addLayer : (layerData) ->
     depth = layerData.depth

@@ -145,6 +145,12 @@ h1, h2 {
     width: 1024px;
     height: 768px;
     transition-duration: 1s; }
+    .movie .layer .onion-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1024px;
+      height: 768px; }
 
 .blur {
   -webkit-filter: blur(5px);
