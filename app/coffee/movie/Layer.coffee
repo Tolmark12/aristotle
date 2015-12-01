@@ -19,6 +19,8 @@ module.exports = class Layer
       @updateContent( @layerData )
     if @layerData.fx?
       @updateEffects( @layerData.fx )
+    if @layerData.action?
+      PubSub.publish @layerData.action.cmd, @layerData.action.data
 
   updateContent : (layerData) ->
     # If there is existing content, create a second 'onion layer' so the transition is seamless
@@ -71,6 +73,5 @@ module.exports = class Layer
     $onionLayer = $ jadeTemplate['movie/onion-layer']( {} )
     @$layer.prepend $onionLayer
     $onionLayer
-
 
   empty : () -> @$layer.empty()

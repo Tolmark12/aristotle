@@ -1,19 +1,21 @@
 module.exports = class ChromeUI
 
-  constructor: ($el) ->
-    @build $el
+  constructor: (@$el) ->
+    @build @$el
+    PubSub.subscribe "chrome.hide", (m, data)=> @hide()
+    PubSub.subscribe "chrome.show", (m, data)=> @show()
 
-  build : ($el) ->
+  build : (@$el) ->
     data = {name:"John \"Deadeye\" Nimbus", episode:"1"}
     @getRank data, "cyber-cadet"
 
     $top = $ jadeTemplate['chrome-ui/top']( data )
-    $el.append $top
+    @$el.append $top
 
     $progress = $ jadeTemplate['chrome-ui/progress']( {} )
-    $el.append $progress
+    @$el.append $progress
 
-    shadowIconsInstance.svgReplaceWithString pxSvgIconString, $el
+    shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
 
 
   getRank : (data, episode) ->
@@ -33,3 +35,7 @@ module.exports = class ChromeUI
       when 'cyber-cadet'
         data.rank  = "Cyber Cadet"
         data.badge = "rank-badge-cyber-cadet"
+
+  hide : () -> @$el.css opacity:0
+  show : () -> @$el.css opacity:1
+
