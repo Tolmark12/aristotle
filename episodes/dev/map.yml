@@ -40,7 +40,7 @@ chapters:
   -
     dev:
       volume: 0.3
-      startIndex: 6
+      startIndex: 4
       # dontAnimate: [0, 1, 2, 3, 4]
     kind: chapter
     slides:
@@ -96,9 +96,6 @@ chapters:
           defaults:
             next: click
           actions:
-            test:
-              text: "Asdf"
-              pos: [300,300]
             control-system:
               pos: "control-system-outline"
               text: "Control System"
