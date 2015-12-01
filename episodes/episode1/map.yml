@@ -16,8 +16,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 0, content: clear }
-            - {depth: 1, content: commandline.json, events: [complete], loop: false}
+            - {depth: 1, background: black, content: commandline.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
         movie:
