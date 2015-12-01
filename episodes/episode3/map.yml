@@ -10,42 +10,6 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 0, content: clear }
-            - {depth: 1, content: splitdoor.json, events: [complete], loop: false}
-        duration: {kind: listen, event: layer.1.complete}
-      -
-        movie:
-          layers:
-            - {depth: 0, content: clear }
-            - {depth: 1, content: commandline.json, events: [complete], loop: false}
-        duration: {kind: listen, event: layer.1.complete}
-      -
-        movie:
-          layers:
-            - {depth: 0, content: clear }
-            - {depth: 1, content: quarantine.json, events: [complete], loop: false}
-        duration: {kind: listen, event: layer.1.complete}
-      -
-        movie:
-          layers:
-            - {depth: 0, content: clear }
-            - {depth: 1, content: powergrid1.json, events: [complete], loop: false}
-        duration: {kind: listen, event: layer.1.complete}
-      -
-        movie:
-          layers:
-            - {depth: 0, content: clear }
-            - {depth: 1, content: septimus.json, events: [complete], loop: false}
-        duration: {kind: listen, event: layer.1.complete}
-      -
-        movie:
-          layers:
-            - {depth: 0, content: clear }
-            - {depth: 1, content: earth.json, events: [complete], loop: false}
-        duration: {kind: listen, event: layer.1.complete}
-      -
-        movie:
-          layers:
             - {depth: 0, content: smoke-bg.svg }
             - {depth: 1, content: steve/smoke.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
@@ -59,9 +23,18 @@ chapters:
         movie:
           layers:
             - {depth: 0, content: clear }
-            - {depth: 1, content: powergrid2.json, events: [complete], loop: false}
+            - {depth: 1, content: testing/earth.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
-
+      -
+        movie:
+          layers:
+            - {depth: 1, content: testing/septimus.json, events: [complete], loop: false}
+        duration: {kind: listen, event: layer.1.complete}
+      -
+        movie:
+          layers:
+            - {depth: 1, content: testing/quarantine.json, events: [complete], loop: false }
+        duration: {kind: listen, event: layer.1.complete}
 
   # CHAPTER 2
   -
@@ -84,8 +57,8 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 4, content: facility/interior_build.json, events: [complete] }
-            - {depth: 6, content: facility/control_facility_loop.json, wait: 500, loop: false }
+            - {depth: 4, content: keith/interior_build.json, events: [complete] }
+            - {depth: 6, content: keith/control_facility_loop.json, wait: 500, loop: false }
         duration: {kind: listen, event: layer.4.complete}
         action: {cmd: ctanlee.clear}
       # Building Tour - ctanlee
@@ -101,7 +74,7 @@ chapters:
             - {depth: 4, fx: {effects: [blur]} }
             - {depth: 5, fx: {effects: [blur]} }
             - {depth: 6, fx: {effects: [blur]} }
-            - {depth: 7, content: facility/interior_build_network.json }
+            - {depth: 7, content: keith/interior_build_network.json }
         duration: {kind: time, seconds: 3 }
       -
         movie:
