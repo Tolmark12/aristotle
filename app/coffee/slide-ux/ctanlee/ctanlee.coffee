@@ -106,8 +106,8 @@ module.exports = class Ctanlee
   showText : () -> @$speechBox.css opacity: 1, "pointer-events": "all"
   hideText : () -> @$speechBox.css opacity: 0, "pointer-events": "none"
 
-  showNext : () -> @$nextBtn.css opacity:1, 'pointer-events': 'all'
-  hideNext : () -> @$nextBtn.css opacity:0, 'pointer-events': 'none'
+  showNext : () -> @$nextBtn.css opacity: 1,   'pointer-events': 'all'
+  hideNext : () -> @$nextBtn.css opacity: 0,   'pointer-events': 'none'
 
   # ------------------------------------ HELPERS
 

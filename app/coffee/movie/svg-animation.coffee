@@ -1,8 +1,6 @@
 module.exports = class SVGAnimation
 
   constructor: ( el, json, data ) ->
-    # window.fixSVGS = ()->
-      # $("svg").css width:"initial", height:"initial"
     if !data.loop? then data.loop = false
 
     @animation = bodymovin.loadAnimation {
@@ -14,21 +12,15 @@ module.exports = class SVGAnimation
              path      : json
            }
 
-
-    if data.jumpToEnd?
-      interval  = setInterval ()=>
-        if @animation.totalFrames != 0
-          clearInterval interval
-          @animation.setCurrentRawFrameValue @animation.totalFrames
-      ,
-        100
-    else
-      if data.delay?
-        setTimeout @play, data.delay
+    @animation.addEventListener 'data_ready', ()=>
+      if data.jumpToEnd?
+        @animation.setCurrentRawFrameValue @animation.totalFrames
       else
-        @play()
-    @addEvents data
-
+        if data.delay?
+          setTimeout @play, data.delay
+        else
+          @play()
+      @addEvents data
 
   addEvents : (data) ->
     if data.events?
