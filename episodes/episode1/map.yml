@@ -1,6 +1,6 @@
 title: Training One
 dev:
-  startIndex: 1
+  startIndex: 0
 
 # CHAPTER 1
 chapters:
@@ -47,13 +47,13 @@ chapters:
         movie:
           layers:
             - {depth: 0, content: smoke-bg.svg }
-            - {depth: 1, content: steve/smoke.json, events: [complete], loop: false}
+            - {depth: 1, content: smoke.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
         movie:
           layers:
             - {depth: 0, content: digitalchip-bg.svg }
-            - {depth: 1, content: steve/digitalchip.json, events: [complete], loop: false}
+            - {depth: 1, content: digitalchip.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
         movie:
