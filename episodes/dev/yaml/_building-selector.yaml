@@ -1,0 +1,37 @@
+movie:
+  layers:
+    - {depth: 1, content: semi-final-assets/c1-background-clouds-loop.json, loop: true }
+duration: {kind: ux}
+ctanlee:
+  defaults:
+    next: none
+    pos: [200, 50]
+  actions:
+    a:
+      emo: happy
+      text: "My grandfather twice removed was a circuit breaker."
+      audio: ctanlee/Story_2_Ctanlee_1.m4a
+    b:
+      emo: sad
+      text: "I dated a boiler once. She was hot."
+      audio: ctanlee/Story_2_Ctanlee_2.m4a
+    c:
+      emo: surprize
+      text: "The nerve center of the BES. My 1s and 0s are tingling."
+      audio: ctanlee/Story_2_Ctanlee_3.m4a
+ux:
+  components:
+    -
+      kind: selection-dialogue
+      config:
+        click:
+          - {cmd: slides.next-slide}
+          - {cmd: movie.load-layer, data: {depth: 3, content: keith/control_facility_build.json } }
+        intro: The Standards require we protect significant control centers, generation plants, and substations on the Bulk Electric System. Per the Standards, we will classify them as High Impact (big control centers), Medium Impact (significant transmission substations and generation plants) and Low Impact (everything else). Most of the Standards apply to High and Medium impact facilities, so we'll add one of those facilities to our simulator.
+        title: Pick Your Facility
+        subTitle: Let's configure the simulator with one of these facilities. Click on a facility to choose it. This is a simulator after all, so pick whichever one you like! We'll teach the same principles with each facility.
+        submitBtn: {txt: Load Facility, icon: action-btn-fist}
+        items:
+          - { click: {cmd: ctanlee.activate, data: a}, btnTxt: Substation, icon: mini-substation, blurb: "I’m sorry Dave but I can’t let you in without proper access.", details: "+2 Style Points, Eye of the Beholder Bonus, +5 Robot Recognition"  }
+          - { click: {cmd: ctanlee.activate, data: b}, btnTxt: Generation Plant, icon: mini-generation, blurb: "I’m sorry Dave but I can’t let you in without proper access.", details: "+2 Style Points, Eye of the Beholder Bonus, +5 Robot Recognition"  }
+          - { click: {cmd: ctanlee.activate, data: c}, btnTxt: Control Center, icon: mini-control-center, blurb: "I’m sorry Dave but I can’t let you in without proper access.", details: "+2 Style Points, Eye of the Beholder Bonus, +5 Robot Recognition"  }
