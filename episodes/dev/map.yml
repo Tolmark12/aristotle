@@ -52,7 +52,7 @@ chapters:
             - {depth: 2, content: semi-final-assets/c1-background-buildin.json, events: [complete]  }
         duration: {kind: listen, event: layer.2.complete}
       # Building Selector
-      - !!inc/file ./episodes/episode1/yaml/_building-selector.yaml
+      - !!inc/file ./episodes/dev/yaml/_building-selector.yaml
       # Interior build-in
       -
         movie:
@@ -62,7 +62,7 @@ chapters:
         duration: {kind: listen, event: layer.4.complete}
         action: {cmd: ctanlee.clear}
       # Building Tour - ctanlee
-      - !!inc/file ./episodes/episode1/yaml/_building-overview.yaml
+      - !!inc/file ./episodes/dev/yaml/_building-overview.yaml
       # Components overview
       -
         movie:
