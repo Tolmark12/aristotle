@@ -47,11 +47,11 @@ layers:
 ```
 
 #### background (optional)
-Background of the layer, is directly aplied to the css background property, therefore, either of the following is valid:
+Background of the layer, is directly aplied to the css background property, therefore, either of the following is valid
 ```yaml
 layers:
   - {depth: 6, background: red }
-  - {depth: 6, background: #FF0000 }
+  - {depth: 6, background: "#FF0000" }   # Note place hex values in "quotation" marks
   - {depth: 6, background: url(/path/to/some/image.png) }
   # waits 1 second before adding the animations and playing it
 ```
