@@ -1,0 +1,146 @@
+title: Training One
+dev:
+  startIndex: 1
+
+# CHAPTER 1
+chapters:
+  -
+    kind: intro
+    slides:
+      -
+        movie:
+          layers:
+            - {depth: 0, content: smoke-bg.svg }
+            - {depth: 1, content: steve/smoke.json, events: [complete], loop: false}
+        duration: {kind: listen, event: layer.1.complete}
+      -
+        movie:
+          layers:
+            - {depth: 0, content: digitalchip-bg.svg }
+            - {depth: 1, content: steve/digitalchip.json, events: [complete], loop: false}
+        duration: {kind: listen, event: layer.1.complete}
+      -
+        movie:
+          layers:
+            - {depth: 0, content: clear }
+            - {depth: 1, content: testing/earth.json, events: [complete], loop: false}
+        duration: {kind: listen, event: layer.1.complete}
+      -
+        movie:
+          layers:
+            - {depth: 1, content: testing/septimus.json, events: [complete], loop: false}
+        duration: {kind: listen, event: layer.1.complete}
+      -
+        movie:
+          layers:
+            - {depth: 1, content: testing/quarantine.json, events: [complete], loop: false }
+        duration: {kind: listen, event: layer.1.complete}
+
+  # CHAPTER 2
+  -
+    dev:
+      volume: 0.3
+      startIndex: 0
+      # dontAnimate: [0, 1, 2, 3, 4]
+    kind: chapter
+    slides:
+      # Sky and mountains build-in
+      -
+        movie:
+          layers:
+            - {depth: 0, content: c1-sky.svg}
+            - {depth: 2, content: semi-final-assets/c1-background-buildin.json, events: [complete]  }
+        duration: {kind: listen, event: layer.2.complete}
+      # Building Selector
+      - !!inc/file ./episodes/episode1/yaml/_building-selector.yaml
+      # Interior build-in
+      -
+        movie:
+          layers:
+            - {depth: 4, content: keith/interior_build.json, events: [complete] }
+            - {depth: 6, content: keith/control_facility_loop.json, wait: 500, loop: false }
+        duration: {kind: listen, event: layer.4.complete}
+        action: {cmd: ctanlee.clear}
+      # Building Tour - ctanlee
+      - !!inc/file ./episodes/episode1/yaml/_building-overview.yaml
+      # Components overview
+      -
+        movie:
+          layers:
+            - {depth: 0, fx: {effects: [blur]} }
+            - {depth: 1, fx: {effects: [blur]} }
+            - {depth: 2, fx: {effects: [blur]} }
+            - {depth: 3, fx: {effects: [blur]} }
+            - {depth: 4, fx: {effects: [blur]} }
+            - {depth: 5, fx: {effects: [blur]} }
+            - {depth: 6, fx: {effects: [blur]} }
+            - {depth: 7, content: keith/interior_build_network.json }
+        duration: {kind: time, seconds: 3 }
+      -
+        movie:
+          layers:
+            - {depth: 0, fx: {clear: true} }
+            - {depth: 1, fx: {clear: true} }
+            - {depth: 2, fx: {clear: true} }
+            - {depth: 3, fx: {clear: true} }
+            - {depth: 4, fx: {clear: true} }
+            - {depth: 5, fx: {clear: true} }
+            - {depth: 6, fx: {clear: true} }
+        duration: {kind: ctanlee }
+        ctanlee:
+          timeline:
+            # - {action: test }
+            - {action: control-system }
+            - {action: rtu }
+            - {action: network-switch }
+          defaults:
+            next: click
+          actions:
+            test:
+              text: "Asdf"
+              pos: [300,300]
+            control-system:
+              pos: "control-system-outline"
+              text: "Control System"
+              action:
+                - {cmd: movie.zoom, data: {scale: 2, id: control-system-outline} }
+                - {cmd: highlight, data: {id: control-system-outline, level: green} }
+            rtu:
+              pos: "rtu-outline"
+              text: "Remote Terminal Unit"
+              action:
+                - {cmd: highlight, data: {id: rtu-outline, level: green} }
+                # - {cmd: movie.zoom, data: {scale: 2, id: rtu-outline} }
+            network-switch:
+              pos: "server3-outline"
+              text: "Network Switch"
+              action:
+                - {cmd: highlight, data: {id: server3-outline, level: green} }
+                # - {cmd: movie.zoom, data: {scale: 2, id: server3-outline} }
+      # -
+      #   ux:
+      #     components:
+      #       -
+      #         kind: dialogue
+      #         config:
+      #           click:
+      #             - {cmd: slides.next-slide}
+      #             - {cmd: movie.load-layer, data: {depth: 3, content: semi-final-assets/facility-type-generator-build.json, loop: false } }
+      #           intro: The Standards require we protect significant control centers, generation plants, and substations on the Bulk Electric System. Per the Standards, we will classify them as High Impact (big control centers), Medium Impact (significant transmission substations and generation plants) and Low Impact (everything else). Most of the Standards apply to High and Medium impact facilities, so we'll add one of those facilities to our simulator.
+      #           title: Pick Your Facility
+      -
+        movie:
+          zoom: {scale: 1}
+          layers:
+            - {depth: 7, content: clear}
+        duration: {kind: ux}
+        ctanlee:
+          timeline:
+            - {action: a }
+          defaults:
+            next: click
+          actions:
+            a:
+              pos: [100,100]
+              text: "Most facilities that fall under CIP have a lot of equipment like this that controls the Bulk Electric System. Imagine the damage the robots would do if they gained access to control a breaker, power plant or Tesla Cannon. Shudder."
+              audio: ctanlee/Story_2_Ctanlee_8.m4a
