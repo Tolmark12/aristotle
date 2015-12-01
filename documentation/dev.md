@@ -1,3 +1,6 @@
+## Developer niceties
+
+
 ```coffeescript
 dev:
   volume: 0                 # Volume of any sounds
