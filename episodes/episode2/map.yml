@@ -138,6 +138,12 @@ chapters:
               audio: Story_2_Ctanlee_9.m4a
               next: click
       -
+        movie:
+          layers:
+            - {depth: 7, content: interior_build_network.json }
+        duration: {kind: time, seconds: 3 }
+      # Components overview
+      -
         duration: {kind: ctanlee }
         ctanlee:
           timeline:
@@ -158,7 +164,7 @@ chapters:
               text: "System Map"
               action:
                 - {cmd: highlight, data: {id: grid-outline, level: green} }
-            printer-outline:
+            monitor-outline:
               pos: "monitor-outline"
               text: "Control System Views"
               action:
