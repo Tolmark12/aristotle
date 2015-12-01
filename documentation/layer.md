@@ -38,6 +38,16 @@ layers:
   # file expected to be at: assets/some/sub/directory/me.svg
 ```
 
+
+
+#### action (optional)
+Action that can be called when the layer loads
+```yaml
+layers:
+  - {depth: 1,  content: animation.json, action: {cmd: chrome.hide} }
+```
+
+
 #### wait (optional)
 Optional number of milliseconds to wait before adding the content
 ```yaml
