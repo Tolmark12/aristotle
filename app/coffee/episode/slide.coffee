@@ -20,16 +20,24 @@ module.exports = class Slide
     if !@slideData.duration? then return
     switch @slideData.duration.kind
       when "time"
+        console.log "PREV: time complete"
         setTimeout @onSlideComplete, @slideData.duration.seconds * 1000
       when "user"
         console.log "waiting on the user"
       when "ux"
-        PubSub.subscribe 'ux.complete', ()=> @onSlideComplete()
+        uxSubscription = PubSub.subscribe 'ux.complete', ()=>
+          PubSub.unsubscribe uxSubscription
+          console.log 'PREV: ux complete'
+          @onSlideComplete()
       when "ctanlee"
-        PubSub.subscribe 'ctanlee.complete', ()=> @onSlideComplete()
+        ctanleeSubscription = PubSub.subscribe 'ctanlee.complete', ()=>
+          console.log 'PREV: ctanlee complete'
+          PubSub.unsubscribe ctanleeSubscription
+          @onSlideComplete()
       when "listen"
-        PubSub.subscribe @slideData.duration.event, ()=>
-          PubSub.unsubscribe @slideData.duration.event
+        listenSubscription = PubSub.subscribe @slideData.duration.event, ()=>
+          console.log "PREV: animation complete"
+          PubSub.unsubscribe listenSubscription
           @onSlideComplete()
 
   runCtanlee : (data) ->

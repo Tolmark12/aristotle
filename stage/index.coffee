@@ -19,5 +19,4 @@ userSpecifiedEpisode = getQueryVariable 'episode'
 
 # Load either the user specified episode, or a default one
 episode = if !userSpecifiedEpisode then episodes.dev else episodes[userSpecifiedEpisode]
-console.log episode
 aristotle = new Aristotle $(".holder"), episode

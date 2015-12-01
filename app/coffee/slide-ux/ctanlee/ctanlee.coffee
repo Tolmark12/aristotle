@@ -52,7 +52,7 @@ module.exports = class Ctanlee
     @gotoPos pos.left-100, pos.top-80
 
   goto : (data) ->
-    console.log data
+    # console.log data
     # If it is an id
     if typeof data == "string"
       @gotoItem data
