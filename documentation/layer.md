@@ -46,6 +46,17 @@ layers:
   # waits 1 second before adding the animations and playing it
 ```
 
+#### background (optional)
+Background of the layer, is directly aplied to the css background property, therefore, either of the following is valid:
+```yaml
+layers:
+  - {depth: 6, background: red }
+  - {depth: 6, background: #FF0000 }
+  - {depth: 6, background: url(/path/to/some/image.png) }
+  # waits 1 second before adding the animations and playing it
+```
+
+
 ### Options specific to animations (files with .json extensions):
 
 #### events
@@ -56,8 +67,8 @@ _options: complete, enterFrame_
 _generates: layer.[depth].[event name]_
 ```yaml
 # This would fire 'layer.1.complete' when the animation finishes.
-# Also note that this slide will on be complete when it "hears"
-# the event 'layer.1.complete'
+# Also note that this slide will be complete when it "hears" the
+# event : 'layer.1.complete'
 movie:
   layers:
     - {depth: 1, content: anim.json, events: [complete] }

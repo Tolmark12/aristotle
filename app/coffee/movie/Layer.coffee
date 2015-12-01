@@ -15,21 +15,24 @@ module.exports = class Layer
     @createContent()
 
   createContent : () =>
-    if @layerData.content?
+    if @layerData.content? || @layerData.background?
       @updateContent( @layerData )
     if @layerData.fx?
       @updateEffects( @layerData.fx )
 
   updateContent : (layerData) ->
+    # If there is existing content, create a second 'onion layer' so the transition is seamless
     if @currentOnionLayer?
       oldOnionLayer = @currentOnionLayer
       setTimeout ()=>
-        oldOnionLayer.velocity {opacity:0}, {duration:200, complete:()=> oldOnionLayer.remove(); console.log "complete.." }
+        oldOnionLayer.velocity {opacity:0}, {duration:200, complete:()=> oldOnionLayer.remove() }
       ,
         200
 
     @currentOnionLayer = @addOnionLayer()
-    if layerData.content == "clear"
+    if !layerData.content?
+      kind = "none"
+    else if layerData.content == "clear"
       kind = "clear"
     else
       kind = layerData.content.split(".")[1]
@@ -40,11 +43,17 @@ module.exports = class Layer
                         @addImage( @currentOnionLayer, layerData.content, layerData.repeat, layerData.position )
       when "clear" then @empty()
 
+    @updateBackground layerData
+
   updateEffects : (fx) ->
     if fx.clear then @$layer.attr class:'layer'
     if fx.effects?
       for effect in fx.effects
         @$layer.addClass effect
+
+  updateBackground : (layerData) ->
+    return if !layerData.background?
+    @currentOnionLayer.css background: layerData.background
 
   addAnimation : ($holder, layerData) ->
     @animation  = new SVGAnimation $holder, "#{aristotle.episodeRoot}/animations/#{layerData.content}", layerData
