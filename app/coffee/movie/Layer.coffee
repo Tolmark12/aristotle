@@ -27,6 +27,7 @@ module.exports = class Layer
     if @currentOnionLayer?
       oldOnionLayer = @currentOnionLayer
       setTimeout ()=>
+        oldOnionLayer.velocity 'stop', true
         oldOnionLayer.velocity {opacity:0}, {duration:200, complete:()=> oldOnionLayer.remove() }
       ,
         200
