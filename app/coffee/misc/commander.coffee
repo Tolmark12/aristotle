@@ -14,6 +14,9 @@ module.exports = class Commander
     if action.INJECT_GLOBAL_VARS?
       for keyValPair in action.INJECT_GLOBAL_VARS
         for key, globalVarName of keyValPair
-          action.data[key] = aristotle.globals[globalVarName]
+          if aristotle.globals[globalVarName]?
+            action.data[key] = aristotle.globals[globalVarName]
+          else
+            aristotle.throw "Tried to access the global var `#{globalVarName}` but it doesn't exist", true
 
     PubSub.publish action.cmd, action.data

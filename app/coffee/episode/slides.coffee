@@ -4,7 +4,6 @@ Sequence = require 'misc/sequence'
 module.exports = class Slides
 
   constructor: (trainingData, movie, ux, @onShowComplete) ->
-    console.log trainingData
     @currentSlideIndex = -1
     @createSlides trainingData, movie, ux
     PubSub.subscribe 'slides.next-slide', ()=> @nextSlide()

@@ -1,0 +1,8 @@
+$size: 10px;
+.logger            { position: fixed; top:0px; right:25px; display:flex;
+  .error, .message { width:$size; height:$size; border-radius:50%; cursor: pointer; margin:5px 2px; border:solid 2px white;
+    &:hover        { opacity:0.8 }
+  }
+  .error           { background:#CC0089; }
+  .message         { background:#1f5e8b; }
+}

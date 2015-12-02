@@ -26,7 +26,10 @@ module.exports = class Movie
 
   zoom : (data) ->
     if data.id?
-      pos = $("##{data.id}").offset()
+      $item = pos = $("##{data.id}")
+      if $item.length == 0 then aristotle.throw "Tried to zoom to an item with the id `#{data.id}`, but no items with that id were found."
+      return
+      $item.offset()
       @zoomTo data.scale, pos.left, pos.top
     else
       @zoomTo data.scale, data.x, data.y
@@ -38,6 +41,9 @@ module.exports = class Movie
 
 
   addLayer : (layerData) ->
+    if !layerData?       then aristotle.throw "Tried to create a layer, but didn't specify any layer data", true ; return
+    if !layerData.depth? then aristotle.throw "Tried to create a layer with no depth specified", true ; return
+
     depth = layerData.depth
     # If we are placing at a depth higher than the current
     # fill the space between with empty layers

@@ -6,6 +6,7 @@ EpisodeLoader = require 'misc/episode-loader'
 SlideUX       = require 'slide-ux/slide-ux'
 Commander     = require 'misc/commander'
 GlobalVars    = require 'misc/global-vars'
+Logger        = require 'misc/logger'
 
 class Aristotle
 
@@ -31,6 +32,7 @@ class Aristotle
     @movie     = new Movie    $(".movie",    $base)
 
   setDevMode : (devMode) ->
+    logger             = new Logger $('body'), devMode
     aristotle.devTools = new DevTools devMode
 
 
