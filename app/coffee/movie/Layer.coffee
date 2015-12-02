@@ -20,7 +20,7 @@ module.exports = class Layer
     if @layerData.fx?
       @updateEffects( @layerData.fx )
     if @layerData.action?
-      PubSub.publish @layerData.action.cmd, @layerData.action.data
+      aristotle.commander.do action
 
   updateContent : (layerData) ->
     # If there is existing content, create a second 'onion layer' so the transition is seamless

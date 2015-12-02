@@ -30,8 +30,7 @@ module.exports = class SelectionDialogue extends Component
       @activateItem( $targ, @items[ $targ.attr('id') ])
 
     $("#action-btn", $el).on "click", (e)=>
-      for action in data.click
-        PubSub.publish action.cmd, action.data
+      aristotle.commander.do data.click
       @destroy()
 
   activateItem : ($button, item) ->
@@ -43,4 +42,4 @@ module.exports = class SelectionDialogue extends Component
     $("#icon-#{item.id}", @$node).addClass "active"
     $(".blurb", @$node).html item.blurb
     $(".details", @$node).html item.details
-    PubSub.publish item.click.cmd, item.click.data
+    aristotle.commander.do item.click

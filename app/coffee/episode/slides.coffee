@@ -24,9 +24,5 @@ module.exports = class Slides
 
   start             : () -> @playSlide()
   slideComplete     : () => @nextSlide()
-  playSlide         : () ->
-    console.log "Now playing slide index : " + @slides.currentItemIndex
-    console.log @slides.getCurrentItem().slideData
-    console.log "---"
-    @slides.getCurrentItem().play @slideComplete
+  playSlide         : () -> @slides.getCurrentItem().play @slideComplete
   slideShowComplete : () -> @onShowComplete()

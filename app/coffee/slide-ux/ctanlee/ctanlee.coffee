@@ -86,12 +86,7 @@ module.exports = class Ctanlee
 
     # Action
     if action.action?
-      # TODO : should I move global command handling to a single location? Prbly
-      if Array.isArray action.action
-        for item in action.action
-          PubSub.publish item.cmd, item.data
-      else
-        PubSub.publish action.action.cmd, action.action.data
+      aristotle.commander.do action.action
 
     @say action.text, action.audio, action.next
 
