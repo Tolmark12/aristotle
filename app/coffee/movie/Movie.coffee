@@ -28,10 +28,9 @@ module.exports = class Movie
 
   zoom : (data) ->
     if data.id?
-      $item = pos = $("##{data.id}")
-      if $item.length == 0 then aristotle.throw "Tried to zoom to an item with the id `#{data.id}`, but no items with that id were found."
-      return
-      $item.offset()
+      $item = $("##{data.id}")
+      if $item.length == 0 then aristotle.throw "Tried to zoom to an item with the id `#{data.id}`, but no items with that id were found." ;  return
+      pos = $item.position()
       @zoomTo data.scale, pos.left, pos.top
     else
       @zoomTo data.scale, data.x, data.y

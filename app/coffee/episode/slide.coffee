@@ -4,7 +4,6 @@ SVGAnimation = require "movie/svg-animation"
 module.exports = class Slide
 
   constructor: (@movie, @slideUX, @slideData, @onSlideComplete) ->
-    console.log @slideData
 
   play : (onComplete) =>
     @movie.populate @slideData.movie
