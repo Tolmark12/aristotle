@@ -69,7 +69,5 @@ module.exports = class Movie
       @layers[i].addFilter "blueBlur"
 
   unblurAllLAyers : () ->
-    console.log "unbluring??"
     for layer in @layers
-      console.log layer
       layer.removeFilters()
