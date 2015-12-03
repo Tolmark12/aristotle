@@ -20,7 +20,7 @@ module.exports = class Layer
     if @layerData.fx?
       @updateEffects( @layerData.fx )
     if @layerData.action?
-      PubSub.publish @layerData.action.cmd, @layerData.action.data
+      aristotle.commander.do action
 
   updateContent : (layerData) ->
     # If there is existing content, create a second 'onion layer' so the transition is seamless
@@ -45,6 +45,7 @@ module.exports = class Layer
       when "gif", "jpg", "jpeg","png"
                         @addImage( @currentOnionLayer, layerData.content, layerData.repeat, layerData.position )
       when "clear" then @empty()
+      else              aristotle.throw "tried to add unrecognized layer type '#{kind}'", true
 
     @updateBackground layerData
 

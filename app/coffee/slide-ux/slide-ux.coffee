@@ -17,3 +17,6 @@ module.exports = class SlideUX
         component = new SelectionDialogue @$el, componentData.config
       when "dialogue"
         component = new Dialogue @$el, componentData.config
+      else
+        aristotle.throw "tried to create an unrecognized component type: `#{componentData.kind}`"
+

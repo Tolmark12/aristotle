@@ -34,18 +34,6 @@ module.exports = class DevTools
           # account for the slides that have already been removed
           items.splice slideIndex - startIndex, 1
 
-  initPerformanceStats : ()->
-    @stats = new Stats()
-    @stats.setMode( 0 ) # 0: fps, 1: ms, 2: mb
-
-    # align top-left
-    @stats.domElement.style.position = 'absolute'
-    @stats.domElement.style.left = '0px'
-    @stats.domElement.style.top = '0px'
-
-    document.body.appendChild( @stats.domElement )
-    requestAnimationFrame( @update )
-
   preventAnimationAsNeeded : (devConfig, items) ->
     return if !devConfig.dontAnimate?
     for slide, i in devConfig.dontAnimate
@@ -66,6 +54,19 @@ module.exports = class DevTools
         ##    ##    #########    ##          ##
   ##    ##    ##    ##     ##    ##    ##    ##
    ######     ##    ##     ##    ##     ######
+
+  initPerformanceStats : ()->
+    @stats = new Stats()
+    @stats.setMode( 0 ) # 0: fps, 1: ms, 2: mb
+
+    # align top-left
+    @stats.domElement.style.position = 'absolute'
+    @stats.domElement.style.left = '0px'
+    @stats.domElement.style.top = '0px'
+
+    document.body.appendChild( @stats.domElement )
+    requestAnimationFrame( @update )
+
   update :()=>
     @stats.end()
     @stats.begin()

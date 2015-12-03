@@ -25,9 +25,10 @@ chapters:
         movie:
           layers:
             - {depth: 4, content: interior_build.json, events: [complete] }
-            - {depth: 6, content: control_facility_loop.json, wait: 500, loop: false }
         duration: {kind: listen, event: layer.4.complete}
-        action: {cmd: ctanlee.clear}
+        action:
+          - {cmd: movie.load-layer, data: {depth: 6, wait: 500, loop: true}, INJECT_GLOBAL_VARS: [ {content: facilityLoop} ] }
+          - {cmd: ctanlee.clear}
       # Building Tour - ctanlee
       - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
       -

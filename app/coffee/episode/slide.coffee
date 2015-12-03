@@ -14,7 +14,7 @@ module.exports = class Slide
 
   runActions : (action) ->
     return if !action?
-    PubSub.publish action.cmd, action.data
+    aristotle.commander.do action
 
   setDuration : () ->
     if !@slideData.duration? then return

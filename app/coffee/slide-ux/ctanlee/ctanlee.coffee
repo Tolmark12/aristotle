@@ -11,7 +11,8 @@ module.exports = class Ctanlee
     @$text      = $ ".text span.content", @$speechBox
     @$nextBtn   = $ ".text span.next", @$speechBox
 
-    @$nextBtn.on "click", ()=> @playNextAction()
+    @$nextBtn.on "click",   (e)=> @playNextAction()
+    $('html').on "keydown", (e)=> if e.which == 39 then @playNextAction() # Allow right arrow to play next slide
 
     PubSub.subscribe 'ctanlee.activate',  (a, action)=> @playAction(action)
     PubSub.subscribe 'ctanlee.clear',     (a, action)=> @hideText()
@@ -48,7 +49,10 @@ module.exports = class Ctanlee
     @$el.velocity {top:y, left:x}, {delay:delay, duration:duration, easing:"easeInOutQuint"}
 
   gotoItem : (id) ->
-    pos = $("##{id}").offset()
+    $item = $("##{id}")
+    if $item.length == 0 then aristotle.throw "ctanlee wants to hover by `#{id}`, but is unable to find an item with the id #{id}" ; return
+
+    pos = $item.offset()
     @gotoPos pos.left-100, pos.top-80
 
   goto : (data) ->
@@ -73,6 +77,8 @@ module.exports = class Ctanlee
 
   # Play the specified action and set the action index to that action's index
   playAction : (actionId) ->
+    if !@data.actions[actionId]? then aristotle.throw "ctanlee was asked to play the action named `#{actionId}`, but no action with that id exists." ; return
+
     @setFilter 'black-glow'
     action = @overlayDefaults actionId
 
@@ -86,12 +92,7 @@ module.exports = class Ctanlee
 
     # Action
     if action.action?
-      # TODO : should I move global command handling to a single location? Prbly
-      if Array.isArray action.action
-        for item in action.action
-          PubSub.publish item.cmd, item.data
-      else
-        PubSub.publish action.action.cmd, action.action.data
+      aristotle.commander.do action.action
 
     @say action.text, action.audio, action.next
 
