@@ -1,11 +1,20 @@
 .question
-  .text= question
-  each answer in answers
-    .flip-container
-      .flipper
-        .card.answer.front
-          img.shadow-icon(data-src="quiz-answer-bg")
-          .txt= answer.a
-        .card.response.back
-          img.shadow-icon(data-src="quiz-answer-bg")
-          .txt=answer.r
+  .question-index Question #{index+1}:
+  .line
+  .question-text= question
+  .answers
+    each answer in answers
+      .answer-wrapper
+        .flip-container
+          .flipper
+            .card.answer.front
+              .txt= answer.a
+              img.shadow-icon(data-src="quiz-answer-bg")
+            .card.response.back(class = answer.c ? "right" : "wrong")
+              .txt
+                if answer.c
+                  .status You Got It!
+                else
+                  .status Incorrect
+                =answer.r
+              img.shadow-icon(data-src="quiz-answer-bg")

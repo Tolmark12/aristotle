@@ -12,3 +12,17 @@
       font-style: $style;
   }
 }
+
+@mixin drop-shadow ($xoffset:0px, $yoffset:1px, $blur:13px, $color:#727272, $radius:0px) {
+  box-shadow: $xoffset $yoffset $blur $radius $color;
+}
+
+@mixin center-absolute (){top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+@mixin transition ($property:all, $duration:0.2s, $timing:linear, $delay:0s) {
+  @if $property != none {
+    transition: $property $duration $timing $delay;
+  } @else {
+    transition: none;
+  }
+}

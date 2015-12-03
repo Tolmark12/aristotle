@@ -1,11 +1,19 @@
 module.exports = class Question
 
-  constructor: (@$parent, @data) ->
+  constructor: (@$parent, @data, @answerCallback) ->
 
   build : () ->
     @$node = $ jadeTemplate['slide-ux/components/quiz/question']( @data )
-    @$parent.append @$node
+    @$parent.prepend @$node
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
 
-  remove : () -> @$node.remove()
+    $(".answer-wrapper", @$node).on "click", @onAnswerClick
+
+  onAnswerClick : (e)=>
+    $(e.currentTarget).addClass "flipped"
+    $(".answer-wrapper", @$node).css({cursor:"default", "pointer-events": "none"}).off "click"
+    isCorrect = $(".response", e.currentTarget).hasClass 'right'
+    @answerCallback isCorrect
+
+  destroy : () -> @$node.remove()
 

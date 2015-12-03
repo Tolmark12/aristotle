@@ -7,6 +7,8 @@ module.exports = class AssetPreploader
     assets = []
     regex = /.+\.(svg)/
     @lookForFiles data, assets, regex
+
+    # If there are no assets, return and callback
     if assets.length == 0
       @callback()
       return

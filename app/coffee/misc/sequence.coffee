@@ -20,7 +20,7 @@ module.exports = class Sequence
   getCurrentItem : () -> @items[ @currentItemIndex ]
   currentItem    : () -> @getCurrentItem()
 
-  incramentItemIndex : ( incrament, loopOnOvershoot=false) ->
+  incramentItemIndex : ( incrament, loopOnOverShoot=false) ->
     newIndex = @currentItemIndex + incrament
 
     # Make sure the new index falls within the range of items

@@ -10,14 +10,34 @@ module.exports = class Quiz extends Component
     @$node = $ jadeTemplate['slide-ux/components/quiz/quiz']( data )
     super $el, @$node
     @createQuiz $(".questions", @$node), data
+    @$nextBtn = $ ".next-btn", @$node
+    @$nextBtn.on "click", @onNextClick
+    @hideNext()
 
   createQuiz : ($el, data) ->
     questions = []
-    for questionData in data.questions
-      questions.push new Question $el, questionData
+    for questionData, i in data.questions
+      questionData.index = i
+      questions.push new Question $el, questionData, @onQuestionAnswered
     @questions = new Sequence questions
     @showCurrentQuestion()
 
   showCurrentQuestion : () ->
-    question = @questions.currentItem()
-    question.build()
+    @currentQuestion = @questions.currentItem()
+    @currentQuestion.build()
+
+  onQuestionAnswered : (gotItRight) =>
+    @showNext()
+
+  onNextClick : () =>
+    @hideNext()
+    @currentQuestion.destroy()
+    if @questions.isAtLastItem()
+      console.log "done with the quesitons"
+    else
+      @questions.next()
+      @showCurrentQuestion()
+
+  showNext : () -> @$nextBtn.removeClass "hidden"
+  hideNext : () -> @$nextBtn.addClass "hidden"
+
