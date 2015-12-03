@@ -37,7 +37,7 @@ chapters:
           layers:
             - {depth: 7, content: asset_view.json, action: {cmd: "movie.layers.blur.below", data: 7} }
         duration: {kind: time, seconds: 3 }
-      # Components overview
+      # Components overview 
       -
         duration: {kind: ctanlee }
         ctanlee:
