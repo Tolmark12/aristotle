@@ -6,9 +6,15 @@ dev:
 chapters:
   -
     dev:
+<<<<<<< HEAD
       volume: .5
       startIndex: 0
       # dontAnimate: [ 2, 3, 4]
+=======
+      volume: 0
+      startIndex: 31
+      # dontAnimate: [ 0, 3, 4]
+>>>>>>> origin/master
     kind: chapter
     slides:
       # Sky and mountains build-in
@@ -451,3 +457,40 @@ chapters:
                     over: {cmd: highlight, data: {id: tower-outline, level: blue} }
                     out: {cmd: unhighlight, data: tower-outline }
                     click: {cmd: unhighlight, data: tower-outline }
+      # EXAMPLE - Quiz
+      -
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: quiz
+              config:
+                questions:
+                  -
+                    correct: 0
+                    question: What to do?
+                    answers:
+                      -
+                        a: Do Something
+                        r: Better luch next time
+                      -
+                        a: Do Something Else
+                        r: Better luch next time
+                      -
+                        a: Do Some other thing.
+                        r: Better luch next time
+                  -
+                    correct: [2,1]
+                    question: What to do again?
+                    answers:
+                      -
+                        a: Run, run fast
+                        r: Better luch next time
+                      -
+                        a: Eat a pizza
+                        r: Better luch next time
+                      -
+                        a: Throw a tantrum.
+                        r: Better luch next time
+      -
+        duration: {kind: ux}
