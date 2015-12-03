@@ -6,8 +6,8 @@ dev:
 chapters:
   -
     dev:
-      volume: .5
-      startIndex: 0
+      volume: 1
+      startIndex: 30
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -418,39 +418,6 @@ chapters:
                   style: lightning
                   text: Review Duties
                   action: {cmd: slides.next-slide}
-      #################### TESTING
-      -
-        ux:
-          components:
-            -
-              kind: ghost-ux
-              config:
-                targets:
-                  -
-                    id: control-system-outline
-                    over: {cmd: highlight, data: {id: control-system-outline, level: blue} }
-                    out: {cmd: unhighlight, data: control-system-outline }
-                    click: {cmd: unhighlight, data: control-system-outline }
-                  -
-                    id: esp-ns
-                    over: {cmd: highlight, data: {id: esp-ns, level: blue} }
-                    out: {cmd: unhighlight, data: esp-ns }
-                    click: {cmd: unhighlight, data: esp-ns }
-                  -
-                    id: server3-outline
-                    over: {cmd: highlight, data: {id: server3-outline, level: blue} }
-                    out: {cmd: unhighlight, data: server3-outline }
-                    click: {cmd: unhighlight, data: server3-outline }
-                  -
-                    id: server4-hit
-                    over: {cmd: highlight, data: {id: server4-group, level: orange} }
-                    out:   {cmd: highlight, data: {id: server4-group, level: blue} }
-                    click: {cmd: highlight, data: {id: server4-group, level: yellow} }
-                  -
-                    id: tower-outline
-                    over: {cmd: highlight, data: {id: tower-outline, level: blue} }
-                    out: {cmd: unhighlight, data: tower-outline }
-                    click: {cmd: unhighlight, data: tower-outline }
       # EXAMPLE - Quiz
       -
         duration: {kind: ux}
@@ -461,31 +428,61 @@ chapters:
               config:
                 questions:
                   -
-                    question: What to do?
+                    question: In this scenario, what do you expect to see?
                     answers:
                       -
-                        a: Do Something
-                        r: Better luch next time
+                        a: Bigfoot
+                        r: Better lucc next time
                       -
-                        a: Do Something Else
-                        r: Better luch next time
+                        a: A single server
+                        r: Better lucc next time
                       -
-                        a: Do Some other thing.
-                        r: Better luch next time
+                        a: This is the right answer
+                        r: Nice, you're getting the hang of this!
                         c: true
                   -
-                    question: What to do again?
+                    question: What is the shortest distance between two points
                     answers:
                       -
-                        a: Run, run fast
+                        a: A parallel line
                         r: Better luch next time
                       -
-                        a: Eat a pizza
+                        a: A straight line
                         r: Better luch next time
                         c: true
                       -
-                        a: Throw a tantrum.
+                        a: A curve
                         r: Better luch next time
-      -
-        duration: {kind: ux}
-
+      #################### TESTING
+      # -
+      #   ux:
+      #     components:
+      #       -
+      #         kind: ghost-ux
+      #         config:
+      #           targets:
+      #             -
+      #               id: control-system-outline
+      #               over: {cmd: highlight, data: {id: control-system-outline, level: blue} }
+      #               out: {cmd: unhighlight, data: control-system-outline }
+      #               click: {cmd: unhighlight, data: control-system-outline }
+      #             -
+      #               id: esp-ns
+      #               over: {cmd: highlight, data: {id: esp-ns, level: blue} }
+      #               out: {cmd: unhighlight, data: esp-ns }
+      #               click: {cmd: unhighlight, data: esp-ns }
+      #             -
+      #               id: server3-outline
+      #               over: {cmd: highlight, data: {id: server3-outline, level: blue} }
+      #               out: {cmd: unhighlight, data: server3-outline }
+      #               click: {cmd: unhighlight, data: server3-outline }
+      #             -
+      #               id: server4-hit
+      #               over: {cmd: highlight, data: {id: server4-group, level: orange} }
+      #               out:   {cmd: highlight, data: {id: server4-group, level: blue} }
+      #               click: {cmd: highlight, data: {id: server4-group, level: yellow} }
+      #             -
+      #               id: tower-outline
+      #               over: {cmd: highlight, data: {id: tower-outline, level: blue} }
+      #               out: {cmd: unhighlight, data: tower-outline }
+      #               click: {cmd: unhighlight, data: tower-outline }
