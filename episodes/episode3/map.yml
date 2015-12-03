@@ -17,29 +17,28 @@ chapters:
           layers:
             - {depth: 0, content: c1-sky.svg }
             - {depth: 1, content: c1-background-clouds-loop.json, loop: true }
-            - {depth: 2, content: background_hills.svg }
-            - {depth: 3, content: facility_communications.svg }
-            - {depth: 4, content: facility_interior.svg  }
-            - {depth: 5, content: control_facility_loop.json, loop: false, event: [complete] }
-        duration: {kind: listen, event: layer.5.complete}
-      # Building Selector
-      - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
-      # Interior build-in
-      -
-        movie:
-          layers:
-            - {depth: 4, content: interior_build.json, events: [complete] }
-            - {depth: 6, content: control_facility_loop.json, wait: 500, loop: false }
-        duration: {kind: listen, event: layer.4.complete}
-        action: {cmd: ctanlee.clear}
-      # Building Tour - ctanlee
-      - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
-      -
-        movie:
-          layers:
-            - {depth: 7, content: interior_build_network.json }
+            - {depth: 2, content: static_facility_background.json }
+            - {depth: 3, content: static_facility_control.json }
+            - {depth: 4, content: control_facility_loop.json, loop: true  }
+            - {depth: 5, content: static_facility_interior.json }
+            - {depth: 7, content: interior_loop.json, loop: true  }
+            - {depth: 8, content: static_facility_door.json, events: [complete]  }
         duration: {kind: time, seconds: 3 }
+      -
+        movie:
+          layers:
+            - {depth: 6, content: static_facility_interior_no_server.json }
+            - {depth: 9, content: kettle_attack.json, events: [complete] }
+        duration: {kind: listen, event: layer.9.complete}
       # Components overview
+      -
+        movie:
+          layers:
+            - {depth: 6, content: clear }
+            - {depth: 8, content: clear }
+            - {depth: 9, content: clear }
+            - {depth: 9, content: card_scanner.json, events: [complete] }
+        duration: {kind: listen, event: layer.9.complete}
       -
         duration: {kind: ctanlee }
         ctanlee:

@@ -54,28 +54,28 @@ chapters:
               pos: "con-sys-rack-hit"
               text: "Control System"
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: con-sys-rack-hit} }
+                - {cmd: movie.zoom, data: {scale: 4, id: con-sys-rack-hit} }
                 - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
-            rtu-outline:
-              pos: "rtu-outline"
-              text: "Remote Terminal Unit"
-              action:
-                - {cmd: highlight, data: {id: rtu-outline, level: blue} }
-            network-switch:
-              pos: "server3-outline"
+            esp-ns:
+              pos: "esp-ns"
               text: "Network Switch"
               action:
-                - {cmd: highlight, data: {id: server3-outline, level: blue} }
-            server4-outline:
-              pos: "server4-outline"
+                - {cmd: highlight, data: {id: esp-ns-hit, level: blue} }
+            data-acs:
+              pos: "data-acs-hit"
               text: "Data Acquisition and Control Server"
               action:
-                - {cmd: highlight, data: {id: server4-outline, level: blue} }
-            tower-outline:
-              pos: "tower-outline"
+                - {cmd: highlight, data: {id: data-acs-hit, level: blue} }
+            control-sas:
+              pos: "control-sas-hit"
+              text: "Control System Application Server"
+              action:
+                - {cmd: highlight, data: {id: control-sas-hit, level: blue} }
+            operator-ws:
+              pos: "operator-ws-hit"
               text: "Operator Workstation"
               action:
-                - {cmd: highlight, data: {id: tower-outline, level: blue} }
+                - {cmd: highlight, data: {id: operator-ws-hit, level: blue} }
       # ZZzZZZZZ
       -
         action: {cmd: "movie.layers.unblur.all"}
@@ -95,34 +95,34 @@ chapters:
         action: {cmd: "movie.layers.blur.below", data: 7}
         movie:
           layers:
-        duration: {kind: time, seconds: 3 }
+        duration: {kind: time, seconds: 1 }
       # Components overview
       -
         duration: {kind: ctanlee }
         ctanlee:
           timeline:
-            - {action: blade-outline }
-            - {action: grid-computer-outline }
-            - {action: printer-outline }
+            - {action: file-server }
+            - {action: map-computer }
+            - {action: printer }
           defaults:
             next: click
           actions:
-            blade-outline:
-              pos: "blade-outline"
+            file-server:
+              pos: "file-server-hit"
               text: "File Server"
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: blade-outline} }
-                - {cmd: highlight, data: {id: blade-outline, level: blue} }
-            grid-computer-outline:
-              pos: "grid-computer-outline"
+                - {cmd: movie.zoom, data: {scale: 5, id: file-server-hit} }
+                - {cmd: highlight, data: {id: file-server, level: orange} }
+            map-computer:
+              pos: "map-computer-hit"
               text: "Mapboard Computer"
               action:
-                - {cmd: highlight, data: {id: grid-computer-outline, level: blue} }
-            printer-outline:
-              pos: "printer-outline"
+                - {cmd: highlight, data: {id: map-computer, level: orange} }
+            printer:
+              pos: "printer-hit"
               text: "Printer"
               action:
-                - {cmd: highlight, data: {id: printer-outline, level: blue} }
+                - {cmd: highlight, data: {id: printer, level: orange} }
       -
         action: {cmd: "movie.layers.unblur.all"}
         movie:
@@ -139,34 +139,34 @@ chapters:
               next: click
       -
         action: {cmd: "movie.layers.blur.below", data: 7}
-        duration: {kind: time, seconds: 3 }
+        duration: {kind: time, seconds: 1 }
       # Components overview
       -
         duration: {kind: ctanlee }
         ctanlee:
           timeline:
-            - {action: filing-cabinet-outline }
-            - {action: grid-outline }
-            - {action: monitor-outline }
+            - {action: filing-cabinet }
+            - {action: map }
+            - {action: monitor }
           defaults:
             next: click
           actions:
-            filing-cabinet-outline:
-              pos: "filing-cabinet-outline"
+            filing-cabinet:
+              pos: "filing-cabinet-hit"
               text: "Substation diagrams"
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: filing-cabinet-outline} }
-                - {cmd: highlight, data: {id: filing-cabinet-outline, level: blue} }
-            grid-outline:
-              pos: "grid-outline"
+                - {cmd: movie.zoom, data: {scale: 2, id: filing-cabinet-hit} }
+                - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
+            map:
+              pos: "map-computer-hit"
               text: "System Map"
               action:
-                - {cmd: highlight, data: {id: grid-outline, level: blue} }
-            monitor-outline:
-              pos: "monitor-outline"
+                - {cmd: highlight, data: {id: map, level: yellow} }
+            monitor:
+              pos: "monitor-hit"
               text: "Control System Views"
               action:
-                - {cmd: highlight, data: {id: monitor-outline, level: blue} }
+                - {cmd: highlight, data: {id: monitor, level: yellow} }
       -
         action: {cmd: "movie.layers.unblur.all"}
         movie:
@@ -195,10 +195,10 @@ chapters:
                     out: {cmd: unhighlight, data: control-system-outline }
                     click: {cmd: unhighlight, data: control-system-outline }
                   -
-                    id: rtu-outline
-                    over: {cmd: highlight, data: {id: rtu-outline, level: blue} }
-                    out: {cmd: unhighlight, data: rtu-outline }
-                    click: {cmd: unhighlight, data: rtu-outline }
+                    id: esp-ns
+                    over: {cmd: highlight, data: {id: esp-ns, level: blue} }
+                    out: {cmd: unhighlight, data: esp-ns }
+                    click: {cmd: unhighlight, data: esp-ns }
                   -
                     id: server3-outline
                     over: {cmd: highlight, data: {id: server3-outline, level: blue} }

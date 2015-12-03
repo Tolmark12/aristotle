@@ -20,12 +20,12 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 1, content: quarantine.json, events: [complete], loop: false}
+            - {depth: 1, content: quarantine.json, action: {cmd: chrome.hide}, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
         movie:
           layers:
-            - {depth: 1, content: powergrid1.json, events: [complete], loop: false}
+            - {depth: 1, content: powergrid1.json, action: {cmd: chrome.show}, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
         movie:
@@ -35,7 +35,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 1, content: earth.json, events: [complete], loop: false}
+            - {depth: 1, content: earth.json, action: {cmd: chrome.hide}, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
         movie:
@@ -45,7 +45,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 1, content: digitalchip.json, events: [complete], loop: false}
+            - {depth: 1, content: digitalchip.json, action: {cmd: chrome.show}, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
         movie:
