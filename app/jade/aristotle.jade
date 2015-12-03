@@ -59,7 +59,7 @@
                                                0    0 0 1 0")
           feComponentTransfer
             feFuncA(type="linear" slope="1") 
-          fegaussianblur(stddeviation='2' result='coloredBlur')
+          fegaussianblur(stddeviation='0' result='coloredBlur')
           femerge
             femergenode(in='SourceGraphic')
             feMergeNode(in='coloredBlur')

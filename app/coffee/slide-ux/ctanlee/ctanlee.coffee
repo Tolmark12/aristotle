@@ -53,6 +53,9 @@ module.exports = class Ctanlee
     if $item.length == 0 then aristotle.throw "ctanlee wants to hover by `#{id}`, but is unable to find an item with the id #{id}" ; return
 
     pos = $item.offset()
+    console.log "----"
+    console.log id
+    console.log $item.offset()
     @gotoPos pos.left-100, pos.top-80
 
   goto : (data) ->

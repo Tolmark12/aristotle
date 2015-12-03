@@ -24,7 +24,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 4, content: interior_build.json, events: [complete], action: {cmd: "movie.layers.blur-below", data: 4} }
+            - {depth: 4, content: interior_build.json, events: [complete] }
         duration: {kind: listen, event: layer.4.complete}
         action:
           - {cmd: movie.load-layer, data: {depth: 6, wait: 500, loop: true}, INJECT_GLOBAL_VARS: [ {content: facilityLoop} ] }
@@ -35,7 +35,7 @@ chapters:
         movie:
           zoom: {scale: 1, x: 700, y: 600}
           layers:
-            - {depth: 7, content: asset_view.json }
+            - {depth: 7, content: asset_view.json, action: {cmd: "movie.layers.blur-below", data: 7} }
         duration: {kind: time, seconds: 3 }
       # Components overview
       -
@@ -51,10 +51,10 @@ chapters:
             next: click
           actions:
             con-sys-rack:
-              pos: "con-sys-rack"
+              pos: "con-sys-rack-hit"
               text: "Control System"
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: con-sys-rack} }
+                - {cmd: movie.zoom, data: {scale: 2, id: con-sys-rack-hit} }
                 - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
             rtu-outline:
               pos: "rtu-outline"
