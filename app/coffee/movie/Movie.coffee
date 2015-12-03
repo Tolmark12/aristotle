@@ -11,10 +11,8 @@ module.exports = class Movie
     PubSub.subscribe 'movie.load-layer', (m, data) => @addLayer data
     PubSub.subscribe 'movie.zoom',       (m, data) =>
       @zoom data
-    PubSub.subscribe 'movie.layers.blur-below',(m, data) => @blurAllLayersBelow data
-    PubSub.subscribe 'movie.layers.unblur-all',(m, data) =>
-      console.log "unblur"
-      console.log data
+    PubSub.subscribe 'movie.layers.blur.below',(m, data) => @blurAllLayersBelow data
+    PubSub.subscribe 'movie.layers.unblur.all',(m, data) => @unblurAllLAyers()
 
   reset : () ->
     layer.destroy() for layer in @layers
@@ -69,3 +67,9 @@ module.exports = class Movie
   blurAllLayersBelow : (layerDepth) ->
     for i in [0..layerDepth-1]
       @layers[i].addFilter "blueBlur"
+
+  unblurAllLAyers : () ->
+    console.log "unbluring??"
+    for layer in @layers
+      console.log layer
+      layer.removeFilters()

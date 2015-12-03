@@ -35,7 +35,7 @@ chapters:
         movie:
           zoom: {scale: 1, x: 700, y: 600}
           layers:
-            - {depth: 7, content: asset_view.json, action: {cmd: "movie.layers.blur-below", data: 7} }
+            - {depth: 7, content: asset_view.json, action: {cmd: "movie.layers.blur.below", data: 7} }
         duration: {kind: time, seconds: 3 }
       # Components overview
       -
@@ -78,10 +78,9 @@ chapters:
                 - {cmd: highlight, data: {id: tower-outline, level: blue} }
       # ZZzZZZZZ
       -
+        action: {cmd: "movie.layers.unblur.all"}
         movie:
           zoom: {scale: 1}
-          layers:
-            - {depth: 7, content: clear}
         duration: {kind: ctanlee}
         ctanlee:
           timeline:
@@ -93,9 +92,9 @@ chapters:
               audio: Story_2_Ctanlee_8.m4a
               next: click
       -
+        action: {cmd: "movie.layers.blur.below", data: 7}
         movie:
           layers:
-            - {depth: 7, content: asset_view.json }
         duration: {kind: time, seconds: 3 }
       # Components overview
       -
@@ -125,10 +124,9 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: printer-outline, level: blue} }
       -
+        action: {cmd: "movie.layers.unblur.all"}
         movie:
           zoom: {scale: 1}
-          layers:
-            - {depth: 7, content: clear}
         duration: {kind: ctanlee}
         ctanlee:
           timeline:
@@ -140,9 +138,7 @@ chapters:
               audio: Story_2_Ctanlee_9.m4a
               next: click
       -
-        movie:
-          layers:
-            - {depth: 7, content: asset_view.json }
+        action: {cmd: "movie.layers.blur.below", data: 7}
         duration: {kind: time, seconds: 3 }
       # Components overview
       -
@@ -172,10 +168,9 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: monitor-outline, level: blue} }
       -
+        action: {cmd: "movie.layers.unblur.all"}
         movie:
           zoom: {scale: 1}
-          layers:
-            - {depth: 7, content: clear}
         duration: {kind: ctanlee}
         ctanlee:
           timeline:
