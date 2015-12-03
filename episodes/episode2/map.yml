@@ -6,9 +6,9 @@ dev:
 chapters:
   -
     dev:
-      volume: 0
-      startIndex: 31
-      # dontAnimate: [ 0, 3, 4]
+      volume: .5
+      startIndex: 0
+      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
       # Sky and mountains build-in
@@ -48,8 +48,8 @@ chapters:
         movie:
           zoom: {scale: 1, x: 700, y: 600}
           layers:
-            - {depth: 7, content: asset_view.json, action: {cmd: "movie.layers.blur.below", data: 7} }
-        duration: {kind: time, seconds: 3 }
+            - {depth: 7, content: asset_view.json }
+        duration: {kind: time, seconds: 1 }
       # Components overview
       -
         duration: {kind: ctanlee }
@@ -67,34 +67,33 @@ chapters:
               pos: "con-sys-rack-hit"
               text: "Control System"
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: con-sys-rack-hit} }
+                - {cmd: movie.zoom, data: {scale: 1, id: con-sys-rack-hit} }
                 - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
             esp-ns:
-              pos: "esp-ns"
+              pos: "esp-ns-hit"
               text: "Network Switch"
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: esp-ns-hit} }
-                - {cmd: highlight, data: {id: esp-ns-hit, level: blue} }
+                - {cmd: highlight, data: {id: esp-ns, level: blue} }
             data-acs:
               pos: "data-acs-hit"
               text: "Data Acquisition and Control Server"
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: data-acs-hit} }
-                - {cmd: highlight, data: {id: data-acs-hit, level: blue} }
+                - {cmd: highlight, data: {id: data-acs, level: blue} }
             control-sas:
               pos: "control-sas-hit"
               text: "Control System Application Server"
               action:
-                - {cmd: highlight, data: {id: control-sas-hit, level: blue} }
+                - {cmd: highlight, data: {id: control-sas, level: blue} }
             operator-ws:
               pos: "operator-ws-hit"
               text: "Operator Workstation"
               action:
-                - {cmd: highlight, data: {id: operator-ws-hit, level: blue} }
+                - {cmd: highlight, data: {id: operator-ws, level: blue} }
       # ZZzZZZZZ
       -
-        action: {cmd: "movie.layers.unblur.all"}
         movie:
+          layers:
+            - {depth: 7, content: clear }
           zoom: {scale: 1}
         duration: {kind: ctanlee}
         ctanlee:
@@ -120,9 +119,9 @@ chapters:
                   text: tag PCA
                   action: {cmd: slides.next-slide}
       -
-        action: {cmd: "movie.layers.blur.below", data: 7}
         movie:
           layers:
+            - {depth: 7, content: asset_view.json }
         duration: {kind: time, seconds: 1 }
       # Components overview
       -
@@ -139,7 +138,7 @@ chapters:
               pos: "file-server-hit"
               text: "File Server"
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: file-server-hit} }
+                - {cmd: movie.zoom, data: {scale: 1, id: file-server-hit} }
                 - {cmd: highlight, data: {id: file-server, level: orange} }
             map-computer:
               pos: "map-computer-hit"
@@ -154,8 +153,9 @@ chapters:
                 - {cmd: movie.zoom, data: {printer-hit} }
                 - {cmd: highlight, data: {id: printer, level: orange} }
       -
-        action: {cmd: "movie.layers.unblur.all"}
         movie:
+          layers:
+            - {depth: 7, content: clear }
           zoom: {scale: 1}
         duration: {kind: ctanlee}
         ctanlee:
@@ -181,9 +181,10 @@ chapters:
                   text: tag BCSI
                   action: {cmd: slides.next-slide}
       -
-        action: {cmd: "movie.layers.blur.below", data: 7}
+        movie:
+          layers:
+            - {depth: 7, content: asset_view.json }
         duration: {kind: time, seconds: 1 }
-      # Components overview
       -
         duration: {kind: ctanlee }
         ctanlee:
@@ -198,7 +199,7 @@ chapters:
               pos: "filing-cabinet-hit"
               text: "Substation diagrams"
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: filing-cabinet-hit} }
+                - {cmd: movie.zoom, data: {scale: 1, id: filing-cabinet-hit} }
                 - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
             map:
               pos: "map-computer-hit"
@@ -211,9 +212,6 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: monitor, level: yellow} }
       -
-        action:
-          - {cmd: "movie.layers.unblur.all"}
-          - {cmd: "unhighlight.all"}
         movie:
           zoom: {scale: 1}
         duration: {kind: ux}
@@ -229,6 +227,8 @@ chapters:
                   text: continue
                   action: {cmd: slides.next-slide}
       -
+        action:
+          - {cmd: "unhighlight.all"}
         duration: {kind: ux}
         ux:
           components:
@@ -242,6 +242,9 @@ chapters:
                   text: continue
                   action: {cmd: slides.next-slide}
       -
+        movie:
+          layers:
+            - {depth: 7, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -351,8 +354,17 @@ chapters:
           layers:
             - {depth: 8, content: clear }
             - {depth: 8, content: goodcatch.json, events: [complete] }
+        ctanlee:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [100,100]
+              text: "I think the Operator saw that. Stop them!"
+              audio: Story_2_Ctanlee_19.m4a
         duration: {kind: listen, event: layer.8.complete}
       -
+        action: {cmd: ctanlee.gohome}
         duration: {kind: ux}
         ux:
           components:
@@ -370,6 +382,14 @@ chapters:
           layers:
             - {depth: 8, content: clear }
             - {depth: 8, content: identifyassess.json, events: [complete] }
+        ctanlee:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [100,100]
+              text: "Excellent! She's asking about the camera!"
+              audio: Story_2_Ctanlee_26.m4a
         duration: {kind: listen, event: layer.8.complete}
       -
         duration: {kind: ux}
@@ -385,6 +405,7 @@ chapters:
                   text: Placeholder
                   action: {cmd: slides.next-slide}
       -
+        action: {cmd: ctanlee.gohome}
         duration: {kind: ux}
         ux:
           components:
@@ -467,3 +488,4 @@ chapters:
                         r: Better luch next time
       -
         duration: {kind: ux}
+
