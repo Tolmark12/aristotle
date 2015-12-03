@@ -7,10 +7,6 @@ module.exports = class AssetPreploader
     assets = []
     regex = /.+\.(svg)/
     @lookForFiles data, assets, regex
-    if assets.length == 0
-      @callback()
-      return
-
     createjs.Sound.alternateExtensions = ["mp3", "m4a"]
     preloadQueue = new createjs.LoadQueue()
     preloadQueue.installPlugin createjs.Sound

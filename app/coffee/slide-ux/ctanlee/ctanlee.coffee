@@ -17,8 +17,6 @@ module.exports = class Ctanlee
     PubSub.subscribe 'ctanlee.activate',  (a, action)=> @playAction(action)
     PubSub.subscribe 'ctanlee.clear',     (a, action)=> @hideText()
     PubSub.subscribe 'ctanlee.gohome',    (a, action)=> @returnToStation()
-    PubSub.subscribe 'ctanlee.hide',      (a, action)=> @$el.css display: "none"
-    PubSub.subscribe 'ctanlee.show',      (a, action)=> @$el.css display: "initial"
 
     $parent.append @$el
     @returnToStation()

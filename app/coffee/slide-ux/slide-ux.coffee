@@ -1,7 +1,7 @@
 Ctanlee           = require 'slide-ux/ctanlee/Ctanlee'
 Dialogue          = require 'slide-ux/components/dialogue'
 GhostUX           = require 'slide-ux/components/ghost-ux'
-Quiz              = require 'slide-ux/components/quiz/quiz'
+Quiz              = require 'slide-ux/components/quiz'
 SelectionDialogue = require 'slide-ux/components/selection-dialogue'
 
 module.exports = class SlideUX
