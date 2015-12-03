@@ -78,6 +78,5 @@ module.exports = class Layer
     $onionLayer
 
   empty : () -> @$layer.empty()
-
-  addFilter : (filterId) ->
-    $("svg", @currentOnionLayer).css filter:"url(##{filterId})"
+  addFilter : (filterId) -> $("svg", @currentOnionLayer).css filter:"url(##{filterId})"
+  removeFilters : () -> $("svg", @currentOnionLayer).css filter: "none"
