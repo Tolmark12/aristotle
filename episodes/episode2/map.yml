@@ -7,7 +7,7 @@ chapters:
   -
     dev:
       volume: 0
-      # startIndex: 4
+      startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -18,6 +18,19 @@ chapters:
             - {depth: 0, content: c1-sky.svg}
             - {depth: 2, content: c1-background-buildin.json, events: [complete]  }
         duration: {kind: listen, event: layer.2.complete}
+      -
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: BES Cyber Assets
+                body: CIP focuses us on building defenses for the most important Cyber Assets - those that would cause serious problems to the real-time operations of the Bulk Electric System (BES) if they were hacked or attacked by the robots. These are typically cyber assets that can control equipment on the Bulk Electric System. We call them BES Cyber Assets or BCA. We have several assets in this facility that are involved controlling the asset outside and would be classified as BES Cyber Assets. I'll switch the War Core Simulator to network view so we can clearly see these BES Cyber Assets.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
       # Building Selector
       - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
       # Interior build-in
@@ -37,7 +50,7 @@ chapters:
           layers:
             - {depth: 7, content: asset_view.json, action: {cmd: "movie.layers.blur.below", data: 7} }
         duration: {kind: time, seconds: 3 }
-      # Components overview 
+      # Components overview
       -
         duration: {kind: ctanlee }
         ctanlee:
