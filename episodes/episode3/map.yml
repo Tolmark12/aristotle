@@ -1,4 +1,4 @@
-title: Training Two
+title: Training Three
 dev:
   startIndex: 0
 
@@ -15,9 +15,13 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 0, content: c1-sky.svg}
-            - {depth: 2, content: c1-background-buildin.json, events: [complete]  }
-        duration: {kind: listen, event: layer.2.complete}
+            - {depth: 0, content: c1-sky.svg }
+            - {depth: 1, content: c1-background-clouds-loop.json, loop: true }
+            - {depth: 2, content: background_hills.svg }
+            - {depth: 3, content: facility_communications.svg }
+            - {depth: 4, content: facility_interior.svg  }
+            - {depth: 5, content: control_facility_loop.json, loop: false, event: [complete] }
+        duration: {kind: listen, event: layer.5.complete}
       # Building Selector
       - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
       # Interior build-in
@@ -33,27 +37,27 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 7, content: asset_view.json }
+            - {depth: 7, content: interior_build_network.json }
         duration: {kind: time, seconds: 3 }
       # Components overview
       -
         duration: {kind: ctanlee }
         ctanlee:
           timeline:
-            - {action: con-sys-rack }
-            - {action: esp-ns }
-            - {action: data-acs }
-            - {action: control-sas }
-            - {action: operator-ws }
+            - {action: control-system-outline }
+            - {action: rtu-outline }
+            - {action: network-switch }
+            - {action: server4-outline }
+            - {action: tower-outline }
           defaults:
             next: click
           actions:
-            con-sys-rack:
-              pos: "con-sys-rack"
+            control-system-outline:
+              pos: "control-system-outline"
               text: "Control System"
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: con-sys-rack} }
-                - {cmd: highlight, data: {id: con-sys-rack, level: green} }
+                - {cmd: movie.zoom, data: {scale: 2, id: control-system-outline} }
+                - {cmd: highlight, data: {id: control-system-outline, level: green} }
             rtu-outline:
               pos: "rtu-outline"
               text: "Remote Terminal Unit"
@@ -93,7 +97,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 7, content: asset_view.json }
+            - {depth: 7, content: interior_build_network.json }
         duration: {kind: time, seconds: 3 }
       # Components overview
       -
@@ -140,7 +144,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 7, content: asset_view.json }
+            - {depth: 7, content: interior_build_network.json }
         duration: {kind: time, seconds: 3 }
       # Components overview
       -
