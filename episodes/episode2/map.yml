@@ -8,7 +8,7 @@ chapters:
     dev:
       volume: 0
       startIndex: 0
-      # dontAnimate: [ 2, 3, 4]
+      # dontAnimate: [ 0, 3, 4]
     kind: chapter
     slides:
       # Sky and mountains build-in
