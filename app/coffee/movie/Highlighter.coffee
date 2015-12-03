@@ -1,11 +1,24 @@
 module.exports = class Highlighter
 
   constructor: (@$el) ->
-    PubSub.subscribe 'highlight',   (m, data)=> @highlightElement data.id, data.level
-    PubSub.subscribe 'unhighlight', (m, data)=> @unHighlightElement data
+    PubSub.subscribe 'highlight', (m, data)=>
+      if Array.isArray data.id
+        @highlightElement item, data.level for item in data.id
+      else
+        @highlightElement data.id, data.level
+
+    PubSub.subscribe 'unhighlight', (m, data)=>
+      if m == "unhighlight.all"
+        @unhighlightAll()
+      else
+        if Array.isArray data
+            @unHighlightElement item for item in data
+        else
+          @unHighlightElement data
 
   highlightElement : ( elementId, color ) ->
     $item = $ "##{elementId}", @$el
+    $item.attr "class", "filter-highlighted"
     if $item.length == 0 then aristotle.throw "tried to highlight an element with the id `#{elementId}`, but found no elements with that id.", true
 
     switch color
@@ -18,5 +31,11 @@ module.exports = class Highlighter
 
   unHighlightElement : ( elementId ) ->
     $item = $ "##{elementId}", @$el
+    $item.attr "class", ""
     if $item.length == 0 then aristotle.throw "tried to unhighlight an element with the id `#{elementId}`, but found no elements with that id.", true
     $item.css filter : "initial"
+
+  unhighlightAll : () ->
+    $items = $ ".filter-highlighted"
+    $items.attr "class", ""
+    $items.css filter : "initial"
