@@ -68,7 +68,7 @@ chapters:
               pos: "con-sys-rack-hit"
               text: "Control System"
               action:
-                - {cmd: movie.zoom, data: {scale: 4, id: con-sys-rack-hit} }
+                - {cmd: movie.zoom, data: {scale: 2, id: con-sys-rack-hit} }
                 - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
             esp-ns:
               pos: "esp-ns"
