@@ -181,6 +181,23 @@ chapters:
               text: "The bots want to get their steely fingers on this information to enhance their attack algorithms. It's easy for this information to be carried out on paper through a photograph on your camera."
               audio: Story_2_Ctanlee_10.m4a
               next: click
+      -
+        movie:
+          layers:
+            - {depth: 8, content: violation.json, events: [complete] }
+        duration: {kind: listen, event: layer.8.complete}
+      -
+        movie:
+          layers:
+            - {depth: 8, content: clear }
+            - {depth: 8, content: goodcatch.json, events: [complete] }
+        duration: {kind: listen, event: layer.8.complete}
+      -
+        movie:
+          layers:
+            - {depth: 8, content: clear }
+            - {depth: 8, content: identifyassess.json, events: [complete] }
+        duration: {kind: listen, event: layer.8.complete}
       #################### TESTING
       -
         ux:
