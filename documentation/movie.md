@@ -11,9 +11,13 @@ movie:
     - {depth: 2, content: third-layer.json }
 ```
 #### zoom
-The zoom amount and point to zoom into. (ammount, xorigin, yorigin)
+The zoom amount and point to zoom into.
 ```yaml
 movie:
-  zoom: [2, 300, 400]
+  zoom: {scale: 2, x: 200, y: 200}
 ```
-
+Or, the id of the svg item
+```yaml
+movie:
+  zoom: {scale: 2, id: some-id}
+```

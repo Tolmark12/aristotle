@@ -6,8 +6,8 @@ dev:
 chapters:
   -
     dev:
-      volume: 0.3
-      startIndex: 0
+      volume: 0
+      # startIndex: 4
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -24,7 +24,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 4, content: interior_build.json, events: [complete] }
+            - {depth: 4, content: interior_build.json, events: [complete], action: {cmd: "movie.layers.blur-below", data: 4} }
         duration: {kind: listen, event: layer.4.complete}
         action:
           - {cmd: movie.load-layer, data: {depth: 6, wait: 500, loop: true}, INJECT_GLOBAL_VARS: [ {content: facilityLoop} ] }
@@ -33,6 +33,7 @@ chapters:
       - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
       -
         movie:
+          zoom: {scale: 1, x: 700, y: 600}
           layers:
             - {depth: 7, content: asset_view.json }
         duration: {kind: time, seconds: 3 }
@@ -54,27 +55,27 @@ chapters:
               text: "Control System"
               action:
                 - {cmd: movie.zoom, data: {scale: 2, id: con-sys-rack} }
-                - {cmd: highlight, data: {id: con-sys-rack, level: green} }
+                - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
             rtu-outline:
               pos: "rtu-outline"
               text: "Remote Terminal Unit"
               action:
-                - {cmd: highlight, data: {id: rtu-outline, level: green} }
+                - {cmd: highlight, data: {id: rtu-outline, level: blue} }
             network-switch:
               pos: "server3-outline"
               text: "Network Switch"
               action:
-                - {cmd: highlight, data: {id: server3-outline, level: green} }
+                - {cmd: highlight, data: {id: server3-outline, level: blue} }
             server4-outline:
               pos: "server4-outline"
               text: "Data Acquisition and Control Server"
               action:
-                - {cmd: highlight, data: {id: server4-outline, level: green} }
+                - {cmd: highlight, data: {id: server4-outline, level: blue} }
             tower-outline:
               pos: "tower-outline"
               text: "Operator Workstation"
               action:
-                - {cmd: highlight, data: {id: tower-outline, level: green} }
+                - {cmd: highlight, data: {id: tower-outline, level: blue} }
       # ZZzZZZZZ
       -
         movie:
@@ -112,17 +113,17 @@ chapters:
               text: "File Server"
               action:
                 - {cmd: movie.zoom, data: {scale: 2, id: blade-outline} }
-                - {cmd: highlight, data: {id: blade-outline, level: green} }
+                - {cmd: highlight, data: {id: blade-outline, level: blue} }
             grid-computer-outline:
               pos: "grid-computer-outline"
               text: "Mapboard Computer"
               action:
-                - {cmd: highlight, data: {id: grid-computer-outline, level: green} }
+                - {cmd: highlight, data: {id: grid-computer-outline, level: blue} }
             printer-outline:
               pos: "printer-outline"
               text: "Printer"
               action:
-                - {cmd: highlight, data: {id: printer-outline, level: green} }
+                - {cmd: highlight, data: {id: printer-outline, level: blue} }
       -
         movie:
           zoom: {scale: 1}
@@ -159,17 +160,17 @@ chapters:
               text: "Substation diagrams"
               action:
                 - {cmd: movie.zoom, data: {scale: 2, id: filing-cabinet-outline} }
-                - {cmd: highlight, data: {id: filing-cabinet-outline, level: green} }
+                - {cmd: highlight, data: {id: filing-cabinet-outline, level: blue} }
             grid-outline:
               pos: "grid-outline"
               text: "System Map"
               action:
-                - {cmd: highlight, data: {id: grid-outline, level: green} }
+                - {cmd: highlight, data: {id: grid-outline, level: blue} }
             monitor-outline:
               pos: "monitor-outline"
               text: "Control System Views"
               action:
-                - {cmd: highlight, data: {id: monitor-outline, level: green} }
+                - {cmd: highlight, data: {id: monitor-outline, level: blue} }
       -
         movie:
           zoom: {scale: 1}
@@ -185,3 +186,36 @@ chapters:
               text: "The bots want to get their steely fingers on this information to enhance their attack algorithms. It's easy for this information to be carried out on paper through a photograph on your camera."
               audio: Story_2_Ctanlee_10.m4a
               next: click
+      #################### TESTING
+      -
+        ux:
+          components:
+            -
+              kind: ghost-ux
+              config:
+                targets:
+                  -
+                    id: control-system-outline
+                    over: {cmd: highlight, data: {id: control-system-outline, level: blue} }
+                    out: {cmd: unhighlight, data: control-system-outline }
+                    click: {cmd: unhighlight, data: control-system-outline }
+                  -
+                    id: rtu-outline
+                    over: {cmd: highlight, data: {id: rtu-outline, level: blue} }
+                    out: {cmd: unhighlight, data: rtu-outline }
+                    click: {cmd: unhighlight, data: rtu-outline }
+                  -
+                    id: server3-outline
+                    over: {cmd: highlight, data: {id: server3-outline, level: blue} }
+                    out: {cmd: unhighlight, data: server3-outline }
+                    click: {cmd: unhighlight, data: server3-outline }
+                  -
+                    id: server4-hit
+                    over: {cmd: highlight, data: {id: server4-group, level: orange} }
+                    out:   {cmd: highlight, data: {id: server4-group, level: blue} }
+                    click: {cmd: highlight, data: {id: server4-group, level: yellow} }
+                  -
+                    id: tower-outline
+                    over: {cmd: highlight, data: {id: tower-outline, level: blue} }
+                    out: {cmd: unhighlight, data: tower-outline }
+                    click: {cmd: unhighlight, data: tower-outline }

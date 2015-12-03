@@ -8,9 +8,13 @@ module.exports = class Movie
     @layers      = []
     @highlighter = new Highlighter @$wrapper
 
-    PubSub.subscribe 'movie.load-layer', (m, data)=> @addLayer data
-    PubSub.subscribe 'movie.zoom',       (m, data)=>
+    PubSub.subscribe 'movie.load-layer', (m, data) => @addLayer data
+    PubSub.subscribe 'movie.zoom',       (m, data) =>
       @zoom data
+    PubSub.subscribe 'movie.layers.blur-below',(m, data) => @blurAllLayersBelow data
+    PubSub.subscribe 'movie.layers.unblur-all',(m, data) =>
+      console.log "unblur"
+      console.log data
 
   reset : () ->
     layer.destroy() for layer in @layers
@@ -33,7 +37,6 @@ module.exports = class Movie
       @zoomTo data.scale, pos.left, pos.top
     else
       @zoomTo data.scale, data.x, data.y
-
 
   zoomTo : (scale=1, x=0, y=0) ->
     @$el.css "transform-origin": "#{x}px #{y}px"
@@ -62,3 +65,7 @@ module.exports = class Movie
     layer = new Layer @$wrapper, depth
     @layers[depth] = layer
     return layer
+
+  blurAllLayersBelow : (layerDepth) ->
+    for i in [0..layerDepth-1]
+      @layers[i].addFilter "blueBlur"

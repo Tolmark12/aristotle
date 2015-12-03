@@ -18,5 +18,5 @@ episodes =
 userSpecifiedEpisode = getQueryVariable 'episode'
 
 # Load either the user specified episode, or a default one
-episode = if !userSpecifiedEpisode then episodes.dev else episodes[userSpecifiedEpisode]
+episode = if !userSpecifiedEpisode then episodes.episode2 else episodes[userSpecifiedEpisode]
 aristotle = new Aristotle $(".holder"), episode

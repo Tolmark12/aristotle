@@ -20,7 +20,7 @@ module.exports = class Layer
     if @layerData.fx?
       @updateEffects( @layerData.fx )
     if @layerData.action?
-      aristotle.commander.do action
+      aristotle.commander.do @layerData.action
 
   updateContent : (layerData) ->
     # If there is existing content, create a second 'onion layer' so the transition is seamless
@@ -48,6 +48,7 @@ module.exports = class Layer
       else              aristotle.throw "tried to add unrecognized layer type '#{kind}'", true
 
     @updateBackground layerData
+
 
   updateEffects : (fx) ->
     if fx.clear then @$layer.attr class:'layer'
@@ -77,3 +78,6 @@ module.exports = class Layer
     $onionLayer
 
   empty : () -> @$layer.empty()
+
+  addFilter : (filterId) ->
+    $("svg", @currentOnionLayer).css filter:"url(##{filterId})"
