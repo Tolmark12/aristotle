@@ -22,7 +22,6 @@ module.exports = class SlideUX
       when "selection-dialogue"
         component = new SelectionDialogue @$el, componentData.config
       when "dialogue"
-        console.log "...?"
         component = new Dialogue @$el, componentData.config
       when "ghost-ux"
         component = new GhostUX @$el, componentData.config

@@ -18,6 +18,7 @@ chapters:
             - {depth: 0, content: c1-sky.svg}
             - {depth: 2, content: c1-background-buildin.json, events: [complete]  }
         duration: {kind: listen, event: layer.2.complete}
+      # EXAMPLE - Dialogue component
       -
         duration: {kind: ux}
         ux:
