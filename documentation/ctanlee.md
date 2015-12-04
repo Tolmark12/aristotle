@@ -16,7 +16,7 @@ MP3 File :
 ```
 
 #### pos (optional)
-Position (params optional) _[x, y, delay, duration]_ :
+Position (all params optional) _x[0], y[0], duration[600], delay[0]_ :
 ```pos: [100,100,1000,500]
 ```
 
@@ -24,6 +24,7 @@ Position (params optional) _[x, y, delay, duration]_ :
 Emotion : _happy, sad, surprize_
 ```emo: happy
 ```
+#### delayMove (optional)
 
 
 
