@@ -1,5 +1,6 @@
-Layer       = require 'movie/layer'
-Highlighter = require 'movie/highlighter'
+DynamicAssets = require 'movie/dynamic-assets'
+Layer         = require 'movie/layer'
+Highlighter   = require 'movie/highlighter'
 
 module.exports = class Movie
 
@@ -7,7 +8,8 @@ module.exports = class Movie
     aristotle.movie  = @
     @$wrapper        = $ '.wrapper', @$el
     @layers          = []
-    @highlighter     = new Highlighter @$wrapper
+    @dynamicAssets   = new DynamicAssets $('.dynamics', @$el)
+    @highlighter     = new Highlighter @$wrapper, @dynamicAssets
     @scale           = 1
     @transformOrigin = {x:0, y:0}
 
@@ -79,10 +81,14 @@ module.exports = class Movie
     obj =
       x: ( $item.position().left / @scale - @transformOrigin.x ) * @scale + @transformOrigin.x
       y: ( $item.position().top  / @scale - @transformOrigin.y ) * @scale + @transformOrigin.y
+      w: $item[0].getBBox().width
+      h: $item[0].getBBox().height
 
   getLocalPos  : (itemId)->
     $item = $ "##{itemId}"
     obj =
       x: $item.position().left / @scale
       y: $item.position().top  / @scale
+      w: $item[0].getBBox().width # / @scale
+      h: $item[0].getBBox().height# / @scale
     obj

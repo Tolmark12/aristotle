@@ -1,0 +1,24 @@
+$arrow-size    : 8px;
+$bg-color      : rgba(#020308, 0.8);
+$horiz-padding : 9px;
+.label-wrapper          { position:absolute; white-space: nowrap;
+  // Defaults to Bottom Left
+  .label                { position:absolute; background:$bg-color; color:#F9773E; font-size:13px; padding:3px $horiz-padding; bottom:$arrow-size; left:$horiz-padding*-2;
+    &:after             { top: 100%; left: $horiz-padding*2; border: solid transparent; content: ""; height: 0; width: 0; position: absolute; pointer-events: none; border-top-color: $bg-color; border-width: $arrow-size; margin-left: -$arrow-size; }
+    &.arrow-top         { top:$arrow-size; bottom:initial;
+      &:after           { bottom:100%; top:initial; border-color:rgba(#000, 0); border-bottom-color:$bg-color; }
+    }
+    &.arrow-middle      { left:initial;
+      &:after           { left: 50%; }
+    }
+    &.arrow-right       { left:initial; right:$horiz-padding*-2;
+      &:after           { left: initial; right: $horiz-padding; }
+    }
+    &.arrow-point-left { bottom:initial; top:-10px; left:$arrow-size;
+      &:after          { margin-left:initial; left:initial; top:15%;  right:100%;  border-color:rgba(#000, 0); border-right-color:$bg-color; }
+    }
+    &.arrow-point-right{ left:initial; bottom:initial; top:-10px; right:$arrow-size;
+      &:after          { margin-left:initial; left:100%; top:15%; border-color:rgba(#000, 0); border-left-color:$bg-color; }
+    }
+  }
+}
