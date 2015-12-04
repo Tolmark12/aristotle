@@ -1,9 +1,9 @@
-.dialogue   { max-width:340px; background:rgba(#020308, 0.8);  position: absolute; right:20px; top:200px; padding:20px;
+.dialogue   { max-width:340px; background:rgba(#020308, 0.8);  position: absolute; right:20px; padding:20px; top: 50%; transform: translate(0, -50%); 
   h1        { margin:0 0 -10px; }
   .line     { width:100%; content:""; @include blue-border; display:inline-block; height:2px; margin:-10px 0;}
   p         { color:white; font-size:16px; line-height:24px; }
   .btn      { position: relative; margin: 0 auto; display: block; width: 123px; cursor:pointer;
-    .txt    { margin-top: -9px; color:white; text-transform:uppercase; position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+    .txt    { white-space: nowrap; margin-top: -9px; color:white; text-transform:uppercase; position:absolute; top: 55%; left: 50%; transform: translate(-50%, -50%);}
     svg     { }
     &:hover {
       svg * { fill:white; }

@@ -66,32 +66,27 @@ chapters:
             con-sys-rack:
               pos: con-sys-rack-hit
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: con-sys-rack-hit} }
                 - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
                 - {cmd: label.add, data: {id: con-sys-rack-hit, text: Control System, face: top, arrow: right} }
             esp-ns:
               pos: esp-ns-hit
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: esp-ns-hit} }
                 - {cmd: highlight, data: {id: esp-ns, level: blue } }
                 - {cmd: label.add, data: {id: esp-ns-hit, text: Network Switch, face: bottom} }
             data-acs:
               pos: data-acs-hit
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: data-acs-hit} }
                 - {cmd: highlight, data: {id: data-acs, level: blue} }
                 - {cmd: label.add, data: {id: data-acs-hit, text: Data Acquisition and Control Server, face: left } }
             control-sas:
               pos: control-sas-hit
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: control-sas-hit} }
                 - {cmd: highlight, data: {id: control-sas, level: blue} }
                 - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
 
             operator-ws:
               pos: operator-ws-hit
               action:
-                - {cmd: movie.zoom, data: {scale: 2, id: operator-ws-hit} }
                 - {cmd: highlight, data: {id: operator-ws, level: blue } }
                 - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
       # ZZzZZZZZ
