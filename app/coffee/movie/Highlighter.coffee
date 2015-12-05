@@ -1,11 +1,11 @@
 module.exports = class Highlighter
 
-  constructor: (@$el) ->
+  constructor: (@$el, @dynamicAssets) ->
     PubSub.subscribe 'highlight', (m, data)=>
       if Array.isArray data.id
-        @highlightElement item, data.level for item in data.id
+        @highlightElement item, data.level, data.label for item in data.id
       else
-        @highlightElement data.id, data.level
+        @highlightElement data.id, data.level, data.label
 
     PubSub.subscribe 'unhighlight', (m, data)=>
       if m == "unhighlight.all"
@@ -16,7 +16,7 @@ module.exports = class Highlighter
         else
           @unHighlightElement data
 
-  highlightElement : ( elementId, color ) ->
+  highlightElement : ( elementId, color, label ) ->
     $item = $ "##{elementId}", @$el
     $item.attr "class", "filter-highlighted"
     if $item.length == 0 then aristotle.throw "tried to highlight an element with the id `#{elementId}`, but found no elements with that id.", true

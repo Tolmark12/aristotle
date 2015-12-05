@@ -1,16 +1,20 @@
-Layer       = require 'movie/Layer'
-Highlighter = require 'movie/Highlighter'
+DynamicAssets = require 'movie/dynamic-assets'
+Layer         = require 'movie/layer'
+Highlighter   = require 'movie/highlighter'
 
 module.exports = class Movie
 
   constructor: (@$el) ->
-    @$wrapper     = $ '.wrapper', @$el
-    @layers      = []
-    @highlighter = new Highlighter @$wrapper
+    aristotle.movie  = @
+    @$wrapper        = $ '.wrapper', @$el
+    @layers          = []
+    @dynamicAssets   = new DynamicAssets $('.dynamics', @$el)
+    @highlighter     = new Highlighter @$wrapper, @dynamicAssets
+    @scale           = 1
+    @transformOrigin = {x:0, y:0}
 
-    PubSub.subscribe 'movie.load-layer', (m, data) => @addLayer data
-    PubSub.subscribe 'movie.zoom',       (m, data) =>
-      @zoom data
+    PubSub.subscribe 'movie.load-layer', (m, data)       => @addLayer data
+    PubSub.subscribe 'movie.zoom',       (m, data)       => @zoom data
     PubSub.subscribe 'movie.layers.blur.below',(m, data) => @blurAllLayersBelow data
     PubSub.subscribe 'movie.layers.unblur.all',(m, data) => @unblurAllLAyers()
 
@@ -30,14 +34,15 @@ module.exports = class Movie
     if data.id?
       $item = $("##{data.id}")
       if $item.length == 0 then aristotle.throw "Tried to zoom to an item with the id `#{data.id}`, but no items with that id were found." ;  return
-      pos = $item.position()
-      @zoomTo data.scale, pos.left, pos.top
+      pos = @getLocalPos data.id
+      @zoomTo data.scale, pos.x, pos.y
     else
       @zoomTo data.scale, data.x, data.y
 
-  zoomTo : (scale=1, x=0, y=0) ->
+  zoomTo : (@scale=1, x=0, y=0) ->
+    @transformOrigin = {x:x, y:y}
     @$el.css "transform-origin": "#{x}px #{y}px"
-    @$el.css transform: "scale(#{scale})"
+    @$el.css transform: "scale(#{@scale})"
 
 
   addLayer : (layerData) ->
@@ -70,3 +75,20 @@ module.exports = class Movie
   unblurAllLAyers : () ->
     for layer in @layers
       layer.removeFilters()
+
+  getGlobalPos : (itemId)->
+    $item = $ "##{itemId}"
+    obj =
+      x: ( $item.position().left / @scale - @transformOrigin.x ) * @scale + @transformOrigin.x
+      y: ( $item.position().top  / @scale - @transformOrigin.y ) * @scale + @transformOrigin.y
+      w: $item[0].getBBox().width
+      h: $item[0].getBBox().height
+
+  getLocalPos  : (itemId)->
+    $item = $ "##{itemId}"
+    obj =
+      x: $item.position().left / @scale
+      y: $item.position().top  / @scale
+      w: $item[0].getBBox().width # / @scale
+      h: $item[0].getBBox().height# / @scale
+    obj

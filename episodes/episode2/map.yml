@@ -6,7 +6,7 @@ dev:
 chapters:
   -
     dev:
-      volume: .5
+      volume: 0
       startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
@@ -46,7 +46,6 @@ chapters:
                   action: {cmd: slides.next-slide}
       -
         movie:
-          zoom: {scale: 1, x: 700, y: 600}
           layers:
             - {depth: 7, content: asset_view.json }
         duration: {kind: time, seconds: 1 }
@@ -62,39 +61,40 @@ chapters:
             - {action: operator-ws }
           defaults:
             next: click
+            delayMove: 650
           actions:
             con-sys-rack:
-              pos: "con-sys-rack-hit"
-              text: "Control System"
+              pos: con-sys-rack-hit
               action:
-                - {cmd: movie.zoom, data: {scale: 1, id: con-sys-rack-hit} }
                 - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
+                - {cmd: label.add, data: {id: con-sys-rack-hit, text: Control System, face: top, arrow: right} }
             esp-ns:
-              pos: "esp-ns-hit"
-              text: "Network Switch"
+              pos: esp-ns-hit
               action:
-                - {cmd: highlight, data: {id: esp-ns, level: blue} }
+                - {cmd: highlight, data: {id: esp-ns, level: blue } }
+                - {cmd: label.add, data: {id: esp-ns-hit, text: Network Switch, face: bottom} }
             data-acs:
-              pos: "data-acs-hit"
-              text: "Data Acquisition and Control Server"
+              pos: data-acs-hit
               action:
                 - {cmd: highlight, data: {id: data-acs, level: blue} }
+                - {cmd: label.add, data: {id: data-acs-hit, text: Data Acquisition and Control Server, face: left } }
             control-sas:
-              pos: "control-sas-hit"
-              text: "Control System Application Server"
+              pos: control-sas-hit
               action:
                 - {cmd: highlight, data: {id: control-sas, level: blue} }
+                - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
+
             operator-ws:
-              pos: "operator-ws-hit"
-              text: "Operator Workstation"
+              pos: operator-ws-hit
               action:
-                - {cmd: highlight, data: {id: operator-ws, level: blue} }
+                - {cmd: highlight, data: {id: operator-ws, level: blue } }
+                - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
       # ZZzZZZZZ
       -
         movie:
+          zoom: {scale: 1, x: 595, y: 424}
           layers:
             - {depth: 7, content: clear }
-          zoom: {scale: 1}
         duration: {kind: ctanlee}
         ctanlee:
           timeline:
@@ -156,7 +156,6 @@ chapters:
         movie:
           layers:
             - {depth: 7, content: clear }
-          zoom: {scale: 1}
         duration: {kind: ctanlee}
         ctanlee:
           timeline:
@@ -213,7 +212,6 @@ chapters:
                 - {cmd: highlight, data: {id: monitor, level: yellow} }
       -
         movie:
-          zoom: {scale: 1}
         duration: {kind: ux}
         ux:
           components:
@@ -418,39 +416,6 @@ chapters:
                   style: lightning
                   text: Review Duties
                   action: {cmd: slides.next-slide}
-      #################### TESTING
-      -
-        ux:
-          components:
-            -
-              kind: ghost-ux
-              config:
-                targets:
-                  -
-                    id: control-system-outline
-                    over: {cmd: highlight, data: {id: control-system-outline, level: blue} }
-                    out: {cmd: unhighlight, data: control-system-outline }
-                    click: {cmd: unhighlight, data: control-system-outline }
-                  -
-                    id: esp-ns
-                    over: {cmd: highlight, data: {id: esp-ns, level: blue} }
-                    out: {cmd: unhighlight, data: esp-ns }
-                    click: {cmd: unhighlight, data: esp-ns }
-                  -
-                    id: server3-outline
-                    over: {cmd: highlight, data: {id: server3-outline, level: blue} }
-                    out: {cmd: unhighlight, data: server3-outline }
-                    click: {cmd: unhighlight, data: server3-outline }
-                  -
-                    id: server4-hit
-                    over: {cmd: highlight, data: {id: server4-group, level: orange} }
-                    out:   {cmd: highlight, data: {id: server4-group, level: blue} }
-                    click: {cmd: highlight, data: {id: server4-group, level: yellow} }
-                  -
-                    id: tower-outline
-                    over: {cmd: highlight, data: {id: tower-outline, level: blue} }
-                    out: {cmd: unhighlight, data: tower-outline }
-                    click: {cmd: unhighlight, data: tower-outline }
       # EXAMPLE - Quiz
       -
         duration: {kind: ux}
@@ -461,31 +426,61 @@ chapters:
               config:
                 questions:
                   -
-                    question: What to do?
+                    question: In this scenario, what do you expect to see?
                     answers:
                       -
-                        a: Do Something
-                        r: Better luch next time
+                        a: Bigfoot
+                        r: Better lucc next time
                       -
-                        a: Do Something Else
-                        r: Better luch next time
+                        a: A single server
+                        r: Better lucc next time
                       -
-                        a: Do Some other thing.
-                        r: Better luch next time
+                        a: This is the right answer
+                        r: Nice, you're getting the hang of this!
                         c: true
                   -
-                    question: What to do again?
+                    question: What is the shortest distance between two points
                     answers:
                       -
-                        a: Run, run fast
+                        a: A parallel line
                         r: Better luch next time
                       -
-                        a: Eat a pizza
+                        a: A straight line
                         r: Better luch next time
                         c: true
                       -
-                        a: Throw a tantrum.
+                        a: A curve
                         r: Better luch next time
-      -
-        duration: {kind: ux}
-
+      #################### TESTING
+      # -
+      #   ux:
+      #     components:
+      #       -
+      #         kind: ghost-ux
+      #         config:
+      #           targets:
+      #             -
+      #               id: control-system-outline
+      #               over: {cmd: highlight, data: {id: control-system-outline, level: blue} }
+      #               out: {cmd: unhighlight, data: control-system-outline }
+      #               click: {cmd: unhighlight, data: control-system-outline }
+      #             -
+      #               id: esp-ns
+      #               over: {cmd: highlight, data: {id: esp-ns, level: blue} }
+      #               out: {cmd: unhighlight, data: esp-ns }
+      #               click: {cmd: unhighlight, data: esp-ns }
+      #             -
+      #               id: server3-outline
+      #               over: {cmd: highlight, data: {id: server3-outline, level: blue} }
+      #               out: {cmd: unhighlight, data: server3-outline }
+      #               click: {cmd: unhighlight, data: server3-outline }
+      #             -
+      #               id: server4-hit
+      #               over: {cmd: highlight, data: {id: server4-group, level: orange} }
+      #               out:   {cmd: highlight, data: {id: server4-group, level: blue} }
+      #               click: {cmd: highlight, data: {id: server4-group, level: yellow} }
+      #             -
+      #               id: tower-outline
+      #               over: {cmd: highlight, data: {id: tower-outline, level: blue} }
+      #               out: {cmd: unhighlight, data: tower-outline }
+      #               click: {cmd: unhighlight, data: tower-outline }

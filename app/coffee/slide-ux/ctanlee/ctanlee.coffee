@@ -47,25 +47,33 @@ module.exports = class Ctanlee
   setEmotion : (emotion) ->
 
   gotoPos : (x=970, y=10, duration=600, delay=0) ->
+
     @$el.velocity "stop", true
     @$el.velocity {top:y, left:x}, {delay:delay, duration:duration, easing:"easeInOutQuint"}
 
   gotoItem : (id) ->
-    $item = $("##{id}")
-    if $item.length == 0 then aristotle.throw "ctanlee wants to hover by `#{id}`, but is unable to find an item with the id #{id}" ; return
+    pos = aristotle.movie.getGlobalPos id
+    if pos == null then aristotle.throw "ctanlee wants to hover by `#{id}`, but is unable to find an item with the id #{id}" ; return
+    pos.x += 0
+    pos.y += 0
+    @gotoPos pos.x, pos.y
 
-    pos = $item.offset()
-    xtra = {x:0, y:0}
-    @gotoPos pos.left + xtra.x, pos.top + xtra.y
-
-  goto : (data) ->
+  goto : (action) ->
     # If it is an id
-    if typeof data == "string"
-      @gotoItem data
+    if typeof action.pos == "string"
+      # Sometimes we want to delay moving ctanlee and finging the position
+      # of his target. EX: til the zooming of the movit is complete
+      if action.delayMove?
+        me = @
+        setTimeout ()-> me.gotoItem action.pos
+        ,
+          action.delayMove
+      else
+        @gotoItem action.pos
 
     # else it's a position
     else
-      @gotoPos data[0], data[1], data[2], data[3]
+      @gotoPos action.pos[0], action.pos[1], action.pos[2], action.pos[3]
 
   # ------------------------------------ MEAT
 
@@ -84,17 +92,17 @@ module.exports = class Ctanlee
     @setFilter 'black-glow'
     action = @overlayDefaults actionId
 
+    # Action (play actions first in case of something...)
+    if action.action?
+      aristotle.commander.do action.action
+
     # Emotion
     if action.emo?
       @setEmotion action.emo
 
     # Position
     if action.pos?
-      @goto action.pos
-
-    # Action
-    if action.action?
-      aristotle.commander.do action.action
+      @goto action
 
     @say action.text, action.audio, action.next
 
