@@ -32,6 +32,11 @@ chapters:
       # Building Tour - ctanlee
       - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
       -
+        movie:
+          layers:
+            - {depth: 4, content: interior_static.png }
+        duration: {kind: time, seconds: 1 }
+      -
         duration: {kind: ux}
         ux:
           components:
@@ -258,8 +263,13 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 7, content: hq_facility_build.json, events: [complete] }
+            - {depth: 7, content: factory_workers_build.json, events: [complete] }
         duration: {kind: listen, event: layer.7.complete}
+      -
+        movie:
+          layers:
+            - {depth: 7, content: factory_workers_loop.json }
+        duration: {kind: time, seconds: 1}
       -
         duration: {kind: ux}
         ux:
@@ -273,6 +283,11 @@ chapters:
                   style: lightning
                   text: load defenders
                   action: {cmd: slides.next-slide}
+      -
+        movie:
+          layers:
+            - {depth: 8, content: hq_facility_build.json, events: [complete] }
+        duration: {kind: listen, event: layer.8.complete}
       -
         duration: {kind: ux}
         ux:
