@@ -17,6 +17,7 @@ module.exports = class Movie
     PubSub.subscribe 'movie.zoom',       (m, data)       => @zoom data
     PubSub.subscribe 'movie.layers.blur.below',(m, data) => @blurAllLayersBelow data
     PubSub.subscribe 'movie.layers.unblur.all',(m, data) => @unblurAllLAyers()
+    PubSub.subscribe 'movie.layers.cache',(m, data) => @cacheLayer(data)
 
   reset : () ->
     layer.destroy() for layer in @layers
@@ -67,6 +68,13 @@ module.exports = class Movie
     layer = new Layer @$wrapper, depth
     @layers[depth] = layer
     return layer
+
+  cacheLayer : (depth) ->
+    html2canvas( @layers[depth].$layer ).then (canvas)=>
+      # document.body.appendChild canvas
+      Canvas2Image.saveAsPNG canvas, 1024, 768
+      console.log canvas
+
 
   blurAllLayersBelow : (layerDepth) ->
     for i in [0..layerDepth-1]
