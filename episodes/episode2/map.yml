@@ -97,7 +97,7 @@ chapters:
       # ZZzZZZZZ
       -
         action:
-          - {cmd: label.hide, data: {id: [operator-ws-hit, control-sas-hit, data-acs-hit, esp-ns-hit, con-sys-rack-hit]}  }
+          - {cmd: label.hide, data: {id: all}  }
         movie:
           zoom: {scale: 1, x: 595, y: 424}
           layers:
@@ -145,21 +145,23 @@ chapters:
               pos: "file-server-hit"
               text: "File Server"
               action:
-                - {cmd: movie.zoom, data: {scale: 1, id: file-server-hit} }
                 - {cmd: highlight, data: {id: file-server, level: orange} }
+                - {cmd: label.add, data: {id: file-server-hit, text: File Server, face: top, arrow: right} }
             map-computer:
               pos: "map-computer-hit"
               text: "Mapboard Computer"
               action:
-                - {cmd: movie.zoom, data: {id: map-computer-hit} }
                 - {cmd: highlight, data: {id: map-computer, level: orange} }
+                - {cmd: label.add, data: {id: map-computer-hit, text: Map Computer, face: bottom, arrow: right} }
             printer:
               pos: "printer-hit"
               text: "Printer"
               action:
-                - {cmd: movie.zoom, data: {printer-hit} }
                 - {cmd: highlight, data: {id: printer, level: orange} }
+                - {cmd: label.add, data: {id: printer-hit, text: Printer, face: bottom, arrow: right} }
       -
+        action:
+          - {cmd: label.hide, data: {id: all}  }
         movie:
           layers:
             - {depth: 7, content: clear }
@@ -205,19 +207,23 @@ chapters:
               pos: "filing-cabinet-hit"
               text: "Substation diagrams"
               action:
-                - {cmd: movie.zoom, data: {scale: 1, id: filing-cabinet-hit} }
                 - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
+                - {cmd: label.add, data: {id: filing-cabinet-hit, text: Substation Diagrams, face: bottom, arrow: right} }
             map:
               pos: "map-computer-hit"
               text: "System Map"
               action:
                 - {cmd: highlight, data: {id: map, level: yellow} }
+                - {cmd: label.add, data: {id: map-computer-hit, text: System Map, face: bottom, arrow: right} }
             monitor:
               pos: "monitor-hit"
               text: "Control System Views"
               action:
                 - {cmd: highlight, data: {id: monitor, level: yellow} }
+                - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
       -
+        action:
+          - {cmd: label.show, data: {id: all}  }
         movie:
         duration: {kind: ux}
         ux:
@@ -234,6 +240,7 @@ chapters:
       -
         action:
           - {cmd: "unhighlight.all"}
+          - {cmd: label.clear, data: {id: all}  }
         duration: {kind: ux}
         ux:
           components:
