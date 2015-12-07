@@ -25,13 +25,11 @@ module.exports = class Layer
   updateContent : (layerData) ->
     # If there is existing content, create a second 'onion layer' so the transition is seamless
     if @currentOnionLayer?
-      oldOnionLayer = @currentOnionLayer
-      setTimeout ()=>
-        oldOnionLayer.velocity 'stop', true
-        oldOnionLayer.velocity {opacity:0}, {duration:200, complete:()=> oldOnionLayer.remove() }
-      ,
-        200
+      @fadeAndRemoveOldLayer()
+    @addTheCorrectContent layerData
+    @updateBackground layerData
 
+  addTheCorrectContent : (layerData) ->
     @currentOnionLayer = @addOnionLayer()
     if !layerData.content?
       kind = "none"
@@ -47,8 +45,11 @@ module.exports = class Layer
       when "clear" then @empty()
       else              aristotle.throw "tried to add unrecognized layer type '#{kind}'", true
 
-    @updateBackground layerData
-
+  cache : ()->
+    html2canvas( @$layer ).then (canvas)=>
+      @fadeAndRemoveOldLayer()
+      @currentOnionLayer = @addOnionLayer()
+      @currentOnionLayer.append Canvas2Image.convertToPNG(canvas, 1024, 768)
 
   updateEffects : (fx) ->
     if fx.clear then @$layer.attr class:'layer'
@@ -76,6 +77,14 @@ module.exports = class Layer
     $onionLayer = $ jadeTemplate['movie/onion-layer']( {} )
     @$layer.prepend $onionLayer
     $onionLayer
+
+  fadeAndRemoveOldLayer : () ->
+    oldOnionLayer = @currentOnionLayer
+    setTimeout ()=>
+      oldOnionLayer.velocity 'stop', true
+      oldOnionLayer.velocity {opacity:0}, {duration:200, complete:()=> oldOnionLayer.remove() }
+    ,
+      200
 
   empty : () -> @$layer.empty()
   addFilter : (filterId) -> $("svg", @currentOnionLayer).css filter:"url(##{filterId})"

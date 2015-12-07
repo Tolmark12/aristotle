@@ -29,15 +29,6 @@ chapters:
         action:
           - {cmd: movie.load-layer, data: {depth: 6, wait: 500, loop: true}, INJECT_GLOBAL_VARS: [ {content: facilityLoop} ] }
           - {cmd: ctanlee.clear}
-      #ie optimization
-      -
-        movie:
-          layers:
-            - {depth: 0, content: test-bg.png}
-            - {depth: 2, content: clear}
-            - {depth: 4, content: clear}
-            - {depth: 6, content: clear}
-        duration: {kind: time, seconds: 1}
       # Building Tour - ctanlee
       - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
       -

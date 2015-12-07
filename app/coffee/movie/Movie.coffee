@@ -69,12 +69,7 @@ module.exports = class Movie
     @layers[depth] = layer
     return layer
 
-  cacheLayer : (depth) ->
-    html2canvas( @layers[depth].$layer ).then (canvas)=>
-      # document.body.appendChild canvas
-      Canvas2Image.saveAsPNG canvas, 1024, 768
-      console.log canvas
-
+  cacheLayer : (depth) -> @layers[depth].cache()
 
   blurAllLayersBelow : (layerDepth) ->
     for i in [0..layerDepth-1]

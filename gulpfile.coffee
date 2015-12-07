@@ -25,8 +25,8 @@ usemin       = require 'gulp-usemin'
 watch        = require 'gulp-watch'
 wrap         = require 'gulp-wrap'
 
-yaml    = require('gulp-yaml')
-yamlinc = require('gulp-yaml-include')
+yaml         = require('gulp-yaml')
+yamlinc      = require('gulp-yaml-include')
 
 
 # Paths to source files
