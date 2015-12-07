@@ -110,6 +110,8 @@ chapters:
               text: "Most facilities that fall under CIP have a lot of equipment like this that controls the Bulk Electric System. Imagine the damage the robots would do if they gained access to control a breaker, power plant or Tesla Cannon. Shudder."
               audio: Story_2_Ctanlee_8.m4a
               next: click
+              action:
+                - {cmd: label.hide, data: {id: operator-ws-hit, control-sas-hit, data-acs-hit, esp-ns-hit, con-sys-rack-hit}  }
       -
         duration: {kind: ux}
         ux:
