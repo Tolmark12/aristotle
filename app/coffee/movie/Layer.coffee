@@ -47,10 +47,9 @@ module.exports = class Layer
 
   cache : ()->
     html2canvas( @$layer ).then (canvas)=>
-      Canvas2Image.convertToPNG canvas, 1024, 768
       @fadeAndRemoveOldLayer()
       @currentOnionLayer = @addOnionLayer()
-      @currentOnionLayer.append canvas
+      @currentOnionLayer.append Canvas2Image.convertToPNG(canvas, 1024, 768)
 
   updateEffects : (fx) ->
     if fx.clear then @$layer.attr class:'layer'
