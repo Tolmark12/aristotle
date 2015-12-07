@@ -1,7 +1,11 @@
 module.exports = class DynamicAssets
 
   constructor: ( @$el ) ->
-    PubSub.subscribe 'label.add', (m, data)=> @addLabel data
+    PubSub.subscribe 'label.add',    (m, data)=> @addLabel data
+    PubSub.subscribe 'label.remove', (m, data)=> @removeLabel data
+    PubSub.subscribe 'label.clear',  (m, data)=> @removeLabel data
+    PubSub.subscribe 'label.hide',   (m, data)=> @hideLabel data
+    PubSub.subscribe 'label.show',   (m, data)=> @showLabel data
 
   addLabel : (data) ->
     pos    = aristotle.movie.getLocalPos data.id
@@ -10,9 +14,26 @@ module.exports = class DynamicAssets
     @positionLabel data, $label, pos
     $label.css top:pos.y, left:pos.x;
 
-  removeLabel : (id)->
-    $("#{id}-label", @$el).remove()
+  removeLabel : (data)->
+    if data.id == "all"
+      $(".label-wrapper", @$el).remove()
+    $("##{data.id}-label", @$el).remove()
 
+  hideLabel   : (data)->
+    if data.id == "all"
+      $(".label-wrapper", @$el).velocity({opacity:0}, {duration:400})
+    console.log $("##{data.id}-label", @$el)
+    $("##{data.id}-label", @$el).velocity({opacity:0}, {duration:400})
+
+  showLabel   : (data)->
+    if data.id == "all"
+      $(".label-wrapper", @$el).velocity({opacity:1}, {duration:400})
+    $("##{data.id}-label", @$el).velocity({opacity:1}, {duration:400})
+
+  clearLabel  : (data)->
+    if data.id == "all"
+      $(".label-wrapper", @$el).velocity({opacity:1}, {duration:400})
+    $("##{data.id}-label", @$el).velocity({opacity:1}, {duration:400})
 
   # ------------------------------------ HELPERS
 
