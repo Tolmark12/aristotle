@@ -2,6 +2,7 @@ title: Training Two
 dev:
   startIndex: 0
 
+
 # CHAPTER 2
 chapters:
   -
@@ -88,7 +89,6 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: control-sas, level: blue} }
                 - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
-
             operator-ws:
               pos: operator-ws-hit
               action:
@@ -100,6 +100,8 @@ chapters:
           zoom: {scale: 1, x: 595, y: 424}
           layers:
             - {depth: 7, content: clear }
+          action:
+            - {cmd: label.hide, data: {id: [operator-ws-hit, control-sas-hit, data-acs-hit, esp-ns-hit, con-sys-rack-hit]}  }
         duration: {kind: ctanlee}
         ctanlee:
           timeline:
@@ -110,8 +112,6 @@ chapters:
               text: "Most facilities that fall under CIP have a lot of equipment like this that controls the Bulk Electric System. Imagine the damage the robots would do if they gained access to control a breaker, power plant or Tesla Cannon. Shudder."
               audio: Story_2_Ctanlee_8.m4a
               next: click
-              action:
-                - {cmd: label.hide, data: {id: operator-ws-hit, control-sas-hit, data-acs-hit, esp-ns-hit, con-sys-rack-hit}  }
       -
         duration: {kind: ux}
         ux:
@@ -271,7 +271,7 @@ chapters:
         movie:
           layers:
             - {depth: 7, content: factory_workers_loop.json, loop: true }
-        duration: {kind: time, seconds: 1}
+        duration: {kind: time, seconds: .2}
       -
         duration: {kind: ux}
         ux:
