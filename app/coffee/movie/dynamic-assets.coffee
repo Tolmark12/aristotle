@@ -17,23 +17,38 @@ module.exports = class DynamicAssets
   removeLabel : (data)->
     if data.id == "all"
       $(".label-wrapper", @$el).remove()
-    $("##{data.id}-label", @$el).remove()
+    else if Array.isArray data.id
+      for labelId in data.id
+        $("##{labelId}-label", @$el).remove()
+    else
+      $("##{data.id}-label", @$el).remove()
 
   hideLabel   : (data)->
     if data.id == "all"
       $(".label-wrapper", @$el).velocity({opacity:0}, {duration:400})
-    console.log $("##{data.id}-label", @$el)
-    $("##{data.id}-label", @$el).velocity({opacity:0}, {duration:400})
+    else if Array.isArray data.id
+      for labelId in data.id
+        $("##{labelId}-label", @$el).velocity({opacity:0}, {duration:400})
+    else
+        $("##{data.id}-label", @$el).velocity({opacity:0}, {duration:400})
 
   showLabel   : (data)->
     if data.id == "all"
       $(".label-wrapper", @$el).velocity({opacity:1}, {duration:400})
-    $("##{data.id}-label", @$el).velocity({opacity:1}, {duration:400})
+    else if Array.isArray data.id
+      for labelId in data.id
+        $("##{labelId}-label", @$el).velocity({opacity:1}, {duration:400})
+    else
+      $("##{data.id}-label", @$el).velocity({opacity:1}, {duration:400})
 
   clearLabel  : (data)->
     if data.id == "all"
       $(".label-wrapper", @$el).velocity({opacity:1}, {duration:400})
-    $("##{data.id}-label", @$el).velocity({opacity:1}, {duration:400})
+    else if Array.isArray data.id
+      for labelId in data.id
+        $("##{labelId}-label", @$el).velocity({opacity:1}, {duration:400})
+    else
+      $("##{data.id}-label", @$el).velocity({opacity:1}, {duration:400})
 
   # ------------------------------------ HELPERS
 

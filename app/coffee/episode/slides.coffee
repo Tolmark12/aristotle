@@ -25,3 +25,5 @@ module.exports = class Slides
   slideComplete     : () => @nextSlide()
   playSlide         : () -> @slides.getCurrentItem().play @slideComplete
   slideShowComplete : () -> @onShowComplete()
+  getCurrentIndex   : () -> @slides.getCurrentItem().slideData.index
+  getIndexAndTotal  : () -> "#{@slides.getCurrentItem().slideData.index}/#{@slides.totalItems}"

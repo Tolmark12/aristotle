@@ -10,8 +10,18 @@ module.exports = class DevTools
     if !@isDevMode or !devConfig? then return
     @skip devConfig, items
     @preventAnimationAsNeeded devConfig, items
+    @addIndexesToItems devConfig, items
     if devConfig.volume?
       AudioTrack.initSoundSettings devConfig.volume
+    console.log items
+
+   ######  ##       #### ########  ########  ######
+  ##    ## ##        ##  ##     ## ##       ##    ##
+  ##       ##        ##  ##     ## ##       ##
+   ######  ##        ##  ##     ## ######    ######
+        ## ##        ##  ##     ## ##             ##
+  ##    ## ##        ##  ##     ## ##       ##    ##
+   ######  ######## #### ########  ########  ######
 
   # This one can be a bit confusing, but it's used for skipping slides by removing
   # them from the slides array.
@@ -39,6 +49,7 @@ module.exports = class DevTools
     for slide, i in devConfig.dontAnimate
       @addSkipToEnds items[i]
 
+  # If we don't want an animation to play, add `jumpToEnd = true` to its data object
   addSkipToEnds : (obj) ->
     for key, item of obj
       if typeof item == "object"
@@ -46,6 +57,14 @@ module.exports = class DevTools
       if typeof item == "string"
         if item.match /.json/g
           obj.jumpToEnd = true
+
+
+  addIndexesToItems : (devConfig, items) ->
+    numSlidesRemoved = if devConfig.startIndex? then devConfig.startIndex else 0
+    count = 0
+    for item in items
+      item.index = numSlidesRemoved + count++
+
 
    ######  ########    ###    ########  ######
   ##    ##    ##      ## ##      ##    ##    ##
