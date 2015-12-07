@@ -24,6 +24,7 @@ module.exports = class DynamicAssets
       $("##{data.id}-label", @$el).remove()
 
   hideLabel   : (data)->
+    console.log data
     if data.id == "all"
       $(".label-wrapper", @$el).velocity({opacity:0}, {duration:400})
     else if Array.isArray data.id

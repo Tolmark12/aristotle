@@ -13,7 +13,6 @@ module.exports = class DevTools
     @addIndexesToItems devConfig, items
     if devConfig.volume?
       AudioTrack.initSoundSettings devConfig.volume
-    console.log items
 
    ######  ##       #### ########  ########  ######
   ##    ## ##        ##  ##     ## ##       ##    ##

@@ -96,12 +96,12 @@ chapters:
                 - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
       # ZZzZZZZZ
       -
+        action:
+          - {cmd: label.hide, data: {id: [operator-ws-hit, control-sas-hit, data-acs-hit, esp-ns-hit, con-sys-rack-hit]}  }
         movie:
           zoom: {scale: 1, x: 595, y: 424}
           layers:
             - {depth: 7, content: clear }
-          action:
-            - {cmd: label.hide, data: {id: [operator-ws-hit, control-sas-hit, data-acs-hit, esp-ns-hit, con-sys-rack-hit]}  }
         duration: {kind: ctanlee}
         ctanlee:
           timeline:
