@@ -8,7 +8,7 @@ chapters:
   -
     dev:
       volume: 1
-      startIndex: 20
+      startIndex: 27
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -342,36 +342,6 @@ chapters:
         ux:
           components:
             -
-              kind: defender-cards
-              config:
-                defenders:
-                  arnold:
-                    name: Arnold, Mr. Electrical Worker
-                    quote: This country was built by people wearing denim.
-                    personal1: Proud of
-                    personal2: Family, America, personal safety record, fixing things with his bare hands, and the big one that got away. No really, it was that big.
-                    duties:
-                      - Using ID Card to Access Facilities
-                      - Following Change Control Procedures Before Working on a BES Cyber Asset
-                    evidences:
-                      - Door System Logs
-                      - Change Control Checklist
-                  lisa:
-                    name: Lisa, Supervisor Who Wears Prada
-                    quote: Working weekends allows for a jumpstart of the work week
-                    Personal1: Happiest when
-                    Personal2: A good plan comes together.
-                    duties:
-                      - Approving facility-related Cyber Assets on the Cyber Asset Lists
-                      - Using ID Card to Access Facilities
-                    evidences:
-                      - Dated workflow with approvals
-                      - Door System Logs
-      -
-        duration: {kind: ux}
-        ux:
-          components:
-            -
               kind: dialogue
               config:
                 title: Duties
@@ -406,14 +376,31 @@ chapters:
         ux:
           components:
             -
-              kind: dialogue
+              kind: defender-cards
               config:
-                title: Explore Defenders Placeholder
-                body: Click and Read about Defenders
-                btn:
-                  style: lightning
-                  text: review duties
-                  action: {cmd: slides.next-slide}
+                defenders:
+                  arnold:
+                    name: Arnold, Mr. Electrical Worker
+                    quote: This country was built by people wearing denim.
+                    personal1: Proud of
+                    personal2: Family, America, personal safety record, fixing things with his bare hands, and the big one that got away. No really, it was that big.
+                    duties:
+                      - Using ID Card to Access Facilities
+                      - Following Change Control Procedures Before Working on a BES Cyber Asset
+                    evidences:
+                      - Door System Logs
+                      - Change Control Checklist
+                  lisa:
+                    name: Lisa, Supervisor Who Wears Prada
+                    quote: Working weekends allows for a jumpstart of the work week
+                    Personal1: Happiest when
+                    Personal2: A good plan comes together.
+                    duties:
+                      - Approving facility-related Cyber Assets on the Cyber Asset Lists
+                      - Using ID Card to Access Facilities
+                    evidences:
+                      - Dated workflow with approvals
+                      - Door System Logs
       -
         movie:
           layers:
@@ -459,7 +446,7 @@ chapters:
             a:
               pos: [100,100]
               text: "Oh, it looks like an employee from headquarters just walked in. Where are you going?"
-              audio: Story_2_Ctanlee_12.m4a
+              audio: Story_2_Ctanlee_12_15.mp3
         duration: {kind: listen, event: layer.8.complete}
       -
         action: {cmd: ctanlee.gohome}
@@ -486,7 +473,7 @@ chapters:
             a:
               pos: [100,100]
               text: "I think the Operator saw that. Stop them!"
-              audio: Story_2_Ctanlee_19.m4a
+              audio: Story_2_Ctanlee_19_20.mp3
         duration: {kind: listen, event: layer.8.complete}
       -
         action: {cmd: ctanlee.gohome}
@@ -514,7 +501,7 @@ chapters:
             a:
               pos: [100,100]
               text: "Excellent! She's asking about the camera!"
-              audio: Story_2_Ctanlee_26.m4a
+              audio: Story_2_Ctanlee_26_27.mp3
         duration: {kind: listen, event: layer.8.complete}
       -
         duration: {kind: ux}
