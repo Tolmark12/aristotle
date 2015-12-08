@@ -280,13 +280,13 @@ chapters:
           - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
           - {cmd: label.show, data: {id: all}  }
         duration: {kind: ux}
-        # REMOVE START
-        # Important! Remove this, I've only added it for testing so I can
-        # jump directLy to this slide
+        # DELETE ------->
+        # I've only added this layer for testing so I can jump directLy to this slide
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
-        # REMOVE END
+        # <------- DELETE
+        # Equipment exploration component:
         ux:
           components:
             -
