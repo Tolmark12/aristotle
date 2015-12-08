@@ -8,7 +8,7 @@ chapters:
   -
     dev:
       volume: 1
-      startIndex: 0
+      startIndex: 48
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -703,6 +703,7 @@ chapters:
             -
               kind: quiz
               config:
+                question-value: 120
                 questions:
                   -
                     question: In this scenario, what do you expect to see?
@@ -717,6 +718,19 @@ chapters:
                         a: This is the right answer
                         r: Nice, you're getting the hang of this!
                         c: true
+                  -
+                    question: What is the shortest distance between two points
+                    answers:
+                      -
+                        a: A parallel line
+                        r: Better luck next time
+                      -
+                        a: A straight line
+                        r: Nice, I knew you were smart!
+                        c: true
+                      -
+                        a: A curve
+                        r: Better luck next time
                   -
                     question: What is the shortest distance between two points
                     answers:

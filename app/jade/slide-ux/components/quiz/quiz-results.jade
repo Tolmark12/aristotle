@@ -1,0 +1,40 @@
+.quiz-results 
+  .quiz-header Episode #{episodeNumber} Stats
+  .content
+    .total
+      .value-bar
+        .bg
+        .fg(style="width:#{scorePercentage}%")
+      .score= score
+    .answers
+      .bank.left
+        each answer in answers1
+          .answer
+            .name= answer.name
+            .score= answer.score
+            .perfect
+              if answer.isPerfect
+                img.shadow-icon(data-src="perfect-answer")
+      .bank
+        each answer in answers2
+          .answer
+            .name= answer.name
+            .score= answer.score
+            .pefect
+              if answer.isPerfect
+                img.shadow-icon(data-src="perfect-answer")
+    .decisions
+      .decision-bank
+        each decision in decisions
+          .decision
+            .txt You and <span class="perc">#{decision.popularPercentage}</span> of Defenders chose the <span>#{decision.choice}</span> #{decision.category}
+            .value-bar
+              .bg
+              .fg(style="width:#{decision.popularPercentage}%")
+    .buttons
+      .quiz-btn#retry
+        img.shadow-icon(data-src="quiz-btn")
+        .txt Retry
+      .quiz-btn#continue
+        img.shadow-icon(data-src="quiz-btn")
+        .txt Continue
