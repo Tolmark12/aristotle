@@ -30,7 +30,7 @@ module.exports = class Layer
     @updateBackground layerData
 
   addTheCorrectContent : (layerData) ->
-
+    layerData.cache = false
     @currentOnionLayer = @addOnionLayer()
     if !layerData.content?
       kind = "none"
