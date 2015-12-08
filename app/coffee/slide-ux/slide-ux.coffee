@@ -4,12 +4,14 @@ Dialogue          = require 'slide-ux/components/dialogue'
 GhostUX           = require 'slide-ux/components/ghost-ux'
 Quiz              = require 'slide-ux/components/quiz/quiz'
 SelectionDialogue = require 'slide-ux/components/selection-dialogue'
+GenericUiElements = require 'slide-ux/generic-ui'
 
 module.exports = class SlideUX
 
   constructor: (@$el) ->
     @components = []
-    @ctanlee = new Ctanlee @$el
+    @ctanlee    = new Ctanlee @$el
+    @genericUi  = new GenericUiElements @$el
 
   populate : (data) ->
     @removeCurrentComponents()

@@ -9,13 +9,14 @@ module.exports = class DefenderCards extends Component
     @createDefenders @data.defenders
 
   createDefenders : (defenders) ->
+    @ghosts = []
     for defenderId, defenderData of defenders
       data =
         id: defenderId
         events:
           click: (id)=> @showCard id
+      @ghosts.push defenderId
       PubSub.publish 'ghostux.add', data
-
 
   showCard : (defenderId) =>
     @totalCardsViewed++
@@ -25,11 +26,15 @@ module.exports = class DefenderCards extends Component
     @$card = $ jadeTemplate['slide-ux/components/defender-card']( data )
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$card
 
+    $(".got-it-btn", @$card).on "click", (e)=> @removeCurrentCard()
     if @totalCardsViewed == 2
-      $(".got-it-btn", @$card).on "click", (e)=> PubSub.publish "slides.next-slide"
-    else
-      $(".got-it-btn", @$card).on "click", (e)=> @removeCurrentCard()
+      PubSub.publish 'continue.show'
 
     @$node.append @$card
 
   removeCurrentCard : () -> @$card.remove()
+
+  destroy : () ->
+    for ghostId in @ghosts
+      PubSub.publish 'ghostux.remove', ghostId
+    super()
