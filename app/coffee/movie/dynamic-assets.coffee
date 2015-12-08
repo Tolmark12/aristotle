@@ -26,6 +26,8 @@ module.exports = class DynamicAssets
     wid     = $target[0].getBBox().width
     tal     = $target[0].getBBox().height
 
+    if wid > 500 || tal > 400 then aristotle.log "We've created a hit area for `#{data.id}` that is #{wid}px by #{tal}px, I'm guessing that's not right.."
+
     $ghostItem = $ jadeTemplate['slide-ux/components/ghost-item']( {id:"#{data.id}-ghost", width:wid, height:tal, left:pos.left, top:pos.top} )
     @$el.append $ghostItem
 
