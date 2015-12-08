@@ -8,7 +8,7 @@ chapters:
   -
     dev:
       volume: 1
-      startIndex: 0
+      startIndex: 40
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -16,6 +16,12 @@ chapters:
       -
         movie:
           layers:
+            - {depth: 1, content: episode1_placeholder.png, action: {cmd: chrome.hide} }
+        duration: {kind: time, seconds: 3 }
+      -
+        movie:
+          layers:
+            - {depth: 1, content: clear, action: {cmd: chrome.show} }
             - {depth: 0, content: c1-sky.svg}
             - {depth: 2, content: c1-background-buildin.json, events: [complete]  }
         duration: {kind: listen, event: layer.2.complete}
@@ -71,26 +77,31 @@ chapters:
           actions:
             con-sys-rack:
               pos: con-sys-rack-hit
+              text: "Control System"
               action:
                 - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
                 - {cmd: label.add, data: {id: con-sys-rack-hit, text: Control System, face: top, arrow: right} }
             esp-ns:
               pos: esp-ns-hit
+              text: "Network Switch"
               action:
                 - {cmd: highlight, data: {id: esp-ns, level: blue } }
                 - {cmd: label.add, data: {id: esp-ns-hit, text: Network Switch, face: bottom} }
             data-acs:
               pos: data-acs-hit
+              text: "Data Acquisition and Control Server"
               action:
                 - {cmd: highlight, data: {id: data-acs, level: blue} }
                 - {cmd: label.add, data: {id: data-acs-hit, text: Data Acquisition and Control Server, face: left } }
             control-sas:
               pos: control-sas-hit
+              text: "Control System Application Server"
               action:
                 - {cmd: highlight, data: {id: control-sas, level: blue} }
                 - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
             operator-ws:
               pos: operator-ws-hit
+              text: "Operator Workstation"
               action:
                 - {cmd: highlight, data: {id: operator-ws, level: blue } }
                 - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
@@ -225,6 +236,8 @@ chapters:
         action:
           - {cmd: label.hide, data: {id: all}  }
         movie:
+          layers:
+            - {depth: 7, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -238,9 +251,6 @@ chapters:
                   text: continue
                   action: {cmd: slides.next-slide}
       -
-        action:
-          - {cmd: "unhighlight.all"}
-          - {cmd: label.clear, data: {id: all}  }
         duration: {kind: ux}
         ux:
           components:
@@ -253,119 +263,146 @@ chapters:
                   style: lightning
                   text: GOT it!
                   action: {cmd: slides.next-slide}
+      -
+        movie:
+          layers:
+            - {depth: 7, content: asset_view.json }
+        duration: {kind: time, seconds: .1 }
       # Equipment viewing slide
       -
         action:
           - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
-          - {cmd: label.add, data: {id: con-sys-rack-hit, text: Control System, face: top, arrow: right} }
           - {cmd: highlight, data: {id: esp-ns, level: blue } }
-          - {cmd: label.add, data: {id: esp-ns-hit, text: Network Switch, face: bottom} }
           - {cmd: highlight, data: {id: data-acs, level: blue} }
-          - {cmd: label.add, data: {id: data-acs-hit, text: Data Acquisition and Control Server, face: left } }
           - {cmd: highlight, data: {id: control-sas, level: blue} }
-          - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
           - {cmd: highlight, data: {id: operator-ws, level: blue } }
-          - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
           - {cmd: highlight, data: {id: file-server, level: orange} }
-          - {cmd: label.add, data: {id: file-server-hit, text: File Server, face: top, arrow: right} }
           - {cmd: highlight, data: {id: map-computer, level: orange} }
-          - {cmd: label.add, data: {id: map-computer-hit, text: Map Computer, face: bottom, arrow: right} }
           - {cmd: highlight, data: {id: printer, level: orange} }
-          - {cmd: label.add, data: {id: printer-hit, text: Printer, face: bottom, arrow: right} }
           - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
-          - {cmd: label.add, data: {id: filing-cabinet-hit, text: Substation Diagrams, face: bottom, arrow: right} }
           - {cmd: highlight, data: {id: map, level: yellow} }
-          - {cmd: label.add, data: {id: map-computer-hit, text: System Map, face: bottom, arrow: right} }
           - {cmd: highlight, data: {id: monitor, level: yellow} }
-          - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
-          - {cmd: label.show, data: {id: all}  }
         duration: {kind: ux}
-        # DELETE ------->
-        # I've only added this layer for testing so I can jump directLy to this slide
-        movie:
-          layers:
-            - {depth: 7, content: asset_view.json }
-        # <------- DELETE
         # Equipment exploration component:
         ux:
           components:
             -
               kind: explore-cards
               config:
-                required-views: 3 # (number of cards they have to view to move on to next slide)
+                required-views: 5 # (number of cards they have to view to move on to next slide)
                 template: equipment
                 cards:
                   -
                     hit: con-sys-rack-hit
-                    name: Control System
-                    type: BSA
+                    name: Control System Rack
+                    type: BCA
                     network: ESP
                     description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
                   -
                     hit: esp-ns-hit
-                    name: Network Switch
-                    type: BSA
+                    name: Network Rack - ESP Network Switch
+                    type: PCA
                     network: ESP
-                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                    description: Network switch for the Electronic Security Perimeter.
                   -
                     hit: data-acs-hit
-                    name: Data Acquisition
-                    type: BSA
+                    name: Data Acquisition and Control Server
+                    type: BCA
                     network: ESP
-                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                    description: Collects data from the Control System and issues controls from workstations and other devices to the Control System.
                   -
                     hit: control-sas-hit
-                    name: Control System
-                    type: BSA
+                    name: Control System Application Server
+                    type: BCA
                     network: ESP
-                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                    description: Runs applications that provide advanced functionality on top of the Control System.
                   -
                     hit: operator-ws-hit
                     name: Operator Workstation
-                    type: BSA
+                    type: BCA
                     network: ESP
-                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                    description: Powers the operator monitors
                   -
                     hit: file-server-hit
                     name: File Server
-                    type: BSA
-                    network: ESP
-                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                    type: None
+                    network: Corporate
+                    description: Contains maps, network diagrams and other information useful to have on the controls network for reference and maintenance.
                   -
                     hit: map-computer-hit
-                    name: Map Computer
-                    type: BSA
+                    name: Mapboard Computer
+                    type: PCA
                     network: ESP
-                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                    description: Displays data on the mapboard from the control system
                   -
                     hit: printer-hit
-                    name: Printer,
-                    type: BSA
+                    name: First Floor Printer
+                    type: PCA
                     network: ESP
-                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                    description: Printer attached to a protected network.
                   -
                     hit: filing-cabinet-hit
-                    name: Substation Diagrams
-                    type: BSA
-                    network: ESP
-                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                    name: Filing Cabinets
+                    type: BCSI
+                    network: N/A
+                    description: Holds protected information
                   -
-                    hit: map-computer-hit
-                    name: System Map
-                    type: BSA
-                    network: ESP
-                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                    hit: map-hit
+                    name: Mapboard
+                    type: BCSI
+                    network: N/A
+                    description: Shows a control room operator a dynamic map of the power grid they are managing or shows a power plant operator the map of their facility and controls.
                   -
                     hit: monitor-hit
-                    name: Control System
-                    type: BSA
+                    name: Operator Monitors
+                    type: BCSI
+                    network: N/A
+                    description: Operators like lots of monitors to see all their systems
+                  -
+                    hit: laptop-hit
+                    name: First Floor Laptop
+                    type: BCA
                     network: ESP
-                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
-
+                    description: Used by technicians for troubleshooting.
       -
         action:
           - {cmd: "unhighlight.all"}
-          - {cmd: label.hide, data: {id: all}  }
+        duration: {kind: ctanlee}
+        movie:
+          layers:
+            - {depth: 7, content: duties_placeholder.png, action: {cmd: chrome.hide} }
+            - {depth: 8, content: duties_continue_placeholder.png }
+        ctanlee:
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+          defaults:
+            next: click
+          actions:
+            a:
+              pos: [200, 200]
+              emo: happy
+              text: "Your duties are listed here. Click on a duty to review it."
+              audio: Story_2_Ctanlee_31.m4a
+            b:
+              pos: [500, 500]
+              emo: happy
+              text: "Click I acknowledge at the bottom of the duty when you are done."
+              audio: Story_2_Ctanlee_32.m4a
+            c:
+              pos: [500, 600]
+              emo: happy
+              text: "When all duties are completed, you can click CONTINUE to proceed."
+              audio: Story_2_Ctanlee_33.m4a
+      -
+        movie:
+          layers:
+            - {depth: 7, content: clear, action: {cmd: chrome.show} }
+            - {depth: 8, content: clear }
+            - {depth: 7, content: chapter1_placeholder.png }
+        duration: {kind: time, seconds: 5 }
+      -
         movie:
           layers:
             - {depth: 7, content: clear }
@@ -462,6 +499,61 @@ chapters:
                     evidences:
                       - Door System Logs
                       - Change Control Checklist
+                  shelly:
+                    name: Shelly, CIP Senior Manager
+                    quote: Keeping head and Standards high.
+                    Personal1: Remembers fondly
+                    Personal2: That one time during the CIPv5 transition that she participated in a conference call on her phone, a separate WebEx on her laptop, all while leading a team meeting in person.
+                    duties:
+                      - Approve Cyber Security Program
+                      - Delegate Duties and Responsibilities
+                    evidences:
+                      - Signed Cyber Security Program
+                      - Signed delegations documentation
+                  jerry:
+                    name: Jerry, that guy from HR
+                    quote: Always ready to give out hugs…while respecting your personal space
+                    Personal1: Holds record for
+                    Personal2: Reviewing 247 resumes in one day
+                    duties:
+                      - Check backgrounds and criminal history of new employees
+                      - Notify when employees are terminated so their access can be disabled
+                    evidences:
+                      - Dated personnel risk assessment records
+                      - Dated workflow with approvals
+                  brad:
+                    name: Brad, Compliance Team Warrior
+                    quote: Compliance is just another way to say 'I love you
+                    Personal1: Favorite possession
+                    Personal2: A list of CIP acronyms signed by all members of the CIP Drafting Committee.
+                    duties:
+                      - Ensuring Compliance Requirements are documented in the Cyber Security Program
+                      - Regular Review and Approvals of Facilities and Assets
+                    evidences:
+                      - Signed and dated Cyber Security Program with accompanying processes
+                      - Signed and dated lists of assets
+                  rod:
+                    name: Rod, the Smooth Operator
+                    quote: 99% routine, 1% sheer terror.
+                    Personal1: Daily caffeine quota is
+                    Personal2: 5 cups of coffee, 3 energy drinks
+                    duties:
+                      - Using ID Card to Access Facilities
+                      - Not Plugging Your Cell Phone Into Your Control System Workstation
+                    evidences:
+                      - Door System Logs
+                      - Computer System Events
+                  richard:
+                    name: Richard, Your IT Dude
+                    quote: I'm not anti-social. I'm just not user friendly
+                    Personal1: Lifetime accomplishment
+                    Personal2: Playing World of Warcraft 47.38 hours in a row.
+                    duties:
+                      - Patching Servers
+                      - Updating Antivirus on BCAs
+                    evidences:
+                      - Production Change Forms
+                      - Task Documentation
                   lisa:
                     name: Lisa, Supervisor Who Wears Prada
                     quote: Working weekends allows for a jumpstart of the work week
@@ -474,13 +566,27 @@ chapters:
                       - Dated workflow with approvals
                       - Door System Logs
       -
+        action:
+          - {cmd: label.hide, data: {id: all}  }
         movie:
           layers:
             - {depth: 8, content: clear }
         duration: {kind: time, seconds: 1 }
       -
-        action:
-          - {cmd: label.hide, data: {id: all}  }
+        movie:
+          layers:
+            - {depth: 8, content: duties_placeholder.png, action: {cmd: chrome.hide} }
+        duration: {kind: time, seconds: 5 }
+      -
+        movie:
+          layers:
+            - {depth: 8, content: clear }
+            - {depth: 8, content: chapter2_placeholder.png }
+        duration: {kind: time, seconds: 5 }
+      -
+        movie:
+          layers:
+            - {depth: 8, content: clear, action: {cmd: chrome.show} }
         duration: {kind: ux}
         ux:
           components:
@@ -537,6 +643,7 @@ chapters:
       -
         movie:
           layers:
+            - {depth: 8, content: clear }
             - {depth: 8, content: goodcatch.json, events: [complete] }
         ctanlee:
           timeline:
@@ -602,8 +709,23 @@ chapters:
                   style: lightning
                   text: Review Duties
                   action: {cmd: slides.next-slide}
+      -
+        movie:
+          layers:
+            - {depth: 9, content: mimebot_reveal.json, events: [complete] }
+        duration: {kind: listen, event: layer.9.complete}
+      -
+        movie:
+          layers:
+            - {depth: 8, content: clear }
+            - {depth: 9, content: clear }
+            - {depth: 8, content: duties_placeholder.png, action: {cmd: chrome.hide} }
+        duration: {kind: time, seconds: 5 }
       # EXAMPLE - Quiz
       -
+        movie:
+          layers:
+            - {depth: 8, content: clear, action: {cmd: chrome.show} }
         duration: {kind: ux}
         ux:
           components:
@@ -616,10 +738,10 @@ chapters:
                     answers:
                       -
                         a: Bigfoot
-                        r: Better lucc next time
+                        r: Better luck next time
                       -
                         a: A single server
-                        r: Better lucc next time
+                        r: Better luck next time
                       -
                         a: This is the right answer
                         r: Nice, you're getting the hang of this!
@@ -629,14 +751,19 @@ chapters:
                     answers:
                       -
                         a: A parallel line
-                        r: Better luch next time
+                        r: Better luck next time
                       -
                         a: A straight line
-                        r: Better luch next time
+                        r: Better luck next time
                         c: true
                       -
                         a: A curve
-                        r: Better luch next time
+                        r: Better luck next time
+      -
+        movie:
+          layers:
+            - {depth: 9, content: episode2_placeholder.png }
+        duration: {kind: ux }
       #################### TESTING
       # -
       #   ux:
