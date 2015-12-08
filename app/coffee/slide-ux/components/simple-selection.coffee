@@ -29,4 +29,3 @@ module.exports = class SimpleSelection extends Component
       $targ = $(e.target)
       data = @items[ $targ.attr('id') ]
       aristotle.commander.do data.click
-      console.log data.click

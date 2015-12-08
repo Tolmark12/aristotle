@@ -7,8 +7,8 @@ dev:
 chapters:
   -
     dev:
-      volume: 0
-      startIndex: 1
+      volume: 1
+      startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -24,10 +24,10 @@ chapters:
           layers:
             - {depth: 1, content: clear, action: {cmd: chrome.show} }
             - {depth: 0, content: c1-sky.svg}
-            - {depth: 2, content: c1-background-buildin.json, events: [complete]  }
+            - {depth: 2, content: c1-background-buildin.json, events: [complete], cache: true  }
         duration: {kind: listen, event: layer.2.complete}
       # Building Selector
-      - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
+      # - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
       # Interior build-in
       -
         movie:

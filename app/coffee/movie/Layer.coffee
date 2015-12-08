@@ -30,6 +30,7 @@ module.exports = class Layer
     @updateBackground layerData
 
   addTheCorrectContent : (layerData) ->
+
     @currentOnionLayer = @addOnionLayer()
     if !layerData.content?
       kind = "none"
@@ -63,6 +64,9 @@ module.exports = class Layer
 
   addAnimation : ($holder, layerData) ->
     @animation  = new SVGAnimation $holder, "#{aristotle.episodeRoot}/animations/#{layerData.content}", layerData
+    if layerData.cache
+      @animation.addOnComplete ()=>
+        @cache()
 
   addSvg : ($holder, layerData) ->
     $holder.load "#{aristotle.episodeRoot}/assets/#{layerData.content}"

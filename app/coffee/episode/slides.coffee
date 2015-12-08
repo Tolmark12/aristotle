@@ -7,7 +7,6 @@ module.exports = class Slides
     aristotle.slides = @
     @createSlides trainingData, movie, ux
     PubSub.subscribe 'slides.next-slide', ()=>
-      console.log "run next slide...."
       @nextSlide()
 
   createSlides : (trainingData, movie, ux) ->

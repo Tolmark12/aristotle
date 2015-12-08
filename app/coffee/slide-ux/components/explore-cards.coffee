@@ -11,8 +11,6 @@ module.exports = class ExploreCards extends Component
 
     @createCardGhosts @data.cards
     super $el, @$node
-    console.log $el
-
 
   createCardGhosts : (cards) ->
     @ghosts = []
