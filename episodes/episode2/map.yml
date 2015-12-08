@@ -7,7 +7,7 @@ dev:
 chapters:
   -
     dev:
-      volume: 0
+      volume: 1
       startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
@@ -223,7 +223,7 @@ chapters:
                 - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
       -
         action:
-          - {cmd: label.show, data: {id: all}  }
+          - {cmd: label.hide, data: {id: all}  }
         movie:
         duration: {kind: ux}
         ux:
@@ -251,9 +251,49 @@ chapters:
                 body: Review your inventory. Click on your assets if you'd like to learn more about them. <br/>We've reached the end of this chapter. I've programmed your specific duties at Company Name - Arizona Public Service into the WarCore to review. When you're ready to review duties, click "Review Duties" at the bottom to proceed.
                 btn:
                   style: lightning
+                  text: GOT it!
+                  action: {cmd: slides.next-slide}
+      -
+        action:
+          - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
+          - {cmd: label.add, data: {id: con-sys-rack-hit, text: Control System, face: top, arrow: right} }
+          - {cmd: highlight, data: {id: esp-ns, level: blue } }
+          - {cmd: label.add, data: {id: esp-ns-hit, text: Network Switch, face: bottom} }
+          - {cmd: highlight, data: {id: data-acs, level: blue} }
+          - {cmd: label.add, data: {id: data-acs-hit, text: Data Acquisition and Control Server, face: left } }
+          - {cmd: highlight, data: {id: control-sas, level: blue} }
+          - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
+          - {cmd: highlight, data: {id: operator-ws, level: blue } }
+          - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
+          - {cmd: highlight, data: {id: file-server, level: orange} }
+          - {cmd: label.add, data: {id: file-server-hit, text: File Server, face: top, arrow: right} }
+          - {cmd: highlight, data: {id: map-computer, level: orange} }
+          - {cmd: label.add, data: {id: map-computer-hit, text: Map Computer, face: bottom, arrow: right} }
+          - {cmd: highlight, data: {id: printer, level: orange} }
+          - {cmd: label.add, data: {id: printer-hit, text: Printer, face: bottom, arrow: right} }
+          - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
+          - {cmd: label.add, data: {id: filing-cabinet-hit, text: Substation Diagrams, face: bottom, arrow: right} }
+          - {cmd: highlight, data: {id: map, level: yellow} }
+          - {cmd: label.add, data: {id: map-computer-hit, text: System Map, face: bottom, arrow: right} }
+          - {cmd: highlight, data: {id: monitor, level: yellow} }
+          - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
+          - {cmd: label.show, data: {id: all}  }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Explore Placeholder
+                body: Ability to click and read about assets.
+                btn:
+                  style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
       -
+        action:
+          - {cmd: "unhighlight.all"}
+          - {cmd: label.hide, data: {id: all}  }
         movie:
           layers:
             - {depth: 7, content: clear }
@@ -324,6 +364,34 @@ chapters:
                   text: got it
                   action: {cmd: slides.next-slide}
       -
+        duration: {kind: ux}
+        action:
+          - {cmd: label.add, data: {id: jerry-hit, text: Jerry, face: right } }
+          - {cmd: label.add, data: {id: brad-hit, text: Brad, face: right } }
+          - {cmd: label.add, data: {id: shelly-hit, text: Shelly, face: right } }
+          - {cmd: label.add, data: {id: lisa-hit, text: Lisa, face: top, arrow: right} }
+          - {cmd: label.add, data: {id: rod-hit, text: Rod, face: top, arrow: right} }
+          - {cmd: label.add, data: {id: richard-hit, text: Richard, face: top, arrow: right} }
+          - {cmd: label.add, data: {id: arnold-hit, text: Arnold, face: top} }
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Explore Defenders Placeholder
+                body: Click and Read about Defenders
+                btn:
+                  style: lightning
+                  text: review duties
+                  action: {cmd: slides.next-slide}
+      -
+        movie:
+          layers:
+            - {depth: 8, content: clear }
+        duration: {kind: time, seconds: 1 }
+      -
+        action:
+          - {cmd: label.hide, data: {id: all}  }
         duration: {kind: ux}
         ux:
           components:
