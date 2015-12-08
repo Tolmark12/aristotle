@@ -15,6 +15,13 @@ chapters:
       -
         movie:
           layers:
+            - {depth: 1, content: episode2_placeholder.png, action: {cmd: chrome.hide} }
+        duration: {kind: time, seconds: .3 }
+      -
+        movie:
+          layers:
+            - {depth: 1, content: clear, action: {cmd: chrome.show} }
+            - {depth: 2, content: clear }
             - {depth: 0, content: c1-sky.svg }
             - {depth: 1, content: c1-background-clouds-loop.json, loop: true }
             - {depth: 2, content: static_facility_background.json }
@@ -23,7 +30,8 @@ chapters:
             - {depth: 5, content: static_facility_interior.json }
             - {depth: 7, content: interior_loop.json, loop: true  }
             - {depth: 8, content: static_facility_door.json, events: [complete]  }
-        duration: {kind: time, seconds: 3 }
+            - {depth: 9, content: chapter1_placeholder.png }
+        duration: {kind: time, seconds: .5 }
       -
         duration: {kind: ux}
         ux:
@@ -47,11 +55,25 @@ chapters:
             - {action: a }
           actions:
             a:
-              pos: [100,100]
-              text: "Uh oh. One of Sektimus' advance force robots."
+              pos: [800,250]
               audio:
         duration: {kind: listen, event: layer.9.complete}
       # Components overview
+      -
+        movie:
+          layers:
+            - {depth: 9, content: clear }
+            - {depth: 9, content: asset_view.json }
+            - {depth: 10, content: physical_perimeter.png }
+        duration: {kind: ctanlee}
+        ctanlee:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [170,400]
+              text: Your PSP. Sometimes I just hover here and stare at it, ya know? I know how it is.
+              audio: Story_3_Ctanlee_placeholder.m4a
       -
         action: {cmd: ctanlee.gohome}
         duration: {kind: ux}
@@ -64,8 +86,15 @@ chapters:
                 body: To prevent physical attacks, the CIP Standards require that we physically surround our core assets with Physical Security Perimeters (PSPs) made up of walls, fences, and doors to keep the robots and their allies out. We install door controls that only allow authorized Defenders inside the PSP, log all access attempts, and alert when unauthorized people (or robots) try to gain access. Our Medium Impact facilities have one control, while High Impact facilities require two independent controls per access point. <br/>These access control devices are called Physical Access Control Systems (PACS). An example of a PACS is an ID-badge reader on the outside of the door connected to a computer inside that operates the reader and does logging and alerting. A PACS is a defensive asset and will be added to our official asset lists.
                 btn:
                   style: lightning
-                  text: run simulation
+                  text: continue
                   action: {cmd: slides.next-slide}
+      -
+        movie:
+          layers:
+            - {depth: 9, content: clear }
+            - {depth: 10, content: clear }
+        duration: {kind: time, seconds: .2 }
+      - !!inc/file ./episodes/episode3/yaml/_simple-selector-physical-perimeter.yaml
       -
         duration: {kind: ux}
         ux:
@@ -73,8 +102,8 @@ chapters:
             -
               kind: dialogue
               config:
-                title: Choose your PACS PLACEHOLDER
-                body: The only access into the facility is through the door, so let's install a CIP-compliant PACS on the door to create a Physical Security Perimeter around your assets.
+                title: Please Try Again
+                body: Let's reload the simulator to test our newly installed physical access control defense.
                 btn:
                   style: lightning
                   text: run simulation
@@ -91,156 +120,101 @@ chapters:
             - {action: a }
           actions:
             a:
-              pos: [100,100]
-              text: "Your PSP. Sometimes I just hover here and stare at it, ya know? I know how it is."
-              audio:
+              pos: [700,300]
+              text: "Bow to the scanner, Bot. Uh oh, looks like the robots are trying again. Alerts work great. Rust in peace, robots."
+              audio: Story_3_Ctanlee_placeholder.m4a
         duration: {kind: listen, event: layer.9.complete}
       -
+        ctanlee:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [100,100]
+              text: Chapter complete, Cadet. Duty time.
+              audio: Story_3_Ctanlee_placeholder.m4a
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Chapter Complete
+                body:
+                btn:
+                  style: lightning
+                  text: Review Duties
+                  action: {cmd: slides.next-slide}
+        ctanlee:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [100,100]
+              text: Chapter complete, Cadet. Duty time.
+              audio: Story_3_Ctanlee_placeholder.m4a
+      -
         action: {cmd: ctanlee.gohome}
-        duration: {kind: ctanlee }
-        ctanlee:
-          timeline:
-            - {action: control-system-outline }
-            - {action: rtu-outline }
-            - {action: network-switch }
-            - {action: server4-outline }
-            - {action: tower-outline }
-          defaults:
-            next: click
-          actions:
-            control-system-outline:
-              pos: "control-system-outline"
-              text: "Control System"
-              action:
-                - {cmd: movie.zoom, data: {scale: 2, id: control-system-outline} }
-                - {cmd: highlight, data: {id: control-system-outline, level: green} }
-            rtu-outline:
-              pos: "rtu-outline"
-              text: "Remote Terminal Unit"
-              action:
-                - {cmd: highlight, data: {id: rtu-outline, level: green} }
-            network-switch:
-              pos: "server3-outline"
-              text: "Network Switch"
-              action:
-                - {cmd: highlight, data: {id: server3-outline, level: green} }
-            server4-outline:
-              pos: "server4-outline"
-              text: "Data Acquisition and Control Server"
-              action:
-                - {cmd: highlight, data: {id: server4-outline, level: green} }
-            tower-outline:
-              pos: "tower-outline"
-              text: "Operator Workstation"
-              action:
-                - {cmd: highlight, data: {id: tower-outline, level: green} }
-      # ZZzZZZZZ
+        movie:
+          layers:
+            - {depth: 10, content: duties_placeholder.png, action: {cmd: chrome.hide} }
+        duration: {kind: time, seconds: .5 }
       -
         movie:
-          zoom: {scale: 1}
           layers:
-            - {depth: 7, content: clear}
-        duration: {kind: ctanlee}
+            - {depth: 9, content: clear }
+            - {depth: 10, content: clear }
+            - {depth: 11, content: clear }
+            - {depth: 11, content: chapter2_placeholder.png }
+        duration: {kind: time, seconds: .5 }
+      -
+        movie:
+          layers:
+            - {depth: 11, content: clear, action: {cmd: chrome.show} }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Electronic Attacks
+                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a BCA or PCA attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction.
+                btn:
+                  style: lightning
+                  text: Continue
+                  action: {cmd: slides.next-slide}
+      -
+        movie:
+          layers:
+            - {depth: 10, content: fatline.json, events: [complete] }
+        duration: {kind: listen, event: layer.10.complete}
+      -
+        movie:
+          layers:
+            - {depth: 10, content: clear }
+            - {depth: 10, content: fatline.json, events: [complete] }
         ctanlee:
           timeline:
             - {action: a }
           actions:
             a:
-              pos: [100,100]
-              text: "Most facilities that fall under CIP have a lot of equipment like this that controls the Bulk Electric System. Imagine the damage the robots would do if they gained access to control a breaker, power plant or Tesla Cannon. Shudder."
-              audio: Story_2_Ctanlee_8.m4a
-              next: click
+              pos: [700,300]
+              text: "He's packaging up something nasty to send us. He's running some code on our control system! Look out everyone!"
+              audio: Story_3_Ctanlee_placeholder.m4a
+        duration: {kind: listen, event: layer.10.complete}
       -
         movie:
           layers:
-            - {depth: 7, content: interior_build_network.json }
-        duration: {kind: time, seconds: 3 }
-      # Components overview
-      -
-        duration: {kind: ctanlee }
-        ctanlee:
-          timeline:
-            - {action: blade-outline }
-            - {action: grid-computer-outline }
-            - {action: printer-outline }
-          defaults:
-            next: click
-          actions:
-            blade-outline:
-              pos: "blade-outline"
-              text: "File Server"
-              action:
-                - {cmd: movie.zoom, data: {scale: 2, id: blade-outline} }
-                - {cmd: highlight, data: {id: blade-outline, level: green} }
-            grid-computer-outline:
-              pos: "grid-computer-outline"
-              text: "Mapboard Computer"
-              action:
-                - {cmd: highlight, data: {id: grid-computer-outline, level: green} }
-            printer-outline:
-              pos: "printer-outline"
-              text: "Printer"
-              action:
-                - {cmd: highlight, data: {id: printer-outline, level: green} }
-      -
-        movie:
-          zoom: {scale: 1}
-          layers:
-            - {depth: 7, content: clear}
-        duration: {kind: ctanlee}
-        ctanlee:
-          timeline:
-            - {action: a }
-          actions:
-            a:
-              pos: [100,100]
-              text: "You may be saying to yourself, CTANLEE it's just a printer! If we had more time I'd tell you about The Paperfeed Incident of '08 where some Virus Bots hijacked a corporate unit. Many Defenders still bear papercut scars."
-              audio: Story_2_Ctanlee_9.m4a
-              next: click
-      -
-        movie:
-          layers:
-            - {depth: 7, content: interior_build_network.json }
-        duration: {kind: time, seconds: 3 }
-      # Components overview
-      -
-        duration: {kind: ctanlee }
-        ctanlee:
-          timeline:
-            - {action: filing-cabinet-outline }
-            - {action: grid-outline }
-            - {action: monitor-outline }
-          defaults:
-            next: click
-          actions:
-            filing-cabinet-outline:
-              pos: "filing-cabinet-outline"
-              text: "Substation diagrams"
-              action:
-                - {cmd: movie.zoom, data: {scale: 2, id: filing-cabinet-outline} }
-                - {cmd: highlight, data: {id: filing-cabinet-outline, level: green} }
-            grid-outline:
-              pos: "grid-outline"
-              text: "System Map"
-              action:
-                - {cmd: highlight, data: {id: grid-outline, level: green} }
-            monitor-outline:
-              pos: "monitor-outline"
-              text: "Control System Views"
-              action:
-                - {cmd: highlight, data: {id: monitor-outline, level: green} }
-      -
-        movie:
-          zoom: {scale: 1}
-          layers:
-            - {depth: 7, content: clear}
-        duration: {kind: ctanlee}
-        ctanlee:
-          timeline:
-            - {action: a }
-          actions:
-            a:
-              pos: [100,100]
-              text: "The bots want to get their steely fingers on this information to enhance their attack algorithms. It's easy for this information to be carried out on paper through a photograph on your camera."
-              audio: Story_2_Ctanlee_10.m4a
-              next: click
+            - {depth: 10, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Electronic Attacks
+                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a BCA or PCA attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction.
+                btn:
+                  style: lightning
+                  text: Continue
+                  action: {cmd: slides.next-slide}
