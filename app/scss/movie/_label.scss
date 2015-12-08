@@ -1,7 +1,7 @@
 $arrow-size    : 8px;
 $bg-color      : rgba(#020308, 0.8);
 $horiz-padding : 9px;
-.label-wrapper          { position:absolute; white-space: nowrap; pointer-events:none; 
+.label-wrapper          { position:absolute; white-space: nowrap; //pointer-events:none;
   // Defaults to Bottom Left
   .label                { position:absolute; background:$bg-color; color:#F9773E; font-size:13px; padding:3px $horiz-padding; bottom:$arrow-size; left:$horiz-padding*-2;
     &:after             { top: 100%; left: $horiz-padding*2; border: solid transparent; content: ""; height: 0; width: 0; position: absolute; pointer-events: none; border-top-color: $bg-color; border-width: $arrow-size; margin-left: -$arrow-size; }

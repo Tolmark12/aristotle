@@ -1,11 +1,50 @@
 module.exports = class DynamicAssets
 
   constructor: ( @$el ) ->
+    # Ghost UX
+    PubSub.subscribe "ghostux.add",  (m, data)=> @createGhost data
+
+    # Labels
     PubSub.subscribe 'label.add',    (m, data)=> @addLabel data
     PubSub.subscribe 'label.remove', (m, data)=> @removeLabel data
     PubSub.subscribe 'label.clear',  (m, data)=> @removeLabel data
     PubSub.subscribe 'label.hide',   (m, data)=> @hideLabel data
     PubSub.subscribe 'label.show',   (m, data)=> @showLabel data
+
+   ######   ##     ##  #######   ######  ########    ##     ## ##     ##
+  ##    ##  ##     ## ##     ## ##    ##    ##       ##     ##  ##   ##
+  ##        ##     ## ##     ## ##          ##       ##     ##   ## ##
+  ##   #### ######### ##     ##  ######     ##       ##     ##    ###
+  ##    ##  ##     ## ##     ##       ##    ##       ##     ##   ## ##
+  ##    ##  ##     ## ##     ## ##    ##    ##       ##     ##  ##   ##
+   ######   ##     ##  #######   ######     ##        #######  ##     ##
+
+  createGhost : (data) ->
+    $target = $ "##{data.id}"
+    pos     = $target.position()
+    wid     = $target[0].getBBox().width
+    tal     = $target[0].getBBox().height
+
+    $ghostItem = $ jadeTemplate['slide-ux/components/ghost-item']( {width:wid, height:tal, left:pos.left, top:pos.top} )
+    @$el.append $ghostItem
+
+    # Set event handlers
+    for event, action of data.events
+      # if it's a global command ie: {cmd: do.something, data: somedata}
+      if action.cmd?
+        $ghostItem.on event, ()-> aristotle.commander.do action
+
+      # if it's a function..
+      else if typeof action == "function"
+        $ghostItem.on event, ()-> action data.id
+
+  ##          ###    ########  ######## ##        ######
+  ##         ## ##   ##     ## ##       ##       ##    ##
+  ##        ##   ##  ##     ## ##       ##       ##
+  ##       ##     ## ########  ######   ##        ######
+  ##       ######### ##     ## ##       ##             ##
+  ##       ##     ## ##     ## ##       ##       ##    ##
+  ######## ##     ## ########  ######## ########  ######
 
   addLabel : (data) ->
     pos    = aristotle.movie.getLocalPos data.id
@@ -24,7 +63,6 @@ module.exports = class DynamicAssets
       $("##{data.id}-label", @$el).remove()
 
   hideLabel   : (data)->
-    console.log data
     if data.id == "all"
       $(".label-wrapper", @$el).velocity({opacity:0}, {duration:400})
     else if Array.isArray data.id

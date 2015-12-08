@@ -1,5 +1,5 @@
 Ctanlee           = require 'slide-ux/ctanlee/Ctanlee'
-DefenderCard      = require 'slide-ux/components/defender-card'
+DefenderCards     = require 'slide-ux/components/defender-cards'
 Dialogue          = require 'slide-ux/components/dialogue'
 GhostUX           = require 'slide-ux/components/ghost-ux'
 Quiz              = require 'slide-ux/components/quiz/quiz'
@@ -24,7 +24,7 @@ module.exports = class SlideUX
       when "dialogue"           then component = new Dialogue @$el, componentData.config
       when "ghost-ux"           then component = new GhostUX @$el, componentData.config
       when "quiz"               then component = new Quiz @$el, componentData.config
-      when "defender-card"      then component = new DefenderCard @$el, componentData.config
+      when "defender-cards"     then component = new DefenderCards @$el, componentData.config
       else
         aristotle.throw "tried to create an unrecognized component type: `#{componentData.kind}`"
         return null

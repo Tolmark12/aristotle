@@ -1,1 +1,15 @@
-.duties-card
+.defender-wrap
+  .defender-card
+    .name=name
+    .quote=quote
+    .personal1 #{personal1}:
+    .personal2=personal2
+    .info
+      .duties
+        each duty in duties
+          .duty=duty
+      .evidences
+        each evidence in evidences
+          .evidence=evidence
+    .got-it-btn
+      img.shadow-icon(data-src="btn-got-it")

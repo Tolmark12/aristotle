@@ -1,22 +1,32 @@
 @mixin blue-border($border:bottom){
   @if $border == bottom{
     border-bottom:solid 2px #6B989F;
-  }@else{
+  }@else if $border == top{
     border-top:solid 2px #6B989F;
+  }@else if $border == right{
+    border-right:solid 2px #6B989F;
+  }@else if $border == left{
+    border-left:solid 2px #6B989F;
+  }@else{
+    border:solid 2px #6B989F;
   }
+
 }
 
-.slide-ux    { position:relative; width: 100%; height: 100%; z-index: 3;
+
+
+.slide-ux    { position:relative; width: 100%; z-index: 3;
 
   @import "ctanlee/ctanlee";
   @import "components/selection-dialogue";
   @import "components/dialogue";
-  @import "components/ghost-ux";
   @import "components/quiz";
-  @import "components/defender-card";
+  @import "components/defender-cards";
 
   .button    { padding:7px 0; margin:7px 0; font-family:$fun_cond; background:#6B989F; font-size:18px; text-align:center; border:2px solid #335E6E; cursor:pointer;
     &:hover,
     &.active { background:#335E6E; border-color:$orange; color:$yeller; }
   }
+  .line     { width:100%; content:""; @include blue-border; display:inline-block; height:2px; margin:-10px 0;}
 }
+@import "components/ghost-ux";

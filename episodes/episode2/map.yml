@@ -8,7 +8,7 @@ chapters:
   -
     dev:
       volume: 1
-      startIndex: 0
+      startIndex: 20
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -337,6 +337,36 @@ chapters:
           layers:
             - {depth: 8, content: hq_facility_build.json, events: [complete] }
         duration: {kind: listen, event: layer.8.complete}
+      -
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: defender-cards
+              config:
+                defenders:
+                  arnold:
+                    name: Arnold, Mr. Electrical Worker
+                    quote: This country was built by people wearing denim.
+                    personal1: Proud of
+                    personal2: Family, America, personal safety record, fixing things with his bare hands, and the big one that got away. No really, it was that big.
+                    duties:
+                      - Using ID Card to Access Facilities
+                      - Following Change Control Procedures Before Working on a BES Cyber Asset
+                    evidences:
+                      - Door System Logs
+                      - Change Control Checklist
+                  lisa:
+                    name: Lisa, Supervisor Who Wears Prada
+                    quote: Working weekends allows for a jumpstart of the work week
+                    Personal1: Happiest when
+                    Personal2: A good plan comes together.
+                    duties:
+                      - Approving facility-related Cyber Assets on the Cyber Asset Lists
+                      - Using ID Card to Access Facilities
+                    evidences:
+                      - Dated workflow with approvals
+                      - Door System Logs
       -
         duration: {kind: ux}
         ux:
