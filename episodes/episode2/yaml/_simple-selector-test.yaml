@@ -1,0 +1,45 @@
+duration: {kind: ux}
+ctanlee:
+  defaults:
+    next: none
+    pos: [200, 50]
+  actions:
+    a:
+      emo: happy
+      text: "My grandfather twice removed was a circuit breaker."
+      audio: Story_2_Ctanlee_1.m4a
+    b:
+      emo: sad
+      text: "I dated a boiler once. She was hot."
+      audio: Story_2_Ctanlee_2.m4a
+    c:
+      emo: surprize
+      text: "The nerve center of the BES. My 1s and 0s are tingling."
+      audio: Story_2_Ctanlee_3.m4a
+ux:
+  components:
+    -
+      kind: simple-selection
+      config:
+        title: Simple Selection
+        subTitle: Most of the Standards apply to High and Medium impact facilities, so we'll add a Medium Impact facility to the simulator. Pick whichever one you like! We'll teach the same principles with each facility.
+        items:
+          -
+            btnTxt: Substation
+            click: {cmd: ctanlee.activate, data: a}
+          -
+            btnTxt: Generation Plant
+            click: {cmd: ctanlee.activate, data: b}
+          -
+            btnTxt: Control Center
+            # On Click, we add an event listener to ctanlee. After his audio is complete,
+            # we run all the actions listed below in "action"
+            click:
+              - {cmd: ctanlee.activate, data: c}
+              -
+                cmd: ctanlee.add-event-listener
+                data:
+                  event: complete
+                  action:
+                    - {cmd: slides.next-slide}
+                    - {cmd: ctanlee.gohome}

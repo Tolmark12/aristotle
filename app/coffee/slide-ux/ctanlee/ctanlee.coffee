@@ -14,11 +14,12 @@ module.exports = class Ctanlee
     @$nextBtn.on "click",   (e)=> @playNextAction()
     $('html').on "keydown", (e)=> if e.which == 39 then @playNextAction() # Allow right arrow to play next slide
 
-    PubSub.subscribe 'ctanlee.activate',  (a, action)=> @playAction(action)
-    PubSub.subscribe 'ctanlee.clear',     (a, action)=> @hideText()
-    PubSub.subscribe 'ctanlee.gohome',    (a, action)=> @returnToStation()
-    PubSub.subscribe 'ctanlee.hide',      (a, action)=> @$el.css display: "none"
-    PubSub.subscribe 'ctanlee.show',      (a, action)=> @$el.css display: "initial"
+    PubSub.subscribe 'ctanlee.activate',           (a, data)=> @playAction(data)
+    PubSub.subscribe 'ctanlee.clear',              (a, data)=> @hideText()
+    PubSub.subscribe 'ctanlee.gohome',             (a, data)=> @returnToStation()
+    PubSub.subscribe 'ctanlee.hide',               (a, data)=> @$el.css display: "none"
+    PubSub.subscribe 'ctanlee.show',               (a, data)=> @$el.css display: "initial"
+    PubSub.subscribe 'ctanlee.add-event-listener', (a, data)=> @addEventListener data
 
     $parent.append @$el
     @returnToStation()
@@ -74,6 +75,12 @@ module.exports = class Ctanlee
     # else it's a position
     else
       @gotoPos action.pos[0], action.pos[1], action.pos[2], action.pos[3]
+
+  addEventListener : (data) ->
+    if data.event == 'complete'
+      @track.addOnComplete ()=>
+        aristotle.commander.do data.action
+
 
   # ------------------------------------ MEAT
 

@@ -6,7 +6,9 @@ module.exports = class Slides
   constructor: (trainingData, movie, ux, @onShowComplete) ->
     aristotle.slides = @
     @createSlides trainingData, movie, ux
-    PubSub.subscribe 'slides.next-slide', ()=> @nextSlide()
+    PubSub.subscribe 'slides.next-slide', ()=>
+      console.log "run next slide...."
+      @nextSlide()
 
   createSlides : (trainingData, movie, ux) ->
     slides = []

@@ -5,7 +5,10 @@ module.exports = class AudioTrack
 
   play : (onComplete) ->
     @sound = createjs.Sound.play @src, AudioTrack.ppc
-    @sound.addEventListener "complete", ()-> onComplete()
+    @addOnComplete onComplete
+
+  addOnComplete : (onComplete) ->
+    if onComplete? then @sound.addEventListener "complete", ()-> onComplete()
 
   stop : ()-> @sound.stop()
 
