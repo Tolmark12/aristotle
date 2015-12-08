@@ -2,7 +2,8 @@ module.exports = class DynamicAssets
 
   constructor: ( @$el ) ->
     # Ghost UX
-    PubSub.subscribe "ghostux.add",  (m, data)=> @createGhost data
+    PubSub.subscribe "ghostux.add",    (m, data)=> @createGhost data
+    PubSub.subscribe "ghostux.remove", (m, data)=> @destroyGhost data
 
     # Labels
     PubSub.subscribe 'label.add',    (m, data)=> @addLabel data
@@ -25,7 +26,9 @@ module.exports = class DynamicAssets
     wid     = $target[0].getBBox().width
     tal     = $target[0].getBBox().height
 
-    $ghostItem = $ jadeTemplate['slide-ux/components/ghost-item']( {width:wid, height:tal, left:pos.left, top:pos.top} )
+    if wid > 500 || tal > 400 then aristotle.log "We've created a hit area for `#{data.id}` that is #{wid}px by #{tal}px, I'm guessing that's not right.."
+
+    $ghostItem = $ jadeTemplate['slide-ux/components/ghost-item']( {id:"#{data.id}-ghost", width:wid, height:tal, left:pos.left, top:pos.top} )
     @$el.append $ghostItem
 
     # Set event handlers
@@ -37,6 +40,9 @@ module.exports = class DynamicAssets
       # if it's a function..
       else if typeof action == "function"
         $ghostItem.on event, ()-> action data.id
+
+  destroyGhost : (ghostId) -> $("#{ghostId}-ghost").remove()
+
 
   ##          ###    ########  ######## ##        ######
   ##         ## ##   ##     ## ##       ##       ##    ##

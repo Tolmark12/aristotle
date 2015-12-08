@@ -253,6 +253,7 @@ chapters:
                   style: lightning
                   text: GOT it!
                   action: {cmd: slides.next-slide}
+      # Equipment viewing slide
       -
         action:
           - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
@@ -279,17 +280,88 @@ chapters:
           - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
           - {cmd: label.show, data: {id: all}  }
         duration: {kind: ux}
+        # DELETE ------->
+        # I've only added this layer for testing so I can jump directLy to this slide
+        movie:
+          layers:
+            - {depth: 7, content: asset_view.json }
+        # <------- DELETE
+        # Equipment exploration component:
         ux:
           components:
             -
-              kind: dialogue
+              kind: explore-cards
               config:
-                title: Explore Placeholder
-                body: Ability to click and read about assets.
-                btn:
-                  style: lightning
-                  text: continue
-                  action: {cmd: slides.next-slide}
+                required-views: 3 # (number of cards they have to view to move on to next slide)
+                template: equipment
+                cards:
+                  -
+                    hit: con-sys-rack-hit
+                    name: Control System
+                    type: BSA
+                    network: ESP
+                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                  -
+                    hit: esp-ns-hit
+                    name: Network Switch
+                    type: BSA
+                    network: ESP
+                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                  -
+                    hit: data-acs-hit
+                    name: Data Acquisition
+                    type: BSA
+                    network: ESP
+                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                  -
+                    hit: control-sas-hit
+                    name: Control System
+                    type: BSA
+                    network: ESP
+                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                  -
+                    hit: operator-ws-hit
+                    name: Operator Workstation
+                    type: BSA
+                    network: ESP
+                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                  -
+                    hit: file-server-hit
+                    name: File Server
+                    type: BSA
+                    network: ESP
+                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                  -
+                    hit: map-computer-hit
+                    name: Map Computer
+                    type: BSA
+                    network: ESP
+                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                  -
+                    hit: printer-hit
+                    name: Printer,
+                    type: BSA
+                    network: ESP
+                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                  -
+                    hit: filing-cabinet-hit
+                    name: Substation Diagrams
+                    type: BSA
+                    network: ESP
+                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                  -
+                    hit: map-computer-hit
+                    name: System Map
+                    type: BSA
+                    network: ESP
+                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                  -
+                    hit: monitor-hit
+                    name: Control System
+                    type: BSA
+                    network: ESP
+                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+
       -
         action:
           - {cmd: "unhighlight.all"}

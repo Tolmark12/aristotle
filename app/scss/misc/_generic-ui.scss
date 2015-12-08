@@ -1,0 +1,7 @@
+.generic-ui       { pointer-events:none; height:768px; position:absolute;
+  .continue-strip { position:absolute; bottom:0; width:1024px; background:rgba($orange, 0.9); padding:13px 0;
+    .continue-btn { pointer-events:all; margin:0 auto; width:102px; opacity:0.75; cursor:pointer;
+      &:hover     { opacity:1; }
+    }
+  }
+}
