@@ -26,7 +26,6 @@ module.exports = class Highlighter
       when 'orange' then filterId = "highlightOrange"
       when 'yellow' then filterId = "highlightYellow"
 
-
     $item.css filter : "url(##{filterId})"
 
   unHighlightElement : ( elementId ) ->
