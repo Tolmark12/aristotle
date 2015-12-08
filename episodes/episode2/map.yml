@@ -8,7 +8,7 @@ chapters:
   -
     dev:
       volume: 0
-      startIndex: 37
+      startIndex: 45
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -754,7 +754,7 @@ chapters:
                         r: Better luck next time
                       -
                         a: A straight line
-                        r: Better luck next time
+                        r: Nice, I knew you were smart!
                         c: true
                       -
                         a: A curve

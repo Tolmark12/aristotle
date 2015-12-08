@@ -33,7 +33,7 @@ module.exports = class Quiz extends Component
     @hideNext()
     @currentQuestion.destroy()
     if @questions.isAtLastItem()
-      console.log "done with the questions"
+      PubSub.publish 'slides.next-slide',
     else
       @questions.next()
       @showCurrentQuestion()
