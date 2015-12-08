@@ -27,6 +27,5 @@
     &:hover,
     &.active { background:#335E6E; border-color:$orange; color:$yeller; }
   }
-  .line     { width:100%; content:""; @include blue-border; display:inline-block; height:2px; margin:-10px 0;}
 }
 @import "components/ghost-ux";

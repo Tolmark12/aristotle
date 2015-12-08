@@ -11,7 +11,6 @@ module.exports = class Question
 
   onAnswerClick : (e)=>
     $(e.currentTarget).addClass "flipped"
-    $(".answer-wrapper", @$node).css({cursor:"default", "pointer-events": "none"}).off "click"
     isCorrect = $(".response", e.currentTarget).hasClass 'right'
     @answerCallback isCorrect
 

@@ -27,13 +27,13 @@ module.exports = class Quiz extends Component
     @currentQuestion.build()
 
   onQuestionAnswered : (gotItRight) =>
-    @showNext()
+    if gotItRight then @showNext()
 
   onNextClick : () =>
     @hideNext()
     @currentQuestion.destroy()
     if @questions.isAtLastItem()
-      console.log "done with the quesitons"
+      console.log "done with the questions"
     else
       @questions.next()
       @showCurrentQuestion()
