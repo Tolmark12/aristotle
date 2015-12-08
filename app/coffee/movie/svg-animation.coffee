@@ -29,6 +29,10 @@ module.exports = class SVGAnimation
           @animation.removeEventListener event
           PubSub.publish "layer.#{data.depth}.#{event}"
 
+  addOnComplete : (onComplete) ->
+    @animation.addEventListener "complete", ()=>
+      # @animation.removeEventListener "complete"
+      onComplete()
 
   play   : () => @animation.play();
   stop   : () -> @animation.stop()
