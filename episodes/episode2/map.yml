@@ -18,7 +18,7 @@ chapters:
           layers:
             - {depth: 1, content: episode1_placeholder.png, action: {cmd: chrome.hide} }
         duration: {kind: time, seconds: 3 }
-      - !!inc/file ./episodes/episode2/yaml/_simple-selector-test.yaml
+      # - !!inc/file ./episodes/episode2/yaml/_simple-selector-test.yaml
       -
         movie:
           layers:
@@ -27,7 +27,7 @@ chapters:
             - {depth: 2, content: c1-background-buildin.json, events: [complete], cache: true  }
         duration: {kind: listen, event: layer.2.complete}
       # Building Selector
-      # - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
+      - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
       # Interior build-in
       -
         movie:
