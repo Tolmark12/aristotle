@@ -9,7 +9,7 @@ module.exports = class SimpleSelection extends Component
     $right = $ jadeTemplate['slide-ux/components/dialogue/dialogue-buttons']( jadeData )
     @$node.append $right
     @addEventListeners @$node, data
-    super $el, @$node
+    super $el, @$node, data
 
   generateConfigData : (data) ->
     @items         = {}

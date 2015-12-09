@@ -1,5 +1,5 @@
 build:
-  engine: ../nanobox-engine-tolmark-gulp
+  engine: tylerflint/tolmark-gulp
 web1:
   type: php
   httpd_document_root: rel

@@ -30,6 +30,11 @@ module.exports = class Layer
     @updateBackground layerData
 
   addTheCorrectContent : (layerData) ->
+    parse layerData
+    # Temp
+    if layerData.cache
+      layerData.cache = false
+
     @currentOnionLayer = @addOnionLayer()
     if !layerData.content?
       kind = "none"
@@ -68,7 +73,6 @@ module.exports = class Layer
         @cache()
 
   addSvg : ($holder, layerData) ->
-    console.log layerData
     me = @
     $holder.load "#{aristotle.episodeRoot}/assets/#{layerData.content}", ()->
       if layerData.cache then me.cache()

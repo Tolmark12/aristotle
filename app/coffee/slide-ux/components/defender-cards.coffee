@@ -5,7 +5,7 @@ module.exports = class DefenderCards extends Component
   constructor: ($el, @data) ->
     @totalCardsViewed = 0
     @$node = $ jadeTemplate['slide-ux/components/defender-cards']( {} )
-    super $el, @$node
+    super $el, @$node, @data
     @createDefenders @data.defenders
 
   createDefenders : (defenders) ->

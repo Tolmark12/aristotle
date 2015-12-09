@@ -20,7 +20,7 @@ module.exports = class ChromeUI
 
   getRank : (data, episode) ->
     switch episode
-      when 'recruit'
+      when 'recruits'
         data.rank  = "recruit"
         data.badge = "rank-badge-recruit"
       when 'cadet'

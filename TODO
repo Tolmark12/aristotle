@@ -1,0 +1,16 @@
+To Build:
+  ☐ Persisting state between chapters & episodes
+  ☐ Easier variable usage
+  ☐ Duties section
+  ☐ Chapter Headings
+  ☐ Progress Bar at bottom
+  ☐ Change Mode (Learn mode, Explore Mode, Simulate)
+
+Episode1:
+  ☐ ui pages
+
+Complex Animations:
+  ☐ After effects trigger based on keyframes
+  ☐ Ctanlee delay
+
+☐ Make caching work on other browsers

@@ -4,7 +4,7 @@ module.exports = class GhostUX extends Component
 
   constructor: ($el, data) ->
     @$node = $ jadeTemplate['slide-ux/components/ghost-ux']( {} )
-    super $el, @$node
+    super $el, @$node, data
     @createTargets data.targets
 
   createTargets : (targets) ->

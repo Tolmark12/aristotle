@@ -1,12 +1,13 @@
-Episode       = require "episode/episode"
 ChromeUI      = require "chrome/chrome-ui"
-DevTools      = require 'misc/dev-tools'
-Movie         = require 'movie/movie'
-EpisodeLoader = require 'misc/episode-loader'
-SlideUX       = require 'slide-ux/slide-ux'
 Commander     = require 'misc/commander'
+DevTools      = require 'misc/dev-tools'
+Episode       = require "episode/episode"
+EpisodeLoader = require 'misc/episode-loader'
 GlobalVars    = require 'misc/global-vars'
 Logger        = require 'misc/logger'
+Movie         = require 'movie/movie'
+Parser        = require 'misc/parser'
+SlideUX       = require 'slide-ux/slide-ux'
 
 class Aristotle
 
@@ -27,6 +28,7 @@ class Aristotle
 
     commander  = new Commander()
     globals    = new GlobalVars()
+    parser     = new Parser()
     @chromeUI  = new ChromeUI $(".chrome",   $base)
     @slideUX   = new SlideUX  $(".slide-ux", $base)
     @movie     = new Movie    $(".movie",    $base)

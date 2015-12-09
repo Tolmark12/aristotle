@@ -4,6 +4,6 @@ module.exports = class Dialogue extends Component
 
   constructor: ($el, data) ->
     @$node = $ jadeTemplate['slide-ux/components/dialogue/dialogue']( data )
-    super $el, @$node
+    super $el, @$node, data
     $('.btn', @$node).on "click", ()=>
       aristotle.commander.do data.btn.action
