@@ -7,7 +7,7 @@ chapters:
   -
     dev:
       volume: 0.3
-      startIndex: 0
+      startIndex: 11
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -76,17 +76,20 @@ chapters:
       -
         movie:
           layers:
+            - {depth: 6, content: clear }
             - {depth: 9, content: clear }
             - {depth: 10, content: clear }
-        duration: {kind: time, seconds: .2 }
+            - {depth: 10, content: perimeter_door_server.json }
+          zoom: {scale: 2, x: 600, y: 750}
+        duration: {kind: time, seconds: 1.5 }
       - !!inc/file ./episodes/episode3/yaml/_pacs-selector.yaml
       -
         movie:
           layers:
-            - {depth: 6, content: clear }
-            - {depth: 9, content: clear }
-            - {depth: 10, content: asset_view.json }
-            - {depth: 11, content: physical_perimeter.png }
+          zoom: {scale: 1}
+          layers:
+            - {depth: 10, content: clear }
+            - {depth: 10, content: perimeter_physical.json }
         duration: {kind: ux}
         ctanlee:
           timeline:
@@ -112,7 +115,7 @@ chapters:
           layers:
             - {depth: 10, content: clear }
             - {depth: 11, content: clear }
-            - {depth: 10, content: card_scanner.json, events: [complete] }
+            - {depth: 10, content: card_scanner_attack.json, events: [complete] }
         ctanlee:
           timeline:
             - {action: a }
@@ -175,7 +178,7 @@ chapters:
               kind: dialogue
               config:
                 title: Electronic Attacks
-                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a BCA or PCA attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction.
+                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a BCA or PCA attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction. <br/>Let's see how this might work.
                 btn:
                   style: lightning
                   text: Continue
