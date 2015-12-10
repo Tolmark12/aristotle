@@ -60,21 +60,6 @@ chapters:
         duration: {kind: listen, event: layer.9.complete}
       # Components overview
       -
-        movie:
-          layers:
-            - {depth: 9, content: clear }
-            - {depth: 9, content: asset_view.json }
-            - {depth: 10, content: physical_perimeter.png }
-        duration: {kind: ctanlee}
-        ctanlee:
-          timeline:
-            - {action: a }
-          actions:
-            a:
-              pos: [170,400]
-              text: Your PSP. Sometimes I just hover here and stare at it, ya know? I know how it is.
-              audio: Story_3_Ctanlee_placeholder.m4a
-      -
         action: {cmd: ctanlee.gohome}
         duration: {kind: ux}
         ux:
@@ -94,9 +79,23 @@ chapters:
             - {depth: 9, content: clear }
             - {depth: 10, content: clear }
         duration: {kind: time, seconds: .2 }
-      - !!inc/file ./episodes/episode3/yaml/_simple-selector-physical-perimeter.yaml
+      - !!inc/file ./episodes/episode3/yaml/_pacs-selector.yaml
       -
+        movie:
+          layers:
+            - {depth: 6, content: clear }
+            - {depth: 9, content: clear }
+            - {depth: 10, content: asset_view.json }
+            - {depth: 11, content: physical_perimeter.png }
         duration: {kind: ux}
+        ctanlee:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [170,400]
+              text: Your PSP. Sometimes I just hover here and stare at it, ya know? I know how it is.
+              audio: Story_3_Ctanlee_placeholder.m4a
         ux:
           components:
             -
@@ -111,10 +110,9 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 6, content: clear }
-            - {depth: 8, content: clear }
-            - {depth: 9, content: clear }
-            - {depth: 9, content: card_scanner.json, events: [complete] }
+            - {depth: 10, content: clear }
+            - {depth: 11, content: clear }
+            - {depth: 10, content: card_scanner.json, events: [complete] }
         ctanlee:
           timeline:
             - {action: a }
@@ -123,7 +121,7 @@ chapters:
               pos: [700,300]
               text: "Bow to the scanner, Bot. Uh oh, looks like the robots are trying again. Alerts work great. Rust in peace, robots."
               audio: Story_3_Ctanlee_placeholder.m4a
-        duration: {kind: listen, event: layer.9.complete}
+        duration: {kind: listen, event: layer.10.complete}
       -
         ctanlee:
           timeline:
@@ -157,20 +155,19 @@ chapters:
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
-            - {depth: 10, content: duties_placeholder.png, action: {cmd: chrome.hide} }
+            - {depth: 11, content: duties_placeholder.png, action: {cmd: chrome.hide} }
         duration: {kind: time, seconds: .5 }
       -
         movie:
           layers:
-            - {depth: 9, content: clear }
-            - {depth: 10, content: clear }
             - {depth: 11, content: clear }
             - {depth: 11, content: chapter2_placeholder.png }
         duration: {kind: time, seconds: .5 }
       -
         movie:
           layers:
-            - {depth: 11, content: clear, action: {cmd: chrome.show} }
+            - {depth: 10, content: clear, action: {cmd: chrome.show} }
+            - {depth: 11, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -187,6 +184,11 @@ chapters:
         movie:
           layers:
             - {depth: 10, content: fatline.json, events: [complete] }
+        duration: {kind: listen, event: layer.10.complete}
+      -
+        movie:
+          layers:
+            - {depth: 10, content: kettle_e_attack.json, events: [complete] }
         duration: {kind: listen, event: layer.10.complete}
       -
         movie:
