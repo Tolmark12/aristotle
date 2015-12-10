@@ -21,6 +21,7 @@ module.exports = class Layer
       @updateEffects( @layerData.fx )
     if @layerData.action?
       aristotle.commander.do @layerData.action
+      
 
   updateContent : (layerData) ->
     # If there is existing content, create a second 'onion layer' so the transition is seamless
