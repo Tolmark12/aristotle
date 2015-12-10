@@ -7,7 +7,7 @@ chapters:
   -
     dev:
       volume: 0.3
-      startIndex: 11
+      startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -192,12 +192,6 @@ chapters:
         movie:
           layers:
             - {depth: 10, content: kettle_e_attack.json, events: [complete] }
-        duration: {kind: listen, event: layer.10.complete}
-      -
-        movie:
-          layers:
-            - {depth: 10, content: clear }
-            - {depth: 10, content: fatline.json, events: [complete] }
         ctanlee:
           timeline:
             - {action: a }
@@ -218,8 +212,49 @@ chapters:
               kind: dialogue
               config:
                 title: Electronic Attacks
-                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a BCA or PCA attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction.
+                body: To defend our assets against electronic attacks, we must build an Electronic Security Perimeter (ESP) around the network that our BCA and PCA are connected to. CIP requires that we only allow communication in and out of the ESP network that is approved and business justified, ensuring the bad guys and bots can't communicate with our assets in the ESP. CIP also requires that we detect unauthorized electronic activity and alert Defenders if we detect something malicious. <br/>The most common way to meet the CIP requirements is to install Firewall between the ESP network and other networks. Firewalls can prevent unauthorized messages from getting through and often come equipped with Intrusion Prevention Systems (IPS) that inspect the contents of electronic messages and alert Defenders if something malicious is found. Electronic defense assets like firewalls are called Electronic Access Control and Management Systems (EACMS) - that's a mouthful! - and will be added to our official asset lists.
                 btn:
                   style: lightning
                   text: Continue
                   action: {cmd: slides.next-slide}
+      -
+        movie:
+          layers:
+            - {depth: 10, content: clear }
+            - {depth: 10, content: perimeter_door_server.json }
+          zoom: {scale: 2, x: 600, y: 750}
+        duration: {kind: time, seconds: 1.5 }
+      - !!inc/file ./episodes/episode3/yaml/_pacs-selector.yaml
+      -
+        movie:
+          layers:
+          zoom: {scale: 1}
+          layers:
+            - {depth: 10, content: clear }
+            - {depth: 10, content: perimeter_physical.json }
+        duration: {kind: ux}
+        ctanlee:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [170,400]
+              text: Your PSP. Sometimes I just hover here and stare at it, ya know? I know how it is.
+              audio: Story_3_Ctanlee_placeholder.m4a
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Please Try Again
+                body: Let's reload the simulator to test our newly installed physical access control defense.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      -
+        movie:
+          layers:
+            - {depth: 10, content: clear }
+            - {depth: 10, content: fatline.json, events: [complete] }
+        duration: {kind: listen, event: layer.10.complete}
