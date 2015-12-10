@@ -1,3 +1,4 @@
+APIproxy      = require "misc/api-proxy"
 ChromeUI      = require "chrome/chrome-ui"
 Commander     = require 'misc/commander'
 DevTools      = require 'misc/dev-tools'
@@ -29,6 +30,7 @@ class Aristotle
     commander  = new Commander()
     globals    = new GlobalVars()
     parser     = new Parser()
+    apiProxy   = new APIproxy "http://127.0.0.1:1337"
     @chromeUI  = new ChromeUI $(".chrome",   $base)
     @slideUX   = new SlideUX  $(".slide-ux", $base)
     @movie     = new Movie    $(".movie",    $base)

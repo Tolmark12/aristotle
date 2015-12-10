@@ -30,6 +30,7 @@
     "gulp-wrap": "~0.3.0",
     "gulp-yaml": "^1.0.1",
     "gulp-yaml-include": "^0.1.1",
-    "rimraf": "~2.2.8"
+    "rimraf": "~2.2.8",
+    "time-require": "^0.1.2"
   }
 }

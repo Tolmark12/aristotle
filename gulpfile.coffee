@@ -1,3 +1,5 @@
+require "time-require"
+
 autoprefixer = require 'gulp-autoprefixer'
 bower        = require 'gulp-bower'
 bump         = require 'gulp-bump'
@@ -15,6 +17,7 @@ jade         = require 'gulp-jade'
 livereload   = require 'gulp-livereload'
 minifyCss    = require 'gulp-minify-css'
 minifyHtml   = require 'gulp-minify-html'
+nock         = require 'nock'
 open         = require "gulp-open"
 plumber      = require 'gulp-plumber'
 rimraf       = require 'rimraf'
@@ -209,9 +212,12 @@ compileFiles = (doWatch=false, cb) ->
     else
       item.meth.apply null, params
 
+launchAPIsimulator = -> require('./APISimulator.coffee')
+
 # ----------- MAIN ----------- #
 
-gulp.task 'clean',                  (cb) -> rimraf './server', cb
+gulp.task 'nock',                   ()   -> #launchAPIsimulator()
+gulp.task 'clean',  ['nock'],       (cb) -> rimraf './server', cb
 gulp.task 'bowerLibs', ['clean'],   ()   -> copyBowerLibs()
 gulp.task 'compile', ['bowerLibs'], (cb) -> compileFiles(true, cb)
 gulp.task 'server', ['compile'],    (cb) -> server(); launch();
