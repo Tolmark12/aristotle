@@ -290,11 +290,7 @@ h1, h2 {
   width: 100%;
   z-index: 3;
   pointer-events: none;
-  height: 100%;
-  @keyframes spin {
-    100% {
-      transform: rotate(360deg); } }
- }
+  height: 100%; }
   .slide-ux > * {
     pointer-events: all; }
   .slide-ux .ctanlee {

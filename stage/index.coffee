@@ -10,10 +10,26 @@ getQueryVariable = (variable)->
 
 # See if there is a GET var 'episode'
 userSpecifiedEpisode = getQueryVariable 'episode'
+cache                = getQueryVariable 'cache'
 
 # Load either the user specified episode, or a default one
-episode = if !userSpecifiedEpisode then "/episodes/episode2" else "/episodes/#{userSpecifiedEpisode}"
-aristotle = new Aristotle $(".holder"), episode
+episode = if !userSpecifiedEpisode then "episode2" else "#{userSpecifiedEpisode}"
+
+switch episode
+  when "episode1" then episode = "1"
+  when "episode2" then episode = "2"
+  when "episode3" then episode = "3"
+  when "episode4" then episode = "4"
+  when "episode5" then episode = "5"
+  when "episode6" then episode = "6"
+  when "episode7" then episode = "7"
+
+
+aristotle = new Aristotle $(".holder"), "/episodes", episode
+
+if cache == "false" then aristotle.dontCache = true
+
+
 
 # ar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 # count = 0

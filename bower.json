@@ -1,6 +1,6 @@
 {
   "name": "aristotle",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "dependencies": {
     "jquery": "~2.1.1",
     "jquery.easing": "~1.3.0",
@@ -11,7 +11,8 @@
     "createjs-soundjs": "~0.6.1",
     "PreloadJS": "createjs-preloadjs#~0.6.2",
     "canvas2image": "hongru/canvas2image",
-    "html2canvas": "niklasvh/html2canvas#master"
+    "html2canvas": "niklasvh/html2canvas#master",
+    "SVG.toDataURL": "Tolmark12/SVG.toDataURL"
   },
   "ignore": [
     "app",

@@ -17,7 +17,8 @@ module.exports = class Movie
     PubSub.subscribe 'movie.zoom',       (m, data)       => @zoom data
     PubSub.subscribe 'movie.layers.blur.below',(m, data) => @blurAllLayersBelow data
     PubSub.subscribe 'movie.layers.unblur.all',(m, data) => @unblurAllLAyers()
-    PubSub.subscribe 'movie.layers.cache',(m, data) => @cacheLayer(data)
+    PubSub.subscribe 'movie.layers.cache',(m, data)      => @cacheLayer(data)
+    PubSub.subscribe 'movie.layers.uncache',(m, data)    => @uncacheLayer(data)
 
   reset : () ->
     layer.destroy() for layer in @layers
@@ -69,7 +70,8 @@ module.exports = class Movie
     @layers[depth] = layer
     return layer
 
-  cacheLayer : (depth) -> @layers[depth].cache()
+  cacheLayer   : (depth) -> @layers[depth].cache()
+  uncacheLayer : (depth) -> @layers[depth].uncache()
 
   blurAllLayersBelow : (layerDepth) ->
     for i in [0..layerDepth-1]

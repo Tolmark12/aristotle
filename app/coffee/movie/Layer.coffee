@@ -3,6 +3,7 @@ SVGAnimation = require 'movie/svg-animation'
 module.exports = class Layer
 
   constructor: ($el, depth) ->
+    @isCached = false
     @$layer = $ jadeTemplate['movie/layer']( {depth:depth} )
     $el.append @$layer
 
@@ -32,9 +33,9 @@ module.exports = class Layer
 
   addTheCorrectContent : (layerData) ->
     parse layerData
-    # Temp
-    # if layerData.cache
-    #   layerData.cache = false
+    if layerData.ieCache && !aristotle.dontCache && aristotle.isIE
+      layerData.loop  = false
+      layerData.cache = true
 
     @currentOnionLayer = @addOnionLayer()
     if !layerData.content?
@@ -51,11 +52,41 @@ module.exports = class Layer
       when "clear" then @empty()
       else              aristotle.throw "tried to add unrecognized layer type '#{kind}'", true
 
-  cache : ()->
-    html2canvas( @$layer ).then (canvas)=>
+  # cache : ()->
+  #   html2canvas( @$layer ).then (canvas)=>
+  #     @fadeAndRemoveOldLayer()
+  #     @currentOnionLayer = @addOnionLayer()
+  #     @currentOnionLayer.append Canvas2Image.convertToPNG(canvas, 1024, 768)
+
+  cache : () ->
+    return if @isCached
+    @isCached = true
+    if aristotle.dontCache then return
+    svg  = $("svg", @$layer)[0]
+    $img = $( $.parseHTML("<img />") )
+    img  = $img[0]
+
+    svg.toDataURL 'image/png', callback: (data) =>
+      img.setAttribute 'src', data
       @fadeAndRemoveOldLayer()
       @currentOnionLayer = @addOnionLayer()
-      @currentOnionLayer.append Canvas2Image.convertToPNG(canvas, 1024, 768)
+      @currentOnionLayer.append img
+
+  uncache : () ->
+    return if !@isCached
+    @isCached = false
+    @fadeAndRemoveOldLayer()
+    @currentOnionLayer    = @addOnionLayer()
+
+    # Copy layer data into a temp object
+    tempObj = {}
+    for key, val of @layerData
+      tempObj[key] = val
+
+    tempObj.ieCache   = false
+    tempObj.cache     = false
+    tempObj.jumpToEnd = true
+    @addTheCorrectContent tempObj
 
   updateEffects : (fx) ->
     if fx.clear then @$layer.attr class:'layer'
@@ -68,18 +99,18 @@ module.exports = class Layer
     @currentOnionLayer.css background: layerData.background
 
   addAnimation : ($holder, layerData) ->
-    @animation  = new SVGAnimation $holder, "#{aristotle.episodeRoot}/animations/#{layerData.content}", layerData
+    @animation  = new SVGAnimation $holder, aristotle.getAssetPath(layerData.content), layerData
     if layerData.cache
       @animation.addOnComplete ()=>
         @cache()
 
   addSvg : ($holder, layerData) ->
     me = @
-    $holder.load "#{aristotle.episodeRoot}/assets/#{layerData.content}", ()->
+    $holder.load aristotle.getAssetPath(layerData.content), ()->
       if layerData.cache then me.cache()
 
   addImage : ($holder, file, repeat="no-repeat", position="left") ->
-    $holder.css background: "url(#{aristotle.episodeRoot}/assets/#{file}) #{repeat} #{position}"
+    $holder.css background: "url(#{aristotle.getAssetPath(file)}) #{repeat} #{position}"
 
   destroy : () ->
     @$layer.remove()

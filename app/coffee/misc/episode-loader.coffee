@@ -4,7 +4,7 @@ module.exports = class EpisodeLoader
     @loadEpisode()
 
   loadEpisode: ()->
-    @loadJson aristotle.episodeRoot + "/map.json", (json)=>
+    @loadJson aristotle.getAssetPath("map.json"), (json)=>
       @callback JSON.parse(json)
 
 

@@ -23,7 +23,7 @@ chapters:
           layers:
             - {depth: 1, content: clear, action: {cmd: chrome.show} }
             - {depth: 0, content: c1-sky.svg }
-            - {depth: 2, content: c1-background-buildin.json, events: [complete], cache: true  }
+            - {depth: 2, content: c1-background-buildin.json, events: [complete], ieCache: true }
         duration: {kind: listen, event: layer.2.complete}
       # Building Selector
       - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
@@ -31,18 +31,17 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 4, content: interior_build.json, events: [complete] }
+            - {depth: 4, content: interior_build.json, events: [complete], ieCache: true }
+            - {depth: 6, wait: 500, loop: true, content: $facilityLoop, cache: true }
         duration: {kind: listen, event: layer.4.complete}
         action:
-          - {cmd: movie.load-layer, data: {depth: 6, wait: 500, loop: true}, INJECT_GLOBAL_VARS: [ {content: facilityLoop} ] }
           - {cmd: ctanlee.clear}
       # Building Tour - ctanlee
-      - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
       -
         movie:
           layers:
-            - {depth: 4, content: interior_static.png }
-        duration: {kind: time, seconds: 1 }
+            - {depth: 10, content: kettle_attack.json, loop: true }
+      - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
       -
         duration: {kind: ux}
         ux:

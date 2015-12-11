@@ -2,6 +2,9 @@ To Build:
   ☐ Persisting state between chapters & episodes
     - I suppose there's no reason why we can't save the state
   ✔ Easier variable usage @done(2015-12-09 12:04) @project(To Build)
+  ☐ Clean up the caching of svgs
+  ☐ Episode asset directory @1/asdf.json
+  ☐ Add a `savePositions` method for saving the positions of elements pre caching
   ☐ Duties section
   ☐ Chapter Headings
   ☐ Progress Bar at bottom
