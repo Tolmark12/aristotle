@@ -4,6 +4,7 @@ module.exports = class AssetPreploader
     @preloadAssets data
 
   preloadAssets: (data)->
+    aristotle.preloadBar.init data.title
     assets = []
     regex = /.+\.(svg)/
     @lookForFiles data, assets, regex
@@ -19,10 +20,11 @@ module.exports = class AssetPreploader
 
     # On load progress
     preloadQueue.on "progress", (e)=>
-      # console.log e.loaded
+      aristotle.preloadBar.update(e.loaded)
 
     # On load complete
     preloadQueue.on "complete", ()=>
+      aristotle.preloadBar.complete()
       @callback data
 
     # Load it!

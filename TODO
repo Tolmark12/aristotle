@@ -1,5 +1,6 @@
 To Build:
   ☐ Persisting state between chapters & episodes
+    - I suppose there's no reason why we can't save the state
   ✔ Easier variable usage @done(2015-12-09 12:04) @project(To Build)
   ☐ Duties section
   ☐ Chapter Headings
@@ -14,3 +15,4 @@ Complex Animations:
   ☐ Ctanlee delay
 
 ☐ Make caching work on other browsers
+☐ un-caching

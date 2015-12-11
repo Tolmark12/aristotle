@@ -821,3 +821,40 @@ h1, h2 {
       cursor: pointer; }
       .generic-ui .continue-strip .continue-btn:hover {
         opacity: 1; }
+
+.preload-background {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.83);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100; }
+  .preload-background .preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .preload-background .preloader .bar {
+      width: 300px;
+      height: 20px;
+      position: relative; }
+      .preload-background .preloader .bar .fg, .preload-background .preloader .bar .bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0; }
+      .preload-background .preloader .bar .fg {
+        background: #128dc1;
+        width: 0;
+        transition: background 0.2s cubic-bezier(0.86, 0, 0.07, 1) 0s; }
+      .preload-background .preloader .bar .bg {
+        background: #0a3f55; }
+    .preload-background .preloader .txt {
+      color: white;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 10px; }
+  .preload-background.complete .bar .fg {
+    background: white; }

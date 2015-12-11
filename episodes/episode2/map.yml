@@ -3,9 +3,9 @@ dev:
   startIndex: 0
 
 
-# CHAPTER 2
 chapters:
   -
+    title: Chapter 1
     dev:
       volume: 1
       startIndex: 0

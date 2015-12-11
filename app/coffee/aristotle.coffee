@@ -8,6 +8,7 @@ GlobalVars    = require 'misc/global-vars'
 Logger        = require 'misc/logger'
 Movie         = require 'movie/movie'
 Parser        = require 'misc/parser'
+PreloaderBar  = require 'misc/preloader-bar'
 SlideUX       = require 'slide-ux/slide-ux'
 
 class Aristotle
@@ -27,13 +28,14 @@ class Aristotle
     shadowIcons = new pxicons.ShadowIcons();
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, $base
 
-    commander  = new Commander()
-    globals    = new GlobalVars()
-    parser     = new Parser()
-    apiProxy   = new APIproxy "http://127.0.0.1:1337"
-    @chromeUI  = new ChromeUI $(".chrome",   $base)
-    @slideUX   = new SlideUX  $(".slide-ux", $base)
-    @movie     = new Movie    $(".movie",    $base)
+    commander    = new Commander()
+    globals      = new GlobalVars()
+    parser       = new Parser()
+    preloaderBar = new PreloaderBar $base
+    apiProxy     = new APIproxy "http://127.0.0.1:1337"
+    @chromeUI    = new ChromeUI $(".chrome",   $base)
+    @slideUX     = new SlideUX  $(".slide-ux", $base)
+    @movie       = new Movie    $(".movie",    $base)
 
   setDevMode : (devMode) ->
     logger             = new Logger $('body'), devMode
