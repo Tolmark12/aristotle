@@ -51,12 +51,25 @@ chapters:
             - {depth: 6, content: static_facility_interior_no_server.json }
             - {depth: 9, content: kettle_attack.json, events: [complete] }
         ctanlee:
+          defaults:
+            next: audio
           timeline:
             - {action: a }
+            - {action: b }
+            - {action: c }
           actions:
             a:
-              pos: [800,250]
-              audio:
+              pos: [170,400]
+              text: Uh oh. One of Sektimus' advance force robots.
+              audio: Story_3_Ctanlee_placeholder.m4a
+            b:
+              pos: [270,300]
+              text: There's no lock on the door! Run everyone. Run!!!
+              audio: Story_3_Ctanlee_placeholder.m4a
+            c:
+              pos: [370,300]
+              text: Why must the universe punish the good? Simulator Pause.
+              audio: Story_3_Ctanlee_placeholder.m4a
         duration: {kind: listen, event: layer.9.complete}
       # Components overview
       -
@@ -73,6 +86,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
+      # Perimeter Selection slide
       -
         movie:
           layers:
@@ -110,6 +124,7 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
+      # Robot Attacks Perimeter Defense
       -
         movie:
           layers:
@@ -117,12 +132,24 @@ chapters:
             - {depth: 11, content: clear }
             - {depth: 10, content: card_scanner_attack.json, events: [complete] }
         ctanlee:
+          defaults:
+            next: audio
           timeline:
             - {action: a }
+            - {action: b }
+            - {action: c }
           actions:
             a:
-              pos: [700,300]
-              text: "Bow to the scanner, Bot. Uh oh, looks like the robots are trying again. Alerts work great. Rust in peace, robots."
+              pos: [170,400]
+              text: Bow to the scanner, Bot.
+              audio: Story_3_Ctanlee_placeholder.m4a
+            b:
+              pos: [270,300]
+              text: Uh oh, looks like the robots are trying again.
+              audio: Story_3_Ctanlee_placeholder.m4a
+            c:
+              pos: [370,300]
+              text: Alerts work great. Rust in peace, robots.
               audio: Story_3_Ctanlee_placeholder.m4a
         duration: {kind: listen, event: layer.10.complete}
       -
@@ -154,6 +181,7 @@ chapters:
               pos: [100,100]
               text: Chapter complete, Cadet. Duty time.
               audio: Story_3_Ctanlee_placeholder.m4a
+      # Chapter Complete / Duties
       -
         action: {cmd: ctanlee.gohome}
         movie:
@@ -183,6 +211,7 @@ chapters:
                   style: lightning
                   text: Continue
                   action: {cmd: slides.next-slide}
+      # Sektimus Interlude
       -
         movie:
           layers:
@@ -197,11 +226,13 @@ chapters:
             - {action: a }
           actions:
             a:
-              pos: [700,300]
+              pos: [200,50]
               text: "He's packaging up something nasty to send us. He's running some code on our control system! Look out everyone!"
               audio: Story_3_Ctanlee_placeholder.m4a
         duration: {kind: listen, event: layer.10.complete}
+      # Sektimus Interlude
       -
+        action: {cmd: ctanlee.gohome}
         movie:
           layers:
             - {depth: 10, content: clear }
@@ -212,26 +243,27 @@ chapters:
               kind: dialogue
               config:
                 title: Electronic Attacks
-                body: To defend our assets against electronic attacks, we must build an Electronic Security Perimeter (ESP) around the network that our BCA and PCA are connected to. CIP requires that we only allow communication in and out of the ESP network that is approved and business justified, ensuring the bad guys and bots can't communicate with our assets in the ESP. CIP also requires that we detect unauthorized electronic activity and alert Defenders if we detect something malicious. <br/>The most common way to meet the CIP requirements is to install Firewall between the ESP network and other networks. Firewalls can prevent unauthorized messages from getting through and often come equipped with Intrusion Prevention Systems (IPS) that inspect the contents of electronic messages and alert Defenders if something malicious is found. Electronic defense assets like firewalls are called Electronic Access Control and Management Systems (EACMS) - that's a mouthful! - and will be added to our official asset lists.
+                body: To defend our assets against electronic attacks, we must build an Electronic Security Perimeter (ESP) around the network that our BCA and PCA are connected to. CIP requires that we only allow communication in and out of the ESP network that is approved and business justified, ensuring the bad guys and bots can't communicate with our assets in the ESP. CIP also requires that we detect unauthorized electronic activity and alert Defenders if we detect something malicious. <br/>The most common way to meet the CIP requirements is to install Firewall between the ESP network and other networks. Firewalls can prevent unauthorized messages from getting through and often come equipped with Intrusion Prevention Systems (IPS) that inspect the contents of electronic messages and alert Defenders if something malicious is found. Electronic defense assets like firewalls are called Electronic Access Control and Managemement Systems (EACMS) - that's a mouthful! - and will be added to our official asset lists.nt Systems (EACMS) - that's a mouthful! - and will be added to our official asset lists.  t Systems (EACMS) - that's a mouthful! - and will be added to our official asset lists.  nt Systems (EACMS) - that's a mouthful! - and will be added to our official asset lists.
                 btn:
                   style: lightning
                   text: Continue
                   action: {cmd: slides.next-slide}
+      # Zoom Firewall Asset
       -
         movie:
           layers:
             - {depth: 10, content: clear }
-            - {depth: 10, content: perimeter_door_server.json }
-          zoom: {scale: 2, x: 600, y: 750}
+            - {depth: 10, content: perimeter_firewall.json }
+          zoom: {scale: 2, x: 600, y: 550}
         duration: {kind: time, seconds: 1.5 }
-      - !!inc/file ./episodes/episode3/yaml/_pacs-selector.yaml
+      - !!inc/file ./episodes/episode3/yaml/_eacms-selector.yaml
       -
         movie:
           layers:
           zoom: {scale: 1}
           layers:
             - {depth: 10, content: clear }
-            - {depth: 10, content: perimeter_physical.json }
+            - {depth: 10, content: perimeter_electronic.json }
         duration: {kind: ux}
         ctanlee:
           timeline:
@@ -239,15 +271,15 @@ chapters:
           actions:
             a:
               pos: [170,400]
-              text: Your PSP. Sometimes I just hover here and stare at it, ya know? I know how it is.
+              text: I feel safer already.
               audio: Story_3_Ctanlee_placeholder.m4a
         ux:
           components:
             -
               kind: dialogue
               config:
-                title: Please Try Again
-                body: Let's reload the simulator to test our newly installed physical access control defense.
+                title: Toasty
+                body: Let's reload the simulator to test our newly installed defense.
                 btn:
                   style: lightning
                   text: run simulation
@@ -256,5 +288,140 @@ chapters:
         movie:
           layers:
             - {depth: 10, content: clear }
-            - {depth: 10, content: fatline.json, events: [complete] }
+            - {depth: 10, content: $eacmsAnimateGood, events: [complete] }
+        ctanlee:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+          actions:
+            a:
+              pos: [170,400]
+              text: When computers communicate with each other, they send messages in small packets called … umm … packets. Right. Oh, here's a packet now.
+              audio: Story_3_Ctanlee_placeholder.m4a
+            b:
+              pos: [270,300]
+              text: Before, this packet would have gone straight through to our servers. Let's see what the firewall does.
+              audio: Story_3_Ctanlee_placeholder.m4a
+            c:
+              pos: [370,300]
+              text: Even if the communication is authorized, the Intrusion Prevention System will check the contents of the packet.
+              audio: Story_3_Ctanlee_placeholder.m4a
+            d:
+              pos: [700,300]
+              text: That was an approved packet.
+              audio: Story_3_Ctanlee_placeholder.m4a
         duration: {kind: listen, event: layer.10.complete}
+      -
+        movie:
+          layers:
+            - {depth: 10, content: clear }
+            - {depth: 10, content: $eacmsAnimateBadUpper, events: [complete] }
+        ctanlee:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+          actions:
+            a:
+              pos: [170,400]
+              text: 35 Ah, here's a packet sent by our robot hacker.
+              audio: Story_3_Ctanlee_placeholder.m4a
+            b:
+              pos: [270,300]
+              text: He wasn't on the list.
+              audio: Story_3_Ctanlee_placeholder.m4a
+        duration: {kind: listen, event: layer.10.complete}
+      -
+        movie:
+          layers:
+            - {depth: 10, content: clear }
+            - {depth: 10, content: $eacmsAnimateBadLower, events: [complete] }
+        ctanlee:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+          actions:
+            a:
+              pos: [170,400]
+              text: He's trying again. Some attacks can trick the firewall into letting a packet through.
+              audio: Story_3_Ctanlee_placeholder.m4a
+            b:
+              pos: [270,300]
+              text: He's not through yet.
+              audio: Story_3_Ctanlee_placeholder.m4a
+            c:
+              pos: [370,300]
+              text: Terminated. Nice job, firewall.
+              audio: Story_3_Ctanlee_placeholder.m4a
+            d:
+              pos: [700,300]
+              text: And that ends the chapter. It's duty time.
+              audio: Story_3_Ctanlee_placeholder.m4a
+        duration: {kind: listen, event: layer.10.complete}
+      -
+        action: {cmd: ctanlee.gohome}
+        movie:
+          layers:
+            - {depth: 11, content: duties_placeholder.png, action: {cmd: chrome.hide} }
+        duration: {kind: time, seconds: .5 }
+      # EXAMPLE - Quiz
+      -
+        movie:
+          layers:
+            - {depth: 11, content: clear, action: {cmd: chrome.show} }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: quiz
+              config:
+                question-value: 120
+                questions:
+                  -
+                    question: In this scenario, what do you expect to see?
+                    answers:
+                      -
+                        a: Bigfoot
+                        r: Better luck next time
+                      -
+                        a: A single server
+                        r: Better luck next time
+                      -
+                        a: This is the right answer
+                        r: Nice, you're getting the hang of this!
+                        c: true
+                  -
+                    question: What is the shortest distance between two points
+                    answers:
+                      -
+                        a: A parallel line
+                        r: Better luck next time
+                      -
+                        a: A straight line
+                        r: Nice, I knew you were smart!
+                        c: true
+                      -
+                        a: A curve
+                        r: Better luck next time
+                  -
+                    question: What is the shortest distance between two points
+                    answers:
+                      -
+                        a: A parallel line
+                        r: Better luck next time
+                      -
+                        a: A straight line
+                        r: Nice, I knew you were smart!
+                        c: true
+                      -
+                        a: A curve
+                        r: Better luck next time
