@@ -5,7 +5,7 @@
 
 #### actions
 An array of actions that ctanlee can run, each action can be configured via the attributes listed below:
-#### text (required)
+#### text
 Written Text
 ```yaml
 text: I once dated a boiler, she was hot.
@@ -14,7 +14,7 @@ text: I once dated a boiler, she was hot.
 #### audio (required)
 MP3 File :
 ```yaml
-audio: some-audio-file.mp3_
+audio: some-audio-file.mp3
 ```
 
 #### pos (optional)

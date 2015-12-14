@@ -37,10 +37,6 @@ chapters:
         action:
           - {cmd: ctanlee.clear}
       # Building Tour - ctanlee
-      -
-        movie:
-          layers:
-            - {depth: 10, content: kettle_attack.json, loop: true }
       - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
       -
         duration: {kind: ux}

@@ -49,6 +49,11 @@ module.exports = class Ctanlee
 
     if next == 'click' then @showNext() else @hideNext()
 
+    if typeof next == "number"
+      setTimeout ()=>
+        @playNextAction()
+      ,
+        next
 
   setEmotion : (emotion) ->
     resetDuration = 100
@@ -91,8 +96,7 @@ module.exports = class Ctanlee
   idle : () ->
     @$faceHolder.velocity({rotateZ:360}, {duration:10000, loop:true, easing:'linear'})
 
-  gotoPos : (x=970, y=10, duration=600, delay=0) ->
-
+  gotoPos : (x=988, y=34, duration=600, delay=0) ->
     @$el.velocity "stop", true
     @$el.velocity {top:y, left:x}, {delay:delay, duration:duration, easing:"easeInOutQuint"}
 
