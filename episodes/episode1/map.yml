@@ -5,6 +5,8 @@ dev:
 # CHAPTER 1
 chapters:
   -
+    dev:
+      startIndex: 3
     kind: intro
     slides:
       -
@@ -22,6 +24,26 @@ chapters:
           layers:
             - {depth: 1, content: quarantine.json, action: {cmd: chrome.hide}, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
+      -
+        action: {cmd: chrome.hide}
+        movie:
+          layers:
+            - {depth: 1, content: clear}
+        ux:
+          components:
+            -
+              kind: dialogue-page
+              config:
+                title: Approval To Proceed
+                template: proceed-approval
+                btns:
+                  -
+                    txt: Yes
+                  -
+                    txt: No
+                  -
+                    txt: Laser blast my face
+        duration: {kind: ux}
       -
         movie:
           layers:
