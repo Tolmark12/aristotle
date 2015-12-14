@@ -7,7 +7,7 @@ chapters:
   -
     dev:
       volume: 0.3
-      startIndex: 0
+      startIndex: 12
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -16,7 +16,7 @@ chapters:
         movie:
           layers:
             - {depth: 1, content: episode2_placeholder.png, action: {cmd: chrome.hide} }
-        duration: {kind: time, seconds: .3 }
+        duration: {kind: time, seconds: 1 }
       -
         movie:
           layers:
@@ -31,7 +31,7 @@ chapters:
             - {depth: 7, content: interior_loop.json, loop: true  }
             - {depth: 8, content: static_facility_door.json, events: [complete]  }
             - {depth: 9, content: chapter1_placeholder.png }
-        duration: {kind: time, seconds: .5 }
+        duration: {kind: time, seconds: 1 }
       -
         duration: {kind: ux}
         ux:
@@ -59,17 +59,17 @@ chapters:
             - {action: c }
           actions:
             a:
-              pos: [170,400]
+              pos: [670,500]
               text: Uh oh. One of Sektimus' advance force robots.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_1.m4a
             b:
-              pos: [270,300]
+              pos: [220,300]
               text: There's no lock on the door! Run everyone. Run!!!
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_2.m4a
             c:
-              pos: [370,300]
+              pos: [200,100]
               text: Why must the universe punish the good? Simulator Pause.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_3.m4a
         duration: {kind: listen, event: layer.9.complete}
       # Components overview
       -
@@ -94,7 +94,7 @@ chapters:
             - {depth: 9, content: clear }
             - {depth: 10, content: clear }
             - {depth: 10, content: perimeter_door_server.json }
-          zoom: {scale: 2, x: 600, y: 750}
+          zoom: {scale: 2, x: 600, y: 730}
         duration: {kind: time, seconds: 1.5 }
       - !!inc/file ./episodes/episode3/yaml/_pacs-selector.yaml
       -
@@ -112,7 +112,7 @@ chapters:
             a:
               pos: [170,400]
               text: Your PSP. Sometimes I just hover here and stare at it, ya know? I know how it is.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_7.m4a
         ux:
           components:
             -
@@ -126,6 +126,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # Robot Attacks Perimeter Defense
       -
+        action: {cmd: ctanlee.gohome}
         movie:
           layers:
             - {depth: 10, content: clear }
@@ -140,17 +141,21 @@ chapters:
             - {action: c }
           actions:
             a:
-              pos: [170,400]
-              text: Bow to the scanner, Bot.
+              pos: [900,50]
+              text:
               audio: Story_3_Ctanlee_placeholder.m4a
             b:
+              pos: [170,400]
+              text: Bow to the scanner, Bot.
+              audio: Story_3_Ctanlee_10.m4a
+            c:
               pos: [270,300]
               text: Uh oh, looks like the robots are trying again.
-              audio: Story_3_Ctanlee_placeholder.m4a
-            c:
+              audio: Story_3_Ctanlee_11.m4a
+            d:
               pos: [370,300]
               text: Alerts work great. Rust in peace, robots.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_12.m4a
         duration: {kind: listen, event: layer.10.complete}
       -
         ctanlee:
@@ -160,7 +165,7 @@ chapters:
             a:
               pos: [100,100]
               text: Chapter complete, Cadet. Duty time.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_15.m4a
         duration: {kind: ux}
         ux:
           components:
@@ -173,27 +178,19 @@ chapters:
                   style: lightning
                   text: Review Duties
                   action: {cmd: slides.next-slide}
-        ctanlee:
-          timeline:
-            - {action: a }
-          actions:
-            a:
-              pos: [100,100]
-              text: Chapter complete, Cadet. Duty time.
-              audio: Story_3_Ctanlee_placeholder.m4a
       # Chapter Complete / Duties
       -
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
             - {depth: 11, content: duties_placeholder.png, action: {cmd: chrome.hide} }
-        duration: {kind: time, seconds: .5 }
+        duration: {kind: time, seconds: 2 }
       -
         movie:
           layers:
             - {depth: 11, content: clear }
             - {depth: 11, content: chapter2_placeholder.png }
-        duration: {kind: time, seconds: .5 }
+        duration: {kind: time, seconds: 2 }
       -
         movie:
           layers:
@@ -215,20 +212,126 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: fatline.json, events: [complete] }
+            - {depth: 10, content: fatline_extended.json, events: [complete] }
+        ctanlee:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+            - {action: k }
+            - {action: l }
+            - {action: m }
+            - {action: n }
+            - {action: o }
+            - {action: p }
+            - {action: q }
+            - {action: r }
+          actions:
+            a:
+              pos: [170,50]
+              text: Hmm, the button didn't work. WarCore, can you analyze this?
+              audio: Story_3_Ctanlee_16.m4a
+            b:
+              pos: [270,300]
+              text: Wait… I sense a disturbance in the Core. Someone I've not felt for a long time…
+              audio: Story_3_Ctanlee_17.m4a
+            c:
+              pos: [370,300]
+              text: What is this? … We're receiving a communication. It's extremely powerful.
+              audio: Story_3_Ctanlee_18.m4a
+            d:
+              pos: [170,50]
+              text: WarCore, I want you to isolate that transmission. Put it in a security perimeter. Bring up your backup and tertiary memory banks - you'll need it. This is more powerful than anything I've seen in a long time.
+              audio: Story_3_Ctanlee_19.m4a
+            e:
+              pos: []
+              audio: Story_3_Warcore_1.m4a
+            f:
+              pos: [270,300]
+              text: Cadet, I need to see what this signal is and if it's a threat. Please standby.
+              audio: Story_3_Ctanlee_20.m4a
+            g:
+              pos: [900,50]
+              text:
+              audio: Story_3_Warcore_2.m4a
+            h:
+              pos: [900,50]
+              text:
+              audio: Story_3_Sektimus_1.m4a
+            i:
+              pos: [370,300]
+              text:  It's Sektimus … WarCore, can you configure the stream so I can communicate back to Sektimus? He's finally showing himself. Cadet, please stand by.
+              audio: Story_3_Ctanlee_21.m4a
+            j:
+              pos: [900,50]
+              text:
+              audio: Story_3_Warcore_3.m4a
+            k:
+              pos: [900,50]
+              text:
+              audio: Story_3_Sektimus_2.m4a
+            l:
+              pos: [900,50]
+              text:
+              audio: Story_3_Sektimus_3.m4a
+            m:
+              pos: [900,50]
+              text:
+              audio: Story_3_Sektimus_4.m4a
+            n:
+              pos: [900,50]
+              text:
+              audio: Story_3_Warcore_4.m4a
+            o:
+              pos: [170,50]
+              text: Sektimus, you forget too soon that it was humans <copy Sektimus' voice> who defeated your kind in the past. This Defender is one of many that will defeat you again. Your machines may follow your rules perfectly, but you fear humans because they have something you never will be able to program into your robots - choice. A Defender who chooses to sustain security is worth a legion of your robots.
+              audio: Story_3_Ctanlee_22.m4a
+            p:
+              pos: [900,50]
+              text:
+              audio: Story_3_Sektimus_5.m4a
+            q:
+              pos: [900,50]
+              text:
+              audio: Story_3_Sektimus_6.m4a
+            r:
+              pos: [370,300]
+              text: "Cadet … you may wish this wasn't real, that it was just some work of fiction, but good can come from this. What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them. Sektimus fears this. Sektimus fears what you can become. While you ponder these things, let's get back to the simulator."
+              audio: Story_3_Ctanlee_23.m4a
         duration: {kind: listen, event: layer.10.complete}
       -
         movie:
           layers:
             - {depth: 10, content: kettle_e_attack.json, events: [complete] }
         ctanlee:
+          defaults:
+            next: audio
           timeline:
             - {action: a }
+            - {action: b }
+            - {action: c }
           actions:
             a:
-              pos: [200,50]
-              text: "He's packaging up something nasty to send us. He's running some code on our control system! Look out everyone!"
-              audio: Story_3_Ctanlee_placeholder.m4a
+              pos: [170,50]
+              text: He's packaging up something nasty to send us.
+              audio: Story_3_Ctanlee_24.m4a
+            b:
+              pos: [270,300]
+              text: He's running some code on our control system! Look out everyone!
+              audio: Story_3_Ctanlee_25.m4a
+            c:
+              pos: [370,300]
+              text: This is totally uncool. Simulator pause!
+              audio: Story_3_Ctanlee_26.m4a
         duration: {kind: listen, event: layer.10.complete}
       # Sektimus Interlude
       -
@@ -272,7 +375,7 @@ chapters:
             a:
               pos: [170,400]
               text: I feel safer already.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_30.m4a
         ux:
           components:
             -
@@ -301,19 +404,19 @@ chapters:
             a:
               pos: [170,400]
               text: When computers communicate with each other, they send messages in small packets called … umm … packets. Right. Oh, here's a packet now.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_31.m4a
             b:
               pos: [270,300]
               text: Before, this packet would have gone straight through to our servers. Let's see what the firewall does.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_32.m4a
             c:
               pos: [370,300]
               text: Even if the communication is authorized, the Intrusion Prevention System will check the contents of the packet.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_33.m4a
             d:
               pos: [700,300]
               text: That was an approved packet.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_34.m4a
         duration: {kind: listen, event: layer.10.complete}
       -
         movie:
@@ -329,12 +432,12 @@ chapters:
           actions:
             a:
               pos: [170,400]
-              text: 35 Ah, here's a packet sent by our robot hacker.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              text: Ah, here's a packet sent by our robot hacker.
+              audio: Story_3_Ctanlee_35.m4a
             b:
               pos: [270,300]
               text: He wasn't on the list.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_36.m4a
         duration: {kind: listen, event: layer.10.complete}
       -
         movie:
@@ -353,19 +456,19 @@ chapters:
             a:
               pos: [170,400]
               text: He's trying again. Some attacks can trick the firewall into letting a packet through.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_37.m4a
             b:
               pos: [270,300]
               text: He's not through yet.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_38.m4a
             c:
               pos: [370,300]
               text: Terminated. Nice job, firewall.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_39.m4a
             d:
               pos: [700,300]
               text: And that ends the chapter. It's duty time.
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_40.m4a
         duration: {kind: listen, event: layer.10.complete}
       -
         action: {cmd: ctanlee.gohome}

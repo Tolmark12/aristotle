@@ -7,15 +7,15 @@ ctanlee:
     a:
       emo: happy
       text: "Your chance to play with fire."
-      audio: Story_3_Ctanlee_placeholder.m4a
+      audio: Story_3_Ctanlee_27.m4a
     b:
       emo: happy
       text: "Censor those packets."
-      audio: Story_3_Ctanlee_placeholder.m4a
+      audio: Story_3_Ctanlee_28.m4a
     c:
       emo: surprize
       text: "Go ahead. Make my day … packet."
-      audio: Story_3_Ctanlee_placeholder.m4a
+      audio: Story_3_Ctanlee_29.m4a
 ux:
   components:
     -

@@ -2,20 +2,20 @@ duration: {kind: ux}
 ctanlee:
   defaults:
     next: none
-    pos: [50, 5]
+    pos: [50, 40]
   actions:
     a:
       emo: happy
       text: "Smile for the card photo."
-      audio: Story_3_Ctanlee_placeholder.m4a
+      audio: Story_3_Ctanlee_4.m4a
     b:
       emo: happy
       text: "Ah, a kindred defensive AI."
-      audio: Story_3_Ctanlee_placeholder.m4a
+      audio: Story_3_Ctanlee_5.m4a
     c:
       emo: surprize
       text: "Robots and water. A good mix."
-      audio: Story_3_Ctanlee_placeholder.m4a
+      audio: Story_3_Ctanlee_6.m4a
 ux:
   components:
     -
