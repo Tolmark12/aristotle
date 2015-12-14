@@ -6,14 +6,34 @@ dev:
 chapters:
   -
     dev:
-      startIndex: 3
+      startIndex: 0
     kind: intro
     slides:
       -
+        action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}]
         movie:
           layers:
             - {depth: 1, content: splitdoor.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
+      -
+        ux:
+          components:
+            -
+              kind: dialogue-page
+              config:
+                title: Are you listening?
+                btnConfig: {width: 250, lines: true}
+                btns:
+                  -
+                    txt: Play Test Sound
+                    click: {cmd: sound.play, data: {id: some-sound.mp3}}
+                  -
+                    txt: Proceed
+                    click: {cmd: slides.next-slide}
+            -
+              kind: sound-test
+              config: {}
+        duration: {kind: ux}
       -
         movie:
           layers:
@@ -25,24 +45,26 @@ chapters:
             - {depth: 1, content: quarantine.json, action: {cmd: chrome.hide}, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
-        action: {cmd: chrome.hide}
-        movie:
-          layers:
-            - {depth: 1, content: clear}
         ux:
           components:
             -
               kind: dialogue-page
               config:
                 title: Approval To Proceed
-                template: proceed-approval
+                btnConfig: {height: 100, bottom: 100, lines: true}
                 btns:
                   -
                     txt: Yes
+                    click:
+                      - {cmd: slides.next-slide}
                   -
                     txt: No
+                    click:
+                      - {cmd: slides.next-slide}
                   -
                     txt: Laser blast my face
+                    click:
+                      - {cmd: slides.next-slide}
         duration: {kind: ux}
       -
         movie:

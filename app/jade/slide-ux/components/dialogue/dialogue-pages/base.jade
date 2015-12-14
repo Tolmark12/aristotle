@@ -1,9 +1,10 @@
 .dialogue-page
   .title= title
   .content
+  .btn-wrapper
     .btns
       each btn in btns
-        .btn
+        .btn(id="#{btn.id}")
           .txt= btn.txt
-          img.shadow-icon(data-src="btn-generic")
+          img.shadow-icon(scalable="true", data-src="btn-generic")
       

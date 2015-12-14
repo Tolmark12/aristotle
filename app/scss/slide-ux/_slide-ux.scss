@@ -23,6 +23,7 @@
   @import "components/quiz";
   @import "components/cards/cards";
   @import "components/dialogue-pages/dialogue-page";
+  @import "components/sound-test";
 
   .button    { padding:7px 0; margin:7px 0; font-family:$fun_cond; background:#6B989F; font-size:18px; text-align:center; border:2px solid #335E6E; cursor:pointer;
     &:hover,
