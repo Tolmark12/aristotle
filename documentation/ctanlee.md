@@ -7,25 +7,32 @@
 An array of actions that ctanlee can run, each action can be configured via the attributes listed below:
 #### text (required)
 Written Text
-```text: I once dated a boiler, she was hot.
+```yaml
+text: I once dated a boiler, she was hot.
 ```
 
 #### audio (required)
 MP3 File :
-```audio: some-audio-file.mp3_
+```yaml
+audio: some-audio-file.mp3_
 ```
 
 #### pos (optional)
 Position (all params optional) _x[0], y[0], duration[600], delay[0]_ :
-```pos: [100,100,1000,500]
+```yaml
+pos: [100,100,1000,500]
 ```
 
 #### emo (optional)
-Emotion : _happy, sad, surprize_
-```emo: happy
+Emotion : angry, happy, down, left, right, surprise, unhappy
+```yaml
+emo: happy
 ```
 #### delayMove (optional)
-
+```yaml
+# Will wait 2000 miliseconds (2 seconds) before moving  
+delayMove: 2000
+```
 
 
 ## EX : Running with no timeline:
