@@ -10,6 +10,7 @@ Movie         = require 'movie/movie'
 Parser        = require 'misc/parser'
 PreloaderBar  = require 'misc/preloader-bar'
 SlideUX       = require 'slide-ux/slide-ux'
+SoundFX       = require 'episode/soundfx'
 isInternetExp = require 'misc/browser-detect'
 
 class Aristotle
@@ -35,6 +36,7 @@ class Aristotle
     globals      = new GlobalVars()
     parser       = new Parser()
     preloaderBar = new PreloaderBar $base
+    soundFx      = new SoundFX()
     apiProxy     = new APIproxy "http://127.0.0.1:1337"
     @chromeUI    = new ChromeUI $(".chrome",   $base)
     @slideUX     = new SlideUX  $(".slide-ux", $base)

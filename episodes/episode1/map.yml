@@ -26,7 +26,7 @@ chapters:
                 btns:
                   -
                     txt: Play Test Sound
-                    click: {cmd: sound.play, data: {id: some-sound.mp3}}
+                    click: {cmd: playsound, data: {file: short2.mp3}}
                   -
                     txt: Proceed
                     click: {cmd: slides.next-slide}
