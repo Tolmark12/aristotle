@@ -5,18 +5,17 @@ duration: {kind: ux}
 ctanlee:
   defaults:
     next: none
-    pos: [50, 5]
+    pos: [200, 200]
   actions:
     a:
-      emo: happy
       text: "My grandfather twice removed was a circuit breaker."
       audio: Story_2_Ctanlee_1.m4a
     b:
-      emo: sad
+      emo: angry
       text: "I dated a boiler once. She was hot."
       audio: Story_2_Ctanlee_2.m4a
     c:
-      emo: surprize
+      emo: unhappy
       text: "The nerve center of the BES. My 1s and 0s are tingling."
       audio: Story_2_Ctanlee_3.m4a
 ux:

@@ -12,6 +12,8 @@ module.exports = class SVGAnimation
              path      : json
            }
 
+    if data.nativeEvents? then @addNativeEvents data.nativeEvents
+
     @animation.addEventListener 'data_ready', ()=>
       if data.jumpToEnd?
         @animation.setCurrentRawFrameValue @animation.totalFrames
@@ -22,12 +24,18 @@ module.exports = class SVGAnimation
           @play()
       @addEvents data
 
+
+
   addEvents : (data) ->
     if data.events?
       for event in data.events
         @animation.addEventListener event, ()=>
           @animation.removeEventListener event
           PubSub.publish "layer.#{data.depth}.#{event}"
+
+  addNativeEvents : (events) ->
+    for event, cb of events
+      @animation.addEventListener event, cb
 
   addOnComplete : (onComplete) ->
     @animation.addEventListener "complete", ()=>

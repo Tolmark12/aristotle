@@ -1,5 +1,6 @@
 AudioTrack = require 'episode/audio-track'
 Sequence   = require 'misc/sequence'
+Animation  = require 'movie/svg-animation'
 
 module.exports = class Ctanlee
 
@@ -7,9 +8,10 @@ module.exports = class Ctanlee
     aristotle.ctanlee = @
     @$el = $ jadeTemplate['slide-ux/ctanlee/ctanlee']( {} )
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
-    @$speechBox = $ ".speech-box", @$el
-    @$text      = $ ".text span.content", @$speechBox
-    @$nextBtn   = $ ".text span.next", @$speechBox
+    @$speechBox  = $ ".speech-box", @$el
+    @$text       = $ ".text span.content", @$speechBox
+    @$nextBtn    = $ ".text span.next", @$speechBox
+    @$faceHolder = $ ".face", @$el
 
     @$nextBtn.on "click",   (e)=> @playNextAction()
     $('html').on "keydown", (e)=> if e.which == 39 then @playNextAction() # Allow right arrow to play next slide
@@ -36,6 +38,9 @@ module.exports = class Ctanlee
     if text?
       @showText()
       @$text.html text
+    else
+      @hideText()
+
     if audio?
       if @track? then @track.stop()
       @track = new AudioTrack(audio)
@@ -46,6 +51,45 @@ module.exports = class Ctanlee
 
 
   setEmotion : (emotion) ->
+    resetDuration = 100
+    @resetRotation resetDuration
+    @$oldAnimation     = @$currentAnimation
+    @$currentAnimation = $('<div class="animation"/>')
+    @$faceHolder.append @$currentAnimation
+
+    path = "episodes/episode1/animations/ctanlee-anim/"
+    switch emotion
+      when "angry"    then path += 'ctanlee-angry.json'
+      when "happy"    then path += 'ctanlee-happy.json'
+      when "idle"     then path += 'ctanlee-idle.json'
+      when "down"     then path += 'ctanlee-down.json'
+      when "left"     then path += 'ctanlee-left.json'
+      when "right"    then path += 'ctanlee-right.json'
+      when "surprise" then path += 'ctanlee-surprise.json'
+      when "unhappy"  then path += 'ctanlee-unhappy.json'
+      else
+        if !@$oldAnimation?
+          path += 'ctanlee-happy.json'
+
+    @oldAnimation = @animation
+    data =
+      delay: resetDuration
+      nativeEvents:
+        data_ready : ()=> @destroyOldFace()
+        complete   : ()=> @idle()
+    @animation = new Animation @$currentAnimation, path, data
+
+  destroyOldFace : () ->
+    if @oldAnimation?
+      @oldAnimation.destroy()
+      @$oldAnimation.remove()
+
+  resetRotation : (time=100) ->
+    @$faceHolder.velocity "stop", true
+    @$faceHolder.velocity({rotateZ:0}, {duration:time})
+
+  idle : () ->
+    @$faceHolder.velocity({rotateZ:360}, {duration:10000, loop:true, easing:'linear'})
 
   gotoPos : (x=970, y=10, duration=600, delay=0) ->
 
@@ -104,7 +148,7 @@ module.exports = class Ctanlee
       aristotle.commander.do action.action
 
     # Emotion
-    if action.emo?
+    if action.emo? || !@$currentAnimation?
       @setEmotion action.emo
 
     # Position

@@ -5,6 +5,7 @@ dev:
 # CHAPTER 1
 chapters:
   -
+    title: Episode 1 - Chapter 1
     dev:
       startIndex: 0
     kind: intro
