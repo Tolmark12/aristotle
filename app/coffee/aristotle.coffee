@@ -50,21 +50,5 @@ class Aristotle
     if !episodeNum? then episodeNum = @episodeNum
     return "#{@episodesDir}/episode#{episode}/"
 
-  # Move somewhere else..
-  getAssetPath : (asset) ->
-    #
-    if asset == "map.json"                     then contentDir = ""
-    else if  /.mp3|.m4a/.test(asset)           then contentDir = "sounds/"
-    else if /.json/.test(asset)                then contentDir = "animations/"
-    else if /.svg|.jpg|.jpeg|.png/.test(asset) then contentDir = "assets/"
-
-    if asset.charAt(0) == "@"
-      episodeNum = str.substr(1, 1)
-      asset = str.substr(3)
-    else
-      episodeNum = @episodeNum
-
-    return "#{@episodesDir}/episode#{episodeNum}/#{contentDir}#{asset}"
-
 
 window.Aristotle = Aristotle

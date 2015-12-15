@@ -14,7 +14,7 @@ chapters:
         action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}]
         movie:
           layers:
-            - {depth: 1, content: splitdoor.json, events: [complete], loop: false}
+            - {depth: 1, content: ~1/splitdoor.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
         ux:

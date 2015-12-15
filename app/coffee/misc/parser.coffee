@@ -1,8 +1,9 @@
 module.exports = class Parser
 
   constructor : () ->
-    window.parse = @parseAny
-    window.pObj  = @parseObject
+    window.parse           = @parseAny
+    window.pObj            = @parseObject
+    aristotle.getAssetPath = @getAssetPath
 
   parseAny : (item)=>
     if typeof item == "string"
@@ -28,3 +29,17 @@ module.exports = class Parser
       if typeof item == "object"
         @parseObject item
 
+  getAssetPath : (asset) =>
+    #
+    if asset == "map.json"                     then contentDir = ""
+    else if  /.mp3|.m4a/.test(asset)           then contentDir = "sounds/"
+    else if /.json/.test(asset)                then contentDir = "animations/"
+    else if /.svg|.jpg|.jpeg|.png/.test(asset) then contentDir = "assets/"
+
+    if asset.charAt(0) == "~"
+      episodeNum = asset.substr(1, 1)
+      asset      = asset.substr(3)
+    else
+      episodeNum = aristotle.episodeNum
+
+    return "#{aristotle.episodesDir}/episode#{episodeNum}/#{contentDir}#{asset}"
