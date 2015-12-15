@@ -142,7 +142,7 @@ chapters:
           actions:
             a:
               pos: []
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Silence.m4a
             b:
               pos: [170,400]
               text: Bow to the scanner, Bot.
@@ -314,7 +314,7 @@ chapters:
           actions:
             a:
               pos: []
-              audio: Story_3_Ctanlee_placeholder.m4a
+              audio: Story_3_Ctanlee_Silence.m4a
             b:
               pos: [170,150]
               text: He's packaging up something nasty to send us.
