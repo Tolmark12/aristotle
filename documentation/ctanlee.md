@@ -83,12 +83,12 @@ ctanlee:
       audio: nothin-special.mp3
     second:
       pos: [300, 200, 2000, 1000]
-      emo: sad
-      text: "I'm turning out"
+      emo: angry
+      text: "Sedoricus isat um tulk fortitus"
       audio: nothin-special.mp3
     later:
       pos: [300, 100]
-      emo: surprize
-      text: " are turning out"
+      emo: down
+      text: "Lorem ipsum"
       audio: nothin-special.mp3
 ```

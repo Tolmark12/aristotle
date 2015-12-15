@@ -1,11 +1,11 @@
 $background-opacity:0.35;
 .top                             { display:inline-flex; height:60px;
   .main                          { display:inline-flex; align-items:center; background:rgba(#000, $background-opacity); padding:2px 10px;
+    .name-and-rank               { display:inline-flex; align-items:center;}
     .divider                     { border-right:1px solid white; height:50px; margin:0 15px; opacity:0.3; }
     .status-badge                { width:50px; height:60px; text-align:center;  display:flex; margin-right:-8px;
       svg                        { margin:auto auto;}
     }
-    .identity                    { }
     .episodes                    { display:flex; align-items:center;
       .badge                     { display:flex;
         &:not(:last-child):after { content:""; display:block; margin:24px 3px 0; width:6px; height:6px; background:black; opacity:0.3; }

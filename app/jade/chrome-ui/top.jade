@@ -1,12 +1,13 @@
 .top
   .main
-    .status-badge
-      img.shadow-icon(data-src="#{badge}")
-    .divider
-    .identity
-      h1.name #{name}
-      h2.rank #{rank}
-    .divider
+    .name-and-rank
+      .status-badge
+        img.shadow-icon(data-src="#{badge}")
+      .divider
+      .identity
+        h1.name #{name}
+        h2.rank #{rank}
+      .divider
     .episodes(class="#{episode}")
       .badge(class="#{episode == '1' ? 'active' : ''}")
         img.shadow-icon(data-src="ep1-badge")

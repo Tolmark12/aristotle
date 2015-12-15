@@ -46,6 +46,9 @@ chapters:
             - {depth: 1, content: quarantine.json, action: {cmd: chrome.hide}, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
+        movie:
+          layers:
+            - {depth: 1, background: black}
         ux:
           components:
             -
@@ -68,11 +71,49 @@ chapters:
                       - {cmd: slides.next-slide}
         duration: {kind: ux}
       -
+        ux:
+          components:
+            -
+              kind: dialogue-page
+              config:
+                title: Authorization Results
+                btnConfig: {lines: true}
+                btns:
+                  -
+                    txt: Continue
+                    click:
+                      - {cmd: slides.next-slide}
+            -
+              kind: personal-info-intro
+              config: {}
+      -
+        ux:
+          components:
+            -
+              kind: dialogue-page
+              config:
+                title: Call Sign Selection
+                btnConfig: {lines: true, width: 280}
+                btns:
+                  -
+                    txt: Use This Call Sign
+                    click:
+                      - {cmd: save.callsign}
+            -
+              kind: call-sign-select
+              config: {}
+        duration: {kind: ux}
+      # Show Name
+      -
+        action: [ {cmd: chrome.show}, {cmd: chrome.showname},  ]
+        duration: {kind: time, seconds: 3}
+      -
         movie:
           layers:
-            - {depth: 1, content: powergrid1.json, action: {cmd: chrome.show}, events: [complete], loop: false}
+            - {depth: 1, content: powergrid1.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
+        action: {cmd: chrome.hide}
         movie:
           layers:
             - {depth: 1, content: septimus.json, events: [complete], loop: false}
@@ -80,7 +121,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 1, content: earth.json, action: {cmd: chrome.hide}, events: [complete], loop: false}
+            - {depth: 1, content: earth.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
         movie:
@@ -88,10 +129,36 @@ chapters:
             - {depth: 1, content: smoke.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       -
+        action: {cmd: chrome.show}
         movie:
           layers:
-            - {depth: 1, content: digitalchip.json, action: {cmd: chrome.show}, events: [complete], loop: false}
+            - {depth: 1, content: digitalchip.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
+      -
+        ux:
+          components:
+            -
+              kind: dialogue-page
+              config:
+                title: Gut Check
+                btnConfig: {lines: true, height: 100, width: 230}
+                btns:
+                  -
+                    txt: Panicking
+                    click:
+                      - {cmd: slides.next-slide}
+                  -
+                    txt: I Threw Up a Bit in My Mouth
+                    click:
+                      - {cmd: slides.next-slide}
+                  -
+                    txt: Let's Kick Some Bot
+                    click:
+                      - {cmd: slides.next-slide}
+      # Show episodes
+      -
+        action: [{cmd: chrome.show}, {cmd: chrome.showepisodes}]
+        duration: {kind: time, seconds: 3}
       -
         movie:
           layers:

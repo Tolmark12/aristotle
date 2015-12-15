@@ -13,7 +13,12 @@
 
 }
 
+@mixin leftRightLines(){ display:flex; align-items:center; width:1024px;
+  &:before   { content:""; display:inline-block; width:100%; height:1px; background:white; margin:0 20px 0 60px; }
+  &:after    { content:""; display:inline-block; width:100%; height:1px; background:white; margin:0 60px 0 20px; }
+}
 
+@include input-placeholder;
 
 .slide-ux    { position:relative; width: 100%; z-index: 3; pointer-events:none; height:100%;
   > *        { pointer-events:all;  }
@@ -23,6 +28,8 @@
   @import "components/quiz";
   @import "components/cards/cards";
   @import "components/dialogue-pages/dialogue-page";
+  @import "components/personal-info-intro";
+  @import "components/call-sign-select";
   @import "components/sound-test";
 
   .button    { padding:7px 0; margin:7px 0; font-family:$fun_cond; background:#6B989F; font-size:18px; text-align:center; border:2px solid #335E6E; cursor:pointer;
@@ -31,3 +38,5 @@
   }
 }
 @import "components/ghost-ux";
+
+input{border:none; }

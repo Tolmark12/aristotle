@@ -26,3 +26,10 @@
     transition: none;
   }
 }
+
+@mixin input-placeholder($color:#ffd7a2){
+  ::-webkit-input-placeholder {color: $color;}
+  :-moz-placeholder           {color: $color;}
+  ::-moz-placeholder          {color: $color;}
+  :-ms-input-placeholder      {color: $color;}
+}

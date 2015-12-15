@@ -50,6 +50,7 @@ module.exports = class Layer
       when "gif", "jpg", "jpeg","png"
                         @addImage( @currentOnionLayer, layerData.content, layerData.repeat, layerData.position )
       when "clear" then @empty()
+      when "none"  then "do nothing"
       else              aristotle.throw "tried to add unrecognized layer type '#{kind}'", true
 
   # cache : ()->

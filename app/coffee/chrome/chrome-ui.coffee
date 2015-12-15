@@ -2,21 +2,36 @@ module.exports = class ChromeUI
 
   constructor: (@$el) ->
     @build @$el
-    PubSub.subscribe "chrome.hide", (m, data)=> @hide()
-    PubSub.subscribe "chrome.show", (m, data)=> @show()
+    @hideName()
+    @hideIcons()
+    @hideMode()
+    PubSub.subscribe "chrome.hide",         (m, data)=> @hide()
+    PubSub.subscribe "chrome.show",         (m, data)=> @show()
+    PubSub.subscribe "chrome.showname",     (m, data)=> @showName()
+    PubSub.subscribe "chrome.showepisodes", (m, data)=> @showIcons()
 
   build : (@$el) ->
-    data = {name:"John \"Deadeye\" Nimbus", episode:"1"}
+    data    = {name:"John \"Deadeye\" Nimbus", episode:"1"}
     @getRank data, "cyber-cadet"
-
-    $top = $ jadeTemplate['chrome-ui/top']( data )
+    $top    = $ jadeTemplate['chrome-ui/top']( data )
     @$el.append $top
-
+    @$name  = $ ".name-and-rank", $top
+    @$icons = $ ".episodes", $top
+    @$mode  = $ ".learn-mode", $top
     $progress = $ jadeTemplate['chrome-ui/progress']( {} )
     @$el.append $progress
 
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
 
+  showName  : () -> @$name.css( {display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}
+  hideName  : () -> @$name.css  {display:"none"}
+  showIcons : () -> @$icons.css({display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}
+  hideIcons : () -> @$icons.css {display:"none"}
+
+  hide     : () -> @$el.css opacity:0
+  show     : () -> @$el.css opacity:1
+  hideMode : () -> @$mode.css display:"none"
+  showMode : () -> @$mode.css display:"block"
 
   getRank : (data, episode) ->
     switch episode
@@ -36,6 +51,6 @@ module.exports = class ChromeUI
         data.rank  = "Cyber Cadet"
         data.badge = "rank-badge-cyber-cadet"
 
-  hide : () -> @$el.css opacity:0
-  show : () -> @$el.css opacity:1
+
+
 

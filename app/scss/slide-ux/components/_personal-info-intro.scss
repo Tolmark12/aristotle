@@ -1,0 +1,6 @@
+.personal-info-intro { position:absolute; @include center-absolute; color:white; display:flex; align-items:center; flex-direction:column; margin:0 auto; width:300px; border:solid 1px $yeller; padding:15px; text-align:center;
+  h2                 { margin:0 0 5px 0; @include leftRightLines; width:310px; white-space:nowrap;
+    &:before,&:after { margin:0 10px; }
+  }
+  h1               { margin-bottom:15px; text-transform:uppercase; font-family:$fun-cond; }
+}
