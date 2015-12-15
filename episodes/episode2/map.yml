@@ -23,7 +23,7 @@ chapters:
           layers:
             - {depth: 1, content: clear, action: {cmd: chrome.show} }
             - {depth: 0, content: c1-sky.svg }
-            - {depth: 2, content: c1-background-buildin.json, events: [complete], ieCache: true }
+            - {depth: 2, content: c1-background-buildin.json, events: [complete], cache: true }
         duration: {kind: listen, event: layer.2.complete}
       # Building Selector
       - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml

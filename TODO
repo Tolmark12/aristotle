@@ -3,7 +3,7 @@ To Build:
     - I suppose there's no reason why we can't save the state
   ✔ Easier variable usage @done(2015-12-09 12:04) @project(To Build)
   ☐ Clean up the caching of svgs
-  ☐ Episode asset directory @1/asdf.json
+  ✔ Episode asset directory ~1/asdf.json @done(2015-12-15 12:38) @project(To Build)
   ☐ Add a `savePositions` method for saving the positions of elements pre caching
   ☐ Duties section
   ☐ Chapter Headings
@@ -11,11 +11,15 @@ To Build:
   ☐ Change Mode (Learn mode, Explore Mode, Simulate)
 
 Episode1:
-  ☐ ui pages
+  ✔ ui pages @done(2015-12-15 12:38) @project(Episode1)
 
 Complex Animations:
   ☐ After effects trigger based on keyframes
   ☐ Ctanlee delay
 
 ☐ Make caching work on other browsers
+  ✔ chrome @done(2015-12-15 12:39)
+  ✔ firefox @done(2015-12-15 12:41)
+  ✔ ie @done(2015-12-15 12:39)
+  ☐ safari
 ☐ un-caching

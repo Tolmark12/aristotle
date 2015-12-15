@@ -2,13 +2,13 @@ module.exports = class ChromeUI
 
   constructor: (@$el) ->
     @build @$el
-    @hideName()
-    @hideIcons()
     @hideMode()
     PubSub.subscribe "chrome.hide",         (m, data)=> @hide()
     PubSub.subscribe "chrome.show",         (m, data)=> @show()
     PubSub.subscribe "chrome.showname",     (m, data)=> @showName()
     PubSub.subscribe "chrome.showepisodes", (m, data)=> @showIcons()
+    PubSub.subscribe "chrome.hidename",     (m, data)=> @hideName()
+    PubSub.subscribe "chrome.hideepisodes", (m, data)=> @hideIcons()
 
   build : (@$el) ->
     data    = {name:"John \"Deadeye\" Nimbus", episode:"1"}

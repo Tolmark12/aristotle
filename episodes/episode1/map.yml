@@ -11,7 +11,7 @@ chapters:
     kind: intro
     slides:
       -
-        action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}]
+        action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}, {cmd: chrome.hidename}, {cmd: chrome.hideicons}]
         movie:
           layers:
             - {depth: 1, content: ~1/splitdoor.json, events: [complete], loop: false}
