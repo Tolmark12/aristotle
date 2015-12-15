@@ -12,9 +12,9 @@
       &:after       { padding-right:$xtra-padding+10; position:absolute; top:0px; content:""; display:inline-block; width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 7px; border-color: transparent transparent transparent #ffb61a; }
       &:hover:after { border-color: transparent transparent transparent #ff7020; }
     }
+    &.left          { right:-19px; left:initial; }
+    &.top           { top:initial; bottom:23px }
   }
-  .text {top:initial; bottom:23px }
-  &.txt-right .text {right:-19px; left:initial; }
-  &.txt-top   .text { }
+
 }
 

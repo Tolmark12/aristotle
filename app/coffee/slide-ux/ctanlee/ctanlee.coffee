@@ -8,10 +8,11 @@ module.exports = class Ctanlee
     aristotle.ctanlee = @
     @$el = $ jadeTemplate['slide-ux/ctanlee/ctanlee']( {} )
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
-    @$speechBox  = $ ".speech-box", @$el
-    @$text       = $ ".text span.content", @$speechBox
-    @$nextBtn    = $ ".text span.next", @$speechBox
-    @$faceHolder = $ ".face", @$el
+    @$speechBox    = $ ".speech-box", @$el
+    @$text         = $ ".text", @$speechBox
+    @$textContent  = $ "span.content", @$text
+    @$nextBtn      = $ "span.next", @$text
+    @$faceHolder   = $ ".face", @$el
 
     @$nextBtn.on "click",   (e)=> @playNextAction()
     $('html').on "keydown", (e)=> if e.which == 39 then @playNextAction() # Allow right arrow to play next slide
@@ -34,10 +35,11 @@ module.exports = class Ctanlee
     @sequence = new Sequence @timeline
     @playAction @sequence.getCurrentItem().action
 
-  say : (text, audio, next) ->
+  say : (text, audio, next, txtPos) ->
     if text?
       @showText()
-      @$text.html text
+      @$textContent.html text
+      @setTextPosition txtPos
     else
       @hideText()
 
@@ -159,7 +161,7 @@ module.exports = class Ctanlee
     if action.pos?
       @goto action
 
-    @say action.text, action.audio, action.next
+    @say action.text, action.audio, action.next, action.textPos
 
   complete : () ->
     @returnToStation()
@@ -194,3 +196,16 @@ module.exports = class Ctanlee
     for key, val of @data.actions[actionId]
       actions[key] = val
     actions
+
+  setTextPosition : (pos) ->
+    @$text.removeClass "top left"
+    if !pos? then return
+
+    if Array.isArray pos
+      for item in pos
+        console.log item
+        @$text.addClass item
+    else
+      console.log pos
+      @$text.addClass pos
+

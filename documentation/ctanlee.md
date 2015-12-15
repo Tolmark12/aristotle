@@ -34,6 +34,16 @@ emo: happy
 delayMove: 2000
 ```
 
+#### txtPos (optional)
+Relative position of the textbox, defaults to `right, bottom`
+```yaml
+# Changing the text box y position to top
+txtPos: top
+# Changing the text box `y` position to `top` and the `x` position to `left`
+txtPos: [top, left]
+
+```
+
 
 ## EX : Running with no timeline:
 
