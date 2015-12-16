@@ -20,10 +20,9 @@ $hover-color2 : #77c7e9;
     }
   }
 
+  $grid-room-width: 940px;
   &.grid-room    {
-    .title       { margin-top:150px; }
-    .btn-wrapper {
-      &.lines    { }
-    }
+    .title       { margin-top:110px; width:$grid-room-width;}
+    .btn-wrapper { width: $grid-room-width; margin-bottom: 120px; }
   }
 }

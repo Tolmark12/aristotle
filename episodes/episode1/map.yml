@@ -97,7 +97,7 @@ chapters:
               config:
                 title: Approval To Proceed
                 theme: grid-room
-                btnConfig: {height: 100, bottom: 100, lines: true}
+                btnConfig: {height: 100, lines: true}
                 btns:
                   -
                     txt: Yes
@@ -140,6 +140,7 @@ chapters:
               config:
                 title: Authorization Results
                 btnConfig: {lines: true}
+                theme: grid-room
                 btns:
                   -
                     txt: Continue
