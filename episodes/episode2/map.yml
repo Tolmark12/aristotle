@@ -8,7 +8,7 @@ chapters:
     title: Episode 2 - Chapter 1
     dev:
       volume: 1
-      startIndex: 20
+      startIndex: 44
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -386,12 +386,12 @@ chapters:
               emo: happy
               text: "When all duties are completed, you can click CONTINUE to proceed."
               audio: Story_2_Ctanlee_33.m4a
-        duration: {kind: ux}
         ux:
           components:
             -
               kind: duties
               config: {definition: ~l/ep2-ch1-duties.json}
+        duration: {kind: ux}
       -
         movie:
           layers:
@@ -682,13 +682,18 @@ chapters:
           layers:
             - {depth: 9, content: mimebot_reveal.json, events: [complete] }
         duration: {kind: listen, event: layer.9.complete}
+      # Example Duties Slide
       -
         movie:
           layers:
             - {depth: 8, content: clear }
             - {depth: 9, content: clear }
-            - {depth: 8, content: duties_placeholder.png, action: {cmd: chrome.hide} }
-        duration: {kind: time, seconds: 5 }
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: ~l/ep2-ch2-duties.json}
+        duration: {kind: ux}
       # EXAMPLE - Quiz
       -
         movie:
