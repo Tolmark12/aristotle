@@ -11,13 +11,6 @@ chapters:
     kind: intro
     slides:
       -
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: duties
-              config: {definition: ~l/ep1-ch1-duties.json}
-      -
         action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}, {cmd: chrome.hidename}, {cmd: chrome.hideicons}]
         movie:
           layers:

@@ -12,6 +12,14 @@ chapters:
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
+      # Example Duties Slide
+      -
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: ~l/ep1-ch1-duties.json}
       # Sky and mountains build-in
       -
         movie:
