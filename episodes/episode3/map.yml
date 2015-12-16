@@ -177,13 +177,15 @@ chapters:
                   style: lightning
                   text: Review Duties
                   action: {cmd: slides.next-slide}
-      # Chapter Complete / Duties
+      # Example Duties Slide
       -
         action: {cmd: ctanlee.gohome}
-        movie:
-          layers:
-            - {depth: 13, content: duties_placeholder.png, action: {cmd: chrome.hide} }
-        duration: {kind: time, seconds: 2 }
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: ~l/ep3-ch1-duties.json}
+        duration: {kind: ux}
       -
         movie:
           layers:
@@ -517,12 +519,15 @@ chapters:
                   style: lightning
                   text: Review Duties
                   action: {cmd: slides.next-slide}
+      # Example Duties Slide
       -
         action: {cmd: ctanlee.gohome}
-        movie:
-          layers:
-            - {depth: 13, content: duties_placeholder.png, action: {cmd: chrome.hide} }
-        duration: {kind: time, seconds: 5 }
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: ~l/ep3-ch2-duties.json}
+        duration: {kind: ux}
       # EXAMPLE - Quiz
       -
         movie:

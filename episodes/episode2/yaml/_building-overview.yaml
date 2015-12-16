@@ -6,7 +6,7 @@ ctanlee:
   timeline:
     - {action: a }
   defaults:
-    next: click
+    next: audio
   actions:
     a:
       pos: [200, 200]

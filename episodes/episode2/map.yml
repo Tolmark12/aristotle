@@ -8,7 +8,7 @@ chapters:
     title: Episode 2 - Chapter 1
     dev:
       volume: 1
-      startIndex: 44
+      startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -67,30 +67,26 @@ chapters:
             - {action: control-sas }
             - {action: operator-ws }
           defaults:
-            next: click
+            next: 3000
             delayMove: 650
           actions:
             con-sys-rack:
               pos: con-sys-rack-hit
-              text: "Control System"
               action:
                 - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
                 - {cmd: label.add, data: {id: con-sys-rack-hit, text: Control System, face: top, arrow: right} }
             esp-ns:
               pos: esp-ns-hit
-              text: "Network Switch"
               action:
                 - {cmd: highlight, data: {id: esp-ns, level: blue } }
                 - {cmd: label.add, data: {id: esp-ns-hit, text: Network Switch, face: bottom} }
             data-acs:
               pos: data-acs-hit
-              text: "Data Acquisition and Control Server"
               action:
                 - {cmd: highlight, data: {id: data-acs, level: blue} }
                 - {cmd: label.add, data: {id: data-acs-hit, text: Data Acquisition and Control Server, face: left } }
             control-sas:
               pos: control-sas-hit
-              text: "Control System Application Server"
               action:
                 - {cmd: highlight, data: {id: control-sas, level: blue} }
                 - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
@@ -117,7 +113,7 @@ chapters:
               pos: [100,100]
               text: "Most facilities that fall under CIP have a lot of equipment like this that controls the Bulk Electric System. Imagine the damage the robots would do if they gained access to control a breaker, power plant or Tesla Cannon. Shudder."
               audio: Story_2_Ctanlee_8.m4a
-              next: click
+              next: audio
       -
         duration: {kind: ux}
         ux:
@@ -145,23 +141,20 @@ chapters:
             - {action: map-computer }
             - {action: printer }
           defaults:
-            next: click
+            next: 3000
           actions:
             file-server:
               pos: "file-server-hit"
-              text: "File Server"
               action:
                 - {cmd: highlight, data: {id: file-server, level: orange} }
                 - {cmd: label.add, data: {id: file-server-hit, text: File Server, face: top, arrow: right} }
             map-computer:
               pos: "map-computer-hit"
-              text: "Mapboard Computer"
               action:
                 - {cmd: highlight, data: {id: map-computer, level: orange} }
                 - {cmd: label.add, data: {id: map-computer-hit, text: Map Computer, face: bottom, arrow: right} }
             printer:
               pos: "printer-hit"
-              text: "Printer"
               action:
                 - {cmd: highlight, data: {id: printer, level: orange} }
                 - {cmd: label.add, data: {id: printer-hit, text: Printer, face: bottom, arrow: right} }
@@ -180,7 +173,7 @@ chapters:
               pos: [100,100]
               text: "You may be saying to yourself, CTANLEE it's just a printer! If we had more time I'd tell you about The Paperfeed Incident of '08 where some Virus Bots hijacked a corporate unit. Many Defenders still bear papercut scars."
               audio: Story_2_Ctanlee_9.m4a
-              next: click
+              next: audio
       -
         duration: {kind: ux}
         ux:
@@ -207,23 +200,20 @@ chapters:
             - {action: map }
             - {action: monitor }
           defaults:
-            next: click
+            next: 3000
           actions:
             filing-cabinet:
               pos: "filing-cabinet-hit"
-              text: "Substation diagrams"
               action:
                 - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
                 - {cmd: label.add, data: {id: filing-cabinet-hit, text: Substation Diagrams, face: bottom, arrow: right} }
             map:
               pos: "map-computer-hit"
-              text: "System Map"
               action:
                 - {cmd: highlight, data: {id: map, level: yellow} }
                 - {cmd: label.add, data: {id: map-computer-hit, text: System Map, face: bottom, arrow: right} }
             monitor:
               pos: "monitor-hit"
-              text: "Control System Views"
               action:
                 - {cmd: highlight, data: {id: monitor, level: yellow} }
                 - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
@@ -372,17 +362,17 @@ chapters:
             next: audio
           actions:
             a:
-              pos: [200, 200]
+              pos: [150, 200]
               emo: happy
               text: "Your duties are listed here. Click on a duty to review it."
               audio: Story_2_Ctanlee_31.m4a
             b:
-              pos: [500, 500]
+              pos: [740, 600]
               emo: happy
               text: "Click I acknowledge at the bottom of the duty when you are done."
               audio: Story_2_Ctanlee_32.m4a
             c:
-              pos: [500, 600]
+              pos: [740, 680]
               emo: happy
               text: "When all duties are completed, you can click CONTINUE to proceed."
               audio: Story_2_Ctanlee_33.m4a
@@ -562,24 +552,19 @@ chapters:
                     evidences:
                       - Dated workflow with approvals
                       - Door System Logs
+      # Example Duties Slide
       -
         action:
           - {cmd: label.hide, data: {id: all}  }
         movie:
           layers:
-            - {depth: 8, content: clear }
-        duration: {kind: time, seconds: 1 }
-      -
-        movie:
-          layers:
-            - {depth: 8, content: duties_placeholder.png, action: {cmd: chrome.hide} }
-        duration: {kind: time, seconds: 5 }
-      -
-        movie:
-          layers:
-            - {depth: 8, content: clear }
-            - {depth: 8, content: chapter2_placeholder.png }
-        duration: {kind: time, seconds: 5 }
+            - {depth: 8, content: clear, action: {cmd: chrome.hide}}
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: ~l/ep2-ch2-duties.json}
+        duration: {kind: ux}
       -
         movie:
           layers:
