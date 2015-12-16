@@ -7,7 +7,7 @@ chapters:
   -
     title: Episode 1 - Chapter 1
     dev:
-      startIndex: 6
+      startIndex: 12
     kind: intro
     slides:
       -
@@ -258,14 +258,13 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 1, content: smoke.json, events: [complete], loop: false}
+            - {depth: 1, content: smoke1.json, events: [complete], loop: false}
         ctanlee:
           defaults:
             next: audio
           timeline:
             - {action: a }
             - {action: b }
-            - {action: c }
           actions:
             a:
               pos: [350,400]
@@ -275,12 +274,22 @@ chapters:
               pos: [350,400]
               text: "The government is aware of the advance forces operating on Earth and secretly directed the North America Electric Reliability Corporation (NERC) to create the Critical Infrastructure Protection Standards to defend the Bulk Electric System."
               audio: Intro_Ctanlee_19.m4a
-            c:
+        duration: {kind: listen, event: layer.1.complete}
+      -
+        movie:
+          layers:
+            - {depth: 1, content: clear }
+            - {depth: 0, background: black }
+        ctanlee:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+          actions:
+            a:
               pos: [350,400]
               text: "I know this is a lot to process. How are you feeling?"
               audio: Intro_Ctanlee_21.m4a
-        duration: {kind: listen, event: layer.1.complete}
-      -
         ux:
           components:
             -
@@ -304,6 +313,7 @@ chapters:
                     click:
                       - {cmd: slides.next-slide}
                       - {cmd: playsound, data: {file: Intro_Dialogue_2_3_1_Kick.m4a}}
+        duration: {kind: ux }
       # Show episodes
       -
         action: [{cmd: chrome.show}, {cmd: chrome.showepisodes}]
