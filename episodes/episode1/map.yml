@@ -96,6 +96,7 @@ chapters:
               kind: dialogue-page
               config:
                 title: Approval To Proceed
+                theme: grid-room
                 btnConfig: {height: 100, bottom: 100, lines: true}
                 btns:
                   -

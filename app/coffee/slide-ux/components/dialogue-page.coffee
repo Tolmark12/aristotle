@@ -7,6 +7,10 @@ module.exports = class DialoguePate extends Component
     @$node = $ jadeTemplate['slide-ux/components/dialogue/dialogue-pages/base']( data )
     super $el, @$node, data
 
+    console.log data
+    if data.theme?
+      @$node.addClass data.theme
+
     # Make the svg stretch to fill whatever size the button is
     @configButtons @$node, data
     $("svg", @$node).each (i, el)-> el.setAttribute "preserveAspectRatio", "none"
