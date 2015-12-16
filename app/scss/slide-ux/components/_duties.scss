@@ -1,10 +1,13 @@
 .duties                { display:flex; align-items:flex-start; width:960px; height:100%; background:#E6E6E6; margin:0 auto;
+  .float-right         { float:right; }
   &:before             { content:""; position:absolute; width:1024px; height:768px; background:rgba(black, 0.4); top:0; left:0; z-index:-1; }
+  .title               { color:#335E6E; font-size:30px; font-family:$fun_cond; border-bottom:1px solid #335E6E; }
   .content             { width:67%; padding:20px; height:728px; overflow:scroll;
-    .duty-content      { text-align:center;
+    .duty-content      { display: flex; flex-direction: column; align-items: center;
       .user-content    { text-align:left; }
     }
-    .icon-btn          { color:white; margin-left:auto;
+    .icon-btn          { color:white; margin-top:25px;
+      &:before         { border-top:1px solid #335E6E; content:""; display:block; position:absolute; width:300px; @include center-absolute; top:-10px;}
       .txt             { margin-top:-10px; letter-spacing:0.12em; }
       &:hover          { //color:#335E6E;
         svg .bg        { fill:$orange; }

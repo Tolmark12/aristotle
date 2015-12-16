@@ -692,7 +692,7 @@ chapters:
           components:
             -
               kind: duties
-              config: {definition: ~l/ep2-ch2-duties.json}
+              config: {definition: ~l/ep2-ch1-duties.json}
         duration: {kind: ux}
       # EXAMPLE - Quiz
       -
