@@ -41,11 +41,18 @@ module.exports = class Sequence
     incramentDifference  = Math.abs( @currentItemIndex - @newIndex ) * plusOrMinus
     return @incramentItemIndex( incramentDifference )
 
-  getItemByParam : (param, val) ->
-    for item in @items
+  activateItemByParam : (param, val) ->
+    @currentItemIndex = @getIndexByParam param, val
+
+  getIndexByParam : (param, val) ->
+    for item, i in @items
       if item[param] == val
-        return item
+        return i
     return null
+
+  getItemByParam : (param, val) ->
+    # Add in some checking to make sure it works
+    @items[ @getIndexByParam(param, val) ]
 
 
 

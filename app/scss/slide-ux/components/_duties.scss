@@ -1,0 +1,42 @@
+.duties                { display:flex; align-items:flex-start; width:960px; height:100%; background:#E6E6E6; margin:0 auto;
+  &:before             { content:""; position:absolute; width:1024px; height:768px; background:rgba(black, 0.4); top:0; left:0; z-index:-1; }
+  .content             { width:67%; padding:20px; height:728px; overflow:scroll;
+    .duty-content      { text-align:center;
+      .user-content    { text-align:left; }
+    }
+    .icon-btn          { color:white; margin-left:auto;
+      .txt             { margin-top:-10px; letter-spacing:0.12em; }
+      &:hover          { //color:#335E6E;
+        svg .bg        { fill:$orange; }
+        svg .lightning { fill:#335E6E }
+        svg .outline   {  }
+      }
+    }
+  }
+  .list                { width:32%; height:100%; background:#335E6E; padding:15px;
+    > h1               { font-size:30px; text-align:center; border-bottom:2px solid #6B989F; padding-bottom:10px; margin-bottom:15px;}
+    .btn               { display:flex; align-items:center; cursor:pointer;
+      h1               { font-size:16px; color:white; margin-left:10px;}
+      .icon            {
+        &.duty         { display:block}
+        &.complete     { display:none}
+        &.active       { display:none}
+      }
+      &.active         {
+        h1             { color:$yeller; }
+        .icon.duty,
+        .icon.complete { display:none; }
+        .icon.active   { display:block;}
+      }
+      &.complete       {
+        .icon.duty,
+        .icon.active   { display:none; }
+        .icon.complete { display:block;}
+      }
+      &.complete       { }
+      &:hover          {
+        h1             { color:$yeller; }
+      }
+    }
+  }
+}

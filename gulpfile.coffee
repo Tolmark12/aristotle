@@ -46,6 +46,7 @@ svgPath           = 'app/assets/compiled/*.svg'
 fontPath          = 'app/fonts/**/*.@(ttf|svg|eot|ttf|woff|woff2)'
 episodeScriptPath = ['episodes/**/*.yml','episodes/**/*.yaml']
 episodeAssetPath  = 'episodes/**/*.!(yml|yaml)'
+localAssetPath    = 'local/**/*'
 
 parseSVG = (cb)->
   gulp.src svgPath
@@ -106,6 +107,9 @@ jsStage = (cb)->
     .pipe gulp.dest('server/stage/js')
     .on('end', cb)
 
+##############################
+# TODO: I should move all the copy assets methods into on
+# method that passes in the src variable...
 copyAssets = (destination, cb) ->
   gulp.src assetPath
     .pipe gulp.dest(destination)
@@ -120,6 +124,13 @@ episodeAssets = (destination, cb)->
   gulp.src episodeAssetPath
     .pipe gulp.dest(destination)
     .on('end', cb)
+
+localAssets = (destination, cb)->
+  gulp.src localAssetPath
+    .pipe gulp.dest(destination)
+    .on('end', cb)
+
+##############################
 
 episodeScript = (destination, cb) ->
   gulp.src episodeScriptPath
@@ -197,6 +208,7 @@ compileFiles = (doWatch=false, cb) ->
     {meth:cssStage,      glob:cssStagePath}
     {meth:htmlStage,     glob:jadeStagePath}
     {meth:parseSVG,      glob:svgPath}
+    {meth:localAssets,   glob:localAssetPath,     params:['server/local', onComplete]}
     {meth:episodeAssets, glob:episodeAssetPath,   params:['server/episodes', onComplete]}
     {meth:episodeScript, glob:episodeScriptPath,  params:['server/episodes', onComplete] }
     {meth:fonts,         glob:fontPath,           params:['server/assets/fonts', onComplete], dontWatch:true }

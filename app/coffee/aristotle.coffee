@@ -15,7 +15,7 @@ isInternetExp = require 'misc/browser-detect'
 
 class Aristotle
 
-  constructor: ($el, @episodesDir, @episodeNum) ->
+  constructor: ($el, @episodesDir, @localDir, @episodeNum) ->
     window.aristotle = @
     aristotle.isIE = isInternetExp()
     @setDevMode true

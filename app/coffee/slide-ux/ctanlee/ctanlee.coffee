@@ -64,20 +64,20 @@ module.exports = class Ctanlee
     @$currentAnimation = $('<div class="animation"/>')
     @$faceHolder.append @$currentAnimation
 
-    path = "episodes/episode1/animations/ctanlee-anim/"
     switch emotion
-      when "angry"    then path += 'ctanlee-angry.json'
-      when "happy"    then path += 'ctanlee-happy.json'
-      when "idle"     then path += 'ctanlee-idle.json'
-      when "down"     then path += 'ctanlee-down.json'
-      when "left"     then path += 'ctanlee-left.json'
-      when "right"    then path += 'ctanlee-right.json'
-      when "surprise" then path += 'ctanlee-surprise.json'
-      when "unhappy"  then path += 'ctanlee-unhappy.json'
+      when "angry"    then path = 'ctanlee-angry.json'
+      when "happy"    then path = 'ctanlee-happy.json'
+      when "idle"     then path = 'ctanlee-idle.json'
+      when "down"     then path = 'ctanlee-down.json'
+      when "left"     then path = 'ctanlee-left.json'
+      when "right"    then path = 'ctanlee-right.json'
+      when "surprise" then path = 'ctanlee-surprise.json'
+      when "unhappy"  then path = 'ctanlee-unhappy.json'
       else
         if !@$oldAnimation?
-          path += 'ctanlee-happy.json'
+          path = 'ctanlee-happy.json'
 
+    path = aristotle.getAssetPath "~g/ctanlee/#{path}"
     @oldAnimation = @animation
     data =
       delay: resetDuration

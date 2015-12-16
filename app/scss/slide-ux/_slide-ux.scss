@@ -31,6 +31,7 @@
   @import "components/personal-info-intro";
   @import "components/call-sign-select";
   @import "components/sound-test";
+  @import "components/duties";
 
   .button    { padding:7px 0; margin:7px 0; font-family:$fun_cond; background:#6B989F; font-size:18px; text-align:center; border:2px solid #335E6E; cursor:pointer;
     &:hover,
@@ -40,3 +41,7 @@
 @import "components/ghost-ux";
 
 input{border:none; }
+
+.icon-btn{position:relative; display: inline-block; cursor:pointer;
+  .txt  { position:absolute; @include center-absolute; text-transform:uppercase; white-space:nowrap; }
+}

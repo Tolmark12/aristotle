@@ -3,6 +3,7 @@ Ctanlee           = require 'slide-ux/ctanlee/Ctanlee'
 DefenderCards     = require 'slide-ux/components/defender-cards'
 Dialogue          = require 'slide-ux/components/dialogue'
 DialoguePage      = require 'slide-ux/components/dialogue-page'
+Duties            = require 'slide-ux/components/duties'
 ExploreCards      = require 'slide-ux/components/explore-cards'
 GhostUX           = require 'slide-ux/components/ghost-ux'
 PersonalInfoIntro = require 'slide-ux/components/personal-info-intro'
@@ -28,9 +29,10 @@ module.exports = class SlideUX
 
   addComponent : (componentData) ->
     switch componentData.kind
-      when "call-sign-select"    then component = new CallSignSelect @$el, componentData.config 
+      when "call-sign-select"    then component = new CallSignSelect @$el, componentData.config
       when "defender-cards"      then component = new DefenderCards @$el, componentData.config # TODO : Fold this into Explore Cards
       when "dialogue"            then component = new Dialogue @$el, componentData.config
+      when "duties"              then component = new Duties @$el, componentData.config
       when "dialogue-page"       then component = new DialoguePage @$el, componentData.config
       when "explore-cards"       then component = new ExploreCards @$el, componentData.config
       when "ghost-ux"            then component = new GhostUX @$el, componentData.config

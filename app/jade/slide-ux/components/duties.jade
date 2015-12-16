@@ -1,0 +1,15 @@
+.list
+  h1 Duties
+  .btns
+    each duty in duties
+      .btn.duty-btn(id="#{duty.id}")
+        .icon.active
+          img.shadow-icon(data-src="duty-active")
+        .icon.complete
+          img.shadow-icon(data-src="duty-complete")
+        .icon.duty
+          img.shadow-icon(data-src="duty")
+        h1=duty.title
+  
+.content
+  

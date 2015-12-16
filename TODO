@@ -5,7 +5,7 @@ To Build:
   ☐ Clean up the caching of svgs
   ✔ Episode asset directory ~1/asdf.json @done(2015-12-15 12:38) @project(To Build)
   ☐ Add a `savePositions` method for saving the positions of elements pre caching
-  ☐ Duties section
+  ✔ Duties section @done(2015-12-16 12:53) @project(To Build)
   ☐ Chapter Headings
   ☐ Progress Bar at bottom
   ☐ Change Mode (Learn mode, Explore Mode, Simulate)
@@ -15,11 +15,11 @@ Episode1:
 
 Complex Animations:
   ☐ After effects trigger based on keyframes
-  ☐ Ctanlee delay
+  ✔ Ctanlee delay @done(2015-12-16 12:53) @project(Complex Animations)
 
 ☐ Make caching work on other browsers
   ✔ chrome @done(2015-12-15 12:39)
   ✔ firefox @done(2015-12-15 12:41)
   ✔ ie @done(2015-12-15 12:39)
   ☐ safari
-☐ un-caching
+✔ un-caching @done(2015-12-16 12:53)
