@@ -8,18 +8,10 @@ chapters:
     title: Episode 2 - Chapter 1
     dev:
       volume: 1
-      startIndex: 0
+      startIndex: 20
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
-      # Example Duties Slide
-      -
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: duties
-              config: {definition: ~l/ep1-ch1-duties.json}
       # Sky and mountains build-in
       -
         movie:
@@ -367,21 +359,17 @@ chapters:
                     type: BCA
                     network: ESP
                     description: Used by technicians for troubleshooting.
+      # Example Duties Slide
       -
         action:
           - {cmd: "unhighlight.all"}
-        duration: {kind: ctanlee}
-        movie:
-          layers:
-            - {depth: 7, content: duties_placeholder.png, action: {cmd: chrome.hide} }
-            - {depth: 8, content: duties_continue_placeholder.png }
         ctanlee:
           timeline:
             - {action: a }
             - {action: b }
             - {action: c }
           defaults:
-            next: click
+            next: audio
           actions:
             a:
               pos: [200, 200]
@@ -398,6 +386,12 @@ chapters:
               emo: happy
               text: "When all duties are completed, you can click CONTINUE to proceed."
               audio: Story_2_Ctanlee_33.m4a
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: ~l/ep2-ch1-duties.json}
       -
         movie:
           layers:

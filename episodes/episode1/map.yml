@@ -7,7 +7,7 @@ chapters:
   -
     title: Episode 1 - Chapter 1
     dev:
-      startIndex: 0
+      startIndex: 6
     kind: intro
     slides:
       -
