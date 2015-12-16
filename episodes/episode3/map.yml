@@ -182,19 +182,19 @@ chapters:
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
-            - {depth: 11, content: duties_placeholder.png, action: {cmd: chrome.hide} }
+            - {depth: 13, content: duties_placeholder.png, action: {cmd: chrome.hide} }
         duration: {kind: time, seconds: 2 }
       -
         movie:
           layers:
-            - {depth: 11, content: clear }
-            - {depth: 11, content: chapter2_placeholder.png }
+            - {depth: 13, content: clear }
+            - {depth: 13, content: chapter2_placeholder.png }
         duration: {kind: time, seconds: 2 }
       -
         movie:
           layers:
             - {depth: 10, content: clear, action: {cmd: chrome.show} }
-            - {depth: 11, content: clear }
+            - {depth: 13, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -211,7 +211,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: fatline_extended.json, events: [complete] }
+            - {depth: 13, content: fatline_extended.json, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -298,11 +298,11 @@ chapters:
               pos: [370,300]
               text: "Cadet … you may wish this wasn't real, that it was just some work of fiction, but good can come from this. What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them. Sektimus fears this. Sektimus fears what you can become. While you ponder these things, let's get back to the simulator."
               audio: Story_3_Ctanlee_23.m4a
-        duration: {kind: listen, event: layer.10.complete}
+        duration: {kind: listen, event: layer.13.complete}
       -
         movie:
           layers:
-            - {depth: 10, content: kettle_e_attack.json, events: [complete] }
+            - {depth: 13, content: kettle_e_attack.json, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -314,26 +314,26 @@ chapters:
           actions:
             a:
               pos: []
-              audio: Story_3_Ctanlee_Silence.m4a
+              audio: Story_3_Silence.m4a
             b:
               pos: [170,150]
               text: He's packaging up something nasty to send us.
               audio: Story_3_Ctanlee_24.m4a
             c:
-              pos: [270,300]
+              pos: [270,500]
               text: He's running some code on our control system! Look out everyone!
               audio: Story_3_Ctanlee_25.m4a
             d:
-              pos: [370,300]
+              pos: [370,500]
               text: This is totally uncool. Simulator pause!
               audio: Story_3_Ctanlee_26.m4a
-        duration: {kind: listen, event: layer.10.complete}
+        duration: {kind: listen, event: layer.13.complete}
       # Sektimus Interlude
       -
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
-            - {depth: 10, content: clear }
+            - {depth: 13, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -351,7 +351,7 @@ chapters:
         movie:
           layers:
             - {depth: 10, content: clear }
-            - {depth: 10, content: perimeter_firewall.json }
+            - {depth: 13, content: perimeter_firewall.json }
           zoom: {scale: 2, x: 600, y: 550}
         duration: {kind: time, seconds: 1.5 }
       - !!inc/file ./episodes/episode3/yaml/_eacms-selector.yaml
@@ -360,8 +360,8 @@ chapters:
           layers:
           zoom: {scale: 1}
           layers:
-            - {depth: 10, content: clear }
-            - {depth: 10, content: perimeter_electronic.json }
+            - {depth: 13, content: clear }
+            - {depth: 13, content: perimeter_electronic.json }
         duration: {kind: ux}
         ctanlee:
           timeline:
@@ -385,8 +385,8 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: clear }
-            - {depth: 10, content: $eacmsAnimateGood, events: [complete] }
+            - {depth: 13, content: clear }
+            - {depth: 13, content: $eacmsAnimateGood, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -424,12 +424,12 @@ chapters:
               pos: [700,500]
               text: That was an approved packet.
               audio: Story_3_Ctanlee_34.m4a
-        duration: {kind: listen, event: layer.10.complete}
+        duration: {kind: listen, event: layer.13.complete}
       -
         movie:
           layers:
-            - {depth: 10, content: clear }
-            - {depth: 10, content: $eacmsAnimateBadUpper, events: [complete] }
+            - {depth: 13, content: clear }
+            - {depth: 13, content: $eacmsAnimateBadUpper, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -457,12 +457,12 @@ chapters:
               pos: [320,450]
               text: He wasn't on the list.
               audio: Story_3_Ctanlee_36.m4a
-        duration: {kind: listen, event: layer.10.complete}
+        duration: {kind: listen, event: layer.13.complete}
       -
         movie:
           layers:
-            - {depth: 10, content: clear }
-            - {depth: 10, content: $eacmsAnimateBadLower, events: [complete] }
+            - {depth: 13, content: clear }
+            - {depth: 13, content: $eacmsAnimateBadLower, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -495,7 +495,7 @@ chapters:
               pos: [370,300]
               text: Terminated. Nice job, firewall.
               audio: Story_3_Ctanlee_39.m4a
-        duration: {kind: listen, event: layer.10.complete}
+        duration: {kind: listen, event: layer.13.complete}
       -
         ctanlee:
           timeline:
@@ -521,7 +521,7 @@ chapters:
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
-            - {depth: 11, content: duties_placeholder.png, action: {cmd: chrome.hide} }
+            - {depth: 13, content: duties_placeholder.png, action: {cmd: chrome.hide} }
         duration: {kind: time, seconds: 5 }
       # EXAMPLE - Quiz
       -
