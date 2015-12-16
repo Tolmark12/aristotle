@@ -8,7 +8,7 @@ chapters:
     title: Episode 2 - Chapter 1
     dev:
       volume: 1
-      startIndex: 44
+      startIndex: 
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:

@@ -7,9 +7,6 @@
     .personal2    { }
     .info         { display:flex; @include blue-border(top); padding:0;
       > *         { width:50%; padding:20px 0;}
-      .duties     {
-        .duty     { }
-      }
       .evidences  { @include blue-border(left);
         .evidence { }
       }
