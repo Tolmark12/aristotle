@@ -57,6 +57,7 @@ chapters:
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
+          zoom: {scale: 2, x: 600, y: 730}
         duration: {kind: time, seconds: 1 }
       # Components overview
       -
@@ -94,7 +95,6 @@ chapters:
                 - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
             operator-ws:
               pos: operator-ws-hit
-              text: "Operator Workstation"
               action:
                 - {cmd: highlight, data: {id: operator-ws, level: blue } }
                 - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
@@ -102,7 +102,7 @@ chapters:
         action:
           - {cmd: label.hide, data: {id: all}  }
         movie:
-          zoom: {scale: 1, x: 595, y: 424}
+          zoom: {scale: 1}
           layers:
             - {depth: 7, content: clear }
         duration: {kind: ctanlee}
@@ -132,6 +132,7 @@ chapters:
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
+          zoom: {scale: 2, x: 600, y: 680}
         duration: {kind: time, seconds: 1 }
       # Components overview
       -
@@ -165,6 +166,7 @@ chapters:
         movie:
           layers:
             - {depth: 7, content: clear }
+          zoom: {scale: 1}
         duration: {kind: ctanlee}
         ctanlee:
           timeline:
@@ -192,6 +194,7 @@ chapters:
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
+          zoom: {scale: 2, x: 600, y: 430}
         duration: {kind: time, seconds: 1 }
       -
         duration: {kind: ctanlee }
@@ -224,6 +227,7 @@ chapters:
         movie:
           layers:
             - {depth: 7, content: clear }
+          zoom: {scale: 1}
         duration: {kind: ux}
         ux:
           components:
@@ -237,6 +241,7 @@ chapters:
                   text: continue
                   action: {cmd: slides.next-slide}
       -
+        movie:
         duration: {kind: ux}
         ux:
           components:
