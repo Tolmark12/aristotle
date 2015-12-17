@@ -575,6 +575,16 @@ chapters:
               kind: duties
               config: {definition: ~l/ep2-ch2-duties.json}
         duration: {kind: ux}
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 3
+  # ----------------------------------------------
+  -
+    title: Chapter 3
+    subtitle: Our Regulators
+    dev:
+      startIndex: 0
+    kind: chapter
+    slides:
       # Dialogue Regulators ==========================================
       -
         movie:

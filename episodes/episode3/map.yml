@@ -6,8 +6,11 @@ nextRankId: cadet-first-class
 dev:
   startIndex: 0
 
-# CHAPTER 2
+# CHAPTER 1
 chapters:
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 1
+  # ----------------------------------------------
   -
     title: Chapter 1
     subtitle: Physical Security Perimeter
@@ -196,7 +199,9 @@ chapters:
               kind: duties
               config: {definition: ~l/ep3-ch1-duties.json}
         duration: {kind: ux}
-  # Chapter Transition  ==========================================
+  # ----------------------------------------------
+  # ------------------------------------ CHAPTER 2
+  # ----------------------------------------------
   -
     title: Chapter 2
     subtitle: Software Defenses
