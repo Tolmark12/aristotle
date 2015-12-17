@@ -24,8 +24,6 @@ module.exports = class SVGAnimation
           @play()
       @addEvents data
 
-
-
   addEvents : (data) ->
     if data.events?
       for event in data.events

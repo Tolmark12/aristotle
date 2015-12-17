@@ -9,7 +9,7 @@ chapters:
   -
     title: Loading Introduction
     dev:
-      startIndex: 13
+      startIndex: 0
     kind: intro
     slides:
       -
