@@ -161,7 +161,7 @@ module.exports = class Ctanlee
     if action.pos?
       @goto action
 
-    @say action.text, action.audio, action.next, action.textPos
+    @say action.text, action.audio, action.next, action.txtPos
 
   complete : () ->
     @returnToStation()
@@ -203,9 +203,7 @@ module.exports = class Ctanlee
 
     if Array.isArray pos
       for item in pos
-        console.log item
         @$text.addClass item
     else
-      console.log pos
       @$text.addClass pos
 

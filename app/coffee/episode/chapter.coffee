@@ -1,5 +1,5 @@
-Slides    = require 'episode/slides'
-Preloader = require 'misc/asset-preloader'
+Slides         = require 'episode/slides'
+ChapterHeading = require 'episode/chapter-heading'
 
 module.exports = class Chapter
 
@@ -7,7 +7,7 @@ module.exports = class Chapter
 
   start : () ->
     aristotle.devTools.go @chapterData.dev, @chapterData.slides
-    preloader = new Preloader @chapterData, @startSlides
+    chapterHeading = new ChapterHeading @chapterData, @startSlides
 
   startSlides : () =>
     @slides = new Slides @chapterData, @movie, @ux, @onSlidesComplete

@@ -28,6 +28,10 @@ module.exports = class DevTools
     if !@isDevMode then return
     # Remove all slides before the start slide index
     if devConfig.startIndex?
+      # if start index is a negative number, set index to `n` from end of items
+      if devConfig.startIndex < 0
+        devConfig.startIndex = items.length + devConfig.startIndex
+
       startIndex = devConfig.startIndex
       items.splice 0, devConfig.startIndex
     else
