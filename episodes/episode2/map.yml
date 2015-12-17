@@ -11,7 +11,7 @@ chapters:
   # ----------------------------------------------
   -
     title: Chapter 1
-    subtitle: Defenders and Duties
+    subtitle: Facilities and Cyber Assets
     dev:
       volume: 1
       startIndex: 0
@@ -393,18 +393,11 @@ chapters:
   # ----------------------------------------------
   -
     title: Chapter 2
-    subtitle: Our Regulators
+    subtitle: Defenders and Duties
     dev:
       startIndex: 0
     kind: chapter
     slides:
-      # -
-      #   movie:
-      #     layers:
-      #       - {depth: 7, content: clear, action: {cmd: chrome.show} }
-      #       - {depth: 8, content: clear }
-      #       - {depth: 7, content: chapter1_placeholder.png }
-      #   duration: {kind: time, seconds: 5 }
       -
         movie:
           layers:
