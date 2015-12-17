@@ -1,11 +1,13 @@
-title: Training One
-dev:
-  startIndex: 0
-
+episode: 0
+title: Episode 1
+subtitle: Organizing Our Defenses
+rankId: cadet
+skipSlate: true
+nextRankId: cadet-first-class
 # CHAPTER 1
 chapters:
   -
-    title: Episode 1 - Chapter 1
+    title: Loading Introduction
     dev:
       startIndex: 0
     kind: intro

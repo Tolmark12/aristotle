@@ -6,11 +6,14 @@ Sequence       = require 'misc/Sequence'
 module.exports = class Episode
 
   constructor: (trainingData, @movie, @ux) ->
+    @nextRankId = trainingData.nextRankId
     PubSub.publish 'chrome.hide'
     aristotle.devTools.go trainingData.dev, trainingData.chapters
     @createChapters trainingData
-    @showIntro trainingData
-    @nextRankId = trainingData.nextRankId
+    if trainingData.skipSlate
+      @playChapter()
+    else
+      @showIntro trainingData
 
   showIntro : (data) ->
     @ux.populate( {components:[
@@ -22,7 +25,6 @@ module.exports = class Episode
     @ux.populate( {components:[
       {kind: "episode-outro", config: { rankId:@nextRankId, rank:aristotle.dictionary.get(@nextRankId) } }
     ]})
-    # setTimeout @playChapter, 3000
 
   createAndShowOutro : () ->
 
@@ -44,5 +46,6 @@ module.exports = class Episode
   playChapter     : () =>
     @movie.reset()
     @chapters.getCurrentItem().start @chapterComplete
+
   episodeComplete : () ->
     @showOutro()
