@@ -48,4 +48,5 @@ module.exports = class Episode
     @chapters.getCurrentItem().start @chapterComplete
 
   episodeComplete : () ->
+    console.log "episode complete"
     @showOutro()

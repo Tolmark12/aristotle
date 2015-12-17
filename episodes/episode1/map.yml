@@ -9,7 +9,7 @@ chapters:
   -
     title: Loading Introduction
     dev:
-      startIndex: 0
+      startIndex: 13
     kind: intro
     slides:
       -
@@ -333,4 +333,4 @@ chapters:
               pos: [350,400]
               text: "It's time, recruit. Let us begin Episode 1. But first, congratulations on your new rank!"
               audio: Intro_Ctanlee_26.m4a
-        duration: {kind: time, seconds: 10}
+        duration: {kind: ctanlee}
