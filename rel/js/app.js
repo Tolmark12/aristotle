@@ -71,14 +71,6 @@ var jade_interp;
 buf.push("<div class=\"onion-layer\"></div>");;return buf.join("");
 };
 
-jadeTemplate['slide-ux/ctanlee/ctanlee'] = function template(locals) {
-var buf = [];
-var jade_mixins = {};
-var jade_interp;
-
-buf.push("<div class=\"ctanlee\"><div class=\"face\"></div><div class=\"speech-box\"> <div class=\"text\"> <span class=\"content\"> </span><span class=\"next\"></span></div></div></div>");;return buf.join("");
-};
-
 jadeTemplate['slide-ux/components/call-sign-select'] = function template(locals) {
 var buf = [];
 var jade_mixins = {};
@@ -234,6 +226,14 @@ var jade_mixins = {};
 var jade_interp;
 
 buf.push("<div class=\"sound-test\"><div class=\"volume\"> <img data-src=\"speaker\" class=\"shadow-icon flip\"/><div class=\"txt\">Please Enable Your Audio Device</div><img data-src=\"speaker\" class=\"shadow-icon\"/></div><div class=\"silence\"><img data-src=\"no-phone\" class=\"shadow-icon\"/><div class=\"txt\">Please Silence Your Cell Phone</div><img data-src=\"no-phone\" class=\"shadow-icon\"/></div></div>");;return buf.join("");
+};
+
+jadeTemplate['slide-ux/ctanlee/ctanlee'] = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<div class=\"ctanlee\"><div class=\"face\"></div><div class=\"speech-box\"> <div class=\"text\"> <span class=\"content\"> </span><span class=\"next\"></span></div></div></div>");;return buf.join("");
 };
 
 jadeTemplate['slide-ux/components/cards/equipment'] = function template(locals) {
