@@ -102,17 +102,14 @@ chapters:
                   -
                     txt: Yes
                     click:
-                      - {cmd: slides.next-slide}
-                      - {cmd: playsound, data: {file: Intro_Dialogue_1_1_Yes.m4a}}
+                      - {cmd: playsound, data: {file: Intro_Dialogue_1_1_Yes.m4a, complete: {cmd: slides.next-slide} }}
                   -
                     txt: No
                     click:
-                      - {cmd: slides.next-slide}
-                      - {cmd: playsound, data: {file: Intro_Dialogue_Screen_1_2_No.m4a}}
+                      - {cmd: playsound, data: {file: Intro_Dialogue_Screen_1_2_No.m4a }}
                   -
                     txt: Laser blast my face
                     click:
-                      - {cmd: slides.next-slide}
                       - {cmd: playsound, data: {file: Intro_Dialogue_1_3_What.m4a}}
         duration: {kind: ux}
       -
@@ -301,11 +298,11 @@ chapters:
                   -
                     txt: Panicking
                     click:
-                      - {cmd: playsound, data: {file: Intro_Dialogue_2_1_Panicking.m4a, complete: {cmd: slides.next-slide} }}
+                      - {cmd: playsound, data: {file: Intro_Dialogue_2_1_Panicking.m4a }}
                   -
                     txt: I Threw Up a Bit in My Mouth
                     click:
-                      - {cmd: playsound, data: {file: Intro_Dialogue_2_2_Threw_Up.m4a, complete: {cmd: slides.next-slide} }}
+                      - {cmd: playsound, data: {file: Intro_Dialogue_2_2_Threw_Up.m4a }}
                   -
                     txt: Let's Kick Some Bot
                     click:
