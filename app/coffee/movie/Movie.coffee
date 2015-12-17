@@ -33,6 +33,7 @@ module.exports = class Movie
       @zoom data.zoom
 
   zoom : (data) ->
+    return if aristotle.isIE
     if data.id?
       $item = $("##{data.id}")
       if $item.length == 0 then aristotle.throw "Tried to zoom to an item with the id `#{data.id}`, but no items with that id were found." ;  return
@@ -42,6 +43,7 @@ module.exports = class Movie
       @zoomTo data.scale, data.x, data.y
 
   zoomTo : (@scale=1, x=0, y=0) ->
+
     @transformOrigin = {x:x, y:y}
     @$el.css "transform-origin": "#{x}px #{y}px"
     @$el.css transform: "scale(#{@scale})"
