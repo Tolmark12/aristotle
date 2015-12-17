@@ -5,11 +5,21 @@ movie:
 ctanlee:
   timeline:
     - {action: a }
+    - {action: b }
+    - {action: c }
   defaults:
     next: audio
   actions:
     a:
       pos: [200, 200]
       emo: happy
-      text: "Excellent choice cadet! This is one fine building"
+      audio: Silence_1_sec.m4a
+    b:
+      pos: [200, 500]
+      emo: happy
+      audio: Silence_1_sec.m4a
+    c:
+      pos: [400, 200]
+      emo: happy
+      text: Excellent choice cadet! This is one fine building.
       audio: Story_2_Ctanlee_4.m4a
