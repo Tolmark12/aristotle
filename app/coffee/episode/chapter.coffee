@@ -13,5 +13,9 @@ module.exports = class Chapter
     @slides = new Slides @chapterData, @movie, @ux, @onSlidesComplete
     @slides.start()
 
+  destroy : () ->
+    @slides.destroy()
+    @slides = null
+
   onSlidesComplete : () => @onChapterCompete()
 

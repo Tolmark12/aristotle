@@ -6,12 +6,14 @@ module.exports = class Slides
   constructor: (trainingData, movie, ux, @onShowComplete) ->
     aristotle.slides = @
     @createSlides trainingData, movie, ux
-    PubSub.subscribe 'slides.next',       ()=>@nextSlide()
-    PubSub.subscribe 'slides.next-slide', ()=>@nextSlide()
+    @nextToken  = PubSub.subscribe 'slides.next',       ()=>@nextSlide()
+    @nextToken2 = PubSub.subscribe 'slides.next-slide', ()=>@nextSlide()
 
   createSlides : (trainingData, movie, ux) ->
     slides = []
+    count  = 0
     for slideData in trainingData.slides
+      slideData.index = count++
       slides.push new Slide(movie, ux, slideData, @slideComplete)
     @slides = new Sequence slides
 
@@ -21,6 +23,11 @@ module.exports = class Slides
     else
       @slides.next()
       @playSlide()
+
+  destroy : () ->
+    @slides = null
+    PubSub.unsubscribe @nextToken
+    PubSub.unsubscribe @nextToken2
 
   start             : () -> @playSlide()
   slideComplete     : () => @nextSlide()

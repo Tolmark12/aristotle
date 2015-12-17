@@ -44,6 +44,7 @@ module.exports = class Episode
   start           : () -> @playChapter()
   chapterComplete : () =>
     PubSub.publish 'state.save'
+    @chapters.getCurrentItem().destroy()
     @nextChapter()
 
   playChapter     : () =>
