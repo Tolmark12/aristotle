@@ -16,7 +16,6 @@ module.exports = class SVGAnimation
 
     @animation.addEventListener 'data_ready', ()=>
       if data.jumpToEnd?
-        console.log "jumping to the end"
         @animation.setCurrentRawFrameValue @animation.totalFrames
       else
         if data.delay?

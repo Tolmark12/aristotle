@@ -107,5 +107,6 @@ module.exports = class Movie
   rehydrateLayerState : (layers) ->
     @reset()
     for layerData in layers
-      layerData.jumpToEnd = true
+      if layerData.cache || layerData.ieCache
+        layerData.jumpToEnd = true
       @addLayer layerData

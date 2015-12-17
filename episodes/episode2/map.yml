@@ -28,6 +28,10 @@ chapters:
         duration: {kind: listen, event: layer.2.complete}
       # Building Selector
       - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
+  -
+    title: Chapter 2
+    subtitle: Defenders and Duties
+    slides:
       # Interior build-in
       -
         movie:
