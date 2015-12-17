@@ -1,6 +1,10 @@
-title: Training Two
+episode: 1
+title: Episode 1
+subtitle: Organizing Our Defenses
+rankId: cadet
+nextRankId: cadet-first-class
 dev:
-  startIndex: 0
+  startIndex: 1
 chapters:
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 1
@@ -15,11 +19,6 @@ chapters:
     kind: chapter
     slides:
       # Sky and mountains build-in
-      -
-        movie:
-          layers:
-            - {depth: 1, content: episode1_placeholder.png, action: {cmd: chrome.hide} }
-        duration: {kind: time, seconds: 3 }
       -
         movie:
           layers:
@@ -396,7 +395,7 @@ chapters:
     title: Chapter 2
     subtitle: Our Regulators
     dev:
-      startIndex: 0
+      startIndex: 24
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -752,8 +751,8 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 9, content: episode2_placeholder.png }
-        duration: {kind: ux }
+            - {depth: 0, content: c1-sky.svg}
+        duration: {kind: time, seconds: 1}
       #################### TESTING
       # -
       #   ux:

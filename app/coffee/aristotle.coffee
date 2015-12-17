@@ -2,6 +2,7 @@ APIproxy      = require "misc/api-proxy"
 ChromeUI      = require "chrome/chrome-ui"
 Commander     = require 'misc/commander'
 DevTools      = require 'misc/dev-tools'
+Dictionary    = require 'misc/dictionary'
 Episode       = require "episode/episode"
 EpisodeLoader = require 'misc/episode-loader'
 GlobalVars    = require 'misc/global-vars'
@@ -30,8 +31,8 @@ class Aristotle
     shadowIcons = new pxicons.ShadowIcons();
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, $base
 
-
     commander    = new Commander()
+    dictionary   = new Dictionary()
     globals      = new GlobalVars()
     parser       = new Parser()
     soundFx      = new SoundFX()

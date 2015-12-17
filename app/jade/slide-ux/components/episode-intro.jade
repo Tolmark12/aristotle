@@ -1,0 +1,19 @@
+.episode-bookend.episode-intro
+  .bg
+    img.shadow-icon(data-src="tesselation")
+  .content
+    .fist
+      img.shadow-icon(data-src="lightning-fist")
+    .badges
+      .badge.active
+        img.shadow-icon(data-src="ep1-badge", scalable="true")
+      .badge(class = episode > 1 ? "active" : "")
+        img.shadow-icon(data-src="ep2-badge", scalable="true")
+      .badge(class = episode > 2 ? "active" : "")
+        img.shadow-icon(data-src="ep3-badge", scalable="true")
+      .badge(class = episode > 3 ? "active" : "")
+        img.shadow-icon(data-src="ep4-badge", scalable="true")
+    .txt
+      .title=title
+      .subtitle=subtitle
+    

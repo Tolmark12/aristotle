@@ -1,17 +1,36 @@
-Chapter   = require 'episode/chapter'
-Sequence  = require 'misc/Sequence'
+Chapter        = require 'episode/chapter'
+# EpisodeBookend = require 'episode/episode-bookend'
+Sequence       = require 'misc/Sequence'
+
+
 module.exports = class Episode
 
-  constructor: (trainingData, @movie, ux) ->
+  constructor: (trainingData, @movie, @ux) ->
+    PubSub.publish 'chrome.hide'
     aristotle.devTools.go trainingData.dev, trainingData.chapters
-    @createChapters trainingData, ux
+    @createChapters trainingData
+    @showIntro trainingData
+    @nextRankId = trainingData.nextRankId
 
-  createChapters : (trainingData, ux) ->
+  showIntro : (data) ->
+    @ux.populate( {components:[
+      {kind: "episode-intro", config: {title:data.title, subtitle:data.subtitle, episode:data.episode}}
+    ]})
+    setTimeout @playChapter, 3000
+
+  showOutro : (data) ->
+    @ux.populate( {components:[
+      {kind: "episode-outro", config: { rankId:@nextRankId, rank:aristotle.dictionary.get(@nextRankId) } }
+    ]})
+    # setTimeout @playChapter, 3000
+
+  createAndShowOutro : () ->
+
+  createChapters : (trainingData) ->
     chapters = []
     for chapterData in trainingData.chapters
-      chapters.push new Chapter( chapterData, @movie, ux, @chapterComplete )
+      chapters.push new Chapter( chapterData, @movie, @ux, @chapterComplete )
     @chapters = new Sequence chapters
-    @playChapter()
 
   nextChapter : () =>
     if @chapters.isAtLastItem()
@@ -22,7 +41,8 @@ module.exports = class Episode
 
   start           : () -> @playChapter()
   chapterComplete : () => @nextChapter()
-  playChapter     : () ->
+  playChapter     : () =>
     @movie.reset()
     @chapters.getCurrentItem().start @chapterComplete
-  episodeComplete : () -> console.log "episode complete"
+  episodeComplete : () ->
+    @showOutro()

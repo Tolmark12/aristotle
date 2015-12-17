@@ -7,12 +7,12 @@ $background-opacity:0.35;
       svg                        { margin:auto auto;}
     }
     .episodes                    { display:flex; align-items:center;
-      .badge                     { display:flex;
-        &:not(:last-child):after { content:""; display:block; margin:24px 3px 0; width:6px; height:6px; background:black; opacity:0.3; }
+      .badge                     { display:flex; align-items:center
+        &:not(:last-child):after { content:""; display:block; margin:0 3px; width:6px; height:6px; background:black; opacity:0.3; }
         &:not(.active)           {
           svg                    { opacity:0.3;
             *                    { fill:black; }
-            .white *             { fill:none; stroke:black; }
+            .white *             { fill:black; }
           }
         }
       }
