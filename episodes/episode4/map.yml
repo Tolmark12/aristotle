@@ -1,13 +1,19 @@
-title: Training Four
+episode: 3
+title: Episode 3
+subtitle: Asset Defenses
+rankId: cadet
+nextRankId: cadet-first-class
 dev:
   startIndex: 0
 
 # CHAPTER 1
 chapters:
   -
+    title: Chapter 1
+    subtitle: Securing Asset Connections
     dev:
       volume: 0.3
-      startIndex: 5
+      startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -30,13 +36,9 @@ chapters:
             - {depth: 5, content: static_facility_interior.json }
             - {depth: 7, content: interior_loop.json, loop: true  }
             - {depth: 8, content: static_facility_door.json, events: [complete]  }
-            - {depth: 9, content: chapter1_placeholder.png }
         duration: {kind: time, seconds: 1 }
       # Dialogue Intro ==========================================
       -
-        movie:
-          layers:
-            - {depth: 9, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -181,18 +183,16 @@ chapters:
               kind: duties
               config: {definition: ~l/ep4-ch1-duties.json}
         duration: {kind: ux}
-      # Chapter Transition Placeholder ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 10, content: chapter2_placeholder.png }
-        duration: {kind: time, seconds: 2 }
-      # Chapter Transition Clear Placeholder ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 10, content: clear }
-        duration: {kind: time, seconds: .1 }
+  # Chapter Transition  ==========================================
+  -
+    title: Chapter 2
+    subtitle: Software Defenses
+    dev:
+      volume: 1
+      startIndex: 0
+      # dontAnimate: [ 2, 3, 4]
+    kind: chapter
+    slides:
       # Dialogue Patch Assets ==========================================
       -
         duration: {kind: ux}
@@ -334,18 +334,16 @@ chapters:
               kind: duties
               config: {definition: ~l/ep4-ch2-duties.json}
         duration: {kind: ux}
-      # Chapter Transition Placeholder ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 10, content: chapter2_placeholder.png }
-        duration: {kind: time, seconds: 2 }
-      # Chapter Transition Clear Placeholder ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 10, content: clear }
-        duration: {kind: time, seconds: .1 }
+  # Chapter Transition  ==========================================
+  -
+    title: Chapter 3
+    subtitle: Changing Assets
+    dev:
+      volume: 1
+      startIndex: 0
+      # dontAnimate: [ 2, 3, 4]
+    kind: chapter
+    slides:
       # Dialogue Changing Assets ==========================================
       -
         duration: {kind: ux}

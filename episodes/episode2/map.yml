@@ -475,6 +475,7 @@ chapters:
                   style: lightning
                   text: got it
                   action: {cmd: slides.next-slide}
+      # Explore Defenders ==========================================
       -
         duration: {kind: ux}
         action:
@@ -568,7 +569,7 @@ chapters:
                     evidences:
                       - Dated workflow with approvals
                       - Door System Logs
-      # Example Duties Slide
+      # Dialogue Duties ==========================================
       -
         action:
           - {cmd: label.hide, data: {id: all}  }
@@ -581,6 +582,7 @@ chapters:
               kind: duties
               config: {definition: ~l/ep2-ch2-duties.json}
         duration: {kind: ux}
+      # Dialogue Regulators ==========================================
       -
         movie:
           layers:
@@ -597,6 +599,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
+      # Dialogue Violations ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -610,6 +613,7 @@ chapters:
                   style: lightning
                   text: run simulator
                   action: {cmd: slides.next-slide}
+      # Simulator Violation ==========================================
       -
         movie:
           layers:
@@ -624,10 +628,13 @@ chapters:
               text: "Oh, it looks like an employee from headquarters just walked in. Where are you going?"
               audio: Story_2_Ctanlee_12_15.mp3
         duration: {kind: listen, event: layer.8.complete}
+      # Ctanlee Go Home ==========================================
       -
         action: {cmd: ctanlee.gohome}
         duration: {kind: time, seconds: 1 }
+      # Selector Violation ==========================================
       - !!inc/file ./episodes/episode2/yaml/_simple-selector-violation.yaml
+      # Simulator Good Catch ==========================================
       -
         movie:
           layers:
@@ -642,10 +649,13 @@ chapters:
               text: "I think the Operator saw that. Stop them!"
               audio: Story_2_Ctanlee_19_20.mp3
         duration: {kind: listen, event: layer.8.complete}
+      # Ctanlee Go Home ==========================================
       -
         action: {cmd: ctanlee.gohome}
         duration: {kind: time, seconds: 1 }
+      # Selector Good Catch ==========================================
       - !!inc/file ./episodes/episode2/yaml/_simple-selector-goodcatch.yaml
+      # Simulator Identify Assess ==========================================
       -
         movie:
           layers:
@@ -660,10 +670,13 @@ chapters:
               text: "Excellent! She's asking about the camera!"
               audio: Story_2_Ctanlee_26_27.mp3
         duration: {kind: listen, event: layer.8.complete}
+      # Ctanlee Go Home ==========================================
       -
         action: {cmd: ctanlee.gohome}
         duration: {kind: time, seconds: 1 }
+      # Selector Identify Assess ==========================================
       - !!inc/file ./episodes/episode2/yaml/_simple-selector-identifyassess.yaml
+      # Dialogue End Chapter ==========================================
       -
         action: {cmd: ctanlee.gohome}
         duration: {kind: ux}
@@ -678,24 +691,22 @@ chapters:
                   style: lightning
                   text: Review Duties
                   action: {cmd: slides.next-slide}
+      # Mimebot Reveal  ==========================================
       -
         movie:
           layers:
             - {depth: 9, content: mimebot_reveal.json, events: [complete] }
         duration: {kind: listen, event: layer.9.complete}
-      # Example Duties Slide
+      # Duties  ==========================================
       -
-        movie:
-          layers:
-            - {depth: 8, content: clear }
-            - {depth: 9, content: clear }
+        action: {cmd: ctanlee.gohome}
         ux:
           components:
             -
               kind: duties
               config: {definition: ~l/ep2-ch1-duties.json}
         duration: {kind: ux}
-      # EXAMPLE - Quiz
+      # Quiz  ==========================================
       -
         movie:
           layers:
@@ -747,11 +758,6 @@ chapters:
                       -
                         a: A curve
                         r: Better luck next time
-      -
-        movie:
-          layers:
-            - {depth: 0, content: c1-sky.svg}
-        duration: {kind: time, seconds: 1}
       #################### TESTING
       # -
       #   ux:

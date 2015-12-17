@@ -1,22 +1,29 @@
-title: Training Three
+episode: 2
+title: Episode 2
+subtitle: Perimeter Defenses
+rankId: cadet
+nextRankId: cadet-first-class
 dev:
   startIndex: 0
 
 # CHAPTER 2
 chapters:
   -
+    title: Chapter 1
+    subtitle: Physical Security Perimeter
     dev:
       volume: 0.3
       startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
-      # Sky and mountains build-in
+      # Sky and mountains build-in==========================================
       -
         movie:
           layers:
             - {depth: 1, content: episode2_placeholder.png, action: {cmd: chrome.hide} }
         duration: {kind: time, seconds: 1 }
+      # Dialogue Patch Assets ==========================================
       -
         movie:
           layers:
@@ -30,8 +37,8 @@ chapters:
             - {depth: 5, content: static_facility_interior.json }
             - {depth: 7, content: interior_loop.json, loop: true  }
             - {depth: 8, content: static_facility_door.json, events: [complete]  }
-            - {depth: 9, content: chapter1_placeholder.png }
         duration: {kind: time, seconds: 1 }
+      # Dialogue Physical Attacks ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -45,6 +52,7 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
+      # Simulator Robot Attack ==========================================
       -
         movie:
           layers:
@@ -71,7 +79,7 @@ chapters:
               text: Why must the universe punish the good? Simulator Pause.
               audio: Story_3_Ctanlee_3.m4a
         duration: {kind: listen, event: layer.9.complete}
-      # Components overview
+      # Dialogue Physical Acess Control ==========================================
       -
         action: {cmd: ctanlee.gohome}
         duration: {kind: ux}
@@ -86,7 +94,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Perimeter Selection slide
+      # Dialogue Assets Perimeter  ==========================================
       -
         movie:
           layers:
@@ -96,10 +104,11 @@ chapters:
             - {depth: 10, content: perimeter_door_server.json }
           zoom: {scale: 2, x: 600, y: 730}
         duration: {kind: time, seconds: 1.5 }
+      # Selector Physical Security ==========================================
       - !!inc/file ./episodes/episode3/yaml/_pacs-selector.yaml
+      # Dialogue Perimeter Try Again ==========================================
       -
         movie:
-          layers:
           zoom: {scale: 1}
           layers:
             - {depth: 10, content: clear }
@@ -124,7 +133,7 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
-      # Robot Attacks Perimeter Defense
+      # Robot Attack Perimeter ==========================================
       -
         action: {cmd: ctanlee.gohome}
         movie:
@@ -156,6 +165,7 @@ chapters:
               text: Alerts work great. Rust in peace, robots.
               audio: Story_3_Ctanlee_14.m4a
         duration: {kind: listen, event: layer.10.complete}
+      # Dialogue Chapter Complete ==========================================
       -
         ctanlee:
           timeline:
@@ -177,7 +187,7 @@ chapters:
                   style: lightning
                   text: Review Duties
                   action: {cmd: slides.next-slide}
-      # Example Duties Slide
+      # Duties ==========================================
       -
         action: {cmd: ctanlee.gohome}
         ux:
@@ -186,19 +196,18 @@ chapters:
               kind: duties
               config: {definition: ~l/ep3-ch1-duties.json}
         duration: {kind: ux}
-      # Chapter Transition Placeholder ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 13, content: clear }
-            - {depth: 13, content: chapter2_placeholder.png }
-        duration: {kind: time, seconds: 2 }
+  # Chapter Transition  ==========================================
+  -
+    title: Chapter 2
+    subtitle: Software Defenses
+    dev:
+      volume: 1
+      startIndex: 0
+      # dontAnimate: [ 2, 3, 4]
+    kind: chapter
+    slides:
       # Dialogue Electronic Attack ==========================================
       -
-        movie:
-          layers:
-            - {depth: 10, content: clear, action: {cmd: chrome.show} }
-            - {depth: 13, content: clear }
         duration: {kind: ux}
         ux:
           components:
