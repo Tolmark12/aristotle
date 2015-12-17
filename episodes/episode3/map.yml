@@ -186,12 +186,14 @@ chapters:
               kind: duties
               config: {definition: ~l/ep3-ch1-duties.json}
         duration: {kind: ux}
+      # Chapter Transition Placeholder ==========================================
       -
         movie:
           layers:
             - {depth: 13, content: clear }
             - {depth: 13, content: chapter2_placeholder.png }
         duration: {kind: time, seconds: 2 }
+      # Dialogue Electronic Attack ==========================================
       -
         movie:
           layers:
@@ -209,7 +211,7 @@ chapters:
                   style: lightning
                   text: Continue
                   action: {cmd: slides.next-slide}
-      # Sektimus Interlude
+      # Sektimus Interlude ==========================================
       -
         movie:
           layers:
@@ -301,6 +303,7 @@ chapters:
               text: "Cadet … you may wish this wasn't real, that it was just some work of fiction, but good can come from this. What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them. Sektimus fears this. Sektimus fears what you can become. While you ponder these things, let's get back to the simulator."
               audio: Story_3_Ctanlee_23.m4a
         duration: {kind: listen, event: layer.13.complete}
+      # Simulation Kettle E Attack ==========================================
       -
         movie:
           layers:
@@ -330,7 +333,7 @@ chapters:
               text: This is totally uncool. Simulator pause!
               audio: Story_3_Ctanlee_26.m4a
         duration: {kind: listen, event: layer.13.complete}
-      # Sektimus Interlude
+      # Dialogue - Electronic Attack ==========================================
       -
         action: {cmd: ctanlee.gohome}
         movie:
@@ -348,7 +351,7 @@ chapters:
                   style: lightning
                   text: Continue
                   action: {cmd: slides.next-slide}
-      # Zoom Firewall Asset
+      # Zoom Firewall Assets ==========================================
       -
         movie:
           layers:
@@ -356,7 +359,9 @@ chapters:
             - {depth: 13, content: perimeter_firewall.json }
           zoom: {scale: 2, x: 600, y: 550}
         duration: {kind: time, seconds: 1.5 }
+      # Electronic Defense Selector ==========================================
       - !!inc/file ./episodes/episode3/yaml/_eacms-selector.yaml
+      # Dialogue - Run Simulator ==========================================
       -
         movie:
           layers:
@@ -384,6 +389,7 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
+      # Simulator - Firewall Good ==========================================
       -
         movie:
           layers:
@@ -427,6 +433,7 @@ chapters:
               text: That was an approved packet.
               audio: Story_3_Ctanlee_34.m4a
         duration: {kind: listen, event: layer.13.complete}
+      # Simulator - Firewall Upper ==========================================
       -
         movie:
           layers:
@@ -460,6 +467,7 @@ chapters:
               text: He wasn't on the list.
               audio: Story_3_Ctanlee_36.m4a
         duration: {kind: listen, event: layer.13.complete}
+      # Simulator - Firewall Lower ==========================================
       -
         movie:
           layers:
@@ -498,6 +506,7 @@ chapters:
               text: Terminated. Nice job, firewall.
               audio: Story_3_Ctanlee_39.m4a
         duration: {kind: listen, event: layer.13.complete}
+      # Dialogue - End Chapter ==========================================
       -
         ctanlee:
           timeline:
@@ -519,7 +528,7 @@ chapters:
                   style: lightning
                   text: Review Duties
                   action: {cmd: slides.next-slide}
-      # Example Duties Slide
+      # Duties ==========================================
       -
         action: {cmd: ctanlee.gohome}
         ux:
@@ -528,7 +537,7 @@ chapters:
               kind: duties
               config: {definition: ~l/ep3-ch2-duties.json}
         duration: {kind: ux}
-      # EXAMPLE - Quiz
+      # Quiz ==========================================
       -
         movie:
           layers:
