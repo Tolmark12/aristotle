@@ -97,3 +97,15 @@ module.exports = class Movie
       w: $item[0].getBBox().width # / @scale
       h: $item[0].getBBox().height# / @scale
     obj
+
+  dehydrateLayerState : () ->
+    layers = []
+    for layer in @layers
+      layers.push layer.pristineLayerData
+    layers
+
+  rehydrateLayerState : (layers) ->
+    @reset()
+    for layerData in layers
+      layerData.jumpToEnd = true
+      @addLayer layerData

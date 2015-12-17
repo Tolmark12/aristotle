@@ -11,6 +11,7 @@ Movie         = require 'movie/movie'
 Parser        = require 'misc/parser'
 SlideUX       = require 'slide-ux/slide-ux'
 SoundFX       = require 'episode/soundfx'
+State         = require 'misc/state'
 isInternetExp = require 'misc/browser-detect'
 
 class Aristotle
@@ -40,6 +41,7 @@ class Aristotle
     @chromeUI    = new ChromeUI $(".chrome",   $base)
     @slideUX     = new SlideUX  $(".slide-ux", $base)
     @movie       = new Movie    $(".movie",    $base)
+    state        = new State @movie, @slideUX
 
   setDevMode : (devMode) ->
     logger             = new Logger $('body'), devMode

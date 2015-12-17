@@ -42,9 +42,12 @@ module.exports = class Episode
       @playChapter()
 
   start           : () -> @playChapter()
-  chapterComplete : () => @nextChapter()
+  chapterComplete : () =>
+    PubSub.publish 'state.save'
+    @nextChapter()
+
   playChapter     : () =>
-    @movie.reset()
+    PubSub.publish 'state.load'
     @chapters.getCurrentItem().start @chapterComplete
 
   episodeComplete : () ->

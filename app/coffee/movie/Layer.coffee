@@ -8,7 +8,8 @@ module.exports = class Layer
     $el.append @$layer
 
 
-  update : (@layerData) =>
+  update : (@pristineLayerData) =>
+    @layerData = jQuery.extend true, {}, @pristineLayerData
     if @layerData.wait?
       setTimeout @createContent, @layerData.wait
       return
@@ -103,7 +104,14 @@ module.exports = class Layer
     @animation  = new SVGAnimation $holder, aristotle.getAssetPath(layerData.content), layerData
     if layerData.cache
       @animation.addOnComplete ()=>
-        @cache()
+        # Added a timeout because reconstituting animations required us to
+        # jump to the end of the animation, and it seemed like the animation
+        # didn't exist yet to cache.
+        setTimeout ()=>
+          @cache()
+        ,
+          10
+
 
   addSvg : ($holder, layerData) ->
     me = @
