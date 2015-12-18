@@ -1,9 +1,9 @@
 episode: 0
 title: Episode 1
 subtitle: Organizing Our Defenses
-rankId: cadet
+rankId: recruit
 skipSlate: true
-nextRankId: cadet-first-class
+nextRankId: cadet
 # CHAPTER 1
 chapters:
   -
@@ -334,3 +334,9 @@ chapters:
               text: "It's time, recruit. Let us begin Episode 1. But first, congratulations on your new rank!"
               audio: Intro_Ctanlee_26.m4a
         duration: {kind: ctanlee}
+      # Rank Advance ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 0, background: black, content: ~g/cadet.json, event: [complete] }
+        duration: {kind: listen, event: layer.0.complete }

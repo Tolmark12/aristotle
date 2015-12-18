@@ -1,8 +1,8 @@
 episode: 2
 title: Episode 2
 subtitle: Perimeter Defenses
-rankId: cadet
-nextRankId: cadet-first-class
+rankId: cadet-first-class
+nextRankId: technical-cadet
 dev:
   startIndex: 0
 
@@ -603,3 +603,9 @@ chapters:
                       -
                         a: A curve
                         r: Better luck next time
+      # Rank Advance ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 0, background: black, content: ~g/technical_cadet.json, event: [complete] }
+        duration: {kind: listen, event: layer.0.complete }

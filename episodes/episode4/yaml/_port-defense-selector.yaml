@@ -23,7 +23,6 @@ ux:
       config:
         click:
           - {cmd: slides.next-slide}
-          - {cmd: movie.load-layer, data: {depth: 9, content: $portBuild, loop: true}}
         intro:
         title: Choose your Port Defenses
         subTitle: "We'll install two things: 1.) Software firewalls on all assets to close unnecessary logical ports. 2.) Plug-in protections on the physical ports. We have a few CIP-compliant physical port protections to choose from:"
@@ -36,8 +35,8 @@ ux:
                 cmd: setvars
                 data:
                   port: duct-tape
-                  portBuild: duct_tape.json
-                  portLoop:
+                  portInstall: ~4/duct_tape_install.json
+                  portDefend: ~4/duct_tape_defend.json
             btnTxt: Port Duct Tape
             icon: mini-substation
             blurb: "Celebrity Sponsor: MacGyver <br/>Also Fixes: Everything"
@@ -49,8 +48,8 @@ ux:
                 cmd: setvars
                 data:
                   port: kragle
-                  portBuild: kragle.json
-                  portLoop:
+                  portInstall: ~4/kragle_install.json
+                  portDefend: ~4/kragle_defend.json
             btnTxt: The Kragle
             icon: mini-generation
             blurb: "Variants: Regular Glue, Super Glue, Ludicrous Glue. <br/>Other Uses: Fixing Cuts, Fingernails, and Pantyhose Runs."
@@ -62,8 +61,8 @@ ux:
                 cmd: setvars
                 data:
                   port: umpire
-                  portBuild: umpire.json
-                  portLoop:
+                  portInstall: ~4/umpire_install.json
+                  portDefend: ~4/umpire_defend.json
             btnTxt: Port Umpire
             icon: mini-control-center
             blurb: "Ejections: Too Many to Count <br/>Bad Calls: Never!"

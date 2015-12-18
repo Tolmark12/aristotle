@@ -35,10 +35,10 @@ ux:
                 cmd: setvars
                 data:
                   eacms: burninator
-                  eacmsBuild: firewall_burninator.json
-                  eacmsAnimateGood: firewall_burn_good.json
-                  eacmsAnimateBadUpper: firewall_burn_bad_upper.json
-                  eacmsAnimateBadLower: firewall_burn_bad_lower.json
+                  eacmsBuild: ~3/firewall_burninator.json
+                  eacmsAnimateGood: ~3/firewall_burn_good.json
+                  eacmsAnimateBadUpper: ~3/firewall_burn_bad_upper.json
+                  eacmsAnimateBadLower: ~3/firewall_burn_bad_lower.json
             btnTxt: The Burninator
             icon: mini-substation
             blurb: "Temperature: 419 degrees <br/>Spontaneous Combustion Chance: 7%"
@@ -50,10 +50,10 @@ ux:
                 cmd: setvars
                 data:
                   eacms: great_wall
-                  eacmsBuild: firewall_greatwall.json
-                  eacmsAnimateGood: firewall_greatwall_good.json
-                  eacmsAnimateBadUpper: firewall_greatwall_bad_upper.json
-                  eacmsAnimateBadLower: firewall_greatwall_bad_lower.json
+                  eacmsBuild: ~3/firewall_greatwall.json
+                  eacmsAnimateGood: ~3/firewall_greatwall_good.json
+                  eacmsAnimateBadUpper: ~3/firewall_greatwall_bad_upper.json
+                  eacmsAnimateBadLower: ~3/firewall_greatwall_bad_lower.json
             btnTxt: The Great Wall
             icon: mini-generation
             blurb: "Manufactured By: Foxconn <br/>Facility Tourism: +50%"
@@ -65,10 +65,10 @@ ux:
                 cmd: setvars
                 data:
                   eacms: gated
-                  eacmsBuild: firewall_gated.json
-                  eacmsAnimateGood: firewall_gated_good.json
-                  eacmsAnimateBadUpper: firewall_gated_bad_upper.json
-                  eacmsAnimateBadLower: firewall_gated_bad_lower.json
+                  eacmsBuild: ~3/firewall_gated.json
+                  eacmsAnimateGood: ~3/firewall_gated_good.json
+                  eacmsAnimateBadUpper: ~3/firewall_gated_bad_upper.json
+                  eacmsAnimateBadLower: ~3/firewall_gated_bad_lower.json
             btnTxt: Gated Community
             icon: mini-control-center
             blurb: "Leather Trim: Yes <br/>Security Provided: 24x7"

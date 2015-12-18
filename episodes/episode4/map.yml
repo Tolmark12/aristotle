@@ -1,8 +1,8 @@
 episode: 3
 title: Episode 3
 subtitle: Asset Defenses
-rankId: cadet
-nextRankId: cadet-first-class
+rankId: technical-cadet
+nextRankId: cyber-cadet
 dev:
   startIndex: 0
 
@@ -78,27 +78,36 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 9, content: placeholder_15_sec.json }
+            - {depth: 9, content: kettle_bush_attack_end.json, events: [complete] }
         ctanlee:
           defaults:
             next: audio
           timeline:
+            - {action: a }
             - {action: b }
             - {action: c }
+            - {action: d }
           actions:
+            a:
+              pos: []
+              audio: Silence_1_sec.m4a
             b:
+              pos: []
+              audio: 2001_Space.mp3
+            c:
               pos: [100,100]
               text: "The robots have taken control of the operator console and are overloading our transmission lines."
               audio: Story_4_Ctanlee_2.m4a
-            c:
+            d:
               pos: [100,100]
               text: "Simulator Pause!"
               audio: Story_4_Ctanlee_3.m4a
-        duration: {kind: ctanlee }
+        duration: {kind: ctanlee}
       # Zoom to Asset View Ports ==========================================
       -
         movie:
           layers:
+            - {depth: 9, content: clear }
             - {depth: 9, content: placeholder_asset_view.json }
           zoom: {scale: 2, x: 600, y: 730}
         duration: {kind: time, seconds: 2 }
@@ -121,6 +130,7 @@ chapters:
         movie:
           layers:
             - {depth: 9, content: placeholder_perimeter_electronic.json }
+          zoom: {scale: 1 }
         duration: {kind: time, seconds: 1 }
       # Port Defense Selector ==========================================
       - !!inc/file ./episodes/episode4/yaml/_port-defense-selector.yaml
@@ -128,8 +138,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: placeholder_15_sec.json}
-          zoom: {scale: 1 }
+            - {depth: 9, content: $portInstall, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -145,7 +154,7 @@ chapters:
               pos: [100,100]
               text: "You sure know how to accessorize."
               audio: Story_4_Ctanlee_8.m4a
-        duration: {kind: ctanlee }
+        duration: {kind: listen, event: layer.9.complete}
       # Dialogue Try Again ==========================================
       -
         duration: {kind: ux}
@@ -164,7 +173,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: placeholder_15_sec.json }
+            - {depth: 9, content: $portDefend, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -180,7 +189,7 @@ chapters:
               pos: [100,100]
               text: "Duty Time!"
               audio: Story_4_Ctanlee_11.m4a
-        duration: {kind: ctanlee }
+        duration: {kind: listen, event: layer.9.complete}
       # Duties ==========================================
       -
         action: {cmd: ctanlee.gohome}
@@ -632,3 +641,9 @@ chapters:
                       -
                         a: A curve
                         r: Better luck next time
+      # Rank Advance ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 0, background: black, content: ~g/cyber_cadet.json, event: [complete] }
+        duration: {kind: listen, event: layer.0.complete }

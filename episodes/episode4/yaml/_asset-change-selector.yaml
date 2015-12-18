@@ -36,7 +36,7 @@ ux:
                 cmd: setvars
                 data:
                   change: double_deuce
-                  changeBuild: double_deuce.json
+                  changeBuild: ~4/double_deuce.json
                   changeLoop:
             btnTxt: Double Deuce Pulverizer
             icon: mini-substation
@@ -49,7 +49,7 @@ ux:
                 cmd: setvars
                 data:
                   change: mr_fusion
-                  changeBuild: mr_fusion.json
+                  changeBuild: ~4/mr_fusion.json
                   changeLoop:
             btnTxt: Mr. Fusion
             icon: mini-generation
@@ -62,7 +62,7 @@ ux:
                 cmd: setvars
                 data:
                   change: dematerializer
-                  changeBuild: dematerializer.json
+                  changeBuild: ~4/dematerializer.json
                   changeLoop:
             btnTxt: The De-Materializer
             icon: mini-control-center

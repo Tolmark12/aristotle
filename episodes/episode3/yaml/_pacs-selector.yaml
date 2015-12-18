@@ -36,7 +36,7 @@ ux:
                 cmd: setvars
                 data:
                   pacs: card-scanner
-                  pacsBuild: perimeter_card_scanner.json
+                  pacsBuild: ~3/perimeter_card_scanner.json
                   pacsLoop:
             btnTxt: The Card Guard XT
             icon: mini-substation
@@ -49,7 +49,7 @@ ux:
                 cmd: setvars
                 data:
                   pacs: hal-scanner
-                  pacsBuild: perimeter_hal_scanner.json
+                  pacsBuild: ~3/perimeter_hal_scanner.json
                   pacsLoop:
             btnTxt: HAL 9000 Eye Scanner
             icon: mini-generation
@@ -62,7 +62,7 @@ ux:
                 cmd: setvars
                 data:
                   pacs: kraken-scanner
-                  pacsBuild: perimeter_kraken_scanner.json
+                  pacsBuild: ~3/perimeter_kraken_scanner.json
                   pacsLoop:
             btnTxt: Watery Grave Kraken Sensor
             icon: mini-control-center

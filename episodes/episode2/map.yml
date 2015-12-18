@@ -750,11 +750,12 @@ chapters:
                       -
                         a: A curve
                         r: Better luck next time
+      # Rank Advance ==========================================
       -
         movie:
           layers:
-            - {depth: 0, content: c1-sky.svg}
-        duration: {kind: time, seconds: 1}
+            - {depth: 0, background: black, content: ~g/cadet_first_class.json, event: [complete] }
+        duration: {kind: listen, event: layer.0.complete }
       #################### TESTING
       # -
       #   ux:
