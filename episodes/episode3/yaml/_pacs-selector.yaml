@@ -23,7 +23,7 @@ ux:
       config:
         click:
           - {cmd: slides.next-slide}
-          - {cmd: movie.load-layer, data: {depth: 9, content: $pacsBuild, loop: true}}
+          - {cmd: movie.load-layer, data: {depth: 7, content: $pacsBuild, loop: true}}
         intro:
         title: Choose your PACS
         subTitle: The only access into the facility is through the door, so let's install a CIP-compliant PACS on the door to create a Physical Security Perimeter around your assets.

@@ -18,18 +18,18 @@ chapters:
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
-      # Sky and mountains build-in
+      # Background Build in ==========================================
       -
         movie:
           layers:
-            - {depth: 1, content: clear, action: {cmd: chrome.show} }
             - {depth: 0, content: c1-sky.svg }
             - {depth: 2, content: c1-background-buildin.json, events: [complete], cache: true }
         duration: {kind: listen, event: layer.2.complete}
-      # Building Selector
+      # Selector Physical Security ==========================================
       - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
-      # Building Tour - ctanlee
+      # Building Tour Ctanlee ==========================================
       - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
+      # Dialogue BES Cyber Assets  ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -43,13 +43,14 @@ chapters:
                   style: lightning
                   text: tag BCA
                   action: {cmd: slides.next-slide}
+      # Zoom Assets View  ==========================================
       -
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
           zoom: {scale: 2, x: 600, y: 730}
         duration: {kind: time, seconds: 1 }
-      # Components overview
+      # Zoom Assets overview  ==========================================
       -
         duration: {kind: ctanlee }
         ctanlee:
@@ -88,6 +89,7 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: operator-ws, level: blue } }
                 - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
+      # Ctanlee Narration  ==========================================
       -
         action:
           - {cmd: label.hide, data: {id: all}  }
@@ -105,6 +107,7 @@ chapters:
               text: "Most facilities that fall under CIP have a lot of equipment like this that controls the Bulk Electric System. Imagine the damage the robots would do if they gained access to control a breaker, power plant or Tesla Cannon. Shudder."
               audio: Story_2_Ctanlee_8.m4a
               next: audio
+      # Dialogue Protected Cyber Assets  ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -118,13 +121,14 @@ chapters:
                   style: lightning
                   text: tag PCA
                   action: {cmd: slides.next-slide}
+      # Zoom Assets view  ==========================================
       -
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
           zoom: {scale: 2, x: 600, y: 680}
         duration: {kind: time, seconds: 1 }
-      # Components overview
+      # Zoom Assets overview  ==========================================
       -
         duration: {kind: ctanlee }
         ctanlee:
@@ -150,6 +154,7 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: printer, level: orange} }
                 - {cmd: label.add, data: {id: printer-hit, text: Printer, face: bottom, arrow: right} }
+      # Ctanlee Narration  ==========================================
       -
         action:
           - {cmd: label.hide, data: {id: all}  }
@@ -167,6 +172,7 @@ chapters:
               text: "You may be saying to yourself, CTANLEE it's just a printer! If we had more time I'd tell you about The Paperfeed Incident of '08 where some Virus Bots hijacked a corporate unit. Many Defenders still bear papercut scars."
               audio: Story_2_Ctanlee_9.m4a
               next: audio
+      # Dialogue BES Cyber System  ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -180,12 +186,14 @@ chapters:
                   style: lightning
                   text: tag BCSI
                   action: {cmd: slides.next-slide}
+      # Zoom Assets view  ==========================================
       -
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
           zoom: {scale: 2, x: 600, y: 430}
         duration: {kind: time, seconds: 1 }
+      # Zoom Assets overview  ==========================================
       -
         duration: {kind: ctanlee }
         ctanlee:
@@ -211,6 +219,7 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: monitor, level: yellow} }
                 - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
+      # Dialogue Create Inventory  ==========================================
       -
         action:
           - {cmd: label.hide, data: {id: all}  }
@@ -230,6 +239,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
+      # Dialogue Get to Know your Assets  ==========================================
       -
         movie:
         duration: {kind: ux}
@@ -244,12 +254,13 @@ chapters:
                   style: lightning
                   text: GOT it!
                   action: {cmd: slides.next-slide}
+      # Zoom Assets view  ==========================================
       -
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
         duration: {kind: time, seconds: .1 }
-      # Equipment viewing slide
+      # Highlight Equipment  ==========================================
       -
         action:
           - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
@@ -345,7 +356,7 @@ chapters:
                     type: BCA
                     network: ESP
                     description: Used by technicians for troubleshooting.
-      # Example Duties Slide
+      # Duties ==========================================
       -
         action:
           - {cmd: "unhighlight.all"}
@@ -656,6 +667,9 @@ chapters:
               audio: Story_2_Ctanlee_26_27.mp3
         duration: {kind: listen, event: layer.8.complete}
       -
+        movie:
+          layers:
+            - {depth: 8, content: clear }
         action: {cmd: ctanlee.gohome}
         duration: {kind: time, seconds: 1 }
       - !!inc/file ./episodes/episode2/yaml/_simple-selector-identifyassess.yaml
@@ -682,7 +696,6 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 8, content: clear }
             - {depth: 9, content: clear }
         ux:
           components:
@@ -692,9 +705,6 @@ chapters:
         duration: {kind: ux}
       # EXAMPLE - Quiz
       -
-        movie:
-          layers:
-            - {depth: 8, content: clear, action: {cmd: chrome.show} }
         duration: {kind: ux}
         ux:
           components:

@@ -41,7 +41,7 @@ chapters:
             - {depth: 4, content: $facilityLoop, loop: true }
             - {depth: 5, content: ~2/interior_build.json, jumpToEnd: true, cache: true }
             - {depth: 6, content: ~2/interior_loop.json, loop: true }
-            - {depth: 7, content: ~2/factory_workers_loop.json, loop: true }
+            - {depth: 9, content: ~2/factory_workers_loop.json, loop: true }
         duration: {kind: time, seconds: 1 }
       # Dialogue Physical Attacks ==========================================
       -
@@ -61,8 +61,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 5, content: static_facility_interior_no_server.json }
-            - {depth: 9, content: kettle_attack.json, events: [complete] }
+            - {depth: 10, content: kettle_attack.json, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -83,9 +82,12 @@ chapters:
               pos: [200,100]
               text: Why must the universe punish the good? Simulator Pause.
               audio: Story_3_Ctanlee_3.m4a
-        duration: {kind: listen, event: layer.9.complete}
+        duration: {kind: listen, event: layer.10.complete}
       # Dialogue Physical Acess Control ==========================================
       -
+        movie:
+          layers:
+            - {depth: 10, content: clear }
         action: {cmd: ctanlee.gohome}
         duration: {kind: ux}
         ux:
@@ -103,12 +105,9 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 6, content: clear }
-            - {depth: 9, content: clear }
-            - {depth: 10, content: clear }
             - {depth: 10, content: perimeter_door_server.json }
-          zoom: {scale: 2, x: 600, y: 730}
-        duration: {kind: time, seconds: 1.5 }
+          zoom: {scale: 2, x: 600, y: 700}
+        duration: {kind: time, seconds: 2.5 }
       # Selector Physical Security ==========================================
       - !!inc/file ./episodes/episode3/yaml/_pacs-selector.yaml
       # Dialogue Perimeter Try Again ==========================================
@@ -138,13 +137,12 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
-      # Robot Attack Perimeter ==========================================
+      # Simulator Robot Attack Perimeter ==========================================
       -
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
             - {depth: 10, content: clear }
-            - {depth: 11, content: clear }
             - {depth: 10, content: card_scanner_attack.json, events: [complete] }
         ctanlee:
           defaults:
@@ -172,6 +170,9 @@ chapters:
         duration: {kind: listen, event: layer.10.complete}
       # Dialogue Chapter Complete ==========================================
       -
+        movie:
+          layers:
+            - {depth: 10, content: clear }
         ctanlee:
           timeline:
             - {action: a }
@@ -231,7 +232,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 13, content: fatline_extended.json, events: [complete] }
+            - {depth: 10, content: fatline_extended.json, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -318,12 +319,12 @@ chapters:
               pos: [370,300]
               text: "Cadet … you may wish this wasn't real, that it was just some work of fiction, but good can come from this. What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them. Sektimus fears this. Sektimus fears what you can become. While you ponder these things, let's get back to the simulator."
               audio: Story_3_Ctanlee_23.m4a
-        duration: {kind: listen, event: layer.13.complete}
+        duration: {kind: listen, event: layer.10.complete}
       # Simulation Kettle E Attack ==========================================
       -
         movie:
           layers:
-            - {depth: 13, content: kettle_e_attack.json, events: [complete] }
+            - {depth: 10, content: kettle_e_attack.json, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -348,13 +349,13 @@ chapters:
               pos: [370,500]
               text: This is totally uncool. Simulator pause!
               audio: Story_3_Ctanlee_26.m4a
-        duration: {kind: listen, event: layer.13.complete}
+        duration: {kind: listen, event: layer.10.complete}
       # Dialogue - Electronic Attack ==========================================
       -
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
-            - {depth: 13, content: clear }
+            - {depth: 10, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -371,8 +372,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: clear }
-            - {depth: 13, content: perimeter_firewall.json }
+            - {depth: 10, content: perimeter_firewall.json }
           zoom: {scale: 2, x: 600, y: 550}
         duration: {kind: time, seconds: 1.5 }
       # Electronic Defense Selector ==========================================
@@ -383,8 +383,8 @@ chapters:
           layers:
           zoom: {scale: 1}
           layers:
-            - {depth: 13, content: clear }
-            - {depth: 13, content: perimeter_electronic.json }
+            - {depth: 10, content: clear }
+            - {depth: 10, content: perimeter_electronic.json }
         duration: {kind: ux}
         ctanlee:
           timeline:
@@ -409,8 +409,8 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 13, content: clear }
-            - {depth: 13, content: $eacmsAnimateGood, events: [complete] }
+            - {depth: 10, content: clear }
+            - {depth: 10, content: $eacmsAnimateGood, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -448,13 +448,13 @@ chapters:
               pos: [700,500]
               text: That was an approved packet.
               audio: Story_3_Ctanlee_34.m4a
-        duration: {kind: listen, event: layer.13.complete}
+        duration: {kind: listen, event: layer.10.complete}
       # Simulator - Firewall Upper ==========================================
       -
         movie:
           layers:
-            - {depth: 13, content: clear }
-            - {depth: 13, content: $eacmsAnimateBadUpper, events: [complete] }
+            - {depth: 10, content: clear }
+            - {depth: 10, content: $eacmsAnimateBadUpper, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -482,13 +482,13 @@ chapters:
               pos: [320,450]
               text: He wasn't on the list.
               audio: Story_3_Ctanlee_36.m4a
-        duration: {kind: listen, event: layer.13.complete}
+        duration: {kind: listen, event: layer.10.complete}
       # Simulator - Firewall Lower ==========================================
       -
         movie:
           layers:
-            - {depth: 13, content: clear }
-            - {depth: 13, content: $eacmsAnimateBadLower, events: [complete] }
+            - {depth: 10, content: clear }
+            - {depth: 10, content: $eacmsAnimateBadLower, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -521,9 +521,12 @@ chapters:
               pos: [370,300]
               text: Terminated. Nice job, firewall.
               audio: Story_3_Ctanlee_39.m4a
-        duration: {kind: listen, event: layer.13.complete}
+        duration: {kind: listen, event: layer.10.complete}
       # Dialogue - End Chapter ==========================================
       -
+        movie:
+          layers:
+            - {depth: 10, content: clear }
         ctanlee:
           timeline:
             - {action: a }
@@ -555,9 +558,6 @@ chapters:
         duration: {kind: ux}
       # Quiz ==========================================
       -
-        movie:
-          layers:
-            - {depth: 11, content: clear, action: {cmd: chrome.show} }
         duration: {kind: ux}
         ux:
           components:
@@ -609,5 +609,5 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 0, background: black, content: ~g/technical_cadet.json, event: [complete] }
-        duration: {kind: listen, event: layer.0.complete }
+            - {depth: 10, background: black, content: ~g/technical_cadet.json, event: [complete] }
+        duration: {kind: listen, event: layer.10.complete }
