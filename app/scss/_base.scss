@@ -3,3 +3,4 @@ body * { font-family:$fun; font-weight:200; }
 h1     { font-size:22px; font-family:$fun_cond; font-weight:200; color:$yeller; text-transform:uppercase; letter-spacing:0.05em }
 h2     { font-size:11px; color:white; text-transform:uppercase; letter-spacing:0.07em }
 h1, h2 { margin:0; padding:0;}
+.hidden{ display:none; }

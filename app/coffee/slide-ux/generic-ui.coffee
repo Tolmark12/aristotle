@@ -16,6 +16,6 @@ module.exports = class GenericUi
     PubSub.subscribe 'continue.show', ()=>
       @showContinueStrip()
 
-  showContinueStrip : () -> @$continueStrip.css display:"initial"
+  showContinueStrip : () -> @$continueStrip.css display:"auto"
   hideContinueStrip : () -> @$continueStrip.css display:"none"
 

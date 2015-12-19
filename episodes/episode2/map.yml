@@ -13,7 +13,7 @@ chapters:
     title: Chapter 1
     subtitle: Facilities and Cyber Assets
     dev:
-      volume: 1
+      volume: 0
       startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
@@ -68,7 +68,7 @@ chapters:
             - {action: control-sas }
             - {action: operator-ws }
           defaults:
-            next: 3000
+            next: btn
             delayMove: 650
           actions:
             con-sys-rack:

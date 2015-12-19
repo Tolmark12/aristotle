@@ -21,7 +21,7 @@ module.exports = class Ctanlee
     PubSub.subscribe 'ctanlee.clear',              (a, data)=> @hideText()
     PubSub.subscribe 'ctanlee.gohome',             (a, data)=> @returnToStation()
     PubSub.subscribe 'ctanlee.hide',               (a, data)=> @$el.css display: "none"
-    PubSub.subscribe 'ctanlee.show',               (a, data)=> @$el.css display: "initial"
+    PubSub.subscribe 'ctanlee.show',               (a, data)=> @$el.css display: "auto"
     PubSub.subscribe 'ctanlee.add-event-listener', (a, data)=> @addEventListener data
 
     $parent.append @$el
@@ -172,11 +172,11 @@ module.exports = class Ctanlee
     @gotoPos()
     @setFilter 'glow'
 
-  showText : () -> @$speechBox.css opacity: 1, "pointer-events": "all"
-  hideText : () -> @$speechBox.css opacity: 0, "pointer-events": "none"
+  showText : () -> @$speechBox.removeClass "hidden"#@$speechBox.css opacity: 1, "pointer-events": "all"
+  hideText : () -> @$speechBox.addClass "hidden"#@$speechBox.css opacity: 0, "pointer-events": "none"
 
-  showNext : () -> @$nextBtn.css opacity: 1,   'pointer-events': 'all'
-  hideNext : () -> @$nextBtn.css opacity: 0,   'pointer-events': 'none'
+  showNext : () -> @$nextBtn.removeClass "hidden"
+  hideNext : () -> @$nextBtn.addClass "hidden"
 
   # ------------------------------------ HELPERS
 

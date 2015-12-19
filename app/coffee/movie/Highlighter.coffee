@@ -32,7 +32,7 @@ module.exports = class Highlighter
     $item = $ "##{elementId}", @$el
     $item.attr "class", ""
     if $item.length == 0 then aristotle.throw "tried to unhighlight an element with the id `#{elementId}`, but found no elements with that id.", true
-    $item.css filter : "initial"
+    $item.css filter : "auto"
 
   unhighlightAll : () ->
     $items = $ ".filter-highlighted"

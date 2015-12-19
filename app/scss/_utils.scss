@@ -33,3 +33,9 @@
   ::-moz-placeholder          {color: $color;}
   :-ms-input-placeholder      {color: $color;}
 }
+
+@mixin ie(){
+  @media all and (-ms-high-contrast:none), (-ms-high-contrast:active){
+    @content;
+  }
+}
