@@ -28,17 +28,8 @@ chapters:
         duration: {kind: listen, event: layer.2.complete}
       # Selector Physical Security ==========================================
       - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
-<<<<<<< HEAD
       # Building Tour Ctanlee ==========================================
-=======
-<<<<<<< HEAD
-=======
       # Interior build-in
-  -
-    title: Chapter ASDF
-    subtitle: Facilities and Cyber Assets
-    kind: chapter
-    slides:
       -
         movie:
           layers:
@@ -46,9 +37,6 @@ chapters:
             - {depth: 6, wait: 500, loop: true, content: $facilityLoop, cache: true }
         duration: {kind: listen, event: layer.4.complete}
         action: {cmd: ctanlee.gohome}
->>>>>>> added lms integration and local storage testing
-      # Building Tour - ctanlee
->>>>>>> added lms integration and local storage testing
       - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
       # Dialogue BES Cyber Assets  ==========================================
       -
