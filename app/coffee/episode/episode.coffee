@@ -16,6 +16,8 @@ module.exports = class Episode
       @showIntro trainingData
 
   showIntro : (data) ->
+    if aristotle.devTools.skipSlate then @playChapter(); return
+
     @ux.populate( {components:[
       {kind: "episode-intro", config: {title:data.title, subtitle:data.subtitle, episode:data.episode}}
     ]})
@@ -48,7 +50,7 @@ module.exports = class Episode
     @nextChapter()
 
   playChapter     : () =>
-    PubSub.publish 'state.load'
+    PubSub.publish 'state.rehydrate'
     @chapters.getCurrentItem().start @chapterComplete
 
   episodeComplete : () ->

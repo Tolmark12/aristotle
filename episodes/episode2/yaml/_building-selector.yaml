@@ -67,7 +67,7 @@ ux:
                 data:
                   facility: control-center
                   facilityBuild: ~2/control_facility_build.json
-                  facilityLoop: c~2/ontrol_facility_loop.json
+                  facilityLoop: ~2/control_facility_loop.json
             btnTxt: Control Center
             icon: mini-control-center
             blurb: "Monitor to Operator Ratio: 8:1 <br/>Favorite Beverage: Coffee <br/>Second Favorite Beverage: Coffee <br/>CIP Impact: Medium Impact Facility"

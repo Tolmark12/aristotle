@@ -6,21 +6,25 @@ Dictionary    = require 'misc/dictionary'
 Episode       = require "episode/episode"
 EpisodeLoader = require 'misc/episode-loader'
 GlobalVars    = require 'misc/global-vars'
+LMSProxy      = require 'misc/lms-proxy'
 Logger        = require 'misc/logger'
 Movie         = require 'movie/movie'
 Parser        = require 'misc/parser'
 SlideUX       = require 'slide-ux/slide-ux'
 SoundFX       = require 'episode/soundfx'
-State         = require 'misc/state'
 isInternetExp = require 'misc/browser-detect'
 
 class Aristotle
 
-  constructor: ($el, @episodesDir, @localDir, @episodeNum) ->
+  constructor: ($el, @episodesDir, @localDir, @episodeNum, isDevMode) ->
     window.aristotle = @
     aristotle.isIE = isInternetExp()
-    @setDevMode true
+    @setDevMode isDevMode
     @build $el
+    lmsProxy = new LMSProxy(isDevMode)
+    lmsProxy.begin @start
+
+  start : () =>
     episodeLoader = new EpisodeLoader @onJsonLoaded
 
   onJsonLoaded : (episodeData) =>
@@ -35,13 +39,13 @@ class Aristotle
     commander    = new Commander()
     dictionary   = new Dictionary()
     globals      = new GlobalVars()
+    lmsProxy     = new LMSProxy()
     parser       = new Parser()
     soundFx      = new SoundFX()
     apiProxy     = new APIproxy "http://127.0.0.1:1337"
     @chromeUI    = new ChromeUI $(".chrome",   $base)
     @slideUX     = new SlideUX  $(".slide-ux", $base)
     @movie       = new Movie    $(".movie",    $base)
-    state        = new State @movie, @slideUX
 
   setDevMode : (devMode) ->
     logger             = new Logger $('body'), devMode

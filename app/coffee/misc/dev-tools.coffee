@@ -8,6 +8,7 @@ module.exports = class DevTools
 
   go : (devConfig, items) ->
     if !@isDevMode or !devConfig? then return
+    if devConfig.skipSlate? then @skipSlate = devConfig.skipSlate
     @skip devConfig, items
     @preventAnimationAsNeeded devConfig, items
     @addIndexesToItems devConfig, items

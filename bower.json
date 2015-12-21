@@ -12,7 +12,8 @@
     "PreloadJS": "createjs-preloadjs#~0.6.2",
     "canvas2image": "hongru/canvas2image",
     "html2canvas": "niklasvh/html2canvas#master",
-    "SVG.toDataURL": "Tolmark12/SVG.toDataURL"
+    "SVG.toDataURL": "Tolmark12/SVG.toDataURL",
+    "warcore-lms-interface": "Tolmark12/warcore-lms-interface"
   },
   "ignore": [
     "app",

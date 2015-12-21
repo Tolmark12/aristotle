@@ -84,42 +84,21 @@ module.exports = class Movie
     for layer in @layers
       layer.removeFilters()
 
-  findParentPosIE : ($item, parentClass)->
-    pos = {left:0, top:0}
-    if !$item.parent().hasClass parentClass
-      pos.left -= @findParentPosIE($item.parent(), parentClass).left
-    if $item.css('position') == "static"
-      pos.left -= $item.offset().left
-
-    return pos
-
   getGlobalPos : (itemId)->
-    $item = $ "##{itemId}"
-    if aristotle.isIE
-      pos            = { left:$item.offset().left, top:$item.offset().top }
-      parentPosition = @findParentPosIE $item, "movie"
-      pos.left += parentPosition.left
-    else
-      pos = $item.position()
-    bBox = $item[0].getBBox()
-
+    bBox = $("##{itemId}")[0].getBBox()
     obj =
-      # x: ( pos.left / @scale - @transformOrigin.x ) * @scale + @transformOrigin.x
-      # y: ( pos.top  / @scale - @transformOrigin.y ) * @scale + @transformOrigin.y
       x: (bBox.x * @scale) - @transformOrigin.x
       y: (bBox.y * @scale) - @transformOrigin.y
       w: bBox.width
       h: bBox.height
 
   getLocalPos  : (itemId)->
-    $item = $ "##{itemId}"
-    bBox = $item[0].getBBox()
+    bBox = $$("##{itemId}")[0].getBBox()
     obj =
       x: bBox.x
       y: bBox.y
       w: bBox.width # / @scale
       h: bBox.height# / @scale
-    obj
 
   dehydrateLayerState : () ->
     layers = []
