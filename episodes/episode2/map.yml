@@ -32,9 +32,6 @@ chapters:
       # Interior build-in
       -
         movie:
-          layers:
-            - {depth: 4, content: interior_build.json, events: [complete], ieCache: true }
-            - {depth: 6, wait: 500, loop: true, content: $facilityLoop, cache: true }
         duration: {kind: listen, event: layer.4.complete}
         action: {cmd: ctanlee.gohome}
       - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
