@@ -21,6 +21,7 @@ class Aristotle
     aristotle.isIE = isInternetExp()
     @setDevMode isDevMode
     @build $el
+    globals  = new GlobalVars()
     lmsProxy = new LMSProxy(isDevMode)
     lmsProxy.begin @start
 
@@ -38,7 +39,6 @@ class Aristotle
 
     commander    = new Commander()
     dictionary   = new Dictionary()
-    globals      = new GlobalVars()
     lmsProxy     = new LMSProxy()
     parser       = new Parser()
     soundFx      = new SoundFX()

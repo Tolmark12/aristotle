@@ -28,8 +28,8 @@ module.exports = class ChromeUI
   showIcons : () -> @$icons.css({display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}
   hideIcons : () -> @$icons.css {display:"none"}
 
-  hide     : () -> @$el.css opacity:0
-  show     : () -> @$el.css opacity:1
+  hide     : () -> @$el.css display:"none"
+  show     : () -> @$el.css display:"block"
   hideMode : () -> @$mode.css display:"none"
   showMode : () -> @$mode.css display:"block"
 
