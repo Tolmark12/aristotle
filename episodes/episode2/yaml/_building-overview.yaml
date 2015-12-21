@@ -7,18 +7,28 @@ ctanlee:
     - {action: a }
     - {action: b }
     - {action: c }
+    - {action: d }
+    - {action: e }
   defaults:
     next: audio
   actions:
     a:
       pos: [200, 200]
       emo: happy
-      audio: Silence_1_sec.m4a
+      next: 1500
     b:
       pos: [200, 500]
       emo: happy
-      audio: Silence_1_sec.m4a
+      next: 1500
     c:
+      pos: [400, 200]
+      emo: happy
+      next: 1500
+    d:
+      pos: [200, 300]
+      emo: happy
+      next: 1500
+    e:
       pos: [400, 200]
       emo: happy
       text: Excellent choice cadet! This is one fine building.
