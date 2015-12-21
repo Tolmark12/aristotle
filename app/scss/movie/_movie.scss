@@ -1,5 +1,5 @@
 
-.movie           { position:relative; @include transition(transform, 0.6s); @include transition(transform-origin, 0.8s);
+.movie           { position:relative; @include transition(transform, 0.6s); @include transition(all, 0.8s);
   .wrapper       { position:absolute; width:1024px; height:768px; transform: translateZ(0);}
   .layer         { position:absolute; top:0; left:0; width:1024px; height:768px; transition-duration: 1s;
     .onion-layer { position:absolute; top:0; left:0; width:1024px; height:768px;  }

@@ -20,8 +20,8 @@ module.exports = class Ctanlee
     PubSub.subscribe 'ctanlee.activate',           (a, data)=> @playAction(data)
     PubSub.subscribe 'ctanlee.clear',              (a, data)=> @hideText()
     PubSub.subscribe 'ctanlee.gohome',             (a, data)=> @returnToStation()
-    PubSub.subscribe 'ctanlee.hide',               (a, data)=> @$el.css display: "none"
-    PubSub.subscribe 'ctanlee.show',               (a, data)=> @$el.css display: "auto"
+    PubSub.subscribe 'ctanlee.hide',               (a, data)=> @$el.addClass "hidden"
+    PubSub.subscribe 'ctanlee.show',               (a, data)=> @$el.removeClass "hidden"
     PubSub.subscribe 'ctanlee.add-event-listener', (a, data)=> @addEventListener data
 
     $parent.append @$el
@@ -146,12 +146,12 @@ module.exports = class Ctanlee
   playAction : (actionId) ->
     if !@data.actions[actionId]? then aristotle.throw "ctanlee was asked to play the action named `#{actionId}`, but no action with that id exists." ; return
 
-    @setFilter 'black-glow'
+    # @setFilter 'black-glow'
     action = @overlayDefaults actionId
 
-    # Action (play actions first in case of something...)
+    # Action
     if action.action?
-      aristotle.commander.do action.action
+      aristotle.commander.do action.action, true
 
     # Emotion
     if action.emo? || !@$currentAnimation?

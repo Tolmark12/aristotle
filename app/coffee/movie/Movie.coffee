@@ -14,7 +14,7 @@ module.exports = class Movie
     @transformOrigin = {x:0, y:0}
 
     PubSub.subscribe 'movie.load-layer', (m, data)       => @addLayer data
-    PubSub.subscribe 'movie.zoom',       (m, data)       => @zoom data
+    PubSub.subscribe 'movie.zoom',       (m, data)       => @zoom data;
     PubSub.subscribe 'movie.layers.blur.below',(m, data) => @blurAllLayersBelow data
     PubSub.subscribe 'movie.layers.unblur.all',(m, data) => @unblurAllLAyers()
     PubSub.subscribe 'movie.layers.cache',(m, data)      => @cacheLayer(data)
@@ -44,7 +44,6 @@ module.exports = class Movie
       @zoomTo data.scale, data.x, data.y
 
   zoomTo : (@scale=1, x=0, y=0) ->
-
     @transformOrigin = {x:x, y:y}
     @$el.css "transform-origin": "#{x}px #{y}px"
     @$el.css transform: "scale(#{@scale})"
@@ -86,9 +85,25 @@ module.exports = class Movie
 
   getGlobalPos : (itemId)->
     bBox = $("##{itemId}")[0].getBBox()
+
+    xtraX = @transformOrigin.x * (@scale-1) - @transformOrigin.x
+    x = (bBox.x * @scale) - (@transformOrigin.x + xtraX)
+
+    xtraY = @transformOrigin.y * (@scale-1) - @transformOrigin.y
+    y = (bBox.y * @scale) - (@transformOrigin.y + xtraY)
+
+    # console.log "X :::::::"
+    # console.log "bbox.x           : #{bBox.x}"
+    # console.log "scale            : #{@scale}"
+    # console.log "transform origin : #{@transformOrigin.x}"
+    # console.log "target           : #{x}"
+    # console.log "xtra x           : #{xtraX}"
+    # console.log "xtra y           : #{xtraY}"
     obj =
-      x: (bBox.x * @scale) - @transformOrigin.x
-      y: (bBox.y * @scale) - @transformOrigin.y
+      # x: @transformOrigin.x - (bBox.x * @scale)
+      # y: @transformOrigin.y - (bBox.y * @scale)
+      x: x
+      y: y
       w: bBox.width
       h: bBox.height
 
