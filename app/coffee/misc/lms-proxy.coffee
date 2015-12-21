@@ -12,7 +12,8 @@ module.exports = class LMSProxy
     if elbScorm.initCourse()
       @user      = elbScorm.GetUserName()    # ex:       Kingsley, James
       @userId    = elbScorm.GetUserID()      # I assume: asf0h30asbu30
-      @stateData = elbScorm.GetResumeData()  # ojb
+      stateData = elbScorm.GetResumeData()  # ojb
+      aristotle.globals.vars = stateData.globalVars
       cb()
     else
       console.log "couldn't start the course"
