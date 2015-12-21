@@ -21,11 +21,11 @@ ctanlee:
       emo: happy
       next: 1500
     c:
-      pos: [400, 200]
+      pos: [400, 350]
       emo: happy
       next: 1500
     d:
-      pos: [200, 300]
+      pos: [600, 300]
       emo: happy
       next: 1500
     e:
