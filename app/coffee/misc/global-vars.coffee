@@ -3,11 +3,17 @@ module.exports = class GlobalVars
   constructor: () ->
     @vars = {}
     aristotle.globals = @
-    PubSub.subscribe 'setvars', (a, data)=>
-      for key, val of data
-        @vars[key] = val
+    PubSub.subscribe 'setvars', (a, data)=> @setMany data
 
-  set : (key, val) -> @vars[key] = val
+
+  setMany : (vars) ->
+    for key, val of vars
+      @vars[key] = val
+    PubSub.publish 'state.save'
+
+  set : (key, val) ->
+    @vars[key] = val
+    PubSub.publish 'state.save'
 
   get : (str) ->
    if @vars[str]?

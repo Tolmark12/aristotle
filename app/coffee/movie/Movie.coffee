@@ -93,7 +93,7 @@ module.exports = class Movie
       h: bBox.height
 
   getLocalPos  : (itemId)->
-    bBox = $$("##{itemId}")[0].getBBox()
+    bBox = $("##{itemId}")[0].getBBox()
     obj =
       x: bBox.x
       y: bBox.y
