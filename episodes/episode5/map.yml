@@ -748,5 +748,5 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, background: black, content: ~g/cyber_cadet.json, event: [complete] }
+            - {depth: 11, background: black, content: ~g/master_cadet.json, event: [complete] }
         duration: {kind: listen, event: layer.11.complete }

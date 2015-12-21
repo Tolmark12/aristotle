@@ -12,12 +12,14 @@ chapters:
       startIndex: 0
     kind: intro
     slides:
+      # Animation Split Screen Advance ==========================================
       -
         action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}, {cmd: chrome.hidename}, {cmd: chrome.hideicons}]
         movie:
           layers:
             - {depth: 1, content: ~1/splitdoor.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
+      # Dialogue PlaySound ==========================================
       -
         ux:
           components:
@@ -37,6 +39,7 @@ chapters:
               kind: sound-test
               config: {}
         duration: {kind: ux}
+      # Animation Load Warcore ==========================================
       -
         movie:
           layers:
@@ -55,6 +58,7 @@ chapters:
               pos: []
               audio: Intro_Warcore_2.m4a
         duration: {kind: listen, event: layer.1.complete}
+      # Animation Quarantine ==========================================
       -
         movie:
           layers:
@@ -81,6 +85,7 @@ chapters:
               pos: []
               audio: Intro_Ctanlee_2-4.m4a
         duration: {kind: listen, event: layer.1.complete}
+      # Dialogue Approval to Advance  ==========================================
       -
         action: [{cmd: ctanlee.show}]
         movie:
@@ -114,6 +119,7 @@ chapters:
                     click:
                       - {cmd: playsound, data: {file: Intro_Dialogue_1_3_What.m4a}}
         duration: {kind: ux}
+      # Dialogue Clearance Level  ==========================================
       -
         ctanlee:
           defaults:
@@ -148,6 +154,8 @@ chapters:
             -
               kind: personal-info-intro
               config: {}
+        duration: {kind: ux}
+      # Dialogue Call Sign  ==========================================
       -
         movie:
           layers:
@@ -169,7 +177,7 @@ chapters:
               kind: call-sign-select
               config: {}
         duration: {kind: ux}
-      # Show Name
+      # Navigation / Call Sign Tour ==========================================
       -
         action: [ {cmd: chrome.show}, {cmd: chrome.showname},  ]
         duration: {kind: time, seconds: 12}
@@ -183,6 +191,7 @@ chapters:
               pos: [550,50]
               text: "Your name, call sign and rank will always be here. As you complete episodes of my training, this badge will reflect your promotions."
               audio: Intro_Ctanlee_9.m4a
+      # Animation Power Grid  ==========================================
       -
         movie:
           layers:
@@ -213,6 +222,7 @@ chapters:
               text: "Now imagine a day without power."
               audio: Intro_Ctanlee_13.m4a
         duration: {kind: listen, event: layer.1.complete}
+      # Animation Sektimus Launch  ==========================================
       -
         action: {cmd: chrome.hide}
         movie:
@@ -239,6 +249,7 @@ chapters:
               text: "Far across the galaxy, an ancient evil has set its eyes on us. The robot Overmind Sektimus desires to pillage Earth and enslave all humankind.  <br/>He has launched his Metal Swarm, the greatest space armada ever constructed by the robots, against us."
               audio: Intro_Ctanlee_16.m4a
         duration: {kind: listen, event: layer.1.complete}
+      # Animation Earth  ==========================================
       -
         movie:
           layers:
@@ -254,6 +265,7 @@ chapters:
               text: "Sektimus desires to weaken us before the Swarm arrives, so he sent advance forces."
               audio: Intro_Ctanlee_17.m4a
         duration: {kind: listen, event: layer.1.complete}
+      # Animation Robot Introduction  ==========================================
       -
         movie:
           layers:
@@ -274,6 +286,7 @@ chapters:
               text: "The government is aware of the advance forces operating on Earth and secretly directed the North America Electric Reliability Corporation (NERC) to create the Critical Infrastructure Protection Standards to defend the Bulk Electric System."
               audio: Intro_Ctanlee_19.m4a
         duration: {kind: listen, event: layer.1.complete}
+      # Dialogue Gut Check  ==========================================
       -
         movie:
           layers:
@@ -310,7 +323,7 @@ chapters:
                     click:
                       - {cmd: playsound, data: {file: Intro_Dialogue_2_3_1_Kick.m4a, complete: {cmd: slides.next-slide} }}
         duration: {kind: ux }
-      # Show episodes
+      # Introduce Navigation Ranks  ==========================================
       -
         action: [{cmd: chrome.show}, {cmd: chrome.showepisodes}]
         ctanlee:

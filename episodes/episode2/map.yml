@@ -760,8 +760,8 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 0, background: black, content: ~g/cadet_first_class.json, event: [complete] }
-        duration: {kind: listen, event: layer.0.complete }
+            - {depth: 10, background: black, content: ~g/cadet_first_class.json, event: [complete] }
+        duration: {kind: listen, event: layer.10.complete }
       #################### TESTING
       # -
       #   ux:
