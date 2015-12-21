@@ -44,13 +44,12 @@ chapters:
                   style: lightning
                   text: tag BCA
                   action: {cmd: slides.next-slide}
-      # Zoom Assets View  ==========================================
+      # Zoom Assets overview  ==========================================
       -
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
-          zoom: {scale: 2, x: 600, y: 730}
-        duration: {kind: time, seconds: 1 }
+        duration: {kind: time, seconds: .5 }
       # Zoom Assets overview  ==========================================
       -
         duration: {kind: ctanlee }
@@ -62,34 +61,38 @@ chapters:
             - {action: control-sas }
             - {action: operator-ws }
           defaults:
-            next: btn
-            delayMove: 650
+            next: 2000
           actions:
             con-sys-rack:
               pos: con-sys-rack-hit
               action:
                 - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
                 - {cmd: label.add, data: {id: con-sys-rack-hit, text: Control System, face: top, arrow: right} }
+                - {cmd: movie.zoom, data: {scale: 2, id: con-sys-rack-hit }}
             esp-ns:
               pos: esp-ns-hit
               action:
                 - {cmd: highlight, data: {id: esp-ns, level: blue } }
                 - {cmd: label.add, data: {id: esp-ns-hit, text: Network Switch, face: bottom} }
+                - {cmd: movie.zoom, data: {scale: 2, id: esp-ns-hit }}
             data-acs:
               pos: data-acs-hit
               action:
                 - {cmd: highlight, data: {id: data-acs, level: blue} }
                 - {cmd: label.add, data: {id: data-acs-hit, text: Data Acquisition and Control Server, face: left } }
+                - {cmd: movie.zoom, data: {scale: 2, id: data-acs-hit }}
             control-sas:
               pos: control-sas-hit
               action:
                 - {cmd: highlight, data: {id: control-sas, level: blue} }
                 - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
+                - {cmd: movie.zoom, data: {scale: 2, id: control-sas-hit }}
             operator-ws:
               pos: operator-ws-hit
               action:
                 - {cmd: highlight, data: {id: operator-ws, level: blue } }
                 - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
+                - {cmd: movie.zoom, data: {scale: 2, id: operator-ws-hit }}
       # Ctanlee Narration  ==========================================
       -
         action:

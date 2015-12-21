@@ -20,17 +20,6 @@ chapters:
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
-      -
-        action:
-          -
-            cmd: setvars
-            data:
-              facility: substation
-              facilityBuild: ~2/substation_facility_build.json
-              facilityLoop: ~2/substation_facility_loop.json
-              eacmsBuild: ~3/firewall_burninator.json
-              pacsBuild: ~3/perimeter_card_scanner.json
-        duration: {kind: time, seconds: 1 }
       # Background Build in ==========================================
       -
         movie:
