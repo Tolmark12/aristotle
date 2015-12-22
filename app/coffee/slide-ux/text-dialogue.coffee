@@ -77,7 +77,7 @@ module.exports = class TextDialogue
 
     oldActor = @actor
     @setActor action.actor
-    console.log oldActor
+
     if oldActor != undefined
       if oldActor != @actor
         oldActor.sleep()
@@ -105,11 +105,14 @@ module.exports = class TextDialogue
     actions
 
   setActor : (actor) ->
+    # if no actor specifiied, then use ctanlee
     if !actor? then @actor = @ctanlee; return
 
     switch actor
-      when 'warcore', 'sektimus' then @actor = @cc
-      else                            @actor = @ctanlee
+      when 'warcore', 'sektimus', 'firewall', 'packet' 
+        @actor = @cc
+      else
+        @actor = @ctanlee
 
 
 

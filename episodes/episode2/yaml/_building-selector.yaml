@@ -2,7 +2,7 @@ movie:
   layers:
     - {depth: 1, content: c1-background-clouds-loop.json, loop: true }
 duration: {kind: ux}
-ctanlee:
+dialogue:
   defaults:
     next: none
     pos: [50, 70]
