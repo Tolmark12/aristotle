@@ -1,5 +1,15 @@
 #Movie
-
+```yaml
+{cmd: movie.layers.clear, data: 1}
+{cmd: movie.layers.clear-all}
+{cmd: movie.layers.cache, data: 1}
+{cmd: movie.layers.uncache, data: 1}
+{cmd: movie.layers.uncache-all}
+{cmd: movie.layers.cache-all}
+{cmd: movie.layers.cache-all-but, data: 1}
+{cmd: movie.layers.cache-all-but, data: [1,2,5]}
+{cmd: movie.report}
+```
 
 #### layers
 An array of layers
