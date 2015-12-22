@@ -2,11 +2,15 @@ SVGAnimation = require 'movie/svg-animation'
 
 module.exports = class Layer
 
-  constructor: ($el, depth) ->
+  constructor: ($el, @depth) ->
     @isCached = false
-    @$layer = $ jadeTemplate['movie/layer']( {depth:depth} )
+    @$layer = $ jadeTemplate['movie/layer']( {depth:@depth} )
     $el.append @$layer
 
+
+  report : () ->
+    cachedOrNot = if @isCached then "cached" else "not cached"
+    console.log "Layer #{@depth} : #{@pristineLayerData.content} is #{cachedOrNot}"
 
   update : (@pristineLayerData) =>
     @layerData = jQuery.extend true, {}, @pristineLayerData
@@ -33,6 +37,7 @@ module.exports = class Layer
     @updateBackground layerData
 
   addTheCorrectContent : (layerData) ->
+    @isAnimation = false
     parse layerData
     if layerData.ieCache && !aristotle.dontCache && aristotle.isIE
       layerData.loop  = false
@@ -61,18 +66,26 @@ module.exports = class Layer
   #     @currentOnionLayer.append Canvas2Image.convertToPNG(canvas, 1024, 768)
 
   cache : () ->
-    return if @isCached
+    return if @isCached || !@isAnimation || aristotle.dontCache
     @isCached = true
-    if aristotle.dontCache then return
-    svg  = $("svg", @$layer)[0]
+    $svg = $("svg", @$layer)
+    $svg.attr style:"", xmlns:""
+    $svg.removeAttr "xmlns" #Have no idea! But if I don't do this, the animation won't cache in ie X-P
+    svg  = $svg[0]
     $img = $( $.parseHTML("<img />") )
     img  = $img[0]
+    try
+      svg.toDataURL 'image/png', {
+          renderer: 'canvg',
+          callback: (data) =>
+            img.setAttribute 'src', data
+            @fadeAndRemoveOldLayer()
+            @currentOnionLayer = @addOnionLayer()
+            @currentOnionLayer.append img
+        }
+    catch error
+      console.log error
 
-    svg.toDataURL 'image/png', callback: (data) =>
-      img.setAttribute 'src', data
-      @fadeAndRemoveOldLayer()
-      @currentOnionLayer = @addOnionLayer()
-      @currentOnionLayer.append img
 
   uncache : () ->
     return if !@isCached
@@ -101,6 +114,7 @@ module.exports = class Layer
     @currentOnionLayer.css background: layerData.background
 
   addAnimation : ($holder, layerData) ->
+    @isAnimation = true
     @animation  = new SVGAnimation $holder, aristotle.getAssetPath(layerData.content), layerData
     if layerData.cache
       @animation.addOnComplete ()=>

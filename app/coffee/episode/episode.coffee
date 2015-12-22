@@ -7,7 +7,6 @@ module.exports = class Episode
 
   constructor: (trainingData, @movie, @ux) ->
     @nextRankId = trainingData.nextRankId
-    PubSub.publish 'chrome.hide'
     aristotle.devTools.go trainingData.dev, trainingData.chapters
     @createChapters trainingData
     if trainingData.skipSlate

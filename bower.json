@@ -13,7 +13,8 @@
     "canvas2image": "hongru/canvas2image",
     "html2canvas": "niklasvh/html2canvas#master",
     "SVG.toDataURL": "Tolmark12/SVG.toDataURL",
-    "warcore-lms-interface": "Tolmark12/warcore-lms-interface"
+    "warcore-lms-interface": "Tolmark12/warcore-lms-interface",
+    "canvg": "gabelerner/canvg"
   },
   "ignore": [
     "app",

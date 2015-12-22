@@ -28,10 +28,10 @@ module.exports = class ChromeUI
   showIcons : () -> @$icons.css({display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}
   hideIcons : () -> @$icons.css {display:"none"}
 
-  hide     : () -> @$el.css display:"none"
-  show     : () -> @$el.css display:"block"
-  hideMode : () -> @$mode.css display:"none"
-  showMode : () -> @$mode.css display:"block"
+  hide     : () -> @$el.addClass "hidden"
+  show     : () -> @$el.removeClass "hidden"
+  hideMode : () -> @$mode.addClass "hidden"
+  showMode : () -> @$mode.removeClass "hidden"
 
   getRank : (data, episode) ->
     switch episode

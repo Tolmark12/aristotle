@@ -24,7 +24,11 @@ chapters:
       -
         movie:
           layers:
+<<<<<<< HEAD
             - {depth: 0, content: ~2/c1-sky.svg }
+=======
+            - {depth: 0, content: ~2/c1-sky.svg, cache: true }
+>>>>>>> lots of updates
             - {depth: 1, content: ~2/c1-background-clouds-loop.json, loop: true }
             - {depth: 2, content: ~2/c1-background-buildin.json, jumpToEnd: true, cache: true }
             - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true }
