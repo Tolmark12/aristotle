@@ -51,7 +51,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: kettle_attack.json, events: [complete] }
+            - {depth: 10, content: kettle_attack_pngs.json, events: [complete] }
         ctanlee:
           defaults:
             next: audio
