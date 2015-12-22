@@ -326,7 +326,7 @@ chapters:
       # Introduce Navigation Ranks  ==========================================
       -
         action: [{cmd: chrome.show}, {cmd: chrome.showepisodes}]
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -346,7 +346,7 @@ chapters:
               pos: [350,400]
               text: "It's time, recruit. Let us begin Episode 1. But first, congratulations on your new rank!"
               audio: Intro_Ctanlee_26.m4a
-        duration: {kind: ctanlee}
+        duration: {kind: dialogue}
       # Rank Advance ==========================================
       -
         movie:

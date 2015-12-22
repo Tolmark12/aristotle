@@ -141,7 +141,7 @@ chapters:
         movie:
           layers:
             - {depth: 12, content: placeholder_15_sec.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -161,14 +161,14 @@ chapters:
               pos: [100,100]
               text: "Compliance fist bumps all-around. Rod's access was removed in under 24 hours. Now let's deal with that unsavory human."
               audio: Story_5_Ctanlee_11.m4a
-        duration: {kind: ctanlee}
+        duration: {kind: dialogue}
       # 1 Retry Simulation B ==========================================
       -
         movie:
           layers:
             - {depth: 12, content: clear }
             - {depth: 12, content: placeholder_15_sec.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -188,7 +188,7 @@ chapters:
               pos: [100,100]
               text: "Compliance fist bumps all-around. Rod's access was removed in under 24 hours. Now let's deal with that unsavory human."
               audio: Story_5_Ctanlee_11.m4a
-        duration: {kind: ctanlee}
+        duration: {kind: dialogue}
       # 1 Previous Map ==========================================
       # 1 Previous Map ==========================================
       # 1 Previous Map ==========================================
@@ -423,7 +423,7 @@ chapters:
           layers:
             - {depth: 11, content: placeholder_15_sec.json, events: [complete] }
         ctanlee:
-          defaults:
+          dialogue:
             next: audio
           timeline:
             - {action: a }
@@ -442,7 +442,7 @@ chapters:
               pos: [100,100]
               text: "Duty Time!"
               audio: Story_5_Ctanlee_18.m4a
-        duration: {kind: ctanlee }
+        duration: {kind: dialogue }
       # Duties ==========================================
       -
         movie:
@@ -486,7 +486,7 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: placeholder_45_sec.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -511,7 +511,7 @@ chapters:
               pos: [100,100]
               text: "We know how this will end. Simulator pause!"
               audio: Story_5_Ctanlee_22.m4a
-        duration: {kind: ctanlee }
+        duration: {kind: dialogue }
       # Dialogue More Problems ==========================================
       -
         movie:
@@ -534,7 +534,7 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: placeholder_15_sec.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -549,7 +549,7 @@ chapters:
               pos: [100,100]
               text: "Orrrrrr not. Simulator Pause!"
               audio: Story_5_Ctanlee_24.m4a
-        duration: {kind: ctanlee}
+        duration: {kind: dialogue}
       # Dialogue Baseline Configuration 1 ==========================================
       -
         movie:
@@ -633,7 +633,7 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: placeholder_15_sec.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -668,7 +668,7 @@ chapters:
               pos: [100,100]
               text: "Robot! - NO BCSI For You!"
               audio: Story_5_Ctanlee_33.m4a
-        duration: {kind: ctanlee }
+        duration: {kind: dialogue }
       # Dialogue Duties review ==========================================
       -
         movie:

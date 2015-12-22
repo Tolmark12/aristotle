@@ -1,8 +1,8 @@
-duration: {kind: ctanlee}
+duration: {kind: dialogue}
 movie:
   layers:
     - {depth: 5, content: interior_loop.json, loop: true }
-ctanlee:
+dialogue:
   timeline:
     - {action: a }
     - {action: b }

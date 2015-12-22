@@ -75,7 +75,7 @@ chapters:
           layers:
             - {depth: 11, content: kettle_bush_attack_end.json, events: [complete] }
             - {depth: 10, content: clear }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -98,7 +98,7 @@ chapters:
               pos: [100,100]
               text: "Simulator Pause!"
               audio: Story_4_Ctanlee_3.m4a
-        duration: {kind: ctanlee}
+        duration: {kind: dialogue}
       # 1 Zoom to Asset View Ports ==========================================
       -
         movie:
@@ -337,7 +337,7 @@ chapters:
           layers:
             - {depth: 12, content: $patchLoop }
           zoom: {scale: 1.6, x: 600, y: 630}
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -352,7 +352,7 @@ chapters:
               pos: [100,100]
               text: "Duty Call!"
               audio: Story_4_Ctanlee_18.m4a
-        duration: {kind: ctanlee }
+        duration: {kind: dialogue }
       # 2 Duties ==========================================
       -
         movie:
@@ -397,7 +397,7 @@ chapters:
         movie:
           layers:
             - {depth: 12, content: placeholder_45_sec.json }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -422,7 +422,7 @@ chapters:
               pos: [100,100]
               text: "We know how this will end. Simulator pause!"
               audio: Story_4_Ctanlee_22.m4a
-        duration: {kind: ctanlee }
+        duration: {kind: dialogue }
       # 3 Dialogue More Problems ==========================================
       -
         movie:
@@ -445,7 +445,7 @@ chapters:
         movie:
           layers:
             - {depth: 12, content: placeholder_15_sec.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -460,7 +460,7 @@ chapters:
               pos: [100,100]
               text: "Orrrrrr not. Simulator Pause!"
               audio: Story_4_Ctanlee_24.m4a
-        duration: {kind: ctanlee}
+        duration: {kind: dialogue}
       # 3 Dialogue Baseline Configuration 1 ==========================================
       -
         movie:
@@ -596,7 +596,7 @@ chapters:
         movie:
           layers:
             - {depth: 12, content: placeholder_15_sec.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -631,7 +631,7 @@ chapters:
               pos: [100,100]
               text: "Robot! - NO BCSI For You!"
               audio: Story_4_Ctanlee_33.m4a
-        duration: {kind: ctanlee }
+        duration: {kind: dialogue }
       # 3 Dialogue Duties review ==========================================
       -
         movie:
