@@ -1,5 +1,5 @@
 CallSignSelect    = require 'slide-ux/components/call-sign-select'
-Ctanlee           = require 'slide-ux/ctanlee/Ctanlee'
+TextDialogue      = require 'slide-ux/text-dialogue'
 DefenderCards     = require 'slide-ux/components/defender-cards'
 Dialogue          = require 'slide-ux/components/dialogue'
 DialoguePage      = require 'slide-ux/components/dialogue-page'
@@ -19,7 +19,7 @@ module.exports = class SlideUX
 
   constructor: (@$el) ->
     @components = []
-    @ctanlee    = new Ctanlee @$el
+    @dialogue   = new TextDialogue @$el, @ctanlee
     @genericUi  = new GenericUiElements @$el
 
   populate : (data) ->

@@ -22,7 +22,8 @@
 
 .slide-ux    { position:relative; width: 100%; z-index: 3; pointer-events:none; height:100%;
   > *        { pointer-events:all;  }
-  @import "ctanlee/ctanlee";
+  @import "text-dialogue/ctanlee";
+  @import "text-dialogue/closed-caption";
   @import "components/cards/cards";
   @import "components/call-sign-select";
   @import "components/dialogue";

@@ -2,7 +2,6 @@
 
 ## Config Options
 
-
 #### actions
 An array of actions that ctanlee can run, each action can be configured via the attributes listed below:
 #### text

@@ -10,6 +10,7 @@ module.exports = class Slide
     @slideUX.populate @slideData.ux
     @setDuration()
     @runCtanlee @slideData.ctanlee
+    @runDialogue @slideData.dialogue
     @runActions @slideData.action
 
   runActions : (action) ->
@@ -27,8 +28,8 @@ module.exports = class Slide
         uxSubscription = PubSub.subscribe 'ux.complete', ()=>
           PubSub.unsubscribe uxSubscription
           @onSlideComplete()
-      when "ctanlee"
-        ctanleeSubscription = PubSub.subscribe 'ctanlee.complete', ()=>
+      when "dialogue", "ctanlee"
+        ctanleeSubscription = PubSub.subscribe 'dialogue.complete', ()=>
           PubSub.unsubscribe ctanleeSubscription
           @onSlideComplete()
       when "listen"
@@ -38,6 +39,9 @@ module.exports = class Slide
 
   runCtanlee : (data) ->
     if data? then aristotle.ctanlee.activate data
+
+  runDialogue : (data) ->
+    if data? then aristotle.dialogue.activate data
 
 
   # stop : ()->
