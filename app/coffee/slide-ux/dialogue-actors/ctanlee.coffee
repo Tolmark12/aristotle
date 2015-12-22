@@ -15,8 +15,8 @@ module.exports = class Ctanlee
 
     PubSub.subscribe 'ctanlee.hide',   (a, data)=> @$el.addClass "hidden"
     PubSub.subscribe 'ctanlee.show',   (a, data)=> @$el.removeClass "hidden"
-    PubSub.subscribe 'ctanlee.clear',  (a, data)=> @ctanlee.hideText()
-    PubSub.subscribe 'ctanlee.gohome', (a, data)=> @ctanlee.returnToStation()
+    PubSub.subscribe 'ctanlee.clear',  (a, data)=> @hideText()
+    PubSub.subscribe 'ctanlee.gohome', (a, data)=> @returnToStation()
 
     $parent.append @$el
     @returnToStation()

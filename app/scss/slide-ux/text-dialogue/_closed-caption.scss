@@ -1,10 +1,12 @@
-.closed-caption      { position:absolute; @include center-absolute; background:rgba(black, 0.87); width:800px; padding: 20px; top: auto; bottom: 0;
-  .text              { background:black; display:inline; color:white; line-height:15px; margin-top:35px; font-size:18px; line-height:20px;
-    span             { letter-spacing:0.04em; font-style:normal; color:$yeller; font-size:20px; font-family:$fun_cond; text-transform:uppercase;
-      &:after        { content:": "}
+.closed-caption { position:absolute; @include center-absolute; background:rgba(black, 0.87); width:800px; padding: 20px; top: auto; bottom: 0;
+  .text         { background:black; display:inline; color:white; line-height:15px; margin-top:35px; font-size:18px; line-height:20px;
+    span        { letter-spacing:0.04em; font-style:normal; color:$yeller; font-size:20px; font-family:$fun_cond; text-transform:uppercase;
+      &:after   { content:": "}
     }
-    .sektimus       { color:#D13925; }
-    .warcore        {  }
-    .ctanlee        { font-style:italic; }
+    .sektimus,
+    .packet     { color:#D13925; }
+    .warcore,
+    .fire-wall  { }
+    .ctanlee    { font-style:italic; }
   }
 }
