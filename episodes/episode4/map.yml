@@ -4,7 +4,7 @@ subtitle: Asset Defenses
 rankId: technical-cadet
 nextRankId: cyber-cadet
 dev:
-  startIndex: 0
+  startIndex: 1
 
 # CHAPTER 1
 chapters:
@@ -105,7 +105,7 @@ chapters:
           layers:
             - {depth: 11, content: clear }
             - {depth: 10, content: ~2/factory_workers_loop.json, loop: true }
-            - {depth: 11, content: placeholder_asset_view.json }
+            - {depth: 11, content: ~g/perimeter_shelf.json }
           zoom: {scale: 2, x: 600, y: 730}
         duration: {kind: time, seconds: 2 }
       # Dialogue Ports==========================================
@@ -126,7 +126,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: placeholder_perimeter_electronic.json }
+            - {depth: 11, content: ~g/perimeter_shelf.json }
           zoom: {scale: 1 }
         duration: {kind: time, seconds: 1 }
       # Port Defense Selector ==========================================
@@ -250,7 +250,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: placeholder_2_min.json, events: [complete] }
+            - {depth: 11, content: fatline_e41.json, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -294,7 +294,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: placeholder_15_sec.json, events: [complete] }
+            - {depth: 11, content: fatline_e42.json, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -325,36 +325,40 @@ chapters:
                   text: install
                   action: {cmd: slides.next-slide}
       # Simulation System Server Patch ==========================================
+      - !!inc/file ./episodes/episode4/yaml/_patch-server-selector.yaml
+      # Simulation System Server Patch ==========================================
       -
         movie:
           layers:
-            - {depth: 11, content: placeholder_15_sec.json, events: [complete] }
+            - {depth: 11, content: $patchBuild, events: [complete] }
+        duration: {kind: listen, event: layer.11.complete}
+      -
+        movie:
+          layers:
+            - {depth: 12, content: $patchLoop }
+          zoom: {scale: 1.6, x: 600, y: 630}
         ctanlee:
           defaults:
             next: audio
           timeline:
             - {action: a }
             - {action: b }
-            - {action: c }
           actions:
             a:
               pos: [100,100]
-              text: "Ah, the Defender remembered the danger. Do you feel the rejection, FlashBot?"
-              audio: Story_4_Ctanlee_16.m4a
+              text: "That looks awesome. Take it from me."
+              audio: Story_4_Ctanlee_17.m4a
             b:
               pos: [100,100]
-              text: "Duty Time!"
-              audio: Story_4_Ctanlee_17.m4a
-            c:
-              pos: [100,100]
-              text: "Duty Time!"
+              text: "Duty Call!"
               audio: Story_4_Ctanlee_18.m4a
         duration: {kind: ctanlee }
       # Duties ==========================================
       -
         movie:
           layers:
-            - {depth: 11, content: clear }
+            - {depth: 12, content: clear }
+          zoom: {scale: 1 }
         action: {cmd: ctanlee.gohome}
         ux:
           components:
@@ -392,7 +396,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: placeholder_45_sec.json, events: [complete] }
+            - {depth: 12, content: placeholder_45_sec.json }
         ctanlee:
           defaults:
             next: audio
@@ -423,7 +427,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: clear }
+            - {depth: 12, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -440,7 +444,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: placeholder_15_sec.json, events: [complete] }
+            - {depth: 12, content: placeholder_15_sec.json, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -461,7 +465,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: placeholder_asset_view.json }
+            - {depth: 12, content: workstation_1.json }
         duration: {kind: ux}
         ux:
           components:
@@ -469,7 +473,7 @@ chapters:
               kind: dialogue
               config:
                 title: Adding Assets
-                body: "Let's talk about adding new assets like Rod's new workstation. All our defense-building work is worthless if someone connects an unsecured asset to our network. CIP has a process to mitigate this threat: <br/>Create Baseline Configuration - Document how the asset is setup. Things like the operating system, software installed, ports open, etc… <br/>Vulnerability Assessment - Test if the asset is secure and that we've applied all CIP defenses like anti-virus, port defenses, etc… <br/>Compliance Documentation - Add to the asset list; Get approvals from custodians to install. <br/>Install - Install new asset and connect it to the ESP network."
+                body: "Let's talk about adding new assets like Rod's new workstation. All our defense-building work is worthless if someone connects an unsecured asset to our network. CIP has a process to mitigate this threat: <br/>1. Create Baseline Configuration - Document how the asset is setup. Things like the operating system, software installed, ports open, etc…"
                 btn:
                   style: lightning
                   text: continue
@@ -478,7 +482,58 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: placeholder_asset_view.json }
+            - {depth: 12, content: workstation_2.json }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Adding Assets
+                body: "Let's talk about adding new assets like Rod's new workstation. All our defense-building work is worthless if someone connects an unsecured asset to our network. CIP has a process to mitigate this threat: <br/>1. Create Baseline Configuration - Document how the asset is setup. Things like the operating system, software installed, ports open, etc… <br/>2. Vulnerability Assessment - Test if the asset is secure and that we've applied all CIP defenses like anti-virus, port defenses, etc…"
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # Dialogue Baseline Configuration 3 ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 12, content: workstation_3.json }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Adding Assets
+                body: "Let's talk about adding new assets like Rod's new workstation. All our defense-building work is worthless if someone connects an unsecured asset to our network. CIP has a process to mitigate this threat: <br/>1. Create Baseline Configuration - Document how the asset is setup. Things like the operating system, software installed, ports open, etc… <br/>2. Vulnerability Assessment - Test if the asset is secure and that we've applied all CIP defenses like anti-virus, port defenses, etc… <br/>3. Compliance Documentation - Add to the asset list; Get approvals from custodians to install."
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # Dialogue Baseline Configuration 4 ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 12, content: workstation_4.json }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Adding Assets
+                body: "Let's talk about adding new assets like Rod's new workstation. All our defense-building work is worthless if someone connects an unsecured asset to our network. CIP has a process to mitigate this threat: <br/>1. Create Baseline Configuration - Document how the asset is setup. Things like the operating system, software installed, ports open, etc… <br/>2. Vulnerability Assessment - Test if the asset is secure and that we've applied all CIP defenses like anti-virus, port defenses, etc… <br/>3. Compliance Documentation - Add to the asset list; Get approvals from custodians to install. <br/>4. Install - Install new asset and connect it to the ESP network."
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # Dialogue Baseline Configuration 5 ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 12, content: workstation_5.json }
         duration: {kind: ux}
         ux:
           components:
@@ -495,7 +550,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: clear }
+            - {depth: 12, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -508,20 +563,21 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Asset View ==========================================
+      # Zoom Perimeter View ==========================================
       -
         movie:
           layers:
-            - {depth: 11, content: placeholder_asset_view.json }
+            - {depth: 12, content: ~g/perimeter_change.json }
           zoom: {scale: 2, x: 600, y: 730}
         duration: {kind: time, seconds: 2 }
       # Asset Change Tools Selector ==========================================
       - !!inc/file ./episodes/episode4/yaml/_asset-change-selector.yaml
       # Dialogue Mulligan ==========================================
       -
+        action: {cmd: ctanlee.gohome}
         movie:
           layers:
-            - {depth: 11, content: clear }
+            - {depth: 12, content: clear }
           zoom: {scale: 1 }
         duration: {kind: ux}
         ux:
@@ -539,7 +595,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: placeholder_15_sec.json, events: [complete] }
+            - {depth: 12, content: placeholder_15_sec.json, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -580,7 +636,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: clear }
+            - {depth: 12, content: clear }
         duration: {kind: ux}
         ux:
           components:
