@@ -20,7 +20,7 @@ chapters:
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
-      # Background Build in ==========================================
+      # 1 Background Build in ==========================================
       -
         movie:
           layers:
@@ -35,14 +35,14 @@ chapters:
             - {depth: 8, content: $eacmsBuild, jumpToEnd: true, cache: true, events: [complete] }
             - {depth: 10, content: ~2/factory_workers_loop.json, loop: true }
         duration: {kind: time, seconds: 1 }
-      # Zoom to Asset Views ==========================================
+      # 1 Zoom to Asset Views ==========================================
       -
         movie:
           layers:
             - {depth: 11, content: placeholder_perimeter_electronic.json }
           zoom: {scale: 1 }
         duration: {kind: time, seconds: 1 }
-      # Dialogue Intro ==========================================
+      # 1 Dialogue Intro ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -56,7 +56,7 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
-      # Simulation A ==========================================
+      # 1 Simulation A ==========================================
       -
         movie:
           layers:
@@ -92,7 +92,7 @@ chapters:
               text: "Simulator pause!"
               audio: Story_5_Ctanlee_5.m4a
         duration: {kind: listen, event: layer.11.complete}
-      # Dialogue Removing Access ==========================================
+      # 1 Dialogue Removing Access ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -106,7 +106,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Dialogue Removing Access ==========================================
+      # 1 Dialogue Removing Access ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -120,9 +120,9 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Port Defense Selector ==========================================
+      # 1 Port Defense Selector ==========================================
       - !!inc/file ./episodes/episode5/yaml/_access-control-selector.yaml
-      # Dialogue Removing Access ==========================================
+      # 1 Dialogue Removing Access ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -136,7 +136,7 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
-      # Retry Simulation A ==========================================
+      # 1 Retry Simulation A ==========================================
       -
         movie:
           layers:
@@ -162,7 +162,7 @@ chapters:
               text: "Compliance fist bumps all-around. Rod's access was removed in under 24 hours. Now let's deal with that unsavory human."
               audio: Story_5_Ctanlee_11.m4a
         duration: {kind: ctanlee}
-      # Retry Simulation B ==========================================
+      # 1 Retry Simulation B ==========================================
       -
         movie:
           layers:
@@ -189,10 +189,10 @@ chapters:
               text: "Compliance fist bumps all-around. Rod's access was removed in under 24 hours. Now let's deal with that unsavory human."
               audio: Story_5_Ctanlee_11.m4a
         duration: {kind: ctanlee}
-      # Previous Map ==========================================
-      # Previous Map ==========================================
-      # Previous Map ==========================================
-      # Previous Map ==========================================
+      # 1 Previous Map ==========================================
+      # 1 Previous Map ==========================================
+      # 1 Previous Map ==========================================
+      # 1 Previous Map ==========================================
       -
         movie:
           layers:
@@ -201,7 +201,7 @@ chapters:
             - {depth: 11, content: placeholder_asset_view.json }
           zoom: {scale: 2, x: 600, y: 730}
         duration: {kind: time, seconds: 2 }
-      # Dialogue Ports==========================================
+      # 1 Dialogue Ports==========================================
       -
         duration: {kind: ux}
         ux:

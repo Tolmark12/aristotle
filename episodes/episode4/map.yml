@@ -20,7 +20,7 @@ chapters:
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
-      # Background Build in ==========================================
+      # 1 Background Build in ==========================================
       -
         movie:
           layers:
@@ -35,7 +35,7 @@ chapters:
             - {depth: 8, content: $eacmsBuild, jumpToEnd: true, cache: true, events: [complete] }
             - {depth: 10, content: ~2/factory_workers_loop.json, loop: true }
         duration: {kind: time, seconds: 1 }
-      # Dialogue Intro ==========================================
+      # 1 Dialogue Intro ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -49,7 +49,7 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
-      # Simulation A ==========================================
+      # 1 Simulation A ==========================================
       -
         movie:
           layers:
@@ -69,7 +69,7 @@ chapters:
               text: "No, no, no. Don't be fooled by that!"
               audio: Story_4_Ctanlee_1.m4a
         duration: {kind: listen, event: layer.11.complete}
-      # Simulation B ==========================================
+      # 1 Simulation B ==========================================
       -
         movie:
           layers:
@@ -99,7 +99,7 @@ chapters:
               text: "Simulator Pause!"
               audio: Story_4_Ctanlee_3.m4a
         duration: {kind: ctanlee}
-      # Zoom to Asset View Ports ==========================================
+      # 1 Zoom to Asset View Ports ==========================================
       -
         movie:
           layers:
@@ -108,7 +108,7 @@ chapters:
             - {depth: 11, content: ~g/perimeter_shelf.json }
           zoom: {scale: 2, x: 600, y: 730}
         duration: {kind: time, seconds: 2 }
-      # Dialogue Ports==========================================
+      # 1 Dialogue Ports==========================================
       -
         duration: {kind: ux}
         ux:
@@ -122,23 +122,23 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Zoom to Asset Perimeter ==========================================
+      # 1 Zoom to Asset Perimeter ==========================================
       -
         movie:
           layers:
             - {depth: 11, content: ~g/perimeter_shelf.json }
           zoom: {scale: 1 }
         duration: {kind: time, seconds: 1 }
-      # Port Defense Selector ==========================================
+      # 1 Port Defense Selector ==========================================
       - !!inc/file ./episodes/episode4/yaml/_port-defense-selector.yaml
-      # Clear Asset Perimeter ==========================================
+      # 1 Clear Asset Perimeter ==========================================
       -
         movie:
           layers:
             - {depth: 11, content: clear }
             - {depth: 10, content: clear }
         duration: {kind: time, seconds: 1 }
-      # Animate Install Port Security ==========================================
+      # 1 Animate Install Port Security ==========================================
       -
         movie:
           layers:
@@ -159,7 +159,7 @@ chapters:
               text: "You sure know how to accessorize."
               audio: Story_4_Ctanlee_8.m4a
         duration: {kind: listen, event: layer.9.complete}
-      # Dialogue Try Again ==========================================
+      # 1 Dialogue Try Again ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -173,7 +173,7 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
-      # Simulation==========================================
+      # 1 Simulation==========================================
       -
         movie:
           layers:
@@ -194,7 +194,7 @@ chapters:
               text: "Duty Time!"
               audio: Story_4_Ctanlee_11.m4a
         duration: {kind: listen, event: layer.11.complete}
-      # Duties ==========================================
+      # 1 Duties ==========================================
       -
         movie:
           layers:
@@ -214,11 +214,11 @@ chapters:
     subtitle: Software Defenses
     dev:
       volume: 1
-      startIndex: 0
+      startIndex: 5
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
-      # Dialogue Patch Assets ==========================================
+      # 2 Dialogue Patch Assets ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -232,7 +232,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Dialogue Malicious Code Defense ==========================================
+      # 2 Dialogue Malicious Code Defense ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -246,7 +246,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Sektimus Interlude ==========================================
+      # 2 Sektimus Interlude ==========================================
       -
         movie:
           layers:
@@ -265,7 +265,7 @@ chapters:
           actions:
             a:
               pos: [170,50]
-              text: Defender, Sektimus is trying to communicate with us again.?
+              text: Defender, Sektimus is trying to communicate with us again.
               audio: Story_4_Ctanlee_12.m4a
             b:
               pos: [270,300]
@@ -288,9 +288,9 @@ chapters:
               pos: []
               audio: Story_4_Sektimus_3.m4a
         duration: {kind: listen, event: layer.11.complete}
-      # Sektimus Will you Train? ==========================================
+      # 2 Sektimus Will you Train? ==========================================
       - !!inc/file ./episodes/episode4/yaml/_simple-sektimus.yaml
-      # Sektimus Interlude ==========================================
+      # 2 Sektimus Interlude ==========================================
       -
         movie:
           layers:
@@ -310,7 +310,7 @@ chapters:
               text: Nicely handled, Cadet. You have surprised Sektimus and that's no mean accomplishment. I suspect we haven't seen the last of him, so be ready. WarCore, back to the simulator!
               audio: Story_4_Ctanlee_15.m4a
         duration: {kind: listen, event: layer.11.complete}
-      # Dialogue Software Defense ==========================================
+      # 2 Dialogue Software Defense ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -324,9 +324,9 @@ chapters:
                   style: lightning
                   text: install
                   action: {cmd: slides.next-slide}
-      # Simulation System Server Patch ==========================================
+      # 2 Simulation System Server Patch ==========================================
       - !!inc/file ./episodes/episode4/yaml/_patch-server-selector.yaml
-      # Simulation System Server Patch ==========================================
+      # 2 Simulation System Server Patch ==========================================
       -
         movie:
           layers:
@@ -353,7 +353,7 @@ chapters:
               text: "Duty Call!"
               audio: Story_4_Ctanlee_18.m4a
         duration: {kind: ctanlee }
-      # Duties ==========================================
+      # 2 Duties ==========================================
       -
         movie:
           layers:
@@ -378,7 +378,7 @@ chapters:
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
-      # Dialogue Changing Assets ==========================================
+      # 3 Dialogue Changing Assets ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -392,7 +392,7 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
-      # Simulation Attack ==========================================
+      # 3 Simulation Attack ==========================================
       -
         movie:
           layers:
@@ -423,7 +423,7 @@ chapters:
               text: "We know how this will end. Simulator pause!"
               audio: Story_4_Ctanlee_22.m4a
         duration: {kind: ctanlee }
-      # Dialogue More Problems ==========================================
+      # 3 Dialogue More Problems ==========================================
       -
         movie:
           layers:
@@ -440,7 +440,7 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
-      # Simulation Attack ==========================================
+      # 3 Simulation Attack ==========================================
       -
         movie:
           layers:
@@ -461,7 +461,7 @@ chapters:
               text: "Orrrrrr not. Simulator Pause!"
               audio: Story_4_Ctanlee_24.m4a
         duration: {kind: ctanlee}
-      # Dialogue Baseline Configuration 1 ==========================================
+      # 3 Dialogue Baseline Configuration 1 ==========================================
       -
         movie:
           layers:
@@ -478,7 +478,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Dialogue Baseline Configuration 2 ==========================================
+      # 3 Dialogue Baseline Configuration 2 ==========================================
       -
         movie:
           layers:
@@ -495,7 +495,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Dialogue Baseline Configuration 3 ==========================================
+      # 3 Dialogue Baseline Configuration 3 ==========================================
       -
         movie:
           layers:
@@ -512,7 +512,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Dialogue Baseline Configuration 4 ==========================================
+      # 3 Dialogue Baseline Configuration 4 ==========================================
       -
         movie:
           layers:
@@ -529,7 +529,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Dialogue Baseline Configuration 5 ==========================================
+      # 3 Dialogue Baseline Configuration 5 ==========================================
       -
         movie:
           layers:
@@ -546,7 +546,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Dialogue Disposing Assets ==========================================
+      # 3 Dialogue Disposing Assets ==========================================
       -
         movie:
           layers:
@@ -563,16 +563,16 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Zoom Perimeter View ==========================================
+      # 3 Zoom Perimeter View ==========================================
       -
         movie:
           layers:
             - {depth: 12, content: ~g/perimeter_change.json }
           zoom: {scale: 2, x: 600, y: 730}
         duration: {kind: time, seconds: 2 }
-      # Asset Change Tools Selector ==========================================
+      # 3 Asset Change Tools Selector ==========================================
       - !!inc/file ./episodes/episode4/yaml/_asset-change-selector.yaml
-      # Dialogue Mulligan ==========================================
+      # 3 Dialogue Mulligan ==========================================
       -
         action: {cmd: ctanlee.gohome}
         movie:
@@ -591,7 +591,7 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
-      # Simulation Asset Change ==========================================
+      # 3 Simulation Asset Change ==========================================
       -
         movie:
           layers:
@@ -632,7 +632,7 @@ chapters:
               text: "Robot! - NO BCSI For You!"
               audio: Story_4_Ctanlee_33.m4a
         duration: {kind: ctanlee }
-      # Dialogue Duties review ==========================================
+      # 3 Dialogue Duties review ==========================================
       -
         movie:
           layers:
@@ -649,7 +649,7 @@ chapters:
                   style: lightning
                   text: review duties
                   action: {cmd: slides.next-slide}
-      # Duties ==========================================
+      # 3 Duties ==========================================
       -
         action: {cmd: ctanlee.gohome}
         ux:
@@ -658,7 +658,7 @@ chapters:
               kind: duties
               config: {definition: ~l/ep4-ch1-duties.json}
         duration: {kind: ux}
-      # Quiz ==========================================
+      # 3 Quiz ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -707,7 +707,7 @@ chapters:
                       -
                         a: A curve
                         r: Better luck next time
-      # Rank Advance ==========================================
+      # 3 Rank Advance ==========================================
       -
         movie:
           layers:

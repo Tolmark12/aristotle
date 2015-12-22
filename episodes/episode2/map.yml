@@ -19,18 +19,18 @@ chapters:
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
-      # Background Build in ==========================================
+      # 1 Background Build in ==========================================
       -
         movie:
           layers:
             - {depth: 0, content: c1-sky.svg }
             - {depth: 2, content: c1-background-buildin.json, events: [complete], cache: true }
         duration: {kind: listen, event: layer.2.complete}
-      # Selector Facility ==========================================
+      # 1 Selector Facility ==========================================
       - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
-      # Building Tour Ctanlee ==========================================
+      # 1 Building Tour Ctanlee ==========================================
       - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
-      # Dialogue BES Cyber Assets  ==========================================
+      # 1 Dialogue BES Cyber Assets  ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -44,13 +44,13 @@ chapters:
                   style: lightning
                   text: tag BCA
                   action: {cmd: slides.next-slide}
-      # Zoom Assets overview  ==========================================
+      # 1 Zoom Assets overview  ==========================================
       -
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
         duration: {kind: time, seconds: .5 }
-      # Zoom Assets overview  ==========================================
+      # 1 Zoom Assets overview  ==========================================
       -
         duration: {kind: ctanlee }
         ctanlee:
@@ -68,32 +68,32 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
                 - {cmd: label.add, data: {id: con-sys-rack-hit, text: Control System, face: top, arrow: right} }
-                - {cmd: movie.zoom, data: {scale: 1.6, id: con-sys-rack-hit }}
+                - {cmd: movie.zoom, data: {scale: 2, id: con-sys-rack-hit }}
             esp-ns:
               pos: esp-ns-hit
               action:
                 - {cmd: highlight, data: {id: esp-ns, level: blue } }
                 - {cmd: label.add, data: {id: esp-ns-hit, text: Network Switch, face: bottom} }
-                - {cmd: movie.zoom, data: {scale: 1.6, id: esp-ns-hit }}
+                - {cmd: movie.zoom, data: {scale: 2, id: esp-ns-hit }}
             data-acs:
               pos: data-acs-hit
               action:
                 - {cmd: highlight, data: {id: data-acs, level: blue} }
                 - {cmd: label.add, data: {id: data-acs-hit, text: Data Acquisition and Control Server, face: left } }
-                - {cmd: movie.zoom, data: {scale: 1.6, id: data-acs-hit }}
+                - {cmd: movie.zoom, data: {scale: 2, id: data-acs-hit }}
             control-sas:
               pos: control-sas-hit
               action:
                 - {cmd: highlight, data: {id: control-sas, level: blue} }
                 - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
-                - {cmd: movie.zoom, data: {scale: 1.6, id: control-sas-hit }}
+                - {cmd: movie.zoom, data: {scale: 2, id: control-sas-hit }}
             operator-ws:
               pos: operator-ws-hit
               action:
                 - {cmd: highlight, data: {id: operator-ws, level: blue } }
                 - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
-                - {cmd: movie.zoom, data: {scale: 1.6, id: operator-ws-hit }}
-      # Ctanlee Narration  ==========================================
+                - {cmd: movie.zoom, data: {scale: 2, id: operator-ws-hit }}
+      # 1 Ctanlee Narration  ==========================================
       -
         action:
           - {cmd: label.hide, data: {id: all}  }
@@ -111,7 +111,7 @@ chapters:
               text: "Most facilities that fall under CIP have a lot of equipment like this that controls the Bulk Electric System. Imagine the damage the robots would do if they gained access to control a breaker, power plant or Tesla Cannon. Shudder."
               audio: Story_2_Ctanlee_8.m4a
               next: audio
-      # Dialogue Protected Cyber Assets  ==========================================
+      # 1 Dialogue Protected Cyber Assets  ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -125,13 +125,13 @@ chapters:
                   style: lightning
                   text: tag PCA
                   action: {cmd: slides.next-slide}
-      # Zoom Assets view  ==========================================
+      # 1 Zoom Assets view  ==========================================
       -
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
         duration: {kind: time, seconds: 0.2 }
-      # Zoom Assets overview  ==========================================
+      # 1 Zoom Assets overview  ==========================================
       -
         duration: {kind: ctanlee }
         ctanlee:
@@ -147,20 +147,20 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: file-server, level: orange} }
                 - {cmd: label.add, data: {id: file-server-hit, text: File Server, face: top, arrow: right} }
-                - {cmd: movie.zoom, data: {scale: 1.6, id: file-server-hit }}
+                - {cmd: movie.zoom, data: {scale: 2, id: file-server-hit }}
             map-computer:
               pos: "map-computer-hit"
               action:
                 - {cmd: highlight, data: {id: map-computer, level: orange} }
                 - {cmd: label.add, data: {id: map-computer-hit, text: Map Computer, face: bottom, arrow: right} }
-                - {cmd: movie.zoom, data: {scale: 1.6, id: map-computer-hit }}
+                - {cmd: movie.zoom, data: {scale: 2, id: map-computer-hit }}
             printer:
               pos: "printer-hit"
               action:
                 - {cmd: highlight, data: {id: printer, level: orange} }
                 - {cmd: label.add, data: {id: printer-hit, text: Printer, face: bottom, arrow: right} }
-                - {cmd: movie.zoom, data: {scale: 1.6, id: printer-hit }}
-      # Ctanlee Narration  ==========================================
+                - {cmd: movie.zoom, data: {scale: 2, id: printer-hit }}
+      # 1 Ctanlee Narration  ==========================================
       -
         action:
           - {cmd: label.hide, data: {id: all}  }
@@ -178,7 +178,7 @@ chapters:
               text: "You may be saying to yourself, CTANLEE it's just a printer! If we had more time I'd tell you about The Paperfeed Incident of '08 where some Virus Bots hijacked a corporate unit. Many Defenders still bear papercut scars."
               audio: Story_2_Ctanlee_9.m4a
               next: audio
-      # Dialogue BES Cyber System  ==========================================
+      # 1 Dialogue BES Cyber System  ==========================================
       -
         duration: {kind: ux}
         ux:
@@ -192,14 +192,13 @@ chapters:
                   style: lightning
                   text: tag BCSI
                   action: {cmd: slides.next-slide}
-      # Zoom Assets view  ==========================================
+      # 1 Zoom Assets view  ==========================================
       -
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
-          zoom: {scale: 1.6, x: 600, y: 430}
         duration: {kind: time, seconds: 1 }
-      # Zoom Assets overview  ==========================================
+      # 1 Zoom Assets overview  ==========================================
       -
         duration: {kind: ctanlee }
         ctanlee:
@@ -215,17 +214,20 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
                 - {cmd: label.add, data: {id: filing-cabinet-hit, text: Substation Diagrams, face: bottom, arrow: right} }
+                - {cmd: movie.zoom, data: {scale: 2, id: filing-cabinet-hit }}
             map:
               pos: "map-computer-hit"
               action:
                 - {cmd: highlight, data: {id: map, level: yellow} }
                 - {cmd: label.add, data: {id: map-computer-hit, text: System Map, face: bottom, arrow: right} }
+                - {cmd: movie.zoom, data: {scale: 2, id: map-computer-hit }}
             monitor:
               pos: "monitor-hit"
               action:
                 - {cmd: highlight, data: {id: monitor, level: yellow} }
                 - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
-      # Dialogue Create Inventory  ==========================================
+                - {cmd: movie.zoom, data: {scale: 2, id: monitor-hit }}
+      # 1 Dialogue Create Inventory  ==========================================
       -
         action:
           - {cmd: label.hide, data: {id: all}  }
@@ -245,7 +247,7 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # Dialogue Get to Know your Assets  ==========================================
+      # 1 Dialogue Get to Know your Assets  ==========================================
       -
         movie:
         duration: {kind: ux}
@@ -260,13 +262,13 @@ chapters:
                   style: lightning
                   text: GOT it!
                   action: {cmd: slides.next-slide}
-      # Zoom Assets view  ==========================================
+      # 1 Zoom Assets view  ==========================================
       -
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
         duration: {kind: time, seconds: .1 }
-      # Highlight Equipment  ==========================================
+      # 1 Highlight Equipment  ==========================================
       -
         action:
           - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
@@ -281,13 +283,13 @@ chapters:
           - {cmd: highlight, data: {id: map, level: yellow} }
           - {cmd: highlight, data: {id: monitor, level: yellow} }
         duration: {kind: ux}
-        # Equipment exploration component:
+        # 1 Equipment exploration component:
         ux:
           components:
             -
               kind: explore-cards
               config:
-                required-views: 5 # (number of cards they have to view to move on to next slide)
+                required-views: 5 # 1 (number of cards they have to view to move on to next slide)
                 template: equipment
                 cards:
                   -
@@ -362,7 +364,7 @@ chapters:
                     type: BCA
                     network: ESP
                     description: Used by technicians for troubleshooting.
-      # Duties ==========================================
+      # 1 Duties ==========================================
       -
         action:
           - {cmd: "unhighlight.all"}
