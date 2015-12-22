@@ -1,0 +1,20 @@
+// @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.ctanlee            { position:absolute; z-index: 1; padding-top:27px; margin-left:-41px; margin-top:-28px;
+  .face             { transform-origin: 40px 0px; @include ie() {-ms-transform-origin: 41px 35px; margin-top:-35px;};
+    .animation      { width:80px; position:absolute; top:-40px;
+      svg           {  }
+    }
+  }
+  $xtra-padding:15px;
+  .text             { position:absolute; top:47px; left:57px; width:300px; background:rgba(black, 0.77); padding:10px; color:white; font-style:italic; line-height:1.6;
+    span.next       { position:relative; cursor:pointer; padding-left:$xtra-padding;
+      &:after       { padding-right:$xtra-padding+10; position:absolute; top:0px; content:""; display:inline-block; width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 7px; border-color: transparent transparent transparent #ffb61a; }
+      &:hover:after { border-color: transparent transparent transparent #ff7020; }
+    }
+    &.left          { right:-19px; left:auto; left:initial; }
+    &.top           { top:auto; top:initial; bottom:23px }
+  }
+
+}
+
