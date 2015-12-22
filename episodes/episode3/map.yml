@@ -133,7 +133,7 @@ chapters:
         movie:
           layers:
             - {depth: 10, content: clear }
-            - {depth: 10, content: card_scanner_attack.json, events: [complete] }
+            - {depth: 10, content: kettle_attack_post_defense_pngs.json, events: [complete] }
         ctanlee:
           defaults:
             next: audio
@@ -400,7 +400,7 @@ chapters:
         movie:
           layers:
             - {depth: 10, content: clear }
-            - {depth: 10, content: $eacmsAnimateGood, events: [complete] }
+            - {depth: 10, content: $eacmsAnimateGood }
         ctanlee:
           defaults:
             next: audio
@@ -438,13 +438,13 @@ chapters:
               pos: [700,500]
               text: That was an approved packet.
               audio: Story_3_Ctanlee_34.m4a
-        duration: {kind: listen, event: layer.10.complete}
+        duration: {kind: ctanlee }
       # 2 Simulator - Firewall Upper ==========================================
       -
         movie:
           layers:
             - {depth: 10, content: clear }
-            - {depth: 10, content: $eacmsAnimateBadUpper, events: [complete] }
+            - {depth: 10, content: $eacmsAnimateBadUpper }
         ctanlee:
           defaults:
             next: audio
@@ -472,13 +472,13 @@ chapters:
               pos: [320,450]
               text: He wasn't on the list.
               audio: Story_3_Ctanlee_36.m4a
-        duration: {kind: listen, event: layer.10.complete}
+        duration: {kind: ctanlee }
       # 2 Simulator - Firewall Lower ==========================================
       -
         movie:
           layers:
             - {depth: 10, content: clear }
-            - {depth: 10, content: $eacmsAnimateBadLower, events: [complete] }
+            - {depth: 10, content: $eacmsAnimateBadLower }
         ctanlee:
           defaults:
             next: audio
@@ -511,7 +511,7 @@ chapters:
               pos: [370,300]
               text: Terminated. Nice job, firewall.
               audio: Story_3_Ctanlee_39.m4a
-        duration: {kind: listen, event: layer.10.complete}
+        duration: {kind: ctanlee }
       # 2 Dialogue - End Chapter ==========================================
       -
         movie:
