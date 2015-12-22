@@ -97,7 +97,7 @@ chapters:
           layers:
             - {depth: 10, content: perimeter_door_server.json }
           zoom: {scale: 2, x: 600, y: 700}
-        duration: {kind: time, seconds: 2.5 }
+        duration: {kind: time, seconds: 1.5 }
       # 1 Selector Physical Security ==========================================
       - !!inc/file ./episodes/episode3/yaml/_pacs-selector.yaml
       # 1 Dialogue Perimeter Try Again ==========================================
@@ -220,9 +220,12 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
       -
+        action:
+          - {cmd: movie.layers.cache, data: 4}
+          - {cmd: movie.layers.cache, data: 6}
         movie:
           layers:
-            - {depth: 10, content: fatline_extended.json, events: [complete] }
+            - {depth: 10, content: fatline_extended.json }
         ctanlee:
           defaults:
             next: audio
@@ -309,9 +312,12 @@ chapters:
               pos: [370,300]
               text: "Cadet … you may wish this wasn't real, that it was just some work of fiction, but good can come from this. What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them. Sektimus fears this. Sektimus fears what you can become. While you ponder these things, let's get back to the simulator."
               audio: Story_3_Ctanlee_23.m4a
-        duration: {kind: listen, event: layer.10.complete}
+        duration: {kind: ctanlee }
       # 2 Simulation Kettle E Attack ==========================================
       -
+        action:
+          - {cmd: movie.layers.uncache, data: 4}
+          - {cmd: movie.layers.uncache, data: 6}
         movie:
           layers:
             - {depth: 10, content: kettle_e_attack.json, events: [complete] }
@@ -363,7 +369,7 @@ chapters:
         movie:
           layers:
             - {depth: 10, content: perimeter_firewall.json }
-          zoom: {scale: 2, x: 600, y: 550}
+          zoom: {scale: 2, x: 600, y: 700}
         duration: {kind: time, seconds: 1.5 }
       # 2 Electronic Defense Selector ==========================================
       - !!inc/file ./episodes/episode3/yaml/_eacms-selector.yaml
@@ -397,9 +403,13 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Simulator - Firewall Good ==========================================
       -
+        action:
+          - {cmd: movie.layers.cache, data: 1}
+          - {cmd: movie.layers.cache, data: 4}
+          - {cmd: movie.layers.cache, data: 6}
+          - {cmd: movie.layers.cache, data: 9}
         movie:
           layers:
-            - {depth: 10, content: clear }
             - {depth: 10, content: $eacmsAnimateGood }
         ctanlee:
           defaults:
@@ -443,7 +453,6 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: clear }
             - {depth: 10, content: $eacmsAnimateBadUpper }
         ctanlee:
           defaults:
@@ -477,7 +486,6 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: clear }
             - {depth: 10, content: $eacmsAnimateBadLower }
         ctanlee:
           defaults:
@@ -514,6 +522,11 @@ chapters:
         duration: {kind: ctanlee }
       # 2 Dialogue - End Chapter ==========================================
       -
+        action:
+          - {cmd: movie.layers.uncache, data: 1}
+          - {cmd: movie.layers.uncache, data: 4}
+          - {cmd: movie.layers.uncache, data: 6}
+          - {cmd: movie.layers.uncache, data: 9}
         movie:
           layers:
             - {depth: 10, content: clear }

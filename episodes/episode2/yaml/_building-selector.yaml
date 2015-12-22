@@ -5,7 +5,7 @@ duration: {kind: ux}
 ctanlee:
   defaults:
     next: none
-    pos: [150, 50]
+    pos: [50, 70]
   actions:
     a:
       text: "My grandfather twice removed was a circuit breaker."

@@ -2,7 +2,7 @@ duration: {kind: ux}
 ctanlee:
   defaults:
     next: none
-    pos: [200, 200]
+    pos: [50, 70]
   actions:
     a:
       emo: happy

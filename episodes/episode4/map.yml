@@ -127,8 +127,8 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: ~g/perimeter_shelf.json }
-          zoom: {scale: 1 }
-        duration: {kind: time, seconds: 1 }
+          zoom: {scale: 2, x: 600, y: 700}
+        duration: {kind: time, seconds: 1.5 }
       # 1 Port Defense Selector ==========================================
       - !!inc/file ./episodes/episode4/yaml/_port-defense-selector.yaml
       # 1 Clear Asset Perimeter ==========================================
@@ -568,8 +568,8 @@ chapters:
         movie:
           layers:
             - {depth: 12, content: ~g/perimeter_change.json }
-          zoom: {scale: 2, x: 600, y: 730}
-        duration: {kind: time, seconds: 2 }
+          zoom: {scale: 2, x: 600, y: 700}
+        duration: {kind: time, seconds: 1.5 }
       # 3 Asset Change Tools Selector ==========================================
       - !!inc/file ./episodes/episode4/yaml/_asset-change-selector.yaml
       # 3 Dialogue Mulligan ==========================================
