@@ -10,7 +10,9 @@ module.exports = class Layer
 
   report : () ->
     cachedOrNot = if @isCached then "cached" else "not cached"
-    console.log "Layer #{@depth} : #{@pristineLayerData.content} is #{cachedOrNot}"
+    symbol      = if @isCached then "√" else "-"
+    msg =  "#{symbol} Layer #{@depth} : #{@pristineLayerData.content} is #{cachedOrNot}"
+    console.log msg
 
   update : (@pristineLayerData) =>
     @layerData = jQuery.extend true, {}, @pristineLayerData
@@ -38,6 +40,7 @@ module.exports = class Layer
 
   addTheCorrectContent : (layerData) ->
     @isAnimation = false
+    @isCached    = false
     parse layerData
     if layerData.ieCache && !aristotle.dontCache && aristotle.isIE
       layerData.loop  = false

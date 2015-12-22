@@ -37,8 +37,8 @@ module.exports = class Sequence
       false
 
   changeItemByIndex : ( newIndex ) ->
-    plusOrMinus          = if @newIndex > @currentItemIndex then 1 else -1
-    incramentDifference  = Math.abs( @currentItemIndex - @newIndex ) * plusOrMinus
+    plusOrMinus          = if newIndex > @currentItemIndex then 1 else -1
+    incramentDifference  = Math.abs( @currentItemIndex - newIndex ) * plusOrMinus
     return @incramentItemIndex( incramentDifference )
 
   activateItemByParam : (param, val) ->
