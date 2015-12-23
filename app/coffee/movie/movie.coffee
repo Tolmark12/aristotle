@@ -55,6 +55,7 @@ module.exports = class Movie
 
   zoomTo : (@scale=1, x=0, y=0) ->
     @transformOrigin = {x:x, y:y}
+    # Rounding for internet explorer, if decimal transform origin doesn't work!
     @$el.css "transform-origin": "#{Math.round(x)}px #{Math.round(y)}px"
     @$el.css transform: "scale(#{@scale})"
 
