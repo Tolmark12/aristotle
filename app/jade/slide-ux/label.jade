@@ -1,8 +1,8 @@
 .label-wrapper(id="#{id}")
-  .label.floating
+  .label.floating(class="#{cssClass}")
     .title=title
     if locals.text
-      .text=text
+      .text!=text
   
   
   

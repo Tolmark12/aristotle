@@ -25,7 +25,7 @@ ux:
       config:
         labels:
           a: {title: "big control centers"}
-          b: {title: "Medium", text: "significant transmission substations and generation plants"}
+          b: {title: "Medium", text: "significant transmission substations<br/> and generation plants"}
           c: {title: "everything else"}
         click:
           - {cmd: slides.next-slide}
