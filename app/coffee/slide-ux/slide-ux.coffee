@@ -8,6 +8,7 @@ EpisodeIntro      = require 'slide-ux/components/episode-intro'
 EpisodeOutro      = require 'slide-ux/components/episode-outro'
 ExploreCards      = require 'slide-ux/components/explore-cards'
 GhostUX           = require 'slide-ux/components/ghost-ux'
+Labler            = require 'slide-ux/labler'
 PersonalInfoIntro = require 'slide-ux/components/personal-info-intro'
 Quiz              = require 'slide-ux/components/quiz/quiz'
 SelectionDialogue = require 'slide-ux/components/selection-dialogue'
@@ -19,6 +20,7 @@ module.exports = class SlideUX
 
   constructor: (@$el) ->
     @components = []
+    @labler     = new Labler()
     @dialogue   = new TextDialogue @$el, @ctanlee
     @genericUi  = new GenericUiElements @$el
 

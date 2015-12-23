@@ -54,7 +54,7 @@ module.exports = class DynamicAssets
 
   addLabel : (data) ->
     pos    = aristotle.movie.getLocalPos data.id
-    $label = $ jadeTemplate['movie/label']( {text:data.text, id:"#{data.id}-label"} )
+    $label = $ jadeTemplate['slide-ux/label']( {title:data.text, id:"#{data.id}-label"} )
     @$el.append $label
     @positionLabel data, $label, pos
     $label.css top:pos.y, left:pos.x;
