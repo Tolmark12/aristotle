@@ -63,7 +63,7 @@ chapters:
             - {action: control-sas }
             - {action: operator-ws }
           defaults:
-            next: click
+            next: 3000
           actions:
             con-sys-rack:
               pos: con-sys-rack-hit
