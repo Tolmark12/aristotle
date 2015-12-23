@@ -73,7 +73,9 @@ module.exports = class TextDialogue
     if !@data.actions[actionId]? then aristotle.throw "Dialogue was asked to play the action named `#{actionId}`, but no action with that id exists." ; return
 
     # Apply default parameters to the action
+    console.log @data.actions[actionId]
     action = @overlayDefaults actionId
+    console.log action
 
     oldActor = @actor
     @setActor action.actor
@@ -109,7 +111,7 @@ module.exports = class TextDialogue
     if !actor? then @actor = @ctanlee; return
 
     switch actor
-      when 'warcore', 'sektimus', 'firewall', 'packet' 
+      when 'warcore', 'sektimus', 'firewall', 'packet'
         @actor = @cc
       else
         @actor = @ctanlee
