@@ -39,11 +39,13 @@ chapters:
               kind: dialogue
               config:
                 title: BES Cyber Assets
-                body: Our job is to protect the programmable equipment - Cyber Assets - in our facilities. Specifically, CIP protects equipment that will cause real-time operational problems for the Bulk Electric System if they are hacked, attacked, or disabled. Think control systems, relay devices, and other equipment. CIP calls these BES Cyber Assets (BCA). <br/>Our Compliance Team has already identified the BCA in this facility. Let me put tags on the devices so we can see which ones are BCA.
+                body: Our job is to protect the programmable equipment - Cyber Assets - in our facilities. Specifically, CIP protects equipment that will cause real-time operational problems for the Bulk Electric System if they are hacked, attacked, or disabled. Think control systems, relay devices, and other equipment. CIP calls these <a data-label="a">BES Cyber Assets<a>. <br/>Our Compliance Team has already identified the BCA in this facility. Let me put tags on the devices so we can see which ones are BCA.
                 btn:
                   style: lightning
                   text: tag BCA
                   action: {cmd: slides.next-slide}
+                labels:
+                  a: {title: "BCA"}
       # 1 Zoom Assets overview  ==========================================
       -
         movie:
@@ -120,11 +122,13 @@ chapters:
               kind: dialogue
               config:
                 title: Protected Cyber Assets
-                body: When BCA are connected to a network like these are, any other devices on the same network like file servers, network printers, and displays must also be protected at the same level as BCA so no security weaknesses are introduced to the network. We call these devices Protected Cyber Assets (PCA).  <br/>I'll tag the PCA next.
+                body: When BCA are connected to a network like these are, any other devices on the same network like file servers, network printers, and displays must also be protected at the same level as BCA so no security weaknesses are introduced to the network. We call these devices <a data-label="a">Protected Cyber Assets<a>.  <br/>I'll tag the PCA next.
                 btn:
                   style: lightning
                   text: tag PCA
                   action: {cmd: slides.next-slide}
+                labels:
+                  a: {title: "PCA"}
       # 1 Zoom Assets view  ==========================================
       -
         movie:
