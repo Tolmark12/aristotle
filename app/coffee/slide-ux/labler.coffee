@@ -14,4 +14,4 @@ module.exports = class Labler
     data.el.append $label
 
   destroyLabel : ($el) ->
-    $(".label-wrapper", $el).velocity {opacity:0}, {duration:350, complete:()-> $(this).remove() }
+    $(".label-wrapper", $el).velocity {opacity:0}, {duration:150, complete:()-> $(this).remove() }
