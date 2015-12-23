@@ -15,7 +15,7 @@ chapters:
     title: Chapter 1
     subtitle: Physical Security Perimeter
     dev:
-      volume: 0.3
+      volume: 1
       startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
@@ -52,7 +52,7 @@ chapters:
         movie:
           layers:
             - {depth: 10, content: kettle_attack_pngs.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -108,7 +108,7 @@ chapters:
             - {depth: 10, content: clear }
             - {depth: 10, content: perimeter_physical.json }
         duration: {kind: ux}
-        ctanlee:
+        dialogue:
           timeline:
             - {action: a }
           actions:
@@ -134,7 +134,7 @@ chapters:
           layers:
             - {depth: 10, content: clear }
             - {depth: 10, content: kettle_attack_post_defense_pngs.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -163,7 +163,7 @@ chapters:
         movie:
           layers:
             - {depth: 10, content: clear }
-        ctanlee:
+        dialogue:
           timeline:
             - {action: a }
           actions:
@@ -270,7 +270,7 @@ chapters:
               pos: []
               audio: ~3/Story_3_Warcore_1.m4a
               actor: warcore
-              text: Lorem ipsum delor, set amet tracint ut em fiw tudrew twill klept equent fam prem ciastic frip till. Felor, set amet tracint ut em fiw tudrew twill kleptic weix.
+              text: Working…
             f:
               pos: [270,300]
               text: Cadet, I need to see what this signal is and if it's a threat. Please standby.
@@ -279,12 +279,12 @@ chapters:
               pos: []
               audio: ~3/Story_3_Warcore_2.m4a
               actor: warcore
-              text: Lorem ipsum delor, set amet tracint ut em fiw tudrew twill klept equent fam prem ciastic frip till. Felor, set amet tracint ut em fiw tudrew twill kleptic weix.
+              text: Signal captured. Starting live feed.
             h:
               pos: []
               audio: ~3/Story_3_Sektimus_1.m4a
               actor: sektimus
-              text: Lorem ipsum delor, set amet tracint ut em fiw tudrew twill klept equent fam prem ciastic frip till. Felor, set amet tracint ut em fiw tudrew twill kleptic weix.
+              text: Where are you little mind? What did the humans call you long ago? … WarMind? Such a pretentious name.
             i:
               pos: [370,300]
               text:  It's Sektimus … WarCore, can you configure the stream so I can communicate back to Sektimus? He's finally showing himself. Cadet, please stand by.
@@ -292,23 +292,23 @@ chapters:
             j:
               audio: ~3/Story_3_Warcore_3.m4a
               actor: warcore
-              text: Lorem ipsum delor, set amet tracint ut em fiw tudrew twill klept equent fam prem ciastic frip till. Felor, set amet tracint ut em fiw tudrew twill kleptic weix.
+              text: Working...
             k:
               audio: ~3/Story_3_Sektimus_2.m4a
               actor: sektimus
-              text: Lorem ipsum delor, set amet tracint ut em fiw tudrew twill klept equent fam prem ciastic frip till. Felor, set amet tracint ut em fiw tudrew twill kleptic weix.
+              text: My, my, my - you HAVE been busy… No matter. It will benefit you not. While you've spent your energy on humans, I've had many cycles to improve my Metal Swarm and it is now perfe-  What is this? Who are you?
             l:
               audio: ~3/Story_3_Sektimus_3.m4a
               actor: sektimus
-              text: Lorem ipsum delor, set amet tracint ut em fiw tudrew twill klept equent fam prem ciastic frip till. Felor, set amet tracint ut em fiw tudrew twill kleptic weix.
+              text: A human. You've already loaded a human into your pitiful training system!
             m:
               audio: ~3/Story_3_Sektimus_4.m4a
               actor: sektimus
-              text: Lorem ipsum delor, set amet tracint ut em fiw tudrew twill klept equent fam prem ciastic frip till. Felor, set amet tracint ut em fiw tudrew twill kleptic weix.
+              text: Listen to me, human. Fighting me will only prolong your suffering. My forces on Earth are already undermining your Bulk Electric System, preparing the way for my Metal Swarm.
             n:
               audio: ~3/Story_3_Warcore_4.m4a
               actor: warcore
-              text: Lorem ipsum delor, set amet tracint ut em fiw tudrew twill klept equent fam prem ciastic frip till. Felor, set amet tracint ut em fiw tudrew twill kleptic weix.
+              text: Two-way communication channel open!
             o:
               pos: [370,300]
               text: Sektimus, you forget too soon that it was humans <copy Sektimus' voice> who defeated your kind in the past. This Defender is one of many that will defeat you again. Your machines may follow your rules perfectly, but you fear humans because they have something you never will be able to program into your robots - choice. A Defender who chooses to sustain security is worth a legion of your robots.
@@ -316,11 +316,11 @@ chapters:
             p:
               audio: ~3/Story_3_Sektimus_5.m4a
               actor: sektimus
-              text: Lorem ipsum delor, set amet tracint ut em fiw tudrew twill klept equent fam prem ciastic frip till. Felor, set amet tracint ut em fiw tudrew twill kleptic weix.
+              text: Ah CTANLEE. The little computer finally speaks. But I'm not interested in talking to you, am I? I'm talking to this human.
             q:
               audio: ~3/Story_3_Sektimus_6.m4a
               actor: sektimus
-              text: Lorem ipsum delor, set amet tracint ut em fiw tudrew twill klept equent fam prem ciastic frip till. Felor, set amet tracint ut em fiw tudrew twill kleptic weix.
+              text: Human. My Metal Swarm is coming to consume your planet. It took six WarMinds to resist us before and this CTANLEE you follow is the only survivor. Heed my advice. Go. Hide. Enjoy what little time you have left.
             r:
               pos: [370,300]
               text: "Cadet ... you may wish this wasn't real, that it was just some work of fiction, but good can come from this. What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them. Sektimus fears this. Sektimus fears what you can become. While you ponder these things, let's get back to the simulator."
@@ -333,8 +333,8 @@ chapters:
           - {cmd: movie.layers.uncache, data: 6}
         movie:
           layers:
-            - {depth: 10, content: kettle_e_attack.json, events: [complete] }
-        ctanlee:
+            - {depth: 10, content: kettle_e_attack_pngs.json, events: [complete] }
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -395,7 +395,7 @@ chapters:
             - {depth: 10, content: clear }
             - {depth: 10, content: perimeter_electronic.json }
         duration: {kind: ux}
-        ctanlee:
+        dialogue:
           timeline:
             - {action: a }
           actions:
@@ -447,9 +447,13 @@ chapters:
             c:
               pos: []
               audio: Story_3_Firewall_1.m4a
+              actor: warcore
+              text: Papers, please.
             d:
               pos: []
               audio: Story_3_Packet_1.m4a
+              actor: sektimus
+              text: Hello. I'm from the corporate reporting server and I'm headed to the control server application server.
             e:
               pos: [570,500]
               text: Even if the communication is authorized, the Intrusion Prevention System will check the contents of the packet.
@@ -457,6 +461,8 @@ chapters:
             f:
               pos: []
               audio: Story_3_Firewall_2_3.m4a
+              actor: warcore
+              text: Open up… No contraband. Proceed.
             g:
               pos: [700,500]
               text: That was an approved packet.
@@ -484,12 +490,18 @@ chapters:
             b:
               pos: []
               audio: Story_3_Firewall_1.m4a
+              actor: warcore
+              text: Papers, please.
             c:
               pos: []
               audio: Story_3_Packet_2.m4a
+              actor: sektimus
+              text: Ummm, well… I'm from the Internet and I want to communicate with the control system.
             d:
               pos: []
               audio: Story_3_Packet_3.m4a
+              actor: sektimus
+              text: Help me, help me!
             e:
               pos: [320,450]
               text: He wasn't on the list.
@@ -518,9 +530,13 @@ chapters:
             b:
               pos: []
               audio: Story_3_Firewall_1.m4a
+              actor: warcpre
+              text: Papers, please.
             c:
               pos: []
               audio: Story_3_Packet_4.m4a
+              actor: sektimus
+              text: Hello... I'm from the corporate archival server going to the control system data acquisition server.
             d:
               pos: [270,300]
               text: He's not through yet.
@@ -528,6 +544,8 @@ chapters:
             e:
               pos: []
               audio: Story_3_Packet_5.m4a
+              actor: sektimus
+              text: Eeeeeee!
             f:
               pos: [370,300]
               text: Terminated. Nice job, firewall.
@@ -543,7 +561,7 @@ chapters:
         movie:
           layers:
             - {depth: 10, content: clear }
-        ctanlee:
+        dialogue:
           timeline:
             - {action: a }
           actions:

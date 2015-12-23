@@ -44,7 +44,7 @@ chapters:
         movie:
           layers:
             - {depth: 1, background: black, content: commandline.json, events: [complete], loop: false}
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -63,7 +63,7 @@ chapters:
         movie:
           layers:
             - {depth: 1, content: quarantine.json, action: {cmd: chrome.hide}, events: [complete], loop: false}
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -91,7 +91,7 @@ chapters:
         movie:
           layers:
             - {depth: 2}
-        ctanlee:
+        dialogue:
           timeline:
             - {action: a }
           actions:
@@ -121,7 +121,7 @@ chapters:
         duration: {kind: ux}
       # Dialogue Clearance Level  ==========================================
       -
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -181,7 +181,7 @@ chapters:
       -
         action: [ {cmd: chrome.show}, {cmd: chrome.showname},  ]
         duration: {kind: time, seconds: 12}
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -196,7 +196,7 @@ chapters:
         movie:
           layers:
             - {depth: 1, content: powergrid1.json, events: [complete], loop: false}
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -228,7 +228,7 @@ chapters:
         movie:
           layers:
             - {depth: 1, content: sektimus.json, events: [complete], loop: false}
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -254,7 +254,7 @@ chapters:
         movie:
           layers:
             - {depth: 1, content: earth.json, events: [complete], loop: false}
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -270,7 +270,7 @@ chapters:
         movie:
           layers:
             - {depth: 1, content: smoke1.json, events: [complete], loop: false}
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -292,7 +292,7 @@ chapters:
           layers:
             - {depth: 1, content: clear }
             - {depth: 0, background: black }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:

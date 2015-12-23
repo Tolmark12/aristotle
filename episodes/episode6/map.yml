@@ -65,7 +65,7 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: kettle_bush_attack.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -154,7 +154,7 @@ chapters:
         movie:
           layers:
             - {depth: 9, content: $portInstall, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -189,7 +189,7 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: $portDefend, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -262,7 +262,7 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: placeholder_2_min.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -306,7 +306,7 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: placeholder_15_sec.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:

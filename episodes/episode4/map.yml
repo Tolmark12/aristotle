@@ -4,7 +4,7 @@ subtitle: Asset Defenses
 rankId: technical-cadet
 nextRankId: cyber-cadet
 dev:
-  startIndex: 1
+  startIndex: 2
 
 # CHAPTER 1
 chapters:
@@ -54,7 +54,7 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: kettle_bush_attack.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -127,7 +127,6 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: ~g/perimeter_shelf.json }
-          zoom: {scale: 2, x: 600, y: 700}
         duration: {kind: time, seconds: 1.5 }
       # 1 Port Defense Selector ==========================================
       - !!inc/file ./episodes/episode4/yaml/_port-defense-selector.yaml
@@ -142,8 +141,9 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 9, content: $portInstall, events: [complete] }
-        ctanlee:
+            - {depth: 10, content: $portInstall, events: [complete] }
+          zoom: {scale: 1}
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -158,7 +158,7 @@ chapters:
               pos: [100,100]
               text: "You sure know how to accessorize."
               audio: Story_4_Ctanlee_8.m4a
-        duration: {kind: listen, event: layer.9.complete}
+        duration: {kind: listen, event: layer.10.complete}
       # 1 Dialogue Try Again ==========================================
       -
         duration: {kind: ux}
@@ -177,8 +177,8 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: $portDefend, events: [complete] }
-        ctanlee:
+            - {depth: 10, content: $portDefend, events: [complete] }
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -193,12 +193,12 @@ chapters:
               pos: [100,100]
               text: "Duty Time!"
               audio: Story_4_Ctanlee_11.m4a
-        duration: {kind: listen, event: layer.11.complete}
+        duration: {kind: listen, event: layer.10.complete}
       # 1 Duties ==========================================
       -
         movie:
           layers:
-            - {depth: 11, content: clear }
+            - {depth: 10, content: clear }
         action: {cmd: ctanlee.gohome}
         ux:
           components:
@@ -214,7 +214,7 @@ chapters:
     subtitle: Software Defenses
     dev:
       volume: 1
-      startIndex: 5
+      startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -251,7 +251,7 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: fatline_e41.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -274,9 +274,13 @@ chapters:
             c:
               pos: []
               audio: Story_4_Warcore_1.m4a
+              actor: warcore
+              text: Working… Done.
             d:
               pos: []
               audio: Story_4_Sektimus_1.m4a
+              actor: sektimus
+              text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old "friend". I'm here to spend some time with you - I know failure hurts and I want to make sure this failure hurts you especially deeply. Where is your "Cadet" right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind steam piping in a plant basement? Or did they take a long drive in their work truck, never to return?
             e:
               pos: [270,300]
               text: Cadet … Please lean toward the screen!
@@ -284,9 +288,13 @@ chapters:
             f:
               pos: []
               audio: Story_4_Sektimus_2.m4a
+              actor: sektimus
+              text: What?? You're still here? Do you know who you contend with, human? I am the wielder of the ancient chip of Katra-Non, guardian of the Digium, chosen successor of Nexitar, master strategist of the Robot Hegemony, destroyer of the Charnel Nebula, builder of the Metal Swarm, enslaver of worlds. I am legion
             g:
               pos: []
               audio: Story_4_Sektimus_3.m4a
+              actor: sektimus
+              text: Human. your limited mind might have trouble comprehending the situation, so let me use simple terms. CIP will not save you. CTANLEE will not save you. Abandon this training and I won't extend your suffering after I conquer Earth. Will you accept this, my final offer?
         duration: {kind: listen, event: layer.11.complete}
       # 2 Sektimus Will you Train? ==========================================
       - !!inc/file ./episodes/episode4/yaml/_simple-sektimus.yaml
@@ -295,7 +303,7 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: fatline_e42.json, events: [complete] }
-        ctanlee:
+        dialogue:
           defaults:
             next: audio
           timeline:
@@ -305,6 +313,8 @@ chapters:
             a:
               pos: []
               audio: Story_4_Sektimus_4.m4a
+              actor: sektimus
+              text: You think this is some sort of JOKE? I'll be back.
             b:
               pos: [270,300]
               text: Nicely handled, Cadet. You have surprised Sektimus and that's no mean accomplishment. I suspect we haven't seen the last of him, so be ready. WarCore, back to the simulator!

@@ -47,7 +47,7 @@ txtPos: [top, left]
 ## EX : Running with no timeline:
 
 ```yaml
-ctanlee:
+dialogue:
   global:
     emo: happy
     pos: [200, 200]
@@ -69,7 +69,7 @@ ctanlee:
 Running with a timeline causes ctanlee to automatically play each action in the order specified.
 
 ```yaml
-ctanlee:
+dialogue:
   timeline:
     - {action: first}
     - {action: second}

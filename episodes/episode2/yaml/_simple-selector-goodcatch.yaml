@@ -1,5 +1,5 @@
 duration: {kind: ux}
-ctanlee:
+dialogue:
   defaults:
     next: none
     pos: [200, 50]

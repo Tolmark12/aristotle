@@ -1,5 +1,5 @@
 duration: {kind: ux}
-ctanlee:
+dialogue:
   defaults:
     next: none
     pos: [50, 70]
@@ -23,6 +23,7 @@ ux:
       config:
         click:
           - {cmd: slides.next-slide}
+          - {cmd: movie.load-layer, data: {depth: 9, content: $portBuild}}
         intro:
         title: Choose your Port Defenses
         subTitle: "We'll install two things: 1.) Software firewalls on all assets to close unnecessary logical ports. 2.) Plug-in protections on the physical ports. We have a few CIP-compliant physical port protections to choose from:"
@@ -35,6 +36,7 @@ ux:
                 cmd: setvars
                 data:
                   port: duct-tape
+                  portBuild: ~4/duct_tape_build.json
                   portInstall: ~4/duct_tape_install.json
                   portDefend: ~4/duct_tape_defend.json
             btnTxt: Port Duct Tape
@@ -48,6 +50,7 @@ ux:
                 cmd: setvars
                 data:
                   port: kragle
+                  portBuild: ~4/kragle_build.json
                   portInstall: ~4/kragle_install.json
                   portDefend: ~4/kragle_defend.json
             btnTxt: The Kragle
@@ -61,6 +64,7 @@ ux:
                 cmd: setvars
                 data:
                   port: umpire
+                  portBuild: ~4/umpire_build.json
                   portInstall: ~4/umpire_install.json
                   portDefend: ~4/umpire_defend.json
             btnTxt: Port Umpire

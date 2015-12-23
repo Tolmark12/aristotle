@@ -368,7 +368,7 @@ chapters:
       -
         action:
           - {cmd: "unhighlight.all"}
-        ctanlee:
+        dialogue:
           timeline:
             - {action: a }
             - {action: b }
@@ -629,7 +629,7 @@ chapters:
           layers:
             - {depth: 7, content: clear }
             - {depth: 8, content: violation.json, events: [complete] }
-        ctanlee:
+        dialogue:
           timeline:
             - {action: a }
           actions:
@@ -647,7 +647,7 @@ chapters:
           layers:
             - {depth: 8, content: clear }
             - {depth: 8, content: goodcatch.json, events: [complete] }
-        ctanlee:
+        dialogue:
           timeline:
             - {action: a }
           actions:
@@ -665,7 +665,7 @@ chapters:
           layers:
             - {depth: 8, content: clear }
             - {depth: 8, content: identifyassess.json, events: [complete] }
-        ctanlee:
+        dialogue:
           timeline:
             - {action: a }
           actions:
