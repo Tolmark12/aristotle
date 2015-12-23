@@ -4,7 +4,7 @@ subtitle: Manning the Defenses
 rankId: cyber-cadet
 nextRankId: master-cadet
 dev:
-  startIndex: 0
+  startIndex: 2
 
 # CHAPTER 1
 chapters:
@@ -498,7 +498,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: placeholder_15_sec.json }
+            - {depth: 17, content: 5_auditbot_fail.json }
         dialogue:
           defaults:
             next: audio
@@ -558,9 +558,6 @@ chapters:
               audio: Story_5_Ctanlee_35.m4a
       # 3 Dialogue Home Stretch ==========================================
       -
-        movie:
-          layers:
-            - {depth: 17, content: user_accounts_1.json }
         duration: {kind: ux}
         ux:
           components:

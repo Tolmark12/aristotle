@@ -37,7 +37,6 @@ ux:
                 data:
                   visitor: log_book
                   visitorBuild: ~5/log_book_build.json
-                  visitorFail: ~5/log_book_fail.json
                   visitorPass: ~5/log_book_pass.json
             btnTxt: Guest Log Book
             icon: mini-substation
@@ -51,7 +50,6 @@ ux:
                 data:
                   visitor: escort_leash
                   visitorBuild: ~5/escort_leash_build.json
-                  visitorFail: ~5/escort_leash_fail.json
                   visitorPass: ~5/escort_leash_pass.json
             btnTxt: PSP Buddy Escort Leash
             icon: mini-generation
@@ -65,7 +63,6 @@ ux:
                 data:
                   visitor: tractor_beam
                   visitorBuild: ~5/tractor_beam_build.json
-                  visitorFail: ~5/tractor_beam_fail.json
                   visitorPass: ~5/tractor_beam_pass.json
             btnTxt: Visitor Tractor Beam
             icon: mini-control-center
