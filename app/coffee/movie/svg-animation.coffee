@@ -43,9 +43,10 @@ module.exports = class SVGAnimation
   play   : () => @animation.play();
   stop   : () -> @animation.stop()
   destroy: () ->
-    @animation.destroy()
-    if @interval?
-      clearInterval @interval
+    if @animation?
+      @animation.destroy()
+      if @interval?
+        clearInterval @interval
 
   traceFrames : () ->
     @interval = setInterval ()=>

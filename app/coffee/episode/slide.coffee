@@ -43,11 +43,3 @@ module.exports = class Slide
   runDialogue : (data) ->
     if data? then aristotle.dialogue.activate data
 
-
-  # stop : ()->
-  #   @animation.stop()
-  #   @audio.stop()
-  #
-  # destroy : ()->
-  #   @animation.destroy()
-  #   @audio.destroy()

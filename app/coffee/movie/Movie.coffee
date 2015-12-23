@@ -55,8 +55,7 @@ module.exports = class Movie
 
   zoomTo : (@scale=1, x=0, y=0) ->
     @transformOrigin = {x:x, y:y}
-    @$el.css "transform-origin": "#{x}px #{y}px"
-    @$el.css "-ms-transform-origin": "#{x}px #{y}px"
+    @$el.css "transform-origin": "#{Math.round(x)}px #{Math.round(y)}px"
     @$el.css transform: "scale(#{@scale})"
 
   clearLayer : (depth) -> if @layers[depth]? then @layers[depth].empty()

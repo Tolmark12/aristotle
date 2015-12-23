@@ -29,7 +29,5 @@ module.exports = class Component
       ,
         100
 
-
-
   destroy : () ->
     @$node.remove()
