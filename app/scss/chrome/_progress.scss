@@ -1,7 +1,7 @@
 .progress       { position:absolute;  position: absolute; left: 50%; transform: translate(-50%); bottom: -1px;
-  .progress-map { background:rgba(black, 0.5); display:flex; align-items:center;
-    .milestone  {
-
+  .progress-map { background:rgba(black, 0.5); display:flex; align-items:center; padding: 6px 20px 0;
+    .milestone  { opacity:0.5;
+      &.viewed  { opacity:1}
     }
   }
 }

@@ -1,12 +1,18 @@
 module.exports = class ProgressMap
 
   constructor: (@$el) ->
-    PubSub.subscribe 'episode.loaded', (m, data)=> @buildMap data
+    PubSub.subscribe 'episode.loaded', (m, data)=>   @buildMap data
+    PubSub.subscribe 'chapter.started', (m, data)=>  @lightIcon()
+    PubSub.subscribe 'slide.activated', (m, data)=>  @lightIcon()
+    PubSub.subscribe 'quiz.activated', (m, data)=>   @lightIcon()
+    PubSub.subscribe 'duties.activated', (m, data)=> @lightIcon()
+
+  lightIcon : () ->
+
 
   buildMap : (data) ->
     mapData = @parseEpisodeData data
     @addIconData mapData
-    console.log mapData
     $node = $ jadeTemplate['chrome-ui/progress-map']( {milestones : mapData} )
     @$el.append $node
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, $node
