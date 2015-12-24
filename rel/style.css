@@ -80,7 +80,9 @@ h1, h2 {
 
 .chrome {
   position: absolute;
-  z-index: 2; }
+  z-index: 2;
+  width: 1024px;
+  height: 768px; }
   .chrome .top {
     display: inline-flex;
     height: 60px; }
@@ -135,6 +137,21 @@ h1, h2 {
       justify-content: center;
       -webkit-clip-path: polygon(0 0, 100% 0%, 82% 100%, 0% 100%);
       clip-path: polygon(0 0, 100% 0%, 82% 100%, 0% 100%); }
+  .chrome .progress {
+    position: absolute;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -1px; }
+    .chrome .progress .progress-map {
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      padding: 6px 20px 0; }
+      .chrome .progress .progress-map .milestone {
+        opacity: 0.5; }
+        .chrome .progress .progress-map .milestone.viewed {
+          opacity: 1; }
 
 .movie {
   position: relative;

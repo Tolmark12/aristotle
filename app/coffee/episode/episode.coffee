@@ -52,6 +52,7 @@ module.exports = class Episode
   playChapter     : () =>
     PubSub.publish 'state.rehydrate'
     @chapters.getCurrentItem().start @chapterComplete
+    PubSub.publish 'chapter.started', @chapters.getCurrentItem().chapterData.title
 
   episodeComplete : () ->
     console.log "episode complete"

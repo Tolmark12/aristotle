@@ -2,33 +2,33 @@ module.exports = class ProgressMap
 
   constructor: (@$el) ->
     PubSub.subscribe 'episode.loaded', (m, data)=>   @buildMap data
-    PubSub.subscribe 'chapter.started', (m, data)=>  @lightIcon()
-    PubSub.subscribe 'slide.activated', (m, data)=>  @lightIcon()
-    PubSub.subscribe 'quiz.activated', (m, data)=>   @lightIcon()
-    PubSub.subscribe 'duties.activated', (m, data)=> @lightIcon()
+    PubSub.subscribe 'chapter.started', (m, data)=>  @lightIcon(data)
+    PubSub.subscribe 'slide.activated', (m, data)=>  @lightIcon(data)
+    PubSub.subscribe 'quiz.activated', (m, data)=>   @lightIcon(data)
+    PubSub.subscribe 'duties.activated', (m, data)=> @lightIcon(data)
 
-  lightIcon : () ->
+  lightIcon : (title) ->
 
 
   buildMap : (data) ->
     mapData = @parseEpisodeData data
     @addIconData mapData
-    $node = $ jadeTemplate['chrome-ui/progress-map']( {milestones : mapData} )
-    @$el.append $node
-    shadowIconsInstance.svgReplaceWithString pxSvgIconString, $node
+    @$node = $ jadeTemplate['chrome-ui/progress-map']( {milestones : mapData} )
+    @$el.append @$node
+    shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
 
   parseEpisodeData : (data) ->
     items = []
     for chapter in data.chapters
-      items.push {kind: "chapter", title:chapter.title}
+      items.push {kind: "chapter", title:@titleToId(chapter.title) }
       for slide in chapter.slides
-
         item = @getItem slide
         if slide.title?
           if !item? then item = {kind: "slide"}
           item.title = slide.title
 
         if item?
+          item.title = @titleToId(item.title)
           items.push item
     items
 
@@ -40,17 +40,17 @@ module.exports = class ProgressMap
         when "quiz"    then item.icon = "chapter-progress-quiz"
         when "duties"  then item.icon = "chapter-progress-duties"
 
-
+  titleToId : (title) ->
+    title = title.replace /\s/g, '_'
+    title.toLowerCase()
 
   getItem : (slide) ->
     return null if !slide.ux?
     return null if !slide.ux.components?
     for component in slide.ux.components
       if component.kind == "quiz"
-        console.log "quix"
         return {kind:"quiz", title:"quiz"}
       else if component.kind == "duties"
-        console.log "dutz"
         return {kind:"duties", title:"Duty Review"}
     return null
 
