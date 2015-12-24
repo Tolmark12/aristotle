@@ -41,6 +41,7 @@ chapters:
         duration: {kind: ux}
       # Animation Load Warcore ==========================================
       -
+        title: Load Warcore
         movie:
           layers:
             - {depth: 1, background: black, content: commandline.json, events: [complete], loop: false}
@@ -60,6 +61,7 @@ chapters:
         duration: {kind: listen, event: layer.1.complete}
       # Animation Quarantine ==========================================
       -
+        title: Quarantine
         movie:
           layers:
             - {depth: 1, content: quarantine.json, action: {cmd: chrome.hide}, events: [complete], loop: false}
@@ -87,6 +89,7 @@ chapters:
         duration: {kind: listen, event: layer.1.complete}
       # Dialogue Approval to Advance  ==========================================
       -
+        title: Approval To Proceed
         action: [{cmd: ctanlee.show}]
         movie:
           layers:
@@ -121,6 +124,7 @@ chapters:
         duration: {kind: ux}
       # Dialogue Clearance Level  ==========================================
       -
+        title: Authorization Results
         dialogue:
           defaults:
             next: audio
@@ -157,6 +161,7 @@ chapters:
         duration: {kind: ux}
       # Dialogue Call Sign  ==========================================
       -
+        title: Call Sign Selection
         movie:
           layers:
             - {depth: 1, content: clear }
@@ -193,6 +198,7 @@ chapters:
               audio: Intro_Ctanlee_9.m4a
       # Animation Power Grid  ==========================================
       -
+        title: Powergrid
         movie:
           layers:
             - {depth: 1, content: powergrid1.json, events: [complete], loop: false}
@@ -224,6 +230,7 @@ chapters:
         duration: {kind: listen, event: layer.1.complete}
       # Animation Sektimus Launch  ==========================================
       -
+        title: Sektimus
         action: {cmd: chrome.hide}
         movie:
           layers:
@@ -288,6 +295,7 @@ chapters:
         duration: {kind: listen, event: layer.1.complete}
       # Dialogue Gut Check  ==========================================
       -
+        title: Gut Check
         movie:
           layers:
             - {depth: 1, content: clear }

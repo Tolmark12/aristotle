@@ -37,6 +37,7 @@ chapters:
         duration: {kind: time, seconds: 1 }
       # 1 Dialogue Intro ==========================================
       -
+        title: Asset Connections
         duration: {kind: ux}
         ux:
           components:
@@ -109,6 +110,7 @@ chapters:
         duration: {kind: time, seconds: 2 }
       # 1 Dialogue Ports==========================================
       -
+        title: Port Security
         duration: {kind: ux}
         ux:
           components:
@@ -160,6 +162,7 @@ chapters:
         duration: {kind: listen, event: layer.10.complete}
       # 1 Dialogue Try Again ==========================================
       -
+        title: Please Try Again
         duration: {kind: ux}
         ux:
           components:
@@ -224,6 +227,7 @@ chapters:
     slides:
       # 2 Dialogue Patch Assets ==========================================
       -
+        title: Patching Your Assets
         duration: {kind: ux}
         ux:
           components:
@@ -238,6 +242,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Dialogue Malicious Code Defense ==========================================
       -
+        title: Malicious Code Defenses
         duration: {kind: ux}
         ux:
           components:
@@ -326,6 +331,7 @@ chapters:
         duration: {kind: listen, event: layer.11.complete}
       # 2 Dialogue Software Defense ==========================================
       -
+        title: Apply Your Software Defenses
         duration: {kind: ux}
         ux:
           components:
@@ -394,6 +400,7 @@ chapters:
     slides:
       # 3 Dialogue Changing Assets ==========================================
       -
+        title: Changing Assets
         duration: {kind: ux}
         ux:
           components:
@@ -439,6 +446,7 @@ chapters:
         duration: {kind: dialogue }
       # 3 Dialogue More Problems ==========================================
       -
+        title: More Problems
         movie:
           layers:
             - {depth: 12, content: clear }
@@ -477,6 +485,7 @@ chapters:
         duration: {kind: dialogue}
       # 3 Dialogue Baseline Configuration 1 ==========================================
       -
+        title: Adding Assets
         movie:
           layers:
             - {depth: 12, content: workstation_1.json }
@@ -494,6 +503,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Dialogue Baseline Configuration 2 ==========================================
       -
+        title: Adding Assets
         movie:
           layers:
             - {depth: 12, content: workstation_2.json }
@@ -545,6 +555,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Dialogue Baseline Configuration 5 ==========================================
       -
+        title: Updating Assets
         movie:
           layers:
             - {depth: 12, content: workstation_5.json }
@@ -562,6 +573,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Dialogue Disposing Assets ==========================================
       -
+        title: Disposing Assets
         movie:
           layers:
             - {depth: 12, content: clear }
@@ -588,6 +600,7 @@ chapters:
       - !!inc/file ./episodes/episode4/yaml/_asset-change-selector.yaml
       # 3 Dialogue Mulligan ==========================================
       -
+        title: Calling a Mulligan
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
@@ -648,6 +661,7 @@ chapters:
         duration: {kind: dialogue }
       # 3 Dialogue Duties review ==========================================
       -
+        title: You Did It!
         movie:
           layers:
             - {depth: 12, content: clear }

@@ -47,6 +47,7 @@ chapters:
         duration: {kind: time, seconds: 1 }
       # 1 Dialogue Intro ==========================================
       -
+        title: Perimeter and Asset Access
         duration: {kind: ux}
         ux:
           components:
@@ -118,6 +119,7 @@ chapters:
         duration: {kind: dialogue }
       # 1 Dialogue Removing Access ==========================================
       -
+        title: Removing Access
         duration: {kind: ux}
         ux:
           components:
@@ -132,6 +134,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Dialogue Removing Access ==========================================
       -
+        title: Granting Access
         duration: {kind: ux}
         ux:
           components:
@@ -155,6 +158,7 @@ chapters:
         duration: {kind: time, seconds: 1 }
       # 1 Dialogue Removing Access ==========================================
       -
+        title: Once More Unto the Breach
         duration: {kind: ux}
         ux:
           components:
@@ -254,6 +258,7 @@ chapters:
         duration: {kind: dialogue}
       # 1 Dialogue Information Access ==========================================
       -
+        title: Information Access
         duration: {kind: ux}
         ux:
           components:
@@ -268,6 +273,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Dialogue Access Audits ==========================================
       -
+        title: Access Audits
         duration: {kind: ux}
         ux:
           components:
@@ -303,6 +309,7 @@ chapters:
     slides:
       # 2 Dialogue User Accounts ==========================================
       -
+        title: User Accounts
         duration: {kind: ux}
         ux:
           components:
@@ -317,6 +324,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Dialogue User Accounts 1 ==========================================
       -
+        title: Account Attacks
         movie:
           layers:
             - {depth: 17, content: ~g/user_account_1.json }
@@ -371,6 +379,7 @@ chapters:
         duration: {kind: time, seconds: .5 }
       # 2 Dialogue Brute Force Defenses ==========================================
       -
+        title: Brute-Force Defenses
         duration: {kind: ux}
         ux:
           components:
@@ -427,6 +436,7 @@ chapters:
         duration: {kind: time, seconds: .5 }
       # 2 Dialogue Shared / Default Accounts ==========================================
       -
+        title: Shared and Default Accounts
         duration: {kind: ux}
         ux:
           components:
@@ -547,6 +557,7 @@ chapters:
     slides:
       # 3 Dialogue Visitor Access ==========================================
       -
+        title: Visitor Access
         duration: {kind: ux}
         ux:
           components:
@@ -594,6 +605,7 @@ chapters:
         duration: {kind: dialogue}
       # 3 Dialogue Visitor Escort Procedure ==========================================
       -
+        title: The Visitor Escort Procedure
         duration: {kind: ux}
         ux:
           components:
@@ -641,6 +653,7 @@ chapters:
         duration: {kind: dialogue }
       # 3 Dialogue Home Stretch ==========================================
       -
+        title: On the Home Stretch
         duration: {kind: ux}
         ux:
           components:

@@ -14,7 +14,7 @@ chapters:
     title: Chapter 1
     subtitle: Facilities and Cyber Assets
     dev:
-      volume: 0.1
+      volume: 1
       startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
@@ -412,6 +412,7 @@ chapters:
     title: Chapter 2
     subtitle: Defenders and Duties
     dev:
+      volume: 1
       startIndex: 0
     kind: chapter
     slides:
@@ -607,6 +608,7 @@ chapters:
     title: Chapter 3
     subtitle: Our Regulators
     dev:
+      volume: 1
       startIndex: 0
     kind: chapter
     slides:
