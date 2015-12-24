@@ -22,8 +22,6 @@ module.exports = class ChromeUI
     @$name  = $ ".name-and-rank", $top
     @$icons = $ ".episodes", $top
     @$mode  = $ ".learn-mode", $top
-    $progress = $ jadeTemplate['chrome-ui/progress']( {} )
-    @$el.append $progress
 
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
 

@@ -1,7 +1,15 @@
 module.exports = class ProgressMap
 
-  constructor: () ->
-    PubSub.subscribe 'episode.loaded', (m, data)=> @parseEpisodeData data
+  constructor: (@$el) ->
+    PubSub.subscribe 'episode.loaded', (m, data)=> @buildMap data
+
+  buildMap : (data) ->
+    mapData = @parseEpisodeData data
+    @addIconData mapData
+    console.log mapData
+    $node = $ jadeTemplate['chrome-ui/progress-map']( {milestones : mapData} )
+    @$el.append $node
+    shadowIconsInstance.svgReplaceWithString pxSvgIconString, $node
 
   parseEpisodeData : (data) ->
     items = []
@@ -16,7 +24,15 @@ module.exports = class ProgressMap
 
         if item?
           items.push item
-    console.log items
+    items
+
+  addIconData : (mapItems) ->
+    for item in mapItems
+      switch item.kind
+        when "chapter" then item.icon = "chapter-progress-chapter"
+        when "slide"   then item.icon = "chapter-progress-slide"
+        when "quiz"    then item.icon = "chapter-progress-quiz"
+        when "duties"  then item.icon = "chapter-progress-duties"
 
 
 
