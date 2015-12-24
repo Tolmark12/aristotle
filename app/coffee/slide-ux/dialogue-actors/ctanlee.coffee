@@ -34,8 +34,8 @@ module.exports = class Ctanlee
     if data.emo? || !@$currentAnimation?
       @setEmotion data.emo
 
-  showText : () -> @$speechBox.removeClass "hidden"#@$speechBox.css opacity: 1, "pointer-events": "all"
-  hideText : () -> @$speechBox.addClass "hidden"#@$speechBox.css opacity: 0, "pointer-events": "none"
+  showText : () -> @$speechBox.removeClass "hidden"
+  hideText : () -> @$speechBox.addClass "hidden"
   showNext : () -> @$nextBtn.removeClass "hidden"
   hideNext : () -> @$nextBtn.addClass "hidden"
 

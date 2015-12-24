@@ -1,3 +1,5 @@
+ProgressDisplay = require 'chrome/progress-display'
+
 module.exports = class ChromeUI
 
   constructor: (@$el) ->
@@ -11,6 +13,8 @@ module.exports = class ChromeUI
     PubSub.subscribe "chrome.hideepisodes", (m, data)=> @hideIcons()
 
   build : (@$el) ->
+    progressDisplay = new ProgressDisplay @$el
+
     data    = {name:"John \"Deadeye\" Nimbus", episode:"1"}
     @getRank data, "cyber-cadet"
     $top    = $ jadeTemplate['chrome-ui/top']( data )
@@ -22,6 +26,8 @@ module.exports = class ChromeUI
     @$el.append $progress
 
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
+
+
 
   showName  : () -> @$name.css( {display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}
   hideName  : () -> @$name.css  {display:"none"}

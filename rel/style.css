@@ -1,3 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #879a97; }
+
+body * {
+  font-family: 'Function';
+  font-weight: 200; }
+
+h1 {
+  font-size: 22px;
+  font-family: 'Function Condensed';
+  font-weight: 200;
+  color: #DEAA36;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; }
+
+h2 {
+  font-size: 11px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.07em; }
+
+h1, h2 {
+  margin: 0;
+  padding: 0; }
+
+.hidden {
+  display: none !important; }
+
 @font-face {
   font-family: 'Function';
   src: url("/assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.eot");
@@ -40,33 +70,6 @@
   font-weight: 500;
   font-style: normal; }
 
-body {
-  margin: 0;
-  padding: 0;
-  background: #879a97; }
-
-body * {
-  font-family: 'Function';
-  font-weight: 200; }
-
-h1 {
-  font-size: 22px;
-  font-family: 'Function Condensed';
-  font-weight: 200;
-  color: #DEAA36;
-  text-transform: uppercase;
-  letter-spacing: 0.05em; }
-
-h2 {
-  font-size: 11px;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.07em; }
-
-h1, h2 {
-  margin: 0;
-  padding: 0; }
-
 .aristotle {
   width: 1024px;
   height: 768px;
@@ -106,8 +109,9 @@ h1, h2 {
         display: flex;
         align-items: center; }
         .chrome .top .main .episodes .badge {
-          display: flex; }
-          align-items:center .chrome .top .main .episodes .badge:not(:last-child):after {
+          display: flex;
+          align-items: center; }
+          .chrome .top .main .episodes .badge:not(:last-child):after {
             content: "";
             display: block;
             margin: 0 3px;
@@ -132,74 +136,10 @@ h1, h2 {
       -webkit-clip-path: polygon(0 0, 100% 0%, 82% 100%, 0% 100%);
       clip-path: polygon(0 0, 100% 0%, 82% 100%, 0% 100%); }
 
-.label-wrapper {
-  position: absolute;
-  white-space: nowrap; }
-  .label-wrapper .label {
-    position: absolute;
-    background: rgba(2, 3, 8, 0.8);
-    color: #F9773E;
-    font-size: 13px;
-    padding: 3px 9px;
-    bottom: 8px;
-    left: -18px; }
-    .label-wrapper .label:after {
-      top: 100%;
-      left: 18px;
-      border: solid transparent;
-      content: "";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-      border-top-color: rgba(2, 3, 8, 0.8);
-      border-width: 8px;
-      margin-left: -8px; }
-    .label-wrapper .label.arrow-top {
-      top: 8px;
-      bottom: initial; }
-      .label-wrapper .label.arrow-top:after {
-        bottom: 100%;
-        top: initial;
-        border-color: rgba(0, 0, 0, 0);
-        border-bottom-color: rgba(2, 3, 8, 0.8); }
-    .label-wrapper .label.arrow-middle {
-      left: initial; }
-      .label-wrapper .label.arrow-middle:after {
-        left: 50%; }
-    .label-wrapper .label.arrow-right {
-      left: initial;
-      right: -18px; }
-      .label-wrapper .label.arrow-right:after {
-        left: initial;
-        right: 9px; }
-    .label-wrapper .label.arrow-point-left {
-      bottom: initial;
-      top: -10px;
-      left: 8px; }
-      .label-wrapper .label.arrow-point-left:after {
-        margin-left: initial;
-        left: initial;
-        top: 15%;
-        right: 100%;
-        border-color: rgba(0, 0, 0, 0);
-        border-right-color: rgba(2, 3, 8, 0.8); }
-    .label-wrapper .label.arrow-point-right {
-      left: initial;
-      bottom: initial;
-      top: -10px;
-      right: 8px; }
-      .label-wrapper .label.arrow-point-right:after {
-        margin-left: initial;
-        left: 100%;
-        top: 15%;
-        border-color: rgba(0, 0, 0, 0);
-        border-left-color: rgba(2, 3, 8, 0.8); }
-
 .movie {
   position: relative;
   transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1) 0s;
-  transition: transform-origin 0.8s cubic-bezier(0.86, 0, 0.07, 1) 0s; }
+  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1) 0s; }
   .movie .wrapper {
     position: absolute;
     width: 1024px;
@@ -222,70 +162,6 @@ h1, h2 {
 .blur {
   -webkit-filter: blur(5px);
   filter: blur(5px); }
-
-.label-wrapper {
-  position: absolute;
-  white-space: nowrap; }
-  .label-wrapper .label {
-    position: absolute;
-    background: rgba(2, 3, 8, 0.8);
-    color: #F9773E;
-    font-size: 13px;
-    padding: 3px 9px;
-    bottom: 8px;
-    left: -18px; }
-    .label-wrapper .label:after {
-      top: 100%;
-      left: 18px;
-      border: solid transparent;
-      content: "";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-      border-top-color: rgba(2, 3, 8, 0.8);
-      border-width: 8px;
-      margin-left: -8px; }
-    .label-wrapper .label.arrow-top {
-      top: 8px;
-      bottom: initial; }
-      .label-wrapper .label.arrow-top:after {
-        bottom: 100%;
-        top: initial;
-        border-color: rgba(0, 0, 0, 0);
-        border-bottom-color: rgba(2, 3, 8, 0.8); }
-    .label-wrapper .label.arrow-middle {
-      left: initial; }
-      .label-wrapper .label.arrow-middle:after {
-        left: 50%; }
-    .label-wrapper .label.arrow-right {
-      left: initial;
-      right: -18px; }
-      .label-wrapper .label.arrow-right:after {
-        left: initial;
-        right: 9px; }
-    .label-wrapper .label.arrow-point-left {
-      bottom: initial;
-      top: -10px;
-      left: 8px; }
-      .label-wrapper .label.arrow-point-left:after {
-        margin-left: initial;
-        left: initial;
-        top: 15%;
-        right: 100%;
-        border-color: rgba(0, 0, 0, 0);
-        border-right-color: rgba(2, 3, 8, 0.8); }
-    .label-wrapper .label.arrow-point-right {
-      left: initial;
-      bottom: initial;
-      top: -10px;
-      right: 8px; }
-      .label-wrapper .label.arrow-point-right:after {
-        margin-left: initial;
-        left: 100%;
-        top: 15%;
-        border-color: rgba(0, 0, 0, 0);
-        border-left-color: rgba(2, 3, 8, 0.8); }
 
 ::-webkit-input-placeholder {
   color: #ffd7a2; }
@@ -314,8 +190,11 @@ h1, h2 {
     margin-left: -41px;
     margin-top: -28px; }
     .slide-ux .ctanlee .face {
-      margin-left: 0px;
       transform-origin: 40px 0px; }
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        .slide-ux .ctanlee .face {
+          -ms-transform-origin: 41px 35px;
+          margin-top: -35px; } }
       .slide-ux .ctanlee .face .animation {
         width: 80px;
         position: absolute;
@@ -349,52 +228,81 @@ h1, h2 {
           border-color: transparent transparent transparent #ff7020; }
       .slide-ux .ctanlee .text.left {
         right: -19px;
+        left: auto;
         left: initial; }
       .slide-ux .ctanlee .text.top {
+        top: auto;
         top: initial;
         bottom: 23px; }
-  .slide-ux .defender-wrap {
-    height: 768px;
-    width: 0;
-    pointer-events: none; }
-    .slide-ux .defender-wrap .defender-card {
-      pointer-events: all;
-      max-width: 340px;
-      background: rgba(2, 3, 8, 0.8);
-      position: absolute;
-      right: 20px;
-      padding: 20px;
-      top: 50%;
-      transform: translate(0, -50%);
+  .slide-ux .closed-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.87);
+    width: 800px;
+    padding: 20px;
+    top: auto;
+    bottom: 0; }
+    .slide-ux .closed-caption .text {
+      background: black;
+      display: inline;
       color: white;
-      text-align: center; }
-      .slide-ux .defender-wrap .defender-card > * {
-        padding: 14px 0; }
-      .slide-ux .defender-wrap .defender-card .name {
+      line-height: 15px;
+      margin-top: 35px;
+      font-size: 18px;
+      line-height: 20px; }
+      .slide-ux .closed-caption .text span {
+        letter-spacing: 0.04em;
+        font-style: normal;
         color: #DEAA36;
-        border-bottom: solid 2px #6B989F; }
-      .slide-ux .defender-wrap .defender-card .quote {
-        border-bottom: solid 2px #6B989F; }
-      .slide-ux .defender-wrap .defender-card .personal1 {
-        padding: 10px 0 0;
-        color: #F9773E;
+        font-size: 20px;
+        font-family: 'Function Condensed';
+        text-transform: uppercase; }
+        .slide-ux .closed-caption .text span:after {
+          content: ": "; }
+      .slide-ux .closed-caption .text .sektimus, .slide-ux .closed-caption .text .packet {
+        color: #D13925; }
+      .slide-ux .closed-caption .text .ctanlee {
         font-style: italic; }
-      .slide-ux .defender-wrap .defender-card .info {
-        display: flex;
-        border-top: solid 2px #6B989F;
-        padding: 0; }
-        .slide-ux .defender-wrap .defender-card .info > * {
-          width: 50%;
-          padding: 20px 0; }
-        .slide-ux .defender-wrap .defender-card .info .evidences {
-          border-left: solid 2px #6B989F; }
-      .slide-ux .defender-wrap .defender-card .got-it-btn {
-        padding: 0;
-        width: 100%;
-        border: solid 2px #6B989F;
-        cursor: pointer; }
-        .slide-ux .defender-wrap .defender-card .got-it-btn:hover svg * {
-          fill: #ffc700; }
+  .slide-ux .defender-wrap .defender-card {
+    pointer-events: all;
+    max-width: 340px;
+    background: rgba(2, 3, 8, 0.8);
+    position: absolute;
+    right: 20px;
+    padding: 20px;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: white;
+    text-align: center; }
+    .slide-ux .defender-wrap .defender-card > * {
+      padding: 14px 0; }
+    .slide-ux .defender-wrap .defender-card .name {
+      color: #DEAA36;
+      border-bottom: solid 2px #6B989F; }
+    .slide-ux .defender-wrap .defender-card .quote {
+      border-bottom: solid 2px #6B989F; }
+    .slide-ux .defender-wrap .defender-card .personal1 {
+      padding: 10px 0 0;
+      color: #F9773E;
+      font-style: italic; }
+    .slide-ux .defender-wrap .defender-card .info {
+      display: flex;
+      border-top: solid 2px #6B989F;
+      padding: 0; }
+      .slide-ux .defender-wrap .defender-card .info > * {
+        width: 50%;
+        padding: 20px 0; }
+      .slide-ux .defender-wrap .defender-card .info .evidences {
+        border-left: solid 2px #6B989F; }
+    .slide-ux .defender-wrap .defender-card .got-it-btn {
+      padding: 0;
+      width: 100%;
+      border: solid 2px #6B989F;
+      cursor: pointer; }
+      .slide-ux .defender-wrap .defender-card .got-it-btn:hover svg * {
+        fill: #ffc700; }
   .slide-ux .card-wrap {
     pointer-events: none; }
     .slide-ux .card-wrap .card {
@@ -645,7 +553,8 @@ h1, h2 {
         flex-direction: column;
         align-items: center; }
         .slide-ux .duties .content .duty-content .user-content {
-          text-align: left; }
+          text-align: left;
+          width: 605px; }
       .slide-ux .duties .content .icon-btn {
         color: white;
         margin-top: 25px; }
@@ -1087,7 +996,8 @@ h1, h2 {
       display: flex;
       flex-direction: column;
       background: rgba(2, 3, 8, 0.8);
-      width: 340px;
+      min-width: 340px;
+      max-width: 380px;
       padding: 20px; }
     .slide-ux .selection-dialogue .left-section {
       margin-right: 5px;
@@ -1212,6 +1122,126 @@ input {
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     white-space: nowrap; }
+
+.label-trigger {
+  color: #6C9AA0;
+  cursor: pointer;
+  position: relative;
+  display: inline-block; }
+  .label-trigger:hover {
+    color: #F9773E; }
+  .label-trigger .label-wrapper {
+    left: 50%; }
+
+.label-wrapper {
+  position: absolute; }
+  .label-wrapper.attached {
+    top: 0; }
+  .label-wrapper .label {
+    letter-spacing: 0.03em;
+    border-radius: 3px;
+    outline: 2px solid white;
+    position: absolute;
+    background: #020308;
+    color: #F9773E;
+    font-size: 13px;
+    padding: 3px 9px;
+    bottom: 8px;
+    left: -18px; }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .label-wrapper .label {
+        display: inline-table; } }
+    .label-wrapper .label .title {
+      padding-bottom: 3px;
+      white-space: nowrap; }
+    .label-wrapper .label .text {
+      margin-top: -3px;
+      padding-bottom: 5px;
+      white-space: nowrap;
+      color: white; }
+    .label-wrapper .label:after, .label-wrapper .label:before {
+      top: 100%;
+      left: 18px;
+      border: solid transparent;
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none; }
+    .label-wrapper .label:after {
+      border-color: rgba(2, 3, 8, 0);
+      border-top-color: #020308;
+      border-width: 8px;
+      margin-left: -8px; }
+    .label-wrapper .label:before {
+      border-color: rgba(255, 255, 255, 0);
+      border-top-color: white;
+      border-width: 11px;
+      margin-left: -11px; }
+    .label-wrapper .label.arrow-top {
+      top: 8px;
+      bottom: auto;
+      bottom: initial; }
+      .label-wrapper .label.arrow-top:after, .label-wrapper .label.arrow-top:before {
+        bottom: 100%;
+        top: auto;
+        top: initial;
+        border-top-color: rgba(0, 0, 0, 0); }
+      .label-wrapper .label.arrow-top:after {
+        border-bottom-color: #020308; }
+      .label-wrapper .label.arrow-top:before {
+        border-bottom-color: white; }
+    .label-wrapper .label.arrow-middle {
+      left: auto;
+      left: initial; }
+      .label-wrapper .label.arrow-middle:after, .label-wrapper .label.arrow-middle:before {
+        left: 50%; }
+    .label-wrapper .label.arrow-right {
+      left: auto;
+      left: initial;
+      right: -18px; }
+      .label-wrapper .label.arrow-right:after, .label-wrapper .label.arrow-right:before {
+        left: auto;
+        left: initial;
+        right: 9px; }
+      .label-wrapper .label.arrow-right:before {
+        right: 6px; }
+    .label-wrapper .label.arrow-point-left {
+      bottom: auto;
+      bottom: initial;
+      top: -10px;
+      left: 8px; }
+      .label-wrapper .label.arrow-point-left:after, .label-wrapper .label.arrow-point-left:before {
+        margin-left: auto;
+        margin-left: initial;
+        left: auto;
+        left: initial;
+        top: 0;
+        right: 100%;
+        border-color: rgba(0, 0, 0, 0); }
+      .label-wrapper .label.arrow-point-left:after {
+        border-right-color: #020308;
+        top: 3px; }
+      .label-wrapper .label.arrow-point-left:before {
+        border-right-color: white; }
+    .label-wrapper .label.arrow-point-right {
+      left: auto;
+      left: initial;
+      bottom: auto;
+      bottom: initial;
+      top: -10px;
+      right: 8px; }
+      .label-wrapper .label.arrow-point-right:after, .label-wrapper .label.arrow-point-right:before {
+        margin-left: auto;
+        margin-left: initial;
+        left: 100%;
+        top: 0;
+        border-color: rgba(0, 0, 0, 0); }
+      .label-wrapper .label.arrow-point-right:after {
+        border-left-color: #020308;
+        top: 3px; }
+      .label-wrapper .label.arrow-point-right:before {
+        border-left-color: white; }
 
 .logger {
   position: fixed;

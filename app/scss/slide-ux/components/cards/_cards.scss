@@ -1,4 +1,4 @@
-.defender-wrap    { height:768px; width:0; pointer-events:none;
+.defender-wrap    { 
   .defender-card  { pointer-events:all; max-width:340px; background:rgba(#020308, 0.8);  position: absolute; right:20px; padding:20px; top: 50%; transform: translate(0, -50%); color:white; text-align:center;
     > *           { padding:14px 0}
     .name         { color:$yeller; @include blue-border();}

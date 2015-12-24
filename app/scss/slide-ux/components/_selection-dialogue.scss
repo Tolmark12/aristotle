@@ -1,7 +1,7 @@
 .selection-dialogue  { display:flex; color:white;  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
   *                  { font-weight:100; font-size:16px;}
   .left-section,
-  .right-section     { display:flex; flex-direction:column; background:rgba(#020308, 0.8); min-width:340px;  padding:20px;}
+  .right-section     { display:flex; flex-direction:column; background:rgba(#020308, 0.8); min-width:340px; max-width: 380px;  padding:20px;}
   .left-section      { margin-right:5px; border:3px solid $orange;
     .item-info       { display:none; }
     .mini-icon       { text-align:center;

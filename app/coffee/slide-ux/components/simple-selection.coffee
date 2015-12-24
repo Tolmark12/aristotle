@@ -26,6 +26,6 @@ module.exports = class SimpleSelection extends Component
   addEventListeners : ($el, data) ->
     $buttons = $(".button", $el)
     $buttons.on "click", (e)=>
-      $targ = $(e.target)
+      $targ = $(e.currentTarget)
       data = @items[ $targ.attr('id') ]
       aristotle.commander.do data.click

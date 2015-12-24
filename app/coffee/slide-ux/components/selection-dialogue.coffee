@@ -6,10 +6,12 @@ module.exports = class SelectionDialogue extends Component
     jadeData = @generateConfigData data
 
     @$node = $ jadeTemplate['slide-ux/components/dialogue/selection-dialogue']()
-    $left  = $ jadeTemplate['slide-ux/components/dialogue/dialogue-details']( jadeData )
+    @$left  = $ jadeTemplate['slide-ux/components/dialogue/dialogue-details']( jadeData )
     $right = $ jadeTemplate['slide-ux/components/dialogue/dialogue-buttons']( jadeData )
 
-    @$node.append $left
+    @$left.addClass "hidden"
+
+    @$node.append @$left
     @$node.append $right
 
     @addEventListeners @$node, data
@@ -33,7 +35,7 @@ module.exports = class SelectionDialogue extends Component
   addEventListeners : ($el, data) ->
     $buttons = $(".button", $el)
     $buttons.on "click", (e)=>
-      $targ = $(e.target)
+      $targ = $(e.currentTarget)
       @activateItem( $targ, @items[ $targ.attr('id') ])
 
     $("#action-btn", $el).on "click", (e)=>
@@ -41,7 +43,7 @@ module.exports = class SelectionDialogue extends Component
       @destroy()
 
   activateItem : ($button, item) ->
-    $(".intro", @$node).css display:"none"
+    @$left.removeClass "hidden"
     $(".item-info", @$node).css display:"block"
     $(".button", @$node).removeClass "active"
     $button.addClass "active"

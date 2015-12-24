@@ -1,13 +1,14 @@
 Chapter        = require 'episode/chapter'
-# EpisodeBookend = require 'episode/episode-bookend'
 Sequence       = require 'misc/Sequence'
-
 
 module.exports = class Episode
 
   constructor: (trainingData, @movie, @ux) ->
     @nextRankId = trainingData.nextRankId
     aristotle.devTools.go trainingData.dev, trainingData.chapters
+
+    PubSub.publish "episode.loaded", trainingData
+
     @createChapters trainingData
     if trainingData.skipSlate
       @playChapter()

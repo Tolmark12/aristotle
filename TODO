@@ -3,12 +3,8 @@ To Build:
     - I suppose there's no reason why we can't save the state
   ☐ Clean up the caching of svgs
   ☐ Add a `savePositions` method for saving the positions of elements pre caching
-  ☐ Chapter Headings
   ☐ Progress Bar at bottom
   ☐ Change Mode (Learn mode, Explore Mode, Simulate)
-  ☐ Ctanlee next - number
-  ☐ Add local files to the gulpfile.coffee
-  ☐ Caching
 
 
 Complex Animations:
@@ -18,14 +14,18 @@ Complex Animations:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Chapter Headings @done(2015-12-23 16:48) @project(To Build)
+  ✔ Ctanlee next - number @done(2015-12-23 16:41) @project(To Build)
+  ✔ Add local files to the gulpfile.coffee @done(2015-12-23 16:48) @project(To Build)
+  ✔ Caching @done(2015-12-23 16:48) @project(To Build)
   ✔ Easier variable usage @done(2015-12-09 12:04) @project(To Build)
   ✔ Episode asset directory ~1/asdf.json @done(2015-12-15 12:38) @project(To Build)
   ✔ Duties section @done(2015-12-16 12:53) @project(To Build)
   ✔ ui pages @done(2015-12-15 12:38) @project(Episode1)
   ✔ Ctanlee delay @done(2015-12-16 12:53) @project(Complex Animations)
   ✔ un-caching @done(2015-12-16 12:53)
-  ☐ Make caching work on other browsers
+  ✔ Make caching work on other browsers @done(2015-12-23 16:41) @project(Archive)
     ✔ chrome @done(2015-12-15 12:39)
     ✔ firefox @done(2015-12-15 12:41)
     ✔ ie @done(2015-12-15 12:39)
-    ☐ safari
+    ✔ safari @done(2015-12-23 16:41) @project(Archive)

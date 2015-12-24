@@ -240,7 +240,8 @@ gulp.task 'bumpVersion',                                ()    -> bumpBowerVersio
 gulp.task 'copyFonts', ['bowerLibs'],                   ()    -> fonts('rel/assets/fonts', ->)
 gulp.task 'copyEpisodeScripts', ['copyFonts'],          ()    -> episodeScript('rel/episodes', ->)
 gulp.task 'copyEpisodeAssets', ['copyEpisodeScripts'],  ()    -> episodeAssets('rel/episodes', ->)
-gulp.task 'copyStatics', ['copyEpisodeAssets'],         ()    -> copyAssets('rel/assets', ->)
+gulp.task 'copyLocalAssets', ['copyEpisodeAssets'],     ()    -> localAssets('rel/local', ->)
+gulp.task 'copyStatics', ['copyLocalAssets'],           ()    -> copyAssets('rel/assets', ->)
 gulp.task 'releaseCompile', ['copyStatics'],            (cb)  -> compileFiles(false, cb)
 gulp.task 'minify',['releaseCompile'],                  ()    -> minifyAndJoin();
 gulp.task 'rel', ['rel:clean', 'bumpVersion', 'minify'],      -> #pushViaGit()

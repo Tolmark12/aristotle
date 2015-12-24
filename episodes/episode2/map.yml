@@ -21,6 +21,7 @@ chapters:
     slides:
       # 1 Background Build in ==========================================
       -
+        title: Facility Selector
         movie:
           layers:
             - {depth: 0, content: c1-sky.svg }
@@ -32,6 +33,7 @@ chapters:
       - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
       # 1 Dialogue BES Cyber Assets  ==========================================
       -
+        title: BES Cyber Assets
         duration: {kind: ux}
         ux:
           components:
@@ -48,6 +50,7 @@ chapters:
                   a: {title: "BCA"}
       # 1 Zoom Assets overview  ==========================================
       -
+        title: Asset Overview
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
@@ -293,7 +296,7 @@ chapters:
             -
               kind: explore-cards
               config:
-                required-views: 5 # 1 (number of cards they have to view to move on to next slide)
+                required-views: 5 # (number of cards they have to view to move on to next slide)
                 template: equipment
                 cards:
                   -
@@ -495,10 +498,13 @@ chapters:
         ux:
           components:
             -
-              kind: defender-cards
+              kind: explore-cards
               config:
-                defenders:
-                  arnold:
+                required-views: 3
+                template: defender
+                cards:
+                  -
+                    hit: arnold
                     name: Arnold, Mr. Electrical Worker
                     quote: This country was built by people wearing denim.
                     personal1: Proud of
@@ -509,7 +515,8 @@ chapters:
                     evidences:
                       - Door System Logs
                       - Change Control Checklist
-                  shelly:
+                  -
+                    hit: shelly
                     name: Shelly, CIP Senior Manager
                     quote: Keeping head and Standards high.
                     Personal1: Remembers fondly
@@ -520,7 +527,8 @@ chapters:
                     evidences:
                       - Signed Cyber Security Program
                       - Signed delegations documentation
-                  jerry:
+                  -
+                    hit: jerry
                     name: Jerry, that guy from HR
                     quote: Always ready to give out hugs…while respecting your personal space
                     Personal1: Holds record for
@@ -531,7 +539,8 @@ chapters:
                     evidences:
                       - Dated personnel risk assessment records
                       - Dated workflow with approvals
-                  brad:
+                  -
+                    hit: brad
                     name: Brad, Compliance Team Warrior
                     quote: Compliance is just another way to say 'I love you
                     Personal1: Favorite possession
@@ -542,7 +551,8 @@ chapters:
                     evidences:
                       - Signed and dated Cyber Security Program with accompanying processes
                       - Signed and dated lists of assets
-                  rod:
+                  -
+                    hit: rod
                     name: Rod, the Smooth Operator
                     quote: 99% routine, 1% sheer terror.
                     Personal1: Daily caffeine quota is
@@ -553,7 +563,8 @@ chapters:
                     evidences:
                       - Door System Logs
                       - Computer System Events
-                  richard:
+                  -
+                    hit: richard
                     name: Richard, Your IT Dude
                     quote: I'm not anti-social. I'm just not user friendly
                     Personal1: Lifetime accomplishment
@@ -564,7 +575,8 @@ chapters:
                     evidences:
                       - Production Change Forms
                       - Task Documentation
-                  lisa:
+                  -
+                    hit: lisa
                     name: Lisa, Supervisor Who Wears Prada
                     quote: Working weekends allows for a jumpstart of the work week
                     Personal1: Happiest when
