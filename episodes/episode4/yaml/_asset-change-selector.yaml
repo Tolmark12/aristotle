@@ -39,7 +39,7 @@ ux:
                   changeBuild: ~4/double_deuce.json
                   changeLoop:
             btnTxt: Double Deuce Pulverizer
-            icon: mini-substation
+            icon: mini-double-deuce
             blurb: "Testosterone Level: +400% <br/>Never Been To: Band Camp"
             details: "The legendary Double Deuce Pulverizer is guaranteed to blow minds and turn your assets into craters full of nothing but smoking envy and inferiority complex-riddled rubble. <br/>Product Jingle - Twice the fists for twice the fun, it's the disposal device for everyone!"
           -
@@ -52,7 +52,7 @@ ux:
                   changeBuild: ~4/mr_fusion.json
                   changeLoop:
             btnTxt: Mr. Fusion
-            icon: mini-generation
+            icon: mini-mr-fusion
             blurb: "Flux Capacity: 1.21 <br/>Patent Approved: 1985"
             details: "Emmett Brown Laboratories presents Mr. Fusion, the disposal device for discerning utilities. Heated plasma will incinerate your cyber assets, while generating enough energy to make your coffee or run your time travel device. Buy this one lightning-quick if you know watts good for you. <br/>Safety Manual Tip: This is heavy."
           -
@@ -65,6 +65,6 @@ ux:
                   changeBuild: ~4/dematerializer.json
                   changeLoop:
             btnTxt: The De-Materializer
-            icon: mini-control-center
+            icon: mini-dematerializer
             blurb: "Projectile Type: Zalinski Shell <br/>Firing Method: Pneumatic Rail Gun"
             details: "New technology from Deflagration Industries promises to completely eradicate BCSI. The De-Materializer will blow Cyber Assets to their constituent atoms, along with everything within a zone of twelve thousand square yards if the blast shield isn't engaged. <br/>Auditors are reported to look very favorably on these devices (they like big explosions)."

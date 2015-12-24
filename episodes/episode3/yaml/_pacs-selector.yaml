@@ -39,7 +39,7 @@ ux:
                   pacsBuild: ~3/perimeter_card_scanner.json
                   pacsLoop:
             btnTxt: The Card Guard XT
-            icon: mini-substation
+            icon: mini-card-scanner
             blurb: "Uses personal ID badge to confirm user against database. <br/>I'm gonna need to see some ID"
             details: "Personalized Lanyard Coolness Factor <br/>-3 Bad Photo Penalty <br/>+10 Robot Articulation Challenge"
           -
@@ -52,7 +52,7 @@ ux:
                   pacsBuild: ~3/perimeter_hal_scanner.json
                   pacsLoop:
             btnTxt: HAL 9000 Eye Scanner
-            icon: mini-generation
+            icon: mini-hal-scanner
             blurb: "Uses optical recognition to match user against database. <br/>I'm sorry Dave, but I can't let you in without proper access."
             details: "+2 Style Points <br/>Eye of the Beholder Bonus <br/>+5 Robot Recognition"
           -
@@ -65,6 +65,6 @@ ux:
                   pacsBuild: ~3/perimeter_kraken_scanner.json
                   pacsLoop:
             btnTxt: Watery Grave Kraken Sensor
-            icon: mini-control-center
+            icon: mini-kraken-scanner
             blurb: "Kraken tentacle analyzes user body shape against database. <br/>Don't forget to bring a towel."
             details: "+5 Facility Envy Points <br/>Enemy Intimidation Bonus <br/>10% Chance of Robot Electrocution"

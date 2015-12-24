@@ -146,6 +146,13 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Port Defense Selector ==========================================
       - !!inc/file ./episodes/episode5/yaml/_access-control-selector.yaml
+      # 1 Clear Asset Perimeter ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 11, content: clear }
+            - {depth: 10, content: clear }
+        duration: {kind: time, seconds: 1 }
       # 1 Dialogue Removing Access ==========================================
       -
         duration: {kind: ux}
@@ -164,7 +171,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: placeholder_15_sec.json }
+            - {depth: 17, content: $accessFail.json }
         dialogue:
           defaults:
             next: audio
@@ -191,7 +198,7 @@ chapters:
         movie:
           layers:
             - {depth: 17, content: clear }
-            - {depth: 17, content: $accessFail, events: [complete] }
+            - {depth: 17, content: $accessFail }
         dialogue:
           defaults:
             next: audio

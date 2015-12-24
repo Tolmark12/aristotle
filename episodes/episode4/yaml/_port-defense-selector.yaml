@@ -40,7 +40,7 @@ ux:
                   portInstall: ~4/duct_tape_install.json
                   portDefend: ~4/duct_tape_defend.json
             btnTxt: Port Duct Tape
-            icon: mini-substation
+            icon: mini-duct-tape
             blurb: "Celebrity Sponsor: MacGyver <br/>Also Fixes: Everything"
             details: "Do we really need to explain this? <br/>The Defender's Secret Weapon"
           -
@@ -54,7 +54,7 @@ ux:
                   portInstall: ~4/kragle_install.json
                   portDefend: ~4/kragle_defend.json
             btnTxt: The Kragle
-            icon: mini-generation
+            icon: mini-kragle
             blurb: "Variants: Regular Glue, Super Glue, Ludicrous Glue. <br/>Other Uses: Fixing Cuts, Fingernails, and Pantyhose Runs."
             details: "Are people always plugging things into your assets and messing with your stuff? Make those physical ports permanently unavailable to people and robots alike with a good injection of this sticky filler. <br/>Every port is awesome!"
           -
@@ -68,6 +68,6 @@ ux:
                   portInstall: ~4/umpire_install.json
                   portDefend: ~4/umpire_defend.json
             btnTxt: Port Umpire
-            icon: mini-control-center
+            icon: mini-umpire
             blurb: "Ejections: Too Many to Count <br/>Bad Calls: Never!"
             details: "Officiates the game of asset port defense, ensuring Defenders follow the rules when they throw devices at our physical ports. Following the grand tradition of the game, any illegal devices are promptly ejected. <br/>Product Version 5.0 - The Umpire Strikes Back"

@@ -30,6 +30,6 @@ ux:
                   patchBuild: ~g/patch_server.json
                   patchLoop: ~g/patch_install.json
             btnTxt: Patches the Server
-            icon: mini-substation
+            icon: mini-patch-server
             blurb: "Patching, patching, give it thought - it's like armor against the bots."
             details: "Are your out-of-date systems being hit on by unsavory types? Are you tired of your assets attracting all the wrong kinds of attention? \"Patches\" will apply the latest anti-virus definitions and security patches to your assets, maintaining their good reputation and avoiding the threat of electronically-transmitted viruses."
