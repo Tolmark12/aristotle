@@ -2,6 +2,9 @@ ProgressMap = require 'chrome/progress-map'
 
 module.exports = class ProgressDisplay
 
-  constructor: () ->
-    progessMap = new ProgressMap()
+  constructor: (@$el) ->
+    $node = $ jadeTemplate['chrome-ui/progress']( {} )
+    $el.append $node
+
+    progessMap = new ProgressMap( $node )
 

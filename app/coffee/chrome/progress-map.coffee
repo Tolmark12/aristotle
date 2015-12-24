@@ -1,7 +1,13 @@
 module.exports = class ProgressMap
 
-  constructor: () ->
-    PubSub.subscribe 'episode.loaded', (m, data)=> @parseEpisodeData data
+  constructor: (@$el) ->
+    PubSub.subscribe 'episode.loaded', (m, data)=> @buildMap data
+
+  buildMap : (data) ->
+    mapData = @parseEpisodeData data
+    $node = $ jadeTemplate['chrome-ui/progress-map']( mapData )
+    @$el.append $node
+
 
   parseEpisodeData : (data) ->
     items = []
@@ -25,10 +31,8 @@ module.exports = class ProgressMap
     return null if !slide.ux.components?
     for component in slide.ux.components
       if component.kind == "quiz"
-        console.log "quix"
         return {kind:"quiz", title:"quiz"}
       else if component.kind == "duties"
-        console.log "dutz"
         return {kind:"duties", title:"Duty Review"}
     return null
 
