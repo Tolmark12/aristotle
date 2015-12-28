@@ -11,6 +11,7 @@ getQueryVariable = (variable)->
 # See if there is a GET var 'episode'
 userSpecifiedEpisode = getQueryVariable 'episode'
 cache                = getQueryVariable 'cache'
+isLocal              = getQueryVariable('local') == "true"
 
 # Load either the user specified episode, or a default one
 episode = if !userSpecifiedEpisode then "episode2" else "#{userSpecifiedEpisode}"
@@ -25,7 +26,7 @@ switch episode
   when "episode7" then episode = "7"
 
 
-aristotle = new Aristotle $(".holder"), "/episodes", "/local", episode, true
+aristotle = new Aristotle $(".holder"), "/episodes", "/local", episode, true, isLocal
 
 if cache == "false" then aristotle.dontCache = true
 

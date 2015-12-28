@@ -16,13 +16,13 @@ isInternetExp = require 'misc/browser-detect'
 
 class Aristotle
 
-  constructor: ($el, @episodesDir, @localDir, @episodeNum, isDevMode) ->
+  constructor: ($el, @episodesDir, @localDir, @episodeNum, isDevMode, isLocal) ->
     window.aristotle = @
     aristotle.isIE = isInternetExp()
     @setDevMode isDevMode
     @build $el
     globals  = new GlobalVars()
-    lmsProxy = new LMSProxy(isDevMode)
+    lmsProxy = new LMSProxy isLocal
     lmsProxy.begin @start
 
   start : () =>

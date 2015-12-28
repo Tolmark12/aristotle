@@ -77,11 +77,6 @@ module.exports = class Layer
     svg  = $svg[0]
     $img = $( $.parseHTML("<img />") )
     img  = $img[0]
-    console.log "------"
-    if $svg.length == 0
-      console.log "Looks like it couldn't find any svgs!"
-    console.log $svg
-    console.log svg
     window.traceLayer = @
     try
       svg.toDataURL 'image/png', {
