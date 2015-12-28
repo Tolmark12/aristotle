@@ -1,8 +1,8 @@
 module.exports = class LMSProxy
 
-  constructor: (isDevMode) ->
+  constructor: (isLocal) ->
     # for local testing, simulate the lms API
-    if isDevMode then @initScormStubs()
+    if isLocal then @initScormStubs()
     aristotle.lmsProxy = @
     PubSub.subscribe 'state.save',      (m, data)=> @saveState()
     PubSub.subscribe 'state.load',      (m, data)=> @loadState()
@@ -12,7 +12,7 @@ module.exports = class LMSProxy
     if elbScorm.initCourse()
       @user      = elbScorm.GetUserName()    # ex:       Kingsley, James
       @userId    = elbScorm.GetUserID()      # I assume: asf0h30asbu30
-      stateData = elbScorm.GetResumeData()  # ojb
+      stateData  = elbScorm.GetResumeData()  # ojb
       if stateData?
         aristotle.globals.vars = stateData.globalVars
       cb()

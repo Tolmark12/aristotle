@@ -166,7 +166,8 @@ minifyAndJoin = () ->
       usemin
         css : [ minifyCss(), 'concat']
         html: [ minifyHtml({empty: true})]
-        js  : [ uglify()]
+        js  : [ ]
+        # js  : [ uglify()]
     ).pipe gulp.dest('rel/')
   )
 
