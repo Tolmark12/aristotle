@@ -1,5 +1,5 @@
 @mixin include-font($fontName, $fileName, $svg, $weight, $style){
-  $filePath : "/assets/fonts";
+  $filePath : "../assets/fonts";
   @font-face {
       font-family:$fontName;
       src: url("#{$filePath}/#{$fileName}-webfont.eot");
