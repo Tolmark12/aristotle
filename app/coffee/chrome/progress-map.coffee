@@ -19,7 +19,10 @@ module.exports = class ProgressMap
     @$el.append @$node
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
 
-    $(".milestone", @$node).on "click", (e)=> console.log "click"
+    # $milestone = $(".milestone", @$node)
+    # $milestone.on "click",     (e)=> @onMileStoneClick $(e.currentTarget)
+    # $milestone.on "mouseover", (e)=> @onMileStoneOver $(e.currentTarget)
+    # $milestone.on "mouseout",  (e)=> @onMileStoneOut $(e.currentTarget)
 
   parseEpisodeData : (data) ->
     items = []
@@ -58,5 +61,15 @@ module.exports = class ProgressMap
         return {kind:"duties", title:"Duty Review"}
     return null
 
+  # ------------------------------------ Events
+
+  onMileStoneClick : ($el) ->
+    # !$(e.currentTarget).hasClass "viewed"
+    PubSub.publish 'episode.goto', $el.attr "data-title"
+  onMileStoneOver  : ($el) ->
+    return if !$el.hasClass "viewed" #Stop if this slide hasn't been viewed
+    PubSub.publish 'label.attach', { el:$el, content:{title: $el.attr("data-title")} }
+  onMileStoneOut   : ($el) ->
+    PubSub.publish 'label.destroy', $el
 
 

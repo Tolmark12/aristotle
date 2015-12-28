@@ -4,6 +4,7 @@ SVGAnimation = require "movie/svg-animation"
 module.exports = class Slide
 
   constructor: (@movie, @slideUX, @slideData, @onSlideComplete) ->
+    @title = @slideData.title
 
   play : (onComplete) =>
     if @slideData.title?

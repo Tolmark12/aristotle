@@ -18,6 +18,7 @@ module.exports = class Component
 
       configData = data.labels[ $el.attr('data-label')]
       configData.cssClass = "arrow-right"
+      console.log configData
       PubSub.publish 'label.attach', { el:$el, content:configData}
 
     $a.on "mouseout", (e)->

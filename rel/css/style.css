@@ -150,9 +150,18 @@ h1, h2 {
       align-items: center;
       padding: 6px 8px 0; }
       .chrome .progress .progress-map .milestone {
-        opacity: 0.25; }
+        opacity: 0.25;
+        display: inline-block; }
+        .chrome .progress .progress-map .milestone .label-wrapper {
+          margin-top: 10px;
+          margin-left: 8px; }
+        .chrome .progress .progress-map .milestone * {
+          pointer-events: none; }
         .chrome .progress .progress-map .milestone.viewed {
-          opacity: 1; }
+          opacity: 1;
+          cursor: pointer; }
+          .chrome .progress .progress-map .milestone.viewed:hover svg * {
+            fill: #DEAA36; }
       .chrome .progress .progress-map:after, .chrome .progress .progress-map:before {
         height: 0;
         width: 0;

@@ -4,9 +4,11 @@ Sequence       = require 'misc/Sequence'
 module.exports = class Episode
 
   constructor: (trainingData, @movie, @ux) ->
+    aristotle.episodeData = trainingData
     @nextRankId = trainingData.nextRankId
     aristotle.devTools.go trainingData.dev, trainingData.chapters
 
+    PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data
     PubSub.publish "episode.loaded", trainingData
 
     @createChapters trainingData
@@ -27,6 +29,30 @@ module.exports = class Episode
     @ux.populate( {components:[
       {kind: "episode-outro", config: { rankId:@nextRankId, rank:aristotle.dictionary.get(@nextRankId) } }
     ]})
+
+  # Goto a certain point in the training based on the title of the
+  # slide, chapter, quiz or duties element
+  gotoLocationByTitle : (title) ->
+    PubSub.publish 'movie.layers.clear-all'
+    layers = {}
+    for chapter in aristotle.episodeData.chapters
+      chapterTitle = chapter.title
+      if chapter.title == title
+        break
+
+      for slide in chapter.slides
+        if slide.movie?.layers?
+          for layer in slide.movie.layers
+            layers[layer.depth] = layer
+
+        if slide.title == title
+          slideTitle = slide.title
+          breakLoop1 = true; break
+      break if breakLoop1
+
+    @chapters.activateItemByParam 'title', chapterTitle
+    @playChapter slide.title
+
 
   createAndShowOutro : () ->
 
@@ -49,9 +75,9 @@ module.exports = class Episode
     @chapters.getCurrentItem().destroy()
     @nextChapter()
 
-  playChapter     : () =>
+  playChapter     : (firstSlide=null) =>
     PubSub.publish 'state.rehydrate'
-    @chapters.getCurrentItem().start @chapterComplete
+    @chapters.getCurrentItem().start firstSlide
     PubSub.publish 'chapter.started', @chapters.getCurrentItem().chapterData.title
 
   episodeComplete : () ->

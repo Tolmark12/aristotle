@@ -1,5 +1,5 @@
 .progress-map 
   each milestone in milestones
-    .milestone(id="#{milestone.id}")
+    .milestone(id="#{milestone.id}" data-title="#{ milestone.title }")
       img.shadow-icon(data-src="#{ milestone.icon }")
   
