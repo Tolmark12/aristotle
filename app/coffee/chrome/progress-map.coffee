@@ -8,7 +8,9 @@ module.exports = class ProgressMap
     PubSub.subscribe 'duties.activated', (m, data)=> @lightIcon(data)
 
   lightIcon : (title) ->
-
+    $el = $("##{ @titleToId(title) }", @$node)
+    $el.addClass "viewed"
+    $el.prevAll().addClass "viewed"
 
   buildMap : (data) ->
     mapData = @parseEpisodeData data
@@ -17,10 +19,12 @@ module.exports = class ProgressMap
     @$el.append @$node
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
 
+    $(".milestone", @$node).on "click", (e)=> console.log "click"
+
   parseEpisodeData : (data) ->
     items = []
     for chapter in data.chapters
-      items.push {kind: "chapter", title:@titleToId(chapter.title) }
+      items.push {kind: "chapter", title:chapter.title, id: @titleToId(chapter.title) }
       for slide in chapter.slides
         item = @getItem slide
         if slide.title?
@@ -28,7 +32,7 @@ module.exports = class ProgressMap
           item.title = slide.title
 
         if item?
-          item.title = @titleToId(item.title)
+          item.id = @titleToId(item.title)
           items.push item
     items
 

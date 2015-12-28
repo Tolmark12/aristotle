@@ -6,12 +6,13 @@ module.exports = class Slides
   constructor: (trainingData, movie, ux, @onShowComplete) ->
     aristotle.slides = @
     @createSlides trainingData, movie, ux
-    @token1 = PubSub.subscribe 'slides.next',       ()=> @nextSlide()
-    @token2 = PubSub.subscribe 'slides.next-slide', ()=> @nextSlide()
-    @token3 = PubSub.subscribe 'slides.replay',     ()=> @replay()
-    @token4 = PubSub.subscribe 'slides.prev-slide', ()=> @prevSlide()
-    @token5 = PubSub.subscribe 'slides.goto', (m, data)=> @playSlideByIndex data
-    @token5 = PubSub.subscribe 'movie.report',      ()=> console.log @getIndexAndTotal()
+    token1 = PubSub.subscribe 'slides.next',       ()=> @nextSlide()
+    token2 = PubSub.subscribe 'slides.next-slide', ()=> @nextSlide()
+    token3 = PubSub.subscribe 'slides.replay',     ()=> @replay()
+    token4 = PubSub.subscribe 'slides.prev-slide', ()=> @prevSlide()
+    token5 = PubSub.subscribe 'slides.goto', (m, data)=> @playSlideByIndex data
+    token6 = PubSub.subscribe 'movie.report',      ()=> console.log @getIndexAndTotal()
+    @subscriptionTokens = [token1, token2, token3, token4, token5, token6]
 
 
   createSlides : (trainingData, movie, ux) ->
@@ -42,8 +43,8 @@ module.exports = class Slides
 
   destroy : () ->
     @slides = null
-    PubSub.unsubscribe @nextToken
-    PubSub.unsubscribe @nextToken2
+    PubSub.unsubscribe token for token in @subscriptionTokens
+
 
   start             : () -> @playSlide()
   slideComplete     : () => @nextSlide()

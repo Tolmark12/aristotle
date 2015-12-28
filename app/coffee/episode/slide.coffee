@@ -6,6 +6,8 @@ module.exports = class Slide
   constructor: (@movie, @slideUX, @slideData, @onSlideComplete) ->
 
   play : (onComplete) =>
+    if @slideData.title?
+      PubSub.publish 'slide.activated', @slideData.title
     @movie.populate @slideData.movie
     @slideUX.populate @slideData.ux
     @setDuration()

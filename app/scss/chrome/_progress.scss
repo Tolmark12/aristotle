@@ -1,7 +1,13 @@
-.progress       { position:absolute;  position: absolute; left: 50%; transform: translate(-50%); bottom: -1px;
-  .progress-map { background:rgba(black, 0.5); display:flex; align-items:center; padding: 6px 20px 0;
-    .milestone  { opacity:0.5;
-      &.viewed  { opacity:1}
+$progress-height : 50px;
+$progress-bg     : rgba(black, 0.5);
+$progress-size   : 15px;
+.progress            { position:absolute; left: 50%; transform: translate(-50%); bottom: -1px; pointer-events:all;
+  .progress-map      { background:$progress-bg; display:flex; align-items:center; padding: 6px 8px 0;
+    .milestone       { opacity:0.25;
+      &.viewed       { opacity:1}
     }
+    &:after,&:before { height: 0; width: 0; content: ""; display: block; position: absolute; top: 0; }
+    &:before         { border-bottom: $progress-height solid $progress-bg; border-left: $progress-size solid transparent; left:-$progress-size ; }
+    &:after          { border-bottom: $progress-height solid $progress-bg; border-right: $progress-size solid transparent; right:-$progress-size; }
   }
 }

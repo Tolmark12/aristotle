@@ -33,6 +33,8 @@ module.exports = class Ctanlee
       @goto data
     if data.emo? || !@$currentAnimation?
       @setEmotion data.emo
+    else
+      @setEmotion "idle"
 
   showText : () -> @$speechBox.removeClass "hidden"
   hideText : () -> @$speechBox.addClass "hidden"
@@ -62,9 +64,7 @@ module.exports = class Ctanlee
       when "right"    then path = 'ctanlee-right.json'
       when "surprise" then path = 'ctanlee-surprise.json'
       when "unhappy"  then path = 'ctanlee-unhappy.json'
-      else
-        if !@$oldAnimation?
-          path = 'ctanlee-happy.json'
+      else                 path = 'ctanlee-idle.json'
 
     path = aristotle.getAssetPath "~g/ctanlee/#{path}"
     @oldAnimation = @animation
@@ -79,8 +79,10 @@ module.exports = class Ctanlee
     if @oldAnimation?
       @oldAnimation.destroy()
       @$oldAnimation.remove()
+      @oldAnimation = null
 
   resetRotation : (time=100) ->
+
     @$faceHolder.velocity "stop", true
     @$faceHolder.velocity({rotateZ:0}, {duration:time})
 
