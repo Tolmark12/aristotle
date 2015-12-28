@@ -1,0 +1,43 @@
+# == a: is the Answer option displayed ==========================================
+# == r: is the Response from the system to clicking this Answer ==========================================
+# == c: indicates this Answer was the Correct Answer  ==========================================
+# == EDIT QUIZ QUESTIONS BELOW ==========================================
+-
+  question: In this scenario, what do you expect to see?
+  answers:
+    -
+      a: Bigfoot
+      r: Better luck next time
+    -
+      a: A single server
+      r: Better luck next time
+    -
+      a: This is the right answer
+      r: Nice, you're getting the hang of this!
+      c: true
+-
+  question: What is the shortest distance between two points
+  answers:
+    -
+      a: A parallel line
+      r: Better luck next time
+    -
+      a: A straight line
+      r: Nice, I knew you were smart!
+      c: true
+    -
+      a: A curve
+      r: Better luck next time
+-
+  question: What is the shortest distance between two points
+  answers:
+    -
+      a: A parallel line
+      r: Better luck next time
+    -
+      a: A straight line
+      r: Nice, I knew you were smart!
+      c: true
+    -
+      a: A curve
+      r: Better luck next time
