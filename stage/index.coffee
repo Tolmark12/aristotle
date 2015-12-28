@@ -26,7 +26,7 @@ switch episode
   when "episode7" then episode = "7"
 
 
-aristotle = new Aristotle $(".holder"), "/episodes", "/local", episode, true, isLocal
+aristotle = new Aristotle $(".holder"), "episodes", "local", episode, true, isLocal
 
 if cache == "false" then aristotle.dontCache = true
 
