@@ -14,7 +14,7 @@ cache                = getQueryVariable 'cache'
 isLocal              = getQueryVariable('local') == "true"
 
 # Load either the user specified episode, or a default one
-episode = if !userSpecifiedEpisode then "episode2" else "#{userSpecifiedEpisode}"
+episode = if !userSpecifiedEpisode then "episode3" else "#{userSpecifiedEpisode}"
 
 switch episode
   when "episode1" then episode = "1"
