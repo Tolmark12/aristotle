@@ -19,3 +19,4 @@ module.exports = class GenericUi
   showContinueStrip : () -> @$continueStrip.removeClass "hidden"
   hideContinueStrip : () -> @$continueStrip.addClass "hidden"
 
+  destroy : () ->

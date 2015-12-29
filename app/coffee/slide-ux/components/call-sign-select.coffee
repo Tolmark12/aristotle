@@ -17,5 +17,6 @@ module.exports = class CallSignSelect extends Component
 
   saveCallSign : () ->
     if @callSign?.length > 1
-      # TODO: Actually save the callsign to the global vars
+      aristotle.globals.set 'callSign', @callSign
+      PubSub.publish 'callsign.selected', @callSign
       PubSub.publish 'slides.next'

@@ -5,6 +5,8 @@ module.exports = class ProgressDisplay
   constructor: (@$el) ->
     $node = $ jadeTemplate['chrome-ui/progress']( {} )
     @$el.append $node
+    @progessMap = new ProgressMap( $node )
 
-    progessMap = new ProgressMap( $node )
-
+  destroy : () ->
+    if @progressMap?
+      @progressMap.destroy()

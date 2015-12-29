@@ -1,4 +1,3 @@
-APIproxy      = require "misc/api-proxy"
 ChromeUI      = require "chrome/chrome-ui"
 Commander     = require 'misc/commander'
 DevTools      = require 'misc/dev-tools'
@@ -16,36 +15,57 @@ isInternetExp = require 'misc/browser-detect'
 
 class Aristotle
 
-  constructor: ($el, @episodesDir, @localDir, @episodeNum, isDevMode, isLocal) ->
+  constructor: (@$el, @episodesDir, @localDir, @episodeNum, isDevMode, @isLocal) ->
     window.aristotle = @
     aristotle.isIE = isInternetExp()
+    commander      = new Commander()
+    dictionary     = new Dictionary()
+    globals        = new GlobalVars()
+    lmsProxy       = new LMSProxy @isLocal
+    parser         = new Parser()
+    soundFx        = new SoundFX()
+    shadowIcons    = new pxicons.ShadowIcons()
     @setDevMode isDevMode
-    @build $el
-    globals  = new GlobalVars()
-    lmsProxy = new LMSProxy isLocal
-    lmsProxy.begin @start
+    lmsProxy.begin @begin
 
-  start : () =>
+  begin : () =>
+    console.log aristotle.lmsProxy.store
+    if aristotle.lmsProxy.store?
+      if aristotle.lmsProxy.store.location?
+        if aristotle.lmsProxy.store.location.episodeNum
+          @episodeNum = aristotle.lmsProxy.store.location.episodeNum
+
+    PubSub.subscribe 'episode.load', (m, data)=>
+      @episodeNum = data
+      @init()
+
+    PubSub.publish 'episode.load', @episodeNum
+
+  init : () ->
+    if @chromeUI?
+      @deleteOldAssets()
+    @build()
     episodeLoader = new EpisodeLoader @onJsonLoaded
 
   onJsonLoaded : (episodeData) =>
-    episode = new Episode episodeData, @movie, @slideUX, @chromeUI
+    @episode = new Episode episodeData, @movie, @slideUX, @chromeUI
 
-  build : ($el) ->
+  build : () ->
     $base = $ jadeTemplate['aristotle']( {} )
-    $el.append $base
-    shadowIcons = new pxicons.ShadowIcons();
+    @$el.append $base
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, $base
-
-    commander    = new Commander()
-    dictionary   = new Dictionary()
-    lmsProxy     = new LMSProxy()
-    parser       = new Parser()
-    soundFx      = new SoundFX()
-    apiProxy     = new APIproxy "http://127.0.0.1:1337"
     @chromeUI    = new ChromeUI $(".chrome",   $base)
     @slideUX     = new SlideUX  $(".slide-ux", $base)
     @movie       = new Movie    $(".movie",    $base)
+
+  deleteOldAssets : () ->
+    $base = null
+    @episode.destroy()
+    @chromeUI.destroy()
+    @slideUX.destroy()
+    @movie.destroy()
+    @$el.empty()
+    @episode = @chromeUI = @slideUX = @movie = null
 
   setDevMode : (devMode) ->
     logger             = new Logger $('body'), devMode

@@ -15,10 +15,11 @@ module.exports = class GlobalVars
     @vars[key] = val
     PubSub.publish 'state.save'
 
-  get : (str) ->
+  get : (str, throwErrors=true) ->
    if @vars[str]?
      return @vars[str]
-   aristotle.throw "Tried to access global variable `#{str}`, but it doesn't exists", true
+   if throwErrors
+     aristotle.throw "Tried to access global variable `#{str}`, but it doesn't exists", true
    null
 
 

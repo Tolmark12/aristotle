@@ -13,11 +13,11 @@ module.exports = class TextDialogue
 
     $('html').on "keydown", (e)=> if e.which == 39 then @playNextAction() # Allow right arrow to play next slide
 
-    PubSub.subscribe 'ctanlee.activate',           (a, data)=> @playAction(data)
-    PubSub.subscribe 'ctanlee.add-event-listener', (a, data)=> @addEventListener data
-    PubSub.subscribe 'dialogue.activate',           (a, data)=> @playAction(data)
-    PubSub.subscribe 'dialogue.add-event-listener', (a, data)=> @addEventListener data
-
+    token1 = PubSub.subscribe 'ctanlee.activate',           (a, data)=> @playAction(data)
+    token2 = PubSub.subscribe 'ctanlee.add-event-listener', (a, data)=> @addEventListener data
+    token3 = PubSub.subscribe 'dialogue.activate',           (a, data)=> @playAction(data)
+    token4 = PubSub.subscribe 'dialogue.add-event-listener', (a, data)=> @addEventListener data
+    @tokens = [token1, token2, token3, token4]
   # ------------------------------------ API
 
   activate : (@data) ->
@@ -114,6 +114,13 @@ module.exports = class TextDialogue
       else
         @actor = @ctanlee
 
-
-
-
+  destroy : () ->
+    @data     = null
+    @timeline = null
+    @sequence = null
+    @ctanlee.destroy()
+    @cc.destroy()
+    
+    if @track? then @track.stop()
+    for token in @tokens
+      PubSub.unsubscribe token

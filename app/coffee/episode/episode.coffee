@@ -7,12 +7,13 @@ module.exports = class Episode
     aristotle.episode = @
     @episodeNum = trainingData.episode
     @chrome.build()
+    @isLastEpisode = trainingData.isLastEpisode
     aristotle.episodeData = trainingData
     @nextRankId = trainingData.nextRankId
     aristotle.devTools.go trainingData.dev, trainingData.chapters
 
-    PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data
-    PubSub.publish "episode.loaded", trainingData
+    @token1 = PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data
+    PubSub.publish("episode.loaded", trainingData);
 
     @createChapters trainingData
     if trainingData.skipSlate
@@ -28,29 +29,29 @@ module.exports = class Episode
     ]})
 
     # If there is a previous location...
-    if aristotle.lmsProxy.store.location?
-      if aristotle.lmsProxy.store.location.episodeNum == @episodeNum
-        aristotle.lmsProxy.rehydrate()
-        return
+    if aristotle.lmsProxy.store?
+      if aristotle.lmsProxy.store.location?
+        if aristotle.lmsProxy.store.location.episodeNum == @episodeNum
+          if aristotle.lmsProxy.store.location.slide?
+            aristotle.lmsProxy.rehydrate()
+            return
 
     # else, start from the begining
     setTimeout @playChapter, 3000
-
-  showOutro : (data) ->
-    @ux.populate( {components:[
-      {kind: "episode-outro", config: { rankId:@nextRankId, rank:aristotle.dictionary.get(@nextRankId) } }
-    ]})
 
   # Goto a certain point in the training based on the title of the
   # slide, chapter, quiz or duties element
   gotoLocationByTitle : (title) ->
     PubSub.publish 'movie.layers.clear-all'
     layers = {}
+
+    # Loop throught eh chapters
     for chapter in aristotle.episodeData.chapters
       chapterTitle = chapter.title
-      if chapter.title == title
+      if chapter.title == title # If this is a chapter..
         break
 
+      # Loop throught slides building the layer views, and looking for the matching title
       for slide in chapter.slides
         if slide.movie?.layers?
           for layer in slide.movie.layers
@@ -61,6 +62,7 @@ module.exports = class Episode
           breakLoop1 = true; break
       break if breakLoop1
 
+    # Configure layers into an array for rehydration
     layersAr = []
     for key, layer of layers
       layersAr.push layer
@@ -68,8 +70,6 @@ module.exports = class Episode
     @chapters.activateItemByParam 'title', chapterTitle
     @playChapter slide.title
     PubSub.publish 'movie.rehydrate-layers', layersAr
-
-  createAndShowOutro : () ->
 
   createChapters : (trainingData) ->
     chapters = []
@@ -96,5 +96,14 @@ module.exports = class Episode
     PubSub.publish 'chapter.started', @chapters.getCurrentItem().chapterData.title
 
   episodeComplete : () ->
-    # elbScorm.SetComplete()
-    @showOutro()
+    if @isLastEpisode
+      aristotle.lmsProxy.completeCourse()
+    else
+      newEpisodeNum = String(Number(aristotle.episodeNum) + 1)
+      aristotle.lmsProxy.completeEpisode newEpisodeNum
+      PubSub.publish 'episode.load', newEpisodeNum
+
+  destroy : () ->
+    PubSub.unsubscribe @token1
+    for chapter in @chapters.items
+      chapter.destroy()

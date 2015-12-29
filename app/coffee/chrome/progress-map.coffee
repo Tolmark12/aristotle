@@ -1,11 +1,12 @@
 module.exports = class ProgressMap
 
   constructor: (@$el) ->
-    PubSub.subscribe 'episode.loaded', (m, data)=>   @buildMap data
-    PubSub.subscribe 'chapter.started', (m, data)=>  @lightIcon(data)
-    PubSub.subscribe 'slide.activated', (m, data)=>  @lightIcon(data)
-    PubSub.subscribe 'quiz.activated', (m, data)=>   @lightIcon(data)
-    PubSub.subscribe 'duties.activated', (m, data)=> @lightIcon(data)
+    token1  = PubSub.subscribe 'episode.loaded',   (m, data)=> @buildMap data
+    token2  = PubSub.subscribe 'chapter.started',  (m, data)=> @lightIcon(data)
+    token3  = PubSub.subscribe 'slide.activated',  (m, data)=> @lightIcon(data)
+    token4  = PubSub.subscribe 'quiz.activated',   (m, data)=> @lightIcon(data)
+    token5  = PubSub.subscribe 'duties.activated', (m, data)=> @lightIcon(data)
+    @tokens = [token1,token2,token3,token4,token5]
 
   lightIcon : (title) ->
     $el = $("##{ @titleToId(title) }", @$node)
@@ -71,5 +72,9 @@ module.exports = class ProgressMap
     PubSub.publish 'label.attach', { el:$el, content:{title: $el.attr("data-title")} }
   onMileStoneOut   : ($el) ->
     PubSub.publish 'label.destroy', $el
+
+  destroy : () ->
+    for token in @tokens
+      PubSub.unsubscribe token
 
 

@@ -15,6 +15,7 @@ module.exports = class LMSProxy
       @user      = elbScorm.GetUserName()    # ex:       Kingsley, James
       @userId    = elbScorm.GetUserID()      # I assume: asf0h30asbu30
       stateData  = elbScorm.GetResumeData()  # ojb
+      @createFormattedName()
       if stateData?
         aristotle.globals.vars = stateData.globalVars
       cb()
@@ -39,6 +40,17 @@ module.exports = class LMSProxy
     @store.location = {episodeNum:aristotle.episode.episodeNum, slide:currentSlide}
     elbScorm.SetResumeData @store
 
+  completeEpisode : (newEpisodeNum) ->
+    @store = if @store? then @store else {}
+    @store.location = {episodeNum:newEpisodeNum}
+    elbScorm.SetResumeData @store
+
+  createFormattedName : () ->
+    x = @user.split ','
+    @name = "#{x[1]} #{x[0]}"
+
+  completeCourse : () ->
+    elbScorm.SetComplete()
 
   # ------------------------------------ For Local Testing
 
@@ -49,4 +61,6 @@ module.exports = class LMSProxy
     elbScorm.GetUserID     =     ()-> "abcdefg1234567"
     elbScorm.SetResumeData = (data)-> localStorage.setItem( "currentState", JSON.stringify(data) )
     elbScorm.GetResumeData =     ()-> JSON.parse( localStorage.getItem("currentState") )
+    elbScorm.SetComplete   =     ()-> console.log "course is complete"
+
 

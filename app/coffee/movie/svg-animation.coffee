@@ -44,7 +44,13 @@ module.exports = class SVGAnimation
   stop   : () -> @animation.stop()
   destroy: () ->
     if @animation?
-      @animation.destroy()
+
+      try
+        @animation.destroy()
+      catch error
+        console.log @animation.renderer
+        console.log @animation.renderer.layers
+
       if @interval?
         clearInterval @interval
 

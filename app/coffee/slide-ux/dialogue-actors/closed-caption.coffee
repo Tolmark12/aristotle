@@ -28,3 +28,5 @@ module.exports = class ClosedCaption
 
   sleep : ()->
     @hideText()
+
+  destroy : () ->

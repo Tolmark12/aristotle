@@ -55,3 +55,9 @@ module.exports = class SlideUX
   removeCurrentComponents : () ->
     for component in @components
       component.destroy()
+
+  destroy : () ->
+    @removeCurrentComponents()
+    @labler.destroy()
+    @dialogue.destroy()
+    @genericUi.destroy()

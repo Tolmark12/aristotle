@@ -13,20 +13,20 @@ module.exports = class Movie
     @scale           = 1
     @transformOrigin = {x:0, y:0}
 
-    PubSub.subscribe 'movie.load-layer', (m, data)          => @addLayer data
-    PubSub.subscribe 'movie.zoom',       (m, data)          => @zoom data
-    PubSub.subscribe 'movie.layers.clear',(m, data)         => @clearLayer data
-    PubSub.subscribe 'movie.layers.clear-all',(m, data)     => @clearAllLayers()
-    PubSub.subscribe 'movie.layers.blur.below',(m, data)    => @blurAllLayersBelow data
-    PubSub.subscribe 'movie.layers.unblur.all',(m, data)    => @unblurAllLAyers()
-    PubSub.subscribe 'movie.layers.cache',(m, data)         => @cacheLayer data
-    PubSub.subscribe 'movie.layers.uncache',(m, data)       => @uncacheLayer data
-    PubSub.subscribe 'movie.layers.uncache-all',(m, data)   => @unCacheAllLayers()
-    PubSub.subscribe 'movie.layers.cache-all',(m, data)     => @cacheAllLayers()
-    PubSub.subscribe 'movie.layers.cache-all-but',(m, data) => @cacheAllBut data
-    PubSub.subscribe 'movie.report', (m, data)              => @report()
-    PubSub.subscribe 'movie.rehydrate-layers', (m, data)    => @rehydrateLayerState data
-
+    token1  = PubSub.subscribe 'movie.load-layer', (m, data)          => @addLayer data
+    token2  = PubSub.subscribe 'movie.zoom',       (m, data)          => @zoom data
+    token3  = PubSub.subscribe 'movie.layers.clear',(m, data)         => @clearLayer data
+    token4  = PubSub.subscribe 'movie.layers.clear-all',(m, data)     => @clearAllLayers()
+    token5  = PubSub.subscribe 'movie.layers.blur.below',(m, data)    => @blurAllLayersBelow data
+    token6  = PubSub.subscribe 'movie.layers.unblur.all',(m, data)    => @unblurAllLAyers()
+    token7  = PubSub.subscribe 'movie.layers.cache',(m, data)         => @cacheLayer data
+    token8  = PubSub.subscribe 'movie.layers.uncache',(m, data)       => @uncacheLayer data
+    token9  = PubSub.subscribe 'movie.layers.uncache-all',(m, data)   => @unCacheAllLayers()
+    token10 = PubSub.subscribe 'movie.layers.cache-all',(m, data)     => @cacheAllLayers()
+    token11 = PubSub.subscribe 'movie.layers.cache-all-but',(m, data) => @cacheAllBut data
+    token12 = PubSub.subscribe 'movie.report', (m, data)              => @report()
+    token13 = PubSub.subscribe 'movie.rehydrate-layers', (m, data)    => @rehydrateLayerState data
+    @tokens = [token1, token2, token3, token4, token5, token6, token7, token8, token9, token10, token11, token12, token13 ]
 
   report : () ->
     layer.report() for layer in @layers
@@ -95,9 +95,7 @@ module.exports = class Movie
       exceptions[data] = ""
 
     for layer in @layers
-      console.log layer.depth
       if exceptions[layer.depth] != ""
-        console.log layer
         layer.cache()
 
   cacheAllLayers   : () -> layer.cache()   for layer in @layers
@@ -158,3 +156,8 @@ module.exports = class Movie
         if layerData.cache || layerData.ieCache
           layerData.jumpToEnd = true
         @addLayer layerData
+
+  destroy : () ->
+    @reset()
+    for token in @tokens
+      PubSub.unsubscribe token

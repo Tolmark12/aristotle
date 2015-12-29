@@ -139,9 +139,6 @@ module.exports = class Layer
   addImage : ($holder, file, repeat="no-repeat", position="left") ->
     $holder.css background: "url(#{aristotle.getAssetPath(file)}) #{repeat} #{position}"
 
-  destroy : () ->
-    @$layer.remove()
-
   addOnionLayer : () ->
     $onionLayer = $ jadeTemplate['movie/onion-layer']( {} )
     @$layer.prepend $onionLayer
@@ -158,3 +155,6 @@ module.exports = class Layer
   empty : () -> @$layer.empty()
   addFilter : (filterId) -> $("svg", @currentOnionLayer).css filter:"url(##{filterId})"
   removeFilters : () -> $("svg", @currentOnionLayer).css filter: "none"
+
+  destroy : () ->
+    @$layer.remove()

@@ -4,30 +4,38 @@ module.exports = class ChromeUI
 
   constructor: (@$el) ->
     # @build @$el
-    PubSub.subscribe "chrome.hide",         (m, data)=> @hide()
-    PubSub.subscribe "chrome.show",         (m, data)=> @show()
-    PubSub.subscribe "chrome.showname",     (m, data)=> @showName()
-    PubSub.subscribe "chrome.showepisodes", (m, data)=> @showIcons()
-    PubSub.subscribe "chrome.hidename",     (m, data)=> @hideName()
-    PubSub.subscribe "chrome.hideepisodes", (m, data)=> @hideIcons()
-    PubSub.subscribe "chrome", ()-> console.log m, data
+    token1  = PubSub.subscribe "chrome.hide",         (m, data)=> @hide()
+    token2  = PubSub.subscribe "chrome.show",         (m, data)=> @show()
+    token3  = PubSub.subscribe "chrome.showname",     (m, data)=> @showName()
+    token4  = PubSub.subscribe "chrome.showepisodes", (m, data)=> @showIcons()
+    token5  = PubSub.subscribe "chrome.hidename",     (m, data)=> @hideName()
+    token6  = PubSub.subscribe "chrome.hideepisodes", (m, data)=> @hideIcons()
+    token7  = PubSub.subscribe "callsign.selected",   (m, data)=> @updateCallsign()
+
+    @tokens = [token1, token2, token3, token4, token5, token6, token7]
 
   build : () ->
     name = aristotle.lmsProxy.user.split ","
-    progressDisplay = new ProgressDisplay @$el
-    data    = {name:"#{name[1]} \"Deadeye\" #{name[0]}", episode:"1"}
+    @progressDisplay = new ProgressDisplay @$el
+    try
+      callSign = aristotle.globals.get 'callSign', false
+    catch error
+      callSign = "Deadeye"
+
+    data    = {name:"#{name[1]} \"#{callSign}\" #{name[0]}", episode:"1"}
     @getRank data, "cyber-cadet"
-    $top    = $ jadeTemplate['chrome-ui/top']( data )
-    @$el.append $top
-    @$name  = $ ".name-and-rank", $top
-    @$icons = $ ".episodes", $top
-    @$mode  = $ ".learn-mode", $top
+    @$top   = $ jadeTemplate['chrome-ui/top']( data )
+    @$el.append @$top
+    @$name  = $ ".name-and-rank", @$top
+    @$icons = $ ".episodes", @$top
+    @$mode  = $ ".learn-mode", @$top
 
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
     @hideMode()
 
-  setName : () ->
-
+  updateCallsign : () ->
+    name = aristotle.lmsProxy.user.split ","
+    $(".name", @$top).html "#{name[1]} \"#{aristotle.globals.get('callSign')}\" #{name[0]}"
 
   showName  : () -> @$name.css( {display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}
   hideName  : () -> @$name.css  {display:"none"}
@@ -57,6 +65,7 @@ module.exports = class ChromeUI
         data.rank  = "Cyber Cadet"
         data.badge = "rank-badge-cyber-cadet"
 
-
-
-
+  destroy : () ->
+    @progressDisplay.destroy()
+    for token in @tokens
+      PubSub.unsubscribe token

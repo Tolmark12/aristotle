@@ -1,754 +1,626 @@
-episode: 1
-title: Episode 1
-subtitle: Organizing Our Defenses
-rankId: cadet
-nextRankId: cadet-first-class
+episode: 2
+title: Episode 2
+subtitle: Perimeter Defenses
+rankId: cadet-first-class
+nextRankId: technical-cadet
 dev:
   startIndex: 0
-  # skipSlate: true
+
+# CHAPTER 1
 chapters:
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 1
   # ----------------------------------------------
   -
     title: Chapter 1
-    subtitle: Facilities and Cyber Assets
+    subtitle: Physical Security Perimeter
     dev:
       volume: 1
       startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
+      -
+        action:
+          -
+            cmd: setvars
+            data:
+              facility: substation
+              facilityBuild: ~1/substation_facility_build.json
+              facilityLoop: ~1/substation_facility_loop.json
+        duration: { kind: time, seconds: 0.1 }
+
       # 1 Background Build in ==========================================
       -
-        title: Facility Selector
         movie:
           layers:
-            - {depth: 0, content: c1-sky.svg }
-            - {depth: 2, content: c1-background-buildin.json, events: [complete], cache: true}
-        duration: {kind: listen, event: layer.2.complete}
-      # 1 Selector Facility ==========================================
-      - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
-      -
-        movie:
-          layers:
-            - {depth: 3, cache: true, content: $facilityBuild}
+            - {depth: 0, content: ~1/c1-sky.svg }
+            - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
+            - {depth: 2, content: ~1/c1-background-buildin.json, jumpToEnd: true, cache: true }
+            - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true }
             - {depth: 4, content: $facilityLoop, loop: true }
-            - {depth: 5, content: ~2/interior_build.json}
-        duration: {kind: time, seconds: 0.1}
-      # 1 Building Tour Ctanlee ==========================================
-      - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
-      # 1 Dialogue BES Cyber Assets  ==========================================
-      -
-        title: BES Cyber Assets
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: BES Cyber Assets
-                body: Our job is to protect the programmable equipment - Cyber Assets - in our facilities. Specifically, CIP protects equipment that will cause real-time operational problems for the Bulk Electric System if they are hacked, attacked, or disabled. Think control systems, relay devices, and other equipment. CIP calls these <a data-label="a">BES Cyber Assets<a>. <br/>Our Compliance Team has already identified the BCA in this facility. Let me put tags on the devices so we can see which ones are BCA.
-                btn:
-                  style: lightning
-                  text: tag BCA
-                  action: {cmd: slides.next-slide}
-                labels:
-                  a: {title: "BCA"}
-      # 1 Zoom Assets overview  ==========================================
-      -
-        title: Asset Overview
-        movie:
-          layers:
-            - {depth: 7, content: asset_view.json }
-        duration: {kind: time, seconds: .5 }
-      # 1 Zoom Assets overview  ==========================================
-      -
-        duration: {kind: dialogue}
-        dialogue:
-          timeline:
-            - {action: con-sys-rack }
-            - {action: esp-ns }
-            - {action: data-acs }
-            - {action: control-sas }
-            - {action: operator-ws }
-          defaults:
-            next: 3000
-          actions:
-            con-sys-rack:
-              pos: con-sys-rack-hit
-              action:
-                - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
-                - {cmd: label.add, data: {id: con-sys-rack-hit, text: Control System, face: top, arrow: right} }
-                - {cmd: movie.zoom, data: {scale: 2, id: con-sys-rack-hit }}
-            esp-ns:
-              pos: esp-ns-hit
-              action:
-                - {cmd: highlight, data: {id: esp-ns, level: blue } }
-                - {cmd: label.add, data: {id: esp-ns-hit, text: Network Switch, face: bottom} }
-                - {cmd: movie.zoom, data: {scale: 2, id: esp-ns-hit }}
-            data-acs:
-              pos: data-acs-hit
-              action:
-                - {cmd: highlight, data: {id: data-acs, level: blue} }
-                - {cmd: label.add, data: {id: data-acs-hit, text: Data Acquisition and Control Server, face: left } }
-                - {cmd: movie.zoom, data: {scale: 2, id: data-acs-hit }}
-            control-sas:
-              pos: control-sas-hit
-              action:
-                - {cmd: highlight, data: {id: control-sas, level: blue} }
-                - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
-                - {cmd: movie.zoom, data: {scale: 2, id: control-sas-hit }}
-            operator-ws:
-              pos: operator-ws-hit
-              action:
-                - {cmd: highlight, data: {id: operator-ws, level: blue } }
-                - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
-                - {cmd: movie.zoom, data: {scale: 2, id: operator-ws-hit }}
-      # 1 Ctanlee Narration  ==========================================
-      -
-        action:
-          - {cmd: label.hide, data: {id: all}  }
-        movie:
-          zoom: {scale: 1}
-          layers:
-            - {depth: 7, content: clear }
-        duration: {kind: dialogue}
-        dialogue:
-          timeline:
-            - {action: a }
-          actions:
-            a:
-              pos: [100,100]
-              text: "Most facilities that fall under CIP have a lot of equipment like this that controls the Bulk Electric System. Imagine the damage the robots would do if they gained access to a control breaker, power plant or Tesla Cannon. Shudder."
-              audio: Story_2_Ctanlee_8.m4a
-              next: audio
-      # 1 Dialogue Protected Cyber Assets  ==========================================
-      -
-        title: Protected Cyber Assets
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: Protected Cyber Assets
-                body: When BCA are connected to a network like these are, any other devices on the same network like file servers, network printers, and displays must also be protected at the same level as BCA so no security weaknesses are introduced to the network. We call these devices <a data-label="a">Protected Cyber Assets<a>.  <br/>I'll tag the PCA next.
-                btn:
-                  style: lightning
-                  text: tag PCA
-                  action: {cmd: slides.next-slide}
-                labels:
-                  a: {title: "PCA"}
-      # 1 Zoom Assets view  ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 7, content: asset_view.json }
-        duration: {kind: time, seconds: 0.2 }
-      # 1 Zoom Assets overview  ==========================================
-      -
-        duration: {kind: dialogue }
-        dialogue:
-          timeline:
-            - {action: file-server }
-            - {action: map-computer }
-            - {action: printer }
-          defaults:
-            next: 3000
-          actions:
-            file-server:
-              pos: "file-server-hit"
-              action:
-                - {cmd: highlight, data: {id: file-server, level: orange} }
-                - {cmd: label.add, data: {id: file-server-hit, text: File Server, face: top, arrow: right} }
-                - {cmd: movie.zoom, data: {scale: 2, id: file-server-hit }}
-            map-computer:
-              pos: "map-computer-hit"
-              action:
-                - {cmd: highlight, data: {id: map-computer, level: orange} }
-                - {cmd: label.add, data: {id: map-computer-hit, text: Map Computer, face: bottom, arrow: right} }
-                - {cmd: movie.zoom, data: {scale: 2, id: map-computer-hit }}
-            printer:
-              pos: "printer-hit"
-              action:
-                - {cmd: highlight, data: {id: printer, level: orange} }
-                - {cmd: label.add, data: {id: printer-hit, text: Printer, face: bottom, arrow: right} }
-                - {cmd: movie.zoom, data: {scale: 2, id: printer-hit }}
-      # 1 Ctanlee Narration  ==========================================
-      -
-        action:
-          - {cmd: label.hide, data: {id: all}  }
-        movie:
-          layers:
-            - {depth: 7, content: clear }
-          zoom: {scale: 1}
-        duration: {kind: dialogue}
-        dialogue:
-          timeline:
-            - {action: a }
-          actions:
-            a:
-              pos: [100,100]
-              text: "You may be saying to yourself, CTANLEE it's just a printer! If we had more time I'd tell you about The Paperfeed Incident of '08 where some Virus Bots hijacked a corporate unit. Many Defenders still bear papercut scars."
-              audio: Story_2_Ctanlee_9.m4a
-              next: audio
-      # 1 Dialogue BES Cyber System  ==========================================
-      -
-        title: BES Cyber System Information
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: BES Cyber System Information
-                body: Facilities contain information useful for a bot planning an attack. For starters, we often have maps, security plans, network diagrams, and configuration information stored on hard drives, file shares, and in filing cabinets. This is called BES Cyber System Information (BCSI) and we must protect their locations. <br/>All BCA and PCA are assumed to contain BCSI, so we'll tag the other location we might find it.
-                btn:
-                  style: lightning
-                  text: tag BCSI
-                  action: {cmd: slides.next-slide}
-      # 1 Zoom Assets view  ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 7, content: asset_view.json }
+            - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true }
+            - {depth: 6, content: ~1/interior_loop.json, loop: true }
+            - {depth: 9, content: ~1/factory_workers_loop.json, loop: true }
         duration: {kind: time, seconds: 1 }
-      # 1 Zoom Assets overview  ==========================================
+      # 1 Dialogue Physical Attacks ==========================================
       -
-        duration: {kind: dialogue }
+        title: Physical Attacks
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Physical Attacks
+                body: We have a facility loaded up with juicy cyber assets that the bots want to get their hands on. An attacker can destroy or compromise anything they have physical access to, so our first job is to physically protect these assets. Let’s fire up the simulator to illustrate an attack the CIP-required physical defenses protect us from.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 1 Simulator Robot Attack ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 10, content: kettle_attack_pngs.json, events: [complete] }
         dialogue:
-          timeline:
-            - {action: filing-cabinet }
-            - {action: map }
-            - {action: monitor }
           defaults:
-            next: 3000
-          actions:
-            filing-cabinet:
-              pos: "filing-cabinet-hit"
-              action:
-                - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
-                - {cmd: label.add, data: {id: filing-cabinet-hit, text: Substation Diagrams, face: bottom, arrow: right} }
-                - {cmd: movie.zoom, data: {scale: 2, id: filing-cabinet-hit }}
-            map:
-              pos: "map-computer-hit"
-              action:
-                - {cmd: highlight, data: {id: map, level: yellow} }
-                - {cmd: label.add, data: {id: map-computer-hit, text: System Map, face: bottom, arrow: right} }
-                - {cmd: movie.zoom, data: {scale: 2, id: map-computer-hit }}
-            monitor:
-              pos: "monitor-hit"
-              action:
-                - {cmd: highlight, data: {id: monitor, level: yellow} }
-                - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
-                - {cmd: movie.zoom, data: {scale: 2, id: monitor-hit }}
-      # 1 Dialogue Create Inventory  ==========================================
-      -
-        title: Creating an Inventory
-        action:
-          - {cmd: label.hide, data: {id: all}  }
-        movie:
-          layers:
-            - {depth: 7, content: clear }
-          zoom: {scale: 1}
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: Creating an Inventory
-                body: CIP requires us to inventory every BCA and PCA, along with all BCSI locations, onto Asset Lists. These form the core of what we protect with our CIP defenses. The CIP defenses we add to the facility will often require servers and software of their own to operate. For example, a door control system might have a server that logs entry and exit. These defensive assets will also be included on the asset lists and get their own unmemorable CIP acronyms like "PACS" and "EACMS". We'll discuss these assets further as we add them to the facility in future episodes.
-                btn:
-                  style: lightning
-                  text: continue
-                  action: {cmd: slides.next-slide}
-      # 1 Dialogue Get to Know your Assets  ==========================================
-      -
-        title: Get to Know Your Assets
-        movie:
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: Get to Know Your Assets
-                body: Review your inventory. Click on your assets if you'd like to learn more about them. <br/>We've reached the end of this chapter. I've programmed your specific duties at Company Name - Arizona Public Service into the WarCore to review. When you're ready to review duties, click "Review Duties" at the bottom to proceed.
-                btn:
-                  style: lightning
-                  text: GOT it!
-                  action: {cmd: slides.next-slide}
-      # 1 Zoom Assets view  ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 7, content: asset_view.json }
-        duration: {kind: time, seconds: .1 }
-      # 1 Highlight Equipment  ==========================================
-      -
-        action:
-          - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
-          - {cmd: highlight, data: {id: esp-ns, level: blue } }
-          - {cmd: highlight, data: {id: data-acs, level: blue} }
-          - {cmd: highlight, data: {id: control-sas, level: blue} }
-          - {cmd: highlight, data: {id: operator-ws, level: blue } }
-          - {cmd: highlight, data: {id: file-server, level: orange} }
-          - {cmd: highlight, data: {id: map-computer, level: orange} }
-          - {cmd: highlight, data: {id: printer, level: orange} }
-          - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
-          - {cmd: highlight, data: {id: map, level: yellow} }
-          - {cmd: highlight, data: {id: monitor, level: yellow} }
-        duration: {kind: ux}
-        # 1 Equipment exploration component:
-        ux:
-          components:
-            -
-              kind: explore-cards
-              config:
-                required-views: 5 # (number of cards they have to view to move on to next slide)
-                template: equipment
-                cards:
-                  -
-                    hit: con-sys-rack-hit
-                    name: Control System Rack
-                    type: BCA
-                    network: ESP
-                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
-                  -
-                    hit: esp-ns-hit
-                    name: Network Rack - ESP Network Switch
-                    type: PCA
-                    network: ESP
-                    description: Network switch for the Electronic Security Perimeter.
-                  -
-                    hit: data-acs-hit
-                    name: Data Acquisition and Control Server
-                    type: BCA
-                    network: ESP
-                    description: Collects data from the Control System and issues controls from workstations and other devices to the Control System.
-                  -
-                    hit: control-sas-hit
-                    name: Control System Application Server
-                    type: BCA
-                    network: ESP
-                    description: Runs applications that provide advanced functionality on top of the Control System.
-                  -
-                    hit: operator-ws-hit
-                    name: Operator Workstation
-                    type: BCA
-                    network: ESP
-                    description: Powers the operator monitors
-                  -
-                    hit: file-server-hit
-                    name: File Server
-                    type: None
-                    network: Corporate
-                    description: Contains maps, network diagrams and other information useful to have on the controls network for reference and maintenance.
-                  -
-                    hit: map-computer-hit
-                    name: Mapboard Computer
-                    type: PCA
-                    network: ESP
-                    description: Displays data on the mapboard from the control system
-                  -
-                    hit: printer-hit
-                    name: First Floor Printer
-                    type: PCA
-                    network: ESP
-                    description: Printer attached to a protected network.
-                  -
-                    hit: filing-cabinet-hit
-                    name: Filing Cabinets
-                    type: BCSI
-                    network: N/A
-                    description: Holds protected information
-                  -
-                    hit: map-hit
-                    name: Mapboard
-                    type: BCSI
-                    network: N/A
-                    description: Shows a control room operator a dynamic map of the power grid they are managing or shows a power plant operator the map of their facility and controls.
-                  -
-                    hit: monitor-hit
-                    name: Operator Monitors
-                    type: BCSI
-                    network: N/A
-                    description: Operators like lots of monitors to see all their systems
-                  -
-                    hit: laptop-hit
-                    name: First Floor Laptop
-                    type: BCA
-                    network: ESP
-                    description: Used by technicians for troubleshooting.
-      # 1 Duties ==========================================
-      -
-        action:
-          - {cmd: "unhighlight.all"}
-        dialogue:
+            next: audio
           timeline:
             - {action: a }
             - {action: b }
             - {action: c }
-          defaults:
-            next: audio
           actions:
             a:
-              pos: [150, 200]
-              emo: happy
-              text: "Your duties are listed here. Click on a duty to review it."
-              audio: Story_2_Ctanlee_31.m4a
+              pos: [670,500]
+              text: Uh oh. One of Sektimus' advance force robots.
+              audio: Story_3_Ctanlee_1.m4a
             b:
-              pos: [740, 600]
-              emo: happy
-              text: "Click I acknowledge at the bottom of the duty when you are done."
-              audio: Story_2_Ctanlee_32.m4a
+              pos: [220,300]
+              text: There's no lock on the door! Run everyone. Run!!!
+              audio: Story_3_Ctanlee_2.m4a
             c:
-              pos: [740, 680]
-              emo: happy
-              text: "When all duties are completed, you can click CONTINUE to proceed."
-              audio: Story_2_Ctanlee_33.m4a
+              pos: [200,100]
+              text: Why must the universe punish the good? Simulator Pause.
+              audio: Story_3_Ctanlee_3.m4a
+        duration: {kind: listen, event: layer.10.complete}
+      # 1 Dialogue Physical Acess Control ==========================================
+      -
+        title: Physical Access Control
+        movie:
+          layers:
+            - {depth: 10, content: clear }
+        action: {cmd: ctanlee.gohome}
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Physical Access Control
+                body: To prevent physical attacks, the CIP Standards require that we physically surround our core assets with Physical Security Perimeters (PSPs) made up of walls, fences, and doors to keep the robots and their allies out. We install door controls that only allow authorized Defenders inside the PSP, log all access attempts, and alert when unauthorized people (or robots) try to gain access. Our Medium Impact facilities have one control, while High Impact facilities require two independent controls per access point. <br/>These access control devices are called Physical Access Control Systems (PACS). An example of a PACS is an ID-badge reader on the outside of the door connected to a computer inside that operates the reader and does logging and alerting. A PACS is a defensive asset and will be added to our official asset lists.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 1 Dialogue Assets Perimeter  ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 10, content: perimeter_door_server.json }
+          zoom: {scale: 2, x: 600, y: 700}
+        duration: {kind: time, seconds: 1.5 }
+      # 1 Selector Physical Security ==========================================
+      - !!inc/file ./episodes/episode2/yaml/_pacs-selector.yaml
+      -
+        movie:
+          layers:
+            - {depth: 7, content: $pacsBuild, loop: true}
+        duration: {kind: time, seconds: 0.5 }
+      # 1 Dialogue Perimeter Try Again ==========================================
+      -
+        title: Please Try Again
+        movie:
+          zoom: {scale: 1}
+          layers:
+            - {depth: 10, content: clear }
+            - {depth: 10, content: perimeter_physical.json }
+        duration: {kind: ux}
+        dialogue:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [170,400]
+              text: Your PSP. Sometimes I just hover here and stare at it, ya know? I know how it is.
+              audio: Story_3_Ctanlee_7.m4a
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Please Try Again
+                body: Let's reload the simulator to test our newly installed physical access control defense.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 1 Simulator Robot Attack Perimeter ==========================================
+      -
+        action: {cmd: ctanlee.gohome}
+        movie:
+          layers:
+            - {depth: 10, content: clear }
+            - {depth: 10, content: kettle_attack_post_defense_pngs.json, events: [complete] }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+          actions:
+            a:
+              pos: []
+              audio: Story_3_Silence.m4a
+            b:
+              pos: [170,400]
+              text: Bow to the scanner, Bot.
+              audio: Story_3_Ctanlee_10.m4a
+            c:
+              pos: [270,300]
+              text: Uh oh, looks like the robots are trying again.
+              audio: Story_3_Ctanlee_11.m4a
+            d:
+              pos: [370,300]
+              text: Alerts work great. Rust in peace, robots.
+              audio: Story_3_Ctanlee_14.m4a
+        duration: {kind: listen, event: layer.10.complete}
+      # 1 Dialogue Chapter Complete ==========================================
+      -
+        title: Chapter Complete
+        movie:
+          layers:
+            - {depth: 10, content: clear }
+        dialogue:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [100,100]
+              text: Chapter complete, Cadet. Duty time.
+              audio: Story_3_Ctanlee_15.m4a
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Chapter Complete
+                body:
+                btn:
+                  style: lightning
+                  text: Review Duties
+                  action: {cmd: slides.next-slide}
+      # 1 Duties ==========================================
+      -
+        action: {cmd: ctanlee.gohome}
         ux:
           components:
             -
               kind: duties
-              config: {definition: ~l/ep2-ch1-duties.json}
+              config: {definition: ~l/ep3-ch1-duties.json}
         duration: {kind: ux}
-
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 2
   # ----------------------------------------------
   -
     title: Chapter 2
-    subtitle: Defenders and Duties
+    subtitle: Software Defenses
     dev:
       volume: 1
       startIndex: 0
+      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
+      # 2 Dialogue Electronic Attack ==========================================
       -
-        title: Defenders
-        movie:
-          layers:
-            - {depth: 7, content: clear }
+        title: Electronic Attacks
         duration: {kind: ux}
         ux:
           components:
             -
               kind: dialogue
               config:
-                title: Defenders
-                body: We now know what we're defending and why. Let's talk about who is doing the defending. CIP requires that a single CIP Senior Manager be made responsible for all CIP defenses. This is a big job, so she delegates responsibilities to Defenders in the facilities to perform. <br/>Let's add some of these Defenders to our facility.
+                title: Electronic Attacks
+                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a BCA or PCA attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction. <br/>Let's see how this might work.
                 btn:
                   style: lightning
-                  text: load defenders
+                  text: Continue
                   action: {cmd: slides.next-slide}
-      -
-        movie:
-          layers:
-            - {depth: 7, content: factory_workers_build.json, events: [complete] }
-        duration: {kind: listen, event: layer.7.complete}
-      -
-        movie:
-          layers:
-            - {depth: 7, content: factory_workers_loop.json, loop: true }
-        duration: {kind: time, seconds: .2}
-      -
-        title: More Defenders
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: More Defenders
-                body: The CIP Senior Manager often has specialized teams who help in different ways. Let's add the Compliance Team, Human Resources, and the CIP Senior Manager herself to our HQ building.
-                btn:
-                  style: lightning
-                  text: load defenders
-                  action: {cmd: slides.next-slide}
-      -
-        movie:
-          layers:
-            - {depth: 8, content: hq_facility_build.json, events: [complete] }
-        duration: {kind: listen, event: layer.8.complete}
-      -
-        title: Duties
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: Duties
-                body: We have Defenders! But how do they know how to defend our facility? The CIP Senior Manager is required to create a Cyber Security Program that describes how our people and defenses meet the CIP Standards. The Program defines the jobs of our Defenders - to learn and Perform Duties that secure our infrastructure and to Create Evidence that those duties were performed correctly. CIP requires we communicate duties to Defenders through dedicated CIP security training and regular awareness campaigns. <br/>Did you notice something, Cadet? While leadership may define the Program and provide training and tools, success depends on everyone doing their duties. Protecting our infrastructure is a team effort and that's why we don't give out the title "Defender" lightly.
-                btn:
-                  style: lightning
-                  text: continue
-                  action: {cmd: slides.next-slide}
-      -
-        title: Get to Know Your Defenders
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: Get to Know Your Defenders
-                body: Each of your Defenders will have specific duties to perform and evidence to create. Click on a few people to see some examples. When you're ready to review duties for this chapter, click "Review Duties" at the bottom to proceed.
-                btn:
-                  style: lightning
-                  text: got it
-                  action: {cmd: slides.next-slide}
-      -
-        duration: {kind: ux}
-        action:
-          - {cmd: label.add, data: {id: jerry-hit, text: Jerry, face: right } }
-          - {cmd: label.add, data: {id: brad-hit, text: Brad, face: right } }
-          - {cmd: label.add, data: {id: shelly-hit, text: Shelly, face: right } }
-          - {cmd: label.add, data: {id: lisa-hit, text: Lisa, face: top, arrow: right} }
-          - {cmd: label.add, data: {id: rod-hit, text: Rod, face: top, arrow: right} }
-          - {cmd: label.add, data: {id: richard-hit, text: Richard, face: top, arrow: right} }
-          - {cmd: label.add, data: {id: arnold-hit, text: Arnold, face: top} }
-        ux:
-          components:
-            -
-              kind: explore-cards
-              config:
-                required-views: 3
-                template: defender
-                cards:
-                  -
-                    hit: arnold
-                    name: Arnold, Mr. Electrical Worker
-                    quote: This country was built by people wearing denim.
-                    personal1: Proud of
-                    personal2: Family, America, personal safety record, fixing things with his bare hands, and the big one that got away. No really, it was that big.
-                    duties:
-                      - Using ID Card to Access Facilities
-                      - Following Change Control Procedures Before Working on a BES Cyber Asset
-                    evidences:
-                      - Door System Logs
-                      - Change Control Checklist
-                  -
-                    hit: shelly
-                    name: Shelly, CIP Senior Manager
-                    quote: Keeping head and Standards high.
-                    Personal1: Remembers fondly
-                    Personal2: That one time during the CIPv5 transition that she participated in a conference call on her phone, a separate WebEx on her laptop, all while leading a team meeting in person.
-                    duties:
-                      - Approve Cyber Security Program
-                      - Delegate Duties and Responsibilities
-                    evidences:
-                      - Signed Cyber Security Program
-                      - Signed delegations documentation
-                  -
-                    hit: jerry
-                    name: Jerry, that guy from HR
-                    quote: Always ready to give out hugs…while respecting your personal space
-                    Personal1: Holds record for
-                    Personal2: Reviewing 247 resumes in one day
-                    duties:
-                      - Check backgrounds and criminal history of new employees
-                      - Notify when employees are terminated so their access can be disabled
-                    evidences:
-                      - Dated personnel risk assessment records
-                      - Dated workflow with approvals
-                  -
-                    hit: brad
-                    name: Brad, Compliance Team Warrior
-                    quote: Compliance is just another way to say 'I love you'
-                    Personal1: Favorite possession
-                    Personal2: A list of CIP acronyms signed by all members of the CIP Drafting Committee.
-                    duties:
-                      - Ensuring Compliance Requirements are documented in the Cyber Security Program
-                      - Regular Review and Approvals of Facilities and Assets
-                    evidences:
-                      - Signed and dated Cyber Security Program with accompanying processes
-                      - Signed and dated lists of assets
-                  -
-                    hit: rod
-                    name: Rod, the Smooth Operator
-                    quote: 99% routine, 1% sheer terror.
-                    Personal1: Daily caffeine quota is
-                    Personal2: 5 cups of coffee, 3 energy drinks
-                    duties:
-                      - Using ID Card to Access Facilities
-                      - Not Plugging Your Cell Phone Into Your Control System Workstation
-                    evidences:
-                      - Door System Logs
-                      - Computer System Events
-                  -
-                    hit: richard
-                    name: Richard, Your IT Dude
-                    quote: I'm not anti-social. I'm just not user friendly
-                    Personal1: Lifetime accomplishment
-                    Personal2: Playing World of Warcraft 47.38 hours in a row.
-                    duties:
-                      - Patching Servers
-                      - Updating Antivirus on BCAs
-                    evidences:
-                      - Production Change Forms
-                      - Task Documentation
-                  -
-                    hit: lisa
-                    name: Lisa, Supervisor Who Wears Prada
-                    quote: Working weekends allows for a jumpstart of the work week
-                    Personal1: Happiest when
-                    Personal2: A good plan comes together.
-                    duties:
-                      - Approving facility-related Cyber Assets on the Cyber Asset Lists
-                      - Using ID Card to Access Facilities
-                    evidences:
-                      - Dated workflow with approvals
-                      - Door System Logs
-      # Example Duties Slide
+      # 2 Sektimus Interlude ==========================================
       -
         action:
-          - {cmd: label.hide, data: {id: all}  }
+          - {cmd: movie.layers.cache, data: 4}
+          - {cmd: movie.layers.cache, data: 6}
         movie:
           layers:
-            - {depth: 8, content: clear, action: {cmd: chrome.hide}}
-        ux:
-          components:
-            -
-              kind: duties
-              config: {definition: ~l/ep2-ch2-duties.json}
-        duration: {kind: ux}
-  # ----------------------------------------------
-  # ------------------------------------ CHAPTER 3
-  # ----------------------------------------------
-  -
-    title: Chapter 3
-    subtitle: Our Regulators
-    dev:
-      volume: 1
-      startIndex: 0
-    kind: chapter
-    slides:
-      # Dialogue Regulators ==========================================
+            - {depth: 10, content: fatline_extended.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+            - {action: k }
+            - {action: l }
+            - {action: m }
+            - {action: n }
+            - {action: o }
+            - {action: p }
+            - {action: q }
+            - {action: r }
+          actions:
+            a:
+              pos: [170,50]
+              text: Hmm, the button didn't work. WarCore, can you analyze this?
+              audio: ~2/Story_3_Ctanlee_16.m4a
+            b:
+              pos: [270,300]
+              text: Wait… I sense a disturbance in the Core. Someone I've not felt for a long time…
+              audio: ~2/Story_3_Ctanlee_17.m4a
+            c:
+              pos: [370,300]
+              emo: surprise
+              text: What is this? … We're receiving a communication. It's extremely powerful.
+              audio: ~2/Story_3_Ctanlee_18.m4a
+            d:
+              pos: [170,50]
+              text: WarCore, I want you to isolate that transmission. Put it in a security perimeter. Bring up your backup and tertiary memory banks - you'll need it. This is more powerful than anything I've seen in a long time.
+              audio: ~2/Story_3_Ctanlee_19.m4a
+            e:
+              pos: []
+              audio: ~2/Story_3_Warcore_1.m4a
+              actor: warcore
+              text: Working…
+            f:
+              pos: [270,300]
+              text: Cadet, I need to see what this signal is and if it's a threat. Please standby.
+              audio: ~2/Story_3_Ctanlee_20.m4a
+            g:
+              pos: []
+              audio: ~2/Story_3_Warcore_2.m4a
+              actor: warcore
+              text: Signal captured. Starting live feed.
+            h:
+              pos: []
+              audio: ~2/Story_3_Sektimus_1.m4a
+              actor: sektimus
+              text: Where are you little mind? What did the humans call you long ago? … WarMind? Such a pretentious name.
+            i:
+              pos: [370,300]
+              text:  It's Sektimus … WarCore, can you configure the stream so I can communicate back to Sektimus? He's finally showing himself. Cadet, please stand by.
+              audio: ~2/Story_3_Ctanlee_21.m4a
+            j:
+              audio: ~2/Story_3_Warcore_3.m4a
+              actor: warcore
+              text: Working...
+            k:
+              audio: ~2/Story_3_Sektimus_2.m4a
+              actor: sektimus
+              text: My, my, my - you HAVE been busy… No matter. It will benefit you not. While you've spent your energy on humans, I've had many cycles to improve my Metal Swarm and it is now perfe-  What is this? Who are you?
+            l:
+              audio: ~2/Story_3_Sektimus_3.m4a
+              actor: sektimus
+              text: A human. You've already loaded a human into your pitiful training system!
+            m:
+              audio: ~2/Story_3_Sektimus_4.m4a
+              actor: sektimus
+              text: Listen to me, human. Fighting me will only prolong your suffering. My forces on Earth are already undermining your Bulk Electric System, preparing the way for my Metal Swarm.
+            n:
+              audio: ~2/Story_3_Warcore_4.m4a
+              actor: warcore
+              text: Two-way communication channel open!
+            o:
+              pos: [370,300]
+              text: Sektimus, you forget too soon that it was humans <copy Sektimus' voice> who defeated your kind in the past. This Defender is one of many that will defeat you again. Your machines may follow your rules perfectly, but you fear humans because they have something you never will be able to program into your robots - choice. A Defender who chooses to sustain security is worth a legion of your robots.
+              audio: ~2/Story_3_Ctanlee_22.m4a
+            p:
+              audio: ~2/Story_3_Sektimus_5.m4a
+              actor: sektimus
+              text: Ah CTANLEE. The little computer finally speaks. But I'm not interested in talking to you, am I? I'm talking to this human.
+            q:
+              audio: ~2/Story_3_Sektimus_6.m4a
+              actor: sektimus
+              text: Human. My Metal Swarm is coming to consume your planet. It took six WarMinds to resist us before and this CTANLEE you follow is the only survivor. Heed my advice. Go. Hide. Enjoy what little time you have left.
+            r:
+              pos: [370,300]
+              text: "Cadet ... you may wish this wasn't real, that it was just some work of fiction, but good can come from this. What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them. Sektimus fears this. Sektimus fears what you can become. While you ponder these things, let's get back to the simulator."
+              audio: ~2/Story_3_Ctanlee_23.m4a
+        duration: {kind: dialogue}
+      # 2 Simulation Kettle E Attack ==========================================
       -
-        title: Regulators
+        action:
+          - {cmd: movie.layers.uncache, data: 4}
+          - {cmd: movie.layers.uncache, data: 6}
         movie:
           layers:
-            - {depth: 8, content: clear, action: {cmd: chrome.show} }
+            - {depth: 10, content: kettle_e_attack_pngs.json, events: [complete] }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+          actions:
+            a:
+              pos: []
+              audio: Story_3_Silence.m4a
+            b:
+              pos: [170,150]
+              text: He's packaging up something nasty to send us.
+              audio: Story_3_Ctanlee_24.m4a
+            c:
+              pos: [270,500]
+              text: He's running some code on our control system! Look out everyone!
+              audio: Story_3_Ctanlee_25.m4a
+            d:
+              pos: [370,500]
+              text: This is totally uncool. Simulator pause!
+              audio: Story_3_Ctanlee_26.m4a
+        duration: {kind: listen, event: layer.10.complete}
+      # 2 Dialogue - Electronic Attack ==========================================
+      -
+        title: Electronic Attacks
+        action: {cmd: ctanlee.gohome}
+        movie:
+          layers:
+            - {depth: 10, content: clear }
         duration: {kind: ux}
         ux:
           components:
             -
               kind: dialogue
               config:
-                title: Regulators
-                body: The government wants to ensure our organization sustains the defenses required by compliance, so Company Name Arizona Public Service is accountable to regulatory bodies. NERC is responsible for defining the CIP Standards and gives authority to Company Regulator WECC to help us interpret the Standards and ensure we are following them through audits. <br/>The evidence we create is critical to this relationship. It helps us identify and fix issues, and shows our regulators that we are holding fast against the robots. With all these duties to perform and evidence to record, it's probably a good time to touch on what happens when we miss performing a duty or creating evidence.
+                title: Electronic Attacks
+                body: To defend our assets against electronic attacks, we must build an Electronic Security Perimeter (ESP) around the network that our BCA and PCA are connected to. CIP requires that we only allow communication in and out of the ESP network that is approved and business justified, ensuring the bad guys and bots can't communicate with our assets in the ESP. CIP also requires that we detect unauthorized electronic activity and alert Defenders if we detect something malicious. <br/>The most common way to meet the CIP requirements is to install Firewall between the ESP network and other networks. Firewalls can prevent unauthorized messages from getting through and often come equipped with Intrusion Prevention Systems (IPS) that inspect the contents of electronic messages and alert Defenders if something malicious is found. Electronic defense assets like firewalls are called Electronic Access Control and Managemement Systems (EACMS) - that's a mouthful! - and will be added to our official asset lists.nt Systems (EACMS) - that's a mouthful! - and will be added to our official asset lists.  t Systems (EACMS) - that's a mouthful! - and will be added to our official asset lists.  nt Systems (EACMS) - that's a mouthful! - and will be added to our official asset lists.
                 btn:
                   style: lightning
-                  text: continue
+                  text: Continue
                   action: {cmd: slides.next-slide}
+      # 2 Zoom Firewall Assets ==========================================
       -
-        title: Violations
+        movie:
+          layers:
+            - {depth: 10, content: perimeter_firewall.json }
+          zoom: {scale: 2, x: 600, y: 700}
+        duration: {kind: time, seconds: 1.5 }
+      # 2 Electronic Defense Selector ==========================================
+      - !!inc/file ./episodes/episode2/yaml/_eacms-selector.yaml
+      -
+        movie:
+          layers:
+            - {depth: 8, content: $eacmsBuild, cache: true }
+        duration: {kind: time, seconds: 0.5 }
+      # 2 Dialogue - Run Simulator ==========================================
+      -
+        title: Toasty
+        movie:
+          layers:
+          zoom: {scale: 1}
+          layers:
+            - {depth: 10, content: clear }
+            - {depth: 10, content: perimeter_electronic.json }
         duration: {kind: ux}
+        dialogue:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [170,400]
+              text: I feel safer already.
+              audio: Story_3_Ctanlee_30.m4a
         ux:
           components:
             -
               kind: dialogue
               config:
-                title: Violations
-                body: A Good Catch is doing something that almost violates a CIP requirement. These are learning opportunities that allow us to improve our processes. <br/>Identify, Assess, and Track is when we violate a CIP requirement, but discover the issue and fix our processes so the issue won't happen again. <br/>A Violation is violating a CIP requirement that doesn't allow for Identify, Assess and Track, or our violation is caught by an auditor. Violations can come with big fines, up to $1,000,000 per day, per incident. <br/>Let's run these situations through the simulator and see if you can identify them.
+                title: Toasty
+                body: Let's reload the simulator to test our newly installed defense.
                 btn:
                   style: lightning
-                  text: run simulator
+                  text: run simulation
                   action: {cmd: slides.next-slide}
+      # 2 Simulator - Firewall Good ==========================================
+      -
+        action:
+          - {cmd: movie.layers.cache, data: 1}
+          - {cmd: movie.layers.cache, data: 4}
+          - {cmd: movie.layers.cache, data: 6}
+          - {cmd: movie.layers.cache, data: 9}
+        movie:
+          layers:
+            - {depth: 10, content: $eacmsAnimateGood }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+          actions:
+            a:
+              pos: [170,400]
+              text: When computers communicate with each other, they send messages in small packets called … umm … packets. Right. Oh, here's a packet now.
+              audio: Story_3_Ctanlee_31.m4a
+            b:
+              pos: [570,250]
+              text: Before, this packet would have gone straight through to our servers. Let's see what the firewall does.
+              audio: Story_3_Ctanlee_32.m4a
+            c:
+              pos: []
+              audio: Story_3_Firewall_1.m4a
+              actor: warcore
+              text: Papers, please.
+            d:
+              pos: []
+              audio: Story_3_Packet_1.m4a
+              actor: sektimus
+              text: Hello. I'm from the corporate reporting server and I'm headed to the control server application server.
+            e:
+              pos: [570,500]
+              text: Even if the communication is authorized, the Intrusion Prevention System will check the contents of the packet.
+              audio: Story_3_Ctanlee_33.m4a
+            f:
+              pos: []
+              audio: Story_3_Firewall_2_3.m4a
+              actor: warcore
+              text: Open up… No contraband. Proceed.
+            g:
+              pos: [700,500]
+              text: That was an approved packet.
+              audio: Story_3_Ctanlee_34.m4a
+        duration: {kind: dialogue }
+      # 2 Simulator - Firewall Upper ==========================================
       -
         movie:
           layers:
-            - {depth: 7, content: clear }
-            - {depth: 8, content: violation.json, events: [complete] }
+            - {depth: 10, content: $eacmsAnimateBadUpper }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+          actions:
+            a:
+              pos: [130,400]
+              text: Ah, here's a packet sent by our robot hacker.
+              audio: Story_3_Ctanlee_35.m4a
+            b:
+              pos: []
+              audio: Story_3_Firewall_1.m4a
+              actor: warcore
+              text: Papers, please.
+            c:
+              pos: []
+              audio: Story_3_Packet_2.m4a
+              actor: sektimus
+              text: Ummm, well… I'm from the Internet and I want to communicate with the control system.
+            d:
+              pos: []
+              audio: Story_3_Packet_3.m4a
+              actor: sektimus
+              text: Help me, help me!
+            e:
+              pos: [320,450]
+              text: He wasn't on the list.
+              audio: Story_3_Ctanlee_36.m4a
+        duration: {kind: dialogue }
+      # 2 Simulator - Firewall Lower ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 10, content: $eacmsAnimateBadLower }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+          actions:
+            a:
+              pos: [170,400]
+              text: He's trying again. Some attacks can trick the firewall into letting a packet through.
+              audio: Story_3_Ctanlee_37.m4a
+            b:
+              pos: []
+              audio: Story_3_Firewall_1.m4a
+              actor: warcpre
+              text: Papers, please.
+            c:
+              pos: []
+              audio: Story_3_Packet_4.m4a
+              actor: sektimus
+              text: Hello... I'm from the corporate archival server going to the control system data acquisition server.
+            d:
+              pos: [270,300]
+              text: He's not through yet.
+              audio: Story_3_Ctanlee_38.m4a
+            e:
+              pos: []
+              audio: Story_3_Packet_5.m4a
+              actor: sektimus
+              text: Eeeeeee!
+            f:
+              pos: [370,300]
+              text: Terminated. Nice job, firewall.
+              audio: Story_3_Ctanlee_39.m4a
+        duration: {kind: dialogue }
+      # 2 Dialogue - End Chapter ==========================================
+      -
+        title: Chapter 2 Complete
+        action:
+          - {cmd: movie.layers.uncache, data: 1}
+          - {cmd: movie.layers.uncache, data: 4}
+          - {cmd: movie.layers.uncache, data: 6}
+          - {cmd: movie.layers.uncache, data: 9}
+        movie:
+          layers:
+            - {depth: 10, content: clear }
         dialogue:
           timeline:
             - {action: a }
           actions:
             a:
               pos: [100,100]
-              text: "Oh, it looks like an employee from headquarters just walked in. Where are you going?"
-              audio: Story_2_Ctanlee_12_15.mp3
-        duration: {kind: listen, event: layer.8.complete}
-      -
-        action: {cmd: ctanlee.gohome}
-        duration: {kind: time, seconds: 1 }
-      - !!inc/file ./episodes/episode2/yaml/_simple-selector-violation.yaml
-      -
-        movie:
-          layers:
-            - {depth: 8, content: clear }
-            - {depth: 8, content: goodcatch.json, events: [complete] }
-        dialogue:
-          timeline:
-            - {action: a }
-          actions:
-            a:
-              pos: [100,100]
-              text: "I think the Operator saw that. Stop them!"
-              audio: Story_2_Ctanlee_19_20.mp3
-        duration: {kind: listen, event: layer.8.complete}
-      -
-        action: {cmd: ctanlee.gohome}
-        duration: {kind: time, seconds: 1 }
-      - !!inc/file ./episodes/episode2/yaml/_simple-selector-goodcatch.yaml
-      -
-        movie:
-          layers:
-            - {depth: 8, content: clear }
-            - {depth: 8, content: identifyassess.json, events: [complete] }
-        dialogue:
-          timeline:
-            - {action: a }
-          actions:
-            a:
-              pos: [100,100]
-              text: "Excellent! She's asking about the camera!"
-              audio: Story_2_Ctanlee_26_27.mp3
-        duration: {kind: listen, event: layer.8.complete}
-      -
-        movie:
-          layers:
-            - {depth: 8, content: clear }
-        action: {cmd: ctanlee.gohome}
-        duration: {kind: time, seconds: 1 }
-      - !!inc/file ./episodes/episode2/yaml/_simple-selector-identifyassess.yaml
-      -
-        title: One Episode Down
-        action: {cmd: ctanlee.gohome}
+              text: And that ends the chapter. It's duty time.
+              audio: Story_3_Ctanlee_40.m4a
         duration: {kind: ux}
         ux:
           components:
             -
               kind: dialogue
               config:
-                title: One Episode Down
-                body: Nice job, Defender. Our facility is built, we tagged BCA, PCA and BCSI locations, learned about the CIP Senior Manager and the Cyber Security Program, and added Defenders. Most importantly, we learned that our core mission as Defenders is to protect our infrastructure performing our duties and creating evidence. <br/>Let's test your knowledge and move onto the next episode where we'll build and secure the perimeters around our facility. Buckle up into your office chairs, because things are about to get really interesting. The robots are coming…
+                title: Chapter Complete
+                body:
                 btn:
                   style: lightning
                   text: Review Duties
                   action: {cmd: slides.next-slide}
+      # 2 Duties ==========================================
       -
-        movie:
-          layers:
-            - {depth: 9, content: mimebot_reveal.json, events: [complete] }
-        duration: {kind: listen, event: layer.9.complete}
-      # Example Duties Slide
-      -
-        movie:
-          layers:
-            - {depth: 9, content: clear }
+        action: {cmd: ctanlee.gohome}
         ux:
           components:
             -
               kind: duties
-              config: {definition: ~l/ep2-ch1-duties.json}
+              config: {definition: ~l/ep3-ch2-duties.json}
         duration: {kind: ux}
-      # EXAMPLE - Quiz
+      # 2 Quiz ==========================================
       -
+        title: Quiz
         duration: {kind: ux}
         ux:
           components:
@@ -796,42 +668,9 @@ chapters:
                       -
                         a: A curve
                         r: Better luck next time
-      # Rank Advance ==========================================
+      # 2 Rank Advance ==========================================
       -
         movie:
           layers:
-            - {depth: 10, background: black, content: ~g/cadet_first_class.json, event: [complete] }
+            - {depth: 10, background: black, content: ~g/technical_cadet.json, events: [complete] }
         duration: {kind: listen, event: layer.10.complete }
-      #################### TESTING
-      # -
-      #   ux:
-      #     components:
-      #       -
-      #         kind: ghost-ux
-      #         config:
-      #           targets:
-      #             -
-      #               id: control-system-outline
-      #               over: {cmd: highlight, data: {id: control-system-outline, level: blue} }
-      #               out: {cmd: unhighlight, data: control-system-outline }
-      #               click: {cmd: unhighlight, data: control-system-outline }
-      #             -
-      #               id: esp-ns
-      #               over: {cmd: highlight, data: {id: esp-ns, level: blue} }
-      #               out: {cmd: unhighlight, data: esp-ns }
-      #               click: {cmd: unhighlight, data: esp-ns }
-      #             -
-      #               id: server3-outline
-      #               over: {cmd: highlight, data: {id: server3-outline, level: blue} }
-      #               out: {cmd: unhighlight, data: server3-outline }
-      #               click: {cmd: unhighlight, data: server3-outline }
-      #             -
-      #               id: server4-hit
-      #               over: {cmd: highlight, data: {id: server4-group, level: orange} }
-      #               out:   {cmd: highlight, data: {id: server4-group, level: blue} }
-      #               click: {cmd: highlight, data: {id: server4-group, level: yellow} }
-      #             -
-      #               id: tower-outline
-      #               over: {cmd: highlight, data: {id: tower-outline, level: blue} }
-      #               out: {cmd: unhighlight, data: tower-outline }
-      #               click: {cmd: unhighlight, data: tower-outline }

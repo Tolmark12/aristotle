@@ -18,8 +18,9 @@ module.exports = class Chapter
       @slides.start()
 
   destroy : () ->
-    @slides.destroy()
-    @slides = null
+    if @slides?
+      @slides.destroy()
+      @slides = null
 
   onSlidesComplete : () => @onChapterCompete()
 

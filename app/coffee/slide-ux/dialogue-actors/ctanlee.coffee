@@ -13,10 +13,11 @@ module.exports = class Ctanlee
 
     @$nextBtn.on "click",   (e)=> @playNextAction()
 
-    PubSub.subscribe 'ctanlee.hide',   (a, data)=> @$el.addClass "hidden"
-    PubSub.subscribe 'ctanlee.show',   (a, data)=> @$el.removeClass "hidden"
-    PubSub.subscribe 'ctanlee.clear',  (a, data)=> @hideText()
-    PubSub.subscribe 'ctanlee.gohome', (a, data)=> @returnToStation()
+    token1  = PubSub.subscribe 'ctanlee.hide',   (a, data)=> @$el.addClass "hidden"
+    token2  = PubSub.subscribe 'ctanlee.show',   (a, data)=> @$el.removeClass "hidden"
+    token3  = PubSub.subscribe 'ctanlee.clear',  (a, data)=> @hideText()
+    token4  = PubSub.subscribe 'ctanlee.gohome', (a, data)=> @returnToStation()
+    @tokens = [token1,token2,token3,token4]
 
     $parent.append @$el
     @returnToStation()
@@ -138,3 +139,10 @@ module.exports = class Ctanlee
         @$text.addClass item
     else
       @$text.addClass pos
+
+  destroy : () ->
+    @$el.velocity "stop", true
+    @$faceHolder.velocity "stop", true
+    @$el.empty()
+    for token in @tokens
+      PubSub.unsubscribe token

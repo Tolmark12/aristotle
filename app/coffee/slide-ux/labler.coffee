@@ -2,8 +2,8 @@ module.exports = class Labler
 
   constructor: () ->
     @count = 0
-    PubSub.subscribe 'label.attach', (m, data)=> @attachLabel data
-    PubSub.subscribe 'label.destroy', (m, data)=> @destroyLabel data
+    @token1 = PubSub.subscribe 'label.attach', (m, data)=> @attachLabel data
+    @token2 = PubSub.subscribe 'label.destroy', (m, data)=> @destroyLabel data
 
   attachLabel : (data) ->
     return if $(".label-wrapper", data.el).length != 0
@@ -15,3 +15,7 @@ module.exports = class Labler
 
   destroyLabel : ($el) ->
     $(".label-wrapper", $el).velocity {opacity:0}, {duration:150, complete:()-> $(this).remove() }
+
+  destroy : () ->
+    PubSub.unsubscribe @token1
+    PubSub.unsubscribe @token2
