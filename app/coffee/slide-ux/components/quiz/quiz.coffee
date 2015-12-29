@@ -8,7 +8,7 @@ module.exports = class Quiz extends Component
     PubSub.publish "chrome.hide"
     PubSub.publish "ctanlee.hide"
     @build @data
-    super @$el, @$node
+    super @$el, @$node, @data
 
   build: (data)->
     @$node = $ jadeTemplate['slide-ux/components/quiz/quiz']( data )
@@ -57,8 +57,6 @@ module.exports = class Quiz extends Component
     @$el.append @$node
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
 
-
-  # PubSub.publish 'slides.next-slide',
 
   ########  ########  ######  ##     ## ##       ########  ######
   ##     ## ##       ##    ## ##     ## ##          ##    ##    ##

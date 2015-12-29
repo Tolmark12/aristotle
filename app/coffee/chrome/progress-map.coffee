@@ -64,7 +64,6 @@ module.exports = class ProgressMap
   # ------------------------------------ Events
 
   onMileStoneClick : ($el) ->
-    console.log "click.."
     # return if !$el.hasClass "viewed" #Stop if this slide hasn't been viewed
     PubSub.publish 'episode.goto', $el.attr "data-title"
   onMileStoneOver  : ($el) ->

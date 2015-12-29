@@ -116,6 +116,7 @@ chapters:
         movie:
           layers:
             - {depth: 7, content: $pacsBuild, loop: true}
+        duration: {kind: time, seconds: 0.5 }
       # 1 Dialogue Perimeter Try Again ==========================================
       -
         title: Please Try Again
@@ -410,7 +411,7 @@ chapters:
         movie:
           layers:
             - {depth: 8, content: $eacmsBuild, cache: true }
-
+        duration: {kind: time, seconds: 0.5 }
       # 2 Dialogue - Run Simulator ==========================================
       -
         title: Toasty
@@ -579,7 +580,7 @@ chapters:
         duration: {kind: dialogue }
       # 2 Dialogue - End Chapter ==========================================
       -
-        title: Chapter Complete
+        title: Chapter 2 Complete
         action:
           - {cmd: movie.layers.uncache, data: 1}
           - {cmd: movie.layers.uncache, data: 4}
@@ -619,6 +620,7 @@ chapters:
         duration: {kind: ux}
       # 2 Quiz ==========================================
       -
+        title: Quiz
         duration: {kind: ux}
         ux:
           components:

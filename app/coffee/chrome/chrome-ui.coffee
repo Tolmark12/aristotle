@@ -3,19 +3,19 @@ ProgressDisplay = require 'chrome/progress-display'
 module.exports = class ChromeUI
 
   constructor: (@$el) ->
-    @build @$el
-    @hideMode()
+    # @build @$el
     PubSub.subscribe "chrome.hide",         (m, data)=> @hide()
     PubSub.subscribe "chrome.show",         (m, data)=> @show()
     PubSub.subscribe "chrome.showname",     (m, data)=> @showName()
     PubSub.subscribe "chrome.showepisodes", (m, data)=> @showIcons()
     PubSub.subscribe "chrome.hidename",     (m, data)=> @hideName()
     PubSub.subscribe "chrome.hideepisodes", (m, data)=> @hideIcons()
+    PubSub.subscribe "chrome", ()-> console.log m, data
 
-  build : (@$el) ->
+  build : () ->
+    name = aristotle.lmsProxy.user.split ","
     progressDisplay = new ProgressDisplay @$el
-
-    data    = {name:"John \"Deadeye\" Nimbus", episode:"1"}
+    data    = {name:"#{name[1]} \"Deadeye\" #{name[0]}", episode:"1"}
     @getRank data, "cyber-cadet"
     $top    = $ jadeTemplate['chrome-ui/top']( data )
     @$el.append $top
@@ -24,7 +24,9 @@ module.exports = class ChromeUI
     @$mode  = $ ".learn-mode", $top
 
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
+    @hideMode()
 
+  setName : () ->
 
 
   showName  : () -> @$name.css( {display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}

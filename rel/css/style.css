@@ -435,7 +435,8 @@ h1, h2 {
       .slide-ux .call-sign-select .input .button {
         border: none; }
   .slide-ux .dialogue-wrap {
-    height: 768px; }
+    height: 768px;
+    pointer-events: none; }
     .slide-ux .dialogue-wrap .line {
       width: 100%;
       content: "";

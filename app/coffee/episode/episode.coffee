@@ -3,9 +3,10 @@ Sequence       = require 'misc/Sequence'
 
 module.exports = class Episode
 
-  constructor: (trainingData, @movie, @ux) ->
+  constructor: (trainingData, @movie, @ux, @chrome) ->
     aristotle.episode = @
     @episodeNum = trainingData.episode
+    @chrome.build()
     aristotle.episodeData = trainingData
     @nextRankId = trainingData.nextRankId
     aristotle.devTools.go trainingData.dev, trainingData.chapters

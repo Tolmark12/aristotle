@@ -120,7 +120,7 @@ chapters:
           actions:
             a:
               pos: [100,100]
-              text: "Most facilities that fall under CIP have a lot of equipment like this that controls the Bulk Electric System. Imagine the damage the robots would do if they gained access to control a breaker, power plant or Tesla Cannon. Shudder."
+              text: "Most facilities that fall under CIP have a lot of equipment like this that controls the Bulk Electric System. Imagine the damage the robots would do if they gained access to a control breaker, power plant or Tesla Cannon. Shudder."
               audio: Story_2_Ctanlee_8.m4a
               next: audio
       # 1 Dialogue Protected Cyber Assets  ==========================================
@@ -203,7 +203,7 @@ chapters:
               kind: dialogue
               config:
                 title: BES Cyber System Information
-                body: Facilities are contain information useful for a bot planning an attack. For starters, we often have maps, security plans, network diagrams, and configuration information stored on hard drives, file shares, and in filing cabinets. This is called BES Cyber System Information (BCSI) and we must protect their locations. <br/>All BCA and PCA are assumed to contain BCSI, so we'll tag the other location we might find it.
+                body: Facilities contain information useful for a bot planning an attack. For starters, we often have maps, security plans, network diagrams, and configuration information stored on hard drives, file shares, and in filing cabinets. This is called BES Cyber System Information (BCSI) and we must protect their locations. <br/>All BCA and PCA are assumed to contain BCSI, so we'll tag the other location we might find it.
                 btn:
                   style: lightning
                   text: tag BCSI
@@ -482,7 +482,7 @@ chapters:
               kind: dialogue
               config:
                 title: Duties
-                body: We have Defenders! But how do they know how to defend our facility? The CIP Senior Manager is required to create a Cyber Security Program that describes how our people and defenses meet the CIP Standards. The Program defines the jobs of our Defenders - to learn and Perform Duties that secure our infrastructure and to Create Evidence that those duties were performed duties correctly. CIP requires we communicate duties to Defenders through dedicated CIP security training and regular awareness campaigns. <br/>Did you notice something, Cadet? While leadership may define the Program and provide training and tools, success depends on everyone doing their duties. Protecting our infrastructure is a team effort and that's why we don't give out the title "Defender" lightly.
+                body: We have Defenders! But how do they know how to defend our facility? The CIP Senior Manager is required to create a Cyber Security Program that describes how our people and defenses meet the CIP Standards. The Program defines the jobs of our Defenders - to learn and Perform Duties that secure our infrastructure and to Create Evidence that those duties were performed correctly. CIP requires we communicate duties to Defenders through dedicated CIP security training and regular awareness campaigns. <br/>Did you notice something, Cadet? While leadership may define the Program and provide training and tools, success depends on everyone doing their duties. Protecting our infrastructure is a team effort and that's why we don't give out the title "Defender" lightly.
                 btn:
                   style: lightning
                   text: continue
@@ -558,7 +558,7 @@ chapters:
                   -
                     hit: brad
                     name: Brad, Compliance Team Warrior
-                    quote: Compliance is just another way to say 'I love you
+                    quote: Compliance is just another way to say 'I love you'
                     Personal1: Favorite possession
                     Personal2: A list of CIP acronyms signed by all members of the CIP Drafting Committee.
                     duties:

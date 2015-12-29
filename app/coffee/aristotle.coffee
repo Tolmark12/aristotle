@@ -29,7 +29,7 @@ class Aristotle
     episodeLoader = new EpisodeLoader @onJsonLoaded
 
   onJsonLoaded : (episodeData) =>
-    episode = new Episode episodeData, @movie, @slideUX
+    episode = new Episode episodeData, @movie, @slideUX, @chromeUI
 
   build : ($el) ->
     $base = $ jadeTemplate['aristotle']( {} )
