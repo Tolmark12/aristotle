@@ -25,12 +25,14 @@ module.exports = class Movie
     PubSub.subscribe 'movie.layers.cache-all',(m, data)     => @cacheAllLayers()
     PubSub.subscribe 'movie.layers.cache-all-but',(m, data) => @cacheAllBut data
     PubSub.subscribe 'movie.report', (m, data)              => @report()
+    PubSub.subscribe 'movie.rehydrate-layers', (m, data)    => @rehydrateLayerState data
 
 
   report : () ->
     layer.report() for layer in @layers
 
   reset : () ->
+    @zoom {scale:1}
     layer.destroy() for layer in @layers
     @layers = []
 

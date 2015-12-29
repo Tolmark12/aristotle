@@ -19,10 +19,10 @@ module.exports = class ProgressMap
     @$el.append @$node
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
 
-    # $milestone = $(".milestone", @$node)
+    $milestone = $(".milestone", @$node)
     # $milestone.on "click",     (e)=> @onMileStoneClick $(e.currentTarget)
-    # $milestone.on "mouseover", (e)=> @onMileStoneOver $(e.currentTarget)
-    # $milestone.on "mouseout",  (e)=> @onMileStoneOut $(e.currentTarget)
+    $milestone.on "mouseover", (e)=> @onMileStoneOver $(e.currentTarget)
+    $milestone.on "mouseout",  (e)=> @onMileStoneOut $(e.currentTarget)
 
   parseEpisodeData : (data) ->
     items = []
@@ -64,6 +64,7 @@ module.exports = class ProgressMap
   # ------------------------------------ Events
 
   onMileStoneClick : ($el) ->
+    console.log "click.."
     # return if !$el.hasClass "viewed" #Stop if this slide hasn't been viewed
     PubSub.publish 'episode.goto', $el.attr "data-title"
   onMileStoneOver  : ($el) ->

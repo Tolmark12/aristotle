@@ -112,6 +112,10 @@ chapters:
         duration: {kind: time, seconds: 1.5 }
       # 1 Selector Physical Security ==========================================
       - !!inc/file ./episodes/episode3/yaml/_pacs-selector.yaml
+      -
+        movie:
+          layers:
+            - {depth: 7, content: $pacsBuild, loop: true}
       # 1 Dialogue Perimeter Try Again ==========================================
       -
         title: Please Try Again
@@ -402,6 +406,11 @@ chapters:
         duration: {kind: time, seconds: 1.5 }
       # 2 Electronic Defense Selector ==========================================
       - !!inc/file ./episodes/episode3/yaml/_eacms-selector.yaml
+      -
+        movie:
+          layers:
+            - {depth: 8, content: $eacmsBuild, cache: true }
+
       # 2 Dialogue - Run Simulator ==========================================
       -
         title: Toasty

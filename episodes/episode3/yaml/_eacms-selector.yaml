@@ -24,7 +24,6 @@ ux:
       config:
         click:
           - {cmd: slides.next-slide}
-          - {cmd: movie.load-layer, data: {depth: 8, content: $eacmsBuild, cache: true }}
         intro:
         title: Choose an EACMS
         subTitle: Choose a Firewall with an Intrusion Prevention System to create your Electronic Security Perimeter.

@@ -7,9 +7,11 @@ module.exports = class LMSProxy
     PubSub.subscribe 'state.save',      (m, data)=> @saveState()
     PubSub.subscribe 'state.load',      (m, data)=> @loadState()
     PubSub.subscribe 'state.rehydrate', (m, data)=> @rehydrate()
+    PubSub.subscribe 'slide.activated', (m, data)=> @saveState data
 
   begin : (cb) ->
     if elbScorm.initCourse()
+      @loadState()
       @user      = elbScorm.GetUserName()    # ex:       Kingsley, James
       @userId    = elbScorm.GetUserID()      # I assume: asf0h30asbu30
       stateData  = elbScorm.GetResumeData()  # ojb
@@ -19,13 +21,14 @@ module.exports = class LMSProxy
     else
       console.log "couldn't start the course"
 
-  loadState : () -> @store = elbScorm.GetResumeData()
+  loadState : () ->
+    @store = elbScorm.GetResumeData()
 
   rehydrate : () ->
     if !@store? then return
-    aristotle.movie.rehydrateLayerState @store.layerState
+    aristotle.episode.gotoLocationByTitle @store.location.slide
 
-  saveState : () ->
+  saveState : (currentSlide) ->
     @store = {}
     # global variabls
     @store.globalVars = aristotle.globals.vars
@@ -33,9 +36,7 @@ module.exports = class LMSProxy
     # layer state
     @store.layerState = aristotle.movie.dehydrateLayerState()
 
-    # current episode / chapter / slide in the training
-    # todo
-
+    @store.location = {episodeNum:aristotle.episode.episodeNum, slide:currentSlide}
     elbScorm.SetResumeData @store
 
 

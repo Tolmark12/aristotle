@@ -1,7 +1,7 @@
 duration: {kind: dialogue}
-movie:
-  layers:
-    - {depth: 5, content: interior_loop.json, loop: true }
+# movie:
+#   layers:
+#     - {depth: 5, content: interior_loop.json, loop: true }
 dialogue:
   timeline:
     - {action: a }

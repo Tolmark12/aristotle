@@ -5,7 +5,7 @@ rankId: cadet
 nextRankId: cadet-first-class
 dev:
   startIndex: 0
-  skipSlate: true
+  # skipSlate: true
 chapters:
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 1
@@ -29,6 +29,13 @@ chapters:
         duration: {kind: listen, event: layer.2.complete}
       # 1 Selector Facility ==========================================
       - !!inc/file ./episodes/episode2/yaml/_building-selector.yaml
+      -
+        movie:
+          layers:
+            - {depth: 3, cache: true, content: $facilityBuild}
+            - {depth: 4, content: $facilityLoop, loop: true }
+            - {depth: 5, content: ~2/interior_build.json}
+        duration: {kind: time, seconds: 0.1}
       # 1 Building Tour Ctanlee ==========================================
       - !!inc/file ./episodes/episode2/yaml/_building-overview.yaml
       # 1 Dialogue BES Cyber Assets  ==========================================

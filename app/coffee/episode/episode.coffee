@@ -4,6 +4,8 @@ Sequence       = require 'misc/Sequence'
 module.exports = class Episode
 
   constructor: (trainingData, @movie, @ux) ->
+    aristotle.episode = @
+    @episodeNum = trainingData.episode
     aristotle.episodeData = trainingData
     @nextRankId = trainingData.nextRankId
     aristotle.devTools.go trainingData.dev, trainingData.chapters
@@ -23,6 +25,14 @@ module.exports = class Episode
     @ux.populate( {components:[
       {kind: "episode-intro", config: {title:data.title, subtitle:data.subtitle, episode:data.episode}}
     ]})
+
+    # If there is a previous location...
+    if aristotle.lmsProxy.store.location?
+      if aristotle.lmsProxy.store.location.episodeNum == @episodeNum
+        aristotle.lmsProxy.rehydrate()
+        return
+
+    # else, start from the begining
     setTimeout @playChapter, 3000
 
   showOutro : (data) ->
@@ -50,9 +60,13 @@ module.exports = class Episode
           breakLoop1 = true; break
       break if breakLoop1
 
+    layersAr = []
+    for key, layer of layers
+      layersAr.push layer
+
     @chapters.activateItemByParam 'title', chapterTitle
     @playChapter slide.title
-
+    PubSub.publish 'movie.rehydrate-layers', layersAr
 
   createAndShowOutro : () ->
 
@@ -76,10 +90,10 @@ module.exports = class Episode
     @nextChapter()
 
   playChapter     : (firstSlide=null) =>
-    PubSub.publish 'state.rehydrate'
+    # PubSub.publish 'state.rehydrate'
     @chapters.getCurrentItem().start firstSlide
     PubSub.publish 'chapter.started', @chapters.getCurrentItem().chapterData.title
 
   episodeComplete : () ->
-    console.log "episode complete"
+    # elbScorm.SetComplete()
     @showOutro()
