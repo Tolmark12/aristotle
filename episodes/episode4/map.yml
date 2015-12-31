@@ -34,7 +34,7 @@ chapters:
             - {depth: 7, content: $pacsBuild, loop: true }
             - {depth: 8, content: $eacmsBuild, jumpToEnd: true, cache: true }
             - {depth: 9, content: $portBuild, jumpToEnd: true, cache: true }
-            - {depth: 10, content: $changeBuild, jumpToEnd: true, cache: true }
+            - {depth: 10, content: $assetBuild, jumpToEnd: true, cache: true }
             - {depth: 11, content: $patchBuild, jumpToEnd: true, cache: true }
         duration: {kind: time, seconds: 1 }
       # 1 Zoom to Asset Views ==========================================
@@ -123,6 +123,9 @@ chapters:
       # 1 Dialogue Removing Access ==========================================
       -
         title: Removing Access
+        movie:
+          layers:
+            - {depth: 17, content: Clear }
         duration: {kind: ux}
         ux:
           components:
@@ -188,15 +191,15 @@ chapters:
             - {action: c }
           actions:
             a:
-              pos: [100,100]
+              pos: [300,100]
               text: "Lisa started the access removal process for Rod."
               audio: Story_5_Ctanlee_9.m4a
             b:
-              pos: [100,100]
+              pos: [200,200]
               text: "Brad will update documentation and Richard will disable Rod's accounts."
               audio: Story_5_Ctanlee_10.m4a
             c:
-              pos: [100,100]
+              pos: [400,200]
               text: "Compliance fist bumps all-around. Rod's access was removed in under 24 hours. Now let's deal with that unsavory human."
               audio: Story_5_Ctanlee_11.m4a
         duration: {kind: dialogue}
@@ -213,11 +216,11 @@ chapters:
             - {action: b }
           actions:
             a:
-              pos: [100,100]
+              pos: [300,100]
               text: "The Personnel Risk Assessment. We've got you now."
               audio: Story_5_Ctanlee_12.m4a
             b:
-              pos: [100,100]
+              pos: [150,500]
               text: "I relish your demise, unworthy opponent. Let's hire a worthy successor for Rod."
               audio: Story_5_Ctanlee_13.m4a
         duration: {kind: dialogue}
@@ -240,7 +243,7 @@ chapters:
             - {action: h }
           actions:
             a:
-              pos: [100,100]
+              pos: [400,100]
               text: "Here's another candidate."
               audio: Story_5_Ctanlee_14.m4a
             b:
@@ -248,7 +251,7 @@ chapters:
               pos: []
               audio: ~1/Silence_1_sec.m4a
             c:
-              pos: [100,100]
+              pos: [100,400]
               text: "That's some top quality training."
               audio: Story_5_Ctanlee_15.m4a
             d:
@@ -256,11 +259,11 @@ chapters:
               pos: []
               audio: ~1/Silence_1_sec.m4a
             e:
-              pos: [100,100]
+              pos: [100,200]
               text: "Supervisor Lisa approves the access and Brad updates documentation."
               audio: Story_5_Ctanlee_16.m4a
             f:
-              pos: [100,100]
+              pos: [100,300]
               text: "We're safe to give Cindy the physical and electronic access she needs. Richard will configure this."
               audio: Story_5_Ctanlee_17.m4a
             g:
@@ -268,7 +271,7 @@ chapters:
               pos: []
               audio: ~1/Silence_1_sec.m4a
             h:
-              pos: [100,100]
+              pos: [400,100]
               text: "Simulator Pause!"
               audio: Story_5_Ctanlee_18.m4a
         duration: {kind: dialogue}
@@ -305,6 +308,9 @@ chapters:
       # 1 Duties ==========================================
       -
         action: {cmd: ctanlee.gohome}
+        movie:
+          layers:
+            - {depth: 17, content: clear }
         ux:
           components:
             -
@@ -685,6 +691,9 @@ chapters:
         duration: {kind: dialogue}
       # 3 Duties ==========================================
       -
+        movie:
+          layers:
+            - {depth: 17, content: clear }
         action: {cmd: ctanlee.gohome}
         ux:
           components:
@@ -745,5 +754,5 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, background: black, content: ~g/master_cadet.json, events: [complete] }
-        duration: {kind: listen, event: layer.17.complete }
+            - {depth: 20, background: black, content: ~g/master_cadet.json, events: [complete] }
+        duration: {kind: listen, event: layer.20.complete }

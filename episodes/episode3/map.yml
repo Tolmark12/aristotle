@@ -33,7 +33,6 @@ chapters:
             - {depth: 6, content: ~1/interior_loop.json, loop: true }
             - {depth: 7, content: $pacsBuild, loop: true }
             - {depth: 8, content: $eacmsBuild, jumpToEnd: true, cache: true, events: [complete] }
-            - {depth: 10, content: ~1/factory_workers_loop.json, loop: true }
         duration: {kind: time, seconds: 1 }
       # 1 Dialogue Intro ==========================================
       -
@@ -54,28 +53,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: kettle_bush_attack.json, events: [complete] }
-        dialogue:
-          defaults:
-            next: audio
-          timeline:
-            - {action: a }
-            - {action: b }
-          actions:
-            a:
-              pos: []
-              audio: Placeholder_Silence.m4a
-            b:
-              pos: [100,100]
-              text: "No, no, no. Don't be fooled by that!"
-              audio: Story_4_Ctanlee_1.m4a
-        duration: {kind: listen, event: layer.11.complete}
-      # 1 Simulation B ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 11, content: kettle_bush_attack_end.json, events: [complete] }
-            - {depth: 10, content: clear }
+            - {depth: 11, content: kettle_bush_attack.json }
         dialogue:
           defaults:
             next: audio
@@ -84,30 +62,29 @@ chapters:
             - {action: b }
             - {action: c }
             - {action: d }
+            - {action: e }
           actions:
             a:
-              next: 1500
+              next: 13000
               pos: []
-              audio: Silence_1_sec.m4a
+              audio: Placeholder_Silence.m4a
             b:
-              pos: []
-              audio: 2001_Space.mp3
+              pos: [100,100]
+              text: "No, no, no. Don't be fooled by that!"
+              audio: Story_4_Ctanlee_1.m4a
             c:
+              next: 29500
+              pos: []
+              audio: Placeholder_Silence.m4a
+            d:
               pos: [100,100]
               text: "The robots have taken control of the operator console and are overloading our transmission lines."
               audio: Story_4_Ctanlee_2.m4a
-            d:
+            e:
               pos: [100,100]
               text: "Simulator Pause!"
               audio: Story_4_Ctanlee_3.m4a
-        duration: {kind: dialogue}
-      # 1 Zoom to Asset View Ports ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 11, content: clear }
-            - {depth: 10, content: ~1/factory_workers_loop.json, loop: true }
-        duration: {kind: time, seconds: 2 }
+        duration: {kind: dialogue }
       # 1 Dialogue Ports==========================================
       -
         title: Port Security
@@ -136,7 +113,8 @@ chapters:
         movie:
           layers:
             - {depth: 11, content: clear }
-        duration: {kind: time, seconds: .5 }
+            - {depth: 9, content: $portBuild, events: [complete] }
+        duration: {kind: listen, event: layer.9.complete}
       # 1 Animate Install Port Security ==========================================
       -
         movie:
@@ -417,7 +395,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: placeholder_45_sec.json }
+            - {depth: 12, content: change_assets_fail.json }
         dialogue:
           defaults:
             next: audio
@@ -426,20 +404,35 @@ chapters:
             - {action: b }
             - {action: c }
             - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
           actions:
             a:
+              next: 7000
+              pos: []
+              audio: Placeholder_Silence.m4a
+            b:
               pos: [100,100]
               text: "Looks like Rod's workstation is old and causing problems. Lisa requested an upgrade."
               audio: Story_4_Ctanlee_19.m4a
-            b:
+            c:
+              next: 20000
+              pos: []
+              audio: Placeholder_Silence.m4a
+            d:
               pos: [100,100]
               text: "Wait a second! You're just going to plug that computer into the ESP network? It doesn't have ports disabled, anti-virus installed, and who knows what else that MimeBot installed on it. It's a security nightmare!"
               audio: Story_4_Ctanlee_20.m4a
-            c:
+            e:
+              next: 2000
+              pos: []
+              audio: Placeholder_Silence.m4a
+            f:
               pos: [100,100]
               text: "The computer just dialed out to the KettleHead. He's taking command of the computer."
               audio: Story_4_Ctanlee_21.m4a
-            d:
+            g:
               pos: [100,100]
               text: "We know how this will end. Simulator pause!"
               audio: Story_4_Ctanlee_22.m4a
@@ -447,9 +440,6 @@ chapters:
       # 3 Dialogue More Problems ==========================================
       -
         title: More Problems
-        movie:
-          layers:
-            - {depth: 12, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -466,19 +456,25 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: placeholder_15_sec.json, events: [complete] }
+            - {depth: 12, content: change_assets_fail_part_2.json }
         dialogue:
           defaults:
             next: audio
           timeline:
             - {action: a }
             - {action: b }
+            - {action: c }
           actions:
             a:
+              next: 17500
+              pos: []
+              audio: Placeholder_Silence.m4a
+            b:
+              next: 5800
               pos: [100,100]
               text: "No problem. I'm sure Richard cleaned all that data off…"
               audio: Story_4_Ctanlee_23.m4a
-            b:
+            c:
               pos: [100,100]
               text: "Orrrrrr not. Simulator Pause!"
               audio: Story_4_Ctanlee_24.m4a
@@ -488,6 +484,7 @@ chapters:
         title: Adding Assets
         movie:
           layers:
+            - {depth: 12, content: clear }
             - {depth: 12, content: workstation_1.json }
         duration: {kind: ux}
         ux:
@@ -622,7 +619,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: placeholder_15_sec.json, events: [complete] }
+            - {depth: 12, content: $changePass }
         dialogue:
           defaults:
             next: audio
@@ -633,29 +630,45 @@ chapters:
             - {action: d }
             - {action: e }
             - {action: f }
+            - {action: g }
+            - {action: h }
           actions:
             a:
-              pos: [100,100]
+              next: 2700
+              pos: []
+              audio: Placeholder_Silence.m4a
+            b:
+              next: 5500
+              pos: [570,600]
               text: "Richard set up the workstation and documented the configuration."
               audio: Story_4_Ctanlee_28.m4a
-            b:
-              pos: [100,100]
+            c:
+              next: 8500
+              pos: [625,650]
               text: "Now he's running the vulnerability assessment and fixing all the issues."
               audio: Story_4_Ctanlee_29.m4a
-            c:
-              pos: [100,100]
+            d:
+              next: 4500
+              pos: [150,450]
               text: "Brad updates documentation."
               audio: Story_4_Ctanlee_30.m4a
-            d:
-              pos: [100,100]
+            e:
+              next: 5500
+              pos: [500,400]
               text: "And Rod's supervisor, Lisa, approves the change. We're safe to install."
               audio: Story_4_Ctanlee_31.m4a
-            e:
-              pos: [100,100]
+            f:
+              next: 9000
+              pos: [700,100]
               text: "You fought well, bot. But we fought so much better. Now let's handle that disposal better."
               audio: Story_4_Ctanlee_32.m4a
-            f:
-              pos: [100,100]
+            g:
+              next: 11000
+              pos: []
+              audio: Placeholder_Silence.m4a
+            h:
+              next: 3500
+              pos: [100,400]
               text: "Robot! - NO BCSI For You!"
               audio: Story_4_Ctanlee_33.m4a
         duration: {kind: dialogue }

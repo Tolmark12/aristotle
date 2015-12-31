@@ -35,7 +35,7 @@ chapters:
             - {depth: 7, content: $pacsBuild, loop: true }
             - {depth: 8, content: $eacmsBuild, jumpToEnd: true, cache: true }
             - {depth: 9, content: $portBuild, jumpToEnd: true, cache: true }
-            - {depth: 10, content: $changeBuild, jumpToEnd: true, cache: true }
+            - {depth: 10, content: $assetBuild, jumpToEnd: true, cache: true }
             - {depth: 11, content: $patchBuild, jumpToEnd: true, cache: true }
             - {depth: 12, content: $accessBuild, jumpToEnd: true, cache: true }
             - {depth: 13, content: $visitorBuild, jumpToEnd: true, cache: true }
@@ -241,7 +241,7 @@ chapters:
             b:
               next: 3500
               pos: []
-              audio: Placeholder_Silence.m4a
+              audio: ~3/Placeholder_Silence.m4a
             c:
               pos: [700,250]
               text: What is this?

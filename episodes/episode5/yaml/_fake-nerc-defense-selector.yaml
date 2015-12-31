@@ -8,15 +8,15 @@ dialogue:
     a:
       emo: happy
       text: "Crikey!"
-      audio: ~4/Story_5_Ctanlee_13.m4a
+      audio: Story_6_Ctanlee_13.m4a
     b:
       emo: happy
       text: "Stay on target."
-      audio: ~4/Story_5_Ctanlee_14.m4a
+      audio: Story_6_Ctanlee_14.m4a
     c:
       emo: surprize
       text: "Gravity kills."
-      audio: ~4/Story_5_Ctanlee_15.m4a
+      audio: Story_6_Ctanlee_15.m4a
 ux:
   components:
     -
@@ -24,7 +24,6 @@ ux:
       config:
         click:
           - {cmd: slides.next-slide}
-          - {cmd: movie.load-layer, data: {depth: 12, content: $accessBuild }}
         intro:
         title: Choose your NERC Bot-Tron Defense
         subTitle: "The Incident Response Team reported the threat to E-ISAC. From this information and the forensic data we provided from the recovery, NERC designed several Bot-Tron Overlord defenses. <br/>Time to kick some bot."
