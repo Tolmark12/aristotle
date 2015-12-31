@@ -8,15 +8,15 @@ dialogue:
     a:
       emo: happy
       text: "Crikey!"
-      audio: Story_5_Ctanlee_13.m4a
+      audio: ~4/Story_5_Ctanlee_13.m4a
     b:
       emo: happy
       text: "Stay on target."
-      audio: Story_5_Ctanlee_14.m4a
+      audio: ~4/Story_5_Ctanlee_14.m4a
     c:
       emo: surprize
       text: "Gravity kills."
-      audio: Story_5_Ctanlee_15.m4a
+      audio: ~4/Story_5_Ctanlee_15.m4a
 ux:
   components:
     -

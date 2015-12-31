@@ -1,3 +1,18 @@
+Episode 3:
+  - I don't think we can name with ? or !
+    #will_you_stop_training?
+    #you_did_it!
+
+Episode 4:
+  - can't find : $assetBuild
+  - #do_you_accept_this_challenge?
+
+Episode 5:
+episode5/animations/brit_beacon_fail.json
+episode5/animations/speeder_fail.json
+episode5/animations/orbital_strike_pass.json
+episode5/animations/orbital_strike_fail.json
+
 # body motion
   getPosition()
   play() pause()

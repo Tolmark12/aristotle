@@ -36,9 +36,9 @@ ux:
                 cmd: setvars
                 data:
                   nerc: brit_beacon
-                  nercBuild: ~6/brit_beacon_build.json
-                  nercFail: ~6/brit_beacon_fail.json
-                  nercPass: ~6/brit_beacon_pass.json
+                  nercBuild: ~5/brit_beacon_build.json
+                  nercFail: ~5/brit_beacon_fail.json
+                  nercPass: ~5/brit_beacon_pass.json
             btnTxt: Brit Beacon, Scholar. Gentleman. Bot Hunter.
             icon: mini-brit-beacon
             blurb: "Moustache Length: +4 inches <br/>Rifle Name: Lord Brimstone"
@@ -50,9 +50,9 @@ ux:
                 cmd: setvars
                 data:
                   nerc: speeder
-                  nercBuild: ~6/speeder_build.json
-                  nercFail: ~6/speeder_fail.json
-                  nercPass: ~6/speeder_pass.json
+                  nercBuild: ~5/speeder_build.json
+                  nercFail: ~5/speeder_fail.json
+                  nercPass: ~5/speeder_pass.json
             btnTxt: Speeder with Tow Cables
             icon: mini-speeder
             blurb: "Tow Cable Length: 800 meters <br/>Last deployed: Planet Hoth"
@@ -64,9 +64,9 @@ ux:
                 cmd: setvars
                 data:
                   nerc: orbital_strike
-                  nercBuild: ~6/orbital_strike_build.json
-                  nercFail: ~6/orbital_strike_fail.json
-                  nercPass: ~6/orbital_strike_pass.json
+                  nercBuild: ~5/orbital_strike_build.json
+                  nercFail: ~5/orbital_strike_fail.json
+                  nercPass: ~5/orbital_strike_pass.json
             btnTxt: Kinetic Orbital Strike
             icon: mini-orbital-strike
             blurb: "Size: Classified <br/>Use: Classified <br/>Material: Classified <br/>Launching Satellite: Classified"
