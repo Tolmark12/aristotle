@@ -38,8 +38,9 @@ ux:
                 data:
                   access: background_probe
                   accessBuild: ~5/background_probe_build.json
-                  accessFail: ~5/background_probe_fail.json
-                  accessPass: ~5/background_probe_pass.json
+                  accessPassA: ~5/background_probe_pass_a.json
+                  accessPassB: ~5/background_probe_pass_b.json
+                  accessPassC: ~5/background_probe_pass_c.json
             btnTxt: The Background Probe
             icon: mini-background-probe
             blurb: "Origin: Foreign <br/>Batteries: Not Included"
@@ -52,8 +53,9 @@ ux:
                 data:
                   access: risk_detector
                   accessBuild: ~5/risk_detector_build.json
-                  accessFail: ~5/risk_detector_fail.json
-                  accessPass: ~5/risk_detector_pass.json
+                  accessPassA: ~5/risk_detector_pass_a.json
+                  accessPassB: ~5/risk_detector_pass_b.json
+                  accessPassC: ~5/risk_detector_pass_c.json
             btnTxt: The Risk Detector
             icon: mini-risk-detector
             blurb: "Pros: TSA Approved <br/>Cons: False Positives from Pace Makers, Artificial Joints, Belt Buckles"
@@ -66,8 +68,9 @@ ux:
                 data:
                   access: voight_kampff
                   accessBuild: ~5/voight_kampff_build.json
-                  accessFail: ~5/voight_kampff_fail.json
-                  accessPass: ~5/voight_kampff_pass.json
+                  accessPassA: ~5/voight_kampff_pass_a.json
+                  accessPassB: ~5/voight_kampff_pass_b.json
+                  accessPassC: ~5/voight_kampff_pass_c.json
             btnTxt: Voight-Kampff Assessor
             icon: mini-voight-kampff
             blurb: "Manufacturer: Tyrell Corporation <br/>When Powered Off: Dreams of Electric Sheep"

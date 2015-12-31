@@ -24,7 +24,7 @@ ux:
       config:
         click:
           - {cmd: slides.next-slide}
-          - {cmd: movie.load-layer, data: {depth: 10, content: $changeBuild, loop: true}}
+          - {cmd: movie.load-layer, data: {depth: 10, content: $changeBuild }}
         intro:
         title: Choose Your Asset Change Tools
         subTitle: "Richard and team need some tools to help them manage change to assets. Let's give them tools and processes to help with adding and updating assets and an asset disposal tool to eradicate BCSI. The vendor allows three options for the asset disposal component:"
@@ -37,8 +37,8 @@ ux:
                 cmd: setvars
                 data:
                   change: double_deuce
-                  changeBuild: ~4/double_deuce.json
-                  changeLoop:
+                  changeBuild: ~4/double_deuce_build.json
+                  changePass: ~4/double_deuce_pass.json
             btnTxt: Double Deuce Pulverizer
             icon: mini-double-deuce
             blurb: "Testosterone Level: +400% <br/>Never Been To: Band Camp"
@@ -50,8 +50,8 @@ ux:
                 cmd: setvars
                 data:
                   change: mr_fusion
-                  changeBuild: ~4/mr_fusion.json
-                  changeLoop:
+                  changeBuild: ~4/mr_fusion_build.json
+                  changePass: ~4/mr_fusion_pass.json
             btnTxt: Mr. Fusion
             icon: mini-mr-fusion
             blurb: "Flux Capacity: 1.21 <br/>Patent Approved: 1985"
@@ -63,8 +63,8 @@ ux:
                 cmd: setvars
                 data:
                   change: dematerializer
-                  changeBuild: ~4/dematerializer.json
-                  changeLoop:
+                  changeBuild: ~4/dematerializer_build.json
+                  changePass: ~4/dematerializer_pass.json
             btnTxt: The De-Materializer
             icon: mini-dematerializer
             blurb: "Projectile Type: Zalinski Shell <br/>Firing Method: Pneumatic Rail Gun"

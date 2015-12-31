@@ -24,7 +24,6 @@ ux:
       config:
         click:
           - {cmd: slides.next-slide}
-          - {cmd: movie.load-layer, data: {depth: 9, content: $portBuild}}
         intro:
         title: Choose your Port Defenses
         subTitle: "We'll install two things: 1.) Software firewalls on all assets to close unnecessary logical ports. 2.) Plug-in protections on the physical ports. We have a few CIP-compliant physical port protections to choose from:"
