@@ -15,7 +15,7 @@ isInternetExp = require 'misc/browser-detect'
 
 class Aristotle
 
-  constructor: (@$el, @episodesDir, @localDir, @episodeNum, isDevMode, @isLocal) ->
+  constructor: (@$el, @episodesDir, @localDir, @devEpisodeNum, @isDevMode, @isLocal) ->
     window.aristotle = @
     aristotle.isIE = isInternetExp()
     commander      = new Commander()
@@ -25,15 +25,11 @@ class Aristotle
     parser         = new Parser()
     soundFx        = new SoundFX()
     shadowIcons    = new pxicons.ShadowIcons()
-    @setDevMode isDevMode
+    @setDevMode @isDevMode
     lmsProxy.begin @begin
 
   begin : () =>
-    console.log aristotle.lmsProxy.store
-    if aristotle.lmsProxy.store?
-      if aristotle.lmsProxy.store.location?
-        if aristotle.lmsProxy.store.location.episodeNum
-          @episodeNum = aristotle.lmsProxy.store.location.episodeNum
+    @setInitialEpisodeNum()
 
     PubSub.subscribe 'episode.load', (m, data)=>
       @episodeNum = data
@@ -42,6 +38,8 @@ class Aristotle
     PubSub.publish 'episode.load', @episodeNum
 
   init : () ->
+    # If chromeui exists, then an episode is already
+    # loaded and needs to be deleted / cleared first
     if @chromeUI?
       @deleteOldAssets()
     @build()
@@ -59,7 +57,6 @@ class Aristotle
     @movie       = new Movie    $(".movie",    $base)
 
   deleteOldAssets : () ->
-    $base = null
     @episode.destroy()
     @chromeUI.destroy()
     @slideUX.destroy()
@@ -75,5 +72,19 @@ class Aristotle
     if !episodeNum? then episodeNum = @episodeNum
     return "#{@episodesDir}/episode#{episode}/"
 
+  setInitialEpisodeNum : () ->
+    # If a previous location has been stored, use that
+    if aristotle.lmsProxy.store?
+      if aristotle.lmsProxy.store.location?
+        if aristotle.lmsProxy.store.location.episodeNum
+          @episodeNum = aristotle.lmsProxy.store.location.episodeNum
+
+    # If we're in dev mode and specified an episode, use that
+    if @isDevMode && @devEpisodeNum?
+      @episodeNum = @devEpisodeNum
+
+    # If neither of the above conditions, default to first episode
+    if !@episodeNum?
+      @episodeNum = "0"
 
 window.Aristotle = Aristotle
