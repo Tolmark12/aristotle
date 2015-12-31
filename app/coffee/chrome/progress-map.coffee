@@ -50,6 +50,7 @@ module.exports = class ProgressMap
 
   titleToId : (title) ->
     title = title.replace /\s/g, '_'
+    title = title.replace /([\!\?])/g, '' # remove any '!' or '?' symbols
     title.toLowerCase()
 
   getItem : (slide) ->
