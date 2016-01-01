@@ -1,12 +1,8 @@
 To Build:
-  ☐ Persisting state between chapters & episodes
-    - I suppose there's no reason why we can't save the state
   ☐ Clean up the caching of svgs
   ☐ Add a `savePositions` method for saving the positions of elements pre caching
-  ☐ Progress Bar at bottom
   ☐ Change Mode (Learn mode, Explore Mode, Simulate)
   ☐ Remove ghose ux items on component destroy
-  ☐ Getting a weird ctanlee animation destroy error
 
 Complex Animations:
   ☐ After effects trigger based on keyframes
@@ -15,6 +11,9 @@ Complex Animations:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Persisting state between chapters & episodes @done(2015-12-31 17:48) @project(To Build)
+  ✔ Progress Bar at bottom @done(2015-12-31 17:48) @project(To Build)
+  ✔ Getting a weird ctanlee animation destroy error @done(2015-12-31 17:48) @project(To Build)
   ✔ Chapter Headings @done(2015-12-23 16:48) @project(To Build)
   ✔ Ctanlee next - number @done(2015-12-23 16:41) @project(To Build)
   ✔ Add local files to the gulpfile.coffee @done(2015-12-23 16:48) @project(To Build)
