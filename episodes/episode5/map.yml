@@ -233,6 +233,7 @@ chapters:
             - {action: j }
             - {action: k }
             - {action: l }
+            - {action: m }
           actions:
             a:
               pos: [570,400]
@@ -247,42 +248,47 @@ chapters:
               text: What is this?
               audio: Story_6_Ctanlee_9.m4a
             d:
+              next: 11000
               pos: []
               audio: Story_6_Sektimus_3.m4a
               actor: sektimus
             e:
               next: 6000
-              pos: [270,300]
+              pos: [270,470]
               text: The Incident Response Team has been convened. This is definitely a Cyber Security Incident.
               audio: Story_6_Ctanlee_9.m4a
             f:
-              next: 6000
+              next: 3000
               pos: [270,300]
               text: How are they going to respond?
               audio: Story_6_Ctanlee_7.m4a
             g:
+              next: 3500
+              pos: []
+              audio: ~3/Placeholder_Silence.m4a
+            h:
               pos: [270,300]
               text: Good call, team. Get the people out.
               audio: Story_6_Ctanlee_8.m4a
-            h:
-              next: 6500
+            i:
+              next: 6000
               pos: []
               audio: Placeholder_Silence.m4a
-            i:
+            j:
               pos: []
               audio: Story_6_Sektimus_4.m4a
               actor: sektimus
               text: I'll now accept your concession CTANLEE, and your resignation from the training program, human.
-            j:
+            k:
               pos: [270,300]
               text: Not so fast, Sektimus. The wager was against all the CIP Standards and we still have one training chapter left.
               audio: Story_6_Ctanlee_10.m4a
-            k:
+            l:
               pos: []
               audio: Story_6_Sektimus_5.m4a
               actor: sektimus
               text: It matters not. Complete your worthless training. I'll observe.
-            l:
+            m:
               pos: [270,300]
               text: Hold your head high, Cadet. We're not beaten yet.
               audio: Story_6_Ctanlee_11.m4a
@@ -304,8 +310,8 @@ chapters:
         title: The Recovery Plan
         movie:
           layers:
-            - {depth: 0, content: ~1/c1-sky.svg, jumpToEnd: true, cache: true }
-            - {depth: 19, content: ~1/c1-background-buildin.json, jumpToEnd: true, cache: true }
+            - {depth: 0, content: ~1/c1-sky.svg }
+            - {depth: 18, content: 6_3_0_devastation.json }
         duration: {kind: ux}
         ux:
           components:
@@ -338,7 +344,6 @@ chapters:
         movie:
           layers:
             - {depth: 18, content: 6_3_1_rebuild_sektimus_dialogue.json }
-            - {depth: 19, content: clear }
         dialogue:
           defaults:
             next: audio
@@ -348,7 +353,7 @@ chapters:
             - {action: c }
           actions:
             a:
-              next: 5000
+              next: 12000
               pos: []
               audio: Placeholder_Silence.m4a
             b:
