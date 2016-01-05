@@ -24,7 +24,6 @@ ux:
       config:
         click:
           - {cmd: slides.next-slide}
-          - {cmd: movie.load-layer, data: {depth: 10, content: $changeBuild }}
         intro:
         title: Choose Your Asset Change Tools
         subTitle: "Richard and team need some tools to help them manage change to assets. Let's give them tools and processes to help with adding and updating assets and an asset disposal tool to eradicate BCSI. The vendor allows three options for the asset disposal component:"

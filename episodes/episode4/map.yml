@@ -155,6 +155,12 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Port Defense Selector ==========================================
       - !!inc/file ./episodes/episode4/yaml/_access-control-selector.yaml
+      # 1 Animate Selector Build ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 12, content: $accessBuild, events: [complete] }
+        duration: {kind: listen, event: layer.12.complete}
       # 1 Clear Asset Perimeter ==========================================
       -
         movie:
@@ -642,6 +648,12 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Port Defense Selector ==========================================
       - !!inc/file ./episodes/episode4/yaml/_visitor-escort-selector.yaml
+      # 3 Animate Selector Build ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 12, content: $visitorBuild, events: [complete] }
+        duration: {kind: listen, event: layer.13.complete}
       # 3 Simulation Visitor Tracked ==========================================
       -
         movie:

@@ -24,7 +24,6 @@ ux:
       config:
         click:
           - {cmd: slides.next-slide}
-          - {cmd: movie.load-layer, data: {depth: 13, content: $visitorBuild }}
         intro:
         title: Select your Visitor Escort System
         subTitle: "Every organization handles logging and keeping their visitors closely escorted while inside the PSP in different ways. Here are a few options for your facility."

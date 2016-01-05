@@ -108,7 +108,7 @@ chapters:
         duration: {kind: time, seconds: 1.5 }
       # 1 Port Defense Selector ==========================================
       - !!inc/file ./episodes/episode3/yaml/_port-defense-selector.yaml
-      # 1 Zoom to Asset Perimeter ==========================================
+      # 1 Animate Selector Build ==========================================
       -
         movie:
           layers:
@@ -324,12 +324,13 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Simulation System Server Patch ==========================================
       - !!inc/file ./episodes/episode3/yaml/_patch-server-selector.yaml
-      # 2 Simulation System Server Patch ==========================================
+      # 2 Animate System Server Patch ==========================================
       -
         movie:
           layers:
             - {depth: 11, content: $patchBuild, events: [complete] }
         duration: {kind: listen, event: layer.11.complete}
+      # 2 Animate System Server Patch ==========================================
       -
         movie:
           layers:
@@ -595,6 +596,12 @@ chapters:
         duration: {kind: time, seconds: 1.5 }
       # 3 Asset Change Tools Selector ==========================================
       - !!inc/file ./episodes/episode3/yaml/_asset-change-selector.yaml
+      # 3 Animate Selector Build ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 10, content: $changeBuild, events: [complete] }
+        duration: {kind: listen, event: layer.10.complete}
       # 3 Dialogue Mulligan ==========================================
       -
         title: Calling a Mulligan

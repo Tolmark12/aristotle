@@ -1,4 +1,4 @@
-title: Choose an EACMS
+title: Choose Your Electronic Access Control
 duration: {kind: ux}
 dialogue:
   defaults:
@@ -25,8 +25,8 @@ ux:
         click:
           - {cmd: slides.next-slide}
         intro:
-        title: Choose an EACMS
-        subTitle: Choose a Firewall with an Intrusion Prevention System to create your Electronic Security Perimeter.
+        title: Choose Your Electronic Access Control
+        subTitle: Select a firewall with an intrusion prevention system to create your  <a data-label=“esp”>Electronic Security Perimeter<a>.
         submitBtn: {txt: Install, icon: action-btn-fist}
         items:
           -

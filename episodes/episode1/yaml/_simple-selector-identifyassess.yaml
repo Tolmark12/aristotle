@@ -7,16 +7,16 @@ dialogue:
   actions:
     a:
       emo: happy
-      text: "Close! The information did not leave our facility, but we also identified a problem and fixed it."
-      audio: Story_2_Ctanlee_28.m4a
+      text: "Sorry! The information did leave our facility, so we have a problem."
+      audio: Story_2_Ctanlee_28.mp3
     b:
       emo: sad
-      text: "Yes! An employee found the issue, fixed it by adding the awareness poster, and informed the Compliance Team."
-      audio: Story_2_Ctanlee_29.m4a
+      text: "Yes! The issue was found, fixed with the awareness poster, and the Compliance Team will self-report a violation."
+      audio: Story_2_Ctanlee_X42.mp3
     c:
       emo: surprize
-      text: "Nope! The information did leave the facility, but we caught the issue and fixed it."
-      audio: Story_2_Ctanlee_30.m4a
+      text: "Nope! The information did leave the facility, but we caught the issue."
+      audio: Story_2_Ctanlee_30.mp3
 ux:
   components:
     -
@@ -29,7 +29,7 @@ ux:
             btnTxt: Good Catch
             click: {cmd: ctanlee.activate, data: a}
           -
-            btnTxt: Identify, Assess, and Correct
+            btnTxt: Self-Report
             # On Click, we add an event listener to ctanlee. After his audio is complete,
             # we run all the actions listed below in "action"
             click:

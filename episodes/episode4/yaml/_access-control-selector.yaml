@@ -24,7 +24,6 @@ ux:
       config:
         click:
           - {cmd: slides.next-slide}
-          - {cmd: movie.load-layer, data: {depth: 12, content: $accessBuild }}
         intro:
         title: Removing Access
         subTitle: "Let's setup processes and tools to control the removal and granting of access. You have a few options for the Personnel Risk Assessment component that Jerry in HR will use. <br/>Richard and team need some tools to help them manage change to assets. Let's give them tools and processes to help with adding and updating assets and an asset disposal tool to eradicate BCSI. The vendor allows three options for the asset disposal component:"

@@ -7,16 +7,16 @@ dialogue:
   actions:
     a:
       emo: happy
-      text: "Nope. Since the information actually left the facility, we have a real problem here."
-      audio: Story_2_Ctanlee_16.m4a
+      text: "Not a good catch. Since the information actually left the facility, we have a real problem here."
+      audio: Story_2_Ctanlee_16.mp3
     b:
       emo: sad
-      text: "Nope. We didn't identify the issue or fix the problem."
-      audio: Story_2_Ctanlee_17.m4a
+      text: "Nope. We didn't catch the issue ourselves."
+      audio: Story_2_Ctanlee_17.mp3
     c:
       emo: surprize
-      text: " Correct! This would likely be a violation. Let's try another example."
-      audio: Story_2_Ctanlee_18.m4a
+      text: " Correct! This would be a violation. Let's try another example."
+      audio: Story_2_Ctanlee_X40.mp3
 ux:
   components:
     -
@@ -29,7 +29,7 @@ ux:
             btnTxt: Good Catch
             click: {cmd: ctanlee.activate, data: a}
           -
-            btnTxt: Identify, Assess, and Correct
+            btnTxt: Self-Report
             click: {cmd: ctanlee.activate, data: b}
           -
             btnTxt: Violation
