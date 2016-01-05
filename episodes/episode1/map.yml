@@ -547,7 +547,7 @@ chapters:
               kind: dialogue
               config:
                 title: Duties
-                body: "We have <a data-label="defenders">Defenders<a>! But how do they know how to defend our facility? The <a data-label="manager">CIP Senior Manager<a> is required to create a <a data-label="cyber_security_program" class="new">Cyber Security Program<a> that describes how our people and defenses meet the <a data-label="cip">CIP<a> Standards. Each Defender has two essential responsibilities to support the Program. <br/><ol type="A"><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed </li></ol><br/>To aid you in these responsibilities, <a data-label="cip">CIP<a> requires that you receive dedicated cyber-security training and regular awareness materials in addition to normal job training at your organization."
+                body: 'We have <a data-label="defenders">Defenders<a>! But how do they know how to defend our facility? The <a data-label="manager">CIP Senior Manager<a> is required to create a <a data-label="cyber_security_program" class="new">Cyber Security Program<a> that describes how our people and defenses meet the <a data-label="cip">CIP<a> Standards. Each Defender has two essential responsibilities to support the Program. <br/><ol type="A"><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed </li></ol><br/>To aid you in these responsibilities, <a data-label="cip">CIP<a> requires that you receive dedicated cyber-security training and regular awareness materials in addition to normal job training at your organization.'
                 btn:
                   style: lightning
                   text: continue
