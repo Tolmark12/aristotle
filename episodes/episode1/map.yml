@@ -15,7 +15,7 @@ chapters:
     title: Chapter 1
     subtitle: Facilities and Cyber Assets
     dev:
-      startIndex: 20
+      startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -29,24 +29,24 @@ chapters:
             - {depth: 2, content: c1-background-buildin.json, events: [complete] }
         duration: {kind: listen, event: layer.2.complete}
       # 1 Warcore slide ==========================================
-      -
-        title: Warcore Load
-        dialogue:
-          defaults:
-            next: audio
-          timeline:
-            - {action: a }
-            - {action: b }
-          actions:
-            a:
-              next: 500
-              pos: []
-            b:
-              emo: down
-              pos: [500,600]
-              text: "The simulator is loaded! Track your progress through the episode here. Now we just need a facility."
-              audio: Story_2_Ctanlee_X43.mp3
-        duration: {kind: dialogue }
+      # -
+      #   title: Warcore Load
+      #   dialogue:
+      #     defaults:
+      #       next: audio
+      #     timeline:
+      #       - {action: a }
+      #       - {action: b }
+      #     actions:
+      #       a:
+      #         next: 500
+      #         pos: []
+      #       b:
+      #         emo: down
+      #         pos: [500,600]
+      #         text: "The simulator is loaded! Track your progress through the episode here. Now we just need a facility."
+      #         audio: Story_2_Ctanlee_X43.mp3
+      #   duration: {kind: dialogue }
       # 1 Selector Facility ==========================================
       - !!inc/file ./episodes/episode1/yaml/_building-selector.yaml
       # 1 Selector Build ==========================================
