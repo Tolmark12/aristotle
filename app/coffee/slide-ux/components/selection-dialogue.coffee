@@ -35,8 +35,6 @@ module.exports = class SelectionDialogue extends Component
 
       jadeData.items.push {txt:item.btnTxt, id:item.id, icon:item.icon}
 
-
-
       @items[item.id] = item
     jadeData
 

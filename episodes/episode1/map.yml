@@ -3,6 +3,7 @@ title: Episode 1
 subtitle: Organizing Our Defenses
 rankId: cadet
 nextRankId: cadet-first-class
+labels: !!inc/file ./episodes/global/_labels.yaml
 dev:
   startIndex: 0
   # skipSlate: true

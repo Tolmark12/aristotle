@@ -74,7 +74,8 @@ input{border:none; }
 $arrow-size    : 8px;
 $bg-color      : rgba(#020308, 0.8);
 $horiz-padding : 9px;
-.label-trigger          { color: #6C9AA0; cursor:pointer; position:relative; display:inline-block;
+.label-trigger          { color: white; cursor:pointer; position:relative; display:inline-block;
+  &.new                 { color: #6C989F; }
   &:hover               { color: $orange; }
   .label-wrapper        { left:50%; }
 }

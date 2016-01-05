@@ -6,7 +6,7 @@ module.exports = class Component
     @listenForLabelHovers(data)
 
   listenForLabelHovers : (data) ->
-    if !data.labels? then return
+    if !data.hasLabels then return
     $a = $("a[data-label]", @$node)
     $a.addClass "label-trigger"
 
@@ -16,7 +16,7 @@ module.exports = class Component
       timeoutId = "timeout#{$el.attr('data-label')}"
       clearTimeout me[timeoutId]
 
-      configData = data.labels[ $el.attr('data-label')]
+      configData = aristotle.labels[ $el.attr('data-label')]
       configData.cssClass = "arrow-right"
       PubSub.publish 'label.attach', { el:$el, content:configData}
 

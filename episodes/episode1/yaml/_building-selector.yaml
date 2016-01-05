@@ -24,15 +24,12 @@ ux:
     -
       kind: selection-dialogue
       config:
-        labels:
-          a: {title: "big control centers"}
-          b: {title: "Medium", text: "significant transmission substations<br/> and generation plants"}
-          c: {title: "everything else"}
+        hasLabels: true
         click:
           - {cmd: slides.next-slide}
         intro: The CIP Standards require that we protect significant control centers, generation plants, and substations on the Bulk Electric System. Per the Standards, we will classify them as High Impact (big control centers), Medium Impact (significant transmission substations and generation plants) and Low Impact (everything else).
         title: Pick Your Facility
-        subTitle: The CIP Standards require that we protect significant facilities on the Bulk Electric System and classify them as <a data-label="a">High Impact<a>, <a data-label="b">Medium Impact<a> and <a data-label="c">Low Impact<a>.
+        subTitle: The CIP Standards require that we protect significant facilities on the Bulk Electric System and classify them as <a data-label="high_impact" class="new">High Impact<a>, <a data-label="medium_impact">Medium Impact<a> and <a data-label="low_impact" class="new">Low Impact<a>.
         submitBtn: {txt: Load Facility, icon: action-btn-fist}
         items:
           -
