@@ -3,12 +3,14 @@ module.exports = class EpisodeLoader
   constructor: (@callback) ->
     @loadConfigData()
 
+  # Load the local config vars
   loadConfigData : () ->
     @loadJson "local/config.json", (json)=>
       for key, val of JSON.parse( json )
         aristotle.globals.set key, val, false
       @loadEpisode()
 
+  # Load the Episode
   loadEpisode: ()->
     @loadJson aristotle.getAssetPath("map.json"), (json)=>
       @callback JSON.parse(json)

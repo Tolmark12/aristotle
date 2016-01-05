@@ -11,6 +11,8 @@ module.exports = class GlobalVars
       @vars[key] = val
     PubSub.publish 'state.save'
 
+  # There are times we want to set a var before everything is initialized. Therefore,
+  # you can pass `saveState=false` to save a var, but not persist to storage
   set : (key, val, saveState=true) ->
     @vars[key] = val
     if saveState

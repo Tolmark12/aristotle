@@ -33,7 +33,7 @@ Tooltips:
 General:
   ✔ Actions should have delays @done(2016-01-04 17:15)
   ☐ Make labels (tooltips) clickable
-  ☐ Add local config files
+  ✔ Add local config files @done(2016-01-05 14:53) @project(General)
 
 Structure Storyboard 2:
 -------------------------------------
