@@ -168,7 +168,7 @@ chapters:
         movie:
           layers:
             - {depth: 7, content: clear }
-            - {depth: 10, content: kettle_attack_post_defense_pngs.json, events: [complete] }
+            - {depth: 10, content: $pacsPass }
         dialogue:
           defaults:
             next: audio
