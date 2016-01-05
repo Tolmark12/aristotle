@@ -9,7 +9,7 @@ chapters:
   -
     title: Loading Introduction
     dev:
-      startIndex: 0
+      startIndex: 4
     kind: intro
     slides:
       # Animation Split Screen Advance ==========================================
@@ -133,6 +133,7 @@ chapters:
             - {action: b }
           actions:
             a:
+              emo: surprise
               pos: [350,300,0]
               text: "Critical Infrastructure Protection Version Five clearance! Impressive! This is the highest level of security training available in the WarCore. Company Name: Arizona Public Service has a lot of confidence in you."
               audio: Intro_Ctanlee_7.m4a

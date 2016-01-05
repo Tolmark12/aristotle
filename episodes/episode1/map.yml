@@ -19,6 +19,29 @@ chapters:
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
+      # 1 Warcore slide ==========================================
+      -
+        title: Warcore Load
+        movie:
+          layers:
+            - {depth: 0, content: warcore.json }
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+          actions:
+            a:
+              next: 500
+              pos: []
+              audio: ~1/Silence_1_sec.m4a
+            b:
+              emo: down
+              pos: [500,700]
+              text: "The simulator is loaded! Track your progress through the episode here. Now we just need a facility."
+              audio: Story_1_Ctanlee_X43.mp3
+        duration: {kind: dialogue }
       # 1 Background Build in ==========================================
       -
         title: Facility Selector
@@ -29,6 +52,7 @@ chapters:
         duration: {kind: listen, event: layer.2.complete}
       # 1 Selector Facility ==========================================
       - !!inc/file ./episodes/episode1/yaml/_building-selector.yaml
+      # 1 Selector Build ==========================================
       -
         movie:
           layers:
