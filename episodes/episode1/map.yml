@@ -547,7 +547,7 @@ chapters:
               kind: dialogue
               config:
                 title: Duties
-                body: We have <a data-label="defenders">Defenders<a>! But how do they know how to defend our facility? The <a data-label="manager">CIP Senior Manager<a> is required to create a <a data-label="cyber_security_program" class="new">Cyber Security Program<a> that describes how our people and defenses meet the <a data-label="cip">CIP<a> Standards. Each Defender has two essential responsibilities to support the Program. <br/><ol type="A"><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed </li></ol><br/>To aid you in these responsibilities, <a data-label="cip">CIP<a> requires that you receive dedicated cyber-security training and regular awareness materials in addition to normal job training at your organization.
+                body: "We have <a data-label="defenders">Defenders<a>! But how do they know how to defend our facility? The <a data-label="manager">CIP Senior Manager<a> is required to create a <a data-label="cyber_security_program" class="new">Cyber Security Program<a> that describes how our people and defenses meet the <a data-label="cip">CIP<a> Standards. Each Defender has two essential responsibilities to support the Program. <br/><ol type="A"><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed </li></ol><br/>To aid you in these responsibilities, <a data-label="cip">CIP<a> requires that you receive dedicated cyber-security training and regular awareness materials in addition to normal job training at your organization."
                 btn:
                   style: lightning
                   text: continue
@@ -707,7 +707,7 @@ chapters:
               config:
                 replaceVars: [body]
                 title: Regulators
-                body: The government wants to ensure our organization sustains the defenses required by compliance, so  is accountable to regulators. The <a data-label="nerc" class="new">North American Electric Reliability Corporation (NERC)<a> is responsible for defining the <a data-label="cip">CIP Standards<a> and gives authority to ${companyRegulators} to help us interpret the <a data-label="cip">Standards<a> and ensure we are following them through audits. <br/><br/>The evidence we create is critical to this relationship. It helps us identify and fix issues, and shows our regulators that we are holding fast against the robots. With all these duties to perform and evidence to record, it's probably a good time to touch on what happens when we miss performing a duty or creating evidence.
+                body: The government wants to ensure our organization sustains the defenses required by compliance, so ${companyName} is accountable to regulators. The <a data-label="nerc" class="new">North American Electric Reliability Corporation (NERC)<a> is responsible for defining the <a data-label="cip">CIP Standards<a> and gives authority to ${companyRegulator} to help us interpret the <a data-label="cip">Standards<a> and ensure we are following them through audits. <br/><br/>The evidence we create is critical to this relationship. It helps us identify and fix issues, and shows our regulators that we are holding fast against the robots. With all these duties to perform and evidence to record, it's probably a good time to touch on what happens when we miss performing a duty or creating evidence.
                 btn:
                   style: lightning
                   text: continue
@@ -722,7 +722,7 @@ chapters:
               kind: dialogue
               config:
                 title: Violations
-                body: A Good Catch is doing something that almost violates a <a data-label="cip">CIP<a> requirement. These are learning opportunities that allow us to improve our processes. <br/><br/>A Self-Report is when we violate a  <a data-label="cip">CIP<a> requirement, but discover the issue and fix our processes so the issue won't happen again. We still must self-report to our regulator, but regulators look more favorably on these situations. <br/><br/>A Violation is violating a  <a data-label="cip">CIP<a> requirement and being caught by an auditor. These can come with big fines, up to $1,000,000 per day, per incident. <br/><br/>Let's run these situations through the simulator and see if you can identify them.
+                body: A Good Catch is doing something that almost violates a <a data-label="cip">CIP<a> requirement. These are learning opportunities that allow us to improve our processes. <br/><br/>A Self-Report is when we violate a  <a data-label="cip">CIP<a> requirement, but discover the issue and fix our processes so the issue won't happen again. We still must self-report to our regulator, but regulators look more favorably on these situations. <br/><br/>A Violation is violating a <a data-label="cip">CIP<a> requirement and being caught by an auditor. These can come with big fines, up to $1,000,000 per day, per incident. <br/><br/>Let's run these situations through the simulator and see if you can identify them.
                 btn:
                   style: lightning
                   text: run simulator

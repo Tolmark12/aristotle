@@ -1,4 +1,4 @@
-ProgressDisplay = require 'chrome/progress-display'
+BottomUiElements = require 'chrome/bottom-ui-element'
 
 module.exports = class ChromeUI
 
@@ -16,7 +16,7 @@ module.exports = class ChromeUI
 
   build : () ->
     name = aristotle.lmsProxy.user.split ","
-    @progressDisplay = new ProgressDisplay @$el
+    @bottomUiElements = new BottomUiElements @$el
     try
       callSign = aristotle.globals.get 'callSign', false
     catch error
@@ -66,6 +66,6 @@ module.exports = class ChromeUI
         data.badge = "rank-badge-cyber-cadet"
 
   destroy : () ->
-    @progressDisplay.destroy()
+    @bottomUiElements.destroy()
     for token in @tokens
       PubSub.unsubscribe token
