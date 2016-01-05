@@ -12,11 +12,9 @@ dialogue:
       text: "My grandfather twice removed was a circuit breaker."
       audio: Story_2_Ctanlee_1.m4a
     b:
-      emo: angry
       text: "I dated a boiler once. She was hot."
       audio: Story_2_Ctanlee_2.m4a
     c:
-      emo: unhappy
       text: "The nerve center of the BES. My 1s and 0s are tingling."
       audio: Story_2_Ctanlee_3.m4a
 ux:

@@ -17,20 +17,29 @@ New:
     - in between tracks
 
 ------------------------------------
+  ✔ Make user input call signs persits @done(2016-01-04 21:25)
 
 Feedback:
-  ☐ check the ctanlee
+  ☐ Add speech arrow to ctanlee
+
+Ctanlee:
+  ✔ Add animation when he is talking @done(2016-01-04 20:28) @project(Ctanlee)
+  ✔ Fix the emotions (left, down right) @done(2016-01-04 20:30) @project(Ctanlee)
 
 Tooltips:
-  ☐ Need to differentiate between new and old tips
-  ☐ Also have a central cache of tooltips
+  ✔ Need to differentiate between new and old tips @done(2016-01-04 20:30) @project(Tooltips)
+  ✔ Also have a central cache of tooltips @done(2016-01-04 20:30) @project(Tooltips)
+
+General:
+  ✔ Actions should have delays @done(2016-01-04 17:15)
 
 Structure Storyboard 2:
 -------------------------------------
-  ☐ Check double return <br/>
+  ✔ Check double return <br/> @done(2016-01-04 20:32)
 
 Variables in text
-  ☐ Way of adding variables to text
+  ✔ Way of adding variables to text @done(2016-01-04 20:53)
+    See lines 277-278 of ep1/map.yml
 
 IE :
   ☐ Make sure the hotsposts are correct
@@ -42,7 +51,6 @@ Quiz:
 
 ☐ Add pausing of layers, and actions with delay.
 ☐ Alternative continue button style (possible)
-✔ Actions should have delays @done(2016-01-04 17:15)
 ☐ Build playhead
   - Replay will need to replay the whole slide
   - Pause ctanlee, sound effects

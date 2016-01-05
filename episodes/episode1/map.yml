@@ -15,7 +15,6 @@ chapters:
     title: Chapter 1
     subtitle: Facilities and Cyber Assets
     dev:
-      volume: 1
       startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
@@ -275,8 +274,9 @@ chapters:
             -
               kind: dialogue
               config:
+                replaceVars: [body]
                 title: Get to Know Your Assets
-                body: Review your inventory. Click on your assets if you'd like to learn more about them. <br/>We've reached the end of this chapter. I've programmed your specific duties at Company Name - Arizona Public Service into the WarCore to review. When you're ready to review duties, click "Review Duties" at the bottom to proceed.
+                body: Review your inventory. Click on your assets if you'd like to learn more about them. <br/>We've reached the end of this chapter. I've programmed your specific duties at ${companyName} into the WarCore to review. When you're ready to review duties, click "Review Duties" at the bottom to proceed.
                 btn:
                   style: lightning
                   text: GOT it!
@@ -423,9 +423,6 @@ chapters:
   -
     title: Chapter 2
     subtitle: Defenders and Duties
-    dev:
-      volume: 1
-      startIndex: 0
     kind: chapter
     slides:
       -
@@ -624,7 +621,6 @@ chapters:
     title: Chapter 3
     subtitle: Our Regulators
     dev:
-      volume: 1
       startIndex: 0
     kind: chapter
     slides:
@@ -640,8 +636,9 @@ chapters:
             -
               kind: dialogue
               config:
+                replaceVars: [body]
                 title: Regulators
-                body: The government wants to ensure our organization sustains the defenses required by compliance, so Company Name Arizona Public Service is accountable to regulatory bodies. NERC is responsible for defining the CIP Standards and gives authority to Company Regulator WECC to help us interpret the Standards and ensure we are following them through audits. <br/>The evidence we create is critical to this relationship. It helps us identify and fix issues, and shows our regulators that we are holding fast against the robots. With all these duties to perform and evidence to record, it's probably a good time to touch on what happens when we miss performing a duty or creating evidence.
+                body: The government wants to ensure our organization sustains the defenses required by compliance, so ${companyName} is accountable to regulatory bodies. NERC is responsible for defining the CIP Standards and gives authority to Company Regulator WECC to help us interpret the Standards and ensure we are following them through audits. <br/>The evidence we create is critical to this relationship. It helps us identify and fix issues, and shows our regulators that we are holding fast against the robots. With all these duties to perform and evidence to record, it's probably a good time to touch on what happens when we miss performing a duty or creating evidence.
                 btn:
                   style: lightning
                   text: continue

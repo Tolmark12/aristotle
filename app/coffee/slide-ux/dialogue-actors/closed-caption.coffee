@@ -39,8 +39,11 @@ module.exports = class ClosedCaption
 
   showText : () -> @ccDisplay.fadeIn()
   hideText : () -> @ccDisplay.fadeOut()
-  showNext : () -> #@$nextBtn.removeClass "hidden"
-  hideNext : () -> #@$nextBtn.addClass "hidden"
+
+  showNext     : () -> #@$nextBtn.removeClass "hidden"
+  hideNext     : () -> #@$nextBtn.addClass "hidden"
+  startTalking : () ->
+  stopTalking  : () ->
 
   complete : () -> @sleep()
 

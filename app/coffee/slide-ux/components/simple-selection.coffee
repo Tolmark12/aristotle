@@ -4,12 +4,13 @@ module.exports = class SimpleSelection extends Component
 
 
   constructor: ($el, data) ->
+    super data
     jadeData = @generateConfigData data
     @$node = $ jadeTemplate['slide-ux/components/dialogue/selection-dialogue']()
     $right = $ jadeTemplate['slide-ux/components/dialogue/dialogue-buttons']( jadeData )
     @$node.append $right
     @addEventListeners @$node, data
-    super $el, @$node, data
+    @superInit $el, @$node, data
 
   generateConfigData : (data) ->
     @items         = {}

@@ -29,6 +29,7 @@ module.exports = class TextDialogue
   say : (text, audio, next, txtPos) ->
     if text?
       @actor.say text, txtPos
+      @actor.startTalking()
     else
       @actor.hideText()
 
@@ -36,7 +37,9 @@ module.exports = class TextDialogue
       if @track? then @track.stop()
       @track = new AudioTrack(audio)
       # Play, then on complete, play the next action if that is how next is defined
-      @track.play ()=> if next == 'audio' then @playNextAction()
+      @track.play ()=>
+        @actor.stopTalking()
+        if next == 'audio' then @playNextAction()
 
     # If "next" param is to be a click generated via the actor
     if next == 'click' then @actor.showNext() else @actor.hideNext()
@@ -120,7 +123,7 @@ module.exports = class TextDialogue
     @sequence = null
     @ctanlee.destroy()
     @cc.destroy()
-    
+
     if @track? then @track.stop()
     for token in @tokens
       PubSub.unsubscribe token

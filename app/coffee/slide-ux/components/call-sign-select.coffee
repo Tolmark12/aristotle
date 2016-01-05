@@ -3,8 +3,9 @@ Component = require 'slide-ux/components/component'
 module.exports = class CallSignSelect extends Component
 
   constructor: ($el, data) ->
+    super data
     @$node = $ jadeTemplate['slide-ux/components/call-sign-select']( data )
-    super $el, @$node, data
+    @superInit $el, @$node, data
     @$txt = $ '#callsign-txt', @$node
     $('#generate-callsign', @$node ).on 'click', ()=> @generateCallSign()
 
@@ -16,7 +17,8 @@ module.exports = class CallSignSelect extends Component
     @$txt.val @callSign
 
   saveCallSign : () ->
-    if @callSign?.length > 1
-      aristotle.globals.set 'callSign', @callSign
-      PubSub.publish 'callsign.selected', @callSign
+    callSign = @$txt.val()
+    if callSign?.length > 1
+      aristotle.globals.set 'callSign',   callSign
+      PubSub.publish 'callsign.selected', callSign
       PubSub.publish 'slides.next'

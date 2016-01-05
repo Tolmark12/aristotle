@@ -12,12 +12,15 @@ module.exports = class LMSProxy
   begin : (cb) ->
     if elbScorm.initCourse()
       @loadState()
-      @user      = elbScorm.GetUserName()    # ex:       Kingsley, James
-      @userId    = elbScorm.GetUserID()      # I assume: asf0h30asbu30
-      stateData  = elbScorm.GetResumeData()  # ojb
+      @user       = elbScorm.GetUserName()    # ex:       Kingsley, James
+      @userId     = elbScorm.GetUserID()      # I assume: asf0h30asbu30
+      stateData   = elbScorm.GetResumeData()  # ojb
+      companyName = elbScorm.GetCompanName()
+
       @createFormattedName()
       if stateData?
         aristotle.globals.vars = stateData.globalVars
+      aristotle.globals.vars.companyName = companyName
       cb()
     else
       console.log "couldn't start the course"
@@ -59,6 +62,7 @@ module.exports = class LMSProxy
     elbScorm.initCourse    =     ()-> true
     elbScorm.GetUserName   =     ()-> "Ricks, Justin"
     elbScorm.GetUserID     =     ()-> "abcdefg1234567"
+    elbScorm.GetCompanName =     ()-> "Arizona Public Works"
     elbScorm.SetResumeData = (data)-> localStorage.setItem( "currentState", JSON.stringify(data) )
     elbScorm.GetResumeData =     ()-> JSON.parse( localStorage.getItem("currentState") )
     elbScorm.SetComplete   =     ()-> console.log "course is complete"

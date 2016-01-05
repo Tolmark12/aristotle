@@ -12,7 +12,6 @@ module.exports = class Episode
     @nextRankId           = trainingData.nextRankId
     @chrome.build()
 
-    console.log aristotle.labels
     aristotle.devTools.go trainingData.dev, trainingData.chapters
 
     @token1 = PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data
