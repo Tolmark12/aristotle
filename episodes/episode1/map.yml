@@ -31,9 +31,6 @@ chapters:
       # 1 Warcore slide ==========================================
       -
         title: Warcore Load
-        movie:
-          layers:
-            - {depth: 12, content: warcore.json }
         dialogue:
           defaults:
             next: audio
