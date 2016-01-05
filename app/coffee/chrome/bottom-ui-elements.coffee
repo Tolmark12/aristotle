@@ -7,8 +7,6 @@ module.exports = class BottomUiElements
     @$el.append $node
     @progessMap = new ProgressMap( $node )
 
-  
-
 
   destroy : () ->
     if @progressMap?

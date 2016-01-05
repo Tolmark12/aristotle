@@ -1,4 +1,4 @@
-BottomUiElements = require 'chrome/bottom-ui-element'
+BottomUiElements = require 'chrome/bottom-ui-elements'
 
 module.exports = class ChromeUI
 

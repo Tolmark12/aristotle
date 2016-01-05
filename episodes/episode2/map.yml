@@ -51,7 +51,7 @@ chapters:
               kind: dialogue
               config:
                 title: Physical Attacks
-                body: We have a facility loaded up with juicy <a data-label=“crca”>CRCAs<a> that the bots can't wait to get their hands on. An attacker can destroy or compromise any  <a data-label=“crca”>CRCAs<a> they have physical access to, so our first job is to physically protect them. Let’s fire up the simulator to illustrate a physical attack.
+                body: We have a facility loaded up with juicy <a data-label="crca">CRCAs<a> that the bots can't wait to get their hands on. An attacker can destroy or compromise any  <a data-label="crca">CRCAs<a> they have physical access to, so our first job is to physically protect them. Let’s fire up the simulator to illustrate a physical attack.
                 btn:
                   style: lightning
                   text: run simulation
@@ -108,7 +108,7 @@ chapters:
               kind: dialogue
               config:
                 title: Physical Access Control
-                body: To prevent physical attacks,  <a data-label=“cip”>CIP<a> requires that we physically surround our  <a data-label=“crca”>CRCAs<a> with  <a data-label=“psp” class="new">Physical Security Perimeter (PSP)<a> made up of walls, fences, and doors to keep the robots and their allies out. We install physical access controls that only allow authorized Defenders inside the PSP, log all access attempts, and alert when unauthorized people (or robots) try to gain access. An example of an access control is an ID-badge reader on the outside of the door connected to a computer inside that operates the reader and performs logging and alerting. These controls are considered  <a data-label=“crca”>CRCAs<a> and our  <a data-label=“medium”>Medium Impact<a> facilities must have one control per door, while  <a data-label=“high”>High Impact<a> facilities require two independent controls per door.
+                body: To prevent physical attacks,  <a data-label="cip">CIP<a> requires that we physically surround our  <a data-label="crca">CRCAs<a> with  <a data-label="psp" class="new">Physical Security Perimeter (PSP)<a> made up of walls, fences, and doors to keep the robots and their allies out. We install physical access controls that only allow authorized Defenders inside the PSP, log all access attempts, and alert when unauthorized people (or robots) try to gain access. An example of an access control is an ID-badge reader on the outside of the door connected to a computer inside that operates the reader and performs logging and alerting. These controls are considered  <a data-label="crca">CRCAs<a> and our  <a data-label="medium">Medium Impact<a> facilities must have one control per door, while  <a data-label="high">High Impact<a> facilities require two independent controls per door.
                 btn:
                   style: lightning
                   text: continue
@@ -244,7 +244,7 @@ chapters:
               kind: dialogue
               config:
                 title: Electronic Attacks
-                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a  <a data-label=“crca”>CRCA<a> attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction. <br/><br/>Let's see how this might work.
+                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a  <a data-label="crca">CRCA<a> attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction. <br/><br/>Let's see how this might work.
                 btn:
                   style: lightning
                   text: run simulation
@@ -409,7 +409,7 @@ chapters:
               kind: dialogue
               config:
                 title: Electronic Attacks
-                body: To defend our  <a data-label=“crca”>CRCAs<a> against electronic attacks, we must build an  <a data-label=“esp” class="new">Electronic Security Perimeter (ESP)<a> around the network they are connected to.  <a data-label=“cip”>CIP<a> requires that we only allow communication in and out of the ESP network that is approved and business justified, ensuring the bots can't communicate with our connected  <a data-label=“crca”>CRCAs<a>.  <a data-label=“cip”>CIP<a> also requires that we detect and alert Defenders about any unauthorized electronic activity. <br/><br/>A common way to control communication is to install a firewall between the ESP network and other networks. Firewalls are devices that prevent unauthorized messages and can alert Defenders if something malicious is found in a message. Electronic access controls are considered  <a data-label=“crca”>CRCAs<a>.
+                body: To defend our  <a data-label="crca">CRCAs<a> against electronic attacks, we must build an  <a data-label="esp" class="new">Electronic Security Perimeter (ESP)<a> around the network they are connected to.  <a data-label="cip">CIP<a> requires that we only allow communication in and out of the ESP network that is approved and business justified, ensuring the bots can't communicate with our connected  <a data-label="crca">CRCAs<a>.  <a data-label="cip">CIP<a> also requires that we detect and alert Defenders about any unauthorized electronic activity. <br/><br/>A common way to control communication is to install a firewall between the ESP network and other networks. Firewalls are devices that prevent unauthorized messages and can alert Defenders if something malicious is found in a message. Electronic access controls are considered  <a data-label="crca">CRCAs<a>.
                 btn:
                   style: lightning
                   text: Continue

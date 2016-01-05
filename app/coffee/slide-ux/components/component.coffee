@@ -24,7 +24,6 @@ module.exports = class Component
       $el = $(e.currentTarget)
       timeoutId = "timeout#{$el.attr('data-label')}"
       clearTimeout me[timeoutId]
-
       configData = aristotle.labels[ $el.attr('data-label')]
       configData.cssClass = "arrow-right"
       PubSub.publish 'label.attach', { el:$el, content:configData}
