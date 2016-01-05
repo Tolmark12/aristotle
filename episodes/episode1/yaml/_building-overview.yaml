@@ -18,18 +18,18 @@ dialogue:
       next: 1500
     b:
       pos: [200, 500]
-      emo: happy
+      emo: left
       next: 1500
     c:
       pos: [400, 350]
-      emo: happy
+      emo: right
       next: 1500
     d:
       pos: [600, 300]
-      emo: happy
+      emo: down
       next: 1500
     e:
       pos: [400, 200]
       emo: happy
-      text: Excellent choice cadet! This is one fine building.
-      audio: Story_2_Ctanlee_4.m4a
+      text: Excellent choice, Cadet! This is one fine facility.
+      audio: Story_2_Ctanlee_4.mp3

@@ -1,7 +1,4 @@
 title: Pick Your Facility
-movie:
-  layers:
-    - {depth: 1, content: c1-background-clouds-loop.json, loop: true }
 duration: {kind: ux}
 dialogue:
   defaults:
@@ -10,13 +7,13 @@ dialogue:
   actions:
     a:
       text: "My grandfather twice removed was a circuit breaker."
-      audio: Story_2_Ctanlee_1.m4a
+      audio: Story_2_Ctanlee_1.mp3
     b:
       text: "I dated a boiler once. She was hot."
-      audio: Story_2_Ctanlee_2.m4a
+      audio: Story_2_Ctanlee_2.mp3
     c:
       text: "The nerve center of the BES. My 1s and 0s are tingling."
-      audio: Story_2_Ctanlee_3.m4a
+      audio: Story_2_Ctanlee_3.mp3
 ux:
   components:
     -
@@ -26,7 +23,7 @@ ux:
         click:
           - {cmd: slides.next-slide}
         title: Pick Your Facility
-        subTitle: The <a data-label=“cip”>Critical Infrastructure Protection (CIP)<a> Standards require that we protect significant facilities on the <a data-label=“bes”>Bulk Electric System (BES)<a> and classify our systems. Big control centers are <a data-label=“high” class="new">High Impact<a>, significant transmission substations, generation plants, and small control centers are <a data-label=“medium” class="new">Medium Impact<a> and all other facilities are <a data-label=“low” class="new">Low Impact<a>. <br/><br/>Since the Standards primarily apply to High and Medium impact facilities, we'll add a Medium Impact facility to the simulator. Pick whichever one you like! We'll teach the same principles with any choice. 
+        subTitle: The <a data-label=“cip”>Critical Infrastructure Protection (CIP)<a> Standards require that we protect significant facilities on the <a data-label=“bes”>Bulk Electric System (BES)<a> and classify our systems. Big control centers are <a data-label=“high” class="new">High Impact<a>, significant transmission substations, generation plants, and small control centers are <a data-label=“medium” class="new">Medium Impact<a> and all other facilities are <a data-label=“low” class="new">Low Impact<a>. <br/><br/>Since the Standards primarily apply to High and Medium impact facilities, we'll add a Medium Impact facility to the simulator. Pick whichever one you like! We'll teach the same principles with any choice.
         submitBtn: {txt: Load Facility, icon: action-btn-fist}
         items:
           -

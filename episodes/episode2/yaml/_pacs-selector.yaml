@@ -36,8 +36,8 @@ ux:
                 cmd: setvars
                 data:
                   pacs: card-scanner
-                  pacsBuild: ~2/perimeter_card_scanner.json
-                  pacsLoop:
+                  pacsBuild: ~2/card_scanner_build.json
+                  pacsPSP: ~2/card_scanner_psp.json
             btnTxt: The Card Guard XT
             icon: mini-card-scanner
             blurb: "Uses personal ID badge to confirm user against database. <br/>I'm gonna need to see some ID"
@@ -49,8 +49,8 @@ ux:
                 cmd: setvars
                 data:
                   pacs: hal-scanner
-                  pacsBuild: ~2/perimeter_hal_scanner.json
-                  pacsLoop:
+                  pacsBuild: ~2/hal_scanner_build.json
+                  pacsPSP: ~2/hal_scanner_psp.json
             btnTxt: HAL 9000 Eye Scanner
             icon: mini-hal-scanner
             blurb: "Uses optical recognition to match user against database. <br/>I'm sorry Dave, but I can't let you in without proper access."
@@ -62,8 +62,8 @@ ux:
                 cmd: setvars
                 data:
                   pacs: kraken-scanner
-                  pacsBuild: ~2/perimeter_kraken_scanner.json
-                  pacsLoop:
+                  pacsBuild: ~2/kraken_scanner_build.json
+                  pacsPSP: ~2/kraken_scanner_psp.json
             btnTxt: Watery Grave Kraken Sensor
             icon: mini-kraken-scanner
             blurb: "Kraken tentacle analyzes user body shape against database. <br/>Don't forget to bring a towel."

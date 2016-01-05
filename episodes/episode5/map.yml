@@ -5,7 +5,7 @@ rankId: master-cadet
 nextRankId: defender
 isLastEpisode: true
 dev:
-  startIndex: 1
+  startIndex: 0
 
 # CHAPTER 1
 chapters:
@@ -115,7 +115,7 @@ chapters:
     subtitle: Marshalling the Response
     dev:
       volume: 1
-      startIndex: 2
+      startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
