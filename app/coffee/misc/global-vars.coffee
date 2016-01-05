@@ -11,9 +11,10 @@ module.exports = class GlobalVars
       @vars[key] = val
     PubSub.publish 'state.save'
 
-  set : (key, val) ->
+  set : (key, val, saveState=true) ->
     @vars[key] = val
-    PubSub.publish 'state.save'
+    if saveState
+      PubSub.publish 'state.save'
 
   get : (str, throwErrors=true) ->
    if @vars[str]?

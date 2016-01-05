@@ -32,6 +32,8 @@ Tooltips:
 
 General:
   ✔ Actions should have delays @done(2016-01-04 17:15)
+  ☐ Make labels (tooltips) clickable
+  ☐ Add local config files
 
 Structure Storyboard 2:
 -------------------------------------
@@ -44,7 +46,9 @@ Variables in text
 IE :
   ☐ Make sure the hotsposts are correct
 
-Make labels (tooltips) clickable
+
+
+
 
 Quiz:
   ☐ once we get a right answer, diable clicking other questions

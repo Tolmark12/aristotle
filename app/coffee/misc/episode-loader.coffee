@@ -1,12 +1,17 @@
 module.exports = class EpisodeLoader
 
   constructor: (@callback) ->
-    @loadEpisode()
+    @loadConfigData()
+
+  loadConfigData : () ->
+    @loadJson "local/config.json", (json)=>
+      for key, val of JSON.parse( json )
+        aristotle.globals.set key, val, false
+      @loadEpisode()
 
   loadEpisode: ()->
     @loadJson aristotle.getAssetPath("map.json"), (json)=>
       @callback JSON.parse(json)
-
 
   loadJson : (path, onComplete) ->
     xobj = new XMLHttpRequest()
