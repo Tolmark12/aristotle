@@ -1,12 +1,22 @@
-.closed-caption { position:absolute; @include center-absolute; background:rgba(black, 0.87); width:800px; padding: 20px; top: auto; bottom: 0;
-  .text         { background:black; display:inline; color:white; line-height:15px; margin-top:35px; font-size:18px; line-height:20px;
-    span        { letter-spacing:0.04em; font-style:normal; color:$yeller; font-size:20px; font-family:$fun_cond; text-transform:uppercase;
-      &:after   { content:": "}
+.cc                    {
+  .closed-caption      { position:absolute; @include center-absolute; background:rgba(black, 0.87); width:800px; padding: 20px; top: auto; bottom: 0;
+    .text              { background:black; display:inline; color:white; line-height:15px; margin-top:35px; font-size:18px; line-height:20px;
+      span             { letter-spacing:0.04em; font-style:normal; color:$yeller; font-size:20px; font-family:$fun_cond; text-transform:uppercase;
+        &:after        { content:": "}
+      }
+      .sektimus,
+      .packet          { color:#D13925; }
+      .warcore,
+      .firewall        { }
+      .ctanlee         { font-style:italic; }
     }
-    .sektimus,
-    .packet     { color:#D13925; }
-    .warcore,
-    .firewall   { }
-    .ctanlee    { font-style:italic; }
+  }
+
+  .closed-caption-icon { position:absolute; bottom:4px; right:7px; display:flex; align-items:center; cursor:pointer;
+    svg *              { fill:white; }
+    &:after            { content:"on"; font-weight:bold; font-size:12px; margin-left:0; color:white; }
+    &.off              { opacity:0.6;
+      &:after          { content:"off"; }
+    }
   }
 }

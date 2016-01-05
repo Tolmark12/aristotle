@@ -16,7 +16,8 @@ module.exports = class GenericUi
     PubSub.subscribe 'continue.show', ()=>
       @showContinueStrip()
 
-  showContinueStrip : () -> @$continueStrip.removeClass "hidden"
+  showContinueStrip : () ->
+    @$continueStrip.removeClass "hidden"
   hideContinueStrip : () -> @$continueStrip.addClass "hidden"
 
   destroy : () ->

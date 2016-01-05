@@ -12,11 +12,9 @@ dialogue:
       text: "My grandfather twice removed was a circuit breaker."
       audio: Story_2_Ctanlee_1.m4a
     b:
-      emo: angry
       text: "I dated a boiler once. She was hot."
       audio: Story_2_Ctanlee_2.m4a
     c:
-      emo: unhappy
       text: "The nerve center of the BES. My 1s and 0s are tingling."
       audio: Story_2_Ctanlee_3.m4a
 ux:
@@ -24,18 +22,12 @@ ux:
     -
       kind: selection-dialogue
       config:
-        labels:
-          a: {title: "big control centers"}
-          b: {title: "Medium", text: "significant transmission substations<br/> and generation plants"}
-          c: {title: "everything else"}
-          d: {title: "everything else"}
-          e: {title: "everything else"}
+        hasLabels: true
         click:
           - {cmd: slides.next-slide}
         intro: The CIP Standards require that we protect significant control centers, generation plants, and substations on the Bulk Electric System. Per the Standards, we will classify them as High Impact (big control centers), Medium Impact (significant transmission substations and generation plants) and Low Impact (everything else).
         title: Pick Your Facility
-        subTitle: The <a data-label="a">Critical Infrastructure Protection (CIP)<a> Standards require that we protect significant facilities on the <a data-label="b">Bulk Electric System (BES)<a> and classify our systems. Big control centers are <a data-label="c">High Impact<a>, significant transmission substations, generation plants, and small control centers are <a data-label="d">Medium Impact<a> and all other facilities are <a data-label="e">Low Impact<a>.
-          The CIP Standards require that we protect significant facilities on the Bulk Electric System and classify them as <a data-label="a">High Impact<a>, <a data-label="b">Medium Impact<a> and <a data-label="c">Low Impact<a>.
+        subTitle: The CIP Standards require that we protect significant facilities on the Bulk Electric System and classify them as <a data-label="high_impact" class="new">High Impact<a>, <a data-label="medium_impact">Medium Impact<a> and <a data-label="low_impact" class="new">Low Impact<a>.
         submitBtn: {txt: Load Facility, icon: action-btn-fist}
         items:
           -

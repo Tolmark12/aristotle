@@ -4,12 +4,12 @@ Sequence  = require 'misc/sequence'
 module.exports = class Duties extends Component
 
   constructor: ($el, data) ->
+    super data
     @numAcknowledgedDuties = 0
     @acknowledgedDuties    = {} # Store the ids of each duty that's acknowledged
     @getData data.definition
     @$node  = $ "<div class='duties'/>"
-    super $el, @$node, data
-
+    @superInit $el, @$node, data
   build : (data) ->
     @createDutyIds data.duties
     @duties = new Sequence data.duties

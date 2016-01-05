@@ -4,7 +4,7 @@ module.exports = class DevTools
 
   constructor: ( @isDevMode ) ->
     if !@isDevMode then return
-    # @initPerformanceStats()
+    @initPerformanceStats()
 
   go : (devConfig, items) ->
     if !@isDevMode or !devConfig? then return

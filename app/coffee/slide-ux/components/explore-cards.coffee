@@ -4,13 +4,14 @@ Sequence  = require 'misc/sequence'
 module.exports = class ExploreCards extends Component
 
   constructor: ($el, @data) ->
+    super @data
     @totalCardsViewed  = 0
     @requiredCardViews = @data["required-views"]
     @$node             = $ $.parseHTML("<div></div>")
     @cards             = new Sequence @data.cards
 
     @createCardGhosts @data.cards
-    super $el, @$node, @data
+    @superInit $el, @$node, data
 
   createCardGhosts : (cards) ->
     @ghosts = []

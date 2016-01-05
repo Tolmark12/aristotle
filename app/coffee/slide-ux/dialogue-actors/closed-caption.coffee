@@ -1,11 +1,29 @@
 module.exports = class ClosedCaption
 
   constructor: ($parent, @playNextAction) ->
+    @ccIsOn = true
     @$el = $ jadeTemplate['slide-ux/text-dialogue/closed-caption']( {} )
-    @$el.css display:'none'
     $parent.append @$el
+    shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
+
+    @ccDisplay = $ ".closed-caption", @$el
+    @ccDisplay.css display:'none'
+
     @$speechBox = $ ".text", @$el
     @hideText()
+
+    @$icon = $(".closed-caption-icon")
+    @$icon.on 'click', (e)=> @toggleClosedCaptioning()
+
+  toggleClosedCaptioning : () ->
+    if @ccIsOn
+      @ccIsOn = false
+      @ccDisplay.addClass 'hidden'
+      @$icon.addClass 'off'
+    else
+      @ccIsOn = true
+      @ccDisplay.removeClass 'hidden'
+      @$icon.removeClass 'off'
 
   # ------------------------------------ API
 
@@ -19,10 +37,13 @@ module.exports = class ClosedCaption
     else
       @character = 'ctanlee'
 
-  showText : () -> @$el.fadeIn()
-  hideText : () -> @$el.fadeOut()
-  showNext : () -> #@$nextBtn.removeClass "hidden"
-  hideNext : () -> #@$nextBtn.addClass "hidden"
+  showText : () -> @ccDisplay.fadeIn()
+  hideText : () -> @ccDisplay.fadeOut()
+
+  showNext     : () -> #@$nextBtn.removeClass "hidden"
+  hideNext     : () -> #@$nextBtn.addClass "hidden"
+  startTalking : () ->
+  stopTalking  : () ->
 
   complete : () -> @sleep()
 

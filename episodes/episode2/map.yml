@@ -15,7 +15,6 @@ chapters:
     title: Chapter 1
     subtitle: Physical Security Perimeter
     dev:
-      volume: 1
       startIndex: 0
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
@@ -218,9 +217,7 @@ chapters:
     title: Chapter 2
     subtitle: Software Defenses
     dev:
-      volume: 1
       startIndex: 0
-      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
       # 2 Dialogue Electronic Attack ==========================================

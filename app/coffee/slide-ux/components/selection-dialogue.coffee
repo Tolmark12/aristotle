@@ -3,19 +3,17 @@ Component = require 'slide-ux/components/component'
 module.exports = class SelectionDialogue extends Component
 
   constructor: ($el, data) ->
-    jadeData = @generateConfigData data
-
+    super data
     @$node = $ jadeTemplate['slide-ux/components/dialogue/selection-dialogue']()
+    jadeData = @generateConfigData data
     @$left  = $ jadeTemplate['slide-ux/components/dialogue/dialogue-details']( jadeData )
     $right = $ jadeTemplate['slide-ux/components/dialogue/dialogue-buttons']( jadeData )
-
     @$left.addClass "hidden"
-
     @$node.append @$left
     @$node.append $right
-
     @addEventListeners @$node, data
-    super $el, @$node, data
+
+    @superInit $el, @$node, data
 
   generateConfigData : (data) ->
     @items   = {}
@@ -34,8 +32,6 @@ module.exports = class SelectionDialogue extends Component
         item.icon = "mini-control-center"
 
       jadeData.items.push {txt:item.btnTxt, id:item.id, icon:item.icon}
-
-
 
       @items[item.id] = item
     jadeData

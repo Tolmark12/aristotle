@@ -3,9 +3,11 @@ Component = require 'slide-ux/components/component'
 module.exports = class DefenderCards extends Component
 
   constructor: ($el, @data) ->
+    super data
     @totalCardsViewed = 0
     @$node = $ jadeTemplate['slide-ux/components/defender-cards']( {} )
-    super $el, @$node, @data
+    @superInit $el, @$node, data
+
     @createDefenders @data.defenders
 
   createDefenders : (defenders) ->

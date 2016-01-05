@@ -29,6 +29,36 @@ module.exports = class Ctanlee
     @$textContent.html text
     @setTextPosition txtPos
 
+  # Movements of talking
+  startTalking : () ->
+    @isTalking = true
+    @bounce()
+
+  stopTalking  : () ->
+    @isTalking = false
+    clearTimeout @timeout
+    @$currentAnimation.stop true
+    @$currentAnimation.velocity({scale:1}, {duration:300, easing:'easeinoutquint'})
+
+  bounce : ->
+    duration  = 500 + Math.random() * 300
+    timoutDur = duration * (Math.random()/1.3)
+
+    if Math.random() > 0.8
+      timoutDur += 600
+
+    @timeout = setTimeout ()=>
+      scale = 0.8 + (Math.random()/3)
+      @$currentAnimation.stop true
+      @$currentAnimation.css transform: "scale(#{scale})"
+      @$currentAnimation.velocity({scale:scale}, {duration:0})
+      @$currentAnimation.velocity({scale:1}, {delay:10, duration:duration, easing:[500, 15]})
+      if @isTalking
+        @bounce()
+    ,
+      timoutDur
+
+
   special : (data)->
     if data.pos?
       @goto data
@@ -44,7 +74,8 @@ module.exports = class Ctanlee
 
   complete : () -> @returnToStation()
 
-  sleep : () -> @returnToStation()
+  sleep : () ->
+    @returnToStation()
 
 
   # ------------------------------------ Face
@@ -60,9 +91,9 @@ module.exports = class Ctanlee
       when "angry"    then path = 'ctanlee-angry.json'
       when "happy"    then path = 'ctanlee-happy.json'
       when "idle"     then path = 'ctanlee-idle.json'
-      when "down"     then path = 'ctanlee-down.json'
-      when "left"     then path = 'ctanlee-left.json'
-      when "right"    then path = 'ctanlee-right.json'
+      when "down"     then path = 'ctanlee-look-down.json'
+      when "left"     then path = 'ctanlee-look-left.json'
+      when "right"    then path = 'ctanlee-look-right.json'
       when "surprise" then path = 'ctanlee-surprise.json'
       when "unhappy"  then path = 'ctanlee-unhappy.json'
       else                 path = 'ctanlee-idle.json'

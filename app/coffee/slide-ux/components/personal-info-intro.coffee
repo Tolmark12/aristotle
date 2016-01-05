@@ -4,7 +4,8 @@ module.exports = class PersonalInfoIntro extends Component
 
   constructor: ($el, data) ->
     # TODO: Change this to a global var:
+    super data
     data.organization = "Arizona Public Service"
     data.name         = aristotle.lmsProxy.name
     @$node = $ jadeTemplate['slide-ux/components/personal-info-intro']( data )
-    super $el, @$node, data
+    @superInit $el, @$node, data

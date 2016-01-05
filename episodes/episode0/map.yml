@@ -9,7 +9,7 @@ chapters:
   -
     title: Loading Introduction
     dev:
-      startIndex: 4
+      startIndex: 5
     kind: intro
     slides:
       # Animation Split Screen Advance ==========================================

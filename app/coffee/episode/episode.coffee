@@ -4,12 +4,14 @@ Sequence       = require 'misc/Sequence'
 module.exports = class Episode
 
   constructor: (trainingData, @movie, @ux, @chrome) ->
-    aristotle.episode = @
-    @episodeNum = trainingData.episode
-    @chrome.build()
-    @isLastEpisode = trainingData.isLastEpisode
+    aristotle.episode     = @
+    @episodeNum           = trainingData.episode
+    @isLastEpisode        = trainingData.isLastEpisode
     aristotle.episodeData = trainingData
-    @nextRankId = trainingData.nextRankId
+    aristotle.labels      = trainingData.labels
+    @nextRankId           = trainingData.nextRankId
+    @chrome.build()
+
     aristotle.devTools.go trainingData.dev, trainingData.chapters
 
     @token1 = PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data

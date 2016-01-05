@@ -11,14 +11,17 @@ module.exports = class Commander
       @publish action, publishSynchronously
 
   publish : (action, publishSynchronously=false) ->
-    if action.INJECT_GLOBAL_VARS?
-      for keyValPair in action.INJECT_GLOBAL_VARS
-        for key, globalVarName of keyValPair
-          if aristotle.globals[globalVarName]?
-            action.data[key] = aristotle.globals[globalVarName]
-          else
-            aristotle.throw "Tried to access the global var `#{globalVarName}` but it doesn't exist", true
+    if action.delay?
+      @publishDelayedAction action
+      return
+
     if publishSynchronously
       PubSub.publishSync action.cmd, action.data
     else
       PubSub.publish action.cmd, action.data
+
+  publishDelayedAction : (action) ->
+    setTimeout ()->
+      PubSub.publish action.cmd, action.data
+    ,
+      action.delay
