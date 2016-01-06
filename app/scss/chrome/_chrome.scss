@@ -1,4 +1,12 @@
 .chrome { position:absolute; z-index:2; width:1024px; height:768px; pointer-events:none;
   @import "top";
   @import "progress";
+  @import "vcr";
+
+  .bottom-item        { background:$progress-bg; position:absolute; left: 50%; transform: translate(-50%); bottom: -1px; pointer-events:all;
+    &:after,&:before  { height: 0; width: 0; content: ""; display: block; position: absolute; top: 0; }
+    &:before          { border-bottom: $progress-height solid $progress-bg; border-left: $progress-size solid transparent; left:-$progress-size ; }
+    &:after           { border-bottom: $progress-height solid $progress-bg; border-right: $progress-size solid transparent; right:-$progress-size; }
+  }
+
 }

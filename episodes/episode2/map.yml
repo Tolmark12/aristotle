@@ -15,7 +15,7 @@ chapters:
     title: Chapter 1
     subtitle: Physical Security Perimeter
     dev:
-      startIndex: 0
+      startIndex: 1
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
@@ -60,7 +60,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 7, content: kettle_attack_pngs.json }
+            - {depth: 7, content: kettle_attack_pngs.json, vcr: true }
         dialogue:
           defaults:
             next: audio

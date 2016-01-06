@@ -2,7 +2,6 @@ module.exports = class SVGAnimation
 
   constructor: ( el, json, data ) ->
     if !data.loop? then data.loop = false
-
     @animation = bodymovin.loadAnimation {
              wrapper   : el[0]
              animType  : 'svg'
@@ -13,6 +12,9 @@ module.exports = class SVGAnimation
            }
 
     if data.nativeEvents? then @addNativeEvents data.nativeEvents
+
+    if data.vcr
+      PubSub.publish 'vcr-control.show', @
 
     @animation.addEventListener 'data_ready', ()=>
       if data.jumpToEnd?
