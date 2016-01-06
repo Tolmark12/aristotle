@@ -4,36 +4,24 @@ VCRControls = require 'chrome/vcr-controls'
 module.exports = class BottomUiElements
 
   constructor: (@$el) ->
-<<<<<<< HEAD
-    $node = $ jadeTemplate['chrome-ui/progress']( {} )
-    @$el.append $node
-    @progessMap  = new ProgressMap $node
-    @vcrControls = new VCRControls $node
-=======
     @$node = $ jadeTemplate['chrome-ui/progress']( {} )
     @$el.append @$node
     @progessMap  = new ProgressMap @$node
     @vcrControls = new VCRControls @$node
 
-
+    @show 'progress-map'
 
     PubSub.subscribe 'vcr-control.show', (m, data)=>
       @showAnimationControls data
-      @shode @progessMap
+      @show 'vcr'
 
   showAnimationControls : (svgAnimation) ->
-    @vcrControls.activate svgAnimation
+    @vcrControls.activate svgAnimation, ()=>
+      @show 'progress-map'
 
-  show : ($el)->
+  show : (clss)->
     @$node.children().addClass 'hidden'
-    $el.children().removeClass 'hidden'
->>>>>>> master
-
-    PubSub.subscribe 'vcr-control.show', (m, data)=>
-      @showAnimationControls data
-
-  showAnimationControls : (svgAnimation) ->
-    @vcrControls.activate svgAnimation
+    $(".#{clss}", @$node).removeClass 'hidden'
 
   destroy : () ->
     if @progressMap?

@@ -1,7 +1,7 @@
 module.exports = class Sequence
 
   constructor: ( @items ) ->
-    @currentItemIndex = 0
+    @reset()
     @totalItems       = @items.length
 
   # ------------------------------------ API
@@ -54,5 +54,6 @@ module.exports = class Sequence
     # Add in some checking to make sure it works
     @items[ @getIndexByParam(param, val) ]
 
+  reset : () -> @currentItemIndex = 0
 
 

@@ -1,3 +1,25 @@
-.vcr{
-  
+.vcr                  { position:relative; display:flex; align-items:center; padding:0 20px;
+  .track              { display:flex; align-items:center; width:255px; height:3px; background:$teal; margin-right:10px;
+    .playhead         { height:3px; background:$yeller; position:relative;
+      .svg            { position:absolute; right:-10px; top:-12px; }
+    }
+  }
+  .pause-and-play     { cursor:pointer;
+    .play, .replay    { display:none; }
+    &.paused          {
+      .play           { display:auto; display:initial; }
+      .pause          { display:none; }
+    }
+    &.complete        {
+      .play, .pause   { display:none; }
+      .replay         { display:auto; display:initial; }
+    }
+  }
+  .attic              { display:flex; @include center-absolute;  justify-content:center; position:absolute; top:-35px; background:$progress-bg; width:100%; align-items:center;
+    .icon-btn         { color:white;
+      &:first-of-type { margin-right:20px; }
+      .txt            { margin-top:-5px; }
+    }
+
+  }
 }

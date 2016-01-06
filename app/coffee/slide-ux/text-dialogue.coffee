@@ -13,11 +13,15 @@ module.exports = class TextDialogue
 
     $('html').on "keydown", (e)=> if e.which == 39 then @playNextAction() # Allow right arrow to play next slide
 
-    token1 = PubSub.subscribe 'ctanlee.activate',           (a, data)=> @playAction(data)
-    token2 = PubSub.subscribe 'ctanlee.add-event-listener', (a, data)=> @addEventListener data
-    token3 = PubSub.subscribe 'dialogue.activate',           (a, data)=> @playAction(data)
-    token4 = PubSub.subscribe 'dialogue.add-event-listener', (a, data)=> @addEventListener data
-    @tokens = [token1, token2, token3, token4]
+    token1  = PubSub.subscribe 'ctanlee.activate',            (a, data)=> @playAction(data)
+    token2  = PubSub.subscribe 'ctanlee.add-event-listener',  (a, data)=> @addEventListener data
+    token3  = PubSub.subscribe 'dialogue.activate',           (a, data)=> @playAction(data)
+    token4  = PubSub.subscribe 'dialogue.add-event-listener', (a, data)=> @addEventListener data
+    token5  = PubSub.subscribe 'vcr.pause',                  (a, data)=> @pauseTimeline()
+    token6  = PubSub.subscribe 'vcr.play',                   (a, data)=> @playTimeline()
+    token7  = PubSub.subscribe 'vcr.replay',                 (a, data)=> @replayTimeline()
+
+    @tokens = [token1, token2, token3, token4, token5, token6, token7]
   # ------------------------------------ API
 
   activate : (@data) ->
@@ -38,6 +42,8 @@ module.exports = class TextDialogue
       @track = new AudioTrack(audio)
       # Play, then on complete, play the next action if that is how next is defined
       @track.play ()=>
+        @track.destroy()
+        @track = null
         @actor.stopTalking()
         if next == 'audio' then @playNextAction()
 
@@ -50,6 +56,19 @@ module.exports = class TextDialogue
         @playNextAction()
       ,
         next
+
+  pauseTimeline : () ->
+    @track?.sound.paused = true
+    @actor?.stopTalking()
+
+  playTimeline  : () ->
+    @track?.sound.paused = false
+    @actor?.startTalking()
+
+  replayTimeline : () ->
+    @track?.stop()
+    @sequence.reset()
+    @playAction @sequence.getCurrentItem().action
 
   addEventListener : (data) ->
     if data.event == 'complete'

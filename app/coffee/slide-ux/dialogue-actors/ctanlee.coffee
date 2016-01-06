@@ -58,7 +58,6 @@ module.exports = class Ctanlee
     ,
       timoutDur
 
-
   special : (data)->
     if data.pos?
       @goto data
