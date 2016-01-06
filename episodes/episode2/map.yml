@@ -523,7 +523,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: $eacmsAnimateBadUpper }
+            - {depth: 11, content: $eacmsAnimateBadUpper }
         dialogue:
           defaults:
             next: audio
@@ -568,7 +568,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: $eacmsAnimateBadLower }
+            - {depth: 12, content: $eacmsAnimateBadLower }
         dialogue:
           defaults:
             next: audio
@@ -631,6 +631,8 @@ chapters:
         movie:
           layers:
             - {depth: 10, content: clear }
+            - {depth: 11, content: clear }
+            - {depth: 12, content: clear }
         dialogue:
           timeline:
             - {action: a }

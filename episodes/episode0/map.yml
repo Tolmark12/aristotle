@@ -66,10 +66,10 @@ chapters:
       # Animation Quarantine ==========================================
       -
         title: Quarantine
-        action: [{cmd: ctanlee.show}]
         movie:
           layers:
             - {depth: 1, content: quarantine.json, action: {cmd: chrome.hide} }
+        action: [{cmd: ctanlee.show}]
         dialogue:
           defaults:
             next: audio
@@ -122,6 +122,15 @@ chapters:
           actions:
             a:
               pos: [513,384,0]
+            b:
+              text: "Excellent! Gaze at the dot on the screen, while the warcore  read your optical receptors."
+              audio: Story_1_Yes.mp3
+            c:
+              text: "Sorry, that was a trick question. I really must insist."
+              audio: Story_1_No.mp3
+            d:
+              text: "Standard protocol. Don't worry - laser blast deaths are somewhat quick and mostly painless."
+              audio: Story_1_LaserBlast.mp3
         ux:
           components:
             -
@@ -134,14 +143,17 @@ chapters:
                   -
                     txt: Yes
                     click:
+                      #- {cmd: ctanlee.activate, data: b, complete: {cmd: slides.next-slide}}
                       - {cmd: playsound, data: {file: Story_1_Yes.mp3, complete: {cmd: slides.next-slide} }}
                   -
                     txt: No
                     click:
+                      #- {cmd: ctanlee.activate, data: c, complete: {cmd: slides.next-slide}}
                       - {cmd: playsound, data: {file: Story_1_No.mp3, complete: {cmd: slides.next-slide} }}
                   -
                     txt: Laser blast my face
                     click:
+                      #- {cmd: ctanlee.activate, data: d, complete: {cmd: slides.next-slide}}
                       - {cmd: playsound, data: {file: Story_1_LaserBlast.mp3, complete: {cmd: slides.next-slide} }}
         duration: {kind: ux}
       # Dialogue Clearance Level  ==========================================
@@ -201,6 +213,12 @@ chapters:
           layers:
             - {depth: 1, content: clear }
             - {depth: 1, background: black }
+        dialogue:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [513,384,2000]
         ux:
           components:
             -
@@ -238,33 +256,35 @@ chapters:
           actions:
             a:
               emo: left
-              pos: [400,50,2000]
+              pos: [400,50]
+              next: 5000
               text: "Your name, call sign and training rank will be shown here."
               audio: Story_1_Ctanlee_9.mp3
             b:
-              next: 6000
-              pos: [650,200,2000]
+              pos: [430,200]
               text: "With CIPv5 clearance, it's time for you to learn the reason for this training."
               audio: Story_1_Ctanlee_10.mp3
             c:
-              emo: left
-              pos: [400,450]
+              emo: down
+              pos: [450,450]
               text: "We operate part of the North American Bulk Electric System - this system is made up of power plants, transmission substations, control centers and their supporting operations."
               audio: Story_1_Ctanlee_11.mp3
             d:
-              pos: [550,300]
+              emo: left
+              pos: [500,250]
               text: "All these facilities working together provide power to homes, businesses, industry, and other vital services."
               audio: Story_1_Ctanlee_12.mp3
             e:
-              pos: [650,200]
+              pos: [170,330]
               text: "But there's a problem. Hackers, terrorists, and other nasty people want to disrupt our ability to provide this power. These facilities are highly connected and automated through computer technology and thr4 vulnerable to a cyber-attack."
               audio: Story_1_Ctanlee_12b.mp3
+              emo: down
             f:
-              pos: [650,300]
+              pos: [400,300]
               text: "Just imagine a day without power."
               audio: Story_1_Ctanlee_12c.mp3
             g:
-              pos: [650,100]
+              pos: [450,200]
               text: "To protect this critical infrastructure, the government ordered the North American Electric Reliability Corporation - NERC - to create the Critical Infrastructure Protection standards that defines how each utility must protect their facilities from attack."
               audio: Story_1_Ctanlee_12d.mp3
         duration: {kind: dialogue }
@@ -274,7 +294,7 @@ chapters:
         action: {cmd: chrome.hide}
         movie:
           layers:
-            - {depth: 1, content: sektimus.json }
+            - {depth: 1, content: sektimus_pngs.json }
         dialogue:
           defaults:
             next: audio
@@ -282,40 +302,20 @@ chapters:
             - {action: a }
             - {action: b }
             - {action: c }
-            - {action: d }
           actions:
             a:
-              next: 3500
+              next: 500
               pos: []
               audio: ~3/Placeholder_Silence.m4a
             b:
-              pos: [350,400,3000]
+              pos: [350,400]
               text: "That's the official story from the government. But there's more to the story that I can reveal with your clearance level - and the full truth is far more serious."
               audio: Story_1_Ctanlee_12e.mp3
             c:
-              next: 13000
-              pos: [350,400]
-              audio: ~3/Placeholder_Silence.m4a
-            d:
-              pos: [250,450]
+              emo: right
+              pos: [150,500]
               text: "Far across the galaxy, an ancient evil has set its eyes on us. The robot Overmind Sektimus desires to attack Earth and enslave all humankind. <br/><br/>He has launched his Metal Swarm, the greatest space armada ever constructed by the robots, against our planet."
               audio: Story_1_Ctanlee_16.mp3
-        duration: {kind: dialogue }
-      # Animation Earth  ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 1, content: earth.json }
-        dialogue:
-          defaults:
-            next: audio
-          timeline:
-            - {action: a }
-          actions:
-            a:
-              pos: [350,400]
-              text: "Sektimus desires to weaken us before the Swarm arrives, so he sent advance forces."
-              audio: Story_1_Ctanlee_17.mp3
         duration: {kind: dialogue }
       # Animation Robot Introduction  ==========================================
       -
@@ -329,17 +329,24 @@ chapters:
             - {action: a }
             - {action: b }
             - {action: c }
+            - {action: d }
           actions:
             a:
               pos: [350,400]
+              text: "Sektimus desires to weaken us before the Swarm arrives, so he sent advance forces."
+              audio: Story_1_Ctanlee_17.mp3
+            b:
+              emo: left
+              pos: [250,500]
               text: "Several models of robots were sent in this advance force, each specifically designed to attack an aspect of the computer systems that run our facilities. These robots and their human allies have targeted us."
               audio: Story_1_Ctanlee_18.mp3
-            b:
+            c:
               pos: [350,400]
               text: "The government is aware of Sektimus and his advance forces. They secretly directed NERC to create the CIP Standards to help defend against their attacks."
               audio: Story_1_Ctanlee_19.mp3
-            c:
-              pos: [350,400]
+            d:
+              emo: left
+              pos: [550,500]
               text: "So while the CIP Standards protect us from hackers and terrorists on Earth, these are mere pawns in an intergalactic struggle that threatens all humankind. CIP is Earth's secret weapon against this threat."
               audio: Story_1_Ctanlee_19b.mp3
         duration: {kind: dialogue }
@@ -355,9 +362,13 @@ chapters:
             next: audio
           timeline:
             - {action: a }
+            - {action: b }
           actions:
             a:
               pos: [513,384,1000]
+              next: 1200
+            a:
+              pos: [513,384]
               text: "You now know the full story about CIP - How are you feeling?"
               audio: Story_1_Ctanlee_21.mp3
         ux:
@@ -384,6 +395,9 @@ chapters:
       # Introduce Navigation Ranks  ==========================================
       -
         action: [{cmd: chrome.show}, {cmd: chrome.showepisodes}]
+        movie:
+          layers:
+            - {depth: 0, content: chip.json }
         dialogue:
           defaults:
             next: audio
@@ -394,19 +408,22 @@ chapters:
             - {action: d }
           actions:
             a:
-              pos: [350,400]
+              pos: [200,500]
               text: "Sektimus' latest battle plans were intercepted by NERC special agents who used them to create CIP version 5, the version you're about to learn."
               audio: Story_1_Ctanlee_20.mp3
+              next: 9500
             b:
-              pos: [350,400]
+              emo: left
+              pos: [680,450]
               text: "CIP puts you at the center of our defenses and I will teach you these defenses in 5 easy episodes."
               audio: Story_1_Ctanlee_22.mp3
             c:
-              pos: [350,400]
+              emo: left
+              pos: [700,100]
               text: "You will learn using the WarCore's fully-functional battle simulator to protect a simulated facility from attacks by Sektimus' advance force."
               audio: Story_1_Ctanlee_24.mp3
             d:
-              pos: [350,400]
+              pos: [350,300]
               text: "Cadet, By the end of this training you will be a full CIP defender. Let us begin Episode 1 and load the simulator."
               audio: Story_1_Ctanlee_25.mp3
         duration: {kind: dialogue}
