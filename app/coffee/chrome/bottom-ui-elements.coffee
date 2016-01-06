@@ -18,6 +18,7 @@ module.exports = class BottomUiElements
   showAnimationControls : (svgAnimation) ->
     @vcrControls.activate svgAnimation, ()=>
       @show 'progress-map'
+      PubSub.publish 'slides.next-slide'
 
   show : (clss)->
     @$node.children().addClass 'hidden'

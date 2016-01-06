@@ -93,7 +93,7 @@ chapters:
               pos: [200,100]
               text: Why must the universe punish the good? Simulator Pause.
               audio: Story_3_Ctanlee_3.mp3
-        duration: {kind: ux }
+        duration: {kind: ux}
       # 1 Dialogue Physical Acess Control ==========================================
       -
         title: Physical Access Control
