@@ -16,7 +16,6 @@ chapters:
     subtitle: Physical Security Perimeter
     dev:
       startIndex: 1
-      volume: 0.1
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
