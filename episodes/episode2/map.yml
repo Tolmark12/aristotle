@@ -176,25 +176,26 @@ chapters:
             - {action: a }
             - {action: b }
             - {action: c }
+            - {action: d }
           actions:
             a:
               pos: []
-              audio: Story_3_Silence.mp3
+              next: 7000
             b:
               pos: [170,400]
               text: Bow to the scanner, Bot. Uh oh, looks like the robots are trying again.
               audio: Story_3_Ctanlee_8.mp3
             c:
+              pos: []
+              next: 7000
+            d:
               pos: [370,300]
               text: Alerted and Defended. Rust in peace, robots.
-              audio: Story_3_Ctanlee_14.mp3
+              audio: Story_3_Ctanlee_9.mp3
         duration: {kind: dialogue }
       # 1 Dialogue Chapter Complete ==========================================
       -
         title: Chapter Complete
-        movie:
-          layers:
-            - {depth: 10, content: clear }
         dialogue:
           timeline:
             - {action: a }
@@ -217,6 +218,9 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Duties ==========================================
       -
+        movie:
+          layers:
+            - {depth: 10, content: clear }
         action: {cmd: ctanlee.gohome}
         ux:
           components:
@@ -304,6 +308,7 @@ chapters:
               actor: warcore
               text: Working…
             f:
+              next: 7500
               pos: [270,300]
               text: Cadet, I need to see what this signal is and if it's a threat. Please standby.
               audio: ~2/Story_3_Ctanlee_20.mp3
@@ -362,11 +367,29 @@ chapters:
               text: "Cadet ... you may wish this wasn't real, that it was just some work of fiction, but good can come from this. What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them. Sektimus fears this. Sektimus fears what you can become. While you ponder these things, let's get back to the simulator."
               audio: ~2/Story_3_Ctanlee_23.mp3
         duration: {kind: dialogue}
-      # 2 Simulation Kettle E Attack ==========================================
+      # 2 Dialogue Electronic Attack ==========================================
       -
+        title: Electronic Attacks
         action:
           - {cmd: movie.layers.uncache, data: 4}
           - {cmd: movie.layers.uncache, data: 6}
+        movie:
+          layers:
+            - {depth: 10, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Electronic Attacks
+                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a  <a data-label="crca">CRCA<a> attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction. <br/><br/>Let's see how this might work.
+                btn:
+                  style: lightning
+                  text: run simulation
+                  action: {cmd: slides.next-slide}
+      # 2 Simulation Kettle E Attack ==========================================
+      -
         movie:
           layers:
             - {depth: 10, content: kettle_e_attack_pngs.json }

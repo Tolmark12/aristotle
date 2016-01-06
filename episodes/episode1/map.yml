@@ -822,13 +822,10 @@ chapters:
               audio: Story_2_Ctanlee_X41.mp3
               next: 13000
         duration: {kind: dialogue }
-      # 3 Animation Clear ==========================================
+      # 3 Ctanlee Clear ==========================================
       -
-        movie:
-          layers:
-            - {depth: 8, content: clear }
         action: {cmd: ctanlee.gohome}
-        duration: {kind: time, seconds: 1 }
+        duration: {kind: time, seconds: .5 }
       # 3 Identify Assess Simple Selector ==========================================
       - !!inc/file ./episodes/episode1/yaml/_simple-selector-identifyassess.yaml
       # 3 Dialogue One Down ==========================================
@@ -847,6 +844,12 @@ chapters:
                   style: lightning
                   text: Review Duties
                   action: {cmd: slides.next-slide}
+      # 3 Animation Clear ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 8, content: clear }
+        duration: {kind: time, seconds: .5 }
       # 3 Duties ==========================================
       -
         movie:
