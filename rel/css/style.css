@@ -276,7 +276,7 @@ h1, h2 {
         top: auto;
         top: initial;
         bottom: 23px; }
-  .slide-ux .closed-caption {
+  .slide-ux .cc .closed-caption {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -286,7 +286,7 @@ h1, h2 {
     padding: 20px;
     top: auto;
     bottom: 0; }
-    .slide-ux .closed-caption .text {
+    .slide-ux .cc .closed-caption .text {
       background: black;
       display: inline;
       color: white;
@@ -294,19 +294,38 @@ h1, h2 {
       margin-top: 35px;
       font-size: 18px;
       line-height: 20px; }
-      .slide-ux .closed-caption .text span {
+      .slide-ux .cc .closed-caption .text span {
         letter-spacing: 0.04em;
         font-style: normal;
         color: #DEAA36;
         font-size: 20px;
         font-family: 'Function Condensed';
         text-transform: uppercase; }
-        .slide-ux .closed-caption .text span:after {
+        .slide-ux .cc .closed-caption .text span:after {
           content: ": "; }
-      .slide-ux .closed-caption .text .sektimus, .slide-ux .closed-caption .text .packet {
+      .slide-ux .cc .closed-caption .text .sektimus, .slide-ux .cc .closed-caption .text .packet {
         color: #D13925; }
-      .slide-ux .closed-caption .text .ctanlee {
+      .slide-ux .cc .closed-caption .text .ctanlee {
         font-style: italic; }
+  .slide-ux .cc .closed-caption-icon {
+    position: absolute;
+    bottom: 4px;
+    right: 7px;
+    display: flex;
+    align-items: center;
+    cursor: pointer; }
+    .slide-ux .cc .closed-caption-icon svg * {
+      fill: white; }
+    .slide-ux .cc .closed-caption-icon:after {
+      content: "on";
+      font-weight: bold;
+      font-size: 12px;
+      margin-left: 0;
+      color: white; }
+    .slide-ux .cc .closed-caption-icon.off {
+      opacity: 0.6; }
+      .slide-ux .cc .closed-caption-icon.off:after {
+        content: "off"; }
   .slide-ux .defender-wrap .defender-card {
     pointer-events: all;
     max-width: 340px;
@@ -1027,14 +1046,13 @@ h1, h2 {
       top: 0; }
   .slide-ux .selection-dialogue {
     display: flex;
-    color: white;
+    color: #FFF;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); }
-    .slide-ux .selection-dialogue * {
-      font-weight: 100;
-      font-size: 16px; }
+    transform: translate(-50%, -50%);
+    font-weight: 100;
+    font-size: 16px; }
     .slide-ux .selection-dialogue .left-section, .slide-ux .selection-dialogue .right-section {
       display: flex;
       flex-direction: column;
@@ -1042,6 +1060,10 @@ h1, h2 {
       min-width: 340px;
       max-width: 380px;
       padding: 20px; }
+      .slide-ux .selection-dialogue .left-section p, .slide-ux .selection-dialogue .right-section p {
+        color: #CCC;
+        font-size: 14px;
+        line-height: 1.3; }
     .slide-ux .selection-dialogue .left-section {
       margin-right: 5px;
       border: 3px solid #F9773E; }
@@ -1167,10 +1189,12 @@ input {
     white-space: nowrap; }
 
 .label-trigger {
-  color: #6C9AA0;
+  color: white;
   cursor: pointer;
   position: relative;
   display: inline-block; }
+  .label-trigger.new {
+    color: #6C989F; }
   .label-trigger:hover {
     color: #F9773E; }
   .label-trigger .label-wrapper {
