@@ -17,7 +17,7 @@ chapters:
         action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}, {cmd: chrome.hidename}, {cmd: chrome.hideicons}]
         movie:
           layers:
-            - {depth: 1, content: ~0/splitdoor.json, events: [complete] }
+            - {depth: 1, content: ~0/splitdoor.json, events: [complete], loop: false}
         duration: {kind: listen, event: layer.1.complete}
       # Dialogue PlaySound ==========================================
       -
@@ -68,7 +68,7 @@ chapters:
         title: Quarantine
         movie:
           layers:
-            - {depth: 1, content: quarantine.json, vcr: true, action: {cmd: chrome.hide} }
+            - {depth: 1, content: quarantine.json, action: {cmd: chrome.hide} }
         action: [{cmd: ctanlee.show}]
         dialogue:
           defaults:
@@ -101,11 +101,60 @@ chapters:
               pos: [513,384,0]
               text: "I'm in charge of training new CIP Defenders. I'm sorry for the quarantine, but I do need to confirm you are authorized before you can enter the WarCore."
               audio: Story_1_Ctanlee_2.mp3
+            e:
+              pos: [513,384,0]
+              text: "If you aren't authorized, I' am afraid I'll have to laser-blast you."
+              audio: Story_1_Ctanlee_3.mp3
             f:
               pos: [513,384,0]
               text: "The warcore will now confirm your identity. Are you ready to proceed?"
               audio: Story_1_Ctanlee_4.mp3
-        duration: {kind: ux }
+        duration: {kind: dialogue }
+      # Dialogue Approval to Advance  ==========================================
+      -
+        title: Approval To Proceed
+        movie:
+          layers:
+            - {depth: 2}
+        dialogue:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [513,384,0]
+            b:
+              text: "Excellent! Gaze at the dot on the screen, while the warcore  read your optical receptors."
+              audio: Story_1_Yes.mp3
+            c:
+              text: "Sorry, that was a trick question. I really must insist."
+              audio: Story_1_No.mp3
+            d:
+              text: "Standard protocol. Don't worry - laser blast deaths are somewhat quick and mostly painless."
+              audio: Story_1_LaserBlast.mp3
+        ux:
+          components:
+            -
+              kind: dialogue-page
+              config:
+                title: Approval To Proceed
+                theme: grid-room
+                btnConfig: {height: 100, lines: true}
+                btns:
+                  -
+                    txt: Yes
+                    click:
+                      #- {cmd: ctanlee.activate, data: b, complete: {cmd: slides.next-slide}}
+                      - {cmd: playsound, data: {file: Story_1_Yes.mp3, complete: {cmd: slides.next-slide} }}
+                  -
+                    txt: No
+                    click:
+                      #- {cmd: ctanlee.activate, data: c, complete: {cmd: slides.next-slide}}
+                      - {cmd: playsound, data: {file: Story_1_No.mp3, complete: {cmd: slides.next-slide} }}
+                  -
+                    txt: Laser blast my face
+                    click:
+                      #- {cmd: ctanlee.activate, data: d, complete: {cmd: slides.next-slide}}
+                      - {cmd: playsound, data: {file: Story_1_LaserBlast.mp3, complete: {cmd: slides.next-slide} }}
         duration: {kind: ux}
       # Dialogue Clearance Level  ==========================================
       -
@@ -122,7 +171,7 @@ chapters:
             a:
               next: 700
               emo: surprise
-              pos: [340,300,1000]
+              pos: [320,300,1000]
               audio: Silence_1_sec.mp3
             b:
               emo: right
@@ -235,7 +284,7 @@ chapters:
               text: "Just imagine a day without power."
               audio: Story_1_Ctanlee_12c.mp3
             g:
-              pos: [350,400]
+              pos: [450,200]
               text: "To protect this critical infrastructure, the government ordered the North American Electric Reliability Corporation - NERC - to create the Critical Infrastructure Protection standards that defines how each utility must protect their facilities from attack."
               audio: Story_1_Ctanlee_12d.mp3
         duration: {kind: dialogue }
@@ -245,7 +294,7 @@ chapters:
         action: {cmd: chrome.hide}
         movie:
           layers:
-            - {depth: 1, content: sektimus_pngs.json, vcr: true }
+            - {depth: 1, content: sektimus_pngs.json }
         dialogue:
           defaults:
             next: audio
@@ -257,6 +306,7 @@ chapters:
             a:
               next: 500
               pos: []
+              audio: ~3/Placeholder_Silence.m4a
             b:
               pos: [350,400]
               text: "That's the official story from the government. But there's more to the story that I can reveal with your clearance level - and the full truth is far more serious."
@@ -266,12 +316,12 @@ chapters:
               pos: [150,500]
               text: "Far across the galaxy, an ancient evil has set its eyes on us. The robot Overmind Sektimus desires to attack Earth and enslave all humankind. <br/><br/>He has launched his Metal Swarm, the greatest space armada ever constructed by the robots, against our planet."
               audio: Story_1_Ctanlee_16.mp3
-        duration: {kind: ux }
+        duration: {kind: dialogue }
       # Animation Robot Introduction  ==========================================
       -
         movie:
           layers:
-            - {depth: 1, content: smoke1.json, vcr: true }
+            - {depth: 1, content: smoke1.json }
         dialogue:
           defaults:
             next: audio
@@ -299,7 +349,7 @@ chapters:
               pos: [550,500]
               text: "So while the CIP Standards protect us from hackers and terrorists on Earth, these are mere pawns in an intergalactic struggle that threatens all humankind. CIP is Earth's secret weapon against this threat."
               audio: Story_1_Ctanlee_19b.mp3
-        duration: {kind: ux }
+        duration: {kind: dialogue }
       # Dialogue Gut Check  ==========================================
       -
         title: Gut Check
@@ -347,7 +397,7 @@ chapters:
         action: [{cmd: chrome.show}, {cmd: chrome.showepisodes}]
         movie:
           layers:
-            - {depth: 0, content: chip.json, vcr: true }
+            - {depth: 0, content: chip.json }
         dialogue:
           defaults:
             next: audio
@@ -376,7 +426,7 @@ chapters:
               pos: [350,300]
               text: "Cadet, By the end of this training you will be a full CIP defender. Let us begin Episode 1 and load the simulator."
               audio: Story_1_Ctanlee_25.mp3
-        duration: {kind: ux}
+        duration: {kind: dialogue}
       # Rank Advance ==========================================
       -
         movie:

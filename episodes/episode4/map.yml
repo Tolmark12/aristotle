@@ -63,7 +63,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: 5_defender_access_fail.json }
+            - {depth: 17, content: 5_defender_access_fail.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -119,7 +119,7 @@ chapters:
               pos: [100,100]
               text: "Simulator pause!"
               audio: Story_5_Ctanlee_5.m4a
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 1 Dialogue Removing Access ==========================================
       -
         title: Removing Access
@@ -187,7 +187,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: $accessPassA }
+            - {depth: 17, content: $accessPassA, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -208,12 +208,12 @@ chapters:
               pos: [400,200]
               text: "Compliance fist bumps all-around. Rod's access was removed in under 24 hours. Now let's deal with that unsavory human."
               audio: Story_5_Ctanlee_11.m4a
-        duration: {kind: dialogue}
+        duration: {kind: ux}
       # 1 Simulation Retry Unsavory Fail ==========================================
       -
         movie:
           layers:
-            - {depth: 17, content: $accessPassB }
+            - {depth: 17, content: $accessPassB, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -229,12 +229,12 @@ chapters:
               pos: [150,500]
               text: "I relish your demise, unworthy opponent. Let's hire a worthy successor for Rod."
               audio: Story_5_Ctanlee_13.m4a
-        duration: {kind: dialogue}
+        duration: {kind: ux }
       # 1 Simulation Retry Cindy Pass ==========================================
       -
         movie:
           layers:
-            - {depth: 17, content: $accessPassC }
+            - {depth: 17, content: $accessPassC, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -280,7 +280,7 @@ chapters:
               pos: [400,100]
               text: "Simulator Pause!"
               audio: Story_5_Ctanlee_18.m4a
-        duration: {kind: dialogue}
+        duration: {kind: ux }
       # 1 Dialogue Information Access ==========================================
       -
         title: Information Access
@@ -355,7 +355,7 @@ chapters:
         title: Account Attacks
         movie:
           layers:
-            - {depth: 17, content: ~g/user_account_1.json }
+            - {depth: 17, content: ~g/user_account_1.json  }
         duration: {kind: ux}
         ux:
           components:
@@ -372,7 +372,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: 5_user_account_fail.json, events: [complete] }
+            - {depth: 17, content: 5_user_account_fail.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -398,7 +398,7 @@ chapters:
               pos: [780,350]
               text: "He has access. Simulator pause."
               audio: Story_5_Ctanlee_20.m4a
-        duration: {kind: dialogue}
+        duration: {kind: ux }
       # 2 Simulation Brute Force Fail Clear ==========================================
       -
         movie:
@@ -424,7 +424,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: 5_user_account_pass.json }
+            - {depth: 17, content: 5_user_account_pass.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -455,7 +455,7 @@ chapters:
               pos: [100,100]
               text: "The metal is willing, but the spirit is weak."
               audio: Story_5_Ctanlee_23.m4a
-        duration: {kind: dialogue}
+        duration: {kind: ux }
       # 2 Simulation Brute Force Pass Clear ==========================================
       -
         movie:
@@ -481,7 +481,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: intercept_e5_1.json }
+            - {depth: 17, content: intercept_e5_1.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -526,7 +526,7 @@ chapters:
               pos: [270,300]
               text: Then prove it. This Cadet has a facility that has defeated every attack your robots are programmed with. If you can give me an attack that our CIP defenses can't handle then we'll concede the Blankity-blank. Cadet, do you accept this challenge with me?
               audio: Story_5_Ctanlee_26.m4a
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 2 Sektimus Do you Accept? ==========================================
       - !!inc/file ./episodes/episode4/yaml/_simple-sektimus-e5.yaml
       # 2 Sektimus Interlude ==========================================
@@ -602,7 +602,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: 5_auditbot_fail.json }
+            - {depth: 17, content: 5_auditbot_fail.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -630,7 +630,7 @@ chapters:
               pos: [100,100]
               text: "He's blacked out part of the Grid. Simulator Pause!"
               audio: Story_5_Ctanlee_30.m4a
-        duration: {kind: dialogue}
+        duration: {kind: ux }
       # 3 Dialogue Visitor Escort Procedure ==========================================
       -
         title: The Visitor Escort Procedure
@@ -662,7 +662,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: $visitorPass, events: [complete] }
+            - {depth: 17, content: $visitorPass, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -684,7 +684,7 @@ chapters:
               pos: [100,100]
               text: "Parting is such sweet sorrow, AuditBot."
               audio: Story_5_Ctanlee_35.m4a
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 3 Dialogue Home Stretch ==========================================
       -
         title: On the Home Stretch

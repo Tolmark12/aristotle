@@ -168,7 +168,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 18, content: 6_1_sektimus_intercept.json }
+            - {depth: 18, content: 6_1_sektimus_intercept.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -207,7 +207,7 @@ chapters:
               pos: [270,300]
               text: Cadet, are you ready to put your facility to the test?
               audio: Story_6_Ctanlee_3.m4a
-        duration: {kind: dialogue}
+        duration: {kind: ux }
       # 2 Sektimus Are you Ready? ==========================================
       - !!inc/file ./episodes/episode5/yaml/_simple-sektimus-e6.yaml
       # 2 Sektimus Interlude ==========================================
@@ -216,7 +216,7 @@ chapters:
           layers:
             - {depth: 0, content: red-sky.svg }
             - {depth: 16, content: clear }
-            - {depth: 18, content: 6_2_bot_battle.json }
+            - {depth: 18, content: 6_2_bot_battle.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -292,7 +292,7 @@ chapters:
               pos: [270,300]
               text: Hold your head high, Cadet. We're not beaten yet.
               audio: Story_6_Ctanlee_11.m4a
-        duration: {kind: dialogue}
+        duration: {kind: ux}
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 3
   # ----------------------------------------------
@@ -343,7 +343,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 18, content: 6_3_1_rebuild_sektimus_dialogue.json }
+            - {depth: 18, content: 6_3_1_rebuild_sektimus_dialogue.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -365,14 +365,14 @@ chapters:
               pos: [550,300]
               text: "Defender, please pick your NERC Bot-Tron Defense."
               audio: Story_6_Ctanlee_12.m4a
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 3 Sektimus Nerc Defense Selector ? ==========================================
       - !!inc/file ./episodes/episode5/yaml/_fake-nerc-defense-selector.yaml
       # 3 Simulation Recovery ==========================================
       -
         movie:
           layers:
-            - {depth: 18, content: 6_3_2_rebuild_sektimus_dialogue.json }
+            - {depth: 18, content: 6_3_2_rebuild_sektimus_dialogue.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -389,7 +389,7 @@ chapters:
               pos: [300,220]
               text: The WarCore is simply simulating the results from following the CIP Standards. Our Incident Response Team(remember them?) reported the Bot-Tron attack to E-ISAC and NERC used the information to build new experimental defenses for the industry against Bot-Tron Overlords. Proceed with your selection, Cadet.
               audio: Story_6_Ctanlee_16.m4a
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 3 Sektimus Nerc Defense Selector ? ==========================================
       - !!inc/file ./episodes/episode5/yaml/_nerc-defense-selector.yaml
       # 3 Sektimus Interlude ==========================================
@@ -403,7 +403,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 16, content: $nercPass }
+            - {depth: 16, content: $nercPass, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -449,7 +449,7 @@ chapters:
               pos: [270,300]
               text: Not many have the courage to stare Sektimus in the eyes and challenge him. Well fought. Let's complete your training.
               audio: Story_6_Ctanlee_17.m4a
-        duration: {kind: dialogue}
+        duration: {kind: ux }
       # 3 Duties ==========================================
       -
         action: {cmd: ctanlee.gohome}

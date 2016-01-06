@@ -168,7 +168,7 @@ chapters:
         movie:
           layers:
             - {depth: 7, content: clear }
-            - {depth: 10, content: $pacsPass }
+            - {depth: 10, content: $pacsPass, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -192,7 +192,7 @@ chapters:
               pos: [370,300]
               text: Alerted and Defended. Rust in peace, robots.
               audio: Story_3_Ctanlee_9.mp3
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 1 Dialogue Chapter Complete ==========================================
       -
         title: Chapter Complete
@@ -260,7 +260,7 @@ chapters:
           - {cmd: movie.layers.cache, data: 6}
         movie:
           layers:
-            - {depth: 10, content: fatline_extended.json }
+            - {depth: 10, content: fatline_extended.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -366,7 +366,7 @@ chapters:
               pos: [370,300]
               text: "Cadet ... you may wish this wasn't real, that it was just some work of fiction, but good can come from this. What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them. Sektimus fears this. Sektimus fears what you can become. While you ponder these things, let's get back to the simulator."
               audio: ~2/Story_3_Ctanlee_23.mp3
-        duration: {kind: dialogue}
+        duration: {kind: ux}
       # 2 Dialogue Electronic Attack ==========================================
       -
         title: Electronic Attacks
@@ -392,7 +392,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: kettle_e_attack_pngs.json }
+            - {depth: 10, content: kettle_e_attack_pngs.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -417,7 +417,7 @@ chapters:
               pos: [370,500]
               text: This is totally uncool. Simulator pause!
               audio: Story_3_Ctanlee_26.mp3
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 2 Dialogue - Electronic Attack ==========================================
       -
         title: Electronic Attacks
@@ -490,7 +490,7 @@ chapters:
           - {cmd: movie.layers.cache, data: 9}
         movie:
           layers:
-            - {depth: 10, content: $eacmsAnimateGood }
+            - {depth: 10, content: $eacmsAnimateGood, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -540,12 +540,12 @@ chapters:
               pos: [700,500]
               text: That was an approved packet.
               audio: Story_3_Ctanlee_34.mp3
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 2 Simulator - Firewall Upper ==========================================
       -
         movie:
           layers:
-            - {depth: 11, content: $eacmsAnimateBadUpper }
+            - {depth: 11, content: $eacmsAnimateBadUpper, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -585,12 +585,12 @@ chapters:
               pos: [320,450]
               text: He wasn't on the list.
               audio: Story_3_Ctanlee_36.mp3
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 2 Simulator - Firewall Lower ==========================================
       -
         movie:
           layers:
-            - {depth: 12, content: $eacmsAnimateBadLower }
+            - {depth: 12, content: $eacmsAnimateBadLower, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -641,7 +641,7 @@ chapters:
               pos: [370,300]
               text: Terminated. Nice job, firewall.
               audio: Story_3_Ctanlee_39.mp3
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 2 Dialogue - End Chapter ==========================================
       -
         title: Chapter 2 Complete

@@ -53,7 +53,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: kettle_bush_attack.json }
+            - {depth: 11, content: kettle_bush_attack.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -84,7 +84,7 @@ chapters:
               pos: [100,100]
               text: "Simulator Pause!"
               audio: Story_4_Ctanlee_3.m4a
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 1 Dialogue Ports==========================================
       -
         title: Port Security
@@ -157,7 +157,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: $portDefend, events: [complete] }
+            - {depth: 10, content: $portDefend, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -178,7 +178,7 @@ chapters:
               pos: [100,100]
               text: "Duty Time!"
               audio: Story_4_Ctanlee_11.m4a
-        duration: {kind: listen, event: layer.10.complete}
+        duration: {kind: ux }
       # 1 Duties ==========================================
       -
         movie:
@@ -237,7 +237,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: fatline_e41.json, events: [complete] }
+            - {depth: 11, content: fatline_e41.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -282,14 +282,14 @@ chapters:
               audio: Story_4_Sektimus_3.m4a
               actor: sektimus
               text: Human. your limited mind might have trouble comprehending the situation, so let me use simple terms. CIP will not save you. CTANLEE will not save you. Abandon this training and I won't extend your suffering after I conquer Earth. Will you accept this, my final offer?
-        duration: {kind: listen, event: layer.11.complete}
+        duration: {kind: ux}
       # 2 Sektimus Will you Train? ==========================================
       - !!inc/file ./episodes/episode3/yaml/_simple-sektimus.yaml
       # 2 Sektimus Interlude ==========================================
       -
         movie:
           layers:
-            - {depth: 11, content: fatline_e42.json, events: [complete] }
+            - {depth: 11, content: fatline_e42.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -306,7 +306,7 @@ chapters:
               pos: [270,300]
               text: Nicely handled, Cadet. You have surprised Sektimus and that's no mean accomplishment. I suspect we haven't seen the last of him, so be ready. WarCore, back to the simulator!
               audio: Story_4_Ctanlee_15.m4a
-        duration: {kind: listen, event: layer.11.complete}
+        duration: {kind: ux }
       # 2 Dialogue Software Defense ==========================================
       -
         title: Apply Your Software Defenses
@@ -396,7 +396,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: change_assets_fail.json }
+            - {depth: 12, content: change_assets_fail.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -437,7 +437,7 @@ chapters:
               pos: [100,100]
               text: "We know how this will end. Simulator pause!"
               audio: Story_4_Ctanlee_22.m4a
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 3 Dialogue More Problems ==========================================
       -
         title: More Problems
@@ -457,7 +457,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: change_assets_fail_part_2.json }
+            - {depth: 12, content: change_assets_fail_part_2.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -479,7 +479,7 @@ chapters:
               pos: [100,100]
               text: "Orrrrrr not. Simulator Pause!"
               audio: Story_4_Ctanlee_24.m4a
-        duration: {kind: dialogue}
+        duration: {kind: ux}
       # 3 Dialogue Baseline Configuration 1 ==========================================
       -
         title: Adding Assets
@@ -626,7 +626,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: $changePass }
+            - {depth: 12, content: $changePass, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -678,7 +678,7 @@ chapters:
               pos: [100,400]
               text: "Robot! - NO BCSI For You!"
               audio: Story_4_Ctanlee_33.m4a
-        duration: {kind: dialogue }
+        duration: {kind: ux }
       # 3 Dialogue Duties review ==========================================
       -
         title: You Did It!
