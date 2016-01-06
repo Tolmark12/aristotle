@@ -24,7 +24,7 @@ module.exports = class Slide
     if !@slideData.duration? then return
     switch @slideData.duration.kind
       when "time"
-        setTimeout @onSlideComplete, @slideData.duration.seconds * 1000
+        aristotle.timeout @onSlideComplete, @slideData.duration.seconds * 1000
       when "user"
         console.log "waiting on the user"
       when "ux"

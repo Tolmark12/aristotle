@@ -1,17 +1,18 @@
-ChromeUI      = require "chrome/chrome-ui"
-Commander     = require 'misc/commander'
-DevTools      = require 'misc/dev-tools'
-Dictionary    = require 'misc/dictionary'
-Episode       = require "episode/episode"
-EpisodeLoader = require 'misc/episode-loader'
-GlobalVars    = require 'misc/global-vars'
-LMSProxy      = require 'misc/lms-proxy'
-Logger        = require 'misc/logger'
-Movie         = require 'movie/movie'
-Parser        = require 'misc/parser'
-SlideUX       = require 'slide-ux/slide-ux'
-SoundFX       = require 'episode/soundfx'
-isInternetExp = require 'misc/browser-detect'
+ChromeUI       = require "chrome/chrome-ui"
+Commander      = require 'misc/commander'
+DevTools       = require 'misc/dev-tools'
+Dictionary     = require 'misc/dictionary'
+Episode        = require "episode/episode"
+EpisodeLoader  = require 'misc/episode-loader'
+GlobalVars     = require 'misc/global-vars'
+isInternetExp  = require 'misc/browser-detect'
+LMSProxy       = require 'misc/lms-proxy'
+Logger         = require 'misc/logger'
+Movie          = require 'movie/movie'
+Parser         = require 'misc/parser'
+PausableDelays = require 'misc/pausable-delays'
+SlideUX        = require 'slide-ux/slide-ux'
+SoundFX        = require 'episode/soundfx'
 
 class Aristotle
 
@@ -24,6 +25,7 @@ class Aristotle
     lmsProxy       = new LMSProxy @isLocal
     parser         = new Parser()
     soundFx        = new SoundFX()
+    pausableDelays = new PausableDelays()
     shadowIcons    = new pxicons.ShadowIcons()
     @setDevMode @isDevMode
     lmsProxy.begin @begin

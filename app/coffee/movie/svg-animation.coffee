@@ -21,7 +21,7 @@ module.exports = class SVGAnimation
         @animation.setCurrentRawFrameValue @animation.totalFrames
       else
         if data.delay?
-          setTimeout @play, data.delay
+          aristotle.timeout @play, data.delay
         else
           @play()
       @addEvents data

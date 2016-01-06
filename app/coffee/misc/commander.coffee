@@ -21,7 +21,7 @@ module.exports = class Commander
       PubSub.publish action.cmd, action.data
 
   publishDelayedAction : (action) ->
-    setTimeout ()->
+    aristotle.timeout ()->
       PubSub.publish action.cmd, action.data
     ,
       action.delay

@@ -52,7 +52,7 @@ module.exports = class TextDialogue
 
     # If "next" param is a number, count that many milliseconds and play next
     if typeof next == "number"
-      setTimeout ()=>
+      aristotle.timeout ()=>
         @playNextAction()
       ,
         next
@@ -60,10 +60,12 @@ module.exports = class TextDialogue
   pauseTimeline : () ->
     @track?.sound.paused = true
     @actor?.stopTalking()
+    PubSub.publish "timers.pause"
 
   playTimeline  : () ->
     @track?.sound.paused = false
     @actor?.startTalking()
+    PubSub.publish "timers.resume"
 
   replayTimeline : () ->
     @track?.stop()

@@ -17,7 +17,7 @@ module.exports = class Layer
   update : (@pristineLayerData) =>
     @layerData = jQuery.extend true, {}, @pristineLayerData
     if @layerData.wait?
-      setTimeout @createContent, @layerData.wait
+      aristotle.timeout @createContent, @layerData.wait
       return
 
     @createContent()
@@ -146,7 +146,7 @@ module.exports = class Layer
 
   fadeAndRemoveOldLayer : () ->
     oldOnionLayer = @currentOnionLayer
-    setTimeout ()=>
+    aristotle.timeout ()=>
       oldOnionLayer.velocity 'stop', true
       oldOnionLayer.velocity {opacity:0}, {duration:200, complete:()=> oldOnionLayer.remove() }
     ,
