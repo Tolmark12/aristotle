@@ -40,7 +40,7 @@ chapters:
           layers:
             - {depth: 0, content: ~1/c1-sky.svg }
             - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
-            - {depth: 2, content: ~1/c1-background-buildin.json }
+            - {depth: 2, content: ~1/c1_background_buildin.json, jumpToEnd: true, cache: true }
             - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true }
             - {depth: 4, content: $facilityLoop, loop: true }
             - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true }
@@ -426,7 +426,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Electronic Attacks
-                body: To defend our  <a data-label="crca">CRCAs</a> against electronic attacks, we must build an  <a data-label="esp" class="new">Electronic Security Perimeter (ESP)</a> around the network they are connected to.  <a data-label="cip">CIP</a> requires that we only allow communication in and out of the ESP network that is approved and business justified, ensuring the bots can't communicate with our connected  <a data-label="crca">CRCAs</a>.  <a data-label="cip">CIP</a> also requires that we detect and alert Defenders about any unauthorized electronic activity. <br/><br/>A common way to control communication is to install a firewall between the ESP network and other networks. Firewalls are devices that prevent unauthorized messages and can alert Defenders if something malicious is found in a message. Electronic access controls are considered  <a data-label="crca">CRCAs</a>.
+                body: To defend our <a data-label="crca">CRCAs</a> against electronic attacks, we must build an <a data-label="esp" class="new"> Electronic Security Perimeter (ESP)</a> around the network they are connected to. We only allow authorized communication into and out of the <a data-label="crca">CRCA</a> network, and alert our technical Defenders of any detected malicious communication. <br/><br/>A common way to create an <a data-label="esp">ESP</a> is to install a firewall between the <a data-label="crca">CRCA</a> network and other networks. Firewalls are devices that prevent unauthorized messages and can alert Defenders if something malicious is found in a message.
                 btn:
                   style: lightning
                   text: Continue
@@ -445,7 +445,7 @@ chapters:
         movie:
           layers:
             - {depth: 8, content: $eacmsBuild, cache: true }
-        duration: {kind: time, seconds: 0.5 }
+        duration: {kind: time, seconds: 5 }
       # 2 Dialogue - Run Simulator ==========================================
       -
         title: Toasty

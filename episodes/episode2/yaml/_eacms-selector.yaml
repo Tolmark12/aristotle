@@ -8,15 +8,15 @@ dialogue:
     a:
       emo: happy
       text: "Your chance to play with fire."
-      audio: Story_3_Ctanlee_27.m4a
+      audio: Story_3_Ctanlee_27.mp3
     b:
       emo: happy
       text: "Censor those packets."
-      audio: Story_3_Ctanlee_28.m4a
+      audio: Story_3_Ctanlee_28.mp3
     c:
       emo: surprize
       text: "Go ahead. Make my day … packet."
-      audio: Story_3_Ctanlee_29.m4a
+      audio: Story_3_Ctanlee_29.mp3
 ux:
   components:
     -
@@ -37,7 +37,7 @@ ux:
                 cmd: setvars
                 data:
                   eacms: burninator
-                  eacmsBuild: ~2/firewall_burninator.json
+                  eacmsBuild: ~2/firewall_burninator_build.json
                   eacmsAnimateGood: ~2/firewall_burn_good.json
                   eacmsAnimateBadUpper: ~2/firewall_burn_bad_upper.json
                   eacmsAnimateBadLower: ~2/firewall_burn_bad_lower.json
@@ -52,7 +52,7 @@ ux:
                 cmd: setvars
                 data:
                   eacms: great_wall
-                  eacmsBuild: ~2/firewall_greatwall.json
+                  eacmsBuild: ~2/firewall_greatwall_build.json
                   eacmsAnimateGood: ~2/firewall_greatwall_good.json
                   eacmsAnimateBadUpper: ~2/firewall_greatwall_bad_upper.json
                   eacmsAnimateBadLower: ~2/firewall_greatwall_bad_lower.json
@@ -67,7 +67,7 @@ ux:
                 cmd: setvars
                 data:
                   eacms: gated
-                  eacmsBuild: ~2/firewall_gated.json
+                  eacmsBuild: ~2/firewall_gated_build.json
                   eacmsAnimateGood: ~2/firewall_gated_good.json
                   eacmsAnimateBadUpper: ~2/firewall_gated_bad_upper.json
                   eacmsAnimateBadLower: ~2/firewall_gated_bad_lower.json

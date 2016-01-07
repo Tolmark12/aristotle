@@ -27,7 +27,7 @@ chapters:
           layers:
             - {depth: 0, content: c1-sky.svg }
             - {depth: 1, content: c1-background-clouds-loop.json, loop: true }
-            - {depth: 2, content: c1-background-buildin.json, events: [complete] }
+            - {depth: 2, content: c1_background_buildin.json, events: [complete], cache: true }
         duration: {kind: listen, event: layer.2.complete}
       # 1 Warcore slide ==========================================
       -
