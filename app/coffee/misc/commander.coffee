@@ -11,7 +11,7 @@ module.exports = class Commander
       @publish action, publishSynchronously
 
   publish : (action, publishSynchronously=false) ->
-    if action.delay?
+    if action?.delay?
       @publishDelayedAction action
       return
 

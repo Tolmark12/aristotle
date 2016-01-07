@@ -3,9 +3,9 @@ title: Episode 2
 subtitle: Perimeter Defenses
 rankId: cadet-first-class
 nextRankId: technical-cadet
+action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05} }
 dev:
   startIndex: 0
-
 # CHAPTER 1
 chapters:
   # ----------------------------------------------
@@ -27,6 +27,11 @@ chapters:
               facility: substation
               facilityBuild: ~1/substation_facility_build.json
               facilityLoop: ~1/substation_facility_loop.json
+          -
+            cmd: playsound
+            data:
+              content: ~g/MU_Ambient_Facility.mp3
+              loop: true
         duration: { kind: time, seconds: 0.1 }
 
       # 1 Background Build in ==========================================
@@ -58,6 +63,8 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulator Robot Attack ==========================================
       -
+        sfx:
+          - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 15810, volume:0.8}
         movie:
           layers:
             - {depth: 7, content: kettle_attack_pngs.json, vcr: true }

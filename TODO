@@ -1,3 +1,7 @@
+Audio:
+  ☐ - When the audio is longer thean the video
+  ☐ - show vcr when chrome is hidden
+
 To Build:
   ☐ Clean up the caching of svgs
   ☐ Add a `savePositions` method for saving the positions of elements pre caching

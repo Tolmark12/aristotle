@@ -52,13 +52,19 @@ module.exports = class Slides
     @playSlide()
 
   destroy : () ->
+    for slide in @slides.items
+      slides.destroy()
+
     @slides = null
     PubSub.unsubscribe token for token in @subscriptionTokens
 
 
   start             : () -> @playSlide()
   slideComplete     : () => @nextSlide()
-  playSlide         : () -> @slides.getCurrentItem().play @slideComplete
+  playSlide         : () ->
+    PubSub.publish 'slides.changing' 
+    @slides.getCurrentItem().play @slideComplete
+
   slideShowComplete : () -> @onShowComplete()
   getCurrentIndex   : () -> @slides.getCurrentItem().slideData.index
   getIndexAndTotal  : () -> "slide #{@slides.getCurrentItem().slideData.index} of #{@slides.totalItems}"

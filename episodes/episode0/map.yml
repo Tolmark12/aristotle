@@ -31,7 +31,7 @@ chapters:
                 btns:
                   -
                     txt: Play Test Sound
-                    click: {cmd: playsound, data: {file: SFX_SoundTestButton.mp3}}
+                    click: {cmd: playsound, data: {content: SFX_SoundTestButton.mp3}}
                   -
                     txt: Proceed
                     click: {cmd: slides.next-slide}
@@ -327,15 +327,15 @@ chapters:
                   -
                     txt: Panicking
                     click:
-                      - {cmd: playsound, data: {file: Story_1_Dialogue_Panicking.mp3, complete: {cmd: slides.next-slide} }}
+                      - {cmd: playsound, data: {content: Story_1_Dialogue_Panicking.mp3, complete: {cmd: slides.next-slide} }}
                   -
                     txt: I Threw Up a Bit in My Mouth
                     click:
-                      - {cmd: playsound, data: {file: Story_1_Dialogue_Puke.mp3, complete: {cmd: slides.next-slide} }}
+                      - {cmd: playsound, data: {content: Story_1_Dialogue_Puke.mp3, complete: {cmd: slides.next-slide} }}
                   -
                     txt: Let's Kick Some Bot
                     click:
-                      - {cmd: playsound, data: {file: Story_1_Dialogue_Spirit.mp3, complete: {cmd: slides.next-slide} }}
+                      - {cmd: playsound, data: {content: Story_1_Dialogue_Spirit.mp3, complete: {cmd: slides.next-slide} }}
         duration: {kind: ux }
       # Introduce Navigation Ranks  ==========================================
       -
