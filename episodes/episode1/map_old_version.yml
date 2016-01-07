@@ -31,13 +31,14 @@ chapters:
         duration: {kind: listen, event: layer.2.complete}
       # 1 Warcore slide ==========================================
       -
+        title: Warcore Load
         dialogue:
           defaults:
             next: audio
           timeline:
-            - {action: a }
+            - {action: b }
           actions:
-            a:
+            b:
               emo: down
               pos: [500,600]
               text: "The simulator is loaded! Track your progress through the episode here. Now we just need a facility."
@@ -78,10 +79,11 @@ chapters:
         movie:
           layers:
             - {depth: 7, content: asset_view.json }
+          zoom: {scale: 2, x: 600, y: 700}
         duration: {kind: time, seconds: .5 }
-      # 1 Tagged BCA PCA Assets  ==========================================
+      # 1 Tagged Assets  ==========================================
       -
-        duration: {kind: dialogue }
+        duration: {kind: dialogue}
         dialogue:
           timeline:
             - {action: con-sys-rack }
@@ -89,11 +91,8 @@ chapters:
             - {action: data-acs }
             - {action: control-sas }
             - {action: operator-ws }
-            - {action: file-server }
-            - {action: map-computer }
-            - {action: printer }
           defaults:
-            next: 1000
+            next: 3000
           actions:
             con-sys-rack:
               pos: con-sys-rack-hit
@@ -120,6 +119,59 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: operator-ws, level: blue } }
                 - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
+      # 1 Ctanlee Narration  ==========================================
+      -
+        action:
+          - {cmd: label.hide, data: {id: all}  }
+        movie:
+          zoom: {scale: 1}
+          layers:
+            - {depth: 7, content: clear }
+        duration: {kind: dialogue}
+        dialogue:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [250,300]
+              text: "Most facilities that fall under CIP have a lot of equipment like this that controls the Bulk Electric System. Imagine the damage the robots would do if they gained access to control a breaker, power plant or Tesla Cannon. Shudder."
+              audio: Story_2_Ctanlee_8.mp3
+              next: audio
+      # 1 Dialogue Protected Cyber Assets  ==========================================
+      -
+        title: Protected Cyber Assets
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Protected Cyber Assets
+                body: When BCA are connected to a network like these are, any other devices on the same network like file servers, network printers, and displays must also be protected at the same level as BCA so no security weaknesses are introduced to the network. We call these devices <a data-label="a">Protected Cyber Assets<a>.  <br/>I'll tag the PCA next.
+                btn:
+                  style: lightning
+                  text: tag PCA
+                  action: {cmd: slides.next-slide}
+                labels:
+                  a: {title: "PCA"}
+      # 1 Zoom Assets view  ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 7, content: asset_view.json }
+          zoom: {scale: 2, x: 600, y: 700}
+        duration: {kind: time, seconds: 0.2 }
+      # 1 Zoom Assets overview  ==========================================
+      -
+        duration: {kind: dialogue }
+        dialogue:
+          timeline:
+            - {action: file-server }
+            - {action: map-computer }
+            - {action: printer }
+          defaults:
+            next: 3000
+          actions:
             file-server:
               pos: "file-server-hit"
               action:
@@ -135,11 +187,121 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: printer, level: orange} }
                 - {cmd: label.add, data: {id: printer-hit, text: Printer, face: bottom, arrow: right} }
-      # 1 Highlight PCA BCA Equipment  ==========================================
+      # 1 Ctanlee Narration  ==========================================
       -
         action:
-          - {cmd: unhighlight.all }
           - {cmd: label.hide, data: {id: all}  }
+        movie:
+          layers:
+            - {depth: 7, content: clear }
+          zoom: {scale: 1}
+        duration: {kind: dialogue}
+        dialogue:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [250,300]
+              text: "You may be saying to yourself, CTANLEE it's just a printer! If we had more time I'd tell you about The Paperfeed Incident of '08 where some Virus Bots hijacked a corporate unit. Many Defenders still bear papercut scars."
+              audio: Story_2_Ctanlee_9.mp3
+              next: audio
+      # 1 Dialogue BES Cyber System  ==========================================
+      -
+        title: BES Cyber System Information
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: BES Cyber System Information
+                body: Facilities contain information useful for a bot planning an attack. For starters, we often have maps, security plans, network diagrams, and configuration information stored on hard drives, file shares, and in filing cabinets. This is called BES Cyber System Information (BCSI) and we must protect their locations. <br/>All BCA and PCA are assumed to contain BCSI, so we'll tag the other location we might find it.
+                btn:
+                  style: lightning
+                  text: tag BCSI
+                  action: {cmd: slides.next-slide}
+      # 1 Zoom Assets view  ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 7, content: asset_view.json }
+        duration: {kind: time, seconds: 1 }
+      # 1 Zoom Assets overview  ==========================================
+      -
+        duration: {kind: dialogue }
+        dialogue:
+          timeline:
+            - {action: filing-cabinet }
+            - {action: map }
+            - {action: monitor }
+          defaults:
+            next: 3000
+          actions:
+            filing-cabinet:
+              pos: "filing-cabinet-hit"
+              action:
+                - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
+                - {cmd: label.add, data: {id: filing-cabinet-hit, text: Substation Diagrams, face: bottom, arrow: right} }
+                - {cmd: movie.zoom, data: {scale: 2, id: filing-cabinet-hit }}
+            map:
+              pos: "map-computer-hit"
+              action:
+                - {cmd: highlight, data: {id: map, level: yellow} }
+                - {cmd: label.add, data: {id: map-computer-hit, text: System Map, face: bottom, arrow: right} }
+                - {cmd: movie.zoom, data: {scale: 2, id: map-computer-hit }}
+            monitor:
+              pos: "monitor-hit"
+              action:
+                - {cmd: highlight, data: {id: monitor, level: yellow} }
+                - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
+                - {cmd: movie.zoom, data: {scale: 2, id: monitor-hit }}
+      # 1 Dialogue Create Inventory  ==========================================
+      -
+        title: Creating an Inventory
+        action:
+          - {cmd: label.hide, data: {id: all}  }
+        movie:
+          layers:
+            - {depth: 7, content: clear }
+          zoom: {scale: 1}
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Creating an Inventory
+                body: CIP requires us to inventory every BCA and PCA, along with all BCSI locations, onto Asset Lists. These form the core of what we protect with our CIP defenses. The CIP defenses we add to the facility will often require servers and software of their own to operate. For example, a door control system might have a server that logs entry and exit. These defensive assets will also be included on the asset lists and get their own unmemorable CIP acronyms like "PACS" and "EACMS". We'll discuss these assets further as we add them to the facility in future episodes.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 1 Dialogue Get to Know your Assets  ==========================================
+      -
+        title: Get to Know Your Assets
+        movie:
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                replaceVars: [body]
+                title: Get to Know Your Assets
+                body: Review your inventory. Click on your assets if you'd like to learn more about them. <br/><br/>We've reached the end of this chapter. I've programmed your specific duties at ${companyName} into the WarCore to review. When you're ready to review duties, click "Review Duties" at the bottom to proceed.
+                btn:
+                  style: lightning
+                  text: GOT it!
+                  action: {cmd: slides.next-slide}
+      # 1 Zoom Assets view  ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 7, content: asset_view.json }
+        duration: {kind: time, seconds: .1 }
+      # 1 Highlight Equipment  ==========================================
+      -
+        action:
           - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
           - {cmd: highlight, data: {id: esp-ns, level: blue } }
           - {cmd: highlight, data: {id: data-acs, level: blue} }
@@ -148,7 +310,9 @@ chapters:
           - {cmd: highlight, data: {id: file-server, level: orange} }
           - {cmd: highlight, data: {id: map-computer, level: orange} }
           - {cmd: highlight, data: {id: printer, level: orange} }
-          - {cmd: highlight, data: {id: laptop, level: orange} }
+          - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
+          - {cmd: highlight, data: {id: map, level: yellow} }
+          - {cmd: highlight, data: {id: monitor, level: yellow} }
         duration: {kind: ux}
         # 1 Equipment exploration component:
         ux:
@@ -156,7 +320,7 @@ chapters:
             -
               kind: explore-cards
               config:
-                required-views: 0 # (number of cards they have to view to move on to next slide)
+                required-views: 5 # (number of cards they have to view to move on to next slide)
                 template: equipment
                 cards:
                   -
@@ -208,93 +372,6 @@ chapters:
                     network: ESP
                     description: Printer attached to a protected network.
                   -
-                    hit: laptop-hit
-                    name: First Floor Laptop
-                    type: BCA
-                    network: ESP
-                    description: Used by technicians for troubleshooting.
-      # 1 Dialogue Protected Cyber Assets  ==========================================
-      -
-        title: CIP-Related Cyber Assets
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: CIP-Related Cyber Assets
-                body: "<a data-label="bca">BCA<a> and <a data-label="pca">PCA<a> are the core assets we protect, but in future episodes, we'll add door control systems, firewalls, and other defenses to our facility. CIP gives these devices their own delightful acronyms like "PACS" and "EACMS", so to make your life easier we'll refer to all these assets with one term going forward: <a data-label="crca" class="new">CIP-Related Cyber Assets (CRCAs)<a>."
-                btn:
-                  style: lightning
-                  text: continue
-                  action: {cmd: slides.next-slide}
-      # 1 Dialogue BES Cyber System  ==========================================
-      -
-        title: BES Cyber System Information
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: BES Cyber System Information
-                body: In addition to assets, facilities also contain information that we must protect. <a data-label="bcsi" class="new">BES Cyber System Information (BCSI)<a> includes maps, security plans, network diagrams, configuration information, and other information useful for a bot planning an attack. <a data-label="bcsi">BCSI<a> is found in many places - the hard drives of our <a data-label="crca">CRCAs<a>, on file shares, whiteboards, and in filing cabinets. <br/><br/>Let's inspect some of the <a data-label="bcsi">BCSI<a> locations the Compliance Team identified at your facility.
-                btn:
-                  style: lightning
-                  text: tag BCSI
-                  action: {cmd: slides.next-slide}
-                labels:
-                  a: {title: "PCA"}
-      # 1 Assets view  ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 7, content: asset_view.json }
-        duration: {kind: time, seconds: 1 }
-      # 1 BCSI Assets Tour  ==========================================
-      -
-        duration: {kind: dialogue }
-        dialogue:
-          timeline:
-            - {action: filing-cabinet }
-            - {action: map }
-            - {action: monitor }
-          defaults:
-            next: 1000
-          actions:
-            filing-cabinet:
-              pos: "filing-cabinet-hit"
-              action:
-                - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
-                - {cmd: label.add, data: {id: filing-cabinet-hit, text: Substation Diagrams, face: bottom, arrow: right} }
-            map:
-              pos: "map-computer-hit"
-              action:
-                - {cmd: highlight, data: {id: map, level: yellow} }
-                - {cmd: label.add, data: {id: map-computer-hit, text: System Map, face: bottom, arrow: right} }
-            monitor:
-              pos: "monitor-hit"
-              action:
-                - {cmd: highlight, data: {id: monitor, level: yellow} }
-                - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
-      # 1 Highlight BCSI Equipment  ==========================================
-      -
-        action:
-          - {cmd: label.hide, data: {id: all}  }
-          - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
-          - {cmd: highlight, data: {id: map, level: yellow} }
-          - {cmd: highlight, data: {id: monitor, level: yellow} }
-        duration: {kind: ux}
-        # 1 Equipment exploration component:
-        ux:
-          components:
-            -
-              kind: explore-cards
-              config:
-                required-views: 0 # (number of cards they have to view to move on to next slide)
-                template: equipment
-                cards:
-                  -
                     hit: filing-cabinet-hit
                     name: Filing Cabinets
                     type: BCSI
@@ -312,11 +389,33 @@ chapters:
                     type: BCSI
                     network: N/A
                     description: Operators like lots of monitors to see all their systems
+                  -
+                    hit: laptop-hit
+                    name: First Floor Laptop
+                    type: BCA
+                    network: ESP
+                    description: Used by technicians for troubleshooting.
+      # 1 Dialogue Creating Inventory ==========================================
+      -
+        title: Creating an Inventory
+        movie:
+          layers:
+            - {depth: 7, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Creating an Inventory
+                body: The <a data-label="bca">BCA<a> and <a data-label="pca">PCA<a> that we just tagged form the core of what we protect, and we'll be adding new servers and software to our facility in future episodes that provide defenses around these assets. The assets we'll add to the facility come with delightful <a data-label="cip">CIP<a> acronyms like "PACS" and "EACMS." To make your life easier, we'll refer to all assets with one term going forward - we'll call them  <a data-label="crca" class="new">CIP-Related Cyber Assets (CRCA)<a>. <br/><br/>CIP requires that our Compliance Team document an inventory of every CRCA, along with all <a data-label="bcsi">BCSI<a> locations. These Asset Lists give us a complete inventory of everything we must protect.
+                btn:
+                  style: lightning
+                  text: review duties
+                  action: {cmd: slides.next-slide}
       # 1 Dialogue Duty Call ==========================================
       -
         title: Duty Call!
-        action:
-          - {cmd: "unhighlight.all"}
         movie:
           layers:
             - {depth: 7, content: clear }
@@ -328,7 +427,7 @@ chapters:
               config:
                 replaceVars: [body]
                 title: Duty Call!
-                body: Nice job Cadet! You've completed your first chapter and now know what CIP requires us to protect. I've programmed your specific duties at ${companyName} into the WarCore to review.
+                body: "We've reached the end of the chapter. I've programmed your specific duties at ${companyName} into the WarCore to review next before proceeding."
                 btn:
                   style: lightning
                   text: review duties

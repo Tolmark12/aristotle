@@ -53,22 +53,21 @@ chapters:
             - {action: b }
           actions:
             a:
-              pos: []
+              next: 6000
               text: Welcome to the WarCore. Booting system...
               actor: warcore
-              audio: Story_1_Warcore_1.mp3
+              audio: Story_1_Warcore_1.m4a
             b:
-              pos: []
               text: The system is ready for login. I will now access your records.
               actor: warcore
-              audio: Story_1_Warcore_2.mp3
+              audio: Story_1_Warcore_2.m4a
         duration: {kind: dialogue }
       # Animation Quarantine ==========================================
       -
         title: Quarantine
         movie:
           layers:
-            - {depth: 1, content: quarantine.json, vcr: true, action: {cmd: chrome.hide} }
+            - {depth: 1, content: quarantine.json, action: {cmd: chrome.hide} }
         action: [{cmd: ctanlee.show}]
         dialogue:
           defaults:
@@ -79,34 +78,31 @@ chapters:
             - {action: c }
             - {action: d }
             - {action: e }
-            - {action: f }
           actions:
             a:
-              next: 11000
-              pos: []
               text: Your user has not logged in before. You'll be quarantined until your authorization records are confirmed.
               actor: warcore
-              audio: Story_1_Warcore_3.mp3
+              audio: Story_1_Warcore_3.m4a
             b:
-              pos: []
+              next: 6000
               text: I'll send for the WarCore authority now. Alerting CTANLEE!
               actor: warcore
-              audio: Story_1_Warcore_4.mp3
+              audio: Story_1_Warcore_4.m4a
             c:
               pos: [513,384,0]
               text: "Hello potentially dangerous entity! I am CTANLEE."
               audio: Story_1_Ctanlee_1.mp3
             d:
-              next: 11000
+              next: 8900
               pos: [513,384,0]
               text: "I'm in charge of training new CIP Defenders. I'm sorry for the quarantine, but I do need to confirm you are authorized before you can enter the WarCore."
               audio: Story_1_Ctanlee_2.mp3
-            f:
+            e:
+              next: 5900
               pos: [513,384,0]
               text: "The warcore will now confirm your identity. Are you ready to proceed?"
               audio: Story_1_Ctanlee_4.mp3
-        duration: {kind: ux }
-        duration: {kind: ux}
+        duration: {kind: dialogue }
       # Dialogue Clearance Level  ==========================================
       -
         title: Authorization Results
@@ -134,7 +130,6 @@ chapters:
               next: 1200
               emo: right
               pos: [320,300,0]
-              audio: Silence_1_sec.mp3
             d:
               pos: [320,300,0]
               text: Let's get rid of this quarantine and initiate you with a killer call sign.
@@ -169,7 +164,7 @@ chapters:
             - {action: a }
           actions:
             a:
-              pos: [513,384,2000]
+              pos: [513,384]
         ux:
           components:
             -
@@ -245,7 +240,7 @@ chapters:
         action: {cmd: chrome.hide}
         movie:
           layers:
-            - {depth: 1, content: sektimus_pngs.json, vcr: true }
+            - {depth: 1, content: sektimus_pngs.json }
         dialogue:
           defaults:
             next: audio
@@ -266,12 +261,12 @@ chapters:
               pos: [150,500]
               text: "Far across the galaxy, an ancient evil has set its eyes on us. The robot Overmind Sektimus desires to attack Earth and enslave all humankind. <br/><br/>He has launched his Metal Swarm, the greatest space armada ever constructed by the robots, against our planet."
               audio: Story_1_Ctanlee_16.mp3
-        duration: {kind: ux }
+        duration: {kind: dialogue }
       # Animation Robot Introduction  ==========================================
       -
         movie:
           layers:
-            - {depth: 1, content: smoke1.json, vcr: true }
+            - {depth: 1, content: smoke1.json }
         dialogue:
           defaults:
             next: audio
@@ -299,7 +294,7 @@ chapters:
               pos: [550,500]
               text: "So while the CIP Standards protect us from hackers and terrorists on Earth, these are mere pawns in an intergalactic struggle that threatens all humankind. CIP is Earth's secret weapon against this threat."
               audio: Story_1_Ctanlee_19b.mp3
-        duration: {kind: ux }
+        duration: {kind: dialogue }
       # Dialogue Gut Check  ==========================================
       -
         title: Gut Check
@@ -347,7 +342,7 @@ chapters:
         action: [{cmd: chrome.show}, {cmd: chrome.showepisodes}]
         movie:
           layers:
-            - {depth: 0, content: chip.json, vcr: true }
+            - {depth: 0, content: chip.json }
         dialogue:
           defaults:
             next: audio
@@ -376,7 +371,7 @@ chapters:
               pos: [350,300]
               text: "Cadet, By the end of this training you will be a full CIP defender. Let us begin Episode 1 and load the simulator."
               audio: Story_1_Ctanlee_25.mp3
-        duration: {kind: ux}
+        duration: {kind: dialogue }
       # Rank Advance ==========================================
       -
         movie:
