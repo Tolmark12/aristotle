@@ -374,6 +374,7 @@ chapters:
         duration: {kind: dialogue }
       # Rank Advance ==========================================
       -
+        action: {cmd: chrome.hide}
         movie:
           layers:
             - {depth: 0, background: black, content: ~g/cadet.json, events: [complete] }
