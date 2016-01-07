@@ -89,9 +89,7 @@ chapters:
             - {action: data-acs }
             - {action: control-sas }
             - {action: operator-ws }
-            - {action: file-server }
-            - {action: map-computer }
-            - {action: printer }
+            - {action: laptop }
           defaults:
             next: 1000
           actions:
@@ -120,6 +118,28 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: operator-ws, level: blue } }
                 - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
+            laptop:
+              pos: laptop-hit
+              action:
+                - {cmd: highlight, data: {id: laptop, level: blue } }
+                - {cmd: label.add, data: {id: laptop-hit, text: Laptop, face: bottom } }
+      # 1 Tagged BCA PCA Assets  ==========================================
+      -
+        action:
+          - {cmd: unhighlight.all }
+          - {cmd: label.hide, data: {id: all}  }
+        duration: {kind: time, seconds: 1}
+      # 1 Tagged BCA PCA Assets  ==========================================
+      -
+        duration: {kind: dialogue }
+        dialogue:
+          timeline:
+            - {action: file-server }
+            - {action: map-computer }
+            - {action: printer }
+          defaults:
+            next: 1000
+          actions:
             file-server:
               pos: "file-server-hit"
               action:
@@ -145,10 +165,10 @@ chapters:
           - {cmd: highlight, data: {id: data-acs, level: blue} }
           - {cmd: highlight, data: {id: control-sas, level: blue} }
           - {cmd: highlight, data: {id: operator-ws, level: blue } }
+          - {cmd: highlight, data: {id: laptop, level: blue} }
           - {cmd: highlight, data: {id: file-server, level: orange} }
           - {cmd: highlight, data: {id: map-computer, level: orange} }
           - {cmd: highlight, data: {id: printer, level: orange} }
-          - {cmd: highlight, data: {id: laptop, level: orange} }
         duration: {kind: ux}
         # 1 Equipment exploration component:
         ux:
@@ -190,6 +210,12 @@ chapters:
                     network: ESP
                     description: Powers the operator monitors
                   -
+                    hit: laptop-hit
+                    name: First Floor Laptop
+                    type: BCA
+                    network: ESP
+                    description: Used by technicians for troubleshooting.
+                  -
                     hit: file-server-hit
                     name: File Server
                     type: None
@@ -207,12 +233,6 @@ chapters:
                     type: PCA
                     network: ESP
                     description: Printer attached to a protected network.
-                  -
-                    hit: laptop-hit
-                    name: First Floor Laptop
-                    type: BCA
-                    network: ESP
-                    description: Used by technicians for troubleshooting.
       # 1 Dialogue Protected Cyber Assets  ==========================================
       -
         title: CIP-Related Cyber Assets
@@ -223,7 +243,7 @@ chapters:
               kind: dialogue
               config:
                 title: CIP-Related Cyber Assets
-                body: "<a data-label="bca">BCA<a> and <a data-label="pca">PCA<a> are the core assets we protect, but in future episodes, we'll add door control systems, firewalls, and other defenses to our facility. CIP gives these devices their own delightful acronyms like "PACS" and "EACMS", so to make your life easier we'll refer to all these assets with one term going forward: <a data-label="crca" class="new">CIP-Related Cyber Assets (CRCAs)<a>."
+                body: <a data-label="bca">BCA<a> and <a data-label="pca">PCA<a> are the core assets we protect, but in future episodes, we'll add door control systems, firewalls, and other defenses to our facility. CIP gives these devices their own delightful acronyms like "PACS" and "EACMS", so to make your life easier we'll refer to all these assets with one term going forward&#58; <a data-label="crca" class="new">CIP-Related Cyber Assets (CRCAs)<a>.
                 btn:
                   style: lightning
                   text: continue
@@ -447,7 +467,7 @@ chapters:
               kind: dialogue
               config:
                 title: Duties
-                body: "A <a data-label="defenders">Defender<a> has two primary jobs related to <a data-label="cip">CIP<a>:<ol><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed</li></ol>Our <a data-label="cyber_security_program" class="new">Cyber Security Program<a> describes how our duties meet the <a data-label="cip">CIP Standards<a> and we teach these duties through annual cyber security training and regular awareness communication."
+                body: A <a data-label="defenders">Defender<a> has two primary jobs related to <a data-label="cip">CIP<a>:<ol><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed</li></ol>Our <a data-label="cyber_security_program" class="new">Cyber Security Program<a> describes how our duties meet the <a data-label="cip">CIP Standards<a> and we teach these duties through annual cyber security training and regular awareness communication.
                 btn:
                   style: lightning
                   text: continue
@@ -483,7 +503,7 @@ chapters:
             -
               kind: explore-cards
               config:
-                required-views: 3
+                required-views: 0
                 template: defender
                 cards:
                   -
@@ -607,22 +627,7 @@ chapters:
               config:
                 replaceVars: [body]
                 title: Regulators
-                body: The government wants to ensure our organization sustains the defenses required by compliance, so ${companyName} is accountable to regulators. The <a data-label="nerc" class="new">North American Electric Reliability Corporation (NERC)<a> is responsible for defining the <a data-label="cip">CIP Standards<a> and gives authority to ${companyRegulator} to help us interpret the <a data-label="cip">Standards<a> and ensure we are following them through audits. <br/><br/>The evidence we create is critical to this relationship. It helps us identify and fix issues, and shows our regulators that we are holding fast against the robots. With all these duties to perform and evidence to record, it's probably a good time to touch on what happens when we miss performing a duty or creating evidence.
-                btn:
-                  style: lightning
-                  text: continue
-                  action: {cmd: slides.next-slide}
-      # 3 Dialogue Violation ==========================================
-      -
-        title: Violations
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: Violations
-                body: A Good Catch is doing something that almost violates a <a data-label="cip">CIP<a> requirement. These are learning opportunities that allow us to improve our processes. <br/><br/>A Self-Report is when we violate a  <a data-label="cip">CIP<a> requirement, but discover the issue and fix our processes so the issue won't happen again. We still must self-report to our regulator, but regulators look more favorably on these situations. <br/><br/>A Violation is violating a <a data-label="cip">CIP<a> requirement and being caught by an auditor. These can come with big fines, up to $1,000,000 per day, per incident. <br/><br/>Let's run these situations through the simulator and see if you can identify them.
+                body: The <a data-label="nerc" class="new">North American Electric Reliability Corporation (NERC)<a> maintains the <a data-label="cip">CIP Standards<a>, and ${companyName} is accountable to our local regulator, ${companyRegulator}, who performs regular audits to confirm we are following the <a data-label="cip">Standards<a>. <br/><br/>The evidence we create is critical to our relationship with regulators because it shows that we are holding fast against the robots by performing our duties. With all these duties to perform and evidence to record, let's see what happens if we don't follow a CIP Standard.
                 btn:
                   style: lightning
                   text: run simulator
@@ -665,12 +670,25 @@ chapters:
               text: "Hey! Stop. Stop. Don't leave with that! Simulation Pause!"
               audio: Story_2_Ctanlee_15.mp3
         duration: {kind: ux }
+      # 3 Dialogue Violation ==========================================
+      -
+        title: Violations
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Violations
+                body: Someone just left the facility with <a data-label="bcsi">BCSI<a> - a picture of the operator's computer screens! If an auditor learned of this, we'd likely be issued a Violation. Violations can come with big fines, up to &#36;1,000,000 per day, per incident. Youch! <br/><br/>So when we violate a <a data-label="cip">CIP<a> requirement, it's always better to issue a Self-Report to our regulator and fix our internal processes so the issue won't happen again. We still may receive a violation, but regulators look more favorably when we catch and fix our own problems. <br/><br/>Since this incident, all Defenders have received BCSI security training. Let's see if this helps avoid a violation.
+                btn:
+                  style: lightning
+                  text: run simulator
+                  action: {cmd: slides.next-slide}
       # 3 Ctanlee Clear ==========================================
       -
         action: {cmd: ctanlee.gohome}
         duration: {kind: time, seconds: 1 }
-      # 3 Violation Simple Selector ==========================================
-      - !!inc/file ./episodes/episode1/yaml/_simple-selector-violation.yaml
       # 3 Animation Good Catch ==========================================
       -
         movie:
@@ -684,6 +702,7 @@ chapters:
             - {action: a }
             - {action: b }
             - {action: c }
+            - {action: d }
           actions:
             a:
               pos: [200, 200]
@@ -698,48 +717,16 @@ chapters:
               pos: [100,100]
               text: "Simulation Pause! Oh My!"
               audio: Story_2_Ctanlee_20.mp3
+            d:
+              pos: [100,100]
+              emo: happy
+              text: "We're 100% compliant, though my algorithms predict a 98% chance of lawsuit for the dogpile method."
+              audio: Story_2_Ctanlee_21.mp3
         duration: {kind: ux }
       # 3 Ctanlee Clear ==========================================
       -
         action: {cmd: ctanlee.gohome}
         duration: {kind: time, seconds: 1 }
-      # 3 Good Catch Simple Selector ==========================================
-      - !!inc/file ./episodes/episode1/yaml/_simple-selector-goodcatch.yaml
-      # 3 Animation Identify Assess ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 8, content: clear }
-            - {depth: 8, content: identifyassess.json, vcr: true }
-        dialogue:
-          defaults:
-            next: audio
-          timeline:
-            - {action: a }
-            - {action: b }
-            - {action: c }
-          actions:
-            a:
-              pos: [200, 200]
-              emo: surprise
-              next: 15000
-            b:
-              pos: [100,100]
-              text: "Excellent! She's asking about the camera!"
-              audio: Story_2_Ctanlee_26.mp3
-              next: 4000
-            c:
-              pos: [100,100]
-              text: "Oh good, the pictures are deleted."
-              audio: Story_2_Ctanlee_X41.mp3
-              next: 13000
-        duration: {kind: ux }
-      # 3 Ctanlee Clear ==========================================
-      -
-        action: {cmd: ctanlee.gohome}
-        duration: {kind: time, seconds: .5 }
-      # 3 Identify Assess Simple Selector ==========================================
-      - !!inc/file ./episodes/episode1/yaml/_simple-selector-identifyassess.yaml
       # 3 Dialogue One Down ==========================================
       -
         title: One Episode Down
