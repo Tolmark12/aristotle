@@ -138,45 +138,96 @@ h1, h2 {
       justify-content: center;
       -webkit-clip-path: polygon(0 0, 100% 0%, 82% 100%, 0% 100%);
       clip-path: polygon(0 0, 100% 0%, 82% 100%, 0% 100%); }
-  .chrome .progress {
+  .chrome .progress .progress-map {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px 0; }
+    .chrome .progress .progress-map .milestone {
+      opacity: 0.25;
+      display: inline-block; }
+      .chrome .progress .progress-map .milestone .label-wrapper {
+        margin-top: 10px;
+        margin-left: 8px; }
+      .chrome .progress .progress-map .milestone * {
+        pointer-events: none; }
+      .chrome .progress .progress-map .milestone.viewed {
+        opacity: 1;
+        cursor: pointer; }
+        .chrome .progress .progress-map .milestone.viewed:hover svg * {
+          fill: #DEAA36; }
+  .chrome .vcr {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 20px; }
+    .chrome .vcr .track {
+      display: flex;
+      align-items: center;
+      width: 255px;
+      height: 3px;
+      background: #6B989F;
+      margin-right: 10px; }
+      .chrome .vcr .track .playhead {
+        height: 3px;
+        background: #DEAA36;
+        position: relative; }
+        .chrome .vcr .track .playhead .svg {
+          position: absolute;
+          right: -10px;
+          top: -12px; }
+    .chrome .vcr .pause-and-play {
+      cursor: pointer; }
+      .chrome .vcr .pause-and-play .play, .chrome .vcr .pause-and-play .replay {
+        display: none; }
+      .chrome .vcr .pause-and-play.paused .play {
+        display: auto;
+        display: initial; }
+      .chrome .vcr .pause-and-play.paused .pause {
+        display: none; }
+      .chrome .vcr .pause-and-play.complete .play, .chrome .vcr .pause-and-play.complete .pause {
+        display: none; }
+      .chrome .vcr .pause-and-play.complete .replay {
+        display: auto;
+        display: initial; }
+    .chrome .vcr .attic {
+      display: flex;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      justify-content: center;
+      position: absolute;
+      top: -35px;
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      align-items: center; }
+      .chrome .vcr .attic .icon-btn {
+        color: white; }
+        .chrome .vcr .attic .icon-btn:first-of-type {
+          margin-right: 20px; }
+        .chrome .vcr .attic .icon-btn .txt {
+          margin-top: -5px; }
+  .chrome .bottom-item {
+    background: rgba(0, 0, 0, 0.5);
     position: absolute;
     left: 50%;
     transform: translate(-50%);
     bottom: -1px;
     pointer-events: all; }
-    .chrome .progress .progress-map {
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      padding: 6px 8px 0; }
-      .chrome .progress .progress-map .milestone {
-        opacity: 0.25;
-        display: inline-block; }
-        .chrome .progress .progress-map .milestone .label-wrapper {
-          margin-top: 10px;
-          margin-left: 8px; }
-        .chrome .progress .progress-map .milestone * {
-          pointer-events: none; }
-        .chrome .progress .progress-map .milestone.viewed {
-          opacity: 1;
-          cursor: pointer; }
-          .chrome .progress .progress-map .milestone.viewed:hover svg * {
-            fill: #DEAA36; }
-      .chrome .progress .progress-map:after, .chrome .progress .progress-map:before {
-        height: 0;
-        width: 0;
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0; }
-      .chrome .progress .progress-map:before {
-        border-bottom: 50px solid rgba(0, 0, 0, 0.5);
-        border-left: 15px solid transparent;
-        left: -15px; }
-      .chrome .progress .progress-map:after {
-        border-bottom: 50px solid rgba(0, 0, 0, 0.5);
-        border-right: 15px solid transparent;
-        right: -15px; }
+    .chrome .bottom-item:after, .chrome .bottom-item:before {
+      height: 0;
+      width: 0;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0; }
+    .chrome .bottom-item:before {
+      border-bottom: 50px solid rgba(0, 0, 0, 0.5);
+      border-left: 15px solid transparent;
+      left: -15px; }
+    .chrome .bottom-item:after {
+      border-bottom: 50px solid rgba(0, 0, 0, 0.5);
+      border-right: 15px solid transparent;
+      right: -15px; }
 
 .movie {
   position: relative;
