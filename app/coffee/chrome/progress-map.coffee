@@ -71,7 +71,7 @@ module.exports = class ProgressMap
     PubSub.publish 'episode.goto', $el.attr "data-title"
   onMileStoneOver  : ($el) ->
     return if !$el.hasClass "viewed" #Stop if this slide hasn't been viewed
-    PubSub.publish 'label.attach', { el:$el, content:{title: $el.attr("data-title")} }
+    PubSub.publish 'label.attach', {data:{ el:$el, content:{title: $el.attr("data-title")} }}
   onMileStoneOut   : ($el) ->
     PubSub.publish 'label.destroy', $el
 
