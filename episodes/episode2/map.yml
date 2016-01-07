@@ -40,7 +40,7 @@ chapters:
           layers:
             - {depth: 0, content: ~1/c1-sky.svg }
             - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
-            - {depth: 2, content: ~1/c1-background-buildin.json, jumpToEnd: true, cache: true }
+            - {depth: 2, content: ~1/c1-background-buildin.json }
             - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true }
             - {depth: 4, content: $facilityLoop, loop: true }
             - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true }
@@ -55,6 +55,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Physical Attacks
                 body: We have a facility loaded up with juicy <a data-label="crca">CRCAs<a> that the bots can't wait to get their hands on. An attacker can destroy or compromise any  <a data-label="crca">CRCAs<a> they have physical access to, so our first job is to physically protect them. Let’s fire up the simulator to illustrate a physical attack.
                 btn:
@@ -114,6 +115,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Physical Access Control
                 body: To prevent physical attacks,  <a data-label="cip">CIP<a> requires that we physically surround our  <a data-label="crca">CRCAs<a> with  <a data-label="psp" class="new">Physical Security Perimeter (PSP)<a> made up of walls, fences, and doors to keep the robots and their allies out. We install physical access controls that only allow authorized Defenders inside the PSP, log all access attempts, and alert when unauthorized people (or robots) try to gain access. An example of an access control is an ID-badge reader on the outside of the door connected to a computer inside that operates the reader and performs logging and alerting. These controls are considered  <a data-label="crca">CRCAs<a> and our  <a data-label="medium">Medium Impact<a> facilities must have one control per door, while  <a data-label="high">High Impact<a> facilities require two independent controls per door.
                 btn:
@@ -199,30 +201,11 @@ chapters:
               pos: [370,300]
               text: Alerted and Defended. Rust in peace, robots.
               audio: Story_3_Ctanlee_9.mp3
-        duration: {kind: ux }
-      # 1 Dialogue Chapter Complete ==========================================
-      -
-        title: Chapter Complete
-        dialogue:
-          timeline:
-            - {action: a }
-          actions:
-            a:
+            e:
               pos: [100,100]
               text: Chapter complete, Cadet. Duty time.
               audio: Story_3_Ctanlee_15.mp3
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: Chapter Complete
-                body:
-                btn:
-                  style: lightning
-                  text: Review Duties
-                  action: {cmd: slides.next-slide}
+        duration: {kind: ux }
       # 1 Duties ==========================================
       -
         movie:
@@ -247,13 +230,13 @@ chapters:
     slides:
       # 2 Dialogue Electronic Attack ==========================================
       -
-        title: Electronic Attacks
         duration: {kind: ux}
         ux:
           components:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Electronic Attacks
                 body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a  <a data-label="crca">CRCA<a> attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction. <br/><br/>Let's see how this might work.
                 btn:
@@ -262,9 +245,6 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
       -
-        action:
-          - {cmd: movie.layers.cache, data: 4}
-          - {cmd: movie.layers.cache, data: 6}
         movie:
           layers:
             - {depth: 10, content: fatline_extended.json, vcr: true }
@@ -377,9 +357,6 @@ chapters:
       # 2 Dialogue Electronic Attack ==========================================
       -
         title: Electronic Attacks
-        action:
-          - {cmd: movie.layers.uncache, data: 4}
-          - {cmd: movie.layers.uncache, data: 6}
         movie:
           layers:
             - {depth: 10, content: clear }
@@ -389,6 +366,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Electronic Attacks
                 body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a  <a data-label="crca">CRCA<a> attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction. <br/><br/>Let's see how this might work.
                 btn:
@@ -408,19 +386,27 @@ chapters:
             - {action: b }
             - {action: c }
             - {action: d }
+            - {action: e }
+            - {action: f }
           actions:
             a:
               pos: []
-              audio: Story_3_Silence.mp3
+              next: 16000
             b:
-              pos: [170,150]
+              pos: [170,190]
               text: He's packaging up something nasty to send us.
               audio: Story_3_Ctanlee_24.mp3
             c:
+              pos: [170,190]
+              next: 6000
+            d:
               pos: [270,500]
               text: He's running some code on our control system! Look out everyone!
               audio: Story_3_Ctanlee_25.mp3
-            d:
+            e:
+              pos: []
+              next: 7000
+            f:
               pos: [370,500]
               text: This is totally uncool. Simulator pause!
               audio: Story_3_Ctanlee_26.mp3
@@ -438,6 +424,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Electronic Attacks
                 body: To defend our  <a data-label="crca">CRCAs<a> against electronic attacks, we must build an  <a data-label="esp" class="new">Electronic Security Perimeter (ESP)<a> around the network they are connected to.  <a data-label="cip">CIP<a> requires that we only allow communication in and out of the ESP network that is approved and business justified, ensuring the bots can't communicate with our connected  <a data-label="crca">CRCAs<a>.  <a data-label="cip">CIP<a> also requires that we detect and alert Defenders about any unauthorized electronic activity. <br/><br/>A common way to control communication is to install a firewall between the ESP network and other networks. Firewalls are devices that prevent unauthorized messages and can alert Defenders if something malicious is found in a message. Electronic access controls are considered  <a data-label="crca">CRCAs<a>.
                 btn:
