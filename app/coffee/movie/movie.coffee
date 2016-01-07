@@ -153,8 +153,8 @@ module.exports = class Movie
     @reset()
     for layerData in layers
       if layerData?
-        if layerData.cache || layerData.ieCache
-          layerData.jumpToEnd = true
+        # if layerData.cache || layerData.ieCache
+        layerData.jumpToEnd = true
         @addLayer layerData
 
   destroy : () ->

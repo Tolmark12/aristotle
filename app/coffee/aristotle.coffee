@@ -16,8 +16,9 @@ SoundFX        = require 'misc/sfx'
 
 class Aristotle
 
-  constructor: (@$el, @episodesDir, @localDir, @devEpisodeNum, @isDevMode, @isLocal) ->
+  constructor: (@$el, @episodesDir, @localDir, @devEpisodeNum, @isDevMode, @isLocal, sudo=false) ->
     window.aristotle = @
+    aristotle.sudo = sudo
     aristotle.isIE = isInternetExp()
     commander      = new Commander()
     dictionary     = new Dictionary()

@@ -13,7 +13,9 @@ episode    = getQueryVariable 'episode'
 cache      = getQueryVariable 'cache'
 isDevMode  = getQueryVariable 'dev'
 isLocal    = getQueryVariable('local') == "true"
+sudo       = getQueryVariable('sudo')  == "true"
+
 
 # Load either the user specified episode, or a default one
-aristotle = new Aristotle $(".holder"), "episodes", "local", episode, isDevMode, isLocal
+aristotle = new Aristotle $(".holder"), "episodes", "local", episode, isDevMode, isLocal, sudo
 if cache == "false" then aristotle.dontCache = true

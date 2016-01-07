@@ -11,7 +11,7 @@ module.exports = class ExploreCards extends Component
     @cards             = new Sequence @data.cards
 
     @createCardGhosts @data.cards
-    @superInit $el, @$node, data
+    @superInit $el, @$node, @data
 
   createCardGhosts : (cards) ->
     @ghosts = []

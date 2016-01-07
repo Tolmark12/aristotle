@@ -21,7 +21,9 @@ module.exports = class ProgressMap
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
 
     $milestone = $(".milestone", @$node)
-    # $milestone.on "click",     (e)=> @onMileStoneClick $(e.currentTarget)
+    console.log aristotle.sudo
+    if aristotle.sudo
+      $milestone.on "click",   (e)=> @onMileStoneClick $(e.currentTarget)
     $milestone.on "mouseover", (e)=> @onMileStoneOver $(e.currentTarget)
     $milestone.on "mouseout",  (e)=> @onMileStoneOut $(e.currentTarget)
 

@@ -1,7 +1,3 @@
-Audio:
-  ☐ - When the audio is longer thean the video
-  ☐ - show vcr when chrome is hidden
-
 To Build:
   ☐ Clean up the caching of svgs
   ☐ Add a `savePositions` method for saving the positions of elements pre caching
@@ -52,14 +48,12 @@ IE :
 
 
 
-
-
 Quiz:
   ☐ once we get a right answer, diable clicking other questions
 
-☐ Add pausing of layers, and actions with delay.
+✔ Add pausing of layers, and actions with delay. @done(2016-01-07 10:21)
 ☐ Alternative continue button style (possible)
-☐ Build playhead
+✔ Build playhead @done(2016-01-07 10:21)
   - Replay will need to replay the whole slide
   - Pause ctanlee, sound effects
 

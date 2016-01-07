@@ -192,7 +192,7 @@ server = ->
 launch = ->
   gulp.src("./stage/index.jade") # An actual file must be specified or gulp will overlook the task.
     .pipe(open("",
-      url: "http://localhost:5654/index.html?local=true&dev=true&episode=1",
+      url: "http://localhost:5654/index.html?local=true&dev=true&sudo=true&episode=1",
       app: "google chrome"
     ))
 
