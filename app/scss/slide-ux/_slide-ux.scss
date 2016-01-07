@@ -89,7 +89,7 @@ $horiz-padding : 9px;
 
 
   .label                { letter-spacing:0.03em; border-radius:3px; outline: $border-width solid $border-color; @include ie() {display:inline-table}; position:absolute; background:$fill-color; color:#F9773E; font-size:13px; padding:3px $horiz-padding; bottom:$arrow-size; left:$horiz-padding*-2;
-    .title              { padding-bottom:3px; white-space:nowrap; }
+    .title              { padding-bottom:3px; white-space:nowrap; color:$orange; }
     .text               { margin-top:-3px; padding-bottom:5px; white-space:nowrap; color:white; }
     &.box .text         { white-space: auto; white-space: initial; max-width: 200px; min-width: 200px;}
     &.inline            {

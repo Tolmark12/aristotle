@@ -1,7 +1,7 @@
-.selection-dialogue  { display:flex; color:#FFF;  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight:100; font-size:16px;
+.selection-dialogue  { display:flex; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight:100;
   .left-section,
   .right-section     { display:flex; flex-direction:column; background:rgba(#020308, 0.8); min-width:340px; max-width: 380px;  padding:20px;
-    .subtitle        { color:#CCC; font-size:14px; line-height:1.3; margin:15px 0; }
+    .subtitle        { margin:15px 0; }
     ol, ul           { margin:10px 0; padding:0; }
     ol               { margin-left:18px;}
     ul               { list-style:none;
@@ -17,7 +17,7 @@
     }
     .header          { display:flex; align-items:center;
       .line          { width:50%; content:""; @include blue-border; display:inline-block; height:2px; }
-      h1             { margin:0 5px; text-align:center; display:inline; font-size:18px;  }
+      h1             { margin:10px 5px 0; text-align:center; display:inline; font-size:18px;  }
     }
     .action          { @include blue-border(top); text-align:center;
       .btn           { display:flex;  color:$orange; align-items:center; text-transform:uppercase; justify-content:center; margin-top:10px; cursor:pointer;
