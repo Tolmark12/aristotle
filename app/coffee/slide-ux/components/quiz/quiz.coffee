@@ -5,10 +5,11 @@ Sequence  = require 'misc/sequence'
 module.exports = class Quiz extends Component
 
   constructor: (@$el, @data) ->
+    super @data
     PubSub.publish "chrome.hide"
     PubSub.publish "ctanlee.hide"
     @build @data
-    super @$el, @$node, @data
+    @superInit @$el, @$node, @data
 
   build: (data)->
     @$node = $ jadeTemplate['slide-ux/components/quiz/quiz']( data )
