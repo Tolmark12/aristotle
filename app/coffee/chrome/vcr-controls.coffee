@@ -45,8 +45,7 @@ module.exports = class VCRControls
   # ------------------------------------ Events
   controlBtnClick : (e) ->
     if @isComplete
-      @isComplete = false
-      PubSub.publish 'vcr.replay'
+      @replayClick()
     else if @isPaused
       @isPaused = false
       PubSub.publish 'vcr.play'
@@ -54,5 +53,7 @@ module.exports = class VCRControls
       @isPaused = true
       PubSub.publish 'vcr.pause'
 
-  replayClick   : () -> PubSub.publish 'vcr.replay'
+  replayClick   : () ->
+    @isComplete = false
+    PubSub.publish 'vcr.replay'
   continueClick : () -> @completeCb()

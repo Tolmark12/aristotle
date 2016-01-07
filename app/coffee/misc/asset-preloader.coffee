@@ -18,9 +18,10 @@ module.exports = class AssetPreploader
     preloadQueue.installPlugin createjs.Sound
 
     # On load progress
-    preloadQueue.on "progress", (e)=>
-      if e.loaded > 1 then e.loaded = 1
-      @progressCallback e.loaded
+    if @progressCallback?
+      preloadQueue.on "progress", (e)=>
+        if e.loaded > 1 then e.loaded = 1
+        @progressCallback e.loaded
 
     # On load complete
     preloadQueue.on "complete", ()=>

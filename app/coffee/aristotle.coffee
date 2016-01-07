@@ -12,7 +12,7 @@ Movie          = require 'movie/movie'
 Parser         = require 'misc/parser'
 PausableDelays = require 'misc/pausable-delays'
 SlideUX        = require 'slide-ux/slide-ux'
-SoundFX        = require 'episode/soundfx'
+SoundFX        = require 'misc/sfx'
 
 class Aristotle
 

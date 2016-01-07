@@ -1,27 +1,33 @@
 Chapter        = require 'episode/chapter'
 Sequence       = require 'misc/Sequence'
+AssetPreloader = require 'misc/asset-preloader'
 
 module.exports = class Episode
 
-  constructor: (trainingData, @movie, @ux, @chrome) ->
+  constructor: (@trainingData, @movie, @ux, @chrome) ->
     aristotle.episode     = @
-    @episodeNum           = trainingData.episode
-    @isLastEpisode        = trainingData.isLastEpisode
-    aristotle.episodeData = trainingData
-    aristotle.labels      = trainingData.labels
-    @nextRankId           = trainingData.nextRankId
+    @episodeNum           = @trainingData.episode
+    @isLastEpisode        = @trainingData.isLastEpisode
+    aristotle.episodeData = @trainingData
+    aristotle.labels      = @trainingData.labels
+    @nextRankId           = @trainingData.nextRankId
     @chrome.build()
+    new AssetPreloader @trainingData.action, @begin
 
-    aristotle.devTools.go trainingData.dev, trainingData.chapters
+  begin : () =>
+    aristotle.devTools.go @trainingData.dev, @trainingData.chapters
 
     @token1 = PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data
-    PubSub.publish("episode.loaded", trainingData);
+    PubSub.publish("episode.loaded", @trainingData);
 
-    @createChapters trainingData
-    if trainingData.skipSlate
+    @createChapters @trainingData
+    if @trainingData.skipSlate
       @playChapter()
     else
-      @showIntro trainingData
+      @showIntro @trainingData
+
+    if @trainingData.action?
+      aristotle.commander.do @trainingData.action
 
   showIntro : (data) ->
     if aristotle.devTools.skipSlate then @playChapter(); return

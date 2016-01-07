@@ -31,7 +31,7 @@ chapters:
                 btns:
                   -
                     txt: Play Test Sound
-                    click: {cmd: playsound, data: {file: SFX_SoundTestButton.mp3}}
+                    click: {cmd: playsound, data: {content: SFX_SoundTestButton.mp3}}
                   -
                     txt: Proceed
                     click: {cmd: slides.next-slide}
@@ -105,7 +105,52 @@ chapters:
               pos: [513,384,0]
               text: "The warcore will now confirm your identity. Are you ready to proceed?"
               audio: Story_1_Ctanlee_4.mp3
-        duration: {kind: ux }
+        duration: {kind: dialogue }
+      # Dialogue Approval to Advance  ==========================================
+      -
+        title: Approval To Proceed
+        movie:
+          layers:
+            - {depth: 2}
+        dialogue:
+          timeline:
+            - {action: a }
+          actions:
+            a:
+              pos: [513,384,0]
+            b:
+              text: "Excellent! Gaze at the dot on the screen, while the warcore  read your optical receptors."
+              audio: Story_1_Yes.mp3
+            c:
+              text: "Sorry, that was a trick question. I really must insist."
+              audio: Story_1_No.mp3
+            d:
+              text: "Standard protocol. Don't worry - laser blast deaths are somewhat quick and mostly painless."
+              audio: Story_1_LaserBlast.mp3
+        ux:
+          components:
+            -
+              kind: dialogue-page
+              config:
+                title: Approval To Proceed
+                theme: grid-room
+                btnConfig: {height: 100, lines: true}
+                btns:
+                  -
+                    txt: Yes
+                    click:
+                      #- {cmd: ctanlee.activate, data: b, complete: {cmd: slides.next-slide}}
+                      - {cmd: playsound, data: {content: Story_1_Yes.mp3, complete: {cmd: slides.next-slide} }}
+                  -
+                    txt: No
+                    click:
+                      #- {cmd: ctanlee.activate, data: c, complete: {cmd: slides.next-slide}}
+                      - {cmd: playsound, data: {content: Story_1_No.mp3, complete: {cmd: slides.next-slide} }}
+                  -
+                    txt: Laser blast my face
+                    click:
+                      #- {cmd: ctanlee.activate, data: d, complete: {cmd: slides.next-slide}}
+                      - {cmd: playsound, data: {content: Story_1_LaserBlast.mp3, complete: {cmd: slides.next-slide} }}
         duration: {kind: ux}
       # Dialogue Clearance Level  ==========================================
       -
@@ -332,15 +377,15 @@ chapters:
                   -
                     txt: Panicking
                     click:
-                      - {cmd: playsound, data: {file: Story_1_Dialogue_Panicking.mp3, complete: {cmd: slides.next-slide} }}
+                      - {cmd: playsound, data: {content: Story_1_Dialogue_Panicking.mp3, complete: {cmd: slides.next-slide} }}
                   -
                     txt: I Threw Up a Bit in My Mouth
                     click:
-                      - {cmd: playsound, data: {file: Story_1_Dialogue_Puke.mp3, complete: {cmd: slides.next-slide} }}
+                      - {cmd: playsound, data: {content: Story_1_Dialogue_Puke.mp3, complete: {cmd: slides.next-slide} }}
                   -
                     txt: Let's Kick Some Bot
                     click:
-                      - {cmd: playsound, data: {file: Story_1_Dialogue_Spirit.mp3, complete: {cmd: slides.next-slide} }}
+                      - {cmd: playsound, data: {content: Story_1_Dialogue_Spirit.mp3, complete: {cmd: slides.next-slide} }}
         duration: {kind: ux }
       # Introduce Navigation Ranks  ==========================================
       -

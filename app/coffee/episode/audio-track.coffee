@@ -2,9 +2,11 @@ module.exports = class AudioTrack
 
   constructor: (@src) ->
     AudioTrack.initSoundSettings()
+    @sound = createjs.Sound.createInstance @src
 
-  play : (onComplete) ->
-    @sound = createjs.Sound.play @src, AudioTrack.ppc
+  play : (config={}, onComplete) ->
+    @parseConfig config
+    @sound.play config
     @addOnComplete onComplete
 
   addOnComplete : (onComplete) ->
@@ -13,6 +15,7 @@ module.exports = class AudioTrack
   stop : ()-> @sound.stop()
 
   destroy : ()->
+    @isDead = true
     @sound.removeEventListener "complete"
     @sound.destroy()
 
@@ -23,3 +26,10 @@ module.exports = class AudioTrack
       volume: volume
       pan:1
       # loop: -1,
+
+  parseConfig : (config) ->
+    if config.loop?
+      # If loop is true, set it to -1 so sound will loop infinitely
+      if config.loop == true && typeof config.loop != "number"
+        config.loop = -1
+    config.pan = 1

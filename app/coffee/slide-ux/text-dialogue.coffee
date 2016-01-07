@@ -41,7 +41,7 @@ module.exports = class TextDialogue
       if @track? then @track.stop()
       @track = new AudioTrack(audio)
       # Play, then on complete, play the next action if that is how next is defined
-      @track.play ()=>
+      @track.play {}, ()=>
         @track.destroy()
         @track = null
         @actor.stopTalking()
