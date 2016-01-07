@@ -447,7 +447,7 @@ chapters:
               kind: dialogue
               config:
                 title: Duties
-                body: "A <a data-label="defenders">Defender<a> has two primary jobs related to <a data-label="cip">CIP<a>:<ol><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed</li></ol>Our <a data-label="cyber_security_program" class="new">Cyber Security Program<a> describes how our duties meet the <a data-label="cip">CIP Standards<a> and we teach these duties through annual cyber security training and regular awareness communication."
+                body: A <a data-label="defenders">Defender<a> has two primary jobs related to <a data-label="cip">CIP<a>:<ol><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed</li></ol>Our <a data-label="cyber_security_program" class="new">Cyber Security Program<a> describes how our duties meet the <a data-label="cip">CIP Standards<a> and we teach these duties through annual cyber security training and regular awareness communication.
                 btn:
                   style: lightning
                   text: continue
