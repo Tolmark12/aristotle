@@ -3,6 +3,7 @@ To Build:
   ☐ Add a `savePositions` method for saving the positions of elements pre caching
   ☐ Change Mode (Learn mode, Explore Mode, Simulate)
   ☐ Remove ghose ux items on component destroy
+  ☐ Add a way to time how long spent on various things..
 
 Complex Animations:
   ☐ After effects trigger based on keyframes
