@@ -30,6 +30,10 @@ module.exports = class VCRControls
     @animation.play()
 
   activate : (svgAnimation, @completeCb) ->
+    @$attic.addClass 'hidden'
+    @$pauseAndPlayBtn.removeClass 'paused'
+    @$pauseAndPlayBtn.removeClass 'complete'
+
     @animation = svgAnimation.animation
 
     @animation.addEventListener 'enterFrame', ()=>

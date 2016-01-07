@@ -10,6 +10,7 @@ module.exports = class Duties extends Component
     @getData data.definition
     @$node  = $ "<div class='duties'/>"
     @superInit $el, @$node, data
+
   build : (data) ->
     @createDutyIds data.duties
     @duties = new Sequence data.duties

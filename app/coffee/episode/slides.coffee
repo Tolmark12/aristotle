@@ -53,7 +53,7 @@ module.exports = class Slides
 
   destroy : () ->
     for slide in @slides.items
-      slides.destroy()
+      slide.destroy()
 
     @slides = null
     PubSub.unsubscribe token for token in @subscriptionTokens
@@ -62,7 +62,7 @@ module.exports = class Slides
   start             : () -> @playSlide()
   slideComplete     : () => @nextSlide()
   playSlide         : () ->
-    PubSub.publish 'slides.changing' 
+    PubSub.publish 'slides.changing'
     @slides.getCurrentItem().play @slideComplete
 
   slideShowComplete : () -> @onShowComplete()
