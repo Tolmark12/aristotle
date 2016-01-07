@@ -66,7 +66,7 @@ chapters:
               kind: dialogue
               config:
                 title: BES Cyber Assets
-                body: <a data-label="cip">CIP<a> gives us the task to protect <a data-label="bca" class="new">BES Cyber Assets (BCA)<a> - the critical equipment in our facilities that will cause real-time operational problems for the Bulk Electric System if they are hacked, attacked, or disabled. Any other computers and devices on the same network as <a data-label="bca">BCA<a> are called <a data-label="pca" class="new">Protected Cyber Assets (PCA)<a> and must also be protected. <br/><br/>The Compliance Team identified the <a data-label="bca">BCA<a> and <a data-label="pca">PCA<a> in this facility. It's time for an inspection - on the next screen click any of your assets to learn more about them.
+                body: <a data-label="cip">CIP</a> gives us the task to protect <a data-label="bca" class="new">BES Cyber Assets (BCA)</a> - the critical equipment in our facilities that will cause real-time operational problems for the Bulk Electric System if they are hacked, attacked, or disabled. Any other computers and devices on the same network as <a data-label="bca">BCA</a> are called <a data-label="pca" class="new">Protected Cyber Assets (PCA)</a> and must also be protected. <br/><br/>The Compliance Team identified the <a data-label="bca">BCA</a> and <a data-label="pca">PCA</a> in this facility. It's time for an inspection - on the next screen click any of your assets to learn more about them.
                 btn:
                   style: lightning
                   text: inspect assets
@@ -147,7 +147,7 @@ chapters:
               kind: dialogue
               config:
                 title: Protected Cyber Assets
-                body: When BCA are connected to a network like these are, any other devices on the same network like file servers, network printers, and displays must also be protected at the same level as BCA so no security weaknesses are introduced to the network. We call these devices <a data-label="a">Protected Cyber Assets<a>.  <br/>I'll tag the PCA next.
+                body: When BCA are connected to a network like these are, any other devices on the same network like file servers, network printers, and displays must also be protected at the same level as BCA so no security weaknesses are introduced to the network. We call these devices <a data-label="a">Protected Cyber Assets</a>.  <br/>I'll tag the PCA next.
                 btn:
                   style: lightning
                   text: tag PCA
@@ -408,7 +408,7 @@ chapters:
               kind: dialogue
               config:
                 title: Creating an Inventory
-                body: The <a data-label="bca">BCA<a> and <a data-label="pca">PCA<a> that we just tagged form the core of what we protect, and we'll be adding new servers and software to our facility in future episodes that provide defenses around these assets. The assets we'll add to the facility come with delightful <a data-label="cip">CIP<a> acronyms like "PACS" and "EACMS." To make your life easier, we'll refer to all assets with one term going forward - we'll call them  <a data-label="crca" class="new">CIP-Related Cyber Assets (CRCA)<a>. <br/><br/>CIP requires that our Compliance Team document an inventory of every CRCA, along with all <a data-label="bcsi">BCSI<a> locations. These Asset Lists give us a complete inventory of everything we must protect.
+                body: The <a data-label="bca">BCA</a> and <a data-label="pca">PCA</a> that we just tagged form the core of what we protect, and we'll be adding new servers and software to our facility in future episodes that provide defenses around these assets. The assets we'll add to the facility come with delightful <a data-label="cip">CIP</a> acronyms like "PACS" and "EACMS." To make your life easier, we'll refer to all assets with one term going forward - we'll call them  <a data-label="crca" class="new">CIP-Related Cyber Assets (CRCA)</a>. <br/><br/>CIP requires that our Compliance Team document an inventory of every CRCA, along with all <a data-label="bcsi">BCSI</a> locations. These Asset Lists give us a complete inventory of everything we must protect.
                 btn:
                   style: lightning
                   text: review duties
@@ -487,7 +487,7 @@ chapters:
               kind: dialogue
               config:
                 title: Defenders
-                body: We now know what we're defending and why. Let's talk about who is doing the defending. <a data-label="cip">CIP<a> requires that a single <a data-label="manager" class="new">CIP Senior Manager<a> be made responsible for all <a data-label="cip">CIP<a> defenses. This is a big job, so this manager will delegate responsibilities to <a data-label="defenders" class="new">Defenders<a> in the facilities to perform. <br/><br/>Let's add some of these Defenders to our facility.
+                body: We now know what we're defending and why. Let's talk about who is doing the defending. <a data-label="cip">CIP</a> requires that a single <a data-label="manager" class="new">CIP Senior Manager</a> be made responsible for all <a data-label="cip">CIP</a> defenses. This is a big job, so this manager will delegate responsibilities to <a data-label="defenders" class="new">Defenders</a> in the facilities to perform. <br/><br/>Let's add some of these Defenders to our facility.
                 btn:
                   style: lightning
                   text: load defenders
@@ -514,7 +514,7 @@ chapters:
               kind: dialogue
               config:
                 title: More Defenders
-                body: The <a data-label="manager">CIP Senior Manager<a> often has specialized <a data-label="defenders">Defenders<a> who help in different ways. Let's add the Compliance Team, Human Resources, and the <a data-label="manager">CIP Senior Manager<a> herself to our HQ building.
+                body: The <a data-label="manager">CIP Senior Manager</a> often has specialized <a data-label="defenders">Defenders</a> who help in different ways. Let's add the Compliance Team, Human Resources, and the <a data-label="manager">CIP Senior Manager</a> herself to our HQ building.
                 btn:
                   style: lightning
                   text: load defenders
@@ -535,7 +535,7 @@ chapters:
               kind: dialogue
               config:
                 title: Duties
-                body: 'We have <a data-label="defenders">Defenders<a>! But how do they know how to defend our facility? The <a data-label="manager">CIP Senior Manager<a> is required to create a <a data-label="cyber_security_program" class="new">Cyber Security Program<a> that describes how our people and defenses meet the <a data-label="cip">CIP<a> Standards. Each Defender has two essential responsibilities to support the Program. <br/><ol type="A"><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed </li></ol><br/>To aid you in these responsibilities, <a data-label="cip">CIP<a> requires that you receive dedicated cyber-security training and regular awareness materials in addition to normal job training at your organization.'
+                body: 'We have <a data-label="defenders">Defenders</a>! But how do they know how to defend our facility? The <a data-label="manager">CIP Senior Manager</a> is required to create a <a data-label="cyber_security_program" class="new">Cyber Security Program</a> that describes how our people and defenses meet the <a data-label="cip">CIP</a> Standards. Each Defender has two essential responsibilities to support the Program. <br/><ol type="A"><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed </li></ol><br/>To aid you in these responsibilities, <a data-label="cip">CIP</a> requires that you receive dedicated cyber-security training and regular awareness materials in addition to normal job training at your organization.'
                 btn:
                   style: lightning
                   text: continue
@@ -550,7 +550,7 @@ chapters:
               kind: dialogue
               config:
                 title: Get to Know Your Defenders
-                body: While leadership may define the <a data-label="cyber_security_program">Program<a> and provide training and tools, success depends on everyone doing their duties. Protecting our infrastructure is a team effort and that's why we don't give out the title <a data-label="defenders">"Defender"<a> lightly. <br/><br/>Each of the <a data-label="defenders">Defenders<a> in your facility will have specific duties to perform and evidence to create. Click on a few people to see some examples. When you're ready to review duties for this chapter, use the button at the bottom of the screen to proceed.
+                body: While leadership may define the <a data-label="cyber_security_program">Program</a> and provide training and tools, success depends on everyone doing their duties. Protecting our infrastructure is a team effort and that's why we don't give out the title <a data-label="defenders">"Defender"</a> lightly. <br/><br/>Each of the <a data-label="defenders">Defenders</a> in your facility will have specific duties to perform and evidence to create. Click on a few people to see some examples. When you're ready to review duties for this chapter, use the button at the bottom of the screen to proceed.
                 btn:
                   style: lightning
                   text: got it
@@ -695,7 +695,7 @@ chapters:
               config:
                 replaceVars: [body]
                 title: Regulators
-                body: The government wants to ensure our organization sustains the defenses required by compliance, so ${companyName} is accountable to regulators. The <a data-label="nerc" class="new">North American Electric Reliability Corporation (NERC)<a> is responsible for defining the <a data-label="cip">CIP Standards<a> and gives authority to ${companyRegulator} to help us interpret the <a data-label="cip">Standards<a> and ensure we are following them through audits. <br/><br/>The evidence we create is critical to this relationship. It helps us identify and fix issues, and shows our regulators that we are holding fast against the robots. With all these duties to perform and evidence to record, it's probably a good time to touch on what happens when we miss performing a duty or creating evidence.
+                body: The government wants to ensure our organization sustains the defenses required by compliance, so ${companyName} is accountable to regulators. The <a data-label="nerc" class="new">North American Electric Reliability Corporation (NERC)</a> is responsible for defining the <a data-label="cip">CIP Standards</a> and gives authority to ${companyRegulator} to help us interpret the <a data-label="cip">Standards</a> and ensure we are following them through audits. <br/><br/>The evidence we create is critical to this relationship. It helps us identify and fix issues, and shows our regulators that we are holding fast against the robots. With all these duties to perform and evidence to record, it's probably a good time to touch on what happens when we miss performing a duty or creating evidence.
                 btn:
                   style: lightning
                   text: continue
@@ -710,7 +710,7 @@ chapters:
               kind: dialogue
               config:
                 title: Violations
-                body: A Good Catch is doing something that almost violates a <a data-label="cip">CIP<a> requirement. These are learning opportunities that allow us to improve our processes. <br/><br/>A Self-Report is when we violate a  <a data-label="cip">CIP<a> requirement, but discover the issue and fix our processes so the issue won't happen again. We still must self-report to our regulator, but regulators look more favorably on these situations. <br/><br/>A Violation is violating a <a data-label="cip">CIP<a> requirement and being caught by an auditor. These can come with big fines, up to $1,000,000 per day, per incident. <br/><br/>Let's run these situations through the simulator and see if you can identify them.
+                body: A Good Catch is doing something that almost violates a <a data-label="cip">CIP</a> requirement. These are learning opportunities that allow us to improve our processes. <br/><br/>A Self-Report is when we violate a  <a data-label="cip">CIP</a> requirement, but discover the issue and fix our processes so the issue won't happen again. We still must self-report to our regulator, but regulators look more favorably on these situations. <br/><br/>A Violation is violating a <a data-label="cip">CIP</a> requirement and being caught by an auditor. These can come with big fines, up to $1,000,000 per day, per incident. <br/><br/>Let's run these situations through the simulator and see if you can identify them.
                 btn:
                   style: lightning
                   text: run simulator
@@ -839,7 +839,7 @@ chapters:
               kind: dialogue
               config:
                 title: One Episode Down
-                body: Nice job, Cadet. Our facility is built, we tagged <a data-label="crca">CRCAs<a> and <a data-label="bcsi">BCSI<a> locations, learned about the <a data-label="manager">CIP Senior Manager<a> and the <a data-label="cyber_security_program">Cyber Security Program<a>, and added <a data-label="defenders">Defender<a>. Most importantly, we learned that our core mission as <a data-label="defenders">Defenders<a> is to protect our infrastructure by performing our duties and creating evidence. <br/><br/>Let's test your knowledge and move onto the next episode where we'll build and secure the perimeters around our facility. Buckle up into your office chairs, because things are about to get really interesting. The robots are coming…
+                body: Nice job, Cadet. Our facility is built, we tagged <a data-label="crca">CRCAs</a> and <a data-label="bcsi">BCSI</a> locations, learned about the <a data-label="manager">CIP Senior Manager</a> and the <a data-label="cyber_security_program">Cyber Security Program</a>, and added <a data-label="defenders">Defender</a>. Most importantly, we learned that our core mission as <a data-label="defenders">Defenders</a> is to protect our infrastructure by performing our duties and creating evidence. <br/><br/>Let's test your knowledge and move onto the next episode where we'll build and secure the perimeters around our facility. Buckle up into your office chairs, because things are about to get really interesting. The robots are coming…
                 btn:
                   style: lightning
                   text: Review Duties

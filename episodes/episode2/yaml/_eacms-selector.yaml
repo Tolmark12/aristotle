@@ -26,7 +26,7 @@ ux:
           - {cmd: slides.next-slide}
         intro:
         title: Choose Your Electronic Access Control
-        subTitle: Select a firewall with an intrusion prevention system to create your  <a data-label=“esp”>Electronic Security Perimeter<a>.
+        subTitle: Select a firewall with an intrusion prevention system to create your  <a data-label=“esp”>Electronic Security Perimeter</a>.
         submitBtn: {txt: Install, icon: action-btn-fist}
         items:
           -

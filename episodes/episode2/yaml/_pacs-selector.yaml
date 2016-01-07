@@ -26,7 +26,7 @@ ux:
           - {cmd: slides.next-slide}
         intro:
         title: Choose your PACS
-        subTitle: The only access to the facility  <a data-label=“crca”>CRCAs<a> is through the door, so let's install a  <a data-label=“cip”>CIP<a>-compliant physical access control on the door to create a  <a data-label=“psp”>Physical Security Perimeter<a> around your assets.
+        subTitle: The only access to the facility  <a data-label=“crca”>CRCAs</a> is through the door, so let's install a  <a data-label=“cip”>CIP</a>-compliant physical access control on the door to create a  <a data-label=“psp”>Physical Security Perimeter</a> around your assets.
         submitBtn: {txt: Install, icon: action-btn-fist}
         items:
           -

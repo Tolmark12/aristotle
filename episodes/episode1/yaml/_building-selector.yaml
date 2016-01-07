@@ -23,7 +23,7 @@ ux:
         click:
           - {cmd: slides.next-slide}
         title: Pick Your Facility
-        subTitle: The <a data-label="cip">Critical Infrastructure Protection (CIP)<a> Standards require that we protect significant facilities on the <a data-label="bes">Bulk Electric System (BES)<a>. We classify our facilities in three categories.<ul><li><a data-label="high" class="new">High Impact<a> are big control centers</li><li><a data-label="medium" class="new">Medium Impact<a> are significant transmission substations and generation plants, and small control centers</li><li><a data-label="low" class="new">Low Impact<a> are everything else.</li></ul>Please add a Medium Impact facility to the simulator. Pick whichever one you like! We'll teach the same principles with any choice.
+        subTitle: <div>The <a data-label="cip">Critical Infrastructure Protection (CIP)</a> Standards require that we protect significant facilities on the <a data-label="bes">Bulk Electric System (BES)</a>. We classify our facilities in three categories.<ol><li><a data-label="high" class="new">High Impact</a> are big control centers</li><li><a data-label="medium" class="new">Medium Impact</a> are significant transmission substations and generation plants, and small control centers</li><li><a data-label="low" class="new">Low Impact</a> are everything else.</li></ol>Please add a Medium Impact facility to the simulator. Pick whichever one you like! We'll teach the same principles with any choice.</div>
         submitBtn: {txt: Load Facility, icon: action-btn-fist}
         items:
           -

@@ -71,9 +71,9 @@ htmlStage = (cb)->
 html = (cb)->
   gulp.src( jadePath )
     .pipe jade(client: true)
-    .pipe wrap( "jadeTemplate['<%= file.relative.split('.')[0] %>'] = <%= file.contents %>;\n" )
-    .pipe concat('jade-templates.js')
-    .pipe wrap( "jadeTemplate = {};\n<%= file.contents %>" )
+    .pipe wrap(   "jadeTemplate['<%= file.relative.split('.')[0] %>'] = <%= file.contents %>;\n" )
+    .pipe concat( 'jade-templates.js')
+    .pipe wrap(   "jadeTemplate = {};\n<%= file.contents %>" )
     .pipe gulp.dest('./server/js')
     .on('end', cb)
 
