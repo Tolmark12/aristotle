@@ -12,6 +12,7 @@ module.exports = class ProgressMap
     $el = $("##{ @titleToId(title) }", @$node)
     $el.addClass "viewed"
     $el.prevAll().addClass "viewed"
+    $el.nextAll().removeClass "viewed"
 
   buildMap : (data) ->
     mapData = @parseEpisodeData data
