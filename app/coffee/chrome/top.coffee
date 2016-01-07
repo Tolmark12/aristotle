@@ -11,16 +11,21 @@ module.exports = class Top
 
   build : () ->
     name = aristotle.lmsProxy.user.split ","
-    [callsign, episode] = @getVars()
-
-    data    = {name:"#{name[1]} \"#{callsign}\" #{name[0]}", episode:episode}
-    @getRank data, "cyber-cadet"
+    [callsign, episodeNum] = @getVars()
+    data    = {name:"#{name[1]} \"#{callsign}\" #{name[0]}", episode:episodeNum}
+    @getRank data, episodeNum
     @$top   = $ jadeTemplate['chrome-ui/top']( data )
     @$el.append @$top
     @$name  = $ ".name-and-rank", @$top
     @$icons = $ ".episodes", @$top
     @$mode  = $ ".learn-mode", @$top
     @hideMode()
+
+    $(".badge", @$top).on "mouseover", (e)=>
+      @badgeMouseover e
+
+    $(".badge", @$top).on "mouseout", (e)=>
+      @badgeMouseout e
 
   updateCallsign : () ->
     name = aristotle.lmsProxy.user.split ","
@@ -33,25 +38,53 @@ module.exports = class Top
   hideMode  : () -> @$mode.addClass "hidden"
   showMode  : () -> @$mode.removeClass "hidden"
 
+  # ------------------------------------ Events
+
+  badgeMouseover : (e) ->
+    $el = $ e.currentTarget
+    episodeNum = $el.attr('data-episode')
+    configData =
+      title    : "Episode #{episodeNum}"
+      text     : @getEpisodeTagline episodeNum
+      cssClass : "arrow-top inline"
+    PubSub.publish 'label.attach', {el:$el, content:configData}
+
+  badgeMouseout : (e) ->
+    PubSub.publish 'label.destroy', $(e.currentTarget)
+
   # ------------------------------------ Helpers
 
-  getRank : (data, episode) ->
-    switch episode
-      when 'recruits'
-        data.rank  = "recruit"
+  getRank : (data, episodeNum ) ->
+    data.episode = episodeNum
+    switch episodeNum
+      when 0
+        data.rank  = "Recruit"
         data.badge = "rank-badge-recruit"
-      when 'cadet'
+      when 1
         data.rank  = "cadet"
         data.badge = "rank-badge-cadet"
-      when 'cadet-first-class'
+      when 2
         data.rank  = "Cadet First Class"
         data.badge = "rank-badge-cadet-first-class"
-      when 'technical-cadet'
+      when 3
         data.rank  = "Technical Cadet"
         data.badge = "rank-badge-technical-cadet"
-      when 'cyber-cadet'
+      when 4
         data.rank  = "Cyber Cadet"
         data.badge = "rank-badge-cyber-cadet"
+      when 5
+        data.rank  = "Master Cadet"
+        data.badge = "rank-badge-cyber-cadet"
+
+  getEpisodeTagline : (episodeNum) ->
+    switch episodeNum
+      when "1" then return "Organizing Our Forces"
+      when "2" then return "Perimeter Defenses"
+      when "3" then return "Asset Defenses"
+      when "4" then return "Manning the Defenses"
+      when "5" then return "Fighting the War"
+
+
 
   destroy : () ->
     for token in @tokens
@@ -63,5 +96,5 @@ module.exports = class Top
     catch error
       callsign = "Deadeye"
 
-    episode = 1
+    episode = Number(aristotle.episodeNum)
     [callsign, episode]

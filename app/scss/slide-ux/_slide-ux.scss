@@ -92,6 +92,9 @@ $horiz-padding : 9px;
     .title              { padding-bottom:3px; white-space:nowrap; }
     .text               { margin-top:-3px; padding-bottom:5px; white-space:nowrap; color:white; }
     &.box .text         { white-space: auto; white-space: initial; max-width: 200px; min-width: 200px;}
+    &.inline            {
+      .title, .text     { display:inline-block; }
+    }
 
     // Defaults to Bottom Left
     &:after, &:before {

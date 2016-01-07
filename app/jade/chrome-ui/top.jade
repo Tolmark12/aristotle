@@ -9,15 +9,16 @@
         h2.rank #{rank}
       .divider
     .episodes(class="#{episode}")
-      .badge(class="#{episode == '1' ? 'active' : ''}")
+      
+      .badge(data-episode="1" class="#{episode >= 1 ? 'active' : ''}")
         img.shadow-icon(data-src="ep1-badge")
-      .badge(class="#{episode == '2' ? 'active' : ''}")
+      .badge(data-episode="2" class="#{episode >= 2 ? 'active' : ''}")
         img.shadow-icon(data-src="ep2-badge")
-      .badge(class="#{episode == '3' ? 'active' : ''}")
+      .badge(data-episode="3" class="#{episode >= 3 ? 'active' : ''}")
         img.shadow-icon(data-src="ep3-badge")
-      .badge(class="#{episode == '4' ? 'active' : ''}")
+      .badge(data-episode="4" class="#{episode >= 4 ? 'active' : ''}")
         img.shadow-icon(data-src="ep4-badge")
-      .badge(class="#{episode == '5' ? 'active' : ''}")
+      .badge(data-episode="5" class="#{episode >= 5 ? 'active' : ''}")
         img.shadow-icon(data-src="ep5-badge")
   .learn-mode
     h2 [ Warcore ]

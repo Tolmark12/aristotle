@@ -30,15 +30,15 @@ module.exports = class Component
     timeoutId = "timeout#{$el.attr('data-label')}"
     clearTimeout @[timeoutId]
     configData = aristotle.labels[ $el.attr('data-label')]
-    configData.cssClass = "arrow-right"
-    PubSub.publish 'label.attach', {data: { el:$el, content:configData}, isBox:true}
+    configData.cssClass = "arrow-right box"
+    PubSub.publish 'label.attach', {el:$el, content:configData}
 
   removeLabel : (e) ->
     $el = $(e.currentTarget)
     timeoutId = "timeout#{$el.attr('data-label')}"
     @[timeoutId] = setTimeout ()->
       $el = $(e.currentTarget)
-      PubSub.publish 'label.destroy', $(e.currentTarget)
+      PubSub.publish 'label.destroy', $el
     ,
       100
 
