@@ -19,23 +19,28 @@ module.exports = class Component
     $a = $("a[data-label]", @$node)
     $a.addClass "label-trigger"
 
-    me = @
-    $a.on "mouseover", (e)->
-      $el = $(e.currentTarget)
-      timeoutId = "timeout#{$el.attr('data-label')}"
-      clearTimeout me[timeoutId]
-      configData = aristotle.labels[ $el.attr('data-label')]
-      configData.cssClass = "arrow-right"
-      PubSub.publish 'label.attach', { el:$el, content:configData}
+    $a.on "mouseover", (e)=>
+      @addLabel e
 
-    $a.on "mouseout", (e)->
+    $a.on "mouseout", (e)=>
+      @removeLabel e
+
+  addLabel : (e) ->
+    $el = $(e.currentTarget)
+    timeoutId = "timeout#{$el.attr('data-label')}"
+    clearTimeout @[timeoutId]
+    configData = aristotle.labels[ $el.attr('data-label')]
+    configData.cssClass = "arrow-right"
+    PubSub.publish 'label.attach', {data: { el:$el, content:configData}, isBox:true}
+
+  removeLabel : (e) ->
+    $el = $(e.currentTarget)
+    timeoutId = "timeout#{$el.attr('data-label')}"
+    @[timeoutId] = setTimeout ()->
       $el = $(e.currentTarget)
-      timeoutId = "timeout#{$el.attr('data-label')}"
-      me[timeoutId] = setTimeout ()->
-        $el = $(e.currentTarget)
-        PubSub.publish 'label.destroy', $(e.currentTarget)
-      ,
-        100
+      PubSub.publish 'label.destroy', $(e.currentTarget)
+    ,
+      100
 
   destroy : () ->
     @$node.remove()
