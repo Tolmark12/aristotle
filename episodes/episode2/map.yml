@@ -4,6 +4,7 @@ subtitle: Perimeter Defenses
 rankId: cadet-first-class
 nextRankId: technical-cadet
 action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05} }
+labels: !!inc/file ./episodes/global/_labels.yaml
 dev:
   startIndex: 0
 # CHAPTER 1

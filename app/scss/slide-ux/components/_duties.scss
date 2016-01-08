@@ -4,7 +4,7 @@
   .title               { color:#335E6E; font-size:30px; font-family:$fun_cond; border-bottom:1px solid #335E6E; }
   .content             { width:67%; padding:20px; height:728px; overflow:scroll;
     .duty-content      { display: flex; flex-direction: column; align-items: center;
-      .user-content    { text-align:left; width:605px; }
+      .user-content    { text-align:left; width:605px; color:$teal-dark; }
     }
     .icon-btn          { color:white; margin-top:25px;
       &:before         { border-top:1px solid #335E6E; content:""; display:block; position:absolute; width:300px; @include center-absolute; top:-10px;}

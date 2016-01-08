@@ -4,6 +4,7 @@ subtitle: Fighting the War
 rankId: master-cadet
 nextRankId: defender
 isLastEpisode: true
+labels: !!inc/file ./episodes/global/_labels.yaml
 dev:
   startIndex: 0
 

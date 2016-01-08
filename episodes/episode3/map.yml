@@ -3,6 +3,7 @@ title: Episode 3
 subtitle: Asset Defenses
 rankId: technical-cadet
 nextRankId: cyber-cadet
+labels: !!inc/file ./episodes/global/_labels.yaml
 dev:
   startIndex: 0
 

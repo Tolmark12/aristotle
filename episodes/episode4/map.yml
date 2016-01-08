@@ -3,6 +3,7 @@ title: Episode 4
 subtitle: Manning the Defenses
 rankId: cyber-cadet
 nextRankId: master-cadet
+labels: !!inc/file ./episodes/global/_labels.yaml
 dev:
   startIndex: 0
 
