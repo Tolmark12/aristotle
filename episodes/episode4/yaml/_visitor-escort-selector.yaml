@@ -26,7 +26,7 @@ ux:
           - {cmd: slides.next-slide}
         intro:
         title: Select your Visitor Escort System
-        subTitle: "Every organization handles logging and keeping their visitors closely escorted while inside the PSP in different ways. Here are a few options for your facility."
+        subTitle: Every organization's <a data-label="visitor_escort">Visitor Escort Procedure</a> handles logging and escorting <a data-label="visitor">Visitors</a> differently. Here are a few options for your facility.
         submitBtn: {txt: Install, icon: action-btn-fist}
         items:
           -

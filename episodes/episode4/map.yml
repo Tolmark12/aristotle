@@ -642,7 +642,22 @@ chapters:
               kind: dialogue
               config:
                 title: The Visitor Escort Procedure
-                body: Wow, that <a data-label="visitor">Visitor</a> caused a lot of damage. To secure our facilities for tours, visits by auditors, and other short-term needs, we follow a <a data-label="visitor_escort" class="new">Visitor Escort Procedure</a>: Defenders with <a data-label="physical_access">Physical Access</a> to a <a data-label="psp">PSP</a> can take a visitor inside if they log the <a data-label="visitor">Visitor's</a> name, entry and exit time, and remain with the Visitor for the duration of the visit. 
+                body: Wow, that <a data-label="visitor">Visitor</a> caused a lot of damage. To secure our facilities for tours, visits by auditors, and other short-term needs, we follow a <a data-label="visitor_escort" class="new">Visitor Escort Procedure</a>: Defenders with <a data-label="physical_access">Physical Access</a> to a <a data-label="psp">PSP</a> can take a visitor inside if they log the <a data-label="visitor">Visitor's</a> name, entry and exit time, and remain with the Visitor for the duration of the visit.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
+      # 3 Dialogue Visitor Escort Procedure ==========================================
+      -
+        title: Visitor Limits
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                title: Visitor Limits
+                body: The <a data-label="visitor_escort">Visitor Escort Procedure</a> is for <a data-label="physical_access">Physical Access</a> inside a <a data-label="psp">PSP</a> only. Visitors are not allowed to use workstations, servers, and other <a data-label="crca"> CRCAs. If a Visitor needs to interact with a system, they must relay instructions to a Defender with <a data-label="electronic_access">Electronic Access</a> to the system. To protect our <a data-label="bcsi">BCSI</a>, visitors are not allowed to take pictures inside a <a data-label="psp">PSP</a>. <br/><br/>Even if you are trained as a Defender, you are considered a Visitor (and must be escorted) to any PSPs you don't have documented <a data-label="physical_access">Physical Access</a> to. Access to one PSP doesn't mean access to all.
                 btn:
                   style: lightning
                   text: continue
@@ -695,7 +710,7 @@ chapters:
               kind: dialogue
               config:
                 title: On the Home Stretch
-                body: "We have a process for securely granting and removing employees, vendors and contractors' Physical Access, Electronic Access, and Information Access through User Accounts. We've also provided a way to give visitors safe physical access to our facilities through the Visitor Access Procedure. Your mastery of defenses is now complete and your facility is fully protected. It's time for our final episode where we learn how to Fight the War."
+                body: We have a process for securely granting and removing <a data-label="physical_access">Physical Access</a>, <a data-label="electronic_access">Electronic Access</a>, and <a data-label="information_access">Information Access</a>, we have safeguards on our <a data-label="user_account">User Accounts</a>, and <a data-label="visitor">Visitors</a> can securely access our <a data-label="cip"> PSPs through the <a data-label="visitor_escort">Visitor Escort Procedure</a>. Your mastery of defenses is now complete and your facility is fully protected. In our final episode, we learn how to Fight the War. 
                 btn:
                   style: lightning
                   text: review duties
