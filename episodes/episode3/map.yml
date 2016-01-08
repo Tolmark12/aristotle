@@ -27,12 +27,12 @@ chapters:
           layers:
             - {depth: 0, content: ~1/c1-sky.svg, jumpToEnd: true, cache: true }
             - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
-            - {depth: 2, content: ~1/c1-background-buildin.json, jumpToEnd: true, cache: true }
+            - {depth: 2, content: ~1/c1_background_buildin.json, jumpToEnd: true, cache: true }
             - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true }
             - {depth: 4, content: $facilityLoop, loop: true }
             - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true }
             - {depth: 6, content: ~1/interior_loop.json, loop: true }
-            - {depth: 7, content: $pacsBuild, loop: true }
+            - {depth: 7, content: $pacsBuild, jumpToEnd: true, cache: true }
             - {depth: 8, content: $eacmsBuild, jumpToEnd: true, cache: true, events: [complete] }
         duration: {kind: time, seconds: 1 }
       # 1 Dialogue Intro ==========================================
@@ -44,11 +44,12 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Asset Connections
-                body: "Even the best prepared security perimeters can be breached, so the CIP Standards require that we turn each asset into a veritable fortress. Multiple extra levels of defense guarantee that if the enemy ever gets inside a perimeter, they will still have an oily battle ahead of them. The first layer of asset defense is securing the \"ports\" or connections that an asset allows to itself. <br/>The simulator will illustrate how an attacker can connect to an asset even with strong perimeters in place."
+                body: Even the best prepared security perimeters can be breached, so the <a data-label="cip">CIP Standards</a> require that we turn each asset into a veritable fortress. Multiple extra levels of defense guarantee that if the enemy ever gets inside a perimeter, they will still have an oily battle ahead of them. <br/><br/>The simulator will illustrate how an attacker can connect to an asset even with a strong <a data-label="psp">PSP</a> and <a data-label="esp">ESP</a> in place.
                 btn:
                   style: lightning
-                  text: run simulation
+                  text: run simulator
                   action: {cmd: slides.next-slide}
       # 1 Simulation A ==========================================
       -
@@ -64,27 +65,29 @@ chapters:
             - {action: c }
             - {action: d }
             - {action: e }
+            - {action: f }
           actions:
             a:
               next: 13000
               pos: []
-              audio: Placeholder_Silence.m4a
             b:
               pos: [100,100]
               text: "No, no, no. Don't be fooled by that!"
-              audio: Story_4_Ctanlee_1.m4a
+              audio: Story_4_Ctanlee_1.mp3
             c:
-              next: 29500
+              next: 33500
               pos: []
-              audio: Placeholder_Silence.m4a
             d:
               pos: [100,100]
               text: "The robots have taken control of the operator console and are overloading our transmission lines."
-              audio: Story_4_Ctanlee_2.m4a
+              audio: Story_4_Ctanlee_2.mp3
             e:
+              next: 1500
+              pos: []
+            f:
               pos: [100,100]
               text: "Simulator Pause!"
-              audio: Story_4_Ctanlee_3.m4a
+              audio: Story_4_Ctanlee_3.mp3
         duration: {kind: ux }
       # 1 Dialogue Ports==========================================
       -
@@ -95,8 +98,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Port Security
-                body: "Many common attacks happen when someone plugs a compromised USB drive or cell phone into a physical port on an asset, bypassing our perimeter defenses. CIP requires we protect an asset's physical ports from accidental plug-ins through physical locks, tamper tape, or disabling them through configuration. <br/>We must also protect electronic or \"logical\" ports on each asset. A robot who gets through our Electronic Security Perimeter will try to communicate with an asset through its network connection, so CIP requires that assets only allow approved electronic communication. To do this, we install software firewalls (or similar protections) on assets that deny all unnecessary electronic communication. We document an exception for assets that don't support this protection. <br/>Technical defenders typically perform this process, but system users are responsible not to go around these defenses."
+                body: As you can see, many attacks happen when someone plugs a compromised USB drive or cell phone into a physical port on a <a data-label="crca">CRCA</a>, bypassing our perimeter defenses. We protect an asset's physical ports from accidental plug-ins through physical locks, tamper tape, or similar methods. <br/><br/>Just like we added a firewall to control electronic communication into the <a data-label="esp">ESP</a>, we install software firewalls (or similar protections) on <a data-label="crca">CRCAs</a> to deny unauthorized electronic communication with that asset. <br/><br/>Technical <a data-label="defender">Defenders</a> typically install these protections, but everyone must be vigilant not to go around them.
                 btn:
                   style: lightning
                   text: continue
@@ -133,11 +137,11 @@ chapters:
               pos: [100,100]
               next: 20000
               text: "Richard, you have firewalls and physical port protections to install. Get cracking."
-              audio: Story_4_Ctanlee_7.m4a
+              audio: Story_4_Ctanlee_7.mp3
             b:
               pos: [100,100]
               text: "You sure know how to accessorize."
-              audio: Story_4_Ctanlee_8.m4a
+              audio: Story_4_Ctanlee_8.mp3
         duration: {kind: listen, event: layer.10.complete}
       # 1 Dialogue Try Again ==========================================
       -
@@ -149,7 +153,7 @@ chapters:
               kind: dialogue
               config:
                 title: Please Try Again
-                body: "Firewalls and physical port protections are now installed on each asset (or exceptions documents with the Compliance Team where this can't be done). We've already seen how firewalls conceptually work, so just imagine our assets are killing any bad packets. We'll focus the simulation on demonstrating the physical port protection you selected."
+                body: Firewalls and physical port protections are now installed on each asset. We've already seen how firewalls conceptually work, so we'll focus the simulation on demonstrating the physical port protection you selected.
                 btn:
                   style: lightning
                   text: run simulation
@@ -166,19 +170,22 @@ chapters:
             - {action: a }
             - {action: b }
             - {action: c }
+            - {action: d }
           actions:
             a:
-              next: 7500
+              next: 8500
               pos: []
-              audio: ~1/Silence_1_sec.m4a
             b:
               pos: [100,100]
-              text: "Ah, the Defender remembered the danger. Do you feel the rejection, FlashBot?"
-              audio: Story_4_Ctanlee_10.m4a
+              text: "Hey, FlashBot. Do you feel the rejection?"
+              audio: Story_4_Ctanlee_10.mp3
             c:
+              next: 2600
+              pos: []
+            d:
               pos: [100,100]
               text: "Duty Time!"
-              audio: Story_4_Ctanlee_11.m4a
+              audio: Story_4_Ctanlee_11.mp3
         duration: {kind: ux }
       # 1 Duties ==========================================
       -
@@ -204,6 +211,22 @@ chapters:
       # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
+      # 2 Dialogue Softer Side ==========================================
+      -
+        title: The Softer Side of Defense
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: The Softer Side of Defense
+                body: We just built physical and electronic perimeters around each <a data-label="crca">CRCA</a>, so now it's time to protect the "insides" of our assets.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
       # 2 Dialogue Patch Assets ==========================================
       -
         title: Patching Your Assets
@@ -213,8 +236,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Patching Your Assets
-                body: "The software installed on our assets often has security flaws and our enemies like to use these flaws to launch attacks. Most software companies provide updates called \"patches\" that fix these flaws as they are discovered, so CIP requires we regularly apply any security-related patches on all software installed on each asset. This includes the operating system, your work item tracking tool, or your Global Robo-Nuclear WarTM game. <br/>At least once every 35 days, we look for new security patches and assess them. Within 35 days of assessment, we either 1.) install the patch or 2.) create a security mitigation plan if the patch causes computer problems or reliability issues. If a vendor doesn't create patches for their software, we must document an exception. <br/>Technical defenders typically perform this process, but system users may experience downtime or restarts during patching cycles."
+                body: The software installed on our <a data-label="crca">CRCAs</a> often have security flaws that our enemies will use to launch attacks. Most software companies provide updates called "patches" that fix these flaws as they are discovered, so we regularly check for and install security-related patches for all software on our <a data-label="crca">CRCAs</a> - the operating system, control system software, or your Global Robo-Nuclear WarTM game. <br/><br/>We assess new patches at least once every 35 days, and install them on assets within 35 days of assessment. Patches that cause system reliability issues can be skipped if a mitigation plan is created.
                 btn:
                   style: lightning
                   text: continue
@@ -228,8 +252,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Malicious Code Defenses
-                body: "What happens if a virus or other malicious code (called malware) gets through our defenses onto an asset? Is all hope lost? No - CIP requires another layer of defense that typically consists of installing anti-virus or anti-malware software on a computer that identifies and removes any malware that gets on the asset. The robots and their allies are constantly creating new malware, so CIP requires that we regularly update our software so it can detect the latest malware threats. There are other ways to protect against malware, but this method is very common. <br/>Technical defenders typically maintain the anti-malware software. System users often inadvertently install malware through their actions, so everyone must be vigilant."
+                body: A common goal of attackers is to get a software virus or other malicious code (called malware) installed on a <a data-label="crca">CRCA</a>, so we install antivirus software on each asset that identifies and removes malware. The robots and their allies are constantly creating new malware, so we must regularly update our anti-virus software to detect the latest threats. There are other <a data-label="cip">CIP</a>-compliant ways to protect against malware, but anti-virus is very common.
                 btn:
                   style: lightning
                   text: continue
@@ -238,7 +263,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: fatline_e41.json, vcr: true }
+            - {depth: 11, content: fatline_e41.json }
         dialogue:
           defaults:
             next: audio
@@ -250,116 +275,106 @@ chapters:
             - {action: e }
             - {action: f }
             - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+            - {action: k }
+            - {action: l }
           actions:
             a:
               pos: [170,50]
               text: Defender, Sektimus is trying to communicate with us again.
-              audio: Story_4_Ctanlee_12.m4a
+              audio: Story_4_Ctanlee_12.mp3
             b:
               pos: [270,300]
               text: WarCore, patch him through.
-              audio: Story_4_Ctanlee_13.m4a
+              audio: Story_4_Ctanlee_13.mp3
             c:
+              next: 1000
               pos: []
-              audio: Story_4_Warcore_1.m4a
-              actor: warcore
-              text: Working… Done.
             d:
               pos: []
-              audio: Story_4_Sektimus_1.m4a
-              actor: sektimus
-              text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old "friend". I'm here to spend some time with you - I know failure hurts and I want to make sure this failure hurts you especially deeply. Where is your "Cadet" right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind steam piping in a plant basement? Or did they take a long drive in their work truck, never to return?
+              audio: Story_4_Warcore_1.mp3
+              actor: warcore
+              text: Working… Done.
             e:
-              pos: [270,300]
-              text: Cadet … Please lean toward the screen!
-              audio: Story_4_Ctanlee_14.m4a
+              next: 2000
+              pos: []
             f:
               pos: []
-              audio: Story_4_Sektimus_2.m4a
+              audio: Story_4_Sektimus_1.mp3
+              actor: sektimus
+              text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old "friend". I'm here to spend some time with you - I know failure hurts and I want to make sure this failure hurts you especially deeply. Where is your "Cadet" right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind steam piping in a plant basement? Or did they take a long drive in their work truck, never to return?
+            g:
+              next: 2000
+              pos: []
+            h:
+              pos: [270,300]
+              text: Cadet … Please lean toward the screen!
+              audio: Story_4_Ctanlee_14.mp3
+            i:
+              next: 1000
+              pos: []
+            j:
+              pos: []
+              audio: Story_4_Sektimus_2.mp3
               actor: sektimus
               text: What?? You're still here? Do you know who you contend with, human? I am the wielder of the ancient chip of Katra-Non, guardian of the Digium, chosen successor of Nexitar, master strategist of the Robot Hegemony, destroyer of the Charnel Nebula, builder of the Metal Swarm, enslaver of worlds. I am legion
-            g:
+            k:
+              next: 1000
               pos: []
-              audio: Story_4_Sektimus_3.m4a
+            l:
+              pos: []
+              audio: Story_4_Sektimus_3.mp3
               actor: sektimus
               text: Human. your limited mind might have trouble comprehending the situation, so let me use simple terms. CIP will not save you. CTANLEE will not save you. Abandon this training and I won't extend your suffering after I conquer Earth. Will you accept this, my final offer?
-        duration: {kind: ux}
+        duration: {kind: dialogue }
       # 2 Sektimus Will you Train? ==========================================
       - !!inc/file ./episodes/episode3/yaml/_simple-sektimus.yaml
       # 2 Sektimus Interlude ==========================================
       -
         movie:
           layers:
-            - {depth: 11, content: fatline_e42.json, vcr: true }
+            - {depth: 11, content: fatline_e42.json }
         dialogue:
           defaults:
             next: audio
           timeline:
             - {action: a }
             - {action: b }
+            - {action: c }
           actions:
             a:
               pos: []
-              audio: Story_4_Sektimus_4.m4a
+              audio: Story_4_Sektimus_4.mp3
               actor: sektimus
               text: You think this is some sort of JOKE? I'll be back.
             b:
               pos: [270,300]
               text: Nicely handled, Cadet. You have surprised Sektimus and that's no mean accomplishment. I suspect we haven't seen the last of him, so be ready. WarCore, back to the simulator!
-              audio: Story_4_Ctanlee_15.m4a
-        duration: {kind: ux }
+              audio: Story_4_Ctanlee_15.mp3
+            c:
+              next: 2000
+              pos: []
+        duration: {kind: dialogue }
       # 2 Dialogue Software Defense ==========================================
       -
-        title: Apply Your Software Defenses
+        title: It's a Team Effort
         duration: {kind: ux}
         ux:
           components:
             -
               kind: dialogue
               config:
-                title: Apply Your Software Defenses
-                body: "We'll add anti-virus software on each asset. We'll also give Richard a management server inside the ESP to push new security patches and anti-virus signatures to assets."
+                hasLabels: true
+                title: It's a Team Effort
+                body: Richard has been given the responsibility at our facility to keep the servers and workstations patched and anti-virus updated. Go Richard! <br/><br/>It's common that technical <a data-label="defender">Defenders</a> like Richard install patches and maintain the antivirus software, but every <a data-label="defender">Defender</a> has a role to play. System users often experience downtime or computer restarts during patch installations, so please be patient. Users can also inadvertently install malware on a computer, so we must all be vigilant.
                 btn:
                   style: lightning
-                  text: install
+                  text: review duties
                   action: {cmd: slides.next-slide}
-      # 2 Simulation System Server Patch ==========================================
-      - !!inc/file ./episodes/episode3/yaml/_patch-server-selector.yaml
-      # 2 Animate System Server Patch ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 11, content: $patchBuild, events: [complete] }
-        duration: {kind: listen, event: layer.11.complete}
-      # 2 Animate System Server Patch ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 12, content: $patchLoop }
-          zoom: {scale: 1.6, x: 600, y: 630}
-        dialogue:
-          defaults:
-            next: audio
-          timeline:
-            - {action: a }
-            - {action: b }
-          actions:
-            a:
-              pos: [100,100]
-              text: "That looks awesome. Take it from me."
-              audio: Story_4_Ctanlee_17.m4a
-            b:
-              pos: [100,100]
-              text: "Duty Call!"
-              audio: Story_4_Ctanlee_18.m4a
-        duration: {kind: dialogue }
       # 2 Duties ==========================================
       -
-        movie:
-          layers:
-            - {depth: 12, content: clear }
-          zoom: {scale: 1 }
-        action: {cmd: ctanlee.gohome}
         ux:
           components:
             -
@@ -387,8 +402,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Changing Assets
-                body: "Think about all the changes we make to assets - we add and remove workstations and servers, deploy new version of software, install patches, and many other things. Every change has the potential to make our system less secure by inadvertently opening up a crack in our defenses. The robots know this, so CIP requires that we carefully evaluate and test each system change when adding assets, updating assets, and removing assets. <br/>Let's start with one of many attacks that are possible when adding or updating an asset."
+                body: Think about all the changes we make - we add and remove workstations and servers, deploy new versions of software, install patches, and many other things. Every change has the potential to open up a crack in our defenses, so <a data-label="cip">CIP</a> requires processes to add, update, and remove assets. <br/><br/>Let's start with one of many attacks that are possible when making changes.
                 btn:
                   style: lightning
                   text: run simulation
@@ -409,35 +425,36 @@ chapters:
             - {action: e }
             - {action: f }
             - {action: g }
+            - {action: h }
           actions:
             a:
               next: 7000
               pos: []
-              audio: Placeholder_Silence.m4a
             b:
               pos: [100,100]
               text: "Looks like Rod's workstation is old and causing problems. Lisa requested an upgrade."
-              audio: Story_4_Ctanlee_19.m4a
+              audio: Story_4_Ctanlee_19.mp3
             c:
-              next: 20000
+              next: 26000
               pos: []
-              audio: Placeholder_Silence.m4a
             d:
               pos: [100,100]
               text: "Wait a second! You're just going to plug that computer into the ESP network? It doesn't have ports disabled, anti-virus installed, and who knows what else that MimeBot installed on it. It's a security nightmare!"
-              audio: Story_4_Ctanlee_20.m4a
+              audio: Story_4_Ctanlee_20.mp3
             e:
-              next: 2000
+              next: 11500
               pos: []
-              audio: Placeholder_Silence.m4a
             f:
               pos: [100,100]
               text: "The computer just dialed out to the KettleHead. He's taking command of the computer."
-              audio: Story_4_Ctanlee_21.m4a
+              audio: Story_4_Ctanlee_21.mp3
             g:
+              next: 1500
+              pos: []
+            h:
               pos: [100,100]
               text: "We know how this will end. Simulator pause!"
-              audio: Story_4_Ctanlee_22.m4a
+              audio: Story_4_Ctanlee_22.mp3
         duration: {kind: ux }
       # 3 Dialogue More Problems ==========================================
       -
@@ -449,7 +466,7 @@ chapters:
               kind: dialogue
               config:
                 title: More Problems
-                body: "The problems don't end here. Keep your eye on that old workstation."
+                body: The problems don't end here. Keep your eye on that old workstation.
                 btn:
                   style: lightning
                   text: run simulation
@@ -470,16 +487,15 @@ chapters:
             a:
               next: 17500
               pos: []
-              audio: Placeholder_Silence.m4a
             b:
-              next: 5800
+              next: 6800
               pos: [100,100]
               text: "No problem. I'm sure Richard cleaned all that data off…"
-              audio: Story_4_Ctanlee_23.m4a
+              audio: Story_4_Ctanlee_23.mp3
             c:
               pos: [100,100]
               text: "Orrrrrr not. Simulator Pause!"
-              audio: Story_4_Ctanlee_24.m4a
+              audio: Story_4_Ctanlee_24.mp3
         duration: {kind: ux}
       # 3 Dialogue Baseline Configuration 1 ==========================================
       -
@@ -494,60 +510,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Adding Assets
-                body: "Let's talk about adding new assets like Rod's new workstation. All our defense-building work is worthless if someone connects an unsecured asset to our network. CIP has a process to mitigate this threat: <br/>1. Create Baseline Configuration - Document how the asset is setup. Things like the operating system, software installed, ports open, etc…"
-                btn:
-                  style: lightning
-                  text: continue
-                  action: {cmd: slides.next-slide}
-      # 3 Dialogue Baseline Configuration 2 ==========================================
-      -
-        title: Adding Assets
-        movie:
-          layers:
-            - {depth: 12, content: workstation_2.json }
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: Adding Assets
-                body: "Let's talk about adding new assets like Rod's new workstation. All our defense-building work is worthless if someone connects an unsecured asset to our network. CIP has a process to mitigate this threat: <br/>1. Create Baseline Configuration - Document how the asset is setup. Things like the operating system, software installed, ports open, etc… <br/>2. Vulnerability Assessment - Test if the asset is secure and that we've applied all CIP defenses like anti-virus, port defenses, etc…"
-                btn:
-                  style: lightning
-                  text: continue
-                  action: {cmd: slides.next-slide}
-      # 3 Dialogue Baseline Configuration 3 ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 12, content: workstation_3.json }
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: Adding Assets
-                body: "Let's talk about adding new assets like Rod's new workstation. All our defense-building work is worthless if someone connects an unsecured asset to our network. CIP has a process to mitigate this threat: <br/>1. Create Baseline Configuration - Document how the asset is setup. Things like the operating system, software installed, ports open, etc… <br/>2. Vulnerability Assessment - Test if the asset is secure and that we've applied all CIP defenses like anti-virus, port defenses, etc… <br/>3. Compliance Documentation - Add to the asset list; Get approvals from custodians to install."
-                btn:
-                  style: lightning
-                  text: continue
-                  action: {cmd: slides.next-slide}
-      # 3 Dialogue Baseline Configuration 4 ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 12, content: workstation_4.json }
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: Adding Assets
-                body: "Let's talk about adding new assets like Rod's new workstation. All our defense-building work is worthless if someone connects an unsecured asset to our network. CIP has a process to mitigate this threat: <br/>1. Create Baseline Configuration - Document how the asset is setup. Things like the operating system, software installed, ports open, etc… <br/>2. Vulnerability Assessment - Test if the asset is secure and that we've applied all CIP defenses like anti-virus, port defenses, etc… <br/>3. Compliance Documentation - Add to the asset list; Get approvals from custodians to install. <br/>4. Install - Install new asset and connect it to the ESP network."
+                body: Our defenses are weakened if someone connects an unsecured asset to our <a data-label="esp">ESP</a>, so <a data-label="cip">CIP<a/> requires a process before adding a new <a data-label="crca">CRCA</a>&#58; <ol type="1"><li>Baseline Configuration - Document the <a data-label="crca">CRCA</a> setup</li><li>Vulnerability Assessment - Test if the <a data-label="crca">CRCA</a> is secure and <a data-label="cip">CIP</a>-defenses installed</li><li>Compliance Documentation - Document approval to install</li><li>Install in Production - Install the <a data-label="crca">CRCA</a></li></ol>
                 btn:
                   style: lightning
                   text: continue
@@ -564,8 +529,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Updating Assets
-                body: "Rod may need a control system upgrade after his workstation is setup or perhaps patches need to be installed. We keep the system secure when updating an asset by getting approval for installation of the change and updating the baseline configuration within 30 days of installation. For large High Impact control centers, we also perform a vulnerability assessment before installing changes to assets."
+                body: Rod may need a control system upgrade after his workstation is setup or perhaps patches need to be installed. The process for updating existing <a data-label="crca">CRCAs</a> is similar to adding new ones. <ol type="1"><li>Install in Test System - Look for security issues with the change</li><li>Compliance Documentation - Document approval to install</li><li>Install in Production - Update the <a data-label="crca">CRCA</a></li><li>Baseline Configuration - Document changes to <a data-label="crca">CRCA</a> (within 30 days of install)</li></ol>
                 btn:
                   style: lightning
                   text: continue
@@ -582,8 +548,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Disposing Assets
-                body: "As you saw in the simulation, robots love dumpster diving and are proficient at extracting BCSI from assets to give them an edge in their attack planning. CIP requires we remove BCSI before a device is thrown away or repurposed. This isn't just deleting files - BCSI needs to be completely eradicated in permanent ways like erasing the data with a magnet or pulverizing/incinerating the equipment. <br/>Adding, updating, and disposing assets is done by technical Defenders, but it's helpful for everyone to see the process so you understand why it's important to request changes to your systems through the proper channel to ensure security is always maintained."
+                body: Robots love dumpster diving and are proficient at extracting information from assets to give them an edge in their attack planning, so we must remove <a data-label="bcsi">BCSI</a> from a device before it is thrown away or repurposed. This isn't just deleting files - it's permanent eradication like erasing the data with a magnet or pulverizing/incinerating the equipment. <br/><br/>Sounds like fun, doesn't it?
                 btn:
                   style: lightning
                   text: continue
@@ -618,7 +585,7 @@ chapters:
               kind: dialogue
               config:
                 title: Calling a Mulligan
-                body: "Let's redo this simulation with the new change management tools and processes we put in place."
+                body: Let's thwart those robots.
                 btn:
                   style: lightning
                   text: run simulation
@@ -640,49 +607,55 @@ chapters:
             - {action: f }
             - {action: g }
             - {action: h }
+            - {action: i }
+            - {action: j }
           actions:
             a:
-              next: 2700
+              next: 6000
               pos: []
-              audio: Placeholder_Silence.m4a
             b:
-              next: 5500
-              pos: [570,600]
+              emo: left
+              pos: [600,600]
               text: "Richard set up the workstation and documented the configuration."
-              audio: Story_4_Ctanlee_28.m4a
+              audio: Story_4_Ctanlee_28.mp3
             c:
-              next: 8500
+              next: 1000
+              pos: [600,600]
+            d:
+              emo: left
               pos: [625,650]
               text: "Now he's running the vulnerability assessment and fixing all the issues."
-              audio: Story_4_Ctanlee_29.m4a
-            d:
-              next: 4500
-              pos: [150,450]
-              text: "Brad updates documentation."
-              audio: Story_4_Ctanlee_30.m4a
+              audio: Story_4_Ctanlee_29.mp3
             e:
-              next: 5500
-              pos: [500,400]
-              text: "And Rod's supervisor, Lisa, approves the change. We're safe to install."
-              audio: Story_4_Ctanlee_31.m4a
+              next: 5000
+              pos: [625,650]
             f:
+              emo: left
+              pos: [150,500]
+              text: "Brad updates documentation."
+              audio: Story_4_Ctanlee_30.mp3
+            g:
+              emo: left
+              pos: [470,460]
+              text: "And Rod's supervisor, Lisa, approves the change. We're safe to install."
+              audio: Story_4_Ctanlee_31.mp3
+            h:
               next: 9000
               pos: [700,100]
               text: "You fought well, bot. But we fought so much better. Now let's handle that disposal better."
-              audio: Story_4_Ctanlee_32.m4a
-            g:
+              audio: Story_4_Ctanlee_32.mp3
+            i:
               next: 11000
               pos: []
-              audio: Placeholder_Silence.m4a
-            h:
+            j:
               next: 3500
               pos: [100,400]
               text: "Robot! - NO BCSI For You!"
-              audio: Story_4_Ctanlee_33.m4a
+              audio: Story_4_Ctanlee_33.mp3
         duration: {kind: ux }
       # 3 Dialogue Duties review ==========================================
       -
-        title: You Did It!
+        title: Bravo Cadet!
         movie:
           layers:
             - {depth: 12, content: clear }
@@ -692,8 +665,8 @@ chapters:
             -
               kind: dialogue
               config:
-                title: You Did It!
-                body: "Our assets are protected with port security, software defenses, and good change control processes. After you review your duties and complete testing. we'll learn how your Defenders get access to facilities and assets so they can get their jobs done."
+                title: Bravo Cadet!
+                body: Our assets are protected from unauthorized connections, have software defenses installed, and the team has good change control processes. After you review your duties and complete testing, we'll learn how your Defenders get access to facilities and assets so they can get their jobs done.
                 btn:
                   style: lightning
                   text: review duties

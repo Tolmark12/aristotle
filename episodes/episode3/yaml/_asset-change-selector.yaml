@@ -8,15 +8,15 @@ dialogue:
     a:
       emo: happy
       text: "Doooouuuubbblllee Deuce!"
-      audio: Story_4_Ctanlee_25.m4a
+      audio: Story_4_Ctanlee_25.mp3
     b:
       emo: happy
       text: "Great Scott!"
-      audio: Story_4_Ctanlee_26.m4a
+      audio: Story_4_Ctanlee_26.mp3
     c:
       emo: surprize
       text: "Jules Verne would be proud."
-      audio: Story_4_Ctanlee_27.m4a
+      audio: Story_4_Ctanlee_27.mp3
 ux:
   components:
     -
@@ -25,8 +25,9 @@ ux:
         click:
           - {cmd: slides.next-slide}
         intro:
+        hasLabels: true
         title: Choose Your Asset Change Tools
-        subTitle: "Richard and team need some tools to help them manage change to assets. Let's give them tools and processes to help with adding and updating assets and an asset disposal tool to eradicate BCSI. The vendor allows three options for the asset disposal component:"
+        subTitle: Adding, updating, and disposing assets is usually done by technical Defenders, but it's helpful for all Defenders to see the process so you understand why we don't make changes or remove assets outside the process. <br/><br/>Let's equip Richard and team to manage changes to our <a data-label="crca">CRCAs</a>. We'll install&#58; 1.) Tools and a process to add and update assets 2.) One of three asset disposal device to eradicate <a data-label="bcsi">BCSI</a>. Choose wisely&#58;
         submitBtn: {txt: Install, icon: action-btn-fist}
         items:
           -

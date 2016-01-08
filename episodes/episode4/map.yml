@@ -27,12 +27,12 @@ chapters:
           layers:
             - {depth: 0, content: ~1/c1-sky.svg, jumpToEnd: true, cache: true }
             - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
-            - {depth: 2, content: ~1/c1-background-buildin.json, jumpToEnd: true, cache: true }
+            - {depth: 2, content: ~1/c1_background_buildin.json, jumpToEnd: true, cache: true }
             - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true }
             - {depth: 4, content: $facilityLoop, loop: true }
             - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true }
             - {depth: 6, content: ~1/interior_loop.json, loop: true }
-            - {depth: 7, content: $pacsBuild, loop: true }
+            - {depth: 7, content: $pacsBuild, jumpToEnd: true, cache: true }
             - {depth: 8, content: $eacmsBuild, jumpToEnd: true, cache: true }
             - {depth: 9, content: $portBuild, jumpToEnd: true, cache: true }
             - {depth: 10, content: $assetBuild, jumpToEnd: true, cache: true }
@@ -55,7 +55,7 @@ chapters:
               kind: dialogue
               config:
                 title: Perimeter and Asset Access
-                body: "Our defenses are up! Now we need to make sure only authorized Defenders have access. There are three types of access. <br/>Physical Access the ability to open the door and enter the PSP. <br/>Electronic Access to logon to workstations, servers, and other assets. <br/>Information Access to file shares, filing cabinets, and other BCSI locations.  <br/>The robots obviously want any and all of the above, so let's see what happens when access isn't controlled."
+                body: Our defenses are up! Now we need to ensure only authorized <a data-label="defender">Defenders</a> have the access they need&#58; <ul><li><a data-label="physical_access" class="new">Physical Access</a> to open the door and enter the <a data-label="psp">PSP</a>.</li><li><a data-label="electronic_access" class="new">Electronic Access<a/> to logon to workstations, servers, and other <a data-label="crca">CRCAs</a>.</li><li><a data-label="information_access" class="new">Information Access</a> to file shares, filing cabinets, and other <a data-label="bcsi">BCSI</a> locations.</li></ul>The robots obviously want any access they can get, so let's see what can happen.
                 btn:
                   style: lightning
                   text: run simulation
@@ -81,45 +81,40 @@ chapters:
             - {action: j }
           actions:
             a:
-              next: 15500
+              next: 5000
               pos: []
-              audio: ~1/Silence_1_sec.m4a
             b:
               pos: [100,100]
               text: "Rod just won the lottery! We need a new operator."
-              audio: Story_5_Ctanlee_1.m4a
+              audio: Story_5_Ctanlee_1.mp3
             c:
-              next: 1000
+              next: 3000
               pos: []
-              audio: ~1/Silence_1_sec.m4a
             d:
               pos: [100,100]
               text: "And Jerry in HR can help us hire a successor."
-              audio: Story_5_Ctanlee_2.m4a
+              audio: Story_5_Ctanlee_2.mp3
             e:
-              next: 5500
+              next: 10500
               pos: []
-              audio: ~1/Silence_1_sec.m4a
             f:
               pos: [100,100]
               text: "What's up with your thumb?"
-              audio: Story_5_Ctanlee_3.m4a
+              audio: Story_5_Ctanlee_3.mp3
             g:
               next: 8800
               pos: []
-              audio: ~1/Silence_1_sec.m4a
             h:
               pos: [100,100]
               text: "You're a robo-sympathizer. You shouldn't have been approved for access to that facility!"
-              audio: Story_5_Ctanlee_4.m4a
+              audio: Story_5_Ctanlee_4.mp3
             i:
               next: 2000
               pos: []
-              audio: ~1/Silence_1_sec.m4a
             j:
               pos: [100,100]
               text: "Simulator pause!"
-              audio: Story_5_Ctanlee_5.m4a
+              audio: ~3/Story_4_Ctanlee_3.mp3
         duration: {kind: ux }
       # 1 Dialogue Removing Access ==========================================
       -
@@ -134,7 +129,7 @@ chapters:
               kind: dialogue
               config:
                 title: Removing Access
-                body: "Our defenders have two problems in the simulation. First, after Rod quit his job, they never removed his Physical Access (door system account) and Electronic Access (workstation account), so he can still enter the facility and access the control system. Second, they granted Physical Access to a malicious agent of the robots. Overall, a rotten day for the people of Earth. <br/>Let's start with access removal - once someone leaves a job that requires access, CIP requires that we disable Physical Access and Electronic Access within 24 hours. This effectively cuts the person off from our facilities and assets, and also removes their Information Access to BCSI. Once this is done, user accounts must be completely removed and shared passwords they know changed within 30 days."
+                body: Our <a data-label="defender">Defenders</a> never removed Rod's door system and workstation accounts after he quit his job, so he still has Physical and Electronic Access. Once a <a data-label="defender">Defender</a> leaves their job, we must disable Physical Access and Electronic Access within 24 hours. This effectively cuts the person off from our facilities and CRCAs. Any user accounts must be completely removed and shared passwords they know changed within 30 days.
                 btn:
                   style: lightning
                   text: continue
@@ -149,7 +144,7 @@ chapters:
               kind: dialogue
               config:
                 title: Granting Access
-                body: "The CIP Standards also require that we thoroughly evaluate employees, vendors and contractors before we give them Physical Access or Electronic Access to our assets. CIP requires a process that evaluates the person, trains them, and documents what access they are approved to be granted. The process has these steps: <br/>1. Personnel Risk Assessment - Check the person's background for risks and criminal activity <br/>2. Cyber-Security Training - Teach the person about cyber threats and their duties as Defenders. <br/>3. Compliance Documentation - Document access levels and management approvals.  <br/>4. Configure Access - Give the user access to facilities, assets, and information"
+                body: In the simulation, we granted <a data-label="physical_access">Physical Access</a> to a malicious agent of the robots. To avoid this, we must carefully evaluate employees, vendors and contractors before we give them <a data-label="physical_access">Physical Access</a> or <a data-label="electronic_access">Electronic Access</a> to our assets. This is the required process&#58; <ol><li>Personnel Risk Assessment - Check the person's background for risks and criminal activity</li><li>Cyber-Security Training - Teach the person about cyber threats and their duties as a <a data-label="defender">Defender</a></li><li>Compliance Documentation - Document access needed and management approval</li><li>Configure Access - Grant the person access to facilities, assets, and information</li></ol>
                 btn:
                   style: lightning
                   text: continue
@@ -160,15 +155,8 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: $accessBuild, events: [complete] }
-        duration: {kind: listen, event: layer.12.complete}
-      # 1 Clear Asset Perimeter ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 11, content: clear }
-            - {depth: 10, content: clear }
-        duration: {kind: time, seconds: 1 }
+            - {depth: 12, content: $accessBuild }
+        duration: {kind: time, seconds: 5}
       # 1 Dialogue Removing Access ==========================================
       -
         title: Once More Unto the Breach
@@ -179,7 +167,7 @@ chapters:
               kind: dialogue
               config:
                 title: Once More Unto the Breach
-                body: "Let's run through the simulator again with our new system and see how everyone works together to ensure only those on the side of humanity gain access."
+                body: Let's see how everyone works together to ensure only those on the side of humanity gain access.
                 btn:
                   style: lightning
                   text: run simulation
@@ -196,19 +184,25 @@ chapters:
             - {action: a }
             - {action: b }
             - {action: c }
+            - {action: d }
           actions:
             a:
-              pos: [300,100]
-              text: "Lisa started the access removal process for Rod."
-              audio: Story_5_Ctanlee_9.m4a
+              pos: []
+              next: 3000
             b:
-              pos: [200,200]
-              text: "Brad will update documentation and Richard will disable Rod's accounts."
-              audio: Story_5_Ctanlee_10.m4a
+              emo: left
+              pos: [600,400]
+              text: "Lisa started the access removal process for Rod."
+              audio: Story_5_Ctanlee_9.mp3
             c:
+              emo: left
+              pos: [250,400]
+              text: "Brad will update documentation and Richard will disable Rod's accounts."
+              audio: Story_5_Ctanlee_10.mp3
+            d:
               pos: [400,200]
               text: "Compliance fist bumps all-around. Rod's access was removed in under 24 hours. Now let's deal with that unsavory human."
-              audio: Story_5_Ctanlee_11.m4a
+              audio: Story_5_Ctanlee_11.mp3
         duration: {kind: ux}
       # 1 Simulation Retry Unsavory Fail ==========================================
       -
@@ -221,15 +215,20 @@ chapters:
           timeline:
             - {action: a }
             - {action: b }
+            - {action: c }
           actions:
             a:
-              pos: [300,100]
+              emo: down
+              pos: [150,500]
               text: "The Personnel Risk Assessment. We've got you now."
-              audio: Story_5_Ctanlee_12.m4a
+              audio: Story_5_Ctanlee_12.mp3
             b:
               pos: [150,500]
+              next: 2500
+            c:
+              pos: [150,500]
               text: "I relish your demise, unworthy opponent. Let's hire a worthy successor for Rod."
-              audio: Story_5_Ctanlee_13.m4a
+              audio: Story_5_Ctanlee_13.mp3
         duration: {kind: ux }
       # 1 Simulation Retry Cindy Pass ==========================================
       -
@@ -248,39 +247,45 @@ chapters:
             - {action: f }
             - {action: g }
             - {action: h }
+            - {action: i }
           actions:
             a:
-              pos: [400,100]
-              text: "Here's another candidate."
-              audio: Story_5_Ctanlee_14.m4a
+              next: 2500
+              pos: []
             b:
-              next: 14000
-              pos: []
-              audio: ~1/Silence_1_sec.m4a
+              emo: left
+              pos: [380,570]
+              text: "Here's another candidate."
+              audio: Story_5_Ctanlee_14.mp3
             c:
-              pos: [100,400]
-              text: "That's some top quality training."
-              audio: Story_5_Ctanlee_15.m4a
+              next: 12500
+              pos: [380,570]
             d:
-              next: 1000
-              pos: []
-              audio: ~1/Silence_1_sec.m4a
+              emo: left
+              pos: [350,400]
+              text: "That's some top quality training."
+              audio: Story_5_Ctanlee_15.mp3
             e:
-              pos: [100,200]
-              text: "Supervisor Lisa approves the access and Brad updates documentation."
-              audio: Story_5_Ctanlee_16.m4a
+              next: 1000
+              pos: [350,400]
             f:
-              pos: [100,300]
-              text: "We're safe to give Cindy the physical and electronic access she needs. Richard will configure this."
-              audio: Story_5_Ctanlee_17.m4a
+              emo: right
+              pos: [350,400]
+              text: "Supervisor Lisa approves the access and Brad updates documentation."
+              audio: Story_5_Ctanlee_16.mp3
             g:
-              next: 5000
-              pos: []
-              audio: ~1/Silence_1_sec.m4a
+              emo: down
+              pos: [550,450]
+              text: "We're safe to give Cindy the physical and electronic access she needs. Richard will configure this."
+              audio: Story_5_Ctanlee_17.mp3
             h:
-              pos: [400,100]
+              next: 12000
+              pos: []
+            i:
+              emo: down
+              pos: [580,220]
               text: "Simulator Pause!"
-              audio: Story_5_Ctanlee_18.m4a
+              audio: Story_5_Ctanlee_18.mp3
         duration: {kind: ux }
       # 1 Dialogue Information Access ==========================================
       -
@@ -292,7 +297,7 @@ chapters:
               kind: dialogue
               config:
                 title: Information Access
-                body: "For most employees, Information Access to BCSI in filing cabinets, file shares, and on the assets they use is approved and granted along with their Physical Access and Electronic Access. <br/>CIP also allows organization some flexibility to define how they share BCSI with vendors and consultants who may need access to BCSI to perform their work. Some organizations require vendors to sign an NDA before receiving BCSI or confirm in writing they have destroyed BCSI at the conclusion of a project. You can learn your organization's procedures for BCSI during the duty review."
+                body: For <a data-label="defender">Defenders</a>, access to <a data-label="bcsi">BCSI</a> is typically granted along with their <a data-label="physical_access">Physical Access</a> and <a data-label="electronic_access">Electronic Access</a>. Vendors, consultants, and other employees without this level of access often need to see <a data-label="bcsi">BCSI</a>, so <a data-label="cip">CIP</a> allows organizations flexibility to define how they share this information. For example, some organizations require vendors to sign an NDA before receiving <a data-label="bcsi">BCSI</a> and confirm in writing they have destroyed <a data-label="bcsi">BCSI</a> at the conclusion of a project.
                 btn:
                   style: lightning
                   text: continue
@@ -307,7 +312,7 @@ chapters:
               kind: dialogue
               config:
                 title: Access Audits
-                body: "Any complex process like access management requires oversight, so CIP requires that we annually review our documented asset permissions to ensure we provide the fewest permissions needed for our Defenders to perform their jobs effectively. We also do a quarterly check of actual permissions in the systems against the documented records maintained by the Compliance Team. The goal is to discover any mismatches and correct them. <br/>CIP has given our Defenders processes to securely remove access, grant access, and audit our work. Let's learn your duties."
+                body: Any complex process requires oversight, so we annually review our documented access permissions to ensure we provide the fewest permissions needed for our <a data-label="defender">Defenders</a> to perform their jobs. We also do a quarterly check of actual permissions in the systems against the documented permissions to discover any mismatches and correct them. <br/><br/><a data-label="cip">CIP</a> has given our <a data-label="defender">Defenders</a> processes to securely remove access, grant access, and audit our work. Let's learn your duties.
                 btn:
                   style: lightning
                   text: review duties
@@ -346,7 +351,7 @@ chapters:
               kind: dialogue
               config:
                 title: User Accounts
-                body: "After Cindy was approved for access in the simulator, Richard configured the door control system to grant Cindy Physical Access to the PSP and he also created a User Account to grant Cindy Electronic Access to use the control system software on her workstation. When Cindy logs in each morning, she enters the username and password for her user account to validate her identity and access the system. <br/>The robots would love to learn the usernames and passwords for any and all accounts on our assets, so we must protect them. This chapter teaches the defenses that CIP provides to keep our accounts from falling into the metallic hands of the robots."
+                body: After our new operator was approved for access, Richard created a <a data-label="user_account" class="new">User Account</a> for Cindy that gave her <a data-label="electronic_access">Electronic Access</a> to use the control system software on her workstation. When Cindy logs in each morning, she enters a username and password for this user account to validate her identity and access the system. <br/><br/>The robots would love to learn Cindy's username and password, so we must protect her <a data-label="user_account">User Account</a>. This chapter teaches the defenses that keep these accounts from falling into the metallic hands of the robots.
                 btn:
                   style: lightning
                   text: continue
@@ -364,7 +369,7 @@ chapters:
               kind: dialogue
               config:
                 title: Account Attacks
-                body: "To make Cindy's password hard for the bots to guess, CIP requires that passwords follow rules on length and complexity to ensure they are difficult to guess. However, even with a complex password, robots can use special tools to perform a Brute-Force Attack where they rapidly try many millions of usernames and passwords until they find a match. Let's see a brute-force attack in action against Cindy's account."
+                body: To make Cindy's password hard for the bots to guess, our passwords must have a minimum length and complexity to ensure they are difficult to guess. However, even with a complex password, robots can use special tools to perform a <a data-label="brute" class="new">Brute-Force Attack</a> where they rapidly try many millions of usernames and passwords until they find a match. Let's see a <a data-label="brute">Brute-Force Attack</a> in action against Cindy's account.
                 btn:
                   style: lightning
                   text: simulate
@@ -386,19 +391,17 @@ chapters:
             a:
               next: 1500
               pos: []
-              audio: ~1/Silence_1_sec.m4a
             b:
               pos: [150,350]
               text: "This robot found a way through our firewalls and is attempting to log into the control system."
-              audio: Story_5_Ctanlee_19.m4a
+              audio: Story_5_Ctanlee_19.mp3
             c:
               next: 21000
               pos: []
-              audio: ~1/Silence_1_sec.m4a
             d:
               pos: [780,350]
               text: "He has access. Simulator pause."
-              audio: Story_5_Ctanlee_20.m4a
+              audio: Story_5_Ctanlee_20.mp3
         duration: {kind: ux }
       # 2 Simulation Brute Force Fail Clear ==========================================
       -
@@ -416,7 +419,7 @@ chapters:
               kind: dialogue
               config:
                 title: Brute-Force Defenses
-                body: "The Standards require us to protect against these attacks with regular password changes and account locking/alerting. First, we must change our passwords at least once a year. In addition, we also Lock Accounts after several failed logins or implement Alerting so a technical Defender is notified when multiple login failures are detected so they can investigate if an attack is occurring. <br/>Richard enabled Locking and Alerting on all user accounts, so let's see what happens."
+                body: We protect against <a data-label="brute">Brute-Force</a> and other <a data-label="user_account">User Account</a> attacks with regular password changes and account locking/alerting. We must change our passwords at least once a year. We also lock accounts after several failed logins and/or implement alerts so a technical <a data-label="defender">Defender</a> can investigate if an attack is underway. <br/><br/>Richard just enabled locking and alerting on all user accounts, so let's see if the Kettlehead's <a data-label="brute">Brute-Force Attack</a> is still effective.
                 btn:
                   style: lightning
                   text: run simulation
@@ -439,23 +442,21 @@ chapters:
             a:
               next: 1500
               pos: []
-              audio: ~1/Silence_1_sec.m4a
             b:
               pos: [250,400]
               text: "You won't get far this time."
-              audio: Story_5_Ctanlee_21.m4a
+              audio: Story_5_Ctanlee_21.mp3
             c:
               next: 10500
               pos: []
-              audio: ~1/Silence_1_sec.m4a
             d:
               pos: [100,100]
               text: "Busted! Richard was notified of your login attempts and discovered the firewall issue that let you in. He fixing it now."
-              audio: Story_5_Ctanlee_22.m4a
+              audio: Story_5_Ctanlee_22.mp3
             e:
               pos: [100,100]
               text: "The metal is willing, but the spirit is weak."
-              audio: Story_5_Ctanlee_23.m4a
+              audio: Story_5_Ctanlee_23.mp3
         duration: {kind: ux }
       # 2 Simulation Brute Force Pass Clear ==========================================
       -
@@ -473,7 +474,7 @@ chapters:
               kind: dialogue
               config:
                 title: Shared and Default Accounts
-                body: "Many older devices don't allow individual user accounts and sometimes only have a single administrator login account. If we need to give multiple Defenders access to these devices, those Defenders will share the same account to login. If you are a Defender who uses ones of these Shared Accounts, act as if it's your personal account and never share the password with anyone else. <br/>Some devices come pre-configured with user accounts, so CIP requires we disable or rename these accounts and change their passwords before putting them in service. We must document any devices that don't allow these changes. <br/>We've covered protecting user accounts, shared accounts, and default accounts. Time to review our duties."
+                body: Some older <a data-label="crca">CRCAs</a> don't allow us to create accounts for each user. If multiple <a data-label="defender">Defenders</a> need access to these devices, they must share the same username and password to login. If you use one of these <a data-label="shared" class="new">Shared Account</a>, act as if it's your personal account and don't share the login information with others. <br/><br/>Some <a data-label="crca">CRCAs</a> come pre-configured with accounts, so we disable or rename these <a data-label="default" class="new">Default Account</a> and change their passwords before putting the <a data-label="crca">CRCA</a> into in service. <br/><br/>We've covered protecting user accounts, shared accounts, and default accounts. Time to review our duties.
                 btn:
                   style: lightning
                   text: review duties
@@ -497,36 +498,36 @@ chapters:
           actions:
             a:
               pos: []
-              audio: Story_5_Warcore_1.m4a
+              audio: Story_5_Warcore_1.mp3
               actor: warcore
               text: Sektimus transmission incoming.
             b:
               pos: []
-              audio: Story_5_Sektimus_1.m4a
+              audio: Story_5_Sektimus_1.mp3
               actor: sektimus
               text: Hello opponents. Perhaps I was too hasty in my last communication. I've been thinking…
             c:
               pos: [270,300]
               text: Sektimus, enough of your games. This Cadet will not be swayed by anything you have to say.
-              audio: Story_5_Ctanlee_24.m4a
+              audio: Story_5_Ctanlee_24.mp3
             d:
               pos: []
-              audio: Story_5_Sektimus_2.m4a
+              audio: Story_5_Sektimus_2.mp3
               actor: sektimus
               text: Ah, CTANLEE. Always trying to sound bigger than you are. I just want to make sure this Defender is fully informed - you surely wouldn't object to that. After all, the human here may not know that CIP really doesn't cover every security attack and has many flaws. They shouldn't be wasting their time with it.
             e:
               pos: [270,300]
               text: Sektimus, you waste your time trying to sway my Cadet. In fact, I think you're spending so much time here because you're afraid of this Cadet becoming a full Defender.
-              audio: Story_5_Ctanlee_25.m4a
+              audio: Story_5_Ctanlee_25.mp3
             f:
               pos: []
-              audio: Story_5_Sektimus_1.m4a
+              audio: Story_5_Sektimus_1.mp3
               actor: sektimus
               text: Afraid? Fear is not in my circuitry.
             g:
               pos: [270,300]
               text: Then prove it. This Cadet has a facility that has defeated every attack your robots are programmed with. If you can give me an attack that our CIP defenses can't handle then we'll concede the Blankity-blank. Cadet, do you accept this challenge with me?
-              audio: Story_5_Ctanlee_26.m4a
+              audio: Story_5_Ctanlee_26.mp3
         duration: {kind: ux }
       # 2 Sektimus Do you Accept? ==========================================
       - !!inc/file ./episodes/episode4/yaml/_simple-sektimus-e5.yaml
@@ -543,7 +544,7 @@ chapters:
           actions:
             a:
               pos: []
-              audio: Story_5_Sektimus_3.m4a
+              audio: Story_5_Sektimus_3.mp3
               actor: sektimus
               text: I accept the challenge as well. I have work to do.
         duration: {kind: dialogue }
@@ -561,7 +562,7 @@ chapters:
             a:
               pos: [270,300]
               text: Let's continue training while Sektimus prepares his attack.
-              audio: Story_5_Ctanlee_27.m4a
+              audio: Story_5_Ctanlee_27.mp3
         duration: {kind: dialogue }
       # 2 Duties ==========================================
       -
@@ -594,7 +595,7 @@ chapters:
               kind: dialogue
               config:
                 title: Visitor Access
-                body: "Our two chapters in this episode deal with granting Physical, Electronic, and Information Access to employees, vendors, and consultants. Sometimes we want to bring a Visitor into a Physical Security Perimeter on a temporary basis. Giving visitors access inside our facility carries a host of risks. Let's see why."
+                body: We learned how access is managed for employees, vendors, and consultants, but sometimes we want to bring a <a data-label="visitor" class="new">Visitor</a> inside a <a data-label="psp">PSP</a> on a temporary basis. Visitors carry a host of risks. Let's see why.
                 btn:
                   style: lightning
                   text: run simulation
@@ -616,21 +617,20 @@ chapters:
             a:
               next: 1500
               pos: []
-              audio: ~1/Silence_1_sec.m4a
             b:
               next: 7500
               pos: [100,100]
               text: "Who is this? This isn't time for a scheduled audit."
-              audio: Story_5_Ctanlee_28.m4a
+              audio: Story_5_Ctanlee_28.mp3
             c:
               next: 8500
               pos: [100,100]
               text: "Wait. Aren't you going to follow him around?"
-              audio: Story_5_Ctanlee_29.m4a
+              audio: Story_5_Ctanlee_29.mp3
             d:
               pos: [100,100]
               text: "He's blacked out part of the Grid. Simulator Pause!"
-              audio: Story_5_Ctanlee_30.m4a
+              audio: Story_5_Ctanlee_30.mp3
         duration: {kind: ux }
       # 3 Dialogue Visitor Escort Procedure ==========================================
       -
@@ -642,7 +642,7 @@ chapters:
               kind: dialogue
               config:
                 title: The Visitor Escort Procedure
-                body: "Wow, that visitor caused a lot of damage. To secure our facilities for tours, gauge-readings, system checkups by vendors, visits by auditors, and other short-term Physical Access needs, CIP requires we follow a Visitor Escort Procedure. This procedure is simple in concept: Defenders with Physical Access can take a visitor into a PSP if they log the visitor's name, entry and exit time, and remain with the visitor for the duration of the visit. <br/>Pay close attention to your visitors. If they ask to take a squeak, instead of a leak, report the colloquially-impaired robot immediately."
+                body: Wow, that <a data-label="visitor">Visitor</a> caused a lot of damage. To secure our facilities for tours, visits by auditors, and other short-term needs, we follow a <a data-label="visitor_escort" class="new">Visitor Escort Procedure</a>: Defenders with <a data-label="physical_access">Physical Access</a> to a <a data-label="psp">PSP</a> can take a visitor inside if they log the <a data-label="visitor">Visitor's</a> name, entry and exit time, and remain with the Visitor for the duration of the visit. 
                 btn:
                   style: lightning
                   text: continue
@@ -675,16 +675,15 @@ chapters:
             a:
               next: 28000
               pos: []
-              audio: ~1/Silence_1_sec.m4a
             b:
               next: 2000
               pos: [100,100]
               text: "Nice job Arnold!"
-              audio: Story_5_Ctanlee_34.m4a
+              audio: Story_5_Ctanlee_34.mp3
             c:
               pos: [100,100]
               text: "Parting is such sweet sorrow, AuditBot."
-              audio: Story_5_Ctanlee_35.m4a
+              audio: Story_5_Ctanlee_35.mp3
         duration: {kind: ux }
       # 3 Dialogue Home Stretch ==========================================
       -

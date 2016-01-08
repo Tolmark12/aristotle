@@ -8,15 +8,15 @@ dialogue:
     a:
       emo: happy
       text: "That looks … painful."
-      audio: Story_5_Ctanlee_6.m4a
+      audio: Story_5_Ctanlee_6.mp3
     b:
       emo: happy
       text: "You have nothing to hide, right?"
-      audio: Story_5_Ctanlee_7.m4a
+      audio: Story_5_Ctanlee_7.mp3
     c:
       emo: surprize
       text: "You'll feel a slight puff of air."
-      audio: Story_5_Ctanlee_8.m4a
+      audio: Story_5_Ctanlee_8.mp3
 ux:
   components:
     -
@@ -26,7 +26,7 @@ ux:
           - {cmd: slides.next-slide}
         intro:
         title: Removing Access
-        subTitle: "Let's setup processes and tools to control the removal and granting of access. You have a few options for the Personnel Risk Assessment component that Jerry in HR will use. <br/>Richard and team need some tools to help them manage change to assets. Let's give them tools and processes to help with adding and updating assets and an asset disposal tool to eradicate BCSI. The vendor allows three options for the asset disposal component:"
+        subTitle: Let's setup processes and tools to control removing and granting access. Jerry from HR needs help selecting the Personnel Risk Assessment tool he'll be using&#58;
         submitBtn: {txt: Install, icon: action-btn-fist}
         items:
           -
@@ -58,7 +58,7 @@ ux:
             btnTxt: The Risk Detector
             icon: mini-risk-detector
             blurb: "Pros: TSA Approved <br/>Cons: False Positives from Pace Makers, Artificial Joints, Belt Buckles"
-            details: "Nothing says \"this facility is safe\" like the Risk Detector, detecting risk threats from robots, malicious humans, and criminals all trying to gain access to your facility. <br/>\"The same beloved airport gate check experience - now at your office!\""
+            details: "Nothing says &#34;this facility is safe&#34; like the Risk Detector, detecting risk threats from robots, malicious humans, and criminals all trying to gain access to your facility. <br/>&#34;The same beloved airport gate check experience - now at your office!&#34;"
           -
             click:
               - {cmd: ctanlee.activate, data: c}
@@ -73,4 +73,4 @@ ux:
             btnTxt: Voight-Kampff Assessor
             icon: mini-voight-kampff
             blurb: "Manufacturer: Tyrell Corporation <br/>When Powered Off: Dreams of Electric Sheep"
-            details: "Formerly used to detect replicants, the Voight-Kampff Assessor has been re-engineered to determine with 99.987% accuracy any criminal or robotic intentions of the employee. <br/>\"Describe in single words, only the good things that come into your mind about your mother.\""
+            details: "Formerly used to detect replicants, the Voight-Kampff Assessor has been re-engineered to determine with 99.987% accuracy any criminal or robotic intentions of the employee. <br/>&#34;Describe in single words, only the good things that come into your mind about your mother.&#34;"
