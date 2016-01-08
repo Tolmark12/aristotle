@@ -20,5 +20,6 @@ module.exports = class CallSignSelect extends Component
     callSign = @$txt.val()
     if callSign?.length > 1
       aristotle.globals.set 'callSign',   callSign
+      PubSub.publish 'state.save'
       PubSub.publish 'callsign.selected', callSign
       PubSub.publish 'slides.next'

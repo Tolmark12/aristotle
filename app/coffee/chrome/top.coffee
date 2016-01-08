@@ -1,7 +1,7 @@
 module.exports = class Top
 
   constructor: (@$el) ->
-    token2  = PubSub.subscribe "callsign.selected",   (m, data)=> @updateCallsign()
+    token2  = PubSub.subscribe "callsign.selected",   (m, data)=> @updateCallsign data
     token3  = PubSub.subscribe "chrome.showname",     (m, data)=> @showName()
     token4  = PubSub.subscribe "chrome.showepisodes", (m, data)=> @showIcons()
     token5  = PubSub.subscribe "chrome.hidename",     (m, data)=> @hideName()
@@ -21,15 +21,12 @@ module.exports = class Top
     @$mode  = $ ".learn-mode", @$top
     @hideMode()
 
-    $(".badge", @$top).on "mouseover", (e)=>
-      @badgeMouseover e
+    $(".badge", @$top).on "mouseover", (e)=> @badgeMouseover e
+    $(".badge", @$top).on "mouseout",  (e)=> @badgeMouseout e
 
-    $(".badge", @$top).on "mouseout", (e)=>
-      @badgeMouseout e
-
-  updateCallsign : () ->
+  updateCallsign : (callSign) ->
     name = aristotle.lmsProxy.user.split ","
-    $(".name", @$top).html "#{name[1]} \"#{aristotle.globals.get('callsign')}\" #{name[0]}"
+    $(".name", @$top).html "#{name[1]} \"#{callSign}\" #{name[0]}"
 
   showName  : () -> @$name.css( {display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}
   hideName  : () -> @$name.css  {display:"none"}
@@ -92,7 +89,7 @@ module.exports = class Top
 
   getVars : () ->
     try
-      callsign = aristotle.globals.get 'callsign', false
+      callsign = aristotle.globals.get 'callSign', false
     catch error
       callsign = "Deadeye"
 
