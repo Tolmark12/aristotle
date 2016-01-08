@@ -440,21 +440,14 @@ chapters:
         duration: {kind: time, seconds: 1.5 }
       # 2 Electronic Defense Selector ==========================================
       - !!inc/file ./episodes/episode2/yaml/_eacms-selector.yaml
-      # 2 EACMS Build In ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 8, content: $eacmsBuild, cache: true }
-        duration: {kind: time, seconds: 5 }
       # 2 Dialogue - Run Simulator ==========================================
       -
         title: Toasty
         movie:
           layers:
-          zoom: {scale: 1}
-          layers:
-            - {depth: 10, content: clear }
+            - {depth: 8, content: $eacmsBuild, cache: true }
             - {depth: 10, content: perimeter_electronic.json }
+          zoom: {scale: 1 }
         duration: {kind: ux}
         dialogue:
           timeline:
@@ -497,40 +490,50 @@ chapters:
             - {action: f }
             - {action: g }
             - {action: h }
+            - {action: i }
+            - {action: j }
           actions:
             a:
+              pos: []
+              next: 2400
+            b:
               pos: [170,400]
               text: When computers communicate with each other, they send messages in small packets called … umm … packets. Right. Oh, here's a packet now.
               audio: Story_3_Ctanlee_31.mp3
-            b:
+            c:
               pos: [570,250]
               text: Before, this packet would have gone straight through to our servers. Let's see what the firewall does.
               audio: Story_3_Ctanlee_32.mp3
-            c:
+            d:
               pos: []
               audio: Story_3_Firewall_1.mp3
               actor: firewall
               text: Papers, please.
-            d:
+            e:
               pos: []
               audio: Story_3_Packet_1.mp3
               actor: packet
               text: Hello. I'm from the corporate reporting server and I'm headed to the control server application server.
-            e:
+              next: 6000
+            f:
               pos: [570,500]
               text: Even if the communication is authorized, the Intrusion Prevention System will check the contents of the packet.
               audio: Story_3_Ctanlee_33.mp3
-            f:
+            g:
+              pos: []
+              next: 400
+            h:
               pos: []
               audio: Story_3_Firewall_2.mp3
               actor: firewall
               text: Open up…
-            g:
+            i:
               pos: []
               audio: Story_3_Firewall_3.mp3
               actor: firewall
               text: No contraband. You may proceed.
-            h:
+              next: 3000
+            j:
               pos: [700,500]
               text: That was an approved packet.
               audio: Story_3_Ctanlee_34.mp3
@@ -550,32 +553,44 @@ chapters:
             - {action: d }
             - {action: e }
             - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
           actions:
             a:
+              pos: []
+              next: 500
+            b:
               pos: [130,400]
               text: Ah, here's a packet sent by our robot hacker.
               audio: Story_3_Ctanlee_35.mp3
-            b:
+            c:
+              pos: []
+              next: 1000
+            d:
               pos: []
               audio: Story_3_Firewall_1.mp3
               actor: firewall
               text: Papers, please.
-            c:
+            e:
               pos: []
               audio: Story_3_Packet_2.mp3
               actor: packet
               text: Ummm, well… I'm from the Internet and I want to communicate with the control system.
-            d:
+            f:
               pos: []
               audio: Story_3_Firewall_6.mp3
               actor: firewall
               text: These papers are phony, I must destroy you now. Have a nice day.
-            e:
+            g:
               pos: []
               audio: Story_3_Packet_3.mp3
               actor: packet
               text: Help me, help me!
-            f:
+            h:
+              pos: []
+              next: 1000
+            i:
               pos: [320,450]
               text: He wasn't on the list.
               audio: Story_3_Ctanlee_36.mp3
@@ -599,7 +614,7 @@ chapters:
             - {action: h }
           actions:
             a:
-              pos: [170,400]
+              pos: [570,250]
               text: He's trying again. Some attacks can trick the firewall into letting a packet through.
               audio: Story_3_Ctanlee_37.mp3
             b:
@@ -623,23 +638,22 @@ chapters:
               text: Give the secrets to me, what are you hiding…
             f:
               pos: []
-              audio: Story_3_Firewall_5.mp3
-              actor: firewall
-              text: Ah Contraband, now I must destroy you.
-            g:
-              pos: []
               audio: Story_3_Packet_5.mp3
               actor: packet
               text: Eeeeeee!
-            h:
+            g:
               pos: [370,300]
               text: Terminated. Nice job, firewall.
               audio: Story_3_Ctanlee_39.mp3
+            h:
+              pos: [100,100]
+              text: And that ends the chapter. It's duty time.
+              audio: Story_3_Ctanlee_40.mp3
         duration: {kind: ux }
-      # 2 Dialogue - End Chapter ==========================================
+      # 2 Duties ==========================================
       -
-        title: Chapter 2 Complete
         action:
+          - {cmd: ctanlee.gohome}
           - {cmd: movie.layers.uncache, data: 1}
           - {cmd: movie.layers.uncache, data: 4}
           - {cmd: movie.layers.uncache, data: 6}
@@ -649,29 +663,6 @@ chapters:
             - {depth: 10, content: clear }
             - {depth: 11, content: clear }
             - {depth: 12, content: clear }
-        dialogue:
-          timeline:
-            - {action: a }
-          actions:
-            a:
-              pos: [100,100]
-              text: And that ends the chapter. It's duty time.
-              audio: Story_3_Ctanlee_40.mp3
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                title: Chapter Complete
-                body:
-                btn:
-                  style: lightning
-                  text: Review Duties
-                  action: {cmd: slides.next-slide}
-      # 2 Duties ==========================================
-      -
-        action: {cmd: ctanlee.gohome}
         ux:
           components:
             -
