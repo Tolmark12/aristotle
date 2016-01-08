@@ -1,4 +1,4 @@
-.selection-dialogue  { display:flex; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight:100;
+.selection-dialogue  { display:flex; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight:100; color:#CCC;
   .left-section,
   .right-section     { display:flex; flex-direction:column; background:rgba(#020308, 0.8); min-width:340px; max-width: 380px;  padding:20px;
     .subtitle        { margin:15px 0; }

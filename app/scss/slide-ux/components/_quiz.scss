@@ -58,7 +58,7 @@
 
 .quiz-results               { width:100%; height:100%; background:white; color:#6B989F;
   .content                  { padding:10px 80px;  }
-  .quiz-header              { background:$yeller; color:white; letter-spacing:3px; font-family:$fun_cond; text-transform:uppercase; font-size:30px; text-align:center; padding:20px;}
+  .quiz-header              { background:$yellow; color:white; letter-spacing:3px; font-family:$fun_cond; text-transform:uppercase; font-size:30px; text-align:center; padding:20px;}
   .total                    { @include blue-border(); padding: 20px 0; margin:20px 0; display:flex; align-items:center; justify-content:space-around;
     .value-bar              { width: 600px; height:41px; }
     &:before                { content:"TOTAL"}
@@ -95,6 +95,6 @@
   }
 }
 .value-bar                  { position:relative; width:700px; height:20px;
-  .bg                       { width:100%; height:100%; background:$yeller; }
+  .bg                       { width:100%; height:100%; background:$yellow; }
   .fg                       { background:$light-orange; position:absolute; height:100%; top:0; }
 }

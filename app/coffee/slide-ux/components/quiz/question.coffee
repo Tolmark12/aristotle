@@ -12,10 +12,13 @@ module.exports = class Question
     $(".answer-wrapper", @$node).on "click", @onAnswerClick
 
   onAnswerClick : (e)=>
+    return if @guessedRight # don't allow any more clicks if they've already guessed right
+
     $(e.currentTarget).addClass "flipped"
-    isCorrect = $(".response", e.currentTarget).hasClass 'right'
-    if !isCorrect then @wrongGuesses++
-    @answerCallback isCorrect
+    @guessedRight = $(".response", e.currentTarget).hasClass 'right'
+    if !@guessedRight
+      @wrongGuesses++
+    @answerCallback @guessedRight
 
   countWrongAnswers : () ->
     @totalWrongAnswers = 0
