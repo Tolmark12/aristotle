@@ -710,7 +710,7 @@ chapters:
               kind: dialogue
               config:
                 title: On the Home Stretch
-                body: We have a process for securely granting and removing <a data-label="physical_access">Physical Access</a>, <a data-label="electronic_access">Electronic Access</a>, and <a data-label="information_access">Information Access</a>, we have safeguards on our <a data-label="user_account">User Accounts</a>, and <a data-label="visitor">Visitors</a> can securely access our <a data-label="cip"> PSPs through the <a data-label="visitor_escort">Visitor Escort Procedure</a>. Your mastery of defenses is now complete and your facility is fully protected. In our final episode, we learn how to Fight the War. 
+                body: We have a process for securely granting and removing <a data-label="physical_access">Physical Access</a>, <a data-label="electronic_access">Electronic Access</a>, and <a data-label="information_access">Information Access</a>, we have safeguards on our <a data-label="user_account">User Accounts</a>, and <a data-label="visitor">Visitors</a> can securely access our <a data-label="cip"> PSPs through the <a data-label="visitor_escort">Visitor Escort Procedure</a>. Your mastery of defenses is now complete and your facility is fully protected. In our final episode, we learn how to Fight the War.
                 btn:
                   style: lightning
                   text: review duties

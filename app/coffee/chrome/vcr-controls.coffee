@@ -30,10 +30,8 @@ module.exports = class VCRControls
     @animation.play()
 
   activate : (svgAnimation, @completeCb) ->
-    bodymovin.setQuality('low')
-    @$attic.addClass 'hidden'
-    @$pauseAndPlayBtn.removeClass 'paused'
-    @$pauseAndPlayBtn.removeClass 'complete'
+    # bodymovin.setQuality('low')
+    @reset()
 
     @animation = svgAnimation.animation
 
@@ -46,8 +44,15 @@ module.exports = class VCRControls
       @$attic.removeClass 'hidden'
       @$pauseAndPlayBtn.addClass 'complete'
 
+  reset : () ->
+    @isPaused   = false
+    @isComplete = false
+    @$attic.addClass 'hidden'
+    @$pauseAndPlayBtn.removeClass 'paused'
+    @$pauseAndPlayBtn.removeClass 'complete'
 
   # ------------------------------------ Events
+
   controlBtnClick : (e) ->
     if @isComplete
       @replayClick()
