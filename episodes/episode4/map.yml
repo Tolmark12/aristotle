@@ -642,7 +642,7 @@ chapters:
               kind: dialogue
               config:
                 title: The Visitor Escort Procedure
-                body: Wow, that <a data-label="visitor">Visitor</a> caused a lot of damage. To secure our facilities for tours, visits by auditors, and other short-term needs, we follow a <a data-label="visitor_escort" class="new">Visitor Escort Procedure</a>: Defenders with <a data-label="physical_access">Physical Access</a> to a <a data-label="psp">PSP</a> can take a visitor inside if they log the <a data-label="visitor">Visitor's</a> name, entry and exit time, and remain with the Visitor for the duration of the visit.
+                body: "Wow, that <a data-label='visitor'>Visitor</a> caused a lot of damage. To secure our facilities for tours, visits by auditors, and other short-term needs, we follow a <a data-label='visitor_escort' class='new'>Visitor Escort Procedure</a>: Defenders with <a data-label='physical_access'>Physical Access</a> to a <a data-label='psp'>PSP</a> can take a visitor inside if they log the <a data-label='visitor'>Visitor's</a> name, entry and exit time, and remain with the Visitor for the duration of the visit."
                 btn:
                   style: lightning
                   text: continue
