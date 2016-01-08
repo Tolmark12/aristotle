@@ -26,13 +26,7 @@ module.exports = class SelectionDialogue extends Component
     jadeData.items    = [  ]
     for item, i in data.items
       item.id = "item#{i}"
-
-      # temp
-      if item.icon != "mini-control-center" || item.icon != "mini-generation" || item.icon != "mini-substation"
-        item.icon = "mini-control-center"
-
       jadeData.items.push {txt:item.btnTxt, id:item.id, icon:item.icon}
-
       @items[item.id] = item
     jadeData
 

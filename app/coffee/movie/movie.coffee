@@ -150,6 +150,7 @@ module.exports = class Movie
     layers
 
   rehydrateLayerState : (layers) ->
+    console.log layers
     @reset()
     for layerData in layers
       if layerData?

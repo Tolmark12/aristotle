@@ -1,3 +1,5 @@
+@import "selection-icons";
+
 .selection-dialogue  { display:flex; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight:100; color:#CCC;
   .left-section,
   .right-section     { display:flex; flex-direction:column; background:rgba(#020308, 0.8); min-width:340px; max-width: 380px;  padding:20px;
@@ -13,6 +15,31 @@
     .mini-icon       { text-align:center;
       .icon          { display:none;
         &.active     { display:block; }
+        &.mini-risk-detector{ @include mini-icon( 'c5' ); }
+        &.mini-voight-kampff{ @include mini-icon( 'c6' ); }
+        &.mini-background-probe{ @include mini-icon( 'c4' ); }
+        &.mini-double-deuce{ @include mini-icon( 'b4' ); }
+        &.mini-mr-fusion{ @include mini-icon( 'b5' ); }
+        &.mini-dematerializer{ @include mini-icon( 'b6' ); }
+        &.mini-gated{ @include mini-icon( 'a6' ); }
+        &.mini-great-wall{ @include mini-icon( 'a5' ); }
+        &.mini-burninator{ @include mini-icon( 'a4' ); }
+        &.mini-orbital-strike{ @include mini-icon( 'b3' ); }
+        &.mini-speeder{ @include mini-icon( 'b2' ); }
+        &.mini-brit-beacon{ @include mini-icon( 'e1' ); }
+        &.mini-kraken-scanner{ @include mini-icon( 'd3' ); }
+        &.mini-hal-scanner{ @include mini-icon( 'd2' ); }
+        &.mini-card-scanner{ @include mini-icon( 'd1' ); }
+        &.mini-umpire{ @include mini-icon( 'c3' ); }
+        &.mini-kragle{ @include mini-icon( 'c2' ); }
+        &.mini-duct-tape{ @include mini-icon( 'c1' ); }
+        &.mini-patch-server{ @include mini-icon( 'b1' ); }
+        &.mini-log-book{ @include mini-icon( 'a1' ); }
+        &.mini-tractor-beam{ @include mini-icon( 'a3' ); }
+        &.mini-escort-leash{ @include mini-icon( 'a2' ); }
+        &.mini-control-center{ @include mini-icon( 'd5' ); }
+        &.mini-generation{ @include mini-icon( 'd4' ); }
+        &.mini-substation{ @include mini-icon( 'd6' ); }
       }
     }
     .header          { display:flex; align-items:center;

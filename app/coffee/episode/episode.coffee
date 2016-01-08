@@ -53,7 +53,7 @@ module.exports = class Episode
     PubSub.publish 'movie.layers.clear-all'
     layers = {}
 
-    # Loop throught eh chapters
+    # Loop throught the chapters
     for chapter in aristotle.episodeData.chapters
       chapterTitle = chapter.title
       if chapter.title == title # If this is a chapter..
@@ -61,13 +61,15 @@ module.exports = class Episode
 
       # Loop throught slides building the layer views, and looking for the matching title
       for slide in chapter.slides
+        if slide.title == title
+          slideTitle = slide.title
+          breakLoop1 = true; break
+          
         if slide.movie?.layers?
           for layer in slide.movie.layers
             layers[layer.depth] = layer
 
-        if slide.title == title
-          slideTitle = slide.title
-          breakLoop1 = true; break
+
       break if breakLoop1
 
     # Configure layers into an array for rehydration

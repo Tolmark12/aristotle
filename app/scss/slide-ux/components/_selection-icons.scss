@@ -1,0 +1,28 @@
+@mixin mini-icon($grid-loc){ margin:0 auto 14px;
+  background:url(../assets/icons.png) no-repeat;
+  @if     ( $grid-loc == "a1" ){width:93px; height:125px; background-position:-135px -105px;}
+  @else if( $grid-loc == "a2" ){width:232px; height:123px; background-position:-417px -105px;}
+  @else if( $grid-loc == "a3" ){width:212px; height:141px; background-position:-870px -100px;}
+  @else if( $grid-loc == "a4" ){width:165px; height:85px; background-position:-1257px -126px;}
+  @else if( $grid-loc == "a5" ){width:165px; height:85px; background-position:-1631px -128px;}
+  @else if( $grid-loc == "a6" ){width:165px; height:85px; background-position:-2055px -129px;}
+  @else if( $grid-loc == "b1" ){width:165px; height:47px; background-position:-100px -463px;}
+  @else if( $grid-loc == "b2" ){width:238px; height:75px; background-position:-456px -445px;}
+  @else if( $grid-loc == "b3" ){width:209px; height:140px; background-position:-838px -403px;}
+  @else if( $grid-loc == "b4" ){width:145px; height:93px; background-position:-1273px -436px;}
+  @else if( $grid-loc == "b5" ){width:145px; height:121px; background-position:-1649px -410px;}
+  @else if( $grid-loc == "b6" ){width:145px; height:125px; background-position:-2067px -407px;}
+  @else if( $grid-loc == "c1" ){width:159px; height:79px; background-position:-107px -743px;}
+  @else if( $grid-loc == "c2" ){width:51px; height:117px; background-position:-559px -733px;}
+  @else if( $grid-loc == "c3" ){width:66px; height:128px; background-position:-943px -728px;}
+  @else if( $grid-loc == "c4" ){width:95px; height:125px; background-position:-1289px -709px;}
+  @else if( $grid-loc == "c5" ){width:59px; height:135px; background-position:-1673px -706px;}
+  @else if( $grid-loc == "c6" ){width:242px; height:90px; background-position:-1998px -730px;}
+  @else if( $grid-loc == "d1" ){width:96px; height:77px; background-position:-131px -1114px;}
+  @else if( $grid-loc == "d2" ){width:52px; height:105px; background-position:-556px -1082px;}
+  @else if( $grid-loc == "d3" ){width:87px; height:140px; background-position:-932px -1065px;}
+  @else if( $grid-loc == "d4" ){width:180px; height:133px; background-position:-1283px -1072px;}
+  @else if( $grid-loc == "d5" ){width:182px; height:133px; background-position:-1630px -1072px;}
+  @else if( $grid-loc == "d6" ){width:180px; height:133px; background-position:-2043px -1072px;}
+  @else if( $grid-loc == "e1" ){width:89px; height:134px; background-position:-139px -1305px;}
+}
