@@ -15,11 +15,13 @@ chapters:
   -
     title: Chapter 1
     subtitle: Physical Security Perimeter
-    dev:
-      startIndex: 1
-      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
+      -
+        movie:
+          layers:
+            - {depth: 0, content: $eacmsAnimateBadUpper}
+        duration: {kind: ux}
       -
         action:
           -
