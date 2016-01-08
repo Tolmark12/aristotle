@@ -1,11 +1,14 @@
 body {
   margin: 0;
   padding: 0;
-  background: #879a97; }
+  background: #879a97;
+  color: #FFF; }
 
 body * {
   font-family: 'Function';
-  font-weight: 200; }
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 1.3; }
 
 h1 {
   font-size: 22px;
@@ -86,7 +89,8 @@ h1, h2 {
   pointer-events: none; }
   .chrome .top {
     display: inline-flex;
-    height: 60px; }
+    height: 60px;
+    pointer-events: all; }
     .chrome .top .main {
       display: inline-flex;
       align-items: center;
@@ -113,7 +117,14 @@ h1, h2 {
         align-items: center; }
         .chrome .top .main .episodes .badge {
           display: flex;
-          align-items: center; }
+          align-items: center;
+          cursor: pointer;
+          position: relative; }
+          .chrome .top .main .episodes .badge .label-wrapper {
+            top: 41px;
+            left: 18px; }
+          .chrome .top .main .episodes .badge * {
+            pointer-events: none; }
           .chrome .top .main .episodes .badge:not(:last-child):after {
             content: "";
             display: block;
@@ -525,10 +536,6 @@ h1, h2 {
       transform: translate(0, -50%); }
       .slide-ux .dialogue-wrap .dialogue h1 {
         margin: 0 0 -10px; }
-      .slide-ux .dialogue-wrap .dialogue p {
-        color: white;
-        font-size: 16px;
-        line-height: 24px; }
       .slide-ux .dialogue-wrap .dialogue .btn {
         position: relative;
         margin: 0 auto;
@@ -991,7 +998,7 @@ h1, h2 {
     .slide-ux .quiz-results .content {
       padding: 10px 80px; }
     .slide-ux .quiz-results .quiz-header {
-      background: #DEAA36;
+      background: #FEB644;
       color: white;
       letter-spacing: 3px;
       font-family: 'Function Condensed';
@@ -1089,7 +1096,7 @@ h1, h2 {
     .slide-ux .value-bar .bg {
       width: 100%;
       height: 100%;
-      background: #DEAA36; }
+      background: #FEB644; }
     .slide-ux .value-bar .fg {
       background: #FB9130;
       position: absolute;
@@ -1097,13 +1104,12 @@ h1, h2 {
       top: 0; }
   .slide-ux .selection-dialogue {
     display: flex;
-    color: #FFF;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-weight: 100;
-    font-size: 16px; }
+    color: #CCC; }
     .slide-ux .selection-dialogue .left-section, .slide-ux .selection-dialogue .right-section {
       display: flex;
       flex-direction: column;
@@ -1111,10 +1117,19 @@ h1, h2 {
       min-width: 340px;
       max-width: 380px;
       padding: 20px; }
-      .slide-ux .selection-dialogue .left-section p, .slide-ux .selection-dialogue .right-section p {
-        color: #CCC;
-        font-size: 14px;
-        line-height: 1.3; }
+      .slide-ux .selection-dialogue .left-section .subtitle, .slide-ux .selection-dialogue .right-section .subtitle {
+        margin: 15px 0; }
+      .slide-ux .selection-dialogue .left-section ol, .slide-ux .selection-dialogue .left-section ul, .slide-ux .selection-dialogue .right-section ol, .slide-ux .selection-dialogue .right-section ul {
+        margin: 10px 0;
+        padding: 0; }
+      .slide-ux .selection-dialogue .left-section ol, .slide-ux .selection-dialogue .right-section ol {
+        margin-left: 18px; }
+      .slide-ux .selection-dialogue .left-section ul, .slide-ux .selection-dialogue .right-section ul {
+        list-style: none; }
+        li .slide-ux .selection-dialogue .left-section ul:before, li .slide-ux .selection-dialogue .right-section ul:before {
+          content: "•";
+          margin-left: -10px;
+          padding-right: 3px; }
     .slide-ux .selection-dialogue .left-section {
       margin-right: 5px;
       border: 3px solid #F9773E; }
@@ -1136,7 +1151,7 @@ h1, h2 {
           display: inline-block;
           height: 2px; }
         .slide-ux .selection-dialogue .left-section .header h1 {
-          margin: 0 5px;
+          margin: 10px 5px 0;
           text-align: center;
           display: inline;
           font-size: 18px; }
@@ -1271,12 +1286,20 @@ input {
         display: inline-table; } }
     .label-wrapper .label .title {
       padding-bottom: 3px;
-      white-space: nowrap; }
+      white-space: nowrap;
+      color: #F9773E; }
     .label-wrapper .label .text {
       margin-top: -3px;
       padding-bottom: 5px;
       white-space: nowrap;
       color: white; }
+    .label-wrapper .label.box .text {
+      white-space: auto;
+      white-space: initial;
+      max-width: 200px;
+      min-width: 200px; }
+    .label-wrapper .label.inline .title, .label-wrapper .label.inline .text {
+      display: inline-block; }
     .label-wrapper .label:after, .label-wrapper .label:before {
       top: 100%;
       left: 18px;
