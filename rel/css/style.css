@@ -1387,13 +1387,13 @@ h1, h2 {
     position: absolute;
     background: red;
     cursor: pointer;
-    opacity: 0.3; }
+    opacity: 0; }
 
 .ghost-item {
   position: absolute;
   background: red;
   cursor: pointer;
-  opacity: 0.3; }
+  opacity: 0; }
 
 input {
   border: none; }

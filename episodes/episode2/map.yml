@@ -17,12 +17,6 @@ chapters:
     subtitle: Physical Security Perimeter
     kind: chapter
     slides:
-      # This animation fails..
-      -
-        movie:
-          layers:
-            - {depth: 0, content: $eacmsAnimateBadUpper}
-        duration: {kind: ux}
       -
         action:
           -
