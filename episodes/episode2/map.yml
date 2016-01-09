@@ -17,6 +17,7 @@ chapters:
     subtitle: Physical Security Perimeter
     kind: chapter
     slides:
+      # This animation fails..
       -
         movie:
           layers:

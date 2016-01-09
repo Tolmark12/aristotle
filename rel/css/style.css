@@ -674,7 +674,8 @@ h1, h2 {
         align-items: center; }
         .slide-ux .duties .content .duty-content .user-content {
           text-align: left;
-          width: 605px; }
+          width: 605px;
+          color: #335E6E; }
       .slide-ux .duties .content .icon-btn {
         color: white;
         margin-top: 25px; }
@@ -864,6 +865,9 @@ h1, h2 {
       margin-bottom: 15px;
       text-transform: uppercase;
       font-family: 'Function Condensed'; }
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        .slide-ux .personal-info-intro h1 {
+          display: inline-table; } }
   .slide-ux .quiz {
     background: #335E6E;
     width: 100%;
@@ -1141,6 +1145,156 @@ h1, h2 {
           display: none; }
           .slide-ux .selection-dialogue .left-section .mini-icon .icon.active {
             display: block; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-risk-detector {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 59px;
+            height: 135px;
+            background-position: -1673px -706px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-voight-kampff {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 242px;
+            height: 90px;
+            background-position: -1998px -730px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-background-probe {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 95px;
+            height: 125px;
+            background-position: -1289px -709px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-double-deuce {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 145px;
+            height: 93px;
+            background-position: -1273px -436px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-mr-fusion {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 145px;
+            height: 121px;
+            background-position: -1649px -410px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-dematerializer {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 145px;
+            height: 125px;
+            background-position: -2067px -407px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-gated {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 165px;
+            height: 85px;
+            background-position: -2055px -129px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-great-wall {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 165px;
+            height: 85px;
+            background-position: -1631px -128px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-burninator {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 165px;
+            height: 85px;
+            background-position: -1257px -126px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-orbital-strike {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 209px;
+            height: 140px;
+            background-position: -838px -403px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-speeder {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 238px;
+            height: 75px;
+            background-position: -456px -445px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-brit-beacon {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 89px;
+            height: 134px;
+            background-position: -139px -1305px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-kraken-scanner {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 87px;
+            height: 140px;
+            background-position: -932px -1065px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-hal-scanner {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 52px;
+            height: 105px;
+            background-position: -556px -1082px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-card-scanner {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 96px;
+            height: 77px;
+            background-position: -131px -1114px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-umpire {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 66px;
+            height: 128px;
+            background-position: -943px -728px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-kragle {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 51px;
+            height: 117px;
+            background-position: -559px -733px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-duct-tape {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 159px;
+            height: 79px;
+            background-position: -107px -743px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-patch-server {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 165px;
+            height: 47px;
+            background-position: -100px -463px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-log-book {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 93px;
+            height: 125px;
+            background-position: -135px -105px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-tractor-beam {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 212px;
+            height: 141px;
+            background-position: -870px -100px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-escort-leash {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 232px;
+            height: 123px;
+            background-position: -417px -105px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-control-center {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 182px;
+            height: 133px;
+            background-position: -1630px -1072px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-generation {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 180px;
+            height: 133px;
+            background-position: -1283px -1072px; }
+          .slide-ux .selection-dialogue .left-section .mini-icon .icon.mini-substation {
+            margin: 0 auto 14px;
+            background: url(../assets/icons.png) no-repeat;
+            width: 180px;
+            height: 133px;
+            background-position: -2043px -1072px; }
       .slide-ux .selection-dialogue .left-section .header {
         display: flex;
         align-items: center; }
@@ -1211,6 +1365,8 @@ h1, h2 {
       margin-bottom: auto;
       margin-top: 30px; }
   .slide-ux .button {
+    letter-spacing: 0.03em;
+    color: white;
     padding: 7px 0;
     margin: 7px 0;
     font-family: 'Function Condensed';
@@ -1231,13 +1387,13 @@ h1, h2 {
     position: absolute;
     background: red;
     cursor: pointer;
-    opacity: 0; }
+    opacity: 0.3; }
 
 .ghost-item {
   position: absolute;
   background: red;
   cursor: pointer;
-  opacity: 0; }
+  opacity: 0.3; }
 
 input {
   border: none; }
@@ -1294,7 +1450,7 @@ input {
       white-space: nowrap;
       color: white; }
     .label-wrapper .label.box .text {
-      white-space: auto;
+      white-space: normal;
       white-space: initial;
       max-width: 200px;
       min-width: 200px; }
