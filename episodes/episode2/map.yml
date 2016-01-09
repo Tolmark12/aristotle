@@ -17,21 +17,6 @@ chapters:
     subtitle: Physical Security Perimeter
     kind: chapter
     slides:
-      -
-        action:
-          -
-            cmd: setvars
-            data:
-              facility: substation
-              facilityBuild: ~1/substation_facility_build.json
-              facilityLoop: ~1/substation_facility_loop.json
-          -
-            cmd: playsound
-            data:
-              content: ~g/MU_Ambient_Facility.mp3
-              loop: true
-        duration: { kind: time, seconds: 0.1 }
-
       # 1 Background Build in ==========================================
       -
         movie:
