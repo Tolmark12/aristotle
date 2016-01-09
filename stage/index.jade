@@ -2,7 +2,8 @@ doctype html
 html(lang="en")
   
   head
-    title ELB - Aristotle
+    title Metamythic - Warcore
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
     // build:css svg.css
     link(href="css/aristotle-svg.css", rel="stylesheet")
@@ -11,6 +12,12 @@ html(lang="en")
     // build:css2 css/style.css
     link(href="css/main.css", rel="stylesheet")
     // endbuild
+    
+    //- Microsoft instrumentation snippet
+    // build:inlinejs
+    script(src="bower-libs/ms-analytics/index.js")
+    // endbuild
+      
     
   body
     .holder

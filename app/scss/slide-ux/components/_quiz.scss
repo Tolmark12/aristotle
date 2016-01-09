@@ -15,7 +15,16 @@
       .question-text        { font-weight:bold; font-size:19px; color:#335E6E; margin:20px 0 80px;}
       // Answers
       .answers              { display:flex; width:100%; justify-content: space-around; height:370px;
-        .answer-wrapper     { width:200px; cursor:pointer;
+        .answer-wrapper     { width:200px; cursor:pointer; position:relative;
+          .points               { position:absolute; left: 50%; transform: translate(-50%); top:0; opacity:0; font-size:24px; font-weight:bold;
+            &:before            { margin-right:3px; }
+            &.right             { color:green;
+              &:before          { content:"+"}
+            }
+            &.wrong             { color:#E03F07;
+              &:before          { content:"-"}
+            }
+          }
           &.flipped         { pointer-events:none;
             .flip-container {
               .back         { transform: rotateY(0deg);}
@@ -58,7 +67,7 @@
 
 .quiz-results               { width:100%; height:100%; background:white; color:#6B989F;
   .content                  { padding:10px 80px;  }
-  .quiz-header              { background:$yellow; color:white; letter-spacing:3px; font-family:$fun_cond; text-transform:uppercase; font-size:30px; text-align:center; padding:20px;}
+  .quiz-header              { height:30px; padding:15px; background:$yellow; color:white; letter-spacing:3px; font-family:$fun_cond; text-transform:uppercase; font-size:30px; text-align:center; line-height:30px; }
   .total                    { @include blue-border(); padding: 20px 0; margin:20px 0; display:flex; align-items:center; justify-content:space-around;
     .value-bar              { width: 600px; height:41px; }
     &:before                { content:"TOTAL"}

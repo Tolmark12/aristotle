@@ -7,7 +7,7 @@ $background-opacity:0.35;
       svg                        { margin:auto auto;}
     }
     .episodes                    { display:flex; align-items:center;
-      .badge                     { display:flex; align-items:center; cursor:pointer; position:relative; 
+      .badge                     { display:flex; align-items:center; cursor:pointer; position:relative;
         .label-wrapper           { top: 41px; left: 18px; }
         *                        { pointer-events:none; }
         &:not(:last-child):after { content:""; display:block; margin:0 3px; width:6px; height:6px; background:black; opacity:0.3; }
@@ -21,5 +21,19 @@ $background-opacity:0.35;
     }
   }
   .learn-mode                    { margin-left:5px; padding:0 30px 0 20px; background:rgba(#000, $background-opacity); height:100%; display:flex; flex-direction:column; justify-content:center; clip-path: polygon(0 0, 100% 0%, 82% 100%, 0% 100%);}
+}
+
+body.body-quiz-results      {
+  .chrome                   { z-index:4; display:block !important;
+    .progress               { display: none; }
+    .top                    {
+      .main                 { background: #335E6C;
+        .name-and-rank      {
+          .divider.second   { display:none; }
+        }
+        .episodes           { display: none; }
+      }
+    }
+  }
 }
 

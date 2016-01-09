@@ -1,0 +1,18 @@
+episode: 6
+title: Episode 6
+subtitle: The final frontier
+rankId: master-cadet
+nextRankId: defender
+isLastEpisode: true
+chapters:
+  -
+    title: Chapter 1
+    subtitle: Outro
+    kind: chapter
+    slides:
+      -
+        action: {cmd: "chrome.hide"}
+        title: Outro Movie
+        movie:
+          layers:
+            - {depth: 0, content: ~6/Conclusion-Proof.mp4 }

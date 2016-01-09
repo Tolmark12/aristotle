@@ -13,12 +13,25 @@ module.exports = class Question
 
   onAnswerClick : (e)=>
     return if @guessedRight # don't allow any more clicks if they've already guessed right
-
-    $(e.currentTarget).addClass "flipped"
+    $el = $(e.currentTarget)
+    $el.addClass "flipped"
     @guessedRight = $(".response", e.currentTarget).hasClass 'right'
     if !@guessedRight
       @wrongGuesses++
     @answerCallback @guessedRight
+    @clickResults $el, @guessedRight
+
+  clickResults : ($el, guessedRight) ->
+    if guessedRight
+      result = 'right'
+      points = @pointsEarned()
+    else
+      result = 'wrong'
+      points = (@questionValue/2) / @totalWrongAnswers
+
+    $node = $ jadeTemplate['slide-ux/components/quiz/points-float']( {points:points, result:result} )
+    $el.append $node
+    $node.velocity {opacity:1, top:-35}, {duration:1000, easing:"easeinoutquint"}
 
   countWrongAnswers : () ->
     @totalWrongAnswers = 0
@@ -33,7 +46,6 @@ module.exports = class Question
 
   pointsEarned : () ->
     wrongGuessValue = (@questionValue/2) / @totalWrongAnswers
-    @questionValue - (wrongGuessValue * @wrongGuesses)
     @questionValue - (wrongGuessValue * @wrongGuesses)
 
   destroy : () -> @$node.remove()

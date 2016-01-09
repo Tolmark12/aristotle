@@ -1,3 +1,13 @@
+Saturday:
+☐ Look at metamythic API integration
+☐ Internet explorer hotspots are off?
+
+Quiz:
+  ☐ Add in new scoring information
+  ☐ Show the name / info on the quiz page
+  
+
+
 To Build:
   ☐ Clean up the caching of svgs
   ☐ Add a `savePositions` method for saving the positions of elements pre caching
@@ -8,58 +18,48 @@ To Build:
 Complex Animations:
   ☐ After effects trigger based on keyframes
 
-
-New:
-  ✔ Turn off closed captioning in dialogue @done(2016-01-04 12:38) @project(New)
-  ✔ Add actors @done(2016-01-04 12:09) @project(New)
-    - packet (styled like sektimus)
-    - firewall (styled like warcore)
-  ☐ Audio Track
-    - in between tracks
-
 ------------------------------------
-  ✔ Make user input call signs persits @done(2016-01-04 21:25)
 
 Feedback:
   ☐ Add speech arrow to ctanlee
 
-Ctanlee:
-  ✔ Add animation when he is talking @done(2016-01-04 20:28) @project(Ctanlee)
-  ✔ Fix the emotions (left, down right) @done(2016-01-04 20:30) @project(Ctanlee)
-
-Tooltips:
-  ✔ Need to differentiate between new and old tips @done(2016-01-04 20:30) @project(Tooltips)
-  ✔ Also have a central cache of tooltips @done(2016-01-04 20:30) @project(Tooltips)
-
 General:
-  ✔ Actions should have delays @done(2016-01-04 17:15)
   ☐ Make labels (tooltips) clickable
-  ✔ Add local config files @done(2016-01-05 14:53) @project(General)
 
 Structure Storyboard 2:
 -------------------------------------
-  ✔ Check double return <br/> @done(2016-01-04 20:32)
 
 Variables in text
-  ✔ Way of adding variables to text @done(2016-01-04 20:53)
     See lines 277-278 of ep1/map.yml
 
 IE :
   ☐ Make sure the hotsposts are correct
 
-
-
-Quiz:
-  ☐ once we get a right answer, diable clicking other questions
-
-✔ Add pausing of layers, and actions with delay. @done(2016-01-07 10:21)
 ☐ Alternative continue button style (possible)
-✔ Build playhead @done(2016-01-07 10:21)
   - Replay will need to replay the whole slide
   - Pause ctanlee, sound effects
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Integrate movie @done(2016-01-09 14:34)
+  ✔ Add tag to the html @done(2016-01-09 14:34)
+  ✔ packet (styled like sektimus) @done(2016-01-09 10:38) @project(New)
+  ✔ firewall (styled like warcore) @done(2016-01-09 10:38) @project(New)
+  ✔ Turn off closed captioning in dialogue @done(2016-01-04 12:38) @project(New)
+  ✔ Add actors @done(2016-01-04 12:09) @project(New)
+  ✔ Audio Track @done(2016-01-09 10:37) @project(New)
+  ✔ Make user input call signs persits @done(2016-01-04 21:25)
+  ✔ Add animation when he is talking @done(2016-01-04 20:28) @project(Ctanlee)
+  ✔ Fix the emotions (left, down right) @done(2016-01-04 20:30) @project(Ctanlee)
+  ✔ Need to differentiate between new and old tips @done(2016-01-04 20:30) @project(Tooltips)
+  ✔ Also have a central cache of tooltips @done(2016-01-04 20:30) @project(Tooltips)
+  ✔ Actions should have delays @done(2016-01-04 17:15)
+  ✔ Add local config files @done(2016-01-05 14:53) @project(General)
+  ✔ Check double return <br/> @done(2016-01-04 20:32)
+  ✔ Way of adding variables to text @done(2016-01-04 20:53)
+  ✔ once we get a right answer, diable clicking other questions @done(2016-01-09 10:37) @project(Quiz)
+  ✔ Add pausing of layers, and actions with delay. @done(2016-01-07 10:21)
+  ✔ Build playhead @done(2016-01-07 10:21)
   ✔ Persisting state between chapters & episodes @done(2015-12-31 17:48) @project(To Build)
   ✔ Progress Bar at bottom @done(2015-12-31 17:48) @project(To Build)
   ✔ Getting a weird ctanlee animation destroy error @done(2015-12-31 17:48) @project(To Build)

@@ -57,8 +57,10 @@ module.exports = class Layer
       when "json"  then @addAnimation( @currentOnionLayer, layerData )
       when "svg"   then @addSvg( @currentOnionLayer, layerData )
       when "gif", "jpg", "jpeg","png"
-                        @addImage( @currentOnionLayer, layerData.content, layerData.repeat, layerData.position )
+                        @addImage @currentOnionLayer, layerData.content, layerData.repeat, layerData.position
       when "clear" then @empty()
+      when "mp4"
+                        @addVideo @currentOnionLayer, layerData.content
       when "none"  then "do nothing"
       else              aristotle.throw "tried to add unrecognized layer type '#{kind}'", true
 
@@ -138,6 +140,10 @@ module.exports = class Layer
 
   addImage : ($holder, file, repeat="no-repeat", position="left") ->
     $holder.css background: "url(#{aristotle.getAssetPath(file)}) #{repeat} #{position}"
+
+  addVideo : ($holder, file) ->
+    $vid = $ jadeTemplate['movie/video']( {src:aristotle.getAssetPath(file)} )
+    $holder.append $vid
 
   addOnionLayer : () ->
     $onionLayer = $ jadeTemplate['movie/onion-layer']( {} )

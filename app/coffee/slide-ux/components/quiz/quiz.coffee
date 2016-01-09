@@ -68,13 +68,14 @@ module.exports = class Quiz extends Component
   ##     ## ########  ######   #######  ########    ##     ######
 
   showResults : () ->
+    $('body').addClass 'body-quiz-results'
     @$node.remove()
     data = @getResults()
     @$node = $ jadeTemplate['slide-ux/components/quiz/quiz-results']( @getResults() )
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
-
-    $("#continue", @$node).on "click", ()=> PubSub.publish 'slides.next-slide'
-
+    $("#continue", @$node).on "click", ()=>
+      $('body').removeClass 'body-quiz-results'
+      PubSub.publish 'slides.next-slide'
     @$el.append @$node
 
   getResults : () ->

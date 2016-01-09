@@ -1,6 +1,6 @@
 {
   "name": "aristotle",
-  "version": "0.0.74",
+  "version": "0.0.75",
   "dependencies": {
     "bodymovin": "bodymovin/bodymovin",
     "canvas2image": "hongru/canvas2image",
@@ -14,7 +14,8 @@
     "shadow-icons-library": "https://tolmark12@bitbucket.org/pagodabox-js-libs/shadow-icons-library.git",
     "SVG.toDataURL": "Tolmark12/SVG.toDataURL",
     "velocity": "~1.1.0",
-    "warcore-lms-interface": "Tolmark12/warcore-lms-interface"
+    "warcore-lms-interface": "Tolmark12/warcore-lms-interface",
+    "ms-analytics": "./z-misc-js/ms-analytics"
   },
   "ignore": [
     "app",
