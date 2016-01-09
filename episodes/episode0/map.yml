@@ -1,5 +1,5 @@
 episode: 0
-title: Episode 1
+title: Episode 0
 subtitle: Organizing Our Defenses
 rankId: recruit
 skipSlate: true
@@ -90,7 +90,7 @@ chapters:
               audio: Story_1_Warcore_4.m4a
             c:
               pos: [513,384,0]
-              text: "Hello potentially dangerous entity! I am CTANLEE."
+              text: Hello potentially dangerous entity! I am CTANLEE.
               audio: Story_1_Ctanlee_1.mp3
             d:
               next: 8900
@@ -100,7 +100,7 @@ chapters:
             e:
               next: 5900
               pos: [513,384,0]
-              text: "The warcore will now confirm your identity. Are you ready to proceed?"
+              text: "The warcore will now confirm your identity."
               audio: Story_1_Ctanlee_4.mp3
         duration: {kind: dialogue }
       # Dialogue Clearance Level  ==========================================
@@ -123,7 +123,7 @@ chapters:
             b:
               emo: right
               pos: [320,300,0]
-              text: "Critical Infrastructure Protection Version Five clearance! Impressive! This is the highest level of security training available in the WarCore. Your company has a lot of confidence in you."
+              text: "Critical Infrastructure Protection Version Five clearance! Impressive! This is the highest level of security training available in the WarCore. Your company has a lot of confidence in you. "
               audio: Story_1_Ctanlee_7.mp3
               txtPos: left
             c:
@@ -132,7 +132,7 @@ chapters:
               pos: [320,300,0]
             d:
               pos: [320,300,0]
-              text: Let's get rid of this quarantine and initiate you with a killer call sign.
+              text: "Let's get rid of this quarantine and initiate you with a killer call sign."
               audio: Story_1_Ctanlee_8.mp3
               txtPos: left
         ux:
@@ -222,7 +222,7 @@ chapters:
               audio: Story_1_Ctanlee_12.mp3
             e:
               pos: [170,330]
-              text: "But there's a problem. Hackers, terrorists, and other nasty people want to disrupt our ability to provide this power. These facilities are highly connected and automated through computer technology and thr4 vulnerable to a cyber-attack."
+              text: "But there's a problem. Hackers, terrorists, and other nasty people want to disrupt our ability to provide this power. These facilities are highly connected and automated through computer technology and therefore vulnerable to a cyber-attack."
               audio: Story_1_Ctanlee_12b.mp3
               emo: down
             f:
@@ -278,7 +278,7 @@ chapters:
           actions:
             a:
               pos: [350,400]
-              text: "Sektimus desires to weaken us before the Swarm arrives, so he sent advance forces."
+              text: "Sektimus desires to weaken us, so he sent advance forces."
               audio: Story_1_Ctanlee_17.mp3
             b:
               emo: left

@@ -46,3 +46,39 @@ psp:
 esp:
   title: "Electronic Security Perimeter (ESP)"
   text: "The logical border surrounding a network to which CRCA are connected. Electronic communication into and out of the ESP network must be controlled."
+information_access:
+  title: "Information Access"
+  text: "The ability to access file shares, filing cabinets, and other locations that have BCSI."
+user_account:
+  title: "User Account"
+  text: "An account that a Defender uses to verify their identity and log into a workstation, server, or other kind of CRCA. These accounts often use a username and password to verify the person, but other methods can be used. "
+shared:
+  title: "Shared Account"
+  text: "An single login account used by multiple employees."
+default:
+  title: "Default Account"
+  text: "An account that comes pre-configured by the manufacturer on a CRCA. These are commonly administrative accounts and sometimes share the same user name and password on all manufactured devices."
+brute:
+  title: "Brute-Force Attack"
+  text: "A trial-and-error method where an attacker tries to guess a user's password. Automated software is used to generate a large number of consecutive guesses."
+visitor:
+  title: "Visitor"
+  text: "Visitors are anyone who doesn't have Physical Access to a PSP but we want to allow them to go inside for tours, gauge reading, audits, and other short-term needs."
+visitor_escort:
+  title: "Visitor Escort Procedure"
+  text: "A procedure that ensures Visitors are documented, monitored, and continually escorted by a Defender at all times while inside a PSP."
+cyber_security_incident:
+  title: "Cyber Security Incident"
+  text: "Any malicious or suspicious event that attempts to disrupt the real-time operations of the Bulk Electric System."
+team:
+  title: "Incident Response Team"
+  text: "A group of Defenders gathered to coordinate the response to a cyber-attack."
+csirp:
+  title: "Cyber Security Incident Response Plan"
+  text: "A plan that gives guidance for how Defenders at an organization respond to a Cyber Security Incident."
+recovery:
+  title: "Recovery Plan"
+  text: "A plan that defines the data backups, spare equipment and parts, and steps needed to restore each type of CRCA after an attack."
+eisac:
+  title: "Electricity Information Sharing and Analysis Center (E-ISAC)"
+  text: "This organization is the primary security communications channel for the electricity sector and helps us prepare for and respond to cyber and physical threats, vulnerabilities, and incidents."

@@ -50,8 +50,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Monitoring Our Defenses
-                body: "Given enough effort, any moat can be bridged and any wall breached if defenders aren't ready to repel the enemy. This episode is about how we detect and respond to actual attacks. We call these attacks Cyber Security Incidents and our first job as Defenders is to detect them by monitoring our defenses."
+                body: Given enough effort, any moat can be bridged and any wall breached if defenders aren't ready to repel the enemy. This episode is about how we detect and respond to <a data-label="cyber_security_incident" class="new">Cyber Security Incidents</a> - actual attacks against our infrastructure.
                 btn:
                   style: lightning
                   text: continue
@@ -65,37 +66,41 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Keep a Sharp Lookout
-                body: "All Defenders must be on the lookout for shady persons hanging around our facilities, photographing our facilities, attempting to gain information via phone, email or other means, and doing otherwise shifty things. Theft of vehicle passes, personnel identification, uniforms, or BCSI is also very suspicious. Report any of these activities promptly because they may be a Cyber Security Incident. <br/>If you have Electronic Access to a workstation or other asset, help our technical Defenders by keeping an eye out for anything that doesn't seem right. While using workstations and equipment, if you see files out of place, windows or prompts that you don't recognize, the system is significantly slower than usual, or otherwise strange behavior, report it promptly."
+                body: All Defenders must be on the lookout for shady persons photographing our facilities, attempting to gain information via phone, email or other means, and doing otherwise shifty things. Disappearance of vehicle passes, personnel identification, uniforms, or BCSI is also suspicious. <br/><br/>Further, if you have <a data-label="electronic_access">Electronic Access</a> to <a data-label="crca">CRCAs</a>, keep an eye out for anything that doesn't seem right on your system. This includes windows or messages that you don't recognize, unusual system slowdowns, files out of place, or otherwise strange system behavior. <br/><br/>Report any of these promptly because an attack may be in progress.
                 btn:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
       # 1 Dialogue Monitoring ==========================================
       -
-        title: Specialized Monitoring
+        title: Electronic Monitoring
         duration: {kind: ux}
         ux:
           components:
             -
               kind: dialogue
               config:
-                title: Specialized Monitoring
-                body: "Nearly all of our defenses generate events that may be indications of an attack: unauthorized access to our door control systems, firewall alerts, failed logins, unauthorized system changes, and detections of malicious code are just a few examples. <br/>Our assets log electronic activity and attacks will generate events like . The Standards require our technical Defenders monitor and analyze events so we can evaluate if a Cyber Security Incident is occurring. CIP also requires our technical Defenders - like Richard - regularly assess our defenses for vulnerabilities to proactively look for security problems."
+                hasLabels: true
+                title: Electronic Monitoring
+                body: Nearly all of our <a data-label="crca">CRCAs</a> generate events that may be indications of an attack&#58; unauthorized access, firewall alerts, failed logins, unexpected system changes, and detection of malicious code are just a few examples. <br/><br/>Our technical <a data-label="defender">Defenders</a> - like Richard - must monitor and analyze these events to detect if they represent a <a data-label="cyber_security_incident">Cyber Security Incident</a>. They will also perform regular Vulnerability Assessment on our defenses to proactively look for security problems.
                 btn:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
       # 1 Dialogue Monitoring ==========================================
       -
+        title: Guard Duty
         duration: {kind: ux}
         ux:
           components:
             -
               kind: dialogue
               config:
-                title: Specialized Monitoring
-                body: "Monitoring the defenses is a big job that requires involvement from all Defenders, so let's learn our duties."
+                hasLabels: true
+                title: Guard Duty
+                body: Monitoring the defenses is a big job that requires involvement from all <a data-label="defender">Defenders</a>, so let's learn our duties.
                 btn:
                   style: lightning
                   text: continue
@@ -129,8 +134,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Local and National Response
-                body: "For attacks detected by our monitoring efforts, the Standards require that we have an Incident Response Team who will be convened to coordinate our efforts to repel the attackers and a Cyber Security Incident Response Plan with processes to ensure our response is swift and efficient. <br/>An incursion on our territory might be part of a larger, coordinated attack against the Bulk Electric System, so CIP requires our Incident Response Team to promptly report significant incidents to NERC's Electricity Information Sharing and Analysis Center (E-ISAC). E-ISAC handles investigation, communication, and response at the national level."
+                body: When our monitoring efforts detect an attack, the <a data-label="cip">Standards</a> require that we convene an <a data-label="team" class="new">Incident Response Team</a> to coordinate our efforts to repel the attackers and a <a data-label="csirp" class="new">Cyber Security Incident Response Plan</a> with processes that ensure our response is swift and effective. <br/><br/>An incursion on our territory might be part of a larger, coordinated attack against the <a data-label="bes">Bulk Electric System</a>, so our Incident Response Team must promptly report significant incidents to <a data-label="nerc">NERC's</a> <a data-label="eisac" class="new">Electricity Information Sharing and Analysis Center (E-ISAC)</a>. E-ISAC handles response to attacks at the national level.
                 btn:
                   style: lightning
                   text: continue
@@ -144,8 +150,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Maintaining Readiness
-                body: "We are expected to test our Incident Response Plan yearly and use our lessons-learned to improve the plan, so you may be involved in responding to a simulated attack. If we do have the unfortunate experience of responding to a real Cyber Security Incident, a test is not required in that year. Other events may cause the Plan to change, like employees moving out of roles, so we are expected to keep the plan up to date."
+                body: We must test our <a data-label="csirp">Cyber Security Incident Response Plan</a> yearly with a simulation and use our lessons-learned to improve the plan. Other events may cause the <a data-label="csirp">Plan</a> to change, like employees moving out of roles, so we must keep the information in the plan up-to-date.
                 btn:
                   style: lightning
                   text: continue
@@ -159,8 +166,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: No Need for Simulation
-                body: "Many of us will have defined roles on the Incident Response Team, help approve the Incident Response Plan, or be involved in yearly testing. During an actual attack, all Defenders may be called upon to assist the Incident Response Team. We've already been detecting and responding to malicious behavior through this training, so we'll skip the simulator for this chapter. Proceed to your duties."
+                body: Many of us will have defined roles on the <a data-label="team">Incident Response Team</a>, help approve the <a data-label="csirp">Cyber Security Incident Response Plan</a>, or be involved in yearly testing. During an actual attack, any <a data-label="defender">Defender</a> may be called upon to assist the <a data-label="team">Team</a>, so we must all be ready. <br/><br/>Our facility Defenders have already been detecting and responding to <a data-label="cyber_security_incident">Cyber Security Incident</a> in each simulated attack, so we'll skip the simulator for this chapter.
                 btn:
                   style: lightning
                   text: review duties
@@ -183,31 +191,31 @@ chapters:
           actions:
             a:
               pos: []
-              audio: Story_6_Sektimus_1.m4a
+              audio: Story_6_Sektimus_1.mp3
               actor: sektimus
               text: Skip the simulation? So confident aren't we? CIP has my robots all figured out, doesn't it?
             b:
               pos: [270,300]
               text: All words and no action, Sektimus. We are waiting for an attack that will defeat our CIP-secured facility.
-              audio: Story_6_Ctanlee_1.m4a
+              audio: Story_6_Ctanlee_1.mp3
             c:
               pos: []
-              audio: Story_6_Sektimus_2.m4a
+              audio: Story_6_Sektimus_2.mp3
               actor: sektimus
               text: Your wait is over. I'm uploading scripts that contain an attack your Cadet cannot defeat.
             d:
               pos: [270,300]
               text: WarCore, can you scan this signal for Malware?
-              audio: Story_6_Ctanlee_2.m4a
+              audio: Story_6_Ctanlee_2.mp3
             e:
               pos: []
-              audio: Story_6_Warcore_1.m4a
+              audio: Story_6_Warcore_1.mp3
               actor: warcore
               text: Scanning. Signal Clean. These are simple parameters for configuring my simulator with a new attack.
             f:
               pos: [270,300]
               text: Cadet, are you ready to put your facility to the test?
-              audio: Story_6_Ctanlee_3.m4a
+              audio: Story_6_Ctanlee_3.mp3
         duration: {kind: ux }
       # 2 Sektimus Are you Ready? ==========================================
       - !!inc/file ./episodes/episode5/yaml/_simple-sektimus-e6.yaml
@@ -239,60 +247,60 @@ chapters:
             a:
               pos: [570,400]
               text: WarCore, run script.
-              audio: Story_6_Ctanlee_9.m4a
+              audio: Story_6_Ctanlee_9.mp3
             b:
               next: 3500
               pos: []
-              audio: ~3/Placeholder_Silence.m4a
+              audio: ~3/Placeholder_Silence.mp3
             c:
               pos: [700,250]
               text: What is this?
-              audio: Story_6_Ctanlee_9.m4a
+              audio: Story_6_Ctanlee_9.mp3
             d:
               next: 11000
               pos: []
-              audio: Story_6_Sektimus_3.m4a
+              audio: Story_6_Sektimus_3.mp3
               actor: sektimus
             e:
               next: 6000
               pos: [270,470]
               text: The Incident Response Team has been convened. This is definitely a Cyber Security Incident.
-              audio: Story_6_Ctanlee_9.m4a
+              audio: Story_6_Ctanlee_9.mp3
             f:
               next: 3000
               pos: [270,300]
               text: How are they going to respond?
-              audio: Story_6_Ctanlee_7.m4a
+              audio: Story_6_Ctanlee_7.mp3
             g:
               next: 3500
               pos: []
-              audio: ~3/Placeholder_Silence.m4a
+              audio: ~3/Placeholder_Silence.mp3
             h:
               pos: [270,300]
               text: Good call, team. Get the people out.
-              audio: Story_6_Ctanlee_8.m4a
+              audio: Story_6_Ctanlee_8.mp3
             i:
               next: 6000
               pos: []
-              audio: Placeholder_Silence.m4a
+              audio: Placeholder_Silence.mp3
             j:
               pos: []
-              audio: Story_6_Sektimus_4.m4a
+              audio: Story_6_Sektimus_4.mp3
               actor: sektimus
               text: I'll now accept your concession CTANLEE, and your resignation from the training program, human.
             k:
               pos: [270,300]
               text: Not so fast, Sektimus. The wager was against all the CIP Standards and we still have one training chapter left.
-              audio: Story_6_Ctanlee_10.m4a
+              audio: Story_6_Ctanlee_10.mp3
             l:
               pos: []
-              audio: Story_6_Sektimus_5.m4a
+              audio: Story_6_Sektimus_5.mp3
               actor: sektimus
               text: It matters not. Complete your worthless training. I'll observe.
             m:
               pos: [270,300]
               text: Hold your head high, Cadet. We're not beaten yet.
-              audio: Story_6_Ctanlee_11.m4a
+              audio: Story_6_Ctanlee_11.mp3
         duration: {kind: ux}
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 3
@@ -319,8 +327,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: The Recovery Plan
-                body: "After an attack, systems may be unavailable because assets are damaged (or eaten), so CIP requires we have a Recovery Plan that helps us restore functionality quickly. The Plan contains steps on how to rebuild each type of asset while preserving forensic evidence of the attack. Most asset rebuilds require configuration and system data from prior to the attack, so the Plan also defines data backups required for restoration, along with any spare equipment and parts that may be needed to restore an asset. <br/>Just like the Incident Response Plan, we are expected to keep our Recovery Plan up to date and test it yearly (unless an actual attack happened that year). We also must regularly test that our backups are working and usable for recovery purposes."
+                body: After an attack, assets may be damaged (or incinerated), so we must have a <a data-label="recovery" class="new">Recovery Plan<a/> that helps our <a data-label="defender">Defenders<a/> restore functionality quickly. The Recovery Plan defines the data backups, spare equipment and parts, and steps needed to restore each type of <a data-label="crca">CRCA<a/>. The Plan also guides Defenders on how to preserve forensic data from the attack needed for subsequent investigations. <br/><br/>Similar to the <a data-label="csirp">Cyber Security Incident Response Plan<a/>, we are expected to keep our Recovery Plan up-to-date and test it yearly. We also must regularly test that our data backups are working and usable for recovery purposes.
                 btn:
                   style: lightning
                   text: continue
@@ -334,8 +343,9 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Yes We Can!
-                body: "Defender, this is the perfect time to put our Recovery Plan into action and repair our facility."
+                body: <a data-label="defender">Defender</a>, it's time to put our <a data-label="recovery">Recovery Plan</a> into action and repair our facility.
                 btn:
                   style: lightning
                   text: run simulation
@@ -356,16 +366,16 @@ chapters:
             a:
               next: 12000
               pos: []
-              audio: Placeholder_Silence.m4a
+              audio: Placeholder_Silence.mp3
             b:
               pos: []
-              audio: Story_6_Sektimus_6.m4a
+              audio: Story_6_Sektimus_6.mp3
               actor: sektimus
               text: CTANLEE, this means nothing. I'll just send my Bot-Tron back.
             c:
               pos: [550,300]
               text: "Defender, please pick your NERC Bot-Tron Defense."
-              audio: Story_6_Ctanlee_12.m4a
+              audio: Story_6_Ctanlee_12.mp3
         duration: {kind: ux }
       # 3 Sektimus Nerc Defense Selector ? ==========================================
       - !!inc/file ./episodes/episode5/yaml/_fake-nerc-defense-selector.yaml
@@ -383,13 +393,13 @@ chapters:
           actions:
             d:
               pos: []
-              audio: Story_6_Sektimus_7.m4a
+              audio: Story_6_Sektimus_7.mp3
               actor: sektimus
               text: What is this? This isn't fair! These defenses don't exist.
             e:
               pos: [300,220]
               text: The WarCore is simply simulating the results from following the CIP Standards. Our Incident Response Team(remember them?) reported the Bot-Tron attack to E-ISAC and NERC used the information to build new experimental defenses for the industry against Bot-Tron Overlords. Proceed with your selection, Cadet.
-              audio: Story_6_Ctanlee_16.m4a
+              audio: Story_6_Ctanlee_16.mp3
         duration: {kind: ux }
       # 3 Sektimus Nerc Defense Selector ? ==========================================
       - !!inc/file ./episodes/episode5/yaml/_nerc-defense-selector.yaml
@@ -420,36 +430,36 @@ chapters:
             a:
               next: 18000
               pos: []
-              audio: Placeholder_Silence.m4a
+              audio: Placeholder_Silence.mp3
             b:
               pos: []
-              audio: Story_6_Sektimus_8.m4a
+              audio: Story_6_Sektimus_8.mp3
               actor: sektimus
               text: No, no no no. Nooooooo!
             c:
               pos: []
-              audio: Story_6_Sektimus_9.m4a
+              audio: Story_6_Sektimus_9.mp3
               actor: sektimus
               text: You sunk my Bot-Tron Overlord!
             d:
               pos: []
-              audio: Story_6_Sektimus_10.m4a
+              audio: Story_6_Sektimus_10.mp3
               actor: sektimus
               text: Perhaps I was … premature … in my earlier judgment. Human, you performed at a higher level than I calculated possible. You are a worthy opponent.
             e:
               pos: []
-              audio: Story_6_Sektimus_11.m4a
+              audio: Story_6_Sektimus_11.mp3
               actor: sektimus
               text: So much the better. I prefer a good challenge.
             f:
               pos: []
-              audio: Story_6_Sektimus_12.m4a
+              audio: Story_6_Sektimus_12.mp3
               actor: sektimus
               text: I will keep my eyes on you. My swarm is not far and we shall meet again on the real battlefield.
             g:
               pos: [270,300]
               text: Not many have the courage to stare Sektimus in the eyes and challenge him. Well fought. Let's complete your training.
-              audio: Story_6_Ctanlee_17.m4a
+              audio: Story_6_Ctanlee_17.mp3
         duration: {kind: ux }
       # 3 Duties ==========================================
       -

@@ -8,15 +8,15 @@ dialogue:
     a:
       emo: happy
       text: "Crikey!"
-      audio: Story_6_Ctanlee_13.m4a
+      audio: Story_6_Ctanlee_13.mp3
     b:
       emo: happy
       text: "Stay on target."
-      audio: Story_6_Ctanlee_14.m4a
+      audio: Story_6_Ctanlee_14.mp3
     c:
       emo: surprize
       text: "Gravity kills."
-      audio: Story_6_Ctanlee_15.m4a
+      audio: Story_6_Ctanlee_15.mp3
 ux:
   components:
     -
@@ -25,8 +25,9 @@ ux:
         click:
           - {cmd: slides.next-slide}
         intro:
+        hasLabels: true
         title: Choose your NERC Bot-Tron Defense
-        subTitle: "The Incident Response Team reported the threat to E-ISAC. From this information and the forensic data we provided from the recovery, NERC designed several Bot-Tron Overlord defenses. <br/>Time to kick some bot."
+        subTitle: The <a data-label="team">Incident Response Team</a> reported the threat to <a data-label="eisac">E-ISAC</a>. From this information and the forensic data we provided from the recovery, <a data-label="nerc">NERC</a> designed several Bot-Tron Overlord defenses. <br/>Time to kick some bot.
         submitBtn: {txt: Install, icon: action-btn-fist}
         items:
           -
