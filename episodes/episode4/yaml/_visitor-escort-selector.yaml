@@ -25,6 +25,7 @@ ux:
         click:
           - {cmd: slides.next-slide}
         intro:
+        hasLabels: true
         title: Select your Visitor Escort System
         subTitle: Every organization's <a data-label="visitor_escort">Visitor Escort Procedure</a> handles logging and escorting <a data-label="visitor">Visitors</a> differently. Here are a few options for your facility.
         submitBtn: {txt: Install, icon: action-btn-fist}

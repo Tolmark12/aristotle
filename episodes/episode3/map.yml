@@ -132,13 +132,16 @@ chapters:
           timeline:
             - {action: a }
             - {action: b }
+            - {action: c }
           actions:
             a:
               pos: [100,100]
-              next: 20000
               text: "Richard, you have firewalls and physical port protections to install. Get cracking."
               audio: Story_4_Ctanlee_7.mp3
             b:
+              pos: [100,100]
+              next: 13000
+            c:
               pos: [100,100]
               text: "You sure know how to accessorize."
               audio: Story_4_Ctanlee_8.mp3
@@ -607,20 +610,18 @@ chapters:
             - {action: f }
             - {action: g }
             - {action: h }
-            - {action: i }
-            - {action: j }
           actions:
             a:
               next: 6000
               pos: []
             b:
               emo: left
-              pos: [600,600]
+              pos: [625,620]
               text: "Richard set up the workstation and documented the configuration."
               audio: Story_4_Ctanlee_28.mp3
             c:
               next: 1000
-              pos: [600,600]
+              pos: [625,620]
             d:
               emo: left
               pos: [625,650]
@@ -644,14 +645,6 @@ chapters:
               pos: [700,100]
               text: "You fought well, bot. But we fought so much better. Now let's handle that disposal better."
               audio: Story_4_Ctanlee_32.mp3
-            i:
-              next: 11000
-              pos: []
-            j:
-              next: 3500
-              pos: [100,400]
-              text: "Robot! - NO BCSI For You!"
-              audio: Story_4_Ctanlee_33.mp3
         duration: {kind: ux }
       # 3 Dialogue Duties review ==========================================
       -

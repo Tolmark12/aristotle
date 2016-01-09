@@ -54,6 +54,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Perimeter and Asset Access
                 body: Our defenses are up! Now we need to ensure only authorized <a data-label="defender">Defenders</a> have the access they need&#58; <ul><li><a data-label="physical_access" class="new">Physical Access</a> to open the door and enter the <a data-label="psp">PSP</a>.</li><li><a data-label="electronic_access" class="new">Electronic Access<a/> to logon to workstations, servers, and other <a data-label="crca">CRCAs</a>.</li><li><a data-label="information_access" class="new">Information Access</a> to file shares, filing cabinets, and other <a data-label="bcsi">BCSI</a> locations.</li></ul>The robots obviously want any access they can get, so let's see what can happen.
                 btn:
@@ -128,6 +129,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Removing Access
                 body: Our <a data-label="defender">Defenders</a> never removed Rod's door system and workstation accounts after he quit his job, so he still has Physical and Electronic Access. Once a <a data-label="defender">Defender</a> leaves their job, we must disable Physical Access and Electronic Access within 24 hours. This effectively cuts the person off from our facilities and CRCAs. Any user accounts must be completely removed and shared passwords they know changed within 30 days.
                 btn:
@@ -143,6 +145,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Granting Access
                 body: In the simulation, we granted <a data-label="physical_access">Physical Access</a> to a malicious agent of the robots. To avoid this, we must carefully evaluate employees, vendors and contractors before we give them <a data-label="physical_access">Physical Access</a> or <a data-label="electronic_access">Electronic Access</a> to our assets. This is the required process&#58; <ol><li>Personnel Risk Assessment - Check the person's background for risks and criminal activity</li><li>Cyber-Security Training - Teach the person about cyber threats and their duties as a <a data-label="defender">Defender</a></li><li>Compliance Documentation - Document access needed and management approval</li><li>Configure Access - Grant the person access to facilities, assets, and information</li></ol>
                 btn:
@@ -296,6 +299,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Information Access
                 body: For <a data-label="defender">Defenders</a>, access to <a data-label="bcsi">BCSI</a> is typically granted along with their <a data-label="physical_access">Physical Access</a> and <a data-label="electronic_access">Electronic Access</a>. Vendors, consultants, and other employees without this level of access often need to see <a data-label="bcsi">BCSI</a>, so <a data-label="cip">CIP</a> allows organizations flexibility to define how they share this information. For example, some organizations require vendors to sign an NDA before receiving <a data-label="bcsi">BCSI</a> and confirm in writing they have destroyed <a data-label="bcsi">BCSI</a> at the conclusion of a project.
                 btn:
@@ -311,6 +315,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Access Audits
                 body: Any complex process requires oversight, so we annually review our documented access permissions to ensure we provide the fewest permissions needed for our <a data-label="defender">Defenders</a> to perform their jobs. We also do a quarterly check of actual permissions in the systems against the documented permissions to discover any mismatches and correct them. <br/><br/><a data-label="cip">CIP</a> has given our <a data-label="defender">Defenders</a> processes to securely remove access, grant access, and audit our work. Let's learn your duties.
                 btn:
@@ -350,6 +355,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: User Accounts
                 body: After our new operator was approved for access, Richard created a <a data-label="user_account" class="new">User Account</a> for Cindy that gave her <a data-label="electronic_access">Electronic Access</a> to use the control system software on her workstation. When Cindy logs in each morning, she enters a username and password for this user account to validate her identity and access the system. <br/><br/>The robots would love to learn Cindy's username and password, so we must protect her <a data-label="user_account">User Account</a>. This chapter teaches the defenses that keep these accounts from falling into the metallic hands of the robots.
                 btn:
@@ -368,6 +374,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Account Attacks
                 body: To make Cindy's password hard for the bots to guess, our passwords must have a minimum length and complexity to ensure they are difficult to guess. However, even with a complex password, robots can use special tools to perform a <a data-label="brute" class="new">Brute-Force Attack</a> where they rapidly try many millions of usernames and passwords until they find a match. Let's see a <a data-label="brute">Brute-Force Attack</a> in action against Cindy's account.
                 btn:
@@ -418,6 +425,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Brute-Force Defenses
                 body: We protect against <a data-label="brute">Brute-Force</a> and other <a data-label="user_account">User Account</a> attacks with regular password changes and account locking/alerting. We must change our passwords at least once a year. We also lock accounts after several failed logins and/or implement alerts so a technical <a data-label="defender">Defender</a> can investigate if an attack is underway. <br/><br/>Richard just enabled locking and alerting on all user accounts, so let's see if the Kettlehead's <a data-label="brute">Brute-Force Attack</a> is still effective.
                 btn:
@@ -438,6 +446,7 @@ chapters:
             - {action: c }
             - {action: d }
             - {action: e }
+            - {action: f }
           actions:
             a:
               next: 1500
@@ -447,13 +456,16 @@ chapters:
               text: "You won't get far this time."
               audio: Story_5_Ctanlee_21.mp3
             c:
-              next: 10500
+              next: 12500
               pos: []
             d:
               pos: [100,100]
               text: "Busted! Richard was notified of your login attempts and discovered the firewall issue that let you in. He fixing it now."
               audio: Story_5_Ctanlee_22.mp3
             e:
+              next: 3500
+              pos: [100,100]
+            f:
               pos: [100,100]
               text: "The metal is willing, but the spirit is weak."
               audio: Story_5_Ctanlee_23.mp3
@@ -473,6 +485,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Shared and Default Accounts
                 body: Some older <a data-label="crca">CRCAs</a> don't allow us to create accounts for each user. If multiple <a data-label="defender">Defenders</a> need access to these devices, they must share the same username and password to login. If you use one of these <a data-label="shared" class="new">Shared Account</a>, act as if it's your personal account and don't share the login information with others. <br/><br/>Some <a data-label="crca">CRCAs</a> come pre-configured with accounts, so we disable or rename these <a data-label="default" class="new">Default Account</a> and change their passwords before putting the <a data-label="crca">CRCA</a> into in service. <br/><br/>We've covered protecting user accounts, shared accounts, and default accounts. Time to review our duties.
                 btn:
@@ -521,7 +534,7 @@ chapters:
               audio: Story_5_Ctanlee_25.mp3
             f:
               pos: []
-              audio: Story_5_Sektimus_1.mp3
+              audio: Story_5_Sektimus_3.mp3
               actor: sektimus
               text: Afraid? Fear is not in my circuitry.
             g:
@@ -544,7 +557,7 @@ chapters:
           actions:
             a:
               pos: []
-              audio: Story_5_Sektimus_3.mp3
+              audio: Story_5_Sektimus_4.mp3
               actor: sektimus
               text: I accept the challenge as well. I have work to do.
         duration: {kind: dialogue }
@@ -594,6 +607,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Visitor Access
                 body: We learned how access is managed for employees, vendors, and consultants, but sometimes we want to bring a <a data-label="visitor" class="new">Visitor</a> inside a <a data-label="psp">PSP</a> on a temporary basis. Visitors carry a host of risks. Let's see why.
                 btn:
@@ -641,6 +655,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: The Visitor Escort Procedure
                 body: "Wow, that <a data-label='visitor'>Visitor</a> caused a lot of damage. To secure our facilities for tours, visits by auditors, and other short-term needs, we follow a <a data-label='visitor_escort' class='new'>Visitor Escort Procedure</a>: Defenders with <a data-label='physical_access'>Physical Access</a> to a <a data-label='psp'>PSP</a> can take a visitor inside if they log the <a data-label='visitor'>Visitor's</a> name, entry and exit time, and remain with the Visitor for the duration of the visit."
                 btn:
@@ -656,6 +671,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: Visitor Limits
                 body: The <a data-label="visitor_escort">Visitor Escort Procedure</a> is for <a data-label="physical_access">Physical Access</a> inside a <a data-label="psp">PSP</a> only. Visitors are not allowed to use workstations, servers, and other <a data-label="crca"> CRCAs. If a Visitor needs to interact with a system, they must relay instructions to a Defender with <a data-label="electronic_access">Electronic Access</a> to the system. To protect our <a data-label="bcsi">BCSI</a>, visitors are not allowed to take pictures inside a <a data-label="psp">PSP</a>. <br/><br/>Even if you are trained as a Defender, you are considered a Visitor (and must be escorted) to any PSPs you don't have documented <a data-label="physical_access">Physical Access</a> to. Access to one PSP doesn't mean access to all.
                 btn:
@@ -709,6 +725,7 @@ chapters:
             -
               kind: dialogue
               config:
+                hasLabels: true
                 title: On the Home Stretch
                 body: We have a process for securely granting and removing <a data-label="physical_access">Physical Access</a>, <a data-label="electronic_access">Electronic Access</a>, and <a data-label="information_access">Information Access</a>, we have safeguards on our <a data-label="user_account">User Accounts</a>, and <a data-label="visitor">Visitors</a> can securely access our <a data-label="cip"> PSPs through the <a data-label="visitor_escort">Visitor Escort Procedure</a>. Your mastery of defenses is now complete and your facility is fully protected. In our final episode, we learn how to Fight the War.
                 btn:
