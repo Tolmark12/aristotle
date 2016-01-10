@@ -12,6 +12,7 @@ module.exports = class Movie
     @highlighter     = new Highlighter @$wrapper, @dynamicAssets
     @scale           = 1
     @transformOrigin = {x:0, y:0}
+    @publishScaleAndTransform()
 
     token1  = PubSub.subscribe 'movie.load-layer', (m, data)          => @addLayer data
     token2  = PubSub.subscribe 'movie.zoom',       (m, data)          => @zoom data
@@ -60,6 +61,7 @@ module.exports = class Movie
     # Rounding for internet explorer, if decimal transform origin doesn't work!
     @$el.css "transform-origin": "#{Math.round(x)}px #{Math.round(y)}px"
     @$el.css transform: "scale(#{@scale})"
+    @publishScaleAndTransform()
 
   clearLayer : (depth) -> if @layers[depth]? then @layers[depth].empty()
   clearAllLayers : ()  -> layer.empty() for layer in @layers
@@ -111,37 +113,8 @@ module.exports = class Movie
     for layer in @layers
       layer.removeFilters()
 
-  getGlobalPos : (itemId)->
-    bBox = $("##{itemId}")[0].getBBox()
-
-    xtraX = @transformOrigin.x * (@scale-1) - @transformOrigin.x
-    x = (bBox.x * @scale) - (@transformOrigin.x + xtraX)
-
-    xtraY = @transformOrigin.y * (@scale-1) - @transformOrigin.y
-    y = (bBox.y * @scale) - (@transformOrigin.y + xtraY)
-
-    # console.log "X :::::::"
-    # console.log "bbox.x           : #{bBox.x}"
-    # console.log "scale            : #{@scale}"
-    # console.log "transform origin : #{@transformOrigin.x}"
-    # console.log "target           : #{x}"
-    # console.log "xtra x           : #{xtraX}"
-    # console.log "xtra y           : #{xtraY}"
-    obj =
-      # x: @transformOrigin.x - (bBox.x * @scale)
-      # y: @transformOrigin.y - (bBox.y * @scale)
-      x: x
-      y: y
-      w: bBox.width
-      h: bBox.height
-
-  getLocalPos  : (itemId)->
-    bBox = $("##{itemId}")[0].getBBox()
-    obj =
-      x: bBox.x
-      y: bBox.y
-      w: bBox.width # / @scale
-      h: bBox.height# / @scale
+  getGlobalPos : (itemId)-> aristotle.getGlobalPos itemId
+  getLocalPos  : (itemId)-> aristotle.getLocalPos itemId
 
   dehydrateLayerState : () ->
     layers = []
@@ -150,7 +123,6 @@ module.exports = class Movie
     layers
 
   rehydrateLayerState : (layers) ->
-    console.log layers
     @reset()
     for layerData in layers
       if layerData?
@@ -158,6 +130,10 @@ module.exports = class Movie
         if !layerData.loop
           layerData.jumpToEnd = true
         @addLayer layerData
+
+  publishScaleAndTransform : () ->
+    PubSub.publish 'scale.update',  @scale
+    PubSub.publish 'transform.update',  @transformOrigin
 
   destroy : () ->
     @reset()

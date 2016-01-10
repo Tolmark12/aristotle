@@ -497,14 +497,6 @@ chapters:
       # 2 Explore Defenders ==========================================
       -
         duration: {kind: ux}
-        action:
-          - {cmd: label.add, data: {id: jerry-hit, text: Jerry, face: right } }
-          - {cmd: label.add, data: {id: brad-hit, text: Brad, face: right } }
-          - {cmd: label.add, data: {id: shelly-hit, text: Shelly, face: right } }
-          - {cmd: label.add, data: {id: lisa-hit, text: Lisa, face: top, arrow: right} }
-          - {cmd: label.add, data: {id: rod-hit, text: Rod, face: top, arrow: right} }
-          - {cmd: label.add, data: {id: richard-hit, text: Richard, face: top, arrow: right} }
-          - {cmd: label.add, data: {id: arnold-hit, text: Arnold, face: top} }
         ux:
           components:
             -
@@ -515,6 +507,7 @@ chapters:
                 cards:
                   -
                     hit: arnold
+                    label: {text: Arnold, face: top}
                     name: Arnold, Mr. Electrical Worker
                     quote: This country was built by people wearing denim.
                     personal1: Proud of
@@ -527,6 +520,7 @@ chapters:
                       - Change Control Checklist
                   -
                     hit: shelly
+                    label: {text: Shelly, face: right }
                     name: Shelly, CIP Senior Manager
                     quote: Keeping head and Standards high.
                     Personal1: Remembers fondly
@@ -539,6 +533,7 @@ chapters:
                       - Signed delegations documentation
                   -
                     hit: jerry
+                    label: {text: Jerry, face: right }
                     name: Jerry, that guy from HR
                     quote: Always ready to give out hugs…while respecting your personal space
                     Personal1: Holds record for
@@ -551,6 +546,7 @@ chapters:
                       - Dated workflow with approvals
                   -
                     hit: brad
+                    label: {text: Brad, face: right }
                     name: Brad, Compliance Team Warrior
                     quote: Compliance is just another way to say 'I love you'
                     Personal1: Favorite possession
@@ -563,6 +559,7 @@ chapters:
                       - Signed and dated lists of assets
                   -
                     hit: rod
+                    label: {text: Rod, face: top, arrow: right}
                     name: Rod, the Smooth Operator
                     quote: 99% routine, 1% sheer terror.
                     Personal1: Daily caffeine quota is
@@ -575,6 +572,7 @@ chapters:
                       - Computer System Events
                   -
                     hit: richard
+                    label: {text: Richard, face: top, arrow: right}
                     name: Richard, Your IT Dude
                     quote: I'm not anti-social. I'm just not user friendly
                     Personal1: Lifetime accomplishment
@@ -587,6 +585,7 @@ chapters:
                       - Task Documentation
                   -
                     hit: lisa
+                    label: {text: Lisa, face: top, arrow: right}
                     name: Lisa, Supervisor Who Wears Prada
                     quote: Working weekends allows for a jumpstart of the work week
                     Personal1: Happiest when

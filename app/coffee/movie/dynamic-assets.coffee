@@ -21,27 +21,28 @@ module.exports = class DynamicAssets
    ######   ##     ##  #######   ######     ##        #######  ##     ##
 
   createGhost : (data) ->
-    $target = $ "##{data.id}"
-    pos     = $target.position()
-    wid     = $target[0].getBBox().width
-    tal     = $target[0].getBBox().height
+    # $target = $ "##{data.id}"
+    box = aristotle.getLocalPos data.id
 
-    if wid > 500 || tal > 400 then aristotle.log "We've created a hit area for `#{data.id}` that is #{wid}px by #{tal}px, I'm guessing that's not right.."
+    if box.w > 500 || box.h > 400 then aristotle.log "We've created a hit area for `#{data.id}` that is #{box.w}px by #{box.h}px, I'm guessing that's not right.."
 
-    $ghostItem = $ jadeTemplate['slide-ux/components/ghost-item']( {id:"#{data.id}-ghost", width:wid, height:tal, left:pos.left, top:pos.top} )
+    $ghostItem = $ jadeTemplate['slide-ux/components/ghost-item']( {id:"#{data.id}-ghost", width:box.w, height:box.h, left:box.x, top:box.y} )
     @$el.append $ghostItem
 
+    @addEvents $ghostItem, data.events, data.id
+
+  addEvents : ($el, events, id) ->
     # Set event handlers
-    for event, action of data.events
+    for event, action of events
       # if it's a global command ie: {cmd: do.something, data: somedata}
       if action.cmd?
-        $ghostItem.on event, ()-> aristotle.commander.do action
+        $el.on event, ()-> aristotle.commander.do action
 
       # if it's a function..
       else if typeof action == "function"
-        $ghostItem.on event, ()-> action data.id
+        $el.on event, ()-> action id
 
-  destroyGhost : (ghostId) -> $("#{ghostId}-ghost").remove()
+  destroyGhost : (ghostId) -> $("##{ghostId}-ghost").remove()
 
 
   ##          ###    ########  ######## ##        ######
@@ -58,6 +59,10 @@ module.exports = class DynamicAssets
     @$el.append $label
     @positionLabel data, $label, pos
     $label.css top:pos.y, left:pos.x;
+    @addEvents $label, data.events, data.id
+    if data.events?
+      $label.addClass "clickable"
+
 
   removeLabel : (data)->
     if data.id == "all"
@@ -122,7 +127,5 @@ module.exports = class DynamicAssets
         $innerLabel.addClass "arrow-right"
       when "middle"
         $innerLabel.addClass "arrow-middle"
-        console.log "width"
-        console.log $innerLabel.width()
         window.thing = $innerLabel
         $innerLabel.css left: - $innerLabel.width()/2

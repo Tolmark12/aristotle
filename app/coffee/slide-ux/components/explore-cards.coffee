@@ -16,25 +16,27 @@ module.exports = class ExploreCards extends Component
   createCardGhosts : (cards) ->
     @ghosts = []
     for cardData in cards
+      if cardData.label?
+        cardData.label.id     = cardData.hit
+        cardData.label.events = click: (id)=> @showCard id
+        @addLabel cardData.label
+
       data =
-        id: cardData.hit
-        events:
-          click: (id)=> @showCard id
+        id     : cardData.hit
+        events : click: (id)=> @showCard id
       @ghosts.push cardData.hit
       PubSub.publish 'ghostux.add', data
+
+  addLabel : (labelData) ->
+    PubSub.publish 'label.add', labelData
 
   showCard : (cardId) =>
     @totalCardsViewed++
     if @$currentCard? then @removeCurrentCard()
-
     data = @cards.getItemByParam 'hit', cardId # we may want to assign an unique id to each card or something..
     @$currentCard = $ jadeTemplate["slide-ux/components/cards/#{@data.template}"]( data )
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$currentCard
-
     $(".got-it-btn", @$currentCard).on "click", (e)=> @removeCurrentCard()
-
-    # We probably want to keep track of which cards have been viewed to enforce unique views of cards
-    # instead of just counting anonymous card views
     if @totalCardsViewed >= @requiredCardViews
       PubSub.publish 'continue.show'
 

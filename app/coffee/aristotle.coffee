@@ -1,18 +1,19 @@
-ChromeUI       = require "chrome/chrome-ui"
-Commander      = require 'misc/commander'
-DevTools       = require 'misc/dev-tools'
-Dictionary     = require 'misc/dictionary'
-Episode        = require "episode/episode"
-EpisodeLoader  = require 'misc/episode-loader'
-GlobalVars     = require 'misc/global-vars'
-isInternetExp  = require 'misc/browser-detect'
-LMSProxy       = require 'misc/lms-proxy'
-Logger         = require 'misc/logger'
-Movie          = require 'movie/movie'
-Parser         = require 'misc/parser'
-PausableDelays = require 'misc/pausable-delays'
-SlideUX        = require 'slide-ux/slide-ux'
-SoundFX        = require 'misc/sfx'
+ChromeUI        = require "chrome/chrome-ui"
+Commander       = require 'misc/commander'
+DevTools        = require 'misc/dev-tools'
+Dictionary      = require 'misc/dictionary'
+Episode         = require "episode/episode"
+EpisodeLoader   = require 'misc/episode-loader'
+GlobalVars      = require 'misc/global-vars'
+isInternetExp   = require 'misc/browser-detect'
+LMSProxy        = require 'misc/lms-proxy'
+Logger          = require 'misc/logger'
+Movie           = require 'movie/movie'
+Parser          = require 'misc/parser'
+PausableDelays  = require 'misc/pausable-delays'
+SlideUX         = require 'slide-ux/slide-ux'
+SoundFX         = require 'misc/sfx'
+SvgCartographer = require 'misc/svg-cartographer'
 
 class Aristotle
 
@@ -27,6 +28,7 @@ class Aristotle
     parser         = new Parser()
     soundFx        = new SoundFX()
     pausableDelays = new PausableDelays()
+    cartographer   = new SvgCartographer()
     shadowIcons    = new pxicons.ShadowIcons()
     @setDevMode @isDevMode
     lmsProxy.begin @begin

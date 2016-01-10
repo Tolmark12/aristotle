@@ -15,4 +15,4 @@ chapters:
         title: Outro Movie
         movie:
           layers:
-            - {depth: 0, content: ~6/Conclusion-Proof.mp4 }
+            - {depth: 0, content: ~6/7-Conclusion.mp4 }

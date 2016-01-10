@@ -81,6 +81,7 @@ $horiz-padding : 9px;
 }
 .label-wrapper          { position:absolute;
   &.attached            { top:0; }
+  &.clickable           { cursor:pointer; }
 
   $border-width:2px;
   $border-color:white;
