@@ -289,7 +289,7 @@ chapters:
               text: Defender, Sektimus is trying to communicate with us again.
               audio: Story_4_Ctanlee_12.mp3
             b:
-              pos: [270,300]
+              pos: [270,400]
               text: WarCore, patch him through.
               audio: Story_4_Ctanlee_13.mp3
             c:
@@ -312,7 +312,7 @@ chapters:
               next: 2000
               pos: []
             h:
-              pos: [270,300]
+              pos: [270,400]
               text: Cadet … Please lean toward the screen!
               audio: Story_4_Ctanlee_14.mp3
             i:

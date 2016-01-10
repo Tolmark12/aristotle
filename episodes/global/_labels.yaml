@@ -34,7 +34,7 @@ crca:
 manager:
   title: "CIP Senior Manager"
   text: "Leads the CIP war efforts against the robots and our allies. Be sure to greet them with the official Fist-Bump SaluteTM if you pass in the hallway."
-defenders:
+defender:
   title: "Defenders"
   text: "Individuals like you who have access to and are responsible for, maintain, support, or use CRCAs and BCSI. Examples: IT Manager, Network Tech, Substation Tech, System Operator, Control Room Operator, Flak-Cannon Engineer."
 cyber_security_program:

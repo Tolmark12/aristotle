@@ -440,7 +440,7 @@ chapters:
               config:
                 hasLabels: true
                 title: More Defenders
-                body: The <a data-label="manager">CIP Senior Manager</a> often has specialized <a data-label="defenders">Defenders</a> who help in different ways. Let's add the Compliance Team, Human Resources, and the <a data-label="manager">CIP Senior Manager</a> herself to our HQ building.
+                body: The <a data-label="manager">CIP Senior Manager</a> often has specialized <a data-label="defender">Defenders</a> who help in different ways. Let's add the Compliance Team, Human Resources, and the <a data-label="manager">CIP Senior Manager</a> herself to our HQ building.
                 btn:
                   style: lightning
                   text: load defenders
@@ -473,7 +473,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Duties
-                body: 'A <a data-label="defenders">Defender</a> has two primary jobs related to <a data-label="cip">CIP</a>:<ol><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed</li></ol>Our <a data-label="cyber_security_program" class="new">Cyber Security Program</a> describes how our duties meet the <a data-label="cip">CIP Standards</a> and we teach these duties through annual cyber security training and regular awareness communication.'
+                body: 'A <a data-label="defender">Defender</a> has two primary jobs related to <a data-label="cip">CIP</a>:<ol><li>To Perform Duties that secure our infrastructure</li><li>To Create Evidence that those duties were performed</li></ol>Our <a data-label="cyber_security_program" class="new">Cyber Security Program</a> describes how our duties meet the <a data-label="cip">CIP Standards</a> and we teach these duties through annual cyber security training and regular awareness communication.'
                 btn:
                   style: lightning
                   text: continue
@@ -489,7 +489,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Get to Know Your Defenders
-                body: While leadership may define the <a data-label="cyber_security_program">Program</a> and provide training and tools, success depends on everyone doing their duties. Protecting our infrastructure is a team effort and that's why we don't give out the title <a data-label="defenders">"Defender"</a> lightly. <br/><br/>On the next screen you can click on Defenders to learn about them and some of their duties.
+                body: While leadership may define the <a data-label="cyber_security_program">Program</a> and provide training and tools, success depends on everyone doing their duties. Protecting our infrastructure is a team effort and that's why we don't give out the title <a data-label="defender">"Defender"</a> lightly. <br/><br/>On the next screen you can click on Defenders to learn about them and some of their duties.
                 btn:
                   style: lightning
                   text: inspect defenders
@@ -747,7 +747,7 @@ chapters:
               config:
                 hasLabels: true
                 title: One Episode Down
-                body: Nice job, Cadet. Our facility is built, we tagged <a data-label="crca">CRCAs</a> and <a data-label="bcsi">BCSI</a> locations, learned about the <a data-label="manager">CIP Senior Manager</a> and the <a data-label="cyber_security_program">Cyber Security Program</a>, and added <a data-label="defenders">Defender</a>. Most importantly, we learned that our core mission as <a data-label="defenders">Defenders</a> is to protect our infrastructure by performing our duties and creating evidence. <br/><br/>Let's test your knowledge and move onto the next episode where we'll build and secure the perimeters around our facility. Buckle up into your office chairs, because things are about to get really interesting. The robots are coming…
+                body: Nice job, Cadet. Our facility is built, we tagged <a data-label="crca">CRCAs</a> and <a data-label="bcsi">BCSI</a> locations, learned about the <a data-label="manager">CIP Senior Manager</a> and the <a data-label="cyber_security_program">Cyber Security Program</a>, and added <a data-label="defender">Defender</a>. Most importantly, we learned that our core mission as <a data-label="defender">Defenders</a> is to protect our infrastructure by performing our duties and creating evidence. <br/><br/>Let's test your knowledge and move onto the next episode where we'll build and secure the perimeters around our facility. Buckle up into your office chairs, because things are about to get really interesting. The robots are coming…
                 btn:
                   style: lightning
                   text: Review Duties
