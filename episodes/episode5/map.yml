@@ -408,7 +408,7 @@ chapters:
       -
         action: {cmd: ctanlee.gohome}
         sfx:
-          - {content: $nercSFX, delay: 1000, volume: 1}
+          - {content: $nercSFX, volume: 1}
         movie:
           layers:
             - {depth: 12, content: $nercBuild }

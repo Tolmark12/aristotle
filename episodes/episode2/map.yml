@@ -121,7 +121,7 @@ chapters:
       # 1 Animate PACS Build ==========================================
       -
         sfx:
-          - {content: $pacsSFX, delay: 1000, volume: 1}
+          - {content: $pacsSFX, volume: 1}
         movie:
           layers:
             - {depth: 7, content: $pacsBuild, cache: true }
@@ -442,7 +442,7 @@ chapters:
       -
         title: Toasty
         sfx:
-            - {content: $eacmsSFX, delay: 1000, volume: 1}
+            - {content: $eacmsSFX, volume: 1}
         movie:
           layers:
             - {depth: 7, content: perimeter_electronic.json }
@@ -576,7 +576,7 @@ chapters:
               pos: []
               audio: Story_3_Packet_2.mp3
               actor: packet
-              text: Ummm, well… I'm from the Internet and I kinda want to communicate with the control system. If that's ok with you. 
+              text: Ummm, well… I'm from the Internet and I kinda want to communicate with the control system. If that's ok with you.
             f:
               pos: []
               audio: Story_3_Firewall_6.mp3

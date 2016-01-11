@@ -154,7 +154,7 @@ chapters:
       # 1 Animate Selector Build ==========================================
       -
         sfx:
-          - {content: $accessSFX, delay: 1000, volume: 1}
+          - {content: $accessSFX, volume: 1}
         movie:
           layers:
             - {depth: 10, content: $accessBuild }
@@ -682,7 +682,7 @@ chapters:
       # 3 Animate Selector Build ==========================================
       -
         sfx:
-          - {content: $visitorSFX, delay: 1000, volume: 1}
+          - {content: $visitorSFX, volume: 1}
         movie:
           layers:
             - {depth: 11, content: $visitorBuild }

@@ -119,13 +119,18 @@ chapters:
       # 1 Animate Selector Build ==========================================
       -
         sfx:
-          - {content: $portSFX, delay: 1000, volume: 1}
+          - {content: $portSFX, volume: 1}
         movie:
           layers:
             - {depth: 9, content: $portBuild, events: [complete] }
         duration: {kind: time, seconds: 3 }
       # 1 Animate Install Port Security ==========================================
       -
+        sfx:
+          - {content: $portSFX, delay: 8500, volume: 0.5}
+          - {content: $portSFX, delay: 10000, volume: 0.5}
+          - {content: $portSFX, delay: 16500, volume: 0.5}
+          - {content: $portSFX, delay: 20000, volume: 0.5}
         movie:
           layers:
             - {depth: 8, content: clear }
@@ -169,6 +174,7 @@ chapters:
       -
         sfx:
           #- {content: ~g/MU_Attack_With_Defense_Music.wav, delay: 1000, volume: 0.5}
+          - {content: $portSFX, delay: 7900, volume: 0.5}
         movie:
           layers:
             - {depth: 10, content: $portDefend, vcr: true }
@@ -182,14 +188,14 @@ chapters:
             - {action: d }
           actions:
             a:
-              next: 8500
+              next: 9500
               pos: []
             b:
               pos: [100,100]
               text: "Hey FlashBot, do you feel the rejection?"
               audio: Story_4_Ctanlee_10.mp3
             c:
-              next: 2600
+              next: 2000
               pos: []
             d:
               pos: [100,100]
@@ -586,7 +592,7 @@ chapters:
       # 3 Animate Selector Build ==========================================
       -
         sfx:
-          - {content: $changeSFX, delay: 1000, volume: 1}
+          - {content: $changeSFX, volume: 1}
         movie:
           layers:
             - {depth: 9, content: $changeBuild, events: [complete] }
