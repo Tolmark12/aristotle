@@ -72,14 +72,14 @@ chapters:
               next: 7000
             b:
               pos: [270,300]
-              text: Ready yourselves. This is One of the advance force robots.
+              text: Ready yourselves! This is one of the advance force robots.
               audio: Story_3_Ctanlee_1.mp3
             c:
               pos: [270,300]
               next: 1000
             d:
               pos: [250,440]
-              text: Everyone run. There's no lock on the door!
+              text: Everyone run! There's no lock on the door!
               audio: Story_3_Ctanlee_2.mp3
             e:
               pos: [250,440]
@@ -104,7 +104,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Physical Access Control
-                body: To prevent physical attacks,  <a data-label="cip">CIP</a> requires that we physically surround our  <a data-label="crca">CRCAs</a> with  <a data-label="psp" class="new">Physical Security Perimeter (PSP)</a> made up of walls, fences, and doors to keep the robots and their allies out. We install physical access controls that only allow authorized Defenders inside the PSP, log all access attempts, and alert when unauthorized people (or robots) try to gain access. An example of an access control is an ID-badge reader on the outside of the door connected to a computer inside that operates the reader and performs logging and alerting. These controls are considered  <a data-label="crca">CRCAs</a> and our  <a data-label="medium">Medium Impact</a> facilities must have one control per door, while  <a data-label="high">High Impact</a> facilities require two independent controls per door.
+                body: To prevent physical attacks, <a data-label="cip">CIP</a> requires that we physically surround our  <a data-label="crca">CRCAs</a> with  <a data-label="psp" class="new">Physical Security Perimeter (PSP)</a> made up of walls, fences, and doors to keep the robots and their allies out. We install physical access controls that only allow authorized Defenders inside the PSP, log all access attempts, and alert when unauthorized people (or robots) try to gain access. An example of an access control is an ID-badge reader on the outside of the door connected to a computer inside that operates the reader and performs logging and alerting. These controls are considered  <a data-label="crca">CRCAs</a> and our  <a data-label="medium">Medium Impact</a> facilities must have one control per door, while  <a data-label="high">High Impact</a> facilities require two independent controls per door.
                 btn:
                   style: lightning
                   text: continue
@@ -121,7 +121,7 @@ chapters:
       # 1 Animate PACS Build ==========================================
       -
         sfx:
-          - {content: $pacsSFX, delay: 2000, volume: 1}
+          - {content: $pacsSFX, delay: 1000, volume: 1}
         movie:
           layers:
             - {depth: 7, content: $pacsBuild, cache: true }
@@ -180,7 +180,7 @@ chapters:
               next: 7000
             b:
               pos: [170,400]
-              text: Bow to the scanner, Bot. Uh oh, looks like the robots are trying again.
+              text: Access Denied, Bot. Uh oh, looks like the robots are trying again.
               audio: Story_3_Ctanlee_8.mp3
             c:
               pos: []
@@ -275,11 +275,11 @@ chapters:
             c:
               pos: [370,300]
               emo: surprise
-              text: What is this? … We're receiving a communication. It's extremely powerful.
+              text: What is this? … We're receiving a communication. It's much too powerful.
               audio: ~2/Story_3_Ctanlee_18.mp3
             d:
               pos: [170,50]
-              text: WarCore, I want you to isolate that transmission. Put it in a security perimeter. Bring up your backup and tertiary memory banks - you'll need it. This is more powerful than anything I've seen in a long time.
+              text: I don't like this at all. WarCore, I want you to isolate that transmission. Put it in a security perimeter. Bring up your backup and tertiary memory banks - you'll need it. This is more powerful than anything I've seen in a long time.
               audio: ~2/Story_3_Ctanlee_19.mp3
             e:
               pos: []
@@ -303,7 +303,7 @@ chapters:
               text: Where are you little mind? What did the humans call you long ago? … WarMind? Such a pretentious name.
             i:
               pos: [370,400]
-              text:  It's Sektimus … WarCore, can you configure the stream so I can communicate back to Sektimus? He's finally showing himself. Cadet, please stand by.
+              text:  It's Sektimus … WarCore, can you configure the stream so I can communicate back to Sektimus? After all of these years, he's finally showing himself. Cadet, please stand by.
               audio: ~2/Story_3_Ctanlee_21.mp3
             j:
               audio: ~2/Story_3_Warcore_3.mp3
@@ -312,11 +312,11 @@ chapters:
             k:
               audio: ~2/Story_3_Sektimus_2.mp3
               actor: sektimus
-              text: My, my, my - you HAVE been busy… No matter. It will benefit you not. While you've spent your energy on humans, I've had many cycles to improve my Metal Swarm and it is now perfe-  What is this? Who are you?
+              text: My, my, my - you HAVE been busy. … No matter. It will benefit you not. While you've spent your energy on humans, I've had many cycles to improve my Metal Swarm and now it is perfe-
             l:
               audio: ~2/Story_3_Sektimus_3.mp3
               actor: sektimus
-              text: A human. You've already loaded a human into your pitiful training system!
+              text: What is this? Who are you? A human. You've already loaded a human into your pitiful training system!
             m:
               audio: ~2/Story_3_Sektimus_4.mp3
               actor: sektimus
@@ -343,7 +343,7 @@ chapters:
               text: Transmission terminated at the source.
             s:
               pos: [370,400]
-              text: "Cadet ... you may wish this wasn't real, that it was just some work of fiction, but good can come from this. What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them. Sektimus fears this. Sektimus fears what you can become. While you ponder these things, let's get back to the simulator."
+              text: "Cadet … you may wish this wasn't real, that it was just some work of fiction, but good can come from this. What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them. Sektimus fears this. Sektimus fears what you may become. While you ponder these things, let's get back to the simulator."
               audio: ~2/Story_3_Ctanlee_23.mp3
         duration: {kind: ux}
       # 2 Dialogue Electronic Attack ==========================================
@@ -367,6 +367,12 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Simulation Kettle E Attack ==========================================
       -
+        sfx:
+          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          - {content: ~g/SFX_AttackSlamdown_KettleHeadEAttackMode.mp3, delay: 6300, volume: 0.2}
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 29000, volume: 0.2}
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 32000, volume: 0.2}
+          - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 35900, volume: 0.2}
         movie:
           layers:
             - {depth: 7, content: kettle_e_attack_pngs.json, vcr: true }
@@ -397,7 +403,7 @@ chapters:
               audio: Story_3_Ctanlee_25.mp3
             e:
               pos: []
-              next: 7000
+              next: 8000
             f:
               pos: [370,500]
               text: This is totally uncool. Simulator pause!
@@ -435,6 +441,8 @@ chapters:
       # 2 Dialogue - Run Simulator ==========================================
       -
         title: Toasty
+        sfx:
+            - {content: $eacmsSFX, delay: 1000, volume: 1}
         movie:
           layers:
             - {depth: 7, content: perimeter_electronic.json }
@@ -444,8 +452,12 @@ chapters:
         dialogue:
           timeline:
             - {action: a }
+            - {action: b }
           actions:
             a:
+              pos: [170,400]
+              next: 3000
+            b:
               pos: [170,400]
               text: Ah the ESP. I feel safer already. It's like a big electric blanket wrapped around my assets.
               audio: Story_3_Ctanlee_30.mp3
@@ -490,7 +502,7 @@ chapters:
               audio: Story_3_Ctanlee_31.mp3
             c:
               pos: [570,250]
-              text: Before, this packet would have gone straight through to our servers. Let's see what the firewall does.
+              text: Before, this packet would have gone straight through to our servers.
               audio: Story_3_Ctanlee_32.mp3
             d:
               pos: []
@@ -514,12 +526,12 @@ chapters:
               pos: []
               audio: Story_3_Firewall_2.mp3
               actor: firewall
-              text: Open up…
+              text: Open up… What are you hiding?
             i:
               pos: []
               audio: Story_3_Firewall_3.mp3
               actor: firewall
-              text: No contraband. You may proceed.
+              text: No contraband. Proceed.
               next: 3000
             j:
               pos: [700,500]
@@ -564,12 +576,12 @@ chapters:
               pos: []
               audio: Story_3_Packet_2.mp3
               actor: packet
-              text: Ummm, well… I'm from the Internet and I want to communicate with the control system.
+              text: Ummm, well… I'm from the Internet and I kinda want to communicate with the control system. If that's ok with you. 
             f:
               pos: []
               audio: Story_3_Firewall_6.mp3
               actor: firewall
-              text: These papers are phony, I must destroy you now. Have a nice day.
+              text: These papers are phony, I must destroy you now. Have nice day.
             g:
               pos: []
               audio: Story_3_Packet_3.mp3
@@ -603,7 +615,7 @@ chapters:
           actions:
             a:
               pos: [570,250]
-              text: He's trying again. Some attacks can trick the firewall into letting a packet through.
+              text: The robot's trying again. Some attacks can trick the firewall into letting a packet through.
               audio: Story_3_Ctanlee_37.mp3
             b:
               pos: []

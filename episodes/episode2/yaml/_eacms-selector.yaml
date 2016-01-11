@@ -41,6 +41,7 @@ ux:
                   eacmsAnimateGood: ~2/firewall_burn_good.json
                   eacmsAnimateBadUpper: ~2/firewall_burn_bad_upper.json
                   eacmsAnimateBadLower: ~2/firewall_burn_bad_lower.json
+                  eacmsSFX: ~2/SFX_ElectronicAccess_Burninator.mp3
             btnTxt: The Burninator
             icon: mini-burninator
             blurb: "Temperature: 419 degrees <br/>Spontaneous Combustion Chance: 7%"
@@ -56,6 +57,7 @@ ux:
                   eacmsAnimateGood: ~2/firewall_greatwall_good.json
                   eacmsAnimateBadUpper: ~2/firewall_greatwall_bad_upper.json
                   eacmsAnimateBadLower: ~2/firewall_greatwall_bad_lower.json
+                  eacmsSFX: ~2/SFX_ElectronicAccess_GreatFireWall.mp3
             btnTxt: The Great Wall
             icon: mini-great-wall
             blurb: "Manufactured By: Foxconn <br/>Facility Tourism: +50%"
@@ -71,6 +73,7 @@ ux:
                   eacmsAnimateGood: ~2/firewall_gated_good.json
                   eacmsAnimateBadUpper: ~2/firewall_gated_bad_upper.json
                   eacmsAnimateBadLower: ~2/firewall_gated_bad_lower.json
+                  eacmsSFX: ~2/SFX_ElectronicAccess_GatedCommunity.mp3
             btnTxt: Gated Community
             icon: mini-gated
             blurb: "Leather Trim: Yes <br/>Security Provided: 24x7"

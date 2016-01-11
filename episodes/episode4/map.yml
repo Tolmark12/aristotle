@@ -83,7 +83,7 @@ chapters:
               pos: []
             b:
               pos: [100,100]
-              text: "Rod just won the lottery! We need a new operator."
+              text: "Rod? Jumping up and down. Look at him go. What? He just won the lottery! Look at that! Look at Rod go. Give me a high five Rod! Yes… well…. if I had hands. <br/><br/>We need a new operator."
               audio: Story_5_Ctanlee_1.mp3
             c:
               next: 3000
@@ -153,10 +153,12 @@ chapters:
       - !!inc/file ./episodes/episode4/yaml/_access-control-selector.yaml
       # 1 Animate Selector Build ==========================================
       -
+        sfx:
+          - {content: $accessSFX, delay: 1000, volume: 1}
         movie:
           layers:
             - {depth: 10, content: $accessBuild }
-        duration: {kind: time, seconds: 5}
+        duration: {kind: time, seconds: 3.5}
       # 1 Dialogue Removing Access ==========================================
       -
         title: Once More Unto the Breach
@@ -220,7 +222,7 @@ chapters:
             a:
               emo: down
               pos: [150,500]
-              text: "The Personnel Risk Assessment. We've got you now."
+              text: "Jerry will now use his Personnel Risk Assessment. This will catch you."
               audio: Story_5_Ctanlee_12.mp3
             b:
               pos: [150,500]
@@ -276,7 +278,7 @@ chapters:
             g:
               emo: down
               pos: [550,450]
-              text: "We're safe to give Cindy the physical and electronic access she needs. Richard will configure this."
+              text: "So now we're safe to give Cindy the physical and electronic access she needs. Richard will configure this."
               audio: Story_5_Ctanlee_17.mp3
             h:
               next: 12000
@@ -284,7 +286,7 @@ chapters:
             i:
               emo: down
               pos: [580,220]
-              text: "Simulator Pause!"
+              text: "Bravo everyone! Simulator Pause."
               audio: Story_5_Ctanlee_18.mp3
         duration: {kind: ux }
       # 1 Dialogue Information Access ==========================================
@@ -457,7 +459,7 @@ chapters:
               pos: []
             d:
               pos: [100,100]
-              text: "Busted! Richard was notified of your login attempts and discovered the firewall issue that let you in. He fixing it now."
+              text: "Richard was notified of your login attempts and discovered the firewall issue that let you in. He is fixing it now."
               audio: Story_5_Ctanlee_22.mp3
             e:
               next: 3500
@@ -679,10 +681,12 @@ chapters:
       - !!inc/file ./episodes/episode4/yaml/_visitor-escort-selector.yaml
       # 3 Animate Selector Build ==========================================
       -
+        sfx:
+          - {content: $visitorSFX, delay: 1000, volume: 1}
         movie:
           layers:
-            - {depth: 11, content: $visitorBuild, events: [complete] }
-        duration: {kind: listen, event: layer.13.complete}
+            - {depth: 11, content: $visitorBuild }
+        duration: {kind: time, seconds: 3.5}
       # 3 Simulation Visitor Tracked ==========================================
       -
         movie:

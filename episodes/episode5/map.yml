@@ -211,7 +211,7 @@ chapters:
               pos: []
               audio: Story_6_Warcore_1.mp3
               actor: warcore
-              text: Scanning. Signal Clean. These are simple parameters for configuring my simulator with a new attack.
+              text: Scanning. Signal Clean. CTANLEE, these appear to be simple parameters for configuring my simulator with a new attack.
             f:
               pos: [270,300]
               text: Cadet, are you ready to put your facility to the test?
@@ -396,10 +396,10 @@ chapters:
               pos: []
               audio: Story_6_Sektimus_7.mp3
               actor: sektimus
-              text: What is this? This isn't fair! These defenses don't exist.
+              text: [Growl]
             e:
               pos: [300,220]
-              text: The WarCore is simply simulating the results from following the CIP Standards. Our Incident Response Team(remember them?) reported the Bot-Tron attack to E-ISAC and NERC used the information to build new experimental defenses for the industry against Bot-Tron Overlords. Proceed with your selection, Cadet.
+              text: The WarCore is simply simulating the results from following the CIP Standards. Our Incident Response Team reported the Bot-Tron attack to E-ISAC and NERC used the information to build new experimental defenses for the industry against Bot-Tron Overlords. Proceed with your selection, Cadet.
               audio: Story_6_Ctanlee_16.mp3
         duration: {kind: dialogue }
       # 3 Sektimus Nerc Defense Selector ? ==========================================
@@ -407,6 +407,8 @@ chapters:
       # 3 Sektimus Interlude ==========================================
       -
         action: {cmd: ctanlee.gohome}
+        sfx:
+          - {content: $nercSFX, delay: 1000, volume: 1}
         movie:
           layers:
             - {depth: 12, content: $nercBuild }
@@ -435,7 +437,7 @@ chapters:
               pos: []
               audio: Story_6_Sektimus_8.mp3
               actor: sektimus
-              text: No, no no no. Nooooooo!
+              text: No, no no no no. Nooooooo!
             c:
               pos: []
               audio: Story_6_Sektimus_9.mp3
@@ -455,7 +457,7 @@ chapters:
               pos: []
               audio: Story_6_Sektimus_12.mp3
               actor: sektimus
-              text: I will keep my eyes on you. My swarm is not far and we shall meet again on the real battlefield.
+              text: I will keep my eyes on you - all of them. My swarm is not far and we shall meet again on the real battlefield.
             g:
               pos: [270,300]
               text: Not many have the courage to stare Sektimus in the eyes and challenge him. Well fought. Let's complete your training.
@@ -655,7 +657,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 0, content: ~6/7-Conclusion.mp4 }
+            - {depth: 0, content: ~5/7-Conclusion.mp4 }
         dialogue:
           defaults:
             next: audio

@@ -82,7 +82,7 @@ chapters:
               pos: []
             d:
               pos: [100,100]
-              text: "The robots have taken control of the operator console and are overloading our transmission lines."
+              text: "These robots have taken control of the operator console and are overloading our transmission lines."
               audio: Story_4_Ctanlee_2.mp3
             e:
               next: 1500
@@ -119,7 +119,7 @@ chapters:
       # 1 Animate Selector Build ==========================================
       -
         sfx:
-          - {content: ~3/CIN_AssetConnection.mp3, delay: 400, volume: .5}
+          - {content: $portSFX, delay: 1000, volume: 1}
         movie:
           layers:
             - {depth: 9, content: $portBuild, events: [complete] }
@@ -186,7 +186,7 @@ chapters:
               pos: []
             b:
               pos: [100,100]
-              text: "Hey, FlashBot. Do you feel the rejection?"
+              text: "Hey FlashBot, do you feel the rejection?"
               audio: Story_4_Ctanlee_10.mp3
             c:
               next: 2600
@@ -317,7 +317,7 @@ chapters:
               pos: []
               audio: Story_4_Sektimus_1.mp3
               actor: sektimus
-              text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old "friend". I'm here to spend some time with you - I know failure hurts and I want to make sure this failure hurts you especially deeply. Where is your "Cadet" right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind steam piping in a plant basement? Or did they take a long drive in their work truck, never to return?
+              text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old "friend". I'm here to spend some time with you. I know failure hurts and I want to make sure this failure hurts you especially deeply. Where is your "Cadet" right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind a steaming pipe in a plant basement? Or did they take the long drive in their work truck, never to return?
             g:
               next: 2000
               pos: []
@@ -332,7 +332,7 @@ chapters:
               pos: []
               audio: Story_4_Sektimus_2.mp3
               actor: sektimus
-              text: What?? You're still here? Do you know who you contend with, human? I am the wielder of the ancient chip of Katra-Non, guardian of the Digium, chosen successor of Nexitar, master strategist of the Robot Hegemony, destroyer of the Charnel Nebula, builder of the Metal Swarm, enslaver of worlds. I am legion
+              text: What?? You're still here? Do you know who you contend with, human? I am wielder of the ancient chip of Katra-Non, guardian of the Digium, chosen successor of Nexitar, master strategist of the Robot Hegemony, destroyer of the Charnel Nebula, builder of the Metal Swarm, enslaver of worlds - I am LEGION!
             k:
               next: 1000
               pos: []
@@ -451,7 +451,7 @@ chapters:
               pos: []
             b:
               pos: [100,100]
-              text: "Looks like Rod's workstation is old and causing problems. Lisa requested an upgrade."
+              text: "Looks like Rod's workstation is old and causing problems. His supervisor requested an upgrade."
               audio: Story_4_Ctanlee_19.mp3
             c:
               next: 26000
@@ -586,7 +586,7 @@ chapters:
       # 3 Animate Selector Build ==========================================
       -
         sfx:
-          - {content: ~3/CIN_Quarantine.mp3, delay: 400, volume: .5}
+          - {content: $changeSFX, delay: 1000, volume: 1}
         movie:
           layers:
             - {depth: 9, content: $changeBuild, events: [complete] }
@@ -635,7 +635,7 @@ chapters:
             b:
               emo: left
               pos: [625,620]
-              text: "Richard set up the workstation and documented the configuration."
+              text: "And let's check in on the team. Richard set up the workstation and documented the configuration. Good job, Richard."
               audio: Story_4_Ctanlee_28.mp3
             c:
               next: 1000
@@ -656,12 +656,12 @@ chapters:
             g:
               emo: left
               pos: [470,460]
-              text: "And Rod's supervisor, Lisa, approves the change. We're safe to install."
+              text: "And now Rod's supervisor, Lisa, approves the change. Well done Lisa. We're safe to install. This is very entertaining, it's much more fun than watching cricket."
               audio: Story_4_Ctanlee_31.mp3
             h:
               next: 9000
               pos: [700,100]
-              text: "You fought well, bot. But we fought so much better. Now let's handle that disposal better."
+              text: "You fought well, bot. But we fought so much better. Now let's dispose of that old workstation."
               audio: Story_4_Ctanlee_32.mp3
         duration: {kind: ux }
       # 3 Dialogue Duties review ==========================================

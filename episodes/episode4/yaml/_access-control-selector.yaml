@@ -40,6 +40,7 @@ ux:
                   accessPassA: ~4/background_probe_pass_a.json
                   accessPassB: ~4/background_probe_pass_b.json
                   accessPassC: ~4/background_probe_pass_c.json
+                  accessSFX: ~4/SFX_AccessControlSystem_BackgroundProbe.mp3
             btnTxt: The Background Probe
             icon: mini-background-probe
             blurb: "Origin: Foreign <br/>Batteries: Not Included"
@@ -55,6 +56,7 @@ ux:
                   accessPassA: ~4/risk_detector_pass_a.json
                   accessPassB: ~4/risk_detector_pass_b.json
                   accessPassC: ~4/risk_detector_pass_c.json
+                  accessSFX: ~4/SFX_AccessControlSystem_RiskDetector.mp3
             btnTxt: The Risk Detector
             icon: mini-risk-detector
             blurb: "Pros: TSA Approved <br/>Cons: False Positives from Pace Makers, Artificial Joints, Belt Buckles"
@@ -70,6 +72,7 @@ ux:
                   accessPassA: ~4/voight_kampff_pass_a.json
                   accessPassB: ~4/voight_kampff_pass_b.json
                   accessPassC: ~4/voight_kampff_pass_c.json
+                  accessSFX: ~4/SFX_AccessControlSystem_VoightKampfDetector.mp3
             btnTxt: Voight-Kampff Assessor
             icon: mini-voight-kampff
             blurb: "Manufacturer: Tyrell Corporation <br/>When Powered Off: Dreams of Electric Sheep"

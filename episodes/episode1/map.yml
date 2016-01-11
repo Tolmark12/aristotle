@@ -450,7 +450,7 @@ chapters:
             a:
               pos: [150, 200]
               emo: happy
-              text: What HQ building you ask? This one.
+              text: Looking for an HQ Building?
               audio: Story_2_Ctanlee_X37.mp3
         duration: {kind: listen, event: layer.7.complete}
       # 2 Dialogue Duties ==========================================
@@ -661,7 +661,7 @@ chapters:
               audio: Story_2_Ctanlee_X39.mp3
             e:
               pos: [100,100]
-              text: "Hey! Stop. Stop. Don't leave with that! Simulation Pause!"
+              text: "Stop. Stop. Don't leave with that! Simulation Pause!"
               audio: Story_2_Ctanlee_15.mp3
         duration: {kind: ux }
       # 3 Dialogue Violation ==========================================
