@@ -9,6 +9,7 @@ module.exports = class Duties extends Component
     @acknowledgedDuties    = {} # Store the ids of each duty that's acknowledged
     @getData data.definition
     @$node  = $ "<div class='duties'/>"
+    PubSub.publish 'meta.duties.start'
     @superInit $el, @$node, data
 
   build : (data) ->
@@ -39,6 +40,7 @@ module.exports = class Duties extends Component
       @$currentActiveButton.addClass "complete"
 
     if @numAcknowledgedDuties == @duties.totalItems
+      PubSub.publish 'meta.duties.finish' 
       PubSub.publish 'continue.show'
     else
       # Loop through the duties and trigger the first uncompleted duty we find
@@ -46,9 +48,6 @@ module.exports = class Duties extends Component
         if !@acknowledgedDuties[duty.id]?
           $("##{duty.id}", @$node).trigger 'click'
           return
-
-
-
 
 
   # Add an id for knowing which duty was clicked on

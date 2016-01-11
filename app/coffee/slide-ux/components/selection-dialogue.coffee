@@ -4,6 +4,9 @@ module.exports = class SelectionDialogue extends Component
 
   constructor: ($el, data) ->
     super data
+    if !data.meta? then aristotle.throw "Selection dialogue doesn't have any meta data!"
+
+    @metaTitle = data.meta.title
     @$node = $ jadeTemplate['slide-ux/components/dialogue/selection-dialogue']()
     jadeData = @generateConfigData data
     @$left  = $ jadeTemplate['slide-ux/components/dialogue/dialogue-details']( jadeData )
@@ -12,6 +15,7 @@ module.exports = class SelectionDialogue extends Component
     @$node.append @$left
     @$node.append $right
     @addEventListeners @$node, data
+    PubSub.publish 'meta.choice.start', {id:data.meta.title}
 
     @superInit $el, @$node, data
 
@@ -38,9 +42,13 @@ module.exports = class SelectionDialogue extends Component
 
     $("#action-btn", $el).on "click", (e)=>
       aristotle.commander.do data.click
+      PubSub.publish 'meta.choice.finish', {id:data.meta.title, choice: aristotle.globals.get( data.meta.choice )}
       @destroy()
 
   activateItem : ($button, item) ->
+    return if @activeItem == item.btnTxt
+    @activeItem = item.btnTxt
+    PubSub.publish 'meta.activity', {activity: "Click #{item.btnTxt}", id:@metaTitle }
     @$left.removeClass "hidden"
     $(".item-info", @$node).css display:"block"
     $(".button", @$node).removeClass "active"

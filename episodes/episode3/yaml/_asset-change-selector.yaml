@@ -22,6 +22,9 @@ ux:
     -
       kind: selection-dialogue
       config:
+        meta:
+          title: Asset Change Tool
+          choice: change
         click:
           - {cmd: slides.next-slide}
         intro:

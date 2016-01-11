@@ -22,6 +22,9 @@ ux:
     -
       kind: selection-dialogue
       config:
+        meta:
+          title: Electronic Access Control System
+          choice: eacms
         click:
           - {cmd: slides.next-slide}
         intro:

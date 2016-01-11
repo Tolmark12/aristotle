@@ -19,6 +19,9 @@ ux:
     -
       kind: selection-dialogue
       config:
+        meta:
+          title: Facility Type
+          choice: facility
         hasLabels: true
         click:
           - {cmd: slides.next-slide}

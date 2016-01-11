@@ -22,6 +22,9 @@ ux:
     -
       kind: selection-dialogue
       config:
+        meta:
+          title: Access Control System
+          choice: access
         click:
           - {cmd: slides.next-slide}
         intro:

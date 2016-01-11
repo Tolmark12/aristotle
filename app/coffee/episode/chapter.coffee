@@ -7,6 +7,7 @@ module.exports = class Chapter
     @title = @chapterData.title
 
   start : (@firstSlideTitle) ->
+    PubSub.publish 'meta.chapter.start', @chapterData
     aristotle.devTools.go @chapterData.dev, @chapterData.slides
     chapterHeading = new ChapterHeading @chapterData, @startSlides
 
@@ -22,5 +23,7 @@ module.exports = class Chapter
       @slides.destroy()
       @slides = null
 
-  onSlidesComplete : () => @onChapterCompete()
+  onSlidesComplete : () =>
+    PubSub.publish 'meta.chapter.finish', @chapterData
+    @onChapterCompete()
 

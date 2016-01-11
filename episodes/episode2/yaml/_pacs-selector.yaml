@@ -22,6 +22,9 @@ ux:
     -
       kind: selection-dialogue
       config:
+        meta:
+          title: Physical Access Control System
+          choice: pacs
         click:
           - {cmd: slides.next-slide}
         intro:

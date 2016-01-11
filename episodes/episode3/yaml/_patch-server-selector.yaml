@@ -14,6 +14,9 @@ ux:
     -
       kind: selection-dialogue
       config:
+        meta:
+          title: Software Defenses
+          choice: patch
         click:
           - {cmd: slides.next-slide}
         intro:

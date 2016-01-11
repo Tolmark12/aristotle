@@ -1,3 +1,4 @@
+APIproxy        = require "misc/api-proxy"
 ChromeUI        = require "chrome/chrome-ui"
 Commander       = require 'misc/commander'
 DevTools        = require 'misc/dev-tools'
@@ -21,10 +22,11 @@ class Aristotle
     window.aristotle = @
     aristotle.sudo = sudo
     aristotle.isIE = isInternetExp()
+    globals        = new GlobalVars()
     commander      = new Commander()
     dictionary     = new Dictionary()
-    globals        = new GlobalVars()
     lmsProxy       = new LMSProxy @isLocal
+    apiProxy       = new APIproxy()
     parser         = new Parser()
     soundFx        = new SoundFX()
     pausableDelays = new PausableDelays()

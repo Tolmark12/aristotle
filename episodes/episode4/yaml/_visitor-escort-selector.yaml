@@ -22,6 +22,9 @@ ux:
     -
       kind: selection-dialogue
       config:
+        meta:
+          title: Visitor Escort Procedure
+          choice: visitor
         click:
           - {cmd: slides.next-slide}
         intro:

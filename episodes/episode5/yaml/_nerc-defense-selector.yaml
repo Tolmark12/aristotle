@@ -22,6 +22,9 @@ ux:
     -
       kind: selection-dialogue
       config:
+        meta:
+          title: NERC Cefence
+          choice: nerc
         click:
           - {cmd: slides.next-slide}
         intro:

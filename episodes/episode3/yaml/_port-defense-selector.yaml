@@ -22,6 +22,9 @@ ux:
     -
       kind: selection-dialogue
       config:
+        meta:
+          title: Physical Port Security
+          choice: port
         click:
           - {cmd: slides.next-slide}
         intro:
