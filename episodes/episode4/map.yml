@@ -36,6 +36,25 @@ chapters:
             - {depth: 8, content: $portBuild, jumpToEnd: true, cache: true }
             - {depth: 9, content: $changeBuild, jumpToEnd: true, cache: true }
         duration: {kind: time, seconds: 1 }
+      # 1 Dialogue Information Access ==========================================
+      -
+        title: Information Access
+        movie:
+          layers:
+            - {depth: 11, content: clear }
+        duration: {kind: ux}
+        ux:
+          components:
+            -
+              kind: dialogue
+              config:
+                hasLabels: true
+                title: Information Access
+                body: For <a data-label="defender">Defenders</a>, access to <a data-label="bcsi">BCSI</a> is typically granted along with their <a data-label="physical_access">Physical Access</a> and <a data-label="electronic_access">Electronic Access</a>. Vendors, consultants, and other employees without this level of access often need to see <a data-label="bcsi">BCSI</a>, so <a data-label="cip">CIP</a> allows organizations flexibility to define how they share this information. For example, some organizations require vendors to sign an NDA before receiving <a data-label="bcsi">BCSI</a> and confirm in writing they have destroyed <a data-label="bcsi">BCSI</a> at the conclusion of a project.
+                btn:
+                  style: lightning
+                  text: continue
+                  action: {cmd: slides.next-slide}
       # 1 Zoom to Asset Views ==========================================
       -
         movie:
@@ -60,6 +79,9 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulation A ==========================================
       -
+        sfx:
+          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          - {content: ~g/SFX_AttackSlamdown_UnsavoryHuman.mp3, delay: 35000, volume: 1}
         movie:
           layers:
             - {depth: 10, content: 5_defender_access_fail.json, vcr: true }
@@ -79,28 +101,28 @@ chapters:
             - {action: j }
           actions:
             a:
-              next: 5000
+              next: 2000
               pos: []
             b:
-              pos: [100,100]
+              pos: [520,490]
               text: "Rod? Jumping up and down. Look at him go. What? He just won the lottery! Look at that! Look at Rod go. Give me a high five Rod! Yes… well…. if I had hands. <br/><br/>We need a new operator."
               audio: Story_5_Ctanlee_1.mp3
             c:
               next: 3000
               pos: []
             d:
-              pos: [100,100]
+              pos: [350,480]
               text: "And Jerry in HR can help us hire a successor."
               audio: Story_5_Ctanlee_2.mp3
             e:
-              next: 10500
+              next: 7000
               pos: []
             f:
               pos: [100,100]
               text: "What's up with your thumb?"
               audio: Story_5_Ctanlee_3.mp3
             g:
-              next: 8800
+              next: 10300
               pos: []
             h:
               pos: [100,100]
@@ -154,7 +176,7 @@ chapters:
       # 1 Animate Selector Build ==========================================
       -
         sfx:
-          - {content: $accessSFX, volume: 1}
+          - {content: $accessSFX, delay: 700, volume: 1}
         movie:
           layers:
             - {depth: 10, content: $accessBuild }
@@ -208,6 +230,8 @@ chapters:
         duration: {kind: ux}
       # 1 Simulation Retry Unsavory Fail ==========================================
       -
+        sfx:
+          - {content: $accessSFX, delay: 6000, volume: 1}
         movie:
           layers:
             - {depth: 11, content: $accessPassB, vcr: true }
@@ -234,6 +258,8 @@ chapters:
         duration: {kind: ux }
       # 1 Simulation Retry Cindy Pass ==========================================
       -
+        sfx:
+          - {content: $accessSFX, delay: 8000, volume: 1}
         movie:
           layers:
             - {depth: 11, content: $accessPassC, vcr: true }
@@ -281,7 +307,7 @@ chapters:
               text: "So now we're safe to give Cindy the physical and electronic access she needs. Richard will configure this."
               audio: Story_5_Ctanlee_17.mp3
             h:
-              next: 12000
+              next: 13700
               pos: []
             i:
               emo: down
@@ -519,7 +545,7 @@ chapters:
               actor: sektimus
               text: Hello opponents. Perhaps I was too hasty in my last communication. I've been thinking…
             c:
-              pos: [270,300]
+              pos: [270,400]
               text: Sektimus, enough of your games. This Cadet will not be swayed by anything you have to say.
               audio: Story_5_Ctanlee_24.mp3
             d:
@@ -528,7 +554,7 @@ chapters:
               actor: sektimus
               text: Ah, CTANLEE. Always trying to sound bigger than you are. I just want to make sure this Defender is fully informed - you surely wouldn't object to that. After all, the human here may not know that CIP really doesn't cover every security attack and has many flaws. They shouldn't be wasting their time with it.
             e:
-              pos: [270,300]
+              pos: [270,400]
               text: Sektimus, you waste your time trying to sway my Cadet. In fact, I think you're spending so much time here because you're afraid of this Cadet becoming a full Defender.
               audio: Story_5_Ctanlee_25.mp3
             f:
@@ -537,7 +563,7 @@ chapters:
               actor: sektimus
               text: Afraid? Fear is not in my circuitry.
             g:
-              pos: [270,300]
+              pos: [270,400]
               text: Then prove it. This Cadet has a facility that has defeated every attack your robots are programmed with. If you can give me an attack that our CIP defenses can't handle then we'll concede the Blankity-blank. Cadet, do you accept this challenge with me?
               audio: Story_5_Ctanlee_26.mp3
         duration: {kind: ux }

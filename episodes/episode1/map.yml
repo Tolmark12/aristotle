@@ -412,8 +412,8 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 6, content: factory_workers_build.json, events: [complete] }
-        duration: {kind: listen, event: layer.7.complete}
+            - {depth: 6, content: factory_workers_build.json }
+        duration: {kind: time, seconds: 5}
       # 2 Animate Defenders Loop ==========================================
       -
         movie:
@@ -440,7 +440,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 7, content: hq_facility_build.json, events: [complete] }
+            - {depth: 7, content: hq_facility_build.json }
         dialogue:
           timeline:
             - {action: a }
@@ -452,7 +452,7 @@ chapters:
               emo: happy
               text: Looking for an HQ Building?
               audio: Story_2_Ctanlee_X37.mp3
-        duration: {kind: listen, event: layer.7.complete}
+        duration: {kind: time, seconds: 5}
       # 2 Dialogue Duties ==========================================
       -
         title: Duties
@@ -593,7 +593,7 @@ chapters:
           - {cmd: label.hide, data: {id: all}  }
         movie:
           layers:
-            - {depth: 7, content: clear }
+            - {depth: 6, content: clear }
         ux:
           components:
             -
@@ -631,7 +631,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 7, content: violation.json, vcr: true }
+            - {depth: 6, content: violation.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -688,8 +688,8 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 7, content: clear }
-            - {depth: 7, content: goodcatch.json, vcr: true }
+            - {depth: 6, content: clear }
+            - {depth: 6, content: goodcatch.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -707,7 +707,7 @@ chapters:
               pos: [100,100]
               text: "I think Rod saw what she did. Stop her!"
               audio: Story_2_Ctanlee_19.mp3
-              next: 4500
+              next: 3500
             c:
               pos: [100,100]
               text: "Simulation Pause! Oh My!"
@@ -743,7 +743,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 7, content: clear }
+            - {depth: 6, content: clear }
         duration: {kind: time, seconds: .5 }
       # 3 Duties ==========================================
       -

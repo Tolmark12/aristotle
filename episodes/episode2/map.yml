@@ -48,7 +48,6 @@ chapters:
       -
         sfx:
           #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
-          - {content: ~2/CIN_RobotRunning.mp3, delay: 1300, volume: 0.2}
           - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 3400, volume: 1}
           - {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3, delay: 12600, volume: .5}
           - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 14500, volume: 0.2}
@@ -120,8 +119,6 @@ chapters:
       - !!inc/file ./episodes/episode2/yaml/_pacs-selector.yaml
       # 1 Animate PACS Build ==========================================
       -
-        sfx:
-          - {content: $pacsSFX, volume: 1}
         movie:
           layers:
             - {depth: 7, content: $pacsBuild, cache: true }
@@ -160,6 +157,8 @@ chapters:
           - {content: $pacsSFX, delay: 3500, volume: 0.2}
           - {content: ~2/CIN_PhysicalDefense_Scanner.mp3, delay: 4200, volume: 0.2}
           - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 14000, volume: 0.2}
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 16000, volume: 0.2}
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 18000, volume: 0.2}
           - {content: ~2/CIN_PhysicalDefense_Laser.mp3, delay: 21000, volume: .5}
         action: {cmd: ctanlee.gohome}
         movie:

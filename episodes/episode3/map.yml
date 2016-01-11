@@ -149,7 +149,7 @@ chapters:
               audio: Story_4_Ctanlee_7.mp3
             b:
               pos: [100,100]
-              next: 13000
+              next: 14500
             c:
               pos: [100,100]
               text: "You sure know how to accessorize."
