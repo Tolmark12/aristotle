@@ -35,6 +35,7 @@ ux:
                   facility: substation
                   facilityBuild: ~1/substation_facility_build.json
                   facilityLoop: ~1/substation_facility_loop.json
+                  facilitySFX: ~1/SFX_FacilityType_Substation.mp3
             btnTxt: Substation
             icon: mini-substation
             blurb: "Rating: 345kV <br/>Tough and Gritty Workers: Yes <br/>CIP Impact: Medium Impact Facility"
@@ -48,6 +49,7 @@ ux:
                   facility: generation-plant
                   facilityBuild: ~1/generation_facility_build.json
                   facilityLoop: ~1/generation_facility_loop.json
+                  facilitySFX: ~1/SFX_FacilityType_GenerationPlant.mp3
             btnTxt: Generation Plant
             icon: mini-generation
             blurb: "Collar Color: Mostly Blue and 100% Proud Of It <br/>Capacity: 1600MW <br/>CIP Impact: Medium Impact Facility"
@@ -61,6 +63,7 @@ ux:
                   facility: control-center
                   facilityBuild: ~1/control_facility_build.json
                   facilityLoop: ~1/control_facility_loop.json
+                  facilitySFX: ~1/SFX_FacilityType_ControlCenter.mp3
             btnTxt: Control Center
             icon: mini-control-center
             blurb: "Monitor to Operator Ratio: 8:1 <br/>Favorite Beverage: Coffee <br/>Second Favorite Beverage: Coffee <br/>CIP Impact: Medium Impact Facility"

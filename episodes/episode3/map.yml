@@ -25,15 +25,14 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 0, content: ~1/c1-sky.svg, jumpToEnd: true, cache: true }
+            - {depth: 0, content: ~1/c1-sky.svg }
             - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
             - {depth: 2, content: ~1/c1_background_buildin.json, jumpToEnd: true, cache: true }
-            - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true }
+            - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true}
             - {depth: 4, content: $facilityLoop, loop: true }
-            - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true }
-            - {depth: 6, content: ~1/interior_loop.json, loop: true }
-            - {depth: 7, content: $pacsBuild, jumpToEnd: true, cache: true }
-            - {depth: 8, content: $eacmsBuild, jumpToEnd: true, cache: true, events: [complete] }
+            - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true}
+            - {depth: 6, content: $pacsBuild, jumpToEnd: true, cache: true }
+            - {depth: 7, content: $eacmsBuild, jumpToEnd: true, cache: true }
         duration: {kind: time, seconds: 1 }
       # 1 Dialogue Intro ==========================================
       -
@@ -53,9 +52,13 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulation A ==========================================
       -
+        sfx:
+          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          - {content: ~g/SFX_AttackSlamdown_FlashBot.mp3, delay: 22000, volume: 1}
+          - {content: ~3/2001_Space.mp3, delay: 35400, volume: 1}
         movie:
           layers:
-            - {depth: 11, content: kettle_bush_attack.json, vcr: true }
+            - {depth: 8, content: kettle_bush_attack.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -109,23 +112,24 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: ~g/perimeter_shelf.json }
+            - {depth: 8, content: ~g/perimeter_shelf.json }
         duration: {kind: time, seconds: 1.5 }
       # 1 Port Defense Selector ==========================================
       - !!inc/file ./episodes/episode3/yaml/_port-defense-selector.yaml
       # 1 Animate Selector Build ==========================================
       -
+        sfx:
+          - {content: ~3/CIN_AssetConnection.mp3, delay: 400, volume: .5}
         movie:
           layers:
-            - {depth: 11, content: clear }
             - {depth: 9, content: $portBuild, events: [complete] }
-        duration: {kind: listen, event: layer.9.complete}
+        duration: {kind: time, seconds: 3 }
       # 1 Animate Install Port Security ==========================================
       -
         movie:
           layers:
-            - {depth: 10, content: $portInstall, events: [complete] }
-          zoom: {scale: 1}
+            - {depth: 8, content: clear }
+            - {depth: 10, content: $portInstall }
         dialogue:
           defaults:
             next: audio
@@ -145,7 +149,7 @@ chapters:
               pos: [100,100]
               text: "You sure know how to accessorize."
               audio: Story_4_Ctanlee_8.mp3
-        duration: {kind: listen, event: layer.10.complete}
+        duration: {kind: dialogue }
       # 1 Dialogue Try Again ==========================================
       -
         title: Please Try Again
@@ -163,6 +167,8 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulation==========================================
       -
+        sfx:
+          #- {content: ~g/MU_Attack_With_Defense_Music.wav, delay: 1000, volume: 0.5}
         movie:
           layers:
             - {depth: 10, content: $portDefend, vcr: true }
@@ -194,6 +200,7 @@ chapters:
       -
         movie:
           layers:
+            - {depth: 9, content: clear }
             - {depth: 10, content: clear }
         action: {cmd: ctanlee.gohome}
         ux:
@@ -217,6 +224,9 @@ chapters:
       # 2 Dialogue Softer Side ==========================================
       -
         title: The Softer Side of Defense
+        movie:
+          layers:
+            - {depth: 8, content: $portBuild, jumpToEnd: true, cache: true }
         duration: {kind: ux}
         ux:
           components:
@@ -266,7 +276,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: fatline_e41.json }
+            - {depth: 9, content: fatline_e41.json }
         dialogue:
           defaults:
             next: audio
@@ -338,7 +348,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: fatline_e42.json }
+            - {depth: 9, content: fatline_e42.json }
         dialogue:
           defaults:
             next: audio
@@ -363,6 +373,9 @@ chapters:
       # 2 Dialogue Software Defense ==========================================
       -
         title: It's a Team Effort
+        movie:
+          layers:
+            - {depth: 9, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -414,9 +427,12 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Simulation Attack ==========================================
       -
+        sfx:
+          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          - {content: ~g/SFX_AttackSlamdown_MimeBot.mp3, delay: 21000, volume: 0.2}
         movie:
           layers:
-            - {depth: 12, content: change_assets_fail.json, vcr: true }
+            - {depth: 9, content: change_assets_fail.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -478,7 +494,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: change_assets_fail_part_2.json, vcr: true }
+            - {depth: 9, content: change_assets_fail_part_2.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -505,8 +521,8 @@ chapters:
         title: Adding Assets
         movie:
           layers:
-            - {depth: 12, content: clear }
-            - {depth: 12, content: workstation_1.json }
+            - {depth: 9, content: clear }
+            - {depth: 9, content: workstation_1.json }
         duration: {kind: ux}
         ux:
           components:
@@ -525,7 +541,7 @@ chapters:
         title: Updating Assets
         movie:
           layers:
-            - {depth: 12, content: workstation_5.json }
+            - {depth: 9, content: workstation_5.json }
         duration: {kind: ux}
         ux:
           components:
@@ -544,7 +560,7 @@ chapters:
         title: Disposing Assets
         movie:
           layers:
-            - {depth: 12, content: clear }
+            - {depth: 9, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -562,24 +578,26 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: ~g/perimeter_change.json }
+            - {depth: 10, content: ~g/perimeter_change.json }
           zoom: {scale: 2, x: 600, y: 700}
         duration: {kind: time, seconds: 1.5 }
       # 3 Asset Change Tools Selector ==========================================
       - !!inc/file ./episodes/episode3/yaml/_asset-change-selector.yaml
       # 3 Animate Selector Build ==========================================
       -
+        sfx:
+          - {content: ~3/CIN_Quarantine.mp3, delay: 400, volume: .5}
         movie:
           layers:
-            - {depth: 10, content: $changeBuild, events: [complete] }
-        duration: {kind: listen, event: layer.10.complete}
+            - {depth: 9, content: $changeBuild, events: [complete] }
+        duration: {kind: time, seconds: 3}
       # 3 Dialogue Mulligan ==========================================
       -
         title: Calling a Mulligan
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
-            - {depth: 12, content: clear }
+            - {depth: 10, content: clear }
           zoom: {scale: 1 }
         duration: {kind: ux}
         ux:
@@ -597,7 +615,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: $changePass, vcr: true }
+            - {depth: 11, content: $changePass, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -651,7 +669,7 @@ chapters:
         title: Bravo Cadet!
         movie:
           layers:
-            - {depth: 12, content: clear }
+            - {depth: 11, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -724,6 +742,8 @@ chapters:
                         r: Better luck next time
       # 3 Rank Advance ==========================================
       -
+        sfx:
+          - {content: ~g/SFX_Level_CyberCadet.mp3, volume:1}
         movie:
           layers:
             - {depth: 11, background: black, content: ~g/cyber_cadet.json, events: [complete] }

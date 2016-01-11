@@ -25,25 +25,22 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 0, content: ~1/c1-sky.svg, jumpToEnd: true, cache: true }
+            - {depth: 0, content: ~1/c1-sky.svg }
             - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
             - {depth: 2, content: ~1/c1_background_buildin.json, jumpToEnd: true, cache: true }
-            - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true }
+            - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true}
             - {depth: 4, content: $facilityLoop, loop: true }
-            - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true }
-            - {depth: 6, content: ~1/interior_loop.json, loop: true }
-            - {depth: 7, content: $pacsBuild, jumpToEnd: true, cache: true }
-            - {depth: 8, content: $eacmsBuild, jumpToEnd: true, cache: true }
-            - {depth: 9, content: $portBuild, jumpToEnd: true, cache: true }
-            - {depth: 10, content: $assetBuild, jumpToEnd: true, cache: true }
-            - {depth: 11, content: $patchBuild, jumpToEnd: true, cache: true }
+            - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true}
+            - {depth: 6, content: $pacsBuild, jumpToEnd: true, cache: true }
+            - {depth: 7, content: $eacmsBuild, jumpToEnd: true, cache: true }
+            - {depth: 8, content: $portBuild, jumpToEnd: true, cache: true }
+            - {depth: 9, content: $changeBuild, jumpToEnd: true, cache: true }
         duration: {kind: time, seconds: 1 }
       # 1 Zoom to Asset Views ==========================================
       -
         movie:
           layers:
-            - {depth: 17, content: ~g/asset_network_labels.json }
-          zoom: {scale: 1 }
+            - {depth: 10, content: ~g/asset_network_labels.json }
         duration: {kind: time, seconds: 1 }
       # 1 Dialogue Intro ==========================================
       -
@@ -65,7 +62,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: 5_defender_access_fail.json, vcr: true }
+            - {depth: 10, content: 5_defender_access_fail.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -122,7 +119,7 @@ chapters:
         title: Removing Access
         movie:
           layers:
-            - {depth: 17, content: Clear }
+            - {depth: 10, content: Clear }
         duration: {kind: ux}
         ux:
           components:
@@ -158,7 +155,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: $accessBuild }
+            - {depth: 10, content: $accessBuild }
         duration: {kind: time, seconds: 5}
       # 1 Dialogue Removing Access ==========================================
       -
@@ -179,7 +176,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: $accessPassA, vcr: true }
+            - {depth: 11, content: $accessPassA, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -211,7 +208,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: $accessPassB, vcr: true }
+            - {depth: 11, content: $accessPassB, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -237,7 +234,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: $accessPassC, vcr: true }
+            - {depth: 11, content: $accessPassC, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -293,6 +290,9 @@ chapters:
       # 1 Dialogue Information Access ==========================================
       -
         title: Information Access
+        movie:
+          layers:
+            - {depth: 11, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -325,9 +325,6 @@ chapters:
       # 1 Duties ==========================================
       -
         action: {cmd: ctanlee.gohome}
-        movie:
-          layers:
-            - {depth: 17, content: clear }
         ux:
           components:
             -
@@ -367,7 +364,7 @@ chapters:
         title: Account Attacks
         movie:
           layers:
-            - {depth: 17, content: ~g/user_account_1.json  }
+            - {depth: 11, content: ~g/user_account_1.json  }
         duration: {kind: ux}
         ux:
           components:
@@ -385,7 +382,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: 5_user_account_fail.json, vcr: true }
+            - {depth: 11, content: 5_user_account_fail.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -414,7 +411,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: clear }
+            - {depth: 11, content: clear }
         duration: {kind: time, seconds: .5 }
       # 2 Dialogue Brute Force Defenses ==========================================
       -
@@ -436,7 +433,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: 5_user_account_pass.json, vcr: true }
+            - {depth: 11, content: 5_user_account_pass.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -474,7 +471,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: clear }
+            - {depth: 11, content: clear }
         duration: {kind: time, seconds: .5 }
       # 2 Dialogue Shared / Default Accounts ==========================================
       -
@@ -496,7 +493,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: intercept_e5_1.json, vcr: true }
+            - {depth: 11, content: intercept_e5_1.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -548,7 +545,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: intercept_e5_2.json }
+            - {depth: 11, content: intercept_e5_2.json }
         dialogue:
           defaults:
             next: audio
@@ -565,7 +562,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: clear }
+            - {depth: 11, content: clear }
         dialogue:
           defaults:
             next: audio
@@ -618,7 +615,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: 5_auditbot_fail.json, vcr: true }
+            - {depth: 11, content: 5_auditbot_fail.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -684,17 +681,13 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: $visitorBuild, events: [complete] }
+            - {depth: 11, content: $visitorBuild, events: [complete] }
         duration: {kind: listen, event: layer.13.complete}
       # 3 Simulation Visitor Tracked ==========================================
       -
         movie:
-          zoom: {scale: 1 }
-        duration: {kind: time, seconds: 1 }
-      -
-        movie:
           layers:
-            - {depth: 17, content: $visitorPass, vcr: true }
+            - {depth: 12, content: $visitorPass, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -737,7 +730,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 17, content: clear }
+            - {depth: 12, content: clear }
         action: {cmd: ctanlee.gohome}
         ux:
           components:
@@ -796,7 +789,9 @@ chapters:
                         r: Better luck next time
       # 3 Rank Advance ==========================================
       -
+        sfx:
+          - {content: ~g/SFX_Level_MasterCadet.mp3, volume:1}
         movie:
           layers:
-            - {depth: 20, background: black, content: ~g/master_cadet.json, events: [complete] }
-        duration: {kind: listen, event: layer.20.complete }
+            - {depth: 12, background: black, content: ~g/master_cadet.json, events: [complete] }
+        duration: {kind: listen, event: layer.12.complete }

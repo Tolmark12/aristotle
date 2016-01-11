@@ -39,6 +39,7 @@ ux:
                   change: double_deuce
                   changeBuild: ~3/double_deuce_build.json
                   changePass: ~3/double_deuce_pass.json
+                  changeSFX: ~3/SFX_AssetChangeTools_DoubleDeuce.mp3
             btnTxt: Double Deuce Pulverizer
             icon: mini-double-deuce
             blurb: "Testosterone Level: +400% <br/>Never Been To: Band Camp"
@@ -52,6 +53,7 @@ ux:
                   change: mr_fusion
                   changeBuild: ~3/mr_fusion_build.json
                   changePass: ~3/mr_fusion_pass.json
+                  changeSFX: ~3/SFX_AssetChangeTools_MyFusion.mp3
             btnTxt: Mr. Fusion
             icon: mini-mr-fusion
             blurb: "Flux Capacity: 1.21 <br/>Patent Approved: 1985"
@@ -65,6 +67,7 @@ ux:
                   change: dematerializer
                   changeBuild: ~3/dematerializer_build.json
                   changePass: ~3/dematerializer_pass.json
+                  changeSFX: ~3/SFX_AssetChangeTools_The De-Materializer.mp3
             btnTxt: The De-Materializer
             icon: mini-dematerializer
             blurb: "Projectile Type: Zalinski Shell <br/>Firing Method: Pneumatic Rail Gun"

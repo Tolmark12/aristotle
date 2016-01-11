@@ -24,10 +24,9 @@ chapters:
             - {depth: 0, content: ~1/c1-sky.svg }
             - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
             - {depth: 2, content: ~1/c1_background_buildin.json, jumpToEnd: true, cache: true }
-            - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true }
+            - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true}
             - {depth: 4, content: $facilityLoop, loop: true }
-            - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true }
-            - {depth: 6, content: ~1/interior_loop.json, loop: true }
+            - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true}
         duration: {kind: time, seconds: 1 }
       # 1 Dialogue Physical Attacks ==========================================
       -
@@ -48,10 +47,15 @@ chapters:
       # 1 Simulator Robot Attack ==========================================
       -
         sfx:
-          - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 15810, volume:0.8}
+          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          - {content: ~2/CIN_RobotRunning.mp3, delay: 1300, volume: 0.2}
+          - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 3400, volume: 1}
+          - {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3, delay: 12600, volume: .5}
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 14500, volume: 0.2}
+          - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 15810, volume: 0.2}
         movie:
           layers:
-            - {depth: 7, content: kettle_attack_pngs.json, vcr: true }
+            - {depth: 6, content: kettle_attack_pngs.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -64,15 +68,15 @@ chapters:
             - {action: f }
           actions:
             a:
-              pos: [270,600]
-              next: 1000
+              pos: [100,100]
+              next: 7000
             b:
-              pos: [270,600]
+              pos: [270,300]
               text: Ready yourselves. This is One of the advance force robots.
               audio: Story_3_Ctanlee_1.mp3
             c:
-              pos: [900,50]
-              next: 7000
+              pos: [270,300]
+              next: 1000
             d:
               pos: [250,440]
               text: Everyone run. There's no lock on the door!
@@ -90,7 +94,7 @@ chapters:
         title: Physical Access Control
         movie:
           layers:
-            - {depth: 7, content: clear }
+            - {depth: 6, content: clear }
         action: {cmd: ctanlee.gohome}
         duration: {kind: ux}
         ux:
@@ -109,23 +113,18 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 7, content: perimeter_door_server.json }
+            - {depth: 6, content: perimeter_door_server.json }
           zoom: {scale: 2, x: 600, y: 700}
         duration: {kind: time, seconds: 1.5 }
       # 1 Selector Physical Security ==========================================
       - !!inc/file ./episodes/episode2/yaml/_pacs-selector.yaml
-      # 1 Dialogue Assets Perimeter  ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 7, content: clear }
-          zoom: {scale: 1 }
-        duration: {kind: time, seconds: 1.5 }
       # 1 Animate PACS Build ==========================================
       -
+        sfx:
+          - {content: $pacsSFX, delay: 2000, volume: 1}
         movie:
           layers:
-            - {depth: 8, content: $pacsBuild }
+            - {depth: 7, content: $pacsBuild, cache: true }
         duration: {kind: time, seconds: 3.5 }
       # 1 Dialogue Perimeter Try Again ==========================================
       -
@@ -133,7 +132,7 @@ chapters:
         movie:
           zoom: {scale: 1}
           layers:
-            - {depth: 7, content: perimeter_physical.json }
+            - {depth: 6, content: perimeter_physical.json }
         duration: {kind: ux}
         dialogue:
           timeline:
@@ -156,11 +155,17 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulator Robot Attack Perimeter ==========================================
       -
+        sfx:
+          #- {content: ~g/MU_Attack_With_Defense_Music.wav, delay: 1000, volume:.5}
+          - {content: $pacsSFX, delay: 3500, volume: 0.2}
+          - {content: ~2/CIN_PhysicalDefense_Scanner.mp3, delay: 4200, volume: 0.2}
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 14000, volume: 0.2}
+          - {content: ~2/CIN_PhysicalDefense_Laser.mp3, delay: 21000, volume: .5}
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
-            - {depth: 7, content: clear }
-            - {depth: 10, content: $pacsPass, vcr: true }
+            - {depth: 6, content: clear }
+            - {depth: 8, content: $pacsPass, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -193,7 +198,8 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: clear }
+            - {depth: 7, content: clear }
+            - {depth: 8, content: clear }
         action: {cmd: ctanlee.gohome}
         ux:
           components:
@@ -213,6 +219,9 @@ chapters:
     slides:
       # 2 Dialogue Electronic Attack ==========================================
       -
+        movie:
+          layers:
+            - {depth: 6, content: $pacsBuild, jumpToEnd: true, cache: true }
         duration: {kind: ux}
         ux:
           components:
@@ -230,7 +239,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: fatline_extended.json, vcr: true }
+            - {depth: 7, content: fatline_extended.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -342,7 +351,7 @@ chapters:
         title: Electronic Attacks
         movie:
           layers:
-            - {depth: 10, content: clear }
+            - {depth: 7, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -360,7 +369,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: kettle_e_attack_pngs.json, vcr: true }
+            - {depth: 7, content: kettle_e_attack_pngs.json, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -400,7 +409,7 @@ chapters:
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
-            - {depth: 10, content: clear }
+            - {depth: 7, content: clear }
         duration: {kind: ux}
         ux:
           components:
@@ -418,7 +427,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: perimeter_firewall.json }
+            - {depth: 7, content: perimeter_firewall.json }
           zoom: {scale: 2, x: 600, y: 700}
         duration: {kind: time, seconds: 1.5 }
       # 2 Electronic Defense Selector ==========================================
@@ -428,8 +437,8 @@ chapters:
         title: Toasty
         movie:
           layers:
+            - {depth: 7, content: perimeter_electronic.json }
             - {depth: 8, content: $eacmsBuild, cache: true }
-            - {depth: 10, content: perimeter_electronic.json }
           zoom: {scale: 1 }
         duration: {kind: ux}
         dialogue:
@@ -453,14 +462,10 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Simulator - Firewall Good ==========================================
       -
-        action:
-          - {cmd: movie.layers.cache, data: 1}
-          - {cmd: movie.layers.cache, data: 4}
-          - {cmd: movie.layers.cache, data: 6}
-          - {cmd: movie.layers.cache, data: 9}
         movie:
           layers:
-            - {depth: 10, content: $eacmsAnimateGood, vcr: true }
+            - {depth: 7, content: clear }
+            - {depth: 9, content: $eacmsAnimateGood, cache: true, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -525,7 +530,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: $eacmsAnimateBadUpper, vcr: true }
+            - {depth: 10, content: $eacmsAnimateBadUpper, cache: true, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -582,7 +587,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: $eacmsAnimateBadLower, vcr: true }
+            - {depth: 11, content: $eacmsAnimateBadLower, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -637,15 +642,11 @@ chapters:
       -
         action:
           - {cmd: ctanlee.gohome}
-          - {cmd: movie.layers.uncache, data: 1}
-          - {cmd: movie.layers.uncache, data: 4}
-          - {cmd: movie.layers.uncache, data: 6}
-          - {cmd: movie.layers.uncache, data: 9}
         movie:
           layers:
+            - {depth: 9, content: clear }
             - {depth: 10, content: clear }
             - {depth: 11, content: clear }
-            - {depth: 12, content: clear }
         ux:
           components:
             -
@@ -704,7 +705,9 @@ chapters:
                         r: Better luck next time
       # 2 Rank Advance ==========================================
       -
+        sfx:
+          - {content: ~g/SFX_Level_TechnicalCadet.mp3, volume:1}
         movie:
           layers:
-            - {depth: 10, background: black, content: ~g/technical_cadet.json, events: [complete] }
-        duration: {kind: listen, event: layer.10.complete }
+            - {depth: 9, background: black, content: ~g/technical_cadet.json, events: [complete] }
+        duration: {kind: listen, event: layer.9.complete }
