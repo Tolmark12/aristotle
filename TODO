@@ -1,8 +1,5 @@
 Saturday:
 ☐ Look at metamythic API integration
-✔ Internet explorer hotspots are off? @done(2016-01-09 16:46)
-✔ Make labels clickable @done(2016-01-09 16:46)
-✔ Clear hotspots when moving on @done(2016-01-09 16:47)
 
 To Build:
   ☐ Clean up the caching of svgs
@@ -37,6 +34,9 @@ IE :
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Internet explorer hotspots are off? @done(2016-01-09 16:46)
+  ✔ Make labels clickable @done(2016-01-09 16:46)
+  ✔ Clear hotspots when moving on @done(2016-01-09 16:47)
   ✔ Add in new scoring information @done(2016-01-09 15:35) @project(Quiz)
   ✔ Show the name / info on the quiz page @done(2016-01-09 15:35) @project(Quiz)
   ✔ Integrate movie @done(2016-01-09 14:34)

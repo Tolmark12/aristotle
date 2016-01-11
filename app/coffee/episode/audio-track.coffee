@@ -1,6 +1,7 @@
 module.exports = class AudioTrack
 
   constructor: (@src) ->
+    @src = parse @src
     AudioTrack.initSoundSettings()
     @sound = createjs.Sound.createInstance @src
 
