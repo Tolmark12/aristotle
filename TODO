@@ -1,5 +1,21 @@
 Saturday:
-☐ Look at metamythic API integration
+  ☐ Add the metamythic API integration
+  ☐ Add in the microsoft sub commands
+  ☐ Only show first episode
+  ☐ Ship data at the end of each chapter
+  ☐ Fail gracefully and catch the exception and publish to the microsoft anlytics thing
+
+Feedback:
+  ☐ Make font bigger
+  ☐ Find missing fonts
+  ☐ CAll to test API
+  ☐ Add in the episode name up at the top of the page
+  ☐ Use the
+  ☐ Add the total in the quiz section
+  ☐ Check answers
+    ☐ Fewer and More
+    ☐ Multiple correct answers, all need to be selected
+  ☐ Pull controls off of video
 
 To Build:
   ☐ Clean up the caching of svgs

@@ -1,6 +1,7 @@
 module.exports = class APIproxy
 
   constructor: () ->
+    window.apiProxy = @
     PubSub.subscribe 'meta.chapter.start'        , (m, data)=> @startChapter data
     PubSub.subscribe 'meta.chapter.finish'       , (m, data)=> @finishChapter data
     PubSub.subscribe 'meta.choice.start'         , (m, data)=> @startChoice data
@@ -10,48 +11,89 @@ module.exports = class APIproxy
     PubSub.subscribe 'meta.activity'             , (m, data)=> @addActivity data
     PubSub.subscribe 'meta.quiz.start'           , (m, data)=> @startQuiz data
     PubSub.subscribe 'meta.quiz.finish'          , (m, data)=> @finishQuiz data
-    PubSub.subscribe 'meta.quiz.quesiton.start'  , (m, data)=> @startQuizQuestion data
-    PubSub.subscribe 'meta.quiz.quesiton.finish' , (m, data)=> @finishQuizQuestion data
-
+    PubSub.subscribe 'meta.quiz.question.start'  , (m, data)=> @startQuizQuestion data
+    PubSub.subscribe 'meta.quiz.question.answer' , (m, data)=> @addQuesitonActivity data
+    PubSub.subscribe 'meta.quiz.question.finish' , (m, data)=> @finishQuizQuestion data
 
   startChapter : (data)->
-    @chapter = { start: @now(), choices:{}, name:"Episode #{aristotle.episodeNum} - #{data.title }", activities:[] }
+    @chapter =
+      EpisodeTitle         : "Episode #{aristotle.episodeNum}"
+      LearningStartTimeUtc : @now()
+      picks                : {}
+      Choices              : []
+      ChapterName          : data.title
+      Activities           : []
 
   finishChapter : ()->
-    @chapter.finish = @now()
-    @metaData().chapters.push @chapter
-    @save()
+    @submitData()
 
   startChoice : (data)->
-    @chapter.choices[data.id] = { start: @now(), activities:[] }
+    @chapter.picks[data.id] = { StartTimeUtc: @now(), Activities:[] }
   finishChoice : (data)->
-    @chapter.choices[data.id].finish    = @now()
-    @chapter.choices[data.id].selection = data.choice
-    @chapter.choices[data.id].name      = data.id
+    @chapter.picks[data.id].EndTimeUtc  = @now()
+    @chapter.picks[data.id].Selection   = data.choice
+    @chapter.picks[data.id].ChoiceName  = data.id
+    @chapter.Choices.push @chapter.picks[data.id]
 
   addActivity : (data) ->
-    activity = { activity: data.activity, time: @now() }
+    console.log data
+    activity = { ActivityName: data.activity, EventTimeUtc: @now() }
     if data.id?
-      @chapter.choices[data.id].activities.push activity
+      @chapter.picks[data.id].Activities.push activity
     else
-      @chapter.activities.push activity
+      @chapter.Activities.push activity
 
   startDuties : ()->
-    @chapter.dutiesStartTime = @now()
+    @chapter.LearningEndTimeUtc     = @now()
+    @chapter.DutyReviewStartTimeUtc = @now()
   finishDuties : ()->
-    @chapter.dutiesEndTime = @now()
-    console.log @chapter
-
+    @chapter.DutyReviewEndTimeUtc = @now()
 
   startQuiz : ()->
-    @chapter.quiz = { start: @now(), questions:{} }
+    @chapter.quiz = { start: @now(), questions:{}, Scores:[] }
   finishQuiz : ()->
     @chapter.quiz.finish = @now()
 
   startQuizQuestion : (data)->
-    @chapter.quiz.questions[data.id] = { start: @now() }
+    @chapter.quiz.questions[data.id] = { StartTimeUtc: @now(), QuestionNumber:data.id, Activities:[] }
+  addQuesitonActivity : (data) ->
+    @chapter.quiz.questions[data.id].Activities.push { ActivityName: data.answer, EventTimeUtc: @now() }
   finishQuizQuestion : (data)->
-    @chapter.quiz.questions[data.id].finish = @now()
+    @chapter.quiz.questions[data.id].EndTimeUtc = @now()
+    @chapter.quiz.questions[data.id].FinalScore = data.score
+    @chapter.quiz.Scores.push @chapter.quiz.questions[data.id]
+
+  submitData : () ->
+    chapterData =
+      EpisodeTitle                    : @chapter.EpisodeTitle
+      ChapterName                     : @chapter.ChapterName
+      LearningStartTimeUtc            : @chapter.LearningStartTimeUtc
+      LearningEndTimeUtc              : @chapter.LearningEndTimeUtc
+      DutyReviewStartTimeUtc          : @chapter.DutyReviewStartTimeUtc
+      DutyReviewEndTimeUtc            : @chapter.DutyReviewEndTimeUtc
+
+    if @chapter.Activities.length > 0
+      chapterData.Activities          = @chapter.Activities
+    if @chapter.Choices.length > 0
+      chapterData.Choices             = @chapter.Choices
+    if @chapter.quiz?
+      chapterData.Scores              = @chapter.quiz.Scores
+      chapterData.TestingStartTimeUtc = @chapter.quiz.start
+      chapterData.TestingEndTimeUtc   = @chapter.quiz.finish
+
+    data = {
+      LearningContext:{
+        ModuleId       : "MetaMythic.CipDefender.v1"
+        ModuleAudience : "fake-module-audience"
+        SessionId      : "fake-session-id"
+        StudentId      : aristotle.lmsProxy.userId
+        StudentName    : aristotle.lmsProxy.user
+      }
+      Chapters: [ chapterData ]
+    }
+
+    console.log data
+    jsonData = JSON.stringify data
 
 
 
@@ -65,7 +107,6 @@ module.exports = class APIproxy
       @meta = {chapters:[]}
     @meta
 
-  save : () -> PubSub.publish 'savemeta', @meta
 
 ###
 
@@ -81,8 +122,9 @@ module.exports = class APIproxy
   }
 
   Chapter {
-    ChapterName            : : ""
-    LearningStartTimeUtc   : DATE
+    EpisodeTitle           : ""
+    ChapterName            : ""
+    LearningStartTimeUtc   : DATE  - Start of the chapter -> duties start
     LearningEndTimeUtc     : DATE
     DutyReviewStartTimeUtc : DATE
     DutyReviewEndTimeUtc   : DATE

@@ -40,8 +40,9 @@ module.exports = class LMSProxy
     # layer state
     @store.layerState = aristotle.movie.dehydrateLayerState()
 
-    @store.location = {episodeNum:aristotle.episode.episodeNum, slide:currentSlide}
-    elbScorm.SetResumeData @store
+    if aristotle.episode?
+      @store.location = {episodeNum:aristotle.episode.episodeNum, slide:currentSlide}
+      elbScorm.SetResumeData @store
 
   completeEpisode : (newEpisodeNum) ->
     @store = if @store? then @store else {}

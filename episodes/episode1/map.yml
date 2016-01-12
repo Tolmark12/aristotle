@@ -187,6 +187,8 @@ chapters:
             -
               kind: explore-cards
               config:
+                meta:
+                  title: Asset Exploration
                 required-views: 0 # (number of cards they have to view to move on to next slide)
                 template: equipment
                 cards:
@@ -318,6 +320,8 @@ chapters:
             -
               kind: explore-cards
               config:
+                meta:
+                  title: Asset Exploration
                 required-views: 0 # (number of cards they have to view to move on to next slide)
                 template: equipment
                 cards:
@@ -505,6 +509,8 @@ chapters:
             -
               kind: explore-cards
               config:
+                meta:
+                  title: Defender Exploration
                 required-views: 0
                 template: defender
                 cards:
@@ -777,9 +783,6 @@ chapters:
                         a: Bigfoot
                         r: Better luck next time
                       -
-                        a: A single server
-                        r: Better luck next time
-                      -
                         a: This is the right answer
                         r: Nice, you're getting the hang of this!
                         c: true
@@ -796,6 +799,10 @@ chapters:
                       -
                         a: A curve
                         r: Better luck next time
+                        c: true
+                      -
+                        a: A curve
+                        r: Better luck next time
                   -
                     question: What is the shortest distance between two points
                     answers:
@@ -806,6 +813,12 @@ chapters:
                         a: A straight line
                         r: Nice, I knew you were smart!
                         c: true
+                      -
+                        a: A curve
+                        r: Better luck next time
+                      -
+                        a: A curve
+                        r: Better luck next time
                       -
                         a: A curve
                         r: Better luck next time

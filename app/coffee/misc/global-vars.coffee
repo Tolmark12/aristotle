@@ -4,15 +4,10 @@ module.exports = class GlobalVars
     @vars = {}
     aristotle.globals = @
     PubSub.subscribe 'setvars',  (a, data)=> @setMany data
-    PubSub.subscribe 'savemeta', (a, data)=> @saveMetaData data
 
   setMany : (vars) ->
     for key, val of vars
       @vars[key] = val
-    PubSub.publish 'state.save'
-
-  saveMetaData : (data) ->
-    @vars.meta = data
     PubSub.publish 'state.save'
 
   getMetaData  : () -> @vars.meta

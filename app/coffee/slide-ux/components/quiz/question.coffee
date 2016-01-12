@@ -1,6 +1,7 @@
 module.exports = class Question
 
   constructor: (@$parent, @data, @questionValue=120, @answerCallback) ->
+    PubSub.publish 'meta.quiz.question.start', {id:@data.index+1}
     @wrongGuesses = 0
     @countWrongAnswers()
 
@@ -8,18 +9,23 @@ module.exports = class Question
     @$node = $ jadeTemplate['slide-ux/components/quiz/question']( @data )
     @$parent.prepend @$node
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
-
     $(".answer-wrapper", @$node).on "click", @onAnswerClick
 
   onAnswerClick : (e)=>
     return if @guessedRight # don't allow any more clicks if they've already guessed right
     $el = $(e.currentTarget)
     $el.addClass "flipped"
-    @guessedRight = $(".response", e.currentTarget).hasClass 'right'
+    $response     = $(".response", e.currentTarget)
+    @guessedRight = $response.hasClass 'right'
+    PubSub.publish 'meta.quiz.question.answer', {id:@data.index+1, answer:$(".front .txt", $(e.currentTarget) ).text() }
+
     if !@guessedRight
       @wrongGuesses++
+    else
+      PubSub.publish 'meta.quiz.question.finish', {id:@data.index+1, score:@pointsEarned() }
     @answerCallback @guessedRight
     @clickResults $el, @guessedRight
+
 
   clickResults : ($el, guessedRight) ->
     if guessedRight

@@ -27,6 +27,7 @@ module.exports = class Quiz extends Component
    ##### ##  #######  #### ########
 
   createQuiz : ($el, data) ->
+    PubSub.publish 'meta.quiz.start'
     questions = []
     questionValue = 120
     for questionData, i in data.questions
@@ -68,6 +69,7 @@ module.exports = class Quiz extends Component
   ##     ## ########  ######   #######  ########    ##     ######
 
   showResults : () ->
+    PubSub.publish 'meta.quiz.finish'
     $('body').addClass 'body-quiz-results'
     @$node.remove()
     data = @getResults()
