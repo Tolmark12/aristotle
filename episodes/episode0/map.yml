@@ -4,6 +4,7 @@ subtitle: Organizing Our Defenses
 rankId: recruit
 skipSlate: true
 nextRankId: cadet
+action: {cmd: sessionkey.add}
 # CHAPTER 1
 chapters:
   -

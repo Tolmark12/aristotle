@@ -1,0 +1,29 @@
+{
+    "duties":[
+      {
+          "title":"Report Any Misses",
+          "content":"
+              <h1>Report Any Misses</h1>
+<p>If you missed a required activity, missed documenting evidence, or identified a deficiency, report it to … immediately so we can learn from the event, improve our security, and prevent or minimize penalties.</p>
+<h2>POTENTIAL ISSUES</h2>
+<p>Not promptly reporting any suspected or actual violations.</p>
+
+              "
+                },
+                {
+                  "title":"Assist With Audits",
+                  "content":"
+                    <h1>Assist with Audits</h1>
+<p>You may be a subject-matter expert at an audit to answer questions or provide additional evidence proving our compliance. Act professionally, answer clearly, honestly and with confidence, and demonstrate the value we place on our work keeping the infrastructure secure.</p>
+<h2>POTENTIAL ISSUES</h2>
+<ul>
+    <li>Not handling audits professionally and ethically</li>
+    <li>Not providing evidence when requested or providing it in a format that auditors can’t view</li>
+    <li>Giving the wrong answer or making answers up</li>
+    <li>Providing poor quality coffee to auditors</li>
+    <li>Calling the auditors names</li>
+</ul>
+                  "
+                }
+            ]
+}

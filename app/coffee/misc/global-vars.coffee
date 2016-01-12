@@ -3,7 +3,8 @@ module.exports = class GlobalVars
   constructor: () ->
     @vars = {}
     aristotle.globals = @
-    PubSub.subscribe 'setvars',  (a, data)=> @setMany data
+    PubSub.subscribe 'setvars',        (a, data)=> @setMany data
+    PubSub.subscribe 'sessionkey.add', (a, data)=> @generateSessionKey()
 
   setMany : (vars) ->
     for key, val of vars
@@ -26,4 +27,5 @@ module.exports = class GlobalVars
      aristotle.throw "Tried to access global variable `#{str}`, but it doesn't exists", true
    null
 
-
+  generateSessionKey : () ->
+    console.log @vars

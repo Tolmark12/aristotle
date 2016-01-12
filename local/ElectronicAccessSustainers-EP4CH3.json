@@ -1,0 +1,18 @@
+{
+    "duties":[
+      {
+          "title":"Escort Visitors",
+        "content": "
+<h1>Escort Visitors</h1>
+<p>Always follow the visitor access procedure when taking a visitor into a PSP. This can easily be forgotten, especially with people that you see every day who don't have full physical access. Don’t get comfortable! An experienced MimeBot can easily mind-flay you with pickup lines that tempt you to let them in.</p>
+<h2>POTENTIAL ISSUES</h2>
+<ul>
+    <li>Entering a PSP without access or without an escort.</li>
+    <li>Taking a visitor into a PSP without following the Visitor Escort Procedure.</li>
+    <li>Leaving your escort in the PSP or being left in the PSP if you are being escorted.</li>
+    <li>Not letting a visitor out of a PSP to use the bathroom. FYI - a visitor who never needs to use the bathroom may be a robot.</li>
+</ul>
+          "
+                }
+            ]
+}
