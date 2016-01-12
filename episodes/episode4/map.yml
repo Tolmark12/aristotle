@@ -6,6 +6,16 @@ nextRankId: master-cadet
 labels: !!inc/file ./episodes/global/_labels.yaml
 dev:
   startIndex: 0
+  actions:
+    -
+      cmd: setvars
+      data:
+        facilityBuild: ~1/substation_facility_build.json
+        facilityLoop: ~1/substation_facility_loop.json
+        eacmsBuild: ~2/firewall_burn_build.json
+        pacsBuild: ~2/card_scanner_build.json
+        changeBuild: ~3/double_deuce_build.json
+        portBuild: ~3/duct_tape_build.json
 
 # CHAPTER 1
 chapters:
