@@ -15,7 +15,6 @@ module.exports = class LMSProxy
       @user       = elbScorm.GetUserName()    # ex:       Kingsley, James
       @userId     = elbScorm.GetUserID()      # I assume: asf0h30asbu30
       stateData   = elbScorm.GetResumeData()  # ojb
-      companyName = elbScorm.GetCompanName()
 
       # Microsoft app insights
       # appInsights.setAuthenticatedUserContext learnerId.replace(/[,;=| ]+/g, "_"), apikey.replace(/[,;=| ]+/g, "_")
@@ -23,7 +22,6 @@ module.exports = class LMSProxy
       @createFormattedName()
       if stateData?
         aristotle.globals.vars = stateData.globalVars
-      aristotle.globals.vars.companyName = companyName
       cb()
     else
       console.log "couldn't start the course"

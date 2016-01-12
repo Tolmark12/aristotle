@@ -92,7 +92,7 @@ module.exports = class APIproxy
       }
       Chapters: [ chapterData ]
     }
-
+    console.log data
     @postData JSON.stringify(data)
 
 
@@ -107,7 +107,7 @@ module.exports = class APIproxy
       console.log a
   # ------------------------------------ Helpers
 
-  now : () -> new Date().getTime()
+  now : () -> new Date().toISOString()
 
   metaData : () ->
     @meta = aristotle.globals.getMetaData()
