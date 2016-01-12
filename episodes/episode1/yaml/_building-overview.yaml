@@ -27,7 +27,7 @@ dialogue:
     d:
       pos: [600, 300]
       emo: down
-      next: 1500
+      next: 3000
     e:
       pos: [400, 200]
       emo: happy

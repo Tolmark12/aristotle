@@ -22,6 +22,7 @@ ux:
     -
       kind: selection-dialogue
       config:
+        meta: 
         click:
           - {cmd: slides.next-slide}
         intro:

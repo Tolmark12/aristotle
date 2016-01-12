@@ -369,7 +369,6 @@ chapters:
               next: 12000
               pos: []
             b:
-              pos: []
               audio: Story_6_Sektimus_6.mp3
               actor: sektimus
               text: CTANLEE, this means nothing. I'll just send my Bot-Tron back.
@@ -393,7 +392,6 @@ chapters:
             - {action: e }
           actions:
             d:
-              pos: []
               audio: Story_6_Sektimus_7.mp3
               actor: sektimus
               text: [Growl]

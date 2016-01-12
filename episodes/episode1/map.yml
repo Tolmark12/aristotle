@@ -87,15 +87,26 @@ chapters:
         duration: {kind: dialogue }
         dialogue:
           timeline:
+            - {action: laptop }
+            - {action: operator-ws }
             - {action: con-sys-rack }
             - {action: esp-ns }
             - {action: data-acs }
             - {action: control-sas }
-            - {action: operator-ws }
-            - {action: laptop }
+            - {action: a }
           defaults:
             next: 1000
           actions:
+            operator-ws:
+              pos: operator-ws-hit
+              action:
+                - {cmd: highlight, data: {id: operator-ws, level: blue } }
+                - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
+            laptop:
+              pos: laptop-hit
+              action:
+                - {cmd: highlight, data: {id: laptop, level: blue } }
+                - {cmd: label.add, data: {id: laptop-hit, text: Laptop, face: bottom } }
             con-sys-rack:
               pos: con-sys-rack-hit
               action:
@@ -116,16 +127,9 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: control-sas, level: blue} }
                 - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
-            operator-ws:
-              pos: operator-ws-hit
-              action:
-                - {cmd: highlight, data: {id: operator-ws, level: blue } }
-                - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
-            laptop:
-              pos: laptop-hit
-              action:
-                - {cmd: highlight, data: {id: laptop, level: blue } }
-                - {cmd: label.add, data: {id: laptop-hit, text: Laptop, face: bottom } }
+            a:
+              pos: []
+              next: 5000
       # 1 Tagged BCA PCA Assets  ==========================================
       -
         action:
@@ -137,9 +141,10 @@ chapters:
         duration: {kind: dialogue }
         dialogue:
           timeline:
-            - {action: file-server }
             - {action: map-computer }
+            - {action: file-server }
             - {action: printer }
+            - {action: a }
           defaults:
             next: 1000
           actions:
@@ -158,6 +163,9 @@ chapters:
               action:
                 - {cmd: highlight, data: {id: printer, level: orange} }
                 - {cmd: label.add, data: {id: printer-hit, text: Printer, face: bottom, arrow: right} }
+            a:
+              pos: []
+              next: 5000
       # 1 Highlight PCA BCA Equipment  ==========================================
       -
         action:
@@ -444,10 +452,14 @@ chapters:
         dialogue:
           timeline:
             - {action: a }
+            - {action: b }
           defaults:
             next: audio
           actions:
             a:
+              pos: []
+              next: 1500
+            b:
               pos: [150, 200]
               emo: happy
               text: Looking for an HQ Building?
@@ -594,6 +606,7 @@ chapters:
         movie:
           layers:
             - {depth: 6, content: clear }
+            - {depth: 7, content: clear }
         ux:
           components:
             -
@@ -739,12 +752,6 @@ chapters:
                   style: lightning
                   text: Review Duties
                   action: {cmd: slides.next-slide}
-      # 3 Animation Clear ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 6, content: clear }
-        duration: {kind: time, seconds: .5 }
       # 3 Duties ==========================================
       -
         ux:

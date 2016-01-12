@@ -154,8 +154,7 @@ chapters:
       -
         sfx:
           #- {content: ~g/MU_Attack_With_Defense_Music.wav, delay: 1000, volume:.5}
-          - {content: $pacsSFX, delay: 3500, volume: 0.2}
-          - {content: ~2/CIN_PhysicalDefense_Scanner.mp3, delay: 4200, volume: 0.2}
+          - {content: $pacsSFX, delay: 4200, volume: 0.2}
           - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 14000, volume: 0.2}
           - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 16000, volume: 0.2}
           - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 18000, volume: 0.2}
@@ -441,7 +440,7 @@ chapters:
       -
         title: Toasty
         sfx:
-            - {content: $eacmsSFX, volume: 1}
+            - {content: $eacmsSFX, delay: 700, volume: 1}
         movie:
           layers:
             - {depth: 7, content: perimeter_electronic.json }
@@ -475,7 +474,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 7, content: clear }
+            - {depth: 7, content: factory_workers_loop.json, loop: true }
             - {depth: 9, content: $eacmsAnimateGood, cache: true, vcr: true }
         dialogue:
           defaults:
@@ -541,6 +540,7 @@ chapters:
       -
         movie:
           layers:
+            - {depth: 7, content: clear }
             - {depth: 10, content: $eacmsAnimateBadUpper, cache: true, vcr: true }
         dialogue:
           defaults:

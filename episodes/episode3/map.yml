@@ -95,6 +95,9 @@ chapters:
       # 1 Dialogue Ports==========================================
       -
         title: Port Security
+        movie:
+          layers:
+            - {depth: 8, content: clear }
         duration: {kind: ux}
         ux:
           components:
