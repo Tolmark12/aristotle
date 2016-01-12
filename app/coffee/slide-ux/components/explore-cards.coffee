@@ -38,7 +38,6 @@ module.exports = class ExploreCards extends Component
     @$currentCard = $ jadeTemplate["slide-ux/components/cards/#{@data.template}"]( data )
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$currentCard
     $(".got-it-btn", @$currentCard).on "click", (e)=> @removeCurrentCard()
-    console.log data
     PubSub.publish 'meta.activity', {activity: "Click : #{@metaCategory} - #{data.label.text}"}
     if @totalCardsViewed >= @requiredCardViews
       PubSub.publish 'continue.show'

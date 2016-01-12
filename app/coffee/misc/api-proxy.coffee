@@ -16,6 +16,7 @@ module.exports = class APIproxy
     PubSub.subscribe 'meta.quiz.question.finish' , (m, data)=> @finishQuizQuestion data
 
   startChapter : (data)->
+    appInsights.trackPageView data.title
     @chapter =
       EpisodeTitle         : "Episode #{aristotle.episodeNum}"
       LearningStartTimeUtc : @now()
@@ -36,7 +37,6 @@ module.exports = class APIproxy
     @chapter.Choices.push @chapter.picks[data.id]
 
   addActivity : (data) ->
-    console.log data
     activity = { ActivityName: data.activity, EventTimeUtc: @now() }
     if data.id?
       @chapter.picks[data.id].Activities.push activity
@@ -92,11 +92,18 @@ module.exports = class APIproxy
       Chapters: [ chapterData ]
     }
 
-    console.log data
-    jsonData = JSON.stringify data
+    @postData JSON.stringify(data)
 
 
+  postData : (jsonData) ->
+    xhr = new XMLHttpRequest()
+    xhr.open "POST", "https://cipdefenderapi.azurewebsites.net:443/api/Learning", true
+    xhr.setRequestHeader 'Content-Type', 'application/json; charset=UTF-8'
+    xhr.send jsonData
 
+    xhr.onloadend = (a)=>
+      console.log "done"
+      console.log a
   # ------------------------------------ Helpers
 
   now : () -> new Date().getTime()
@@ -109,7 +116,7 @@ module.exports = class APIproxy
 
 
 ###
-
+{"LearningContext":{"ModuleId":"MetaMythic.CipDefender.v1","ModuleAudience":"fake-module-audience","SessionId":"fake-session-id","StudentId":"abcdefg1234567","StudentName":"Ricks, Justin"},"Chapters":[{"EpisodeTitle":"Episode 1","ChapterName":"Chapter 1","LearningStartTimeUtc":1452557793466,"LearningEndTimeUtc":1452557808031,"DutyReviewStartTimeUtc":1452557808031,"DutyReviewEndTimeUtc":1452557811519,"Activities":[{"ActivityName":"Click : Asset Exploration - Filing Cabinets","EventTimeUtc":1452557803309},{"ActivityName":"Click : Asset Exploration - Mapboard","EventTimeUtc":1452557804086},{"ActivityName":"Click : Asset Exploration - Operator Monitors","EventTimeUtc":1452557805020}]}]}
   LearningRecord {
     LearningContext {
       ModuleId       : ""

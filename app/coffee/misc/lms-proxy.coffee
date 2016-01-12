@@ -17,6 +17,9 @@ module.exports = class LMSProxy
       stateData   = elbScorm.GetResumeData()  # ojb
       companyName = elbScorm.GetCompanName()
 
+      # Microsoft app insights
+      # appInsights.setAuthenticatedUserContext learnerId.replace(/[,;=| ]+/g, "_"), apikey.replace(/[,;=| ]+/g, "_")
+
       @createFormattedName()
       if stateData?
         aristotle.globals.vars = stateData.globalVars
