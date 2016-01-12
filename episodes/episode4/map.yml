@@ -84,7 +84,7 @@ chapters:
           - {content: ~g/SFX_AttackSlamdown_UnsavoryHuman.mp3, delay: 35000, volume: 1}
         movie:
           layers:
-            - {depth: 10, content: 5_defender_access_fail.json, vcr: true }
+            - {depth: 10, content: 5_defender_access_fail_vector.json, vcr: true }
         dialogue:
           defaults:
             next: audio
