@@ -40,7 +40,7 @@ ux:
                 cmd: setvars
                 data:
                   eacms: burninator
-                  eacmsBuild: ~2/firewall_burninator_build.json
+                  eacmsBuild: ~2/firewall_burn_build.json
                   eacmsAnimateGood: ~2/firewall_burn_good.json
                   eacmsAnimateBadUpper: ~2/firewall_burn_bad_upper.json
                   eacmsAnimateBadLower: ~2/firewall_burn_bad_lower.json

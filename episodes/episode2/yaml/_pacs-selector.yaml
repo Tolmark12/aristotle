@@ -41,7 +41,6 @@ ux:
                 data:
                   pacs: card-scanner
                   pacsBuild: ~2/card_scanner_build.json
-                  pacsPSP: ~2/card_scanner_psp.json
                   pacsPass: ~2/card_scanner_pass.json
                   pacsSFX: ~2/SFX_PhysicalAccessControlSystem_TheCardGuardXT.mp3
             btnTxt: The Card Guard XT
@@ -56,7 +55,6 @@ ux:
                 data:
                   pacs: hal-scanner
                   pacsBuild: ~2/hal_scanner_build.json
-                  pacsPSP: ~2/hal_scanner_psp.json
                   pacsPass: ~2/hal_scanner_pass.json
                   pacsSFX: ~2/SFX_PhysicalAccessControlSystem_HAL9000EyeScanner.mp3
             btnTxt: HAL 9000 Eye Scanner
@@ -71,7 +69,6 @@ ux:
                 data:
                   pacs: kraken-scanner
                   pacsBuild: ~2/kraken_scanner_build.json
-                  pacsPSP: ~2/kraken_scanner_psp.json
                   pacsPass: ~2/kraken_scanner_pass.json
                   pacsSFX: ~2/SFX_PhysicalAccessControlSystem_WateryGraveKrakenSensor.mp3
             btnTxt: Watery Grave Kraken Sensor
