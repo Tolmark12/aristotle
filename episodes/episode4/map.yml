@@ -4,16 +4,6 @@ subtitle: Manning the Defenses
 rankId: cyber-cadet
 nextRankId: master-cadet
 labels: !!inc/file ./episodes/global/_labels.yaml
-action:
-  -
-    cmd: setvars
-    data:
-      facilityBuild: ~1/substation_facility_build.json
-      facilityLoop: ~1/substation_facility_loop.json
-      eacmsBuild: ~2/firewall_burn_build.json
-      pacsBuild: ~2/card_scanner_build.json
-      changeBuild: ~3/double_deuce_build.json
-      portBuild: ~3/duct_tape_build.json
 dev:
   startIndex: 0
 
@@ -94,7 +84,7 @@ chapters:
           - {content: ~g/SFX_AttackSlamdown_UnsavoryHuman.mp3, delay: 35000, volume: 1}
         movie:
           layers:
-            - {depth: 10, content: 5_defender_access_fail_vector.json, vcr: true }
+            - {depth: 10, content: 5_defender_access_fail.json, vcr: true }
         dialogue:
           defaults:
             next: audio
