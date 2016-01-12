@@ -40,7 +40,6 @@ ux:
                 data:
                   nerc: brit_beacon
                   nercBuild: ~5/brit_beacon_build.json
-                  nercFail: ~5/brit_beacon_fail.json
                   nercPass: ~5/brit_beacon_pass.json
                   nercSFX: ~5/SFX_NERCDefense_BritBeacon.mp3
             btnTxt: Brit Beacon, Scholar. Gentleman. Bot Hunter.
@@ -55,7 +54,6 @@ ux:
                 data:
                   nerc: speeder
                   nercBuild: ~5/speeder_build.json
-                  nercFail: ~5/speeder_fail.json
                   nercPass: ~5/speeder_pass.json
                   nercSFX: ~5/SFX_NERCDefense_Speeder.mp3
             btnTxt: Speeder with Tow Cables
@@ -70,7 +68,6 @@ ux:
                 data:
                   nerc: orbital_strike
                   nercBuild: ~5/orbital_strike_build.json
-                  nercFail: ~5/orbital_strike_fail.json
                   nercPass: ~5/orbital_strike_pass.json
                   nercSFX: ~5/SFX_NERCDefense_Satellite.mp3
             btnTxt: Kinetic Orbital Strike

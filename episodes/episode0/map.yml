@@ -119,7 +119,6 @@ chapters:
               next: 700
               emo: surprise
               pos: [340,300,1000]
-              audio: Silence_1_sec.mp3
             b:
               emo: right
               pos: [320,300,0]

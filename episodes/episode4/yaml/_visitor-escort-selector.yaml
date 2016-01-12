@@ -8,15 +8,15 @@ dialogue:
     a:
       emo: happy
       text: "Keep your friends close and your visitors closer."
-      audio: Story_5_Ctanlee_31.m4a
+      audio: Story_5_Ctanlee_31.mp3
     b:
       emo: happy
       text: "Only a little awkward."
-      audio: Story_5_Ctanlee_32.m4a
+      audio: Story_5_Ctanlee_32.mp3
     c:
       emo: surprize
       text: "Scotty approved."
-      audio: Story_5_Ctanlee_33.m4a
+      audio: Story_5_Ctanlee_33.mp3
 ux:
   components:
     -
