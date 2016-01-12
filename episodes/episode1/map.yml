@@ -193,54 +193,63 @@ chapters:
                 template: equipment
                 cards:
                   -
+                    image: sample.png
                     hit: con-sys-rack-hit
                     name: Control System Rack
                     type: BCA
                     network: ESP
                     description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
                   -
+                    image: sample.png
                     hit: esp-ns-hit
                     name: Network Rack - ESP Network Switch
                     type: PCA
                     network: ESP
                     description: Network switch for the Electronic Security Perimeter.
                   -
+                    image: sample.png
                     hit: data-acs-hit
                     name: Data Acquisition and Control Server
                     type: BCA
                     network: ESP
                     description: Collects data from the Control System and issues controls from workstations and other devices to the Control System.
                   -
+                    image: sample.png
                     hit: control-sas-hit
                     name: Control System Application Server
                     type: BCA
                     network: ESP
                     description: Runs applications that provide advanced functionality on top of the Control System.
                   -
+                    image: sample.png
                     hit: operator-ws-hit
                     name: Operator Workstation
                     type: BCA
                     network: ESP
                     description: Powers the operator monitors
                   -
+                    image: sample.png
                     hit: laptop-hit
                     name: First Floor Laptop
                     type: BCA
                     network: ESP
                     description: Used by technicians for troubleshooting.
                   -
+                    image: sample.png
                     hit: file-server-hit
                     name: File Server
                     type: None
                     network: Corporate
                     description: Contains maps, network diagrams and other information useful to have on the controls network for reference and maintenance.
                   -
+                    image: sample.png
                     hit: map-computer-hit
                     name: Mapboard Computer
                     type: PCA
                     network: ESP
                     description: Displays data on the mapboard from the control system
                   -
+                    image: sample.png
                     hit: printer-hit
                     name: First Floor Printer
                     type: PCA
@@ -326,18 +335,21 @@ chapters:
                 template: equipment
                 cards:
                   -
+                    image: sample.png
                     hit: filing-cabinet-hit
                     name: Filing Cabinets
                     type: BCSI
                     network: N/A
                     description: Holds protected information
                   -
+                    image: sample2.png
                     hit: map-hit
                     name: Mapboard
                     type: BCSI
                     network: N/A
                     description: Shows a control room operator a dynamic map of the power grid they are managing or shows a power plant operator the map of their facility and controls.
                   -
+                    image: sample.png
                     hit: monitor-hit
                     name: Operator Monitors
                     type: BCSI
@@ -532,8 +544,8 @@ chapters:
                     label: {text: Shelly, face: right }
                     name: Shelly, CIP Senior Manager
                     quote: Keeping head and Standards high.
-                    Personal1: Remembers fondly
-                    Personal2: That one time during the CIPv5 transition that she participated in a conference call on her phone, a separate WebEx on her laptop, all while leading a team meeting in person.
+                    personal1: Remembers fondly
+                    personal2: That one time during the CIPv5 transition that she participated in a conference call on her phone, a separate WebEx on her laptop, all while leading a team meeting in person.
                     duties:
                       - Approve Cyber Security Program
                       - Delegate Duties and Responsibilities
@@ -545,8 +557,8 @@ chapters:
                     label: {text: Jerry, face: right }
                     name: Jerry, that guy from HR
                     quote: Always ready to give out hugs…while respecting your personal space
-                    Personal1: Holds record for
-                    Personal2: Reviewing 247 resumes in one day
+                    personal1: Holds record for
+                    personal2: Reviewing 247 resumes in one day
                     duties:
                       - Check backgrounds and criminal history of new employees
                       - Notify when employees are terminated so their access can be disabled
@@ -558,8 +570,8 @@ chapters:
                     label: {text: Brad, face: right }
                     name: Brad, Compliance Team Warrior
                     quote: Compliance is just another way to say 'I love you'
-                    Personal1: Favorite possession
-                    Personal2: A list of CIP acronyms signed by all members of the CIP Drafting Committee.
+                    personal1: Favorite possession
+                    personal2: A list of CIP acronyms signed by all members of the CIP Drafting Committee.
                     duties:
                       - Ensuring Compliance Requirements are documented in the Cyber Security Program
                       - Regular Review and Approvals of Facilities and Assets
@@ -571,8 +583,8 @@ chapters:
                     label: {text: Rod, face: top, arrow: right}
                     name: Rod, the Smooth Operator
                     quote: 99% routine, 1% sheer terror.
-                    Personal1: Daily caffeine quota is
-                    Personal2: 5 cups of coffee, 3 energy drinks
+                    personal1: Daily caffeine quota is
+                    personal2: 5 cups of coffee, 3 energy drinks
                     duties:
                       - Using ID Card to Access Facilities
                       - Not Plugging Your Cell Phone Into Your Control System Workstation
@@ -584,8 +596,8 @@ chapters:
                     label: {text: Richard, face: top, arrow: right}
                     name: Richard, Your IT Dude
                     quote: I'm not anti-social. I'm just not user friendly
-                    Personal1: Lifetime accomplishment
-                    Personal2: Playing World of Warcraft 47.38 hours in a row.
+                    personal1: Lifetime accomplishment
+                    personal2: Playing World of Warcraft 47.38 hours in a row.
                     duties:
                       - Patching Servers
                       - Updating Antivirus on BCAs
@@ -597,8 +609,8 @@ chapters:
                     label: {text: Lisa, face: top, arrow: right}
                     name: Lisa, Supervisor Who Wears Prada
                     quote: Working weekends allows for a jumpstart of the work week
-                    Personal1: Happiest when
-                    Personal2: A good plan comes together.
+                    personal1: Happiest when
+                    personal2: A good plan comes together.
                     duties:
                       - Approving facility-related Cyber Assets on the Cyber Asset Lists
                       - Using ID Card to Access Facilities

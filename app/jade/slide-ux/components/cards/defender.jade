@@ -2,13 +2,13 @@
   .defender-card
     .name=name
     .quote=quote
-    .personal1 #{personal1}:
+    h3.personal1 #{personal1}:
     .personal2=personal2
     .info
+      h3 Duties And Evidence
       .defender-duties
         each duty in duties
-          .duty=duty
-      .evidences
+          .evidence=duty
         each evidence in evidences
           .evidence=evidence
     .got-it-btn

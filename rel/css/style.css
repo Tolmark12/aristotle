@@ -129,15 +129,13 @@ h1, h2 {
       .chrome .vcr .pause-and-play .play, .chrome .vcr .pause-and-play .replay {
         display: none; }
       .chrome .vcr .pause-and-play.paused .play {
-        display: auto;
-        display: initial; }
+        display: block; }
       .chrome .vcr .pause-and-play.paused .pause {
         display: none; }
       .chrome .vcr .pause-and-play.complete .play, .chrome .vcr .pause-and-play.complete .pause {
         display: none; }
       .chrome .vcr .pause-and-play.complete .replay {
-        display: auto;
-        display: initial; }
+        display: block; }
     .chrome .vcr .attic {
       display: flex;
       top: 50%;
@@ -403,6 +401,7 @@ body.body-quiz-results .chrome {
         content: "off"; }
   .slide-ux .defender-wrap .defender-card {
     pointer-events: all;
+    min-width: 300px;
     max-width: 340px;
     background: rgba(2, 3, 8, 0.8);
     position: absolute;
@@ -416,22 +415,28 @@ body.body-quiz-results .chrome {
       padding: 14px 0; }
     .slide-ux .defender-wrap .defender-card .name {
       color: #DEAA36;
+      font-size: 18px;
       border-bottom: solid 2px #6B989F; }
     .slide-ux .defender-wrap .defender-card .quote {
       border-bottom: solid 2px #6B989F; }
-    .slide-ux .defender-wrap .defender-card .personal1 {
-      padding: 10px 0 0;
+      .slide-ux .defender-wrap .defender-card .quote:before {
+        content: '"'; }
+      .slide-ux .defender-wrap .defender-card .quote:after {
+        content: '"'; }
+    .slide-ux .defender-wrap .defender-card h3 {
+      font-size: 17px;
+      letter-spacing: 0.05em;
+      margin-bottom: 0;
+      padding: 0px 0 0;
       color: #F9773E;
       font-style: italic; }
+    .slide-ux .defender-wrap .defender-card .personal2 {
+      padding-top: 0; }
     .slide-ux .defender-wrap .defender-card .info {
       display: flex;
       border-top: solid 2px #6B989F;
-      padding: 0; }
-      .slide-ux .defender-wrap .defender-card .info > * {
-        width: 50%;
-        padding: 20px 0; }
-      .slide-ux .defender-wrap .defender-card .info .evidences {
-        border-left: solid 2px #6B989F; }
+      padding: 0 0 15px;
+      flex-direction: column; }
     .slide-ux .defender-wrap .defender-card .got-it-btn {
       padding: 0;
       width: 100%;
@@ -456,7 +461,13 @@ body.body-quiz-results .chrome {
         padding: 14px 0; }
       .slide-ux .card-wrap .card .name {
         color: #DEAA36;
-        border-bottom: solid 2px #6B989F; }
+        font-size: 18px;
+        padding: 0; }
+      .slide-ux .card-wrap .card .type {
+        border-bottom: solid 2px #6B989F;
+        padding: 0 0 10px; }
+      .slide-ux .card-wrap .card .description {
+        text-align: left; }
       .slide-ux .card-wrap .card .quote {
         border-bottom: solid 2px #6B989F; }
       .slide-ux .card-wrap .card .personal1 {
@@ -466,12 +477,9 @@ body.body-quiz-results .chrome {
       .slide-ux .card-wrap .card .info {
         display: flex;
         border-top: solid 2px #6B989F;
-        padding: 0; }
-        .slide-ux .card-wrap .card .info > * {
-          width: 50%;
-          padding: 20px 0; }
-        .slide-ux .card-wrap .card .info .evidences {
-          border-left: solid 2px #6B989F; }
+        padding: 15px 0; }
+        .slide-ux .card-wrap .card .info img {
+          margin: 0 auto; }
       .slide-ux .card-wrap .card .got-it-btn {
         padding: 0;
         width: 100%;

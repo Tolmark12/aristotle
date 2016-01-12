@@ -7,12 +7,12 @@
   .pause-and-play     { cursor:pointer;
     .play, .replay    { display:none; }
     &.paused          {
-      .play           { display:auto; display:initial; }
+      .play           { display:block; }
       .pause          { display:none; }
     }
     &.complete        {
       .play, .pause   { display:none; }
-      .replay         { display:auto; display:initial; }
+      .replay         { display:block; }
     }
   }
   .attic              { display:flex; @include center-absolute;  justify-content:center; position:absolute; top:-35px; background:$progress-bg; width:100%; align-items:center;

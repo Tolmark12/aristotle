@@ -1,18 +1,15 @@
-.defender-wrap    { 
-  .defender-card  { pointer-events:all; max-width:340px; background:rgba(#020308, 0.8);  position: absolute; right:20px; padding:20px; top: 50%; transform: translate(0, -50%); color:white; text-align:center;
+.defender-wrap    {
+  .defender-card  { pointer-events:all; min-width:300px; max-width:340px; background:rgba(#020308, 0.8);  position: absolute; right:20px; padding:20px; top: 50%; transform: translate(0, -50%); color:white; text-align:center;
     > *           { padding:14px 0}
-    .name         { color:$yeller; @include blue-border();}
-    .quote        { @include blue-border();}
-    .personal1    { padding:10px 0 0; color:$orange; font-style:italic;}
-    .personal2    { }
-    .info         { display:flex; @include blue-border(top); padding:0;
-      > *         { width:50%; padding:20px 0;}
-      .duties     {
-        .duty     { }
-      }
-      .evidences  { @include blue-border(left);
-        .evidence { }
-      }
+    .name         { color:$yeller; font-size:18px; @include blue-border();}
+    .quote        { @include blue-border();
+      &:before    { content:'"'}
+      &:after     { content:'"'}
+    }
+    h3            { font-size:17px; letter-spacing:0.05em; margin-bottom:0; padding:0px 0 0; color:$orange; font-style:italic;}
+    .personal2    { padding-top: 0; }
+    .info         { display:flex; @include blue-border(top); padding:0 0 15px; flex-direction:column;
+      .evidence   { }
     }
     .got-it-btn   { padding:0; width:100%; @include blue-border(all); cursor:pointer;
       &:hover     {
@@ -25,18 +22,14 @@
 .card-wrap        { pointer-events:none;
   .card           { pointer-events:all; max-width:340px; background:rgba(#020308, 0.8);  position: absolute; right:20px; padding:20px; top: 50%; transform: translate(0, -50%); color:white; text-align:center;
     > *           { padding:14px 0}
-    .name         { color:$yeller; @include blue-border();}
-    .quote        { @include blue-border();}
+    .name         { color:$yeller; font-size:18px; padding:0; }
+    .type         { @include blue-border(); padding:0 0 10px; }
+    .description  { text-align:left; }
+    .quote        { @include blue-border(); }
     .personal1    { padding:10px 0 0; color:$orange; font-style:italic;}
     .personal2    { }
-    .info         { display:flex; @include blue-border(top); padding:0;
-      > *         { width:50%; padding:20px 0;}
-      .duties     {
-        .duty     { }
-      }
-      .evidences  { @include blue-border(left);
-        .evidence { }
-      }
+    .info         { display:flex; @include blue-border(top); padding:15px 0;
+      img         { margin:0 auto; }
     }
     .got-it-btn   { padding:0; width:100%; @include blue-border(all); cursor:pointer;
       &:hover     {
