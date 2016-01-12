@@ -47,11 +47,15 @@ chapters:
       # 1 Simulator Robot Attack ==========================================
       -
         sfx:
-          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 1.0}
+          - {content: ~2/CIN_RobotMovement.mp3, delay: 200, volume: 1, loop: 4 }
+          - {content: ~2/CIN_RobotRunning.mp3, delay: 200, volume: 1, loop: 4 }
+          - {content: ~2/CIN_RobotStepping.mp3, delay: 12000, volume: 1, loop: 4 }
           - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 3400, volume: 1}
-          - {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3, delay: 12600, volume: .5}
-          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 14500, volume: 0.2}
-          - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 15810, volume: 0.2}
+          - {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3, delay: 12600, volume: 1.0}
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 14500, volume: 1.0 }
+          - {content: ~2/CIN_RipServerFromWall.mp3, delay: 14500, volume: 1.0 }
+          - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 15810, volume: 1.0 }
         movie:
           layers:
             - {depth: 6, content: kettle_attack_pngs.json, vcr: true }
@@ -153,12 +157,15 @@ chapters:
       # 1 Simulator Robot Attack Perimeter ==========================================
       -
         sfx:
-          #- {content: ~g/MU_Attack_With_Defense_Music.wav, delay: 1000, volume:.5}
-          - {content: $pacsSFX, delay: 4200, volume: 0.2}
-          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 14000, volume: 0.2}
-          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 16000, volume: 0.2}
-          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 18000, volume: 0.2}
-          - {content: ~2/CIN_PhysicalDefense_Laser.mp3, delay: 21000, volume: .5}
+          - {content: ~g/MU_Attack_With_Defense_Music.mp3, delay: 1000, volume: 100}
+          - {content: $pacsSFX, delay: 4200, volume: 1.0 }
+          - {content: ~2/CIN_PhysicalAttack_DoorRipAndCrash, delay: 13000, volume: 1.0 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 14000, volume: 1.0 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 16000, volume: 1.0 }
+          - {content: ~2/CIN_PhysicalDefense_RunningMen, delay: 16000, volume: 1.0 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 18000, volume: 1.0 }
+          - {content: ~2/CIN_PhysicalDefense_Laser.mp3, delay: 21000, volume: 1.0 }
+          - {content: ~2/CIN_PhysicalDefense_BlastedRobot.mp3, delay: 22000, volume: 1.0 }
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
@@ -366,11 +373,11 @@ chapters:
       # 2 Simulation Kettle E Attack ==========================================
       -
         sfx:
-          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
-          - {content: ~g/SFX_AttackSlamdown_KettleHeadEAttackMode.mp3, delay: 6300, volume: 0.2}
-          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 29000, volume: 0.2}
-          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 32000, volume: 0.2}
-          - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 35900, volume: 0.2}
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 1.0}
+          - {content: ~g/SFX_AttackSlamdown_KettleHeadEAttackMode.mp3, delay: 6300, volume: 1.0 }
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 29000, volume: 1.0 }
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 32000, volume: 1.0 }
+          - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 35900, volume: 1.0 }
         movie:
           layers:
             - {depth: 7, content: kettle_e_attack_pngs.json, vcr: true }
