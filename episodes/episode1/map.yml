@@ -242,7 +242,7 @@ chapters:
                     network: Corporate
                     description: Contains maps, network diagrams and other information useful to have on the controls network for reference and maintenance.
                   -
-                    image: sample.png
+                    image: iStock_000057458210_Medium_f.jpg
                     hit: map-computer-hit
                     name: Mapboard Computer
                     type: PCA
