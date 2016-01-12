@@ -65,7 +65,7 @@ module.exports = class APIproxy
 
   submitData : () ->
     chapterData =
-      EpisodeTitle                    : @chapter.EpisodeTitle
+      EpisodeName                     : @chapter.EpisodeTitle
       ChapterName                     : @chapter.ChapterName
       LearningStartTimeUtc            : @chapter.LearningStartTimeUtc
       LearningEndTimeUtc              : @chapter.LearningEndTimeUtc
@@ -83,11 +83,12 @@ module.exports = class APIproxy
 
     data = {
       LearningContext:{
-        ModuleId       : "MetaMythic.CipDefender.v1"
-        ModuleAudience : "fake-module-audience"
-        SessionId      : "fake-session-id"
-        StudentId      : aristotle.lmsProxy.userId
-        StudentName    : aristotle.lmsProxy.user
+        ModuleId        : "MetaMythic.CipDefender.v1"
+        ModuleAudience  : "fake-module-audience"
+        SessionId       : "fake-session-id"
+        StudentId       : aristotle.lmsProxy.userId
+        StudentName     : aristotle.lmsProxy.user
+        StudentCallsign : aristotle.globals.get "callSign"
       }
       Chapters: [ chapterData ]
     }
