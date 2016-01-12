@@ -521,7 +521,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 11, content: intercept_e5_1.json, vcr: true }
+            - {depth: 11, content: intercept_e5_1.json }
         dialogue:
           defaults:
             next: audio
@@ -566,7 +566,7 @@ chapters:
               pos: [270,400]
               text: Then prove it. This Cadet has a facility that has defeated every attack your robots are programmed with. If you can give me an attack that our CIP defenses can't handle then we'll concede the Blankity-blank. Cadet, do you accept this challenge with me?
               audio: Story_5_Ctanlee_26.mp3
-        duration: {kind: ux }
+        duration: {kind: dialogue }
       # 2 Sektimus Do you Accept? ==========================================
       - !!inc/file ./episodes/episode4/yaml/_simple-sektimus-e5.yaml
       # 2 Sektimus Interlude ==========================================

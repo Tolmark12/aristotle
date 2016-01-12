@@ -175,7 +175,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: 6_1_sektimus_intercept.json, vcr: true }
+            - {depth: 12, content: 6_1_sektimus_intercept.json }
         dialogue:
           defaults:
             next: audio
@@ -216,7 +216,7 @@ chapters:
               pos: [270,300]
               text: Cadet, are you ready to put your facility to the test?
               audio: Story_6_Ctanlee_3.mp3
-        duration: {kind: ux }
+        duration: {kind: dialogue }
       # 2 Sektimus Are you Ready? ==========================================
       - !!inc/file ./episodes/episode5/yaml/_simple-sektimus-e6.yaml
       # 2 Sektimus Interlude ==========================================
