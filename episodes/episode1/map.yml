@@ -221,7 +221,7 @@ chapters:
                     network: ESP
                     description: Runs applications that provide advanced functionality on top of the Control System.
                   -
-                    image: sample.png
+                    image: iStock_000018703133_Medium_j.jpg
                     hit: operator-ws-hit
                     name: Operator Workstation
                     type: BCA
@@ -249,7 +249,7 @@ chapters:
                     network: ESP
                     description: Displays data on the mapboard from the control system
                   -
-                    image: sample.png
+                    image: iStock_000057458210_Medium_f.jpg
                     hit: printer-hit
                     name: First Floor Printer
                     type: PCA
