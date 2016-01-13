@@ -1,0 +1,55 @@
+doctype html
+html(lang="en")
+  
+  head
+    title Metamythic - Warcore
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+    // build:css svg.css
+    link(href="css/aristotle-svg.css", rel="stylesheet")
+    // endbuild
+
+    // build:css2 css/style.css
+    link(href="css/main.css", rel="stylesheet")
+    // endbuild
+    
+    //- Microsoft instrumentation snippet
+    // build:inlinejs
+    script(src="bower-libs/ms-analytics/index.js")
+    // endbuild
+      
+    
+  body
+    .holder
+    // build:js js/libs.js
+    script(src="bower-libs/canvg/rgbcolor.js")
+    script(src="bower-libs/canvg/StackBlur.js")
+    script(src="bower-libs/canvg/canvg.js")
+    script(src="bower-libs/jquery/dist/jquery.js")
+    script(src="bower-libs/stats.js/build/stats.min.js")
+    script(src="bower-libs/jade/runtime.js")
+    script(src="bower-libs/shadow-icons-library/rel/app.js")
+    script(src="bower-libs/createjs-soundjs/lib/soundjs-NEXT.min.js")
+    script(src="bower-libs/PreloadJS/lib/preloadjs-0.6.2.min.js")
+    script(src="bower-libs/bodymovin/build/player/bodymovin.js")
+    script(src="bower-libs/velocity/velocity.js")
+    script(src="bower-libs/pubsub-js/src/pubsub.js")
+    script(src="bower-libs/SVG.toDataURL/base64.js")
+    script(src="bower-libs/SVG.toDataURL/svg_todataurl.js")
+    script(src="bower-libs/warcore-lms-interface/SCORM_API_wrapper.js")
+    //- script(src="bower-libs/html2canvas/dist/html2canvas.min.js")
+    //- script(src="bower-libs/canvas2image/canvas2image.js")
+    // endbuild
+
+    // build:js2 js/app.js
+    script(src="js/jade-templates.js")
+    script(src="js/aristotle-svg.js")
+    script(src="js/aristotle.js")
+    script(src="stage/js/index.js")
+    // endbuild
+    
+    // build:remove 
+    //- script(src="http://localhost:35729/livereload.js")
+    script(src="http://aristotle.dev:35729/livereload.js")
+    // endbuild
+    

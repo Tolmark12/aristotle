@@ -34,7 +34,7 @@ yamlinc      = require('gulp-yaml-include')
 
 # Paths to source files
 
-jadeStagePath     = 'stage/index.jade'
+jadeStagePath     = 'stage/*.jade'
 jadePath          = 'app/jade/**/*.jade'
 mainJsFile        = './app/coffee/aristotle.coffee'
 cssPath           = 'app/scss/**/*.scss'
