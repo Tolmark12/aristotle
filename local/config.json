@@ -1,5 +1,6 @@
 {
   "companyName"      : "Arizona Public Service",
   "trainingVersion"  : "MetaMythic.CipDefender.v1",
-  "companyRegulator" : "WECC"
+  "companyRegulator" : "WECC",
+  "moduleAudience"   : "Electronic Asset Sustainer"
 }

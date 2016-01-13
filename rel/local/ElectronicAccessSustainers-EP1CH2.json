@@ -1,0 +1,49 @@
+{
+    "duties":[
+      {
+          "title":"Know Your Cyber Security Program",
+          "content":"
+              <h1>Know Your Cyber Security Program</h1>
+            <p>The Cyber Security Program is located ….</p>
+            <h2>POTENTIAL ISSUES</h2>
+            <p>Not knowing where our Cyber Security Program is located. You might be asked in an audit.</p>
+              "
+                },
+                {
+                  "title":"Review Program Annually",
+                  "content":"
+                    <h1>Review Program Annually</h1>
+<p>The IS&C will annually update the Cyber Security Program and may request your review of portions of the Program.</p>
+<h2>POTENTIAL ISSUES</h2>
+<p>Not performing requested reviews in the timeframe required.</p>
+                  "
+                },
+                {
+                  "title":"Know Your CIP Senior Manager",
+                  "content":"
+                    <h1>Know Your CIP Senior Manager</h1>
+<p>Your CIP Senior Manager is Daniel Froetscher, SVP Transmission, Distribution & Customers.</p>
+<h2>POTENTIAL ISSUES</h2>
+<p>Not knowing the name of our CIP Senior Manager. Dan's a really nice guy and you definitely don't want to hurt his feelings. Plus an auditor might ask you.</p>
+                  "
+                },
+                {
+                  "title":"Create Evidence of Your Duties",
+                  "content":"
+                    <h1>Create Evidence of Your Duties</h1>
+<p>Always provide the information the IS&C and Regulatory teams request, follow every documentation step in our processes, and make sure you mark your tasks as done.</p>
+<h2>POTENTIAL ISSUES</h2>
+<p>Not maintaining evidence to document your duties</p>
+                      "
+                },
+                {
+                  "title":"Be Aware",
+                  "content":"
+                    <h1>Be Aware</h1>
+<p>The IS&C will post posters and other awareness material on a quarterly basis. Read, watch and be enlightened.</p>
+<h2>POTENTIAL ISSUES</h2>
+<p>Removing awareness materials. We know they're cool, but you can't take them home to hang in your bedroom.</p>
+                  "
+                }
+            ]
+}
