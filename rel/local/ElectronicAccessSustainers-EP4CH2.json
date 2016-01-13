@@ -1,0 +1,60 @@
+{
+    "duties":[
+      {
+          "title":"Protect Your User Accounts",
+        "content": "
+          <h1>Protect Your User Accounts</h1>
+<p>If you have individual user accounts on any CRCAs, you are not to share these accounts with other people. Ever. If you have a shared account, never share this account with other people. Ever.</p>
+<p>This also includes PIN codes or any other personally identifiable information used for door controls systems or other access controls.</p>
+<h2>POTENTIAL ISSUES</h2>
+<ul>
+    <li>Giving your personal account information to any other person.</li>
+    <li>Giving your shared account information to any person outside the documented users of that account</li>
+    <li>Willingly giving your password to a robot.</li>
+</ul>
+          "
+                },
+                {
+                  "title":"PRA Process Gives Vendors Access",
+                  "content":"
+<h1>Change Your Passwords Regularly</h1>
+<p>If you have electronic access with a personal account, you must change your account passwords annually. Many systems will prompt you to change your password automatically when you try to log in. For systems that don't automatically prompt for the change, the Compliance Team will notify you to perform a manual password change. Please follow this guidance promptly.</p>
+<h2>POTENTIAL ISSUES</h2>
+<ul>
+    <li>Not performing the recurring password-change tasks in a timely manner.</li>
+    <li>Not setting a password of the right complexity</li>
+    <li>Using "12345" as your password.</li>
+</ul>
+                  "
+                },
+                {
+                  "title":"Change Your Passwords Regularly",
+                  "content":"
+<h1>Maintain Your Defender Status</h1>
+<p>When requested to do so, take the cyber security training required every year and cooperative with Corporate Security every seven years to renew your background check.</p>
+<p>Please refrain from illegal activities - don't install dopamine-enhancing microchip implants or drug synthesis chips and don’t deal them. Definitely don't randomly laser-blast someone or use wasteland-survival skills on anyone except in self-defense or unless you’re pretty sure they are a robot. Keep that background check clean.</p>
+<h2>POTENTIAL ISSUES</h2>
+<ul>
+    <li>Not completing cyber-security training each year.</li>
+    <li>Not having an updated background check every seven years.</li>
+    <li>Joining the Robo-Workers Party</li>
+</ul>
+                  "
+                },
+                {
+                  "title":"Force CRCA Accounts to Comply",
+                  "content":"
+<h1>Force CRCA Accounts to Comply</h1>
+<p>You may be requested to help identify shared accounts and update their passwords annually (at least every 15 months) on CRCAs you sustain. You may also be requested to identify default accounts and disable them or change their passwords.</p>
+<p>Since you maintain these CRCAs, you will set up controls on these systems to enforce password complexity, automatic password change rules, and account lockouts/alerts. Please work with your Regulatory to ensure settings are configured properly.</p>
+<h2>POTENTIAL ISSUES</h2>
+<ul>
+    <li>Not performing the recurring password-change tasks in a timely manner.</li>
+    <li>Not setting a password of the right complexity</li>
+    <li>Not configuring rules for password complexity, automatic password changes, and account lockout/alerting.</li>
+</ul>
+
+                  "
+                }
+            ]
+}
