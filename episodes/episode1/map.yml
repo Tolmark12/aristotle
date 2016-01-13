@@ -311,7 +311,7 @@ chapters:
             c:
               pos: [640, 680]
               emo: happy
-              text: "When all duties are completed, you can click CONTINUE to proceed."
+              text: "When all duties are acknowledged, you can click CONTINUE to proceed."
               audio: Story_2_Ctanlee_33.mp3
         ux:
           components:

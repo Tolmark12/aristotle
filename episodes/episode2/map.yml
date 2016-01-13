@@ -317,7 +317,7 @@ chapters:
             j:
               audio: ~2/Story_3_Warcore_3.mp3
               actor: warcore
-              text: Working...
+              text: … Configuring now
             k:
               audio: ~2/Story_3_Sektimus_2.mp3
               actor: sektimus
@@ -333,10 +333,10 @@ chapters:
             n:
               audio: ~2/Story_3_Warcore_4.mp3
               actor: warcore
-              text: Two-way communication channel open!
+              text: Two-way communication channel now open!
             o:
               pos: [370,400]
-              text: Sektimus, you forget too soon that it was humans <copy Sektimus' voice> who defeated your kind in the past. This Defender is one of many that will defeat you again. Your machines may follow your rules perfectly, but you fear humans because they have something you never will be able to program into your robots - choice. A Defender who chooses to sustain security is worth a legion of your robots.
+              text: Sektimus, you forget too soon that it was humans [copy Sektimus' voice] who defeated your kind in the past. This Defender is one of many that will defeat you again. Your machines may follow your rules perfectly, but you fear humans because they have something you never will be able to program into your robots - choice. A Defender who chooses to sustain security is worth a legion of your robots.
               audio: ~2/Story_3_Ctanlee_22.mp3
             p:
               audio: ~2/Story_3_Sektimus_5.mp3
@@ -345,7 +345,7 @@ chapters:
             q:
               audio: ~2/Story_3_Sektimus_6.mp3
               actor: sektimus
-              text: Human. My Metal Swarm is coming to consume your planet. It took six WarMinds to resist us before and this CTANLEE you follow is the only survivor. Heed my advice. Go. Hide. Enjoy what little time you have left.
+              text: Human. My Metal Swarm is coming to consume your planet. It took six WarMinds to resist us before and this CTANLEE you follow is the only survivor. Heed my advice. Go. Hide. Enjoy what little time you have left. [deep laughs that turn to legion laughs]
             r:
               audio: ~2/Story_3_Warcore_5.mp3
               actor: warcore
@@ -527,7 +527,7 @@ chapters:
               pos: []
               audio: Story_3_Packet_1.mp3
               actor: packet
-              text: Hello. I'm from the corporate reporting server and I'm headed to the control server application server.
+              text: Hello. I'm from the corporate reporting server and I'm headed to the control server.
               next: 6000
             f:
               pos: [570,500]

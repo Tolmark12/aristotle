@@ -11,11 +11,11 @@ dialogue:
       audio: Story_6_Ctanlee_13.mp3
     b:
       emo: happy
-      text: "Stay on target."
+      text: "On target."
       audio: Story_6_Ctanlee_14.mp3
     c:
       emo: surprize
-      text: "Gravity kills."
+      text: "Really! That's a thing? I love it."
       audio: Story_6_Ctanlee_15.mp3
 ux:
   components:

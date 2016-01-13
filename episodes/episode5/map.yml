@@ -236,7 +236,7 @@ chapters:
           actions:
             a:
               pos: [570,400]
-              text: WarCore, run script.
+              text: WarCore, run the challenge script.
               audio: Story_6_Ctanlee_4.mp3
             b:
               next: 3500
@@ -249,6 +249,7 @@ chapters:
             d:
               next: 11000
               pos: []
+              text: [Low chuckle] A little surprise just for you old friend.
               audio: Story_6_Sektimus_3.mp3
               actor: sektimus
             e:
@@ -276,7 +277,7 @@ chapters:
               pos: []
               audio: Story_6_Sektimus_4.mp3
               actor: sektimus
-              text: I'll now accept your concession CTANLEE, and your resignation from the training program, human.
+              text: [chuckles] I'll now accept your concession CTANLEE, and your resignation from the training program, human. <still chuckling>
             k:
               next: 1500
               pos: []
@@ -288,7 +289,7 @@ chapters:
               pos: []
               audio: Story_6_Sektimus_5.mp3
               actor: sektimus
-              text: It matters not. Complete your worthless training. I'll observe.
+              text: [chuckles] It matters not. Complete your worthless training. I'll observe.
             n:
               pos: [270,300]
               text: Hold your head high, Cadet. We're not beaten yet.
@@ -380,7 +381,7 @@ chapters:
             d:
               audio: Story_6_Sektimus_7.mp3
               actor: sektimus
-              text: [Growl]
+              text: What is this [enraged]? This isn't fair! These defenses don't exist.
             e:
               pos: [300,220]
               text: The WarCore is simply simulating the results from following the CIP Standards. Our Incident Response Team reported the Bot-Tron attack to E-ISAC and NERC used the information to build new experimental defenses for the industry against Bot-Tron Overlords. Proceed with your selection, Cadet.
@@ -451,7 +452,7 @@ chapters:
               text: I will keep my eyes on you - all of them. My swarm is not far and we shall meet again on the real battlefield.
             g:
               pos: [270,300]
-              text: Not many have the courage to stare Sektimus in the eyes and challenge him. Well fought. Let's complete your training.
+              text:  Not many have the courage to stare Sektimus in the eyes and challenge him. Well fought. Let's complete your training.
               audio: Story_6_Ctanlee_17.mp3
         duration: {kind: ux }
       # 3 Duties ==========================================
