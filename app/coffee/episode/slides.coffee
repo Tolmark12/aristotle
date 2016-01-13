@@ -24,10 +24,10 @@ module.exports = class Slides
     @slides = new Sequence slides
 
   nextSlide : () =>
+    PubSub.publishSync 'dialogue.shh'
     if @slides.isAtLastItem()
       @slideShowComplete()
     else
-      # PubSub.publish 'dialogue.shh'
       @slides.next()
       @playSlide()
 

@@ -176,45 +176,45 @@ h1, h2 {
       border-right: 15px solid transparent;
       right: -15px; }
 
-.top {
+.chrome .top {
   display: inline-flex;
   height: 60px;
   pointer-events: all; }
-  .top .main {
+  .chrome .top .main {
     display: inline-flex;
     align-items: center;
     background: rgba(0, 0, 0, 0.35);
     padding: 2px 10px; }
-    .top .main .name-and-rank {
+    .chrome .top .main .name-and-rank {
       display: inline-flex;
       align-items: center; }
-    .top .main .divider {
+    .chrome .top .main .divider {
       border-right: 1px solid white;
       height: 50px;
       margin: 0 15px;
       opacity: 0.3; }
-    .top .main .status-badge {
+    .chrome .top .main .status-badge {
       width: 50px;
       height: 60px;
       text-align: center;
       display: flex;
       margin-right: -8px; }
-      .top .main .status-badge svg {
+      .chrome .top .main .status-badge svg {
         margin: auto auto; }
-    .top .main .episodes {
+    .chrome .top .main .episodes {
       display: flex;
       align-items: center; }
-      .top .main .episodes .badge {
+      .chrome .top .main .episodes .badge {
         display: flex;
         align-items: center;
         cursor: pointer;
         position: relative; }
-        .top .main .episodes .badge .label-wrapper {
+        .chrome .top .main .episodes .badge .label-wrapper {
           top: 41px;
           left: 18px; }
-        .top .main .episodes .badge * {
+        .chrome .top .main .episodes .badge * {
           pointer-events: none; }
-        .top .main .episodes .badge:not(:last-child):after {
+        .chrome .top .main .episodes .badge:not(:last-child):after {
           content: "";
           display: block;
           margin: 0 3px;
@@ -222,13 +222,13 @@ h1, h2 {
           height: 6px;
           background: black;
           opacity: 0.3; }
-        .top .main .episodes .badge:not(.active) svg {
+        .chrome .top .main .episodes .badge:not(.active) svg {
           opacity: 0.3; }
-          .top .main .episodes .badge:not(.active) svg * {
+          .chrome .top .main .episodes .badge:not(.active) svg * {
             fill: black; }
-          .top .main .episodes .badge:not(.active) svg .white * {
+          .chrome .top .main .episodes .badge:not(.active) svg .white * {
             fill: black; }
-  .top .learn-mode {
+  .chrome .top .learn-mode {
     margin-left: 5px;
     padding: 0 30px 0 20px;
     background: rgba(0, 0, 0, 0.35);
@@ -315,16 +315,18 @@ body.body-quiz-results .chrome {
         position: absolute;
         top: -40px; }
     .slide-ux .ctanlee .text {
+      pointer-events: none;
       position: absolute;
-      top: 47px;
-      left: 57px;
-      width: 300px;
+      top: 70px;
+      left: 47px;
+      width: 200px;
       background: rgba(0, 0, 0, 0.77);
       padding: 10px;
       color: white;
       font-style: italic;
       line-height: 1.6; }
       .slide-ux .ctanlee .text span.next {
+        pointer-events: all;
         position: relative;
         cursor: pointer;
         padding-left: 15px; }
@@ -341,14 +343,42 @@ body.body-quiz-results .chrome {
           border-color: transparent transparent transparent #ffb61a; }
         .slide-ux .ctanlee .text span.next:hover:after {
           border-color: transparent transparent transparent #ff7020; }
+      .slide-ux .ctanlee .text:after {
+        bottom: 100%;
+        left: 10px;
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-bottom: 20px solid rgba(0, 0, 0, 0.77);
+        border-right: 20px solid transparent; }
+      .slide-ux .ctanlee .text.top {
+        bottom: 43px;
+        top: auto;
+        top: initial; }
+        .slide-ux .ctanlee .text.top:after {
+          top: 100%;
+          border-bottom: none;
+          border-top: 20px solid rgba(0, 0, 0, 0.77);
+          border-right: 20px solid transparent; }
       .slide-ux .ctanlee .text.left {
-        right: -19px;
+        right: -32px;
         left: auto;
         left: initial; }
-      .slide-ux .ctanlee .text.top {
-        top: auto;
-        top: initial;
-        bottom: 23px; }
+        .slide-ux .ctanlee .text.left:after {
+          left: auto;
+          left: initial;
+          right: 10px;
+          border-top: none;
+          border-right: none;
+          border-bottom: 20px solid rgba(0, 0, 0, 0.77);
+          border-left: 20px solid transparent; }
+      .slide-ux .ctanlee .text.top.left:after {
+        border-bottom: none;
+        border-right: none;
+        border-top: 20px solid rgba(0, 0, 0, 0.77);
+        border-left: 20px solid transparent; }
   .slide-ux .cc .closed-caption {
     position: absolute;
     top: 50%;

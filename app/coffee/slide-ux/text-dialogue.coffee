@@ -20,10 +20,10 @@ module.exports = class TextDialogue
     token5  = PubSub.subscribe 'vcr.pause',                   (a, data)=> @pauseTimeline()
     token6  = PubSub.subscribe 'vcr.play',                    (a, data)=> @playTimeline()
     token7  = PubSub.subscribe 'vcr.replay',                  (a, data)=> @replayTimeline()
-    token7  = PubSub.subscribe 'dialogue.shh',                (a, data)=> @killTalking()
+    token8  = PubSub.subscribe 'dialogue.shh',                (a, data)=> @killTalking()
 
+    @tokens = [token1, token2, token3, token4, token5, token6, token7, token8]
 
-    @tokens = [token1, token2, token3, token4, token5, token6, token7]
   # ------------------------------------ API
 
   activate : (@data) ->
