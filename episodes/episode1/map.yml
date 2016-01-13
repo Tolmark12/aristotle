@@ -4,8 +4,6 @@ subtitle: Organizing Our Defenses
 rankId: cadet
 nextRankId: cadet-first-class
 labels: !!inc/file ./episodes/global/_labels.yaml
-dev:
-  startIndex: 0
   # skipSlate: true
 chapters:
   # ----------------------------------------------
@@ -14,10 +12,6 @@ chapters:
   -
     title: Chapter 1
     subtitle: Facilities and Cyber Assets
-    dev:
-      volume: 1
-      startIndex: 0
-      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
       # 1 Background Build in ==========================================
@@ -555,8 +549,6 @@ chapters:
   -
     title: Chapter 3
     subtitle: Our Regulators
-    dev:
-      startIndex: 0
     kind: chapter
     slides:
       # 3 Dialogue Regulators ==========================================

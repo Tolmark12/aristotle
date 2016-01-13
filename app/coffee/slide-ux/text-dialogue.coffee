@@ -47,7 +47,12 @@ module.exports = class TextDialogue
         @track.destroy()
         @track = null
         @actor.stopTalking()
-        if next == 'audio' then @playNextAction()
+        # If next should trigger the next audio..
+        if next == 'audio'
+          @playNextAction()
+        # else if it's an object, run a general aristotle command
+        else if typeof next == "object"
+          aristotle.commander.do next
 
     # If "next" param is to be a click generated via the actor
     if next == 'click' then @actor.showNext() else @actor.hideNext()

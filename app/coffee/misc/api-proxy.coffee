@@ -103,8 +103,8 @@ module.exports = class APIproxy
     xhr.send jsonData
 
     xhr.onloadend = (a)=>
-      console.log "done"
-      console.log a
+      # console.log "done"
+      # console.log a
   # ------------------------------------ Helpers
 
   now : () -> new Date().toISOString()

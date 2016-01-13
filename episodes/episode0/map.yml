@@ -8,8 +8,6 @@ nextRankId: cadet
 chapters:
   -
     title: Loading Introduction
-    dev:
-      startIndex: 0
     kind: intro
     slides:
       # Animation Split Screen Advance ==========================================
@@ -315,6 +313,16 @@ chapters:
               pos: [513,384]
               text: "You now know the full story about CIP - How are you feeling?"
               audio: Story_1_Ctanlee_21.mp3
+            c:
+              audio: Story_1_Dialogue_Panicking.mp3
+              next: {cmd: slides.next-slide}
+            d:
+              audio: Story_1_Dialogue_Puke.mp3
+              next: {cmd: slides.next-slide}
+            e:
+              audio: Story_1_Dialogue_Spirit.mp3
+              next: {cmd: slides.next-slide}
+
         ux:
           components:
             -
@@ -325,16 +333,13 @@ chapters:
                 btns:
                   -
                     txt: Panicking
-                    click:
-                      - {cmd: playsound, data: {content: Story_1_Dialogue_Panicking.mp3, complete: {cmd: slides.next-slide} }}
+                    click: {cmd: ctanlee.activate, data: c}
                   -
                     txt: I Threw Up a Bit in My Mouth
-                    click:
-                      - {cmd: playsound, data: {content: Story_1_Dialogue_Puke.mp3, complete: {cmd: slides.next-slide} }}
+                    click: {cmd: ctanlee.activate, data: d}
                   -
                     txt: Let's Kick Some Bot
-                    click:
-                      - {cmd: playsound, data: {content: Story_1_Dialogue_Spirit.mp3, complete: {cmd: slides.next-slide} }}
+                    click: {cmd: ctanlee.activate, data: e}
         duration: {kind: ux }
       # Introduce Navigation Ranks  ==========================================
       -

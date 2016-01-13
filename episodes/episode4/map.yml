@@ -4,8 +4,6 @@ subtitle: Manning the Defenses
 rankId: cyber-cadet
 nextRankId: master-cadet
 labels: !!inc/file ./episodes/global/_labels.yaml
-dev:
-  startIndex: 0
 
 # CHAPTER 1
 chapters:
@@ -15,10 +13,6 @@ chapters:
   -
     title: Chapter 1
     subtitle: Defender Access
-    dev:
-      volume: 1
-      startIndex: 0
-      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
       # 1 Background Build in ==========================================
@@ -365,10 +359,6 @@ chapters:
   -
     title: Chapter 2
     subtitle: User Accounts
-    dev:
-      volume: 1
-      startIndex: 0
-      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
       # 2 Dialogue User Accounts ==========================================
@@ -621,10 +611,6 @@ chapters:
   -
     title: Chapter 3
     subtitle: Visitor Access
-    dev:
-      volume: 1
-      startIndex: 0
-      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
       # 3 Dialogue Visitor Access ==========================================

@@ -5,8 +5,6 @@ rankId: master-cadet
 nextRankId: defender
 isLastEpisode: true
 labels: !!inc/file ./episodes/global/_labels.yaml
-dev:
-  startIndex: 0
 
 # CHAPTER 1
 chapters:
@@ -16,10 +14,6 @@ chapters:
   -
     title: Chapter 1
     subtitle: Monitoring Our Defenses
-    dev:
-      volume: 1
-      startIndex: 0
-      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
       # 1 Background Build in ==========================================
@@ -117,10 +111,6 @@ chapters:
   -
     title: Chapter 2
     subtitle: Marshalling the Response
-    dev:
-      volume: 1
-      startIndex: 0
-      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
       # 2 Dialogue Response ==========================================
@@ -310,10 +300,6 @@ chapters:
   -
     title: Chapter 3
     subtitle: Recovering From Battle
-    dev:
-      volume: 1
-      startIndex: 0
-      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
       # 3 Dialogue Recovery Plan ==========================================

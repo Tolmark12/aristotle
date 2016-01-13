@@ -4,8 +4,6 @@ subtitle: Asset Defenses
 rankId: technical-cadet
 nextRankId: cyber-cadet
 labels: !!inc/file ./episodes/global/_labels.yaml
-dev:
-  startIndex: 0
 
 # CHAPTER 1
 chapters:
@@ -15,10 +13,6 @@ chapters:
   -
     title: Chapter 1
     subtitle: Securing Asset Connections
-    dev:
-      volume: 1
-      startIndex: 0
-      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
       # 1 Background Build in ==========================================
@@ -224,10 +218,6 @@ chapters:
   -
     title: Chapter 2
     subtitle: Software Defenses
-    dev:
-      volume: 1
-      startIndex: 0
-      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
       # 2 Dialogue Softer Side ==========================================
@@ -412,10 +402,6 @@ chapters:
   -
     title: Chapter 3
     subtitle: Changing Assets
-    dev:
-      volume: 1
-      startIndex: 0
-      # dontAnimate: [ 2, 3, 4]
     kind: chapter
     slides:
       # 3 Dialogue Changing Assets ==========================================
