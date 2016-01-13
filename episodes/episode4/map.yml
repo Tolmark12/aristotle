@@ -703,7 +703,14 @@ chapters:
                   style: lightning
                   text: continue
                   action: {cmd: slides.next-slide}
-      # 3 Port Defense Selector ==========================================
+      # 3 Zoom Perimeter View ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 11, content: ~g/perimeter_door.json }
+          zoom: {scale: 2, x: 600, y: 700}
+        duration: {kind: time, seconds: 1.5 }
+      # 3 Visitor Access Selector ==========================================
       - !!inc/file ./episodes/episode4/yaml/_visitor-escort-selector.yaml
       # 3 Animate Selector Build ==========================================
       -
@@ -711,13 +718,15 @@ chapters:
           - {content: $visitorSFX, volume: 1}
         movie:
           layers:
-            - {depth: 11, content: $visitorBuild }
+            - {depth: 12, content: $visitorBuild, cache: true }
+          zoom: {scale: 1}
         duration: {kind: time, seconds: 3.5}
       # 3 Simulation Visitor Tracked ==========================================
       -
         movie:
           layers:
-            - {depth: 12, content: $visitorPass, vcr: true }
+            - {depth: 11, content: clear }
+            - {depth: 13, content: $visitorPass, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -760,7 +769,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: clear }
+            - {depth: 13, content: clear }
         action: {cmd: ctanlee.gohome}
         ux:
           components:
@@ -823,5 +832,5 @@ chapters:
           - {content: ~g/SFX_Level_MasterCadet.mp3, volume:1}
         movie:
           layers:
-            - {depth: 12, background: black, content: ~g/master_cadet.json, events: [complete] }
-        duration: {kind: listen, event: layer.12.complete }
+            - {depth: 13, background: black, content: ~g/master_cadet.json, events: [complete] }
+        duration: {kind: listen, event: layer.13.complete }

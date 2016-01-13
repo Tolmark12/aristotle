@@ -400,22 +400,29 @@ chapters:
               text: The WarCore is simply simulating the results from following the CIP Standards. Our Incident Response Team reported the Bot-Tron attack to E-ISAC and NERC used the information to build new experimental defenses for the industry against Bot-Tron Overlords. Proceed with your selection, Cadet.
               audio: Story_6_Ctanlee_16.mp3
         duration: {kind: dialogue }
+      # 3 Zoom Perimeter View ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 12, content: ~g/perimeter_nerc.json }
+        duration: {kind: time, seconds: 1.5 }
       # 3 Sektimus Nerc Defense Selector ? ==========================================
       - !!inc/file ./episodes/episode5/yaml/_nerc-defense-selector.yaml
-      # 3 Sektimus Interlude ==========================================
+      # 3 Animate Nerc Build ==========================================
       -
         action: {cmd: ctanlee.gohome}
         sfx:
           - {content: $nercSFX, volume: 1}
         movie:
           layers:
-            - {depth: 12, content: $nercBuild }
+            - {depth: 13, content: $nercBuild }
         duration: {kind: time, seconds: 4 }
       # 3 Sektimus Interlude ==========================================
       -
         movie:
           layers:
-            - {depth: 12, content: $nercPass, vcr: true }
+            - {depth: 12, content: clear }
+            - {depth: 13, content: $nercPass, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -526,6 +533,7 @@ chapters:
       -
         movie:
           layers:
+            - {depth: 13, content: clear }
             - {depth: 0, content: ~1/c1-sky.svg }
             - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
             - {depth: 2, content: ~1/c1_background_buildin.json, jumpToEnd: true, cache: true }
