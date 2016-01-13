@@ -113,14 +113,14 @@ chapters:
               pos: []
             f:
               pos: [100,100]
-              text: "What's up with your thumb?"
+              text: "Great Gravy! What's up with your thumb?"
               audio: Story_5_Ctanlee_3.mp3
             g:
               next: 10300
               pos: []
             h:
               pos: [100,100]
-              text: "You're a robo-sympathizer. You shouldn't have been approved for access to that facility!"
+              text: "You're a robo-sympathizer. You shouldn't have been approved to access our facility!"
               audio: Story_5_Ctanlee_4.mp3
             i:
               next: 2000
@@ -293,7 +293,7 @@ chapters:
             f:
               emo: right
               pos: [350,400]
-              text: "Supervisor Lisa approves the access and Brad updates documentation."
+              text: "Lisa approves Cindy's access and Brad updates documentation."
               audio: Story_5_Ctanlee_16.mp3
             g:
               emo: down
@@ -475,14 +475,14 @@ chapters:
               pos: []
             d:
               pos: [100,100]
-              text: "Richard was notified of your login attempts and discovered the firewall issue that let you in. He is fixing it now."
+              text: "Richard was notified of your login attempts and discovered the firewall issue that let you in. He fixing it now."
               audio: Story_5_Ctanlee_22.mp3
             e:
               next: 3500
               pos: [100,100]
             f:
               pos: [100,100]
-              text: "The metal is willing, but the spirit is weak."
+              text: "The spirit is willing, but the metal is weak."
               audio: Story_5_Ctanlee_23.mp3
         duration: {kind: ux }
       # 2 Simulation Brute Force Pass Clear ==========================================
@@ -554,7 +554,7 @@ chapters:
               text: Afraid? Fear is not in my circuitry.
             g:
               pos: [270,400]
-              text: Then prove it. This Cadet has a facility that has defeated every attack your robots are programmed with. If you can give me an attack that our CIP defenses can't handle then we'll concede the Blankity-blank. Cadet, do you accept this challenge with me?
+              text: Then prove it. This Cadet has a facility that has defeated every attack your robots are programmed with. If you can give us an attack that our CIP defenses can't handle then we'll concede that this CIP training is futile and no match for your power. Cadet, do you accept this challenge with me?
               audio: Story_5_Ctanlee_26.mp3
         duration: {kind: dialogue }
       # 2 Sektimus Do you Accept? ==========================================
@@ -649,12 +649,12 @@ chapters:
             b:
               next: 7500
               pos: [100,100]
-              text: "Who is this? This isn't time for a scheduled audit."
+              text: "Who are you? This isn't time for a scheduled audit."
               audio: Story_5_Ctanlee_28.mp3
             c:
               next: 8500
               pos: [100,100]
-              text: "Wait. Aren't you going to follow him around?"
+              text: "Arnold Aren't you going to follow him around?"
               audio: Story_5_Ctanlee_29.mp3
             d:
               pos: [100,100]

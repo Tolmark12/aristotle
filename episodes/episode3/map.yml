@@ -316,7 +316,7 @@ chapters:
               pos: []
               audio: Story_4_Sektimus_1.mp3
               actor: sektimus
-              text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old "friend". I'm here to spend some time with you. I know failure hurts and I want to make sure this failure hurts you especially deeply. Where is your "Cadet" right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind a steaming pipe in a plant basement? Or did they take the long drive in their work truck, never to return?
+              text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old friend. [deep chuckle] I'm here to spend some time with you [paternal voice] - I know failure hurts and I want to make sure this failure hurts you especially deeply. Where is your Cadet right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind a steaming pipe in a plant basement? Or did they take the long drive in their work truck, never to return? [deep laugh]
             g:
               next: 2000
               pos: []
@@ -331,7 +331,7 @@ chapters:
               pos: []
               audio: Story_4_Sektimus_2.mp3
               actor: sektimus
-              text: What?? You're still here? Do you know who you contend with, human? I am wielder of the ancient chip of Katra-Non, guardian of the Digium, chosen successor of Nexitar, master strategist of the Robot Hegemony, destroyer of the Charnel Nebula, builder of the Metal Swarm, enslaver of worlds - I am LEGION!
+              text: What?? You're still here? Do you know who you contend with, human? I am wielder of the ancient chip of Katra-Non, guardian of the Digium, chosen successor of Nexitar, master strategist of the Robot Hegemony, destroyer of the Charnel Nebula, builder of the Metal Swarm, enslaver of worlds. I am LEGION!
             k:
               next: 1000
               pos: []
@@ -339,7 +339,7 @@ chapters:
               pos: []
               audio: Story_4_Sektimus_3.mp3
               actor: sektimus
-              text: Human. your limited mind might have trouble comprehending the situation, so let me use simple terms. CIP will not save you. CTANLEE will not save you. Abandon this training and I won't extend your suffering after I conquer Earth. Will you accept this, my final offer?
+              text: Human. Your limited mind might have trouble comprehending the situation, so let me use simple terms. CIP will not save you. CTANLEE will not save you. Abandon this training and I won't extend your suffering after I conquer Earth. Will you accept this, my final offer?
         duration: {kind: dialogue }
       # 2 Sektimus Will you Train? ==========================================
       - !!inc/file ./episodes/episode3/yaml/_simple-sektimus.yaml
@@ -363,7 +363,7 @@ chapters:
               text: You think this is some sort of JOKE? I'll be back.
             b:
               pos: [270,300]
-              text: Nicely handled, Cadet. You have surprised Sektimus and that's no mean accomplishment. I suspect we haven't seen the last of him, so be ready. WarCore, back to the simulator!
+              text:  Nicely handled, Cadet. You have surprised Sektimus and that's no mean accomplishment. I suspect we haven't seen the last of him, so be ready. WarCore, back to the simulator!
               audio: Story_4_Ctanlee_15.mp3
             c:
               next: 2000
@@ -453,14 +453,14 @@ chapters:
               pos: []
             d:
               pos: [100,100]
-              text: "Wait a second! You're just going to plug that computer into the ESP network? It doesn't have ports disabled, anti-virus installed, and who knows what else that MimeBot installed on it. It's a security nightmare!"
+              text: "Wait a second! Don't plug that computer into the ESP network - Who knows what that MimeBot installed on it. It's a security nightmare!"
               audio: Story_4_Ctanlee_20.mp3
             e:
               next: 11500
               pos: []
             f:
               pos: [100,100]
-              text: "The computer just dialed out to the KettleHead. He's taking command of the computer."
+              text: "The computer just dialed out to the KettleHead. He's taking command of the system."
               audio: Story_4_Ctanlee_21.mp3
             g:
               next: 1500
@@ -646,7 +646,7 @@ chapters:
             f:
               emo: left
               pos: [150,500]
-              text: "Brad updates documentation."
+              text: "And here comes Brad. Brad updates documentation. Well done Brad."
               audio: Story_4_Ctanlee_30.mp3
             g:
               emo: left

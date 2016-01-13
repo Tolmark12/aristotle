@@ -256,7 +256,7 @@ chapters:
             c:
               emo: right
               pos: [150,500]
-              text: "Far across the galaxy, an ancient evil has set its eyes upon us. The robot Overmind Sektimus desires to attack Earth and enslave all humankind. He has launched his Metal Swarm, the greatest space armada ever constructed by robots, against our planet."
+              text: "Far across the galaxy, an ancient evil has set its eyes upon us. The robot Overmind Sektimus desires to attack Earth and enslave all humankind. He has launched his Metal Swarm, the greatest space armada ever constructed by robots, against our planet. "
               audio: Story_1_Ctanlee_16.mp3
         duration: {kind: dialogue }
       # Animation Robot Introduction  ==========================================
@@ -275,7 +275,7 @@ chapters:
           actions:
             a:
               pos: [350,400]
-              text: "Sektimus desires to weaken us, so he sent advance forces to destroy Earth's most critical infrastructure - our power grid - before the metal swarm arrives."
+              text: "Sektimus desires to weaken us , so he sent advance forces to destroy Earth's most critical infrastructure - our power grid - before the metal swarm arrives."
               audio: Story_1_Ctanlee_17.mp3
             b:
               emo: left
