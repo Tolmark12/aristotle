@@ -18,10 +18,10 @@
             femergenode(in='SourceGraphic')
 
         filter#highlightBCA
-          feColorMatrix(type="matrix" values= "0   0 0 0 0\
-                                               0.8 0 0 0 0\
-                                               0.6 0 0 0 0\
-                                               0   0 0 1 0")
+          feColorMatrix(type="matrix" values= "0.15 0 0 0 0\
+                                               0.76 0 0 0 0\
+                                               0.86 0 0 0 0\
+                                               0    0 0 1 0")
           feComponentTransfer
             feFuncA(type="linear" slope="1") 
           fegaussianblur(stddeviation='0.3' result='coloredBlur')
@@ -42,10 +42,10 @@
             feMergeNode(in='coloredBlur')
               
         filter#highlightPCA
-          feColorMatrix(type="matrix" values= "1   0 0 0 0\
-                                               0.3 0 0 0 0\
-                                               0   0 0 0 0\
-                                               0   0 0 1 0")
+          feColorMatrix(type="matrix" values= "0.99 0 0 0 0\
+                                               0.01 0 0 0 0\
+                                               0.99 0 0 0 0\
+                                               0    0 0 1 0")
           feComponentTransfer
             feFuncA(type="linear" slope="1") 
           fegaussianblur(stddeviation='0.3' result='coloredBlur')
