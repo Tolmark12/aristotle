@@ -1,6 +1,6 @@
 {
   "name": "aristotle",
-  "version": "0.0.93",
+  "version": "0.0.94",
   "dependencies": {
     "bodymovin": "bodymovin/bodymovin",
     "canvas2image": "hongru/canvas2image",

@@ -357,7 +357,7 @@ chapters:
           components:
             -
               kind: duties
-              config: {definition: ~l/ElectronicAccessSustainers-EP4CH1.JSON}
+              config: {definition: ~l/ElectronicAccessSustainers-EP4CH1.json}
         duration: {kind: ux}
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 2
@@ -609,7 +609,7 @@ chapters:
           components:
             -
               kind: duties
-              config: {definition: ~l/ElectronicAccessSustainers-EP4CH2.JSON}
+              config: {definition: ~l/ElectronicAccessSustainers-EP4CH2.json}
         duration: {kind: ux}
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 3
@@ -775,7 +775,7 @@ chapters:
           components:
             -
               kind: duties
-              config: {definition: ~l/ElectronicAccessSustainers-EP4CH3.JSON}
+              config: {definition: ~l/ElectronicAccessSustainers-EP4CH3.json}
         duration: {kind: ux}
       # 3 Quiz ==========================================
       -
