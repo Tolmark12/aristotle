@@ -5,21 +5,13 @@ module.exports = class EpisodeLoader
 
   # Load the local config vars
   loadConfigData : () ->
-    @loadJson "local/config.json", (json)=>
-      for key, val of JSON.parse( json )
+    aristotle.getJson "local/config.json", (data)=>
+      for key, val of data
         aristotle.globals.set key, val, false
       @loadEpisode()
 
   # Load the Episode
   loadEpisode: ()->
-    @loadJson aristotle.getAssetPath("map.json"), (json)=>
-      @callback JSON.parse(json)
+    aristotle.getJson aristotle.getAssetPath("map.json"), (data)=>
+      @callback data
 
-  loadJson : (path, onComplete) ->
-    xobj = new XMLHttpRequest()
-    xobj.overrideMimeType 'application/json'
-    xobj.open 'GET', path, true
-    xobj.onreadystatechange = ()=>
-      if xobj.readyState == 4 && xobj.status == 200
-        onComplete xobj.responseText
-    xobj.send(null)

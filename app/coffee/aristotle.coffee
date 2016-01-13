@@ -7,6 +7,7 @@ Episode         = require "episode/episode"
 EpisodeLoader   = require 'misc/episode-loader'
 GlobalVars      = require 'misc/global-vars'
 isInternetExp   = require 'misc/browser-detect'
+JsonLoader      = require 'misc/json-loader'
 LMSProxy        = require 'misc/lms-proxy'
 Logger          = require 'misc/logger'
 Movie           = require 'movie/movie'
@@ -23,6 +24,7 @@ class Aristotle
     window.aristotle = @
     aristotle.sudo = sudo
     aristotle.isIE = isInternetExp()
+    jsonLoaer      = new JsonLoader()
     globals        = new GlobalVars()
     commander      = new Commander()
     dictionary     = new Dictionary()

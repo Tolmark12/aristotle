@@ -764,7 +764,6 @@ chapters:
                   style: lightning
                   text: review duties
                   action: {cmd: slides.next-slide}
-        duration: {kind: dialogue}
       # 3 Duties ==========================================
       -
         movie:
