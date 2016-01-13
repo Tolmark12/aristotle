@@ -84,7 +84,7 @@ module.exports = class APIproxy
     data = {
       LearningContext:{
         ModuleId        : aristotle.globals.get "trainingVersion"
-        ModuleAudience  : "fake-module-audience"
+        ModuleAudience  : aristotle.globals.get "moduleAudience"
         SessionId       : aristotle.globals.get "sessionKey"
         StudentId       : aristotle.lmsProxy.userId
         StudentName     : aristotle.lmsProxy.user
