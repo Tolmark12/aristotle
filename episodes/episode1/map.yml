@@ -81,7 +81,9 @@ chapters:
         movie:
           layers:
             - {depth: 6, content: asset_view.json }
-        duration: {kind: time, seconds: .5 }
+            - {depth: 7, content: asset_bca_pca_label.json }
+            - {depth: 8, content: asset_network_connections.json }
+        duration: {kind: time, seconds: 5 }
       # 1 Highlight PCA BCA Equipment  ==========================================
       -
         action:
