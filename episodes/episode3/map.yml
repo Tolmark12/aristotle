@@ -216,7 +216,7 @@ chapters:
           components:
             -
               kind: duties
-              config: {definition: ~l/ElectronicAccessSustainers-EP3CH1.json}
+              config: {definition: ~l/duties/EP3CH1.json}
         duration: {kind: ux}
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 2
@@ -404,7 +404,7 @@ chapters:
           components:
             -
               kind: duties
-              config: {definition: ~l/ElectronicAccessSustainers-EP3CH2.json}
+              config: {definition: ~l/duties/EP3CH2.json}
         duration: {kind: ux}
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 3
@@ -698,7 +698,7 @@ chapters:
           components:
             -
               kind: duties
-              config: {definition: ~l/ElectronicAccessSustainers-EP3CH1.json}
+              config: {definition: ~l/duties/EP3CH1.json}
         duration: {kind: ux}
       # 3 Quiz ==========================================
       -
@@ -708,47 +708,7 @@ chapters:
             -
               kind: quiz
               config:
-                question-value: 120
-                questions:
-                  -
-                    question: In this scenario, what do you expect to see?
-                    answers:
-                      -
-                        a: Bigfoot
-                        r: Better luck next time
-                      -
-                        a: A single server
-                        r: Better luck next time
-                      -
-                        a: This is the right answer
-                        r: Nice, you're getting the hang of this!
-                        c: true
-                  -
-                    question: What is the shortest distance between two points
-                    answers:
-                      -
-                        a: A parallel line
-                        r: Better luck next time
-                      -
-                        a: A straight line
-                        r: Nice, I knew you were smart!
-                        c: true
-                      -
-                        a: A curve
-                        r: Better luck next time
-                  -
-                    question: What is the shortest distance between two points
-                    answers:
-                      -
-                        a: A parallel line
-                        r: Better luck next time
-                      -
-                        a: A straight line
-                        r: Nice, I knew you were smart!
-                        c: true
-                      -
-                        a: A curve
-                        r: Better luck next time
+                source: ~l/quizes/sample.json
       # 3 Rank Advance ==========================================
       -
         sfx:

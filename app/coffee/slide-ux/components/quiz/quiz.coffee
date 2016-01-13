@@ -8,8 +8,11 @@ module.exports = class Quiz extends Component
     super @data
     PubSub.publish "chrome.hide"
     PubSub.publish "ctanlee.hide"
-    @build @data
-    @superInit @$el, @$node, @data
+    @loadJson @data.source
+
+  loadJson : (path) ->
+    aristotle.getJson aristotle.getAssetPath(path), (data)=>
+      @build data.config
 
   build: (data)->
     @$node = $ jadeTemplate['slide-ux/components/quiz/quiz']( data )
@@ -17,6 +20,8 @@ module.exports = class Quiz extends Component
     @$nextBtn = $ ".next-btn", @$node
     @$nextBtn.on "click", @onNextClick
     @hideNext()
+    @superInit @$el, @$node, @data
+
 
    #######  ##     ## #### ########
   ##     ## ##     ##  ##       ##
@@ -29,10 +34,12 @@ module.exports = class Quiz extends Component
   createQuiz : ($el, data) ->
     PubSub.publish 'meta.quiz.start'
     questions = []
-    questionValue = 120
+    questionValue = data["question-value"]
     for questionData, i in data.questions
       questionData.index = i
-      questions.push new Question $el, questionData, questionValue, @onQuestionAnswered
+      value = if questionData.value? then questionData.value else questionValue
+      console.log value
+      questions.push new Question $el, questionData, value, @onQuestionAnswered
     @questions = new Sequence questions
     @showCurrentQuestion()
 
