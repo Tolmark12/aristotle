@@ -8,6 +8,8 @@ module.exports = class Quiz extends Component
     super @data
     PubSub.publish "chrome.hide"
     PubSub.publish "ctanlee.hide"
+
+    # Load the quiz from external json
     @loadJson @data.source
 
   loadJson : (path) ->
@@ -38,7 +40,6 @@ module.exports = class Quiz extends Component
     for questionData, i in data.questions
       questionData.index = i
       value = if questionData.value? then questionData.value else questionValue
-      console.log value
       questions.push new Question $el, questionData, value, @onQuestionAnswered
     @questions = new Sequence questions
     @showCurrentQuestion()

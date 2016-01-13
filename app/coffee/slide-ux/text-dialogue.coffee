@@ -17,9 +17,11 @@ module.exports = class TextDialogue
     token2  = PubSub.subscribe 'ctanlee.add-event-listener',  (a, data)=> @addEventListener data
     token3  = PubSub.subscribe 'dialogue.activate',           (a, data)=> @playAction(data)
     token4  = PubSub.subscribe 'dialogue.add-event-listener', (a, data)=> @addEventListener data
-    token5  = PubSub.subscribe 'vcr.pause',                  (a, data)=> @pauseTimeline()
-    token6  = PubSub.subscribe 'vcr.play',                   (a, data)=> @playTimeline()
-    token7  = PubSub.subscribe 'vcr.replay',                 (a, data)=> @replayTimeline()
+    token5  = PubSub.subscribe 'vcr.pause',                   (a, data)=> @pauseTimeline()
+    token6  = PubSub.subscribe 'vcr.play',                    (a, data)=> @playTimeline()
+    token7  = PubSub.subscribe 'vcr.replay',                  (a, data)=> @replayTimeline()
+    token7  = PubSub.subscribe 'dialogue.shh',                (a, data)=> @killTalking()
+
 
     @tokens = [token1, token2, token3, token4, token5, token6, token7]
   # ------------------------------------ API
@@ -77,6 +79,9 @@ module.exports = class TextDialogue
       @track.addOnComplete ()=>
         aristotle.commander.do data.action
 
+  killTalking : () ->
+    @track?.stop()
+    @actor?.stopTalking()
 
   # ------------------------------------ Slide Sequencing
 

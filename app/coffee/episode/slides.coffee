@@ -27,6 +27,7 @@ module.exports = class Slides
     if @slides.isAtLastItem()
       @slideShowComplete()
     else
+      # PubSub.publish 'dialogue.shh'
       @slides.next()
       @playSlide()
 

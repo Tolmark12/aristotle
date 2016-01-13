@@ -17,7 +17,9 @@ module.exports = class Ctanlee
     token2  = PubSub.subscribe 'ctanlee.show',   (a, data)=> @$el.removeClass "hidden"
     token3  = PubSub.subscribe 'ctanlee.clear',  (a, data)=> @hideText()
     token4  = PubSub.subscribe 'ctanlee.gohome', (a, data)=> @returnToStation()
-    @tokens = [token1,token2,token3,token4]
+    token5  = PubSub.subscribe 'ctanlee.goto',   (a, data)=> @goto data
+    token6  = PubSub.subscribe 'ctanlee.stop',   (a, data)=> @$faceHolder.velocity "stop", true
+    @tokens = [token1,token2,token3,token4,token5,token6]
 
     $parent.append @$el
     @returnToStation()
