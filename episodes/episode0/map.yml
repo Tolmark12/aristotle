@@ -314,6 +314,7 @@ chapters:
               text: "You now know the full story about CIP - How are you feeling?"
               audio: Story_1_Ctanlee_21.mp3
             c:
+              text: "Pull yourself together soldier! Take a deep breath and lets crack on."
               audio: Story_1_Dialogue_Panicking.mp3
               next: {cmd: slides.next-slide}
             d:

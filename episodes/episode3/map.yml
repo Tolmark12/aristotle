@@ -316,7 +316,7 @@ chapters:
               pos: []
               audio: Story_4_Sektimus_1.mp3
               actor: sektimus
-              text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old friend. [deep chuckle] I'm here to spend some time with you [paternal voice] - I know failure hurts and I want to make sure this failure hurts you especially deeply. Where is your Cadet right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind a steaming pipe in a plant basement? Or did they take the long drive in their work truck, never to return? [deep laugh]
+              text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old "friend". I'm here to spend some time with you. I know failure hurts and I want to make sure this failure hurts you especially deeply. Where is your "Cadet" right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind a steaming pipe in a plant basement? Or did they take the long drive in their work truck, never to return?
             g:
               next: 2000
               pos: []
@@ -331,7 +331,7 @@ chapters:
               pos: []
               audio: Story_4_Sektimus_2.mp3
               actor: sektimus
-              text: What?? You're still here? Do you know who you contend with, human? I am wielder of the ancient chip of Katra-Non, guardian of the Digium, chosen successor of Nexitar, master strategist of the Robot Hegemony, destroyer of the Charnel Nebula, builder of the Metal Swarm, enslaver of worlds. I am LEGION!
+              text: What?? You're still here? Do you know who you contend with, human? I am wielder of the ancient chip of Katra-Non, guardian of the Digium, chosen successor of Nexitar, master strategist of the Robot Hegemony, destroyer of the Charnel Nebula, builder of the Metal Swarm, enslaver of worlds - I am LEGION!
             k:
               next: 1000
               pos: []

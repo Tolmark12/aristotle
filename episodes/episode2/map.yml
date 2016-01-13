@@ -321,11 +321,11 @@ chapters:
             k:
               audio: ~2/Story_3_Sektimus_2.mp3
               actor: sektimus
-              text: My, my, my - you HAVE been busy. … No matter. It will benefit you not. While you've spent your energy on humans, I've had many cycles to improve my Metal Swarm and it is now perfe-
+              text: My, my, my - you HAVE been busy. … No matter. It will benefit you not. While you've spent your energy on humans, I've had many cycles to improve my Metal Swarm and now it is perfe-
             l:
               audio: ~2/Story_3_Sektimus_3.mp3
               actor: sektimus
-              text: What is this? Who are you? A human [almost hisses in derision]. [louder] You've already loaded a human into your pitiful training system!
+              text: What is this? Who are you? A human. You've already loaded a human into your pitiful training system!
             m:
               audio: ~2/Story_3_Sektimus_4.mp3
               actor: sektimus
