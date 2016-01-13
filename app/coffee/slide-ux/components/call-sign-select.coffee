@@ -14,6 +14,7 @@ module.exports = class CallSignSelect extends Component
   generateCallSign : () ->
     nicks = [ "Ace","Aftershock","Baldy","Bam-Bam","Bear","Beetle","Bigfoot","Bizo","Bonzo","Boom-Boom","Bowser","Buck","Bugs","Bull","Calico","Deadeye","Dutch","Ghost","Grits","Hammer","Hardcore 54","Hawk","Hawkeye","Hollywood","Huey","Krazy","Lucky","Mad Dog","Pineapple","Pops","Radar","Rebel","Red","Shorty","Sparky","Spooky","Tack","B.A.","Tex","Tiger","Tiny","Wizard"]
     @callSign = nicks[Math.floor(Math.random()*nicks.length)]
+    PubSub.publish 'meta.activity', {activity: "Generate Call Sign"}
     @$txt.val @callSign
 
   saveCallSign : () ->

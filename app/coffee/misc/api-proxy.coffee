@@ -83,9 +83,9 @@ module.exports = class APIproxy
 
     data = {
       LearningContext:{
-        ModuleId        : "MetaMythic.CipDefender.v1"
+        ModuleId        : aristotle.globals.get "trainingVersion"
         ModuleAudience  : "fake-module-audience"
-        SessionId       : "fake-session-id"
+        SessionId       : aristotle.globals.get "sessionKey"
         StudentId       : aristotle.lmsProxy.userId
         StudentName     : aristotle.lmsProxy.user
         StudentCallsign : aristotle.globals.get "callSign"

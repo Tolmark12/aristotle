@@ -1,4 +1,6 @@
 .duties                { display:flex; align-items:flex-start; width:960px; height:100%; background:#E6E6E6; margin:0 auto;
+  h1, h2               { color:#8C3D21; font-family: $fun_cond; font-size:20px; }
+  h1                   { font-size:24px; }
   .float-right         { float:right; }
   &:before             { content:""; position:absolute; width:1024px; height:768px; background:rgba(black, 0.4); top:0; left:0; z-index:-1; }
   .title               { color:#335E6E; font-size:30px; font-family:$fun_cond; border-bottom:1px solid #335E6E; }

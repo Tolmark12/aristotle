@@ -1,6 +1,5 @@
 {
   "companyName"      : "Arizona Public Service",
-  "apiInstanceKey"   : "ABCDEFGH12345678",
-  "traiiningVersion" : "Aps.GeneralAwareness.v1",
+  "trainingVersion"  : "MetaMythic.CipDefender.v1",
   "companyRegulator" : "WECC"
 }

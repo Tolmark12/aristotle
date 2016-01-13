@@ -28,4 +28,9 @@ module.exports = class GlobalVars
    null
 
   generateSessionKey : () ->
-    console.log @vars
+    if !@get( 'sessionKey', false )?
+      @set "sessionKey", @randomLetter() + @randomLetter() + @randomLetter() + @randomLetter() + (new Date().getTime() + Math.round( Math.random() * 23455432 ))
+
+  randomLetter : () ->
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+    return letters[ Math.floor(letters.length*Math.random()) ]

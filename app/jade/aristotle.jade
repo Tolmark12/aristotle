@@ -17,7 +17,7 @@
             femergenode
             femergenode(in='SourceGraphic')
 
-        filter#highlightBlue
+        filter#highlightBCA
           feColorMatrix(type="matrix" values= "0   0 0 0 0\
                                                0.8 0 0 0 0\
                                                0.6 0 0 0 0\
@@ -29,10 +29,10 @@
             femergenode(in='SourceGraphic')
             feMergeNode(in='coloredBlur')
               
-        filter#highlightYellow
-          feColorMatrix(type="matrix" values= "0.95 0 0 0 0\
-                                               0.8  0 0 0 0\
-                                               0    0 0 0 0\
+        filter#highlightBCSI
+          feColorMatrix(type="matrix" values= "0.11 0 0 0 0\
+                                               1    0 0 0 0\
+                                               0.58 0 0 0 0\
                                                0    0 0 1 0")
           feComponentTransfer
             feFuncA(type="linear" slope="1") 
@@ -41,7 +41,7 @@
             femergenode(in='SourceGraphic')
             feMergeNode(in='coloredBlur')
               
-        filter#highlightOrange
+        filter#highlightPCA
           feColorMatrix(type="matrix" values= "1   0 0 0 0\
                                                0.3 0 0 0 0\
                                                0   0 0 0 0\

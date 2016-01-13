@@ -38,6 +38,7 @@ class Aristotle
 
   begin : () =>
     @setInitialEpisodeNum()
+    PubSub.publish 'sessionkey.add'
 
     PubSub.subscribe 'episode.load', (m, data)=>
       @episodeNum = data

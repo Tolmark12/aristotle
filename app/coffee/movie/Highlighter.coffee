@@ -22,9 +22,9 @@ module.exports = class Highlighter
     if $item.length == 0 then aristotle.throw "tried to highlight an element with the id `#{elementId}`, but found no elements with that id.", true
 
     switch color
-      when 'blue'   then filterId = "highlightBlue"
-      when 'orange' then filterId = "highlightOrange"
-      when 'yellow' then filterId = "highlightYellow"
+      when 'bca'  then filterId = "highlightBCA"
+      when 'pca'  then filterId = "highlightPCA"
+      when 'bcsi' then filterId = "highlightBCSI"
 
     $item.css filter : "url(##{filterId})"
 
