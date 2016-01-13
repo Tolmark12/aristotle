@@ -118,7 +118,7 @@ chapters:
           layers:
             - {depth: 6, content: perimeter_door_server.json }
           zoom: {scale: 2, x: 600, y: 700}
-        duration: {kind: time, seconds: 1.5 }
+        duration: {kind: time, seconds: 3 }
       # 1 Selector Physical Security ==========================================
       - !!inc/file ./episodes/episode2/yaml/_pacs-selector.yaml
       # 1 Animate PACS Build ==========================================
@@ -132,6 +132,7 @@ chapters:
         movie:
           layers:
             - {depth: 6, content: perimeter_physical.json }
+          zoom: {scale: 1 }
         dialogue:
           timeline:
             - {action: a }
@@ -449,15 +450,20 @@ chapters:
         duration: {kind: time, seconds: 1.5 }
       # 2 Electronic Defense Selector ==========================================
       - !!inc/file ./episodes/episode2/yaml/_eacms-selector.yaml
-      # 2 Dialogue - Run Simulator ==========================================
+      # 1 Animate PACS Build ==========================================
       -
-        title: Toasty
         sfx:
             - {content: $eacmsSFX, delay: 700, volume: 1}
         movie:
           layers:
-            - {depth: 7, content: perimeter_electronic.json }
             - {depth: 8, content: $eacmsBuild, cache: true }
+        duration: {kind: time, seconds: 3.5 }
+      # 2 Dialogue - Run Simulator ==========================================
+      -
+        title: Toasty
+        movie:
+          layers:
+            - {depth: 7, content: perimeter_electronic.json }
           zoom: {scale: 1 }
         duration: {kind: ux}
         dialogue:
