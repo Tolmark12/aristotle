@@ -59,7 +59,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 10, content: ~g/asset_network_labels.json }
+            - {depth: 10, content: ~g/perimeter_e5_physical.json }
         duration: {kind: time, seconds: 1 }
       # 1 Dialogue Intro ==========================================
       -
@@ -176,7 +176,7 @@ chapters:
       # 1 Animate Selector Build ==========================================
       -
         sfx:
-          - {content: $accessSFX, delay: 700, volume: 1}
+          - {content: $accessSFX, delay: 700, volume: 0.1}
         movie:
           layers:
             - {depth: 10, content: $accessBuild }
@@ -231,7 +231,7 @@ chapters:
       # 1 Simulation Retry Unsavory Fail ==========================================
       -
         sfx:
-          - {content: $accessSFX, delay: 6000, volume: 1}
+          - {content: $accessSFX, delay: 5600, volume: 0.1 }
         movie:
           layers:
             - {depth: 11, content: $accessPassB, vcr: true }
@@ -259,7 +259,7 @@ chapters:
       # 1 Simulation Retry Cindy Pass ==========================================
       -
         sfx:
-          - {content: $accessSFX, delay: 8000, volume: 1}
+          - {content: $accessSFX, delay: 8000, volume: 0.1 }
         movie:
           layers:
             - {depth: 11, content: $accessPassC, vcr: true }
@@ -290,12 +290,12 @@ chapters:
               pos: [380,570]
             d:
               emo: left
-              pos: [350,400]
+              pos: [320,400]
               text: "That's some top quality training."
               audio: Story_5_Ctanlee_15.mp3
             e:
               next: 1000
-              pos: [350,400]
+              pos: [320,400]
             f:
               emo: right
               pos: [350,400]
@@ -307,7 +307,7 @@ chapters:
               text: "So now we're safe to give Cindy the physical and electronic access she needs. Richard will configure this."
               audio: Story_5_Ctanlee_17.mp3
             h:
-              next: 13700
+              next: 15700
               pos: []
             i:
               emo: down
@@ -428,7 +428,7 @@ chapters:
               text: "This robot found a way through our firewalls and is attempting to log into the control system."
               audio: Story_5_Ctanlee_19.mp3
             c:
-              next: 21000
+              next: 15000
               pos: []
             d:
               pos: [780,350]
@@ -579,12 +579,16 @@ chapters:
             next: audio
           timeline:
             - {action: a }
+            - {action: b }
           actions:
             a:
               pos: []
               audio: Story_5_Sektimus_4.mp3
               actor: sektimus
               text: I accept the challenge as well. I have work to do.
+            b:
+              pos: []
+              next: 1500
         duration: {kind: dialogue }
       # 2 Sektimus Interlude Clear ==========================================
       -
