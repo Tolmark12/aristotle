@@ -83,7 +83,7 @@ chapters:
             - {depth: 6, content: asset_view.json }
             - {depth: 7, content: asset_bca_pca_label.json }
             - {depth: 8, content: asset_network_connections.json }
-        duration: {kind: time, seconds: 5 }
+        duration: {kind: time, seconds: 2 }
       # 1 Highlight PCA BCA Equipment  ==========================================
       -
         action:
@@ -230,6 +230,9 @@ chapters:
                   a: {title: "PCA"}
       # 1 Highlight BCSI Equipment  ==========================================
       -
+        movie:
+          layers:
+            - {depth: 7, content: asset_bcsi_label.json }
         action:
           - {cmd: label.hide, data: {id: all}  }
           - {cmd: highlight, data: {id: filing-cabinet, level: bcsi} }
@@ -276,6 +279,8 @@ chapters:
         movie:
           layers:
             - {depth: 6, content: clear }
+            - {depth: 7, content: clear }
+            - {depth: 8, content: clear }
         duration: {kind: ux}
         ux:
           components:
