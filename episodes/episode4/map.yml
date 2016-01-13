@@ -642,6 +642,7 @@ chapters:
             - {action: b }
             - {action: c }
             - {action: d }
+            - {action: e }
           actions:
             a:
               next: 1500
@@ -657,6 +658,9 @@ chapters:
               text: "Arnold Aren't you going to follow him around?"
               audio: Story_5_Ctanlee_29.mp3
             d:
+              next: 2000
+              pos: []
+            e:
               pos: [100,100]
               text: "He's blacked out part of the Grid. Simulator Pause!"
               audio: Story_5_Ctanlee_30.mp3
@@ -705,7 +709,7 @@ chapters:
       # 3 Animate Selector Build ==========================================
       -
         sfx:
-          - {content: $visitorSFX, volume: 1}
+          - {content: $visitorSFX, volume: .3}
         movie:
           layers:
             - {depth: 12, content: $visitorBuild, cache: true }
