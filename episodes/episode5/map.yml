@@ -249,7 +249,7 @@ chapters:
             d:
               next: 11000
               pos: []
-              text: [Low chuckle] A little surprise just for you old friend.
+              text: "[Low chuckle] A little surprise just for you old friend."
               audio: Story_6_Sektimus_3.mp3
               actor: sektimus
             e:
@@ -277,7 +277,7 @@ chapters:
               pos: []
               audio: Story_6_Sektimus_4.mp3
               actor: sektimus
-              text: [chuckles] I'll now accept your concession CTANLEE, and your resignation from the training program, human. <still chuckling>
+              text: "[chuckles] I'll now accept your concession CTANLEE, and your resignation from the training program, human. [still chuckling]"
             k:
               next: 1500
               pos: []
@@ -289,7 +289,7 @@ chapters:
               pos: []
               audio: Story_6_Sektimus_5.mp3
               actor: sektimus
-              text: [chuckles] It matters not. Complete your worthless training. I'll observe.
+              text: "[chuckles] It matters not. Complete your worthless training. I'll observe."
             n:
               pos: [270,300]
               text: Hold your head high, Cadet. We're not beaten yet.
