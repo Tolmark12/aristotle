@@ -82,104 +82,21 @@ chapters:
           layers:
             - {depth: 6, content: asset_view.json }
         duration: {kind: time, seconds: .5 }
-      # 1 Tagged BCA PCA Assets  ==========================================
-      -
-        duration: {kind: dialogue }
-        dialogue:
-          timeline:
-            - {action: laptop }
-            - {action: operator-ws }
-            - {action: con-sys-rack }
-            - {action: esp-ns }
-            - {action: data-acs }
-            - {action: control-sas }
-            - {action: a }
-          defaults:
-            next: 1000
-          actions:
-            operator-ws:
-              pos: operator-ws-hit
-              action:
-                - {cmd: highlight, data: {id: operator-ws, level: blue } }
-                - {cmd: label.add, data: {id: operator-ws-hit, text: Operator Workstation, face: right } }
-            laptop:
-              pos: laptop-hit
-              action:
-                - {cmd: highlight, data: {id: laptop, level: blue } }
-                - {cmd: label.add, data: {id: laptop-hit, text: Laptop, face: bottom } }
-            con-sys-rack:
-              pos: con-sys-rack-hit
-              action:
-                - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
-                - {cmd: label.add, data: {id: con-sys-rack-hit, text: Control System, face: top, arrow: right} }
-            esp-ns:
-              pos: esp-ns-hit
-              action:
-                - {cmd: highlight, data: {id: esp-ns, level: blue } }
-                - {cmd: label.add, data: {id: esp-ns-hit, text: Network Switch, face: bottom} }
-            data-acs:
-              pos: data-acs-hit
-              action:
-                - {cmd: highlight, data: {id: data-acs, level: blue} }
-                - {cmd: label.add, data: {id: data-acs-hit, text: Data Acquisition and Control Server, face: left } }
-            control-sas:
-              pos: control-sas-hit
-              action:
-                - {cmd: highlight, data: {id: control-sas, level: blue} }
-                - {cmd: label.add, data: {id: control-sas-hit, text: Control System Application Server, face: bottom, arrow: right } }
-            a:
-              pos: []
-              next: 5000
-      # 1 Tagged BCA PCA Assets  ==========================================
-      -
-        action:
-          - {cmd: unhighlight.all }
-          - {cmd: label.hide, data: {id: all}  }
-        duration: {kind: time, seconds: 1}
-      # 1 Tagged BCA PCA Assets  ==========================================
-      -
-        duration: {kind: dialogue }
-        dialogue:
-          timeline:
-            - {action: map-computer }
-            - {action: file-server }
-            - {action: printer }
-            - {action: a }
-          defaults:
-            next: 1000
-          actions:
-            file-server:
-              pos: "file-server-hit"
-              action:
-                - {cmd: highlight, data: {id: file-server, level: orange} }
-                - {cmd: label.add, data: {id: file-server-hit, text: File Server, face: top, arrow: right} }
-            map-computer:
-              pos: "map-computer-hit"
-              action:
-                - {cmd: highlight, data: {id: map-computer, level: orange} }
-                - {cmd: label.add, data: {id: map-computer-hit, text: Map Computer, face: bottom, arrow: right} }
-            printer:
-              pos: "printer-hit"
-              action:
-                - {cmd: highlight, data: {id: printer, level: orange} }
-                - {cmd: label.add, data: {id: printer-hit, text: Printer, face: bottom, arrow: right} }
-            a:
-              pos: []
-              next: 5000
       # 1 Highlight PCA BCA Equipment  ==========================================
       -
         action:
           - {cmd: unhighlight.all }
           - {cmd: label.hide, data: {id: all}  }
-          - {cmd: highlight, data: {id: con-sys-rack, level: blue} }
-          - {cmd: highlight, data: {id: esp-ns, level: blue } }
-          - {cmd: highlight, data: {id: data-acs, level: blue} }
-          - {cmd: highlight, data: {id: control-sas, level: blue} }
-          - {cmd: highlight, data: {id: operator-ws, level: blue } }
-          - {cmd: highlight, data: {id: laptop, level: blue} }
-          - {cmd: highlight, data: {id: file-server, level: orange} }
-          - {cmd: highlight, data: {id: map-computer, level: orange} }
-          - {cmd: highlight, data: {id: printer, level: orange} }
+          - {cmd: highlight, data: {id: con-sys, level: bca} }
+          - {cmd: highlight, data: {id: com-rack, level: bca} }
+          - {cmd: highlight, data: {id: control-ns, level: bca } }
+          - {cmd: highlight, data: {id: tape-back, level: bca} }
+          - {cmd: highlight, data: {id: c-app-server, level: bca} }
+          - {cmd: highlight, data: {id: operator-ws, level: bca } }
+          - {cmd: highlight, data: {id: tech-ws, level: bca} }
+          - {cmd: highlight, data: {id: file-server, level: pca} }
+          - {cmd: highlight, data: {id: map-computer, level: pca} }
+          - {cmd: highlight, data: {id: printer, level: pca} }
         duration: {kind: ux}
         # 1 Equipment exploration component:
         ux:
@@ -193,68 +110,88 @@ chapters:
                 template: equipment
                 cards:
                   -
-                    image: sample.png
-                    hit: con-sys-rack-hit
-                    name: Control System Rack
-                    type: BCA
+                    image: iStock_000017937355_Medium_b.jpg
+                    hit: con-sys-hit
+                    name: Control System
+                    type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: A facility control system is specialized hardware and software that controls a physical asset like a Breaker, Generator, or Tesla Cannon. Treated as one unit.
+                    description: The facility control system is specialized hardware and software that controls the operation of a physical asset like a Breaker, Generator, or Tesla Cannon. For example, the system allows users to open and close breakers, ramp a generator up and down, and aim and fire the Tesla cannon. <br/><br/>I have the power!
                   -
-                    image: sample.png
-                    hit: esp-ns-hit
-                    name: Network Rack - ESP Network Switch
-                    type: PCA
+                    image: iStock_000024244345_Medium_c.jpg
+                    hit: com-rack-hit
+                    name: Communications Equipment
+                    type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: Network switch for the Electronic Security Perimeter.
+                    description: Dial-in modems, remote terminal units, and other equipment that allows remote monitoring and operation of the control system is in this rack. Typically these devices communicate to the primary and any backup control centers. These devices are treated independently by CIP, but we'll group them together for simplicity. <br/><br/>Reach out and touch some asset.
                   -
-                    image: sample.png
-                    hit: data-acs-hit
-                    name: Data Acquisition and Control Server
-                    type: BCA
+                    image: iStock_000005695963_Medium_a.jpg
+                    hit: control-ns-hit
+                    name: Controls Network Switch
+                    type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: Collects data from the Control System and issues controls from workstations and other devices to the Control System.
+                    description: This network switch connects all the servers, workstations, and other cyber assets on the control system network. <br/><br/>Now we're talking! errr … electronically speaking.
                   -
-                    image: sample.png
-                    hit: control-sas-hit
-                    name: Control System Application Server
-                    type: BCA
+                    image: iStock_000013815869_Medium_e.jpg
+                    hit: tape-back-hit
+                    name: Tape Backup Server
+                    type: Protected Cyber Asset (PCA)
                     network: ESP
-                    description: Runs applications that provide advanced functionality on top of the Control System.
+                    description: Servers can crash and data can be lost, so well-managed facilities like yours will have servers that make regular copies of data from other servers on the control system network. Since the Backup Server is on the same network as the BES Cyber Assets, we need to protect it. <br/><br/>Why do we fall? So we can learn to back our data up.
+                  -
+                    image: iStock_000016348944_Medium_d.jpg
+                    hit: c-app-server-hit
+                    name: Control System Application Server 1
+                    type: BES Cyber Asset (BCA)
+                    network: ESP
+                    description: Most control systems have supporting software that collects data and builds sophisticated visualizations and displays for operators. This is the server that performs these functions in your facility. <br/><br/>I live to serve… except the part about being alive.
+                  -
+                    image: iStock_000016348944_Medium_d.jpg
+                    hit: c-app-server2-hit
+                    name: Control System Application Server 2
+                    type: BES Cyber Asset (BCA)
+                    network: ESP
+                    description: Many control systems provide advanced functionality for operators of the control system through ancillary software. Some examples include advanced network modeling and sophisticated relaying systems. <br/><br/>Yeah, it looks the same as the other server. It's not.
                   -
                     image: iStock_000018703133_Medium_j.jpg
                     hit: operator-ws-hit
                     name: Operator Workstation
-                    type: BCA
+                    type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: Powers the operator monitors
+                    description: This workstation allows the operator to log into the control system, view data, and issue controls. It's their primary tool for operating Bulk Electric System components. <br/><br/>Defined by Webster's Dictionary as 'an extension of an operator's arm
                   -
-                    image: sample.png
-                    hit: laptop-hit
-                    name: First Floor Laptop
-                    type: BCA
+                    image: iStock_000012331544_Medium_g.jpg
+                    hit: tech-ws-hit
+                    name: Technician Workstation
+                    type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: Used by technicians for troubleshooting.
+                    description: A laptop used by technical Defenders to troubleshoot and monitor cyber assets inside the facility. It has specialized software installed that can monitor the network and troubleshoot server issues. <br/><br/>Be on your guard. There are older and fouler things in the depths of the network.
                   -
-                    image: sample.png
+                    image: iStock_000016348944_Medium_d.jpg
                     hit: file-server-hit
                     name: File Server
-                    type: None
-                    network: Corporate
-                    description: Contains maps, network diagrams and other information useful to have on the controls network for reference and maintenance.
+                    type: BCSI Location
+                    network: BCSI Location
+                    description: Contains maps, network diagrams and other reference and maintenance information useful to have in the facility. It's not on the controls network, but we must be careful to protect the BCSI on the server. <br/><br/>Keep it secret, keep it safe.
                   -
-                    image: sample.png
+                    image: iStock_000068955545_Medium_i.jpg
                     hit: map-computer-hit
                     name: Mapboard Computer
-                    type: PCA
+                    type: Protected Cyber Asset (PCA)
                     network: ESP
-                    description: Displays data on the mapboard from the control system
+                    description: Displays data on the mapboard that is collected from the control system. It's on the control system network, but can't issue commands, so it's a Protected Cyber Asset. <br/><br/>Big things come in small packages.
                   -
                     image: iStock_000057458210_Medium_f.jpg
                     hit: printer-hit
-                    name: First Floor Printer
-                    type: PCA
+                    name: Network Printer
+                    type: Protected Cyber Asset (PCA)
                     network: ESP
-                    description: Printer attached to a protected network.
+                    description: This printer is attached to the controls network so the technical Defender can print out schematics and diagrams. Since it's on the same network as the BES cyber Assets, we need to protect it. <br/><br/>Nothing beats curling up with a warm newly printed document and a glass of milk.
+      # 1 UnTagged BCA PCA Assets  ==========================================
+      -
+        action:
+          - {cmd: unhighlight.all }
+          - {cmd: label.hide, data: {id: all}  }
+        duration: {kind: time, seconds: 1}
       # 1 Dialogue Protected Cyber Assets  ==========================================
       -
         title: CIP-Related Cyber Assets
@@ -289,39 +226,13 @@ chapters:
                   action: {cmd: slides.next-slide}
                 labels:
                   a: {title: "PCA"}
-      # 1 BCSI Assets Tour  ==========================================
-      -
-        duration: {kind: dialogue }
-        dialogue:
-          timeline:
-            - {action: filing-cabinet }
-            - {action: map }
-            - {action: monitor }
-          defaults:
-            next: 1000
-          actions:
-            filing-cabinet:
-              pos: "filing-cabinet-hit"
-              action:
-                - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
-                - {cmd: label.add, data: {id: filing-cabinet-hit, text: Substation Diagrams, face: bottom, arrow: right} }
-            map:
-              pos: "map-computer-hit"
-              action:
-                - {cmd: highlight, data: {id: map, level: yellow} }
-                - {cmd: label.add, data: {id: map-computer-hit, text: System Map, face: bottom, arrow: right} }
-            monitor:
-              pos: "monitor-hit"
-              action:
-                - {cmd: highlight, data: {id: monitor, level: yellow} }
-                - {cmd: label.add, data: {id: monitor-hit, text: Control System Views, face: top, arrow: right} }
       # 1 Highlight BCSI Equipment  ==========================================
       -
         action:
           - {cmd: label.hide, data: {id: all}  }
-          - {cmd: highlight, data: {id: filing-cabinet, level: yellow} }
-          - {cmd: highlight, data: {id: map, level: yellow} }
-          - {cmd: highlight, data: {id: monitor, level: yellow} }
+          - {cmd: highlight, data: {id: filing-cabinet, level: bcsi} }
+          - {cmd: highlight, data: {id: map, level: bcsi} }
+          - {cmd: highlight, data: {id: monitor, level: bcsi} }
         duration: {kind: ux}
         # 1 Equipment exploration component:
         ux:
@@ -335,26 +246,26 @@ chapters:
                 template: equipment
                 cards:
                   -
-                    image: sample.png
+                    image: iStock_000020512725_Medium_h.jpg
                     hit: filing-cabinet-hit
                     name: Filing Cabinets
-                    type: BCSI
+                    type: BCSI Location
                     network: N/A
-                    description: Holds protected information
+                    description: Holds network diagrams, substation diagrams, and other documents classified as BCSI that we need to protect. <br/><br/>Paper? Really? Are we not living in the 21st century?
                   -
-                    image: sample2.png
+                    image: iStock_000041358150_Medium_k.jpg
                     hit: map-hit
-                    name: Mapboard
-                    type: BCSI
+                    name: System Mapboard
+                    type: BCSI Location
                     network: N/A
-                    description: Shows a control room operator a dynamic map of the power grid they are managing or shows a power plant operator the map of their facility and controls.
+                    description: Gives the operator a visual map of the system they are controlling. A system operator might see the power grid they are managing, while a power plant operator may see a visual picture of the components of the facility. The mapboard is sometimes a physical map with lights and numeric displays. For our facility, it's a giant digital display. <br/><br/>Sometimes I find myself just staring at it…
                   -
-                    image: sample.png
+                    image: iStock_000008213570_Medium_l.jpg
                     hit: monitor-hit
                     name: Operator Monitors
-                    type: BCSI
+                    type: BCSI Location
                     network: N/A
-                    description: Operators like lots of monitors to see all their systems
+                    description: Operators like lots of monitors to see all their systems. These monitors often have BCSI on-screen, so we must be sure to protect the information from being photographed or copied. <br/><br/>NEED MORE MONITORS!
       # 1 Dialogue Duty Call ==========================================
       -
         title: Duty Call!

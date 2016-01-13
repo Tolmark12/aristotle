@@ -48,8 +48,8 @@ chapters:
       -
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 1.0}
-          - {content: ~2/CIN_RobotMovement.mp3, delay: 200, volume: 1, loop: 4 }
-          - {content: ~2/CIN_RobotRunning.mp3, delay: 200, volume: 1, loop: 4 }
+          - {content: ~2/CIN_RobotMovement.mp3, delay: 200, volume: 1 }
+          - {content: ~2/CIN_RobotRunning.mp3, delay: 200, volume: 1 }
           - {content: ~2/CIN_RobotStepping.mp3, delay: 12000, volume: 1, loop: 4 }
           - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 3400, volume: 1}
           - {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3, delay: 12600, volume: 1.0}
@@ -127,14 +127,11 @@ chapters:
           layers:
             - {depth: 7, content: $pacsBuild, cache: true }
         duration: {kind: time, seconds: 3.5 }
-      # 1 Dialogue Perimeter Try Again ==========================================
+      # 1 Animate Perimeter Build ==========================================
       -
-        title: Let's Try Again
         movie:
-          zoom: {scale: 1}
           layers:
             - {depth: 6, content: perimeter_physical.json }
-        duration: {kind: ux}
         dialogue:
           timeline:
             - {action: a }
@@ -143,6 +140,15 @@ chapters:
               pos: [170,400]
               text: Your new PSP. Mesmerizing…
               audio: Story_3_Ctanlee_7.mp3
+        duration: {kind: time, seconds: 7.5 }
+      # 1 Dialogue Perimeter Try Again ==========================================
+      -
+        title: Let's Try Again
+        movie:
+          zoom: {scale: 1}
+          layers:
+            - {depth: 6, content: clear }
+        duration: {kind: ux}
         ux:
           components:
             -
