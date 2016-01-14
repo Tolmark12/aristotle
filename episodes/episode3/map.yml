@@ -292,6 +292,12 @@ chapters:
             - {action: j }
             - {action: k }
             - {action: l }
+            - {action: m }
+            - {action: n }
+            - {action: o }
+            - {action: p }
+            - {action: q }
+            - {action: r }
           actions:
             a:
               pos: [170,50]
@@ -314,32 +320,62 @@ chapters:
               pos: []
             f:
               pos: []
-              audio: Story_4_Sektimus_1.mp3
+              audio: Story_4_Sektimus_1a.mp3
               actor: sektimus
-              text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old "friend". I'm here to spend some time with you. I know failure hurts and I want to make sure this failure hurts you especially deeply. Where is your "Cadet" right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind a steaming pipe in a plant basement? Or did they take the long drive in their work truck, never to return?
+              text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old "friend"
             g:
+              pos: []
+              audio: Story_4_Sektimus_1b.mp3
+              actor: sektimus
+              text:  I'm here to spend some time with you - I know failure hurts and I want to make sure this failure hurts you especially deeply.
+            h:
+              pos: []
+              audio: Story_4_Sektimus_1c.mp3
+              actor: sektimus
+              text: Where is your "Cadet" right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind a steaming pipe in a plant basement? Or did they take the long drive in their work truck, never to return?
+            i:
               next: 2000
               pos: []
-            h:
+            j:
               pos: [270,400]
               text: Cadet … Please lean toward the screen!
               audio: Story_4_Ctanlee_14.mp3
-            i:
-              next: 1000
-              pos: []
-            j:
-              pos: []
-              audio: Story_4_Sektimus_2.mp3
-              actor: sektimus
-              text: What?? You're still here? Do you know who you contend with, human? I am wielder of the ancient chip of Katra-Non, guardian of the Digium, chosen successor of Nexitar, master strategist of the Robot Hegemony, destroyer of the Charnel Nebula, builder of the Metal Swarm, enslaver of worlds - I am LEGION!
             k:
               next: 1000
               pos: []
             l:
               pos: []
-              audio: Story_4_Sektimus_3.mp3
+              audio: Story_4_Sektimus_2a.mp3
               actor: sektimus
-              text: Human. Your limited mind might have trouble comprehending the situation, so let me use simple terms. CIP will not save you. CTANLEE will not save you. Abandon this training and I won't extend your suffering after I conquer Earth. Will you accept this, my final offer?
+              text: What?? You're still here? Do you know who you contend with, human?
+            m:
+              pos: []
+              audio: Story_4_Sektimus_2b.mp3
+              actor: sektimus
+              text: I am wielder of the ancient chip of Katra-Non, guardian of the Digium, chosen successor of Nexitar, master strategist of the Robot Hegemony, destroyer of the Charnel Nebula, builder of the Metal Swarm, enslaver of worlds.
+            n:
+              pos: []
+              audio: Story_4_Sektimus_2c.mp3
+              actor: sektimus
+              text: I am LEGION.
+            o:
+              next: 1000
+              pos: []
+            p:
+              pos: []
+              audio: Story_4_Sektimus_3a.mp3
+              actor: sektimus
+              text: Human. Your limited mind might have trouble comprehending the situation, so let me use simple terms.
+            q:
+              pos: []
+              audio: Story_4_Sektimus_3b.mp3
+              actor: sektimus
+              text: CIP will not save you. CTANLEE will not save you. Abandon this training and I won't extend your suffering after I conquer Earth.
+            r:
+              pos: []
+              audio: Story_4_Sektimus_3c.mp3
+              actor: Will you accept this, my final offer?
+              text: Human.
         duration: {kind: dialogue }
       # 2 Sektimus Will you Train? ==========================================
       - !!inc/file ./episodes/episode3/yaml/_simple-sektimus.yaml

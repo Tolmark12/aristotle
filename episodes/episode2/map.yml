@@ -272,6 +272,13 @@ chapters:
             - {action: q }
             - {action: r }
             - {action: s }
+            - {action: t }
+            - {action: u }
+            - {action: v }
+            - {action: w }
+            - {action: x }
+            - {action: y }
+
           actions:
             a:
               pos: [170,50]
@@ -336,24 +343,48 @@ chapters:
               text: Two-way communication channel now open!
             o:
               pos: [370,400]
-              text: Sektimus, you forget too soon that it was humans [copy Sektimus' voice] who defeated your kind in the past. This Defender is one of many that will defeat you again. Your machines may follow your rules perfectly, but you fear humans because they have something you never will be able to program into your robots - choice. A Defender who chooses to sustain security is worth a legion of your robots.
-              audio: ~2/Story_3_Ctanlee_22.mp3
+              text: Sektimus, you forget too soon that it was humans who defeated your kind in the past. This Defender is one of many that will defeat you again.
+              audio: ~2/Story_3_Ctanlee_22a.mp3
             p:
+              pos: [370,400]
+              text: Your machines may follow your rules perfectly, but you fear humans because they have something you never will be able to program into your robots - choice.
+              audio: ~2/Story_3_Ctanlee_22b.mp3
+            q:
+              pos: [370,400]
+              text: A Defender who chooses to sustain security is worth a legion of your robots.
+              audio: ~2/Story_3_Ctanlee_22c.mp3
+            r:
               audio: ~2/Story_3_Sektimus_5.mp3
               actor: sektimus
               text: Ah CTANLEE. The little computer finally speaks. But I'm not interested in talking to you, am I? I'm talking to this human.
-            q:
-              audio: ~2/Story_3_Sektimus_6.mp3
+            s:
+              audio: ~2/Story_3_Sektimus_6a.mp3
               actor: sektimus
-              text: Human. My Metal Swarm is coming to consume your planet. It took six WarMinds to resist us before and this CTANLEE you follow is the only survivor. Heed my advice. Go. Hide. Enjoy what little time you have left. [deep laughs that turn to legion laughs]
-            r:
+              text: Human. My Metal Swarm is coming to consume your planet. It took six WarMinds to resist us before and this CTANLEE you follow is the only survivor.
+            t:
+              audio: ~2/Story_3_Sektimus_6b.mp3
+              actor: sektimus
+              text: Heed my advice. Go. Hide. Enjoy what little time you have left. [deep laughs that turn to legion laughs]
+            u:
               audio: ~2/Story_3_Warcore_5.mp3
               actor: warcore
               text: Transmission terminated at the source.
-            s:
+            v:
               pos: [370,400]
-              text: "Cadet … you may wish this wasn't real, that it was just some work of fiction, but good can come from this. What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them. Sektimus fears this. Sektimus fears what you may become. While you ponder these things, let's get back to the simulator."
-              audio: ~2/Story_3_Ctanlee_23.mp3
+              text: "Cadet … you may wish this wasn't real, that it was just some work of fiction, but good can come from this."
+              audio: ~2/Story_3_Ctanlee_23a.mp3
+            w:
+              pos: [370,400]
+              text: "What I told Sektimus is true: his robots can only blindly obey his orders. As a human, you give meaning to your duties when you understand why they are important and choose to invest yourself in them."
+              audio: ~2/Story_3_Ctanlee_23b.mp3
+            x:
+              pos: [370,400]
+              text: "Sektimus fears this. Sektimus fears what you may become."
+              audio: ~2/Story_3_Ctanlee_23c.mp3
+            y:
+              pos: [370,400]
+              text: "While you ponder these things, let's get back to the simulator."
+              audio: ~2/Story_3_Ctanlee_23d.mp3
         duration: {kind: dialogue }
       # 2 Dialogue Electronic Attack ==========================================
       -

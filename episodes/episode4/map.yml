@@ -523,6 +523,10 @@ chapters:
             - {action: e }
             - {action: f }
             - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+            - {action: k }
           actions:
             a:
               pos: []
@@ -540,22 +544,41 @@ chapters:
               audio: Story_5_Ctanlee_24.mp3
             d:
               pos: []
-              audio: Story_5_Sektimus_2.mp3
+              audio: Story_5_Sektimus_2a.mp3
               actor: sektimus
-              text: Ah, CTANLEE. Always trying to sound bigger than you are. I just want to make sure this Defender is fully informed - you surely wouldn't object to that. After all, the human here may not know that CIP really doesn't cover every security attack and has many flaws. They shouldn't be wasting their time with it.
+              text: Ah, CTANLEE. Always trying to sound bigger than you are.
             e:
+              pos: []
+              audio: Story_5_Sektimus_2b.mp3
+              actor: sektimus
+              text: I just want to make sure this Defender is fully informed - you surely wouldn't object to that.
+            f:
+              pos: []
+              audio: Story_5_Sektimus_2c.mp3
+              actor: sektimus
+              text: After all, the human here may not know that CIP really doesn't cover every security attack and has many flaws. They shouldn't be wasting their time with it.
+            g:
               pos: [270,400]
               text: Sektimus, you waste your time trying to sway my Cadet. In fact, I think you're spending so much time here because you're afraid of this Cadet becoming a full Defender.
               audio: Story_5_Ctanlee_25.mp3
-            f:
+            h:
               pos: []
               audio: Story_5_Sektimus_3.mp3
               actor: sektimus
               text: Afraid? Fear is not in my circuitry.
-            g:
+            i:
               pos: [270,400]
-              text: Then prove it. This Cadet has a facility that has defeated every attack your robots are programmed with. If you can give us an attack that our CIP defenses can't handle then we'll concede that this CIP training is futile and no match for your power. Cadet, do you accept this challenge with me?
-              audio: Story_5_Ctanlee_26.mp3
+              text: Then prove it. This Cadet has a facility that has defeated every attack your robots are programmed with.
+              audio: Story_5_Ctanlee_26a.mp3
+            j:
+              pos: [270,400]
+              text: If you can give us an attack that our CIP defenses can't handle then we'll concede that this CIP training is futile and no match for your power.
+              audio: Story_5_Ctanlee_26b.mp3
+            k:
+              pos: [270,400]
+              text: Cadet, do you accept this challenge with me?
+              audio: Story_5_Ctanlee_26c.mp3
+
         duration: {kind: dialogue }
       # 2 Sektimus Do you Accept? ==========================================
       - !!inc/file ./episodes/episode4/yaml/_simple-sektimus-e5.yaml
