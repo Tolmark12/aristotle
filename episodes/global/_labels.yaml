@@ -31,10 +31,16 @@ bcsi:
 crca:
   title: "CIP-Related Cyber Assets (CRCA)"
   text: "A single term that used to cover all the crazy CIP acronyms for assets that have security requirements. CRCA is used to refer to these asset types: BES Cyber Assets, Protected Cyber Assets, Electronic Access and Monitoring Systems, and Physical Access Control Systems."
+electronic_access:
+  title: "Electronic Access"
+  text: "The ability to logon to workstations, servers, and other CRCAs."
+physical_access:
+  title: "Physical Access"
+  text: "The ability to open a door and enter a Physical Security Perimeter. Essentially, this means you have physical access to CRCAs."
 manager:
   title: "CIP Senior Manager"
   text: "Leads the CIP war efforts against the robots and our allies. Be sure to greet them with the official Fist-Bump SaluteTM if you pass in the hallway."
-defender:
+defenders:
   title: "Defenders"
   text: "Individuals like you who have access to and are responsible for, maintain, support, or use CRCAs and BCSI. Examples: IT Manager, Network Tech, Substation Tech, System Operator, Control Room Operator, Flak-Cannon Engineer."
 cyber_security_program:

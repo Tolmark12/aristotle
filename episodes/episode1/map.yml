@@ -679,7 +679,7 @@ chapters:
               config:
                 hasLabels: true
                 title: One Episode Down
-                body: Nice job, Cadet. Our facility is built, we tagged <a data-label="crca">CRCAs</a> and <a data-label="bcsi">BCSI</a> locations, learned about the <a data-label="manager">CIP Senior Manager</a> and the <a data-label="cyber_security_program">Cyber Security Program</a>, and added <a data-label="defender">Defender</a>. Most importantly, we learned that our core mission as <a data-label="defender">Defenders</a> is to protect our infrastructure by performing our duties and creating evidence. <br/><br/>Let's test your knowledge and move onto the next episode where we'll build and secure the perimeters around our facility. Buckle up into your office chairs, because things are about to get really interesting. The robots are coming…
+                body: Nice job, Cadet. Our facility is built, we tagged <a data-label="crca">CRCAs</a> and <a data-label="bcsi">BCSI</a> locations, learned about the <a data-label="manager">CIP Senior Manager</a> and the <a data-label="cyber_security_program">Cyber Security Program</a>, and added <a data-label="defender">Defenders</a>. Most importantly, we learned that our core mission as <a data-label="defender">Defenders</a> is to protect our infrastructure by performing our duties and creating evidence. <br/><br/>Let's test your knowledge and move onto the next episode where we'll build and secure the perimeters around our facility. Buckle up into your office chairs, because things are about to get really interesting. The robots are coming…
                 btn:
                   style: lightning
                   text: Review Duties
@@ -690,7 +690,7 @@ chapters:
           components:
             -
               kind: duties
-              config: {definition: ~l/duties/EP1CH1.json}
+              config: {definition: ~l/duties/EP1CH3.json}
         duration: {kind: ux}
       # 3 Quiz ==========================================
       -
