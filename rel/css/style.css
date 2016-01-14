@@ -53,6 +53,13 @@ h1, h2 {
   font-style: normal; }
 
 @font-face {
+  font-family: 'Function Condensed';
+  src: url("../assets/fonts/functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique-webfont.eot");
+  src: url("../assets/fonts/functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique-webfont.woff") format("woff"), url("../assets/fonts/functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique-webfont.svg#function_proMdCnOb") format("svg");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
   font-family: 'Function';
   src: url("../assets/fonts/functionpro_demi_macroman/FunctionPro-DEMI-webfont.eot");
   src: url("../assets/fonts/functionpro_demi_macroman/FunctionPro-DEMI-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-DEMI-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-DEMI-webfont.woff") format("woff"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-DEMI-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-DEMI-webfont.svg#function_prodemi") format("svg");
@@ -90,10 +97,11 @@ h1, h2 {
   .chrome .progress .progress-map {
     display: flex;
     align-items: center;
-    padding: 6px 8px 0; }
+    padding: 0px 8px 0; }
     .chrome .progress .progress-map .milestone {
-      opacity: 0.25;
-      display: inline-block; }
+      opacity: 0.4;
+      display: inline-block;
+      margin: 0 -2px -3px; }
       .chrome .progress .progress-map .milestone .label-wrapper {
         margin-top: 10px;
         margin-left: 8px; }
@@ -1660,8 +1668,22 @@ input {
       width: 102px;
       opacity: 0.75;
       cursor: pointer; }
+      .generic-ui .continue-strip .continue-btn.explorer {
+        display: none;
+        width: 300px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 4px 14px 0; }
       .generic-ui .continue-strip .continue-btn:hover {
         opacity: 1; }
+    .generic-ui .continue-strip.bar-topper {
+      background: none;
+      bottom: 26px; }
+      .generic-ui .continue-strip.bar-topper .continue-btn {
+        opacity: 1; }
+        .generic-ui .continue-strip.bar-topper .continue-btn.explorer {
+          display: block; }
+        .generic-ui .continue-strip.bar-topper .continue-btn.white {
+          display: none; }
 
 .chapter-heading-bg {
   position: fixed;
