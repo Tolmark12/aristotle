@@ -53,6 +53,9 @@ chapters:
       -
         title: Keep a Sharp Lookout
         duration: {kind: ux}
+        movie:
+          layers:
+            - {depth: 12, content: e5_skittering.json }
         ux:
           components:
             -
@@ -69,6 +72,9 @@ chapters:
       -
         title: Electronic Monitoring
         duration: {kind: ux}
+        movie:
+          layers:
+            - {depth: 12, content: clear }
         ux:
           components:
             -
@@ -176,6 +182,7 @@ chapters:
             - {action: d }
             - {action: e }
             - {action: f }
+            - {action: g }
           actions:
             a:
               pos: []
@@ -184,7 +191,7 @@ chapters:
               text: Skip the simulation? So confident aren't we? CIP has my robots all figured out, doesn't it?
             b:
               emo: right
-              pos: [270,300]
+              pos: [270,400]
               text: All words and no action, Sektimus. We are waiting for an attack that will defeat our CIP-secured facility.
               audio: Story_6_Ctanlee_1.mp3
             c:
@@ -203,7 +210,10 @@ chapters:
               actor: warcore
               text: Scanning. Signal Clean. CTANLEE, these appear to be simple parameters for configuring my simulator with a new attack.
             f:
-              pos: [270,300]
+              pos: []
+              next: 1800
+            g:
+              pos: [270,400]
               text: Cadet, are you ready to put your facility to the test?
               audio: Story_6_Ctanlee_3.mp3
         duration: {kind: dialogue }
@@ -387,12 +397,6 @@ chapters:
               text: The WarCore is simply simulating the results from following the CIP Standards. Our Incident Response Team reported the Bot-Tron attack to E-ISAC and NERC used the information to build new experimental defenses for the industry against Bot-Tron Overlords. Proceed with your selection, Cadet.
               audio: Story_6_Ctanlee_16.mp3
         duration: {kind: dialogue }
-      # 3 Zoom Perimeter View ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 12, content: ~g/perimeter_nerc.json }
-        duration: {kind: time, seconds: 1.5 }
       # 3 Sektimus Nerc Defense Selector ? ==========================================
       - !!inc/file ./episodes/episode5/yaml/_nerc-defense-selector.yaml
       # 3 Animate Nerc Build ==========================================
@@ -402,14 +406,13 @@ chapters:
           - {content: $nercSFX, volume: 1}
         movie:
           layers:
-            - {depth: 13, content: $nercBuild }
+            - {depth: 12, content: $nercBuild }
         duration: {kind: time, seconds: 4 }
       # 3 Sektimus Interlude ==========================================
       -
         movie:
           layers:
-            - {depth: 12, content: clear }
-            - {depth: 13, content: $nercPass, vcr: true }
+            - {depth: 12, content: $nercPass, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -456,14 +459,14 @@ chapters:
               audio: Story_6_Ctanlee_17.mp3
         duration: {kind: ux }
       # 3 Duties ==========================================
-      -
-        action: {cmd: ctanlee.gohome}
-        ux:
-          components:
-            -
-              kind: duties
-              config: {definition: ~l/duties/EP5CH3.json}
-        duration: {kind: ux}
+      #-
+      #  action: {cmd: ctanlee.gohome}
+      #  ux:
+      #    components:
+      #      -
+      #        kind: duties
+      #        config: {definition: ~l/duties/EP5CH3.json}
+      #  duration: {kind: ux}
       # 3 Quiz ==========================================
       -
         duration: {kind: ux}
@@ -476,29 +479,11 @@ chapters:
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 4
   # ----------------------------------------------
-      # 4 Background Build in ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 13, content: clear }
-            - {depth: 0, content: ~1/c1-sky.svg }
-            - {depth: 1, content: ~1/c1-background-clouds-loop.json, loop: true }
-            - {depth: 2, content: ~1/c1_background_buildin.json, jumpToEnd: true, cache: true }
-            - {depth: 3, content: $facilityBuild, jumpToEnd: true, cache: true}
-            - {depth: 4, content: $facilityLoop, loop: true }
-            - {depth: 5, content: ~1/interior_build.json, jumpToEnd: true, cache: true}
-            - {depth: 6, content: $pacsBuild, jumpToEnd: true, cache: true }
-            - {depth: 7, content: $eacmsBuild, jumpToEnd: true, cache: true }
-            - {depth: 8, content: $portBuild, jumpToEnd: true, cache: true }
-            - {depth: 9, content: $changeBuild, jumpToEnd: true, cache: true }
-            - {depth: 10, content: $accessBuild, jumpToEnd: true, cache: true }
-            - {depth: 11, content: $visitorBuild, jumpToEnd: true, cache: true }
-            - {depth: 12, content: $nercBuild, jumpToEnd: true, cache: true }
-        duration: {kind: time, seconds: 1 }
       # 4 Shutting Down slide ==========================================
       -
         movie:
           layers:
+            - {depth: 12, content: $nercBuild, jumpToEnd: true, cache: true }
             - {depth: 13, content: 6_6_defenders_enter.json, events: [complete] }
         dialogue:
           defaults:
@@ -520,7 +505,7 @@ chapters:
               actor: warcore
               text: "Shutting down Simulator."
               audio: Story_7_Warcore_1.mp3
-        duration: {kind: listen, event: layer.12.complete }
+        duration: {kind: listen, event: layer.13.complete }
       # 4 -12,13 Clear ==========================================
       -
         movie:
@@ -529,7 +514,7 @@ chapters:
             - {depth: 12, content: clear }
             - {depth: 11, content: clear }
             - {depth: 10, content: clear }
-        duration: {kind: listen, event: layer.12.complete }
+        duration: {kind: listen, event: layer.13.complete }
       # 4 -9,10,11 Clear ==========================================
       -
         movie:
@@ -537,7 +522,7 @@ chapters:
             - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
             - {depth: 9, content: clear }
             - {depth: 8, content: clear }
-        duration: {kind: listen, event: layer.12.complete }
+        duration: {kind: listen, event: layer.13.complete }
       # 4 -7,8 Clear ==========================================
       -
         movie:
@@ -545,7 +530,14 @@ chapters:
             - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
             - {depth: 7, content: clear }
             - {depth: 6, content: clear }
-        duration: {kind: listen, event: layer.12.complete }
+        duration: {kind: listen, event: layer.13.complete }
+      # 4 - 3,4,5,6 Clear ==========================================
+      -
+        movie:
+          layers:
+            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
+            - {depth: 5, content: clear }
+        duration: {kind: listen, event: layer.13.complete }
       # 4 - 3,4,5,6 Clear ==========================================
       -
         movie:
@@ -553,8 +545,7 @@ chapters:
             - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
             - {depth: 3, content: clear }
             - {depth: 4, content: clear }
-            - {depth: 5, content: clear }
-        duration: {kind: listen, event: layer.12.complete }
+        duration: {kind: listen, event: layer.13.complete }
       # 4 - 0,1,2 Clear ==========================================
       -
         movie:
@@ -563,7 +554,7 @@ chapters:
             - {depth: 0, content: clear }
             - {depth: 1, content: clear }
             - {depth: 2, content: clear }
-        duration: {kind: listen, event: layer.12.complete }
+        duration: {kind: listen, event: layer.13.complete }
       # 4 Defender Build Out ==========================================
       -
         movie:
@@ -574,12 +565,24 @@ chapters:
             next: audio
           timeline:
             - {action: a }
+            - {action: b }
+            - {action: c }
           actions:
             a:
               pos: [500,600]
               text: "Our training comes to an end…"
               audio: Story_7_Ctanlee_2.mp3
-        duration: {kind: listen, event: layer.12.complete }
+            b:
+              emo: left
+              pos: [650,384]
+              text: " …and you have earned the title of Defender."
+              audio: Story_7_Ctanlee_3.mp3
+            c:
+              emo: down
+              pos: [650,384]
+              text: "I know you will wear this title and perform your duties with honor."
+              audio: Story_7_Ctanlee_4.mp3
+        duration: {kind: listen, event: layer.13.complete }
       # 4 Rank Advance ==========================================
       -
         sfx:
@@ -587,25 +590,8 @@ chapters:
         movie:
           layers:
             - {depth: 13, content: clear }
-            - {depth: 0, background: black, content: ~g/cyber_cadet.json }
-        dialogue:
-          defaults:
-            next: audio
-          timeline:
-            - {action: a }
-            - {action: b }
-          actions:
-            a:
-              emo: left
-              pos: [650,384]
-              text: " …and you have earned the title of Defender."
-              audio: Story_7_Ctanlee_3.mp3
-            b:
-              emo: down
-              pos: [650,384]
-              text: "I know you will wear this title and perform your duties with honor."
-              audio: Story_7_Ctanlee_4.mp3
-        duration: {kind: dialogue }
+            - {depth: 0, background: black, content: ~g/cyber_cadet.json, events: [complete] }
+        duration: {kind: listen, event: layer.0.complete }
       # 4 Movie ==========================================
       -
         movie:
@@ -620,7 +606,6 @@ chapters:
             - {action: c }
             - {action: d }
             - {action: e }
-            - {action: f }
           actions:
             a:
               pos: [650,384]
@@ -645,11 +630,6 @@ chapters:
               pos: [513,384]
               text: "You and your fellow Defenders truly are this planet's greatest hope."
               audio: Story_7_Ctanlee_9.mp3
-            f:
-              emo: down
-              pos: [513,384]
-              text: "Now go out and protect your infrastructure. Farewell, Defender."
-              audio: Story_7_Ctanlee_10.mp3
         duration: {kind: dialogue }
       # 4 Doors ==========================================
       -

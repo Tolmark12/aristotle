@@ -1,5 +1,5 @@
 title: Removing Access
-duration: {kind: time, seconds: 3.5}
+duration: {kind: time, seconds: 2.5}
 dialogue:
   defaults:
     next: none
