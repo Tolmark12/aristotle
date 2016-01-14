@@ -394,7 +394,7 @@ chapters:
               pos: [150, 200]
               emo: happy
               text: Looking for an HQ Building?
-              audio: Story_2_Ctanlee_X37.mp3
+              audio: Story_2_Ctanlee_X37_alt.mp3
         duration: {kind: time, seconds: 5}
       # 2 Dialogue Duties ==========================================
       -
