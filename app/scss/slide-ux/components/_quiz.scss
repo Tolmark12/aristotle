@@ -89,7 +89,7 @@
     .decision-bank          { @include blue-border(left); padding-left:25px; margin-left:20px;
       .decision             { margin:10px 0;
         .txt                { font-style:italic; font-size:26px; color:#335E6E;
-          span              { color:#FB9130; font-weight:bold;
+          span              { color:#FB9130; font-weight:bold; font-size: 26px;
             &.perc:after    { content:"%"; font-size:15px;}
           }
         }

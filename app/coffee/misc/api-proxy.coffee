@@ -31,6 +31,7 @@ module.exports = class APIproxy
   startChoice : (data)->
     @chapter.picks[data.id] = { StartTimeUtc: @now(), Activities:[] }
   finishChoice : (data)->
+    aristotle.episode.userChoices.push data.choice
     @chapter.picks[data.id].EndTimeUtc  = @now()
     @chapter.picks[data.id].Selection   = data.choice
     @chapter.picks[data.id].ChoiceName  = data.id
@@ -93,6 +94,7 @@ module.exports = class APIproxy
       Chapters: [ chapterData ]
     }
     console.log data
+    console.log JSON.stringify(data)
     @postData JSON.stringify(data)
 
 
@@ -100,11 +102,18 @@ module.exports = class APIproxy
     xhr = new XMLHttpRequest()
     xhr.open "POST", "https://cipdefenderapi.azurewebsites.net:443/api/Learning", true
     xhr.setRequestHeader 'Content-Type', 'application/json; charset=UTF-8'
+
+    xhr.addEventListener "load", (e)=>
+      if e.currentTarget.status > 299
+        console.log "API responded with #{e.currentTarget.status} when trying to get the choice %'s for the quiz section'"
+        console.log e
+
+    xhr.addEventListener "error", (e)=>
+      console.log "API Post failed"
+      console.log e
+
     xhr.send jsonData
 
-    xhr.onloadend = (a)=>
-      # console.log "done"
-      # console.log a
   # ------------------------------------ Helpers
 
   now : () -> new Date().toISOString()
@@ -115,7 +124,60 @@ module.exports = class APIproxy
       @meta = {chapters:[]}
     @meta
 
+  getChoicePercentages : (choices, cb) ->
+    xhr = new XMLHttpRequest()
+    xhr.open "POST", "https://cipdefenderapi.azurewebsites.net:443/api/Metrics/Choices", true
+    xhr.setRequestHeader 'Content-Type', 'application/json; charset=UTF-8'
 
+    xhr.addEventListener "load", (e)=>
+      if e.currentTarget.status > 299
+        console.log "API responded with #{e.currentTarget.status} when trying to get the choice %'s for the quiz section'"
+        fakeResults = [
+          ChoiceName: "Access Control System"
+          Breakdowns: [
+            { Selection: "The Background Probe"   , PercentOfTotal: 0.6}
+            { Selection: "The Risk Detector"      , PercentOfTotal: 0.4}
+            { Selection: "Voight-Kampff Assessor" , PercentOfTotal: 0}
+          ]
+        ]
+        cb fakeResults
+      else
+        cb JSON.parse(e.currentTarget.response)
+
+    xhr.addEventListener "error", (e)=>
+      console.log "Error when requesting choice %'s for quiz results"
+
+    obj =
+      MetricsContext:
+        ModuleId  : aristotle.globals.get "trainingVersion"
+      ChoiceNames : choices
+
+    xhr.send obj
+
+  test : () ->
+    xhr = new XMLHttpRequest()
+    xhr.open "POST", "https://cipdefenderapi.azurewebsites.net:443/api/Metrics/Choices", true
+    xhr.setRequestHeader 'Content-Type', 'application/json; charset=UTF-8'
+
+    xhr.addEventListener "load", (e)=>
+      if e.currentTarget.status > 299
+        console.log "API responded with #{e.currentTarget.status} when trying to get the choice %'s for the quiz section'"
+        console.log JSON.parse e.currentTarget.response
+
+    xhr.addEventListener "error", (e)=>
+      console.log "API Post failed"
+      console.log e
+
+    obj =
+      MetricsContext:
+        ModuleId: aristotle.globals.get "trainingVersion"
+      ChoiceNames:[
+        "Access Control System"
+        "The Burninator"
+        "Card Guard XT"
+      ]
+    console.log JSON.stringify obj
+    xhr.send obj
 ###
 {"LearningContext":{"ModuleId":"MetaMythic.CipDefender.v1","ModuleAudience":"fake-module-audience","SessionId":"fake-session-id","StudentId":"abcdefg1234567","StudentName":"Ricks, Justin"},"Chapters":[{"EpisodeTitle":"Episode 1","ChapterName":"Chapter 1","LearningStartTimeUtc":1452557793466,"LearningEndTimeUtc":1452557808031,"DutyReviewStartTimeUtc":1452557808031,"DutyReviewEndTimeUtc":1452557811519,"Activities":[{"ActivityName":"Click : Asset Exploration - Filing Cabinets","EventTimeUtc":1452557803309},{"ActivityName":"Click : Asset Exploration - Mapboard","EventTimeUtc":1452557804086},{"ActivityName":"Click : Asset Exploration - Operator Monitors","EventTimeUtc":1452557805020}]}]}
   LearningRecord {

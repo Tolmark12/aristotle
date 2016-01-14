@@ -5,6 +5,7 @@ AssetPreloader = require 'misc/asset-preloader'
 module.exports = class Episode
 
   constructor: (@trainingData, @movie, @ux, @chrome) ->
+    @userChoices          = []
     aristotle.episode     = @
     @episodeNum           = @trainingData.episode
     @isLastEpisode        = @trainingData.isLastEpisode
@@ -64,11 +65,10 @@ module.exports = class Episode
         if slide.title == title
           slideTitle = slide.title
           breakLoop1 = true; break
-          
+
         if slide.movie?.layers?
           for layer in slide.movie.layers
             layers[layer.depth] = layer
-
 
       break if breakLoop1
 
@@ -80,6 +80,9 @@ module.exports = class Episode
     @chapters.activateItemByParam 'title', chapterTitle
     @playChapter slide.title
     PubSub.publish 'movie.rehydrate-layers', layersAr
+
+  gotoLocationByChapter : () ->
+
 
   createChapters : (trainingData) ->
     chapters = []

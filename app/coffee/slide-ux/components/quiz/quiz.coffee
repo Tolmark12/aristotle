@@ -17,6 +17,7 @@ module.exports = class Quiz extends Component
       @build data.config
 
   build: (data)->
+    @setChoicePercentages()
     @$node = $ jadeTemplate['slide-ux/components/quiz/quiz']( data )
     @createQuiz $(".questions", @$node), data
     @$nextBtn = $ ".next-btn", @$node
@@ -24,6 +25,37 @@ module.exports = class Quiz extends Component
     @hideNext()
     @superInit @$el, @$node, @data
 
+  setChoicePercentages : () ->
+    apiProxy.getChoicePercentages aristotle.episode.userChoices, (results)=>
+      if !results
+        @decisionPercentages = false
+      else
+        # console.log results
+        @decisionPercentages = []
+        # For each category returned from the api
+        for category in results
+          # For each average within this category
+          for selection in category.Breakdowns
+            # loop throuh all of the user's choices and see if there is a match
+            for userChoice in aristotle.episode.userChoices
+              if userChoice == selection.Selection
+                @decisionPercentages.push
+                  popularPercentage : selection.PercentOfTotal * 100
+                  choice            : selection.Selection
+                  category          : category.ChoiceName
+      # console.log @decisionPercentages
+    ###
+    [  # Results
+      {
+        "ChoiceName": "Access Control System",
+        "Breakdowns": [
+            { Selection: "The Background Probe"   , PercentOfTotal: 0.6}
+            { Selection: "The Risk Detector"      , PercentOfTotal: 0.4}
+            { Selection: "Voight-Kampff Assessor" , PercentOfTotal: 0}
+        ]
+      }
+    ]
+    ###
 
    #######  ##     ## #### ########
   ##     ## ##     ##  ##       ##
@@ -106,11 +138,7 @@ module.exports = class Quiz extends Component
     [obj.answers1, obj.answers2] = @splitArrayInHalf answers
     obj.score           = "#{totalPointsEarned} / #{totalPointsPossible}"
     obj.scorePercentage = (totalPointsEarned / totalPointsPossible)*100
-    obj.decisions = [
-      {popularPercentage: 49, choice: "Cool building", category: "Physical Access Control System"}
-      {popularPercentage: 53, choice: "Dog House", category: "Pet Lodging"}
-      {popularPercentage: 23, choice: "Hospital", category: "Public Service Building"}
-    ]
+    obj.decisions       = @decisionPercentages
     obj
 
   splitArrayInHalf : (ar) ->
