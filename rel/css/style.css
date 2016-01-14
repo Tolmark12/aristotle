@@ -100,8 +100,9 @@ h1, h2 {
       .chrome .progress .progress-map .milestone * {
         pointer-events: none; }
       .chrome .progress .progress-map .milestone.viewed {
-        opacity: 1;
-        cursor: pointer; }
+        opacity: 1; }
+        .chrome .progress .progress-map .milestone.viewed.chapter {
+          cursor: pointer; }
         .chrome .progress .progress-map .milestone.viewed:hover svg * {
           fill: #DEAA36; }
   .chrome .vcr {
