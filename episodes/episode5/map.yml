@@ -33,83 +33,6 @@ chapters:
             - {depth: 10, content: $accessBuild, jumpToEnd: true, cache: true }
             - {depth: 11, content: $visitorBuild, jumpToEnd: true, cache: true }
         duration: {kind: time, seconds: 1 }
-      # 3 Sektimus Nerc Defense Selector ? ==========================================
-      - !!inc/file ./episodes/episode5/yaml/_nerc-defense-selector.yaml
-      # 3 Animate Nerc Build ==========================================
-      -
-        action: {cmd: ctanlee.gohome}
-        sfx:
-          - {content: $nercSFX, volume: 1}
-        movie:
-          layers:
-            - {depth: 12, content: $nercBuild }
-        duration: {kind: time, seconds: 4 }
-      # 3 Sektimus Interlude ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 12, content: $nercPass, vcr: true }
-        dialogue:
-          defaults:
-            next: audio
-          timeline:
-            - {action: a }
-            - {action: b }
-            - {action: c }
-            - {action: d }
-          actions:
-            a:
-              next: 8000
-              pos: []
-            b:
-              pos: []
-              audio: Story_6_Sektimus_8.mp3
-              actor: sektimus
-              text: No, no no no no. Nooooooo!
-            c:
-              next: 4000
-              pos: []
-            d:
-              pos: []
-              audio: Story_6_Sektimus_9.mp3
-              actor: sektimus
-              text: You sunk my Bot-Tron Overlord!
-        duration: {kind: ux }
-      # 3 Sektimus Interlude ==========================================
-      -
-        dialogue:
-          defaults:
-            next: audio
-          timeline:
-            - {action: a }
-            - {action: b }
-            - {action: c }
-            - {action: d }
-            - {action: e }
-          actions:
-            a:
-              next: 1000
-              pos: []
-            b:
-              pos: []
-              audio: Story_6_Sektimus_10.mp3
-              actor: sektimus
-              text: Perhaps I was … premature … in my earlier judgment. Human, you performed at a higher level than I calculated possible. You are a worthy opponent.
-            c:
-              pos: []
-              audio: Story_6_Sektimus_11.mp3
-              actor: sektimus
-              text: So much the better. I prefer a good challenge.
-            d:
-              pos: []
-              audio: Story_6_Sektimus_12.mp3
-              actor: sektimus
-              text: I will keep my eyes on you - all of them. My swarm is not far and we shall meet again on the real battlefield.
-            e:
-              pos: [270,300]
-              text:  Not many have the courage to stare Sektimus in the eyes and challenge him. Well fought. Let's complete your training.
-              audio: Story_6_Ctanlee_17.mp3
-        duration: {kind: dialogue }
       # 1 Dialogue Intro ==========================================
       -
         title: Monitoring Our Defenses
@@ -498,12 +421,9 @@ chapters:
             - {action: b }
             - {action: c }
             - {action: d }
-            - {action: e }
-            - {action: f }
-            - {action: g }
           actions:
             a:
-              next: 18000
+              next: 8000
               pos: []
             b:
               pos: []
@@ -511,30 +431,49 @@ chapters:
               actor: sektimus
               text: No, no no no no. Nooooooo!
             c:
+              next: 4000
+              pos: []
+            d:
               pos: []
               audio: Story_6_Sektimus_9.mp3
               actor: sektimus
               text: You sunk my Bot-Tron Overlord!
-            d:
+        duration: {kind: ux }
+      # 3 Sektimus Interlude ==========================================
+      -
+        dialogue:
+          defaults:
+            next: audio
+          timeline:
+            - {action: a }
+            - {action: b }
+            - {action: c }
+            - {action: d }
+            - {action: e }
+          actions:
+            a:
+              next: 1000
+              pos: []
+            b:
               pos: []
               audio: Story_6_Sektimus_10.mp3
               actor: sektimus
               text: Perhaps I was … premature … in my earlier judgment. Human, you performed at a higher level than I calculated possible. You are a worthy opponent.
-            e:
+            c:
               pos: []
               audio: Story_6_Sektimus_11.mp3
               actor: sektimus
               text: So much the better. I prefer a good challenge.
-            f:
+            d:
               pos: []
               audio: Story_6_Sektimus_12.mp3
               actor: sektimus
               text: I will keep my eyes on you - all of them. My swarm is not far and we shall meet again on the real battlefield.
-            g:
+            e:
               pos: [270,300]
               text:  Not many have the courage to stare Sektimus in the eyes and challenge him. Well fought. Let's complete your training.
               audio: Story_6_Ctanlee_17.mp3
-        duration: {kind: ux }
+        duration: {kind: dialogue }
       # 3 Duties ==========================================
       #-
       #  action: {cmd: ctanlee.gohome}
