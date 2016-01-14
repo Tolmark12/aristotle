@@ -102,10 +102,13 @@ module.exports = class APIproxy
     xhr = new XMLHttpRequest()
     xhr.open "POST", "https://cipdefenderapi.azurewebsites.net:443/api/Learning", true
     xhr.setRequestHeader 'Content-Type', 'application/json; charset=UTF-8'
+    xhr.setRequestHeader 'Authorization', "Basic #{btoa('MetaMythic-43dbb0161e95:')}"
 
     xhr.addEventListener "load", (e)=>
       if e.currentTarget.status > 299
         console.log "API responded with #{e.currentTarget.status} when trying to get the choice %'s for the quiz section'"
+        console.log e
+      else
         console.log e
 
     xhr.addEventListener "error", (e)=>
@@ -128,6 +131,7 @@ module.exports = class APIproxy
     xhr = new XMLHttpRequest()
     xhr.open "POST", "https://cipdefenderapi.azurewebsites.net:443/api/Metrics/Choices", true
     xhr.setRequestHeader 'Content-Type', 'application/json; charset=UTF-8'
+    xhr.setRequestHeader 'Authorization', "Basic #{btoa('MetaMythic-43dbb0161e95:')}"
 
     xhr.addEventListener "load", (e)=>
       if e.currentTarget.status > 299
@@ -157,12 +161,17 @@ module.exports = class APIproxy
   test : () ->
     xhr = new XMLHttpRequest()
     xhr.open "POST", "https://cipdefenderapi.azurewebsites.net:443/api/Metrics/Choices", true
-    xhr.setRequestHeader 'Content-Type', 'application/json; charset=UTF-8'
-
+    xhr.setRequestHeader 'Content-Type',  'application/json; charset=UTF-8'
+    xhr.setRequestHeader 'Authorization', "Basic #{btoa('MetaMythic-43dbb0161e95:')}"
     xhr.addEventListener "load", (e)=>
+      console.log "---"
+      console.log "Basic #{btoa('MetaMythic-43dbb0161e95:')}"
+      console.log "Basic " + btoa("MetaMythic-43dbb0161e95" + ":" + "")
       if e.currentTarget.status > 299
         console.log "API responded with #{e.currentTarget.status} when trying to get the choice %'s for the quiz section'"
         console.log JSON.parse e.currentTarget.response
+      else
+        console.log e
 
     xhr.addEventListener "error", (e)=>
       console.log "API Post failed"

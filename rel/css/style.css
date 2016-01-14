@@ -1146,7 +1146,8 @@ body.body-quiz-results .chrome {
             color: #335E6E; }
             .slide-ux .quiz-results .decisions .decision-bank .decision .txt span {
               color: #FB9130;
-              font-weight: bold; }
+              font-weight: bold;
+              font-size: 26px; }
               .slide-ux .quiz-results .decisions .decision-bank .decision .txt span.perc:after {
                 content: "%";
                 font-size: 15px; }
