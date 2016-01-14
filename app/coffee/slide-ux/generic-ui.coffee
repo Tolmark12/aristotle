@@ -13,11 +13,23 @@ module.exports = class GenericUi
     @hideContinueStrip()
     $el.append $node
 
-    PubSub.subscribe 'continue.show', ()=>
-      @showContinueStrip()
+    PubSub.subscribe 'continue.show', (m, data)=>
+      if data?
+        @showContinueStrip data.css
+      else
+        @showContinueStrip()
 
-  showContinueStrip : () ->
+  showContinueStrip : (cssClasses) ->
     @$continueStrip.removeClass "hidden"
-  hideContinueStrip : () -> @$continueStrip.addClass "hidden"
+    if cssClasses?
+      @addedClasses = cssClasses
+      @$continueStrip.addClass @addedClasses
+    else
+      @addedClasses = null
+
+  hideContinueStrip : () ->
+    @$continueStrip.addClass "hidden"
+    if @addedClasses?
+      @$continueStrip.removeClass @addedClasses
 
   destroy : () ->

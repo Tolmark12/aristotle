@@ -1,8 +1,8 @@
 $progress-height : 50px;
 $progress-size   : 15px;
 .progress             {
-  .progress-map       { display:flex; align-items:center; padding: 6px 8px 0;
-    .milestone        { opacity:0.25; display:inline-block;
+  .progress-map       { display:flex; align-items:center; padding: 0px 8px 0;
+    .milestone        { opacity:0.4; display:inline-block; margin: 0 -2px -3px;
       .label-wrapper  { margin-top:10px; margin-left:8px; }
       *               { pointer-events: none; }
       &.viewed        { opacity:1;

@@ -1,7 +1,14 @@
-.generic-ui       { pointer-events:none; height:768px; position:absolute;
-  .continue-strip { z-index: 1; position:absolute; bottom:0; width:1024px; background:rgba($orange, 0.9); padding:13px 0;
-    .continue-btn { pointer-events:all; margin:0 auto; width:102px; opacity:0.75; cursor:pointer;
-      &:hover     { opacity:1; }
+.generic-ui         { pointer-events:none; height:768px; position:absolute;
+  .continue-strip   { z-index: 1; position:absolute; bottom:0; width:1024px; background:rgba($orange, 0.9); padding:13px 0;
+    .continue-btn   { pointer-events:all; margin:0 auto; width:102px; opacity:0.75; cursor:pointer;
+      &.explorer    { display:none; width:300px; background:rgba(black, 0.5); padding:4px 14px 0; }
+      &:hover       { opacity:1; }
+    }
+    &.bar-topper    { background:none; bottom:26px;
+      .continue-btn { opacity:1;
+        &.explorer  { display:block; }
+        &.white     { display:none; }
+      }
     }
   }
 }

@@ -87,6 +87,7 @@ module.exports = class TextDialogue
   killTalking : () ->
     @track?.stop()
     @actor?.stopTalking()
+    @actor?.complete()
 
   # ------------------------------------ Slide Sequencing
 

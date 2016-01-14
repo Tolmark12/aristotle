@@ -93,6 +93,7 @@ chapters:
           - {cmd: highlight, data: {id: file-server, level: pca} }
           - {cmd: highlight, data: {id: map-computer, level: pca} }
           - {cmd: highlight, data: {id: printer, level: pca} }
+          - {cmd: continue.show, data: {css: bar-topper}}
         duration: {kind: ux}
         # 1 Equipment exploration component:
         ux:
@@ -232,6 +233,8 @@ chapters:
           - {cmd: highlight, data: {id: filing-cabinet, level: bcsi} }
           - {cmd: highlight, data: {id: map, level: bcsi} }
           - {cmd: highlight, data: {id: monitor, level: bcsi} }
+          - {cmd: continue.show, data: {css: bar-topper}}
+
         duration: {kind: ux}
         # 1 Equipment exploration component:
         ux:
@@ -427,6 +430,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Explore Defenders ==========================================
       -
+        action: {cmd: continue.show, data: {css: bar-topper}}
         duration: {kind: ux}
         ux:
           components:

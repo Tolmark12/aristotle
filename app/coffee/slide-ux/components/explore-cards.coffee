@@ -10,7 +10,6 @@ module.exports = class ExploreCards extends Component
     @requiredCardViews = @data["required-views"]
     @$node             = $ $.parseHTML("<div></div>")
     @cards             = new Sequence @data.cards
-    PubSub.publish 'continue.show'
 
     @createCardGhosts @data.cards
     @superInit $el, @$node, @data
