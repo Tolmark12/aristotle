@@ -18,7 +18,7 @@ module.exports = class Episode
   begin : () =>
     aristotle.devTools.go @trainingData.dev, @trainingData.chapters
 
-    @token1 = PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data
+    # @token1 = PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data
     PubSub.publish("episode.loaded", @trainingData);
 
     @createChapters @trainingData
@@ -78,10 +78,15 @@ module.exports = class Episode
       layersAr.push layer
 
     @chapters.activateItemByParam 'title', chapterTitle
-    @playChapter slide.title
+
+    # If there is a specific slide to play..
+    if slide?
+      @playChapter slide.title
+    else
+      @playChapter()
+      
     PubSub.publish 'movie.rehydrate-layers', layersAr
 
-  gotoLocationByChapter : () ->
 
 
   createChapters : (trainingData) ->
@@ -117,6 +122,6 @@ module.exports = class Episode
       PubSub.publish 'episode.load', newEpisodeNum
 
   destroy : () ->
-    PubSub.unsubscribe @token1
+    # PubSub.unsubscribe @token1
     for chapter in @chapters.items
       chapter.destroy()

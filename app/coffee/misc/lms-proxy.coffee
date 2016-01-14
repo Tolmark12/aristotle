@@ -31,8 +31,8 @@ module.exports = class LMSProxy
 
   rehydrate : () ->
     if !@store? then return
+    console.log @store
     aristotle.episode.gotoLocationByTitle @store.location.slide
-    # aristotle.episode.gotoLocationByChapter @store.location.slide
 
   saveState : (currentSlide) ->
     @store = {}

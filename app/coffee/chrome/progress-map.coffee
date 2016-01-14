@@ -22,8 +22,13 @@ module.exports = class ProgressMap
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
 
     $milestone = $(".milestone", @$node)
+    # If sudo is true, allow jumping around in the episode
     if aristotle.sudo
       $milestone.on "click",   (e)=> @onMileStoneClick $(e.currentTarget)
+    # else, only allow clicking on chapters that are already completed
+    else
+      $(".chapter", @$node).on "click", (e)=> @onChapterClick $(e.currentTarget)
+
     $milestone.on "mouseover", (e)=> @onMileStoneOver $(e.currentTarget)
     $milestone.on "mouseout",  (e)=> @onMileStoneOut $(e.currentTarget)
 
@@ -67,6 +72,9 @@ module.exports = class ProgressMap
 
   # ------------------------------------ Events
 
+  onChapterClick : ($el) ->
+    return if !$el.hasClass "viewed" #Stop if this slide hasn't been viewed
+    PubSub.publish 'episode.goto', $el.attr "data-title"
   onMileStoneClick : ($el) ->
     # return if !$el.hasClass "viewed" #Stop if this slide hasn't been viewed
     PubSub.publish 'episode.goto', $el.attr "data-title"

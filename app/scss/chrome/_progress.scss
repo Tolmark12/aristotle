@@ -5,7 +5,8 @@ $progress-size   : 15px;
     .milestone        { opacity:0.25; display:inline-block;
       .label-wrapper  { margin-top:10px; margin-left:8px; }
       *               { pointer-events: none; }
-      &.viewed        { opacity:1; cursor:pointer;
+      &.viewed        { opacity:1;
+        &.chapter     { cursor:pointer; }
         &:hover svg * { fill:$yeller; }
       }
     }

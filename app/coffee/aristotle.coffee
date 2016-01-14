@@ -38,6 +38,8 @@ class Aristotle
     @setDevMode @isDevMode
     lmsProxy.begin @begin
 
+    PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data
+
   begin : () =>
     @setInitialEpisodeNum()
     PubSub.publish 'sessionkey.add'
@@ -97,5 +99,9 @@ class Aristotle
     # If neither of the above conditions, default to first episode
     if !@episodeNum?
       @episodeNum = "0"
+
+  gotoLocationByTitle : (title) ->
+    aristotle.lmsProxy.saveState title
+    @init()
 
 window.Aristotle = Aristotle
