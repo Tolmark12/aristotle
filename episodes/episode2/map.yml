@@ -650,6 +650,8 @@ chapters:
         duration: {kind: ux }
       # 2 Simulator - Firewall Lower ==========================================
       -
+        sfx:
+          - {content: ~g/SFX_AttackSlamdown_VirusBot.mp3, delay: 16100, volume:1}
         movie:
           layers:
             - {depth: 11, content: $eacmsAnimateBadLower, vcr: true }
@@ -665,6 +667,7 @@ chapters:
             - {action: f }
             - {action: g }
             - {action: h }
+            - {action: i }
           actions:
             a:
               pos: [570,250]
@@ -691,14 +694,17 @@ chapters:
               text: Give the secrets to me, what are you hiding…
             f:
               pos: []
+              next: 10000
+            g:
+              pos: []
               audio: Story_3_Packet_5.mp3
               actor: packet
               text: Eeeeeee!
-            g:
+            h:
               pos: [370,300]
               text: Terminated. Nice job, firewall.
               audio: Story_3_Ctanlee_39.mp3
-            h:
+            i:
               pos: [100,100]
               text: And that ends the chapter. It's duty time.
               audio: Story_3_Ctanlee_40.mp3
