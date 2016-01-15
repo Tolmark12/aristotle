@@ -481,7 +481,7 @@ chapters:
         duration: {kind: time, seconds: 1.5 }
       # 2 Electronic Defense Selector ==========================================
       - !!inc/file ./episodes/episode2/yaml/_eacms-selector.yaml
-      # 1 Animate PACS Build ==========================================
+      # 2 Animate PACS Build ==========================================
       -
         sfx:
             - {content: $eacmsSFX, delay: 700, volume: 1}
@@ -506,6 +506,7 @@ chapters:
               pos: [170,400]
               next: 3000
             b:
+              emo: right
               pos: [170,400]
               text: Ah the ESP. I feel safer already. It's like a big electric blanket wrapped around my assets.
               audio: Story_3_Ctanlee_30.mp3
@@ -549,6 +550,7 @@ chapters:
               text: When computers communicate with each other, they send messages in small packets called … umm … packets. Right. Oh, here's a packet now.
               audio: Story_3_Ctanlee_31.mp3
             c:
+              emo: left
               pos: [570,250]
               text: Before, this packet would have gone straight through to our servers.
               audio: Story_3_Ctanlee_32.mp3
@@ -564,6 +566,7 @@ chapters:
               text: Hello. I'm from the corporate reporting server and I'm headed to the control server.
               next: 6000
             f:
+              emo: left
               pos: [570,500]
               text: Even if the communication is authorized, the Intrusion Prevention System will check the contents of the packet.
               audio: Story_3_Ctanlee_33.mp3
@@ -582,6 +585,7 @@ chapters:
               text: No contraband. Proceed.
               next: 3000
             j:
+              emo: right
               pos: [700,500]
               text: That was an approved packet.
               audio: Story_3_Ctanlee_34.mp3

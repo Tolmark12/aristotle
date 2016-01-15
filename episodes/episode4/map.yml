@@ -97,7 +97,7 @@ chapters:
               text: "Great Gravy! What's up with your thumb?"
               audio: Story_5_Ctanlee_3.mp3
             g:
-              next: 10300
+              next: 14300
               pos: []
             h:
               pos: [100,100]
