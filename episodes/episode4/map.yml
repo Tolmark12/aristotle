@@ -635,6 +635,9 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Simulation Auditbot ==========================================
       -
+        sfx:
+          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          - {content: ~g/SFX_AttackSlamdown_Virus.mp3, delay: 22000, volume: 1}
         movie:
           layers:
             - {depth: 11, content: 5_auditbot_fail.json, vcr: true }

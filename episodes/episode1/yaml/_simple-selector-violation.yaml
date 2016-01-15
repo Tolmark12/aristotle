@@ -15,7 +15,7 @@ dialogue:
       audio: Story_2_Ctanlee_17.mp3
     c:
       emo: surprize
-      text: " Correct! This would be a violation. Let's try another example."
+      text: "Correct! This would be a violation. Let's try another example."
       audio: Story_2_Ctanlee_X40.mp3
 ux:
   components:
