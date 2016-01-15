@@ -14,9 +14,9 @@ h1 {
   font-size: 22px;
   font-family: 'Function Condensed';
   font-weight: 200;
-  color: #DEAA36;
+  color: #FEB644;
   text-transform: uppercase;
-  letter-spacing: 0.05em; }
+  letter-spacing: 0.08em; }
 
 h2 {
   font-size: 11px;
@@ -597,10 +597,11 @@ body.body-quiz-results .chrome {
       top: 50%;
       transform: translate(0, -50%); }
       .slide-ux .dialogue-wrap .dialogue h1 {
+        font-weight: 400;
         margin: 0 0 -10px; }
       .slide-ux .dialogue-wrap .dialogue .btn {
         position: relative;
-        margin: 0 auto;
+        margin: 20px auto 10px;
         display: block;
         width: 123px;
         cursor: pointer; }
@@ -1519,6 +1520,48 @@ input {
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     white-space: nowrap; }
+
+.bracket-btn {
+  position: relative;
+  padding: 22px 39px; }
+  .bracket-btn .txt {
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0.08em; }
+  .bracket-btn:before, .bracket-btn:after {
+    transition: all 0.2s cubic-bezier(0.86, 0, 0.07, 1) 0s;
+    content: "";
+    display: block;
+    border: solid 3px #FEB644;
+    height: 100%;
+    width: 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0; }
+  .bracket-btn:before {
+    border-right: none;
+    left: 0; }
+  .bracket-btn:after {
+    border-left: none;
+    right: 0; }
+  .bracket-btn svg {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 3px; }
+  .bracket-btn:hover {
+    transition: all 0.06s cubic-bezier(0.86, 0, 0.07, 1) 0s; }
+    .bracket-btn:hover .txt {
+      color: #F9773E !important; }
+    .bracket-btn:hover:before, .bracket-btn:hover:after {
+      transition: all 0.06s cubic-bezier(0.86, 0, 0.07, 1) 0s;
+      border-color: #F9773E;
+      height: 105%;
+      top: -1px; }
+    .bracket-btn:hover:before {
+      left: 4px; }
+    .bracket-btn:hover:after {
+      right: 4px; }
 
 .label-trigger {
   color: white;

@@ -70,15 +70,16 @@ input{border:none; }
 }
 
 
-.bracket-btn          { position:relative; padding:22px 35px;
+.bracket-btn          { position:relative; padding:22px 39px;
   .txt                { font-size:17px; font-weight:400; letter-spacing:0.08em; }
-  &:before, &:after   { @include transition(all, 0.04s); content:""; display:block; border:solid 3px $yellow; height:100%; width:10px; position:absolute; top:0; bottom:0; }
+  &:before, &:after   { @include transition(all, 0.2s); content:""; display:block; border:solid 3px $yellow; height:100%; width:10px; position:absolute; top:0; bottom:0; }
   &:before            { border-right:none; left: 0; }
   &:after             { border-left:none; right: 0; }
   svg                 { position: absolute; left: 50%; transform: translate(-50%); margin-top:3px;}
-  &:hover             {
-    $hover-distance:5px;
-    &:before, &:after { @include transition(all, 0.04s); border-color:white; height:105%; top:-2px;}
+  &:hover             { @include transition(all, 0.06s);
+    .txt              { color:$orange !important; }
+    $hover-distance:4px;
+    &:before, &:after { @include transition(all, 0.06s); border-color:$orange; height:105%; top:-1px;}
     &:before          { left:$hover-distance; }
     &:after           { right:$hover-distance; }
   }
