@@ -637,7 +637,7 @@ chapters:
       -
         sfx:
           #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
-          - {content: ~g/SFX_AttackSlamdown_Virus.mp3, delay: 22000, volume: 1}
+          - {content: ~g/SFX_AttackSlamdown_VirusBot.mp3, delay: 13500, volume: 1}
         movie:
           layers:
             - {depth: 11, content: 5_auditbot_fail.json, vcr: true }
@@ -665,7 +665,7 @@ chapters:
               text: "Arnold Aren't you going to follow him around?"
               audio: Story_5_Ctanlee_29.mp3
             d:
-              next: 2000
+              next: 13200
               pos: []
             e:
               pos: [100,100]
