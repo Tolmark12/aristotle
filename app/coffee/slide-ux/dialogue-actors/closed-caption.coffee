@@ -1,7 +1,6 @@
 module.exports = class ClosedCaption
 
   constructor: ($parent, @playNextAction) ->
-    @ccIsOn = true
     @$el = $ jadeTemplate['slide-ux/text-dialogue/closed-caption']( {} )
     $parent.append @$el
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
@@ -15,20 +14,37 @@ module.exports = class ClosedCaption
     @$icon = $(".closed-caption-icon")
     @$icon.on 'click', (e)=> @toggleClosedCaptioning()
 
+    ccWasOn = aristotle.globals.get 'ccIsOn', false
+    if ccWasOn?
+      if !ccWasOn
+        @turnCcOff()
+      else
+        @turnCcOn()
+    else
+      @turnCcOn()
+
   toggleClosedCaptioning : () ->
     if @ccIsOn
-      @ccIsOn = false
-      @ccDisplay.addClass 'hidden'
-      @$icon.addClass 'off'
-      PubSub.publish 'cc.off',
+      @turnCcOff()
     else
-      @ccIsOn = true
-      @ccDisplay.removeClass 'hidden'
-      @$icon.removeClass 'off'
-      PubSub.publish 'cc.on',
+      @turnCcOn()
 
 
   # ------------------------------------ API
+
+  turnCcOff : () ->
+    @ccIsOn = false
+    @ccDisplay.addClass 'hidden'
+    @$icon.addClass 'off'
+    PubSub.publish 'cc.off'
+    aristotle.globals.set "ccIsOn", @ccIsOn
+
+  turnCcOn : () ->
+    @ccIsOn = true
+    @ccDisplay.removeClass 'hidden'
+    @$icon.removeClass 'off'
+    PubSub.publish 'cc.on'
+    aristotle.globals.set "ccIsOn", @ccIsOn
 
   say : (text, txtPos) ->
     @showText()
@@ -42,6 +58,9 @@ module.exports = class ClosedCaption
 
   showText : () -> @ccDisplay.fadeIn()
   hideText : () -> @ccDisplay.fadeOut()
+
+  enableCc  : () -> @ccDisplay.removeClass "disabled"
+  disableCc : () -> @ccDisplay.addClass "disabled"
 
   showNext     : () -> #@$nextBtn.removeClass "hidden"
   hideNext     : () -> #@$nextBtn.addClass "hidden"

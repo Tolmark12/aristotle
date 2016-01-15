@@ -11,6 +11,11 @@ module.exports = class TextDialogue
     @cc      = new ClosedCaption $parent, @playNextAction
     @ctanlee = new Ctanlee $parent, @playNextAction
 
+    # If they've turned off closed captioning some time in the past, disable it here
+    if !aristotle.globals.get "ccIsOn", false
+      @cc.disableCc()
+      @ctanlee.disableCc()
+
     $('html').on "keydown", (e)=> if e.which == 39 then @playNextAction() # Allow right arrow to play next slide
 
     token1  = PubSub.subscribe 'ctanlee.activate',            (a, data)=> @playAction(data)
