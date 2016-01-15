@@ -47,6 +47,7 @@ module.exports = class TextDialogue
         @track.destroy()
         @track = null
         @actor.stopTalking()
+        @actor.hideText()
         # If next should trigger the next audio..
         if next == 'audio'
           @playNextAction()
