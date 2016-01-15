@@ -1,9 +1,9 @@
 .dialogue-wrap{ height:768px; pointer-events:none;
   .line       { width:100%; content:""; @include blue-border; display:inline-block; height:2px; margin:-10px 0;}
   .dialogue   { pointer-events: all; max-width:340px; background:rgba(#020308, 0.8);  position: absolute; right:20px; padding:20px; top: 50%; transform: translate(0, -50%);
-    h1        { margin:0 0 -10px; }
+    h1        { font-weight:400; margin:0 0 -10px; }
     p         { }
-    .btn      { position: relative; margin: 0 auto; display: block; width: 123px; cursor:pointer;
+    .btn      { position: relative; margin: 20px auto 10px; display: block; width: 123px; cursor:pointer;
       .txt    { white-space: nowrap; margin-top: -9px; color:white; text-transform:uppercase; position:absolute; top: 55%; left: 50%; transform: translate(-50%, -50%);}
       svg     { }
       &:hover {

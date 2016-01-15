@@ -70,6 +70,20 @@ input{border:none; }
 }
 
 
+.bracket-btn          { position:relative; padding:22px 35px;
+  .txt                { font-size:17px; font-weight:400; letter-spacing:0.08em; }
+  &:before, &:after   { @include transition(all, 0.04s); content:""; display:block; border:solid 3px $yellow; height:100%; width:10px; position:absolute; top:0; bottom:0; }
+  &:before            { border-right:none; left: 0; }
+  &:after             { border-left:none; right: 0; }
+  svg                 { position: absolute; left: 50%; transform: translate(-50%); margin-top:3px;}
+  &:hover             {
+    $hover-distance:5px;
+    &:before, &:after { @include transition(all, 0.04s); border-color:white; height:105%; top:-2px;}
+    &:before          { left:$hover-distance; }
+    &:after           { right:$hover-distance; }
+  }
+}
+
 
 $arrow-size    : 8px;
 $bg-color      : rgba(#020308, 0.8);

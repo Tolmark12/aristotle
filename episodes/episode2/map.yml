@@ -134,13 +134,14 @@ chapters:
           zoom: {scale: 1 }
         dialogue:
           timeline:
-            - {action: a }
+            - {action: a}
           actions:
             a:
               pos: [170,400]
               text: Your new PSP. Mesmerizing…
               audio: Story_3_Ctanlee_7.mp3
-        duration: {kind: dialogue }
+              next: audio
+        duration: {kind: dialogue}
       # 1 Dialogue Perimeter Try Again ==========================================
       -
         title: Let's Try Again
