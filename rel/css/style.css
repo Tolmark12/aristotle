@@ -538,14 +538,19 @@ body.body-quiz-results .chrome {
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
-    width: 400px;
     padding: 15px;
     text-align: center; }
+    .slide-ux .call-sign-select p {
+      margin-top: 20px;
+      width: 600px;
+      font-family: 'Function Condensed';
+      font-weight: 200;
+      font-size: 35px;
+      letter-spacing: 0.07em; }
     .slide-ux .call-sign-select .badge-box {
       display: flex;
       border: 1px solid white;
-      padding: 10px;
-      margin: -120px 0 20px; }
+      padding: 10px; }
       .slide-ux .call-sign-select .badge-box .badge {
         border-right: 1px solid white;
         height: 100%;
@@ -554,29 +559,59 @@ body.body-quiz-results .chrome {
       .slide-ux .call-sign-select .badge-box .txt {
         text-align: left; }
     .slide-ux .call-sign-select .input {
-      margin-top: 130px;
+      position: relative;
       width: 240px;
       display: flex;
       flex-direction: column;
       align-items: stretch; }
+      .slide-ux .call-sign-select .input ::-webkit-input-placeholder {
+        color: rgba(254, 182, 68, 0.3); }
+      .slide-ux .call-sign-select .input :-moz-placeholder {
+        color: rgba(254, 182, 68, 0.3); }
+      .slide-ux .call-sign-select .input ::-moz-placeholder {
+        color: rgba(254, 182, 68, 0.3); }
+      .slide-ux .call-sign-select .input :-ms-input-placeholder {
+        color: rgba(254, 182, 68, 0.3); }
+      .slide-ux .call-sign-select .input:before, .slide-ux .call-sign-select .input .button:before {
+        font-family: 'Function';
+        content: "Type your own";
+        position: absolute;
+        right: 100%;
+        width: 190px;
+        text-align: right;
+        font-size: 15px;
+        letter-spacing: 0.05em;
+        padding-top: 8px;
+        margin-right: 8px; }
       .slide-ux .call-sign-select .input input {
+        color: white;
         display: flex;
         height: 30px;
         outline: none;
         padding: 3px 10px;
-        background: #DEAA36;
+        background: black;
+        border: solid 1px #FEB644;
         font-size: 17px;
-        text-align: center; }
-        .slide-ux .call-sign-select .input input ::-webkit-input-placeholder { }
-        .slide-ux .call-sign-select .input input:after {
-          content: "a";
-          color: white;
-          background: red;
-          width: 10px;
-          height: 10px;
-          display: block; }
+        text-align: center;
+        letter-spacing: 0.08em; }
       .slide-ux .call-sign-select .input .button {
-        border: none; }
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: none;
+        position: relative;
+        font-family: 'Function';
+        font-weight: 500;
+        font-size: 15px;
+        letter-spacing: 0.05em;
+        margin-bottom: 50px; }
+        .slide-ux .call-sign-select .input .button:before {
+          padding-top: 1px;
+          content: "Or I can give you one"; }
+        .slide-ux .call-sign-select .input .button:hover:before {
+          color: white; }
   .slide-ux .dialogue-wrap {
     height: 768px;
     pointer-events: none; }
@@ -665,9 +700,9 @@ body.body-quiz-results .chrome {
           text-transform: uppercase; }
     .slide-ux .dialogue-page.grid-room .title {
       margin-top: 110px;
-      width: 940px; }
+      width: 1024px; }
     .slide-ux .dialogue-page.grid-room .btn-wrapper {
-      width: 940px;
+      width: 1024px;
       margin-bottom: 120px; }
   .slide-ux .duties {
     display: flex;
