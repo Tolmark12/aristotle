@@ -7,6 +7,8 @@ nextRankId: cadet
 # CHAPTER 1
 chapters:
   -
+    dev:
+      startIndex: 5
     title: Loading Introduction
     kind: intro
     slides:
@@ -160,7 +162,7 @@ chapters:
             - {action: a }
           actions:
             a:
-              pos: [513,384]
+              pos: [513,154]
         ux:
           components:
             -

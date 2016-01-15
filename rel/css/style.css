@@ -1429,10 +1429,11 @@ body.body-quiz-results .chrome {
       color: white;
       padding: 0 30px;
       letter-spacing: 3px;
-      text-transform: uppercase; }
+      margin: 0 30px; }
     .slide-ux .sound-test .volume, .slide-ux .sound-test .silence {
       display: flex;
-      align-items: center; }
+      align-items: center;
+      text-align: center; }
     .slide-ux .sound-test .volume {
       margin-top: auto;
       margin-bottom: 30px; }
@@ -1441,6 +1442,17 @@ body.body-quiz-results .chrome {
     .slide-ux .sound-test .silence {
       margin-bottom: auto;
       margin-top: 30px; }
+    .slide-ux .sound-test .btn {
+      pointer-events: all;
+      margin: 10px 0 60px;
+      padding: 7px 25px;
+      letter-spacing: 0.08em;
+      font-size: 20px;
+      font-weight: 500px;
+      background: #6B989F;
+      cursor: pointer; }
+      .slide-ux .sound-test .btn:hover {
+        background: #F9773E; }
   .slide-ux .button {
     letter-spacing: 0.03em;
     color: white;

@@ -13,6 +13,15 @@
   }
 }
 
+@mixin no-select{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 @mixin drop-shadow ($xoffset:0px, $yoffset:1px, $blur:13px, $color:#727272, $radius:0px) {
   box-shadow: $xoffset $yoffset $blur $radius $color;
 }

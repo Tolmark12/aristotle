@@ -29,6 +29,8 @@ module.exports = class LMSProxy
           aristotle.globals.vars = {}
         else
           aristotle.globals.vars = stateData.globalVars
+      aristotle.globals.vars.user   = @user
+      aristotle.globals.vars.userId = @userId
       cb()
     else
       console.log "couldn't start the course"
