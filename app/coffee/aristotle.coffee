@@ -21,6 +21,7 @@ SvgCartographer  = require 'misc/svg-cartographer'
 class Aristotle
 
   constructor: (@$el, @episodesDir, @localDir, @devEpisodeNum, @isDevMode, @isLocal, sudo=false) ->
+    @version         = { major:0, minor:1, feature:0, storeVersion:1 } 
     window.aristotle = @
     aristotle.sudo   = sudo
     aristotle.isIE   = isInternetExp()

@@ -20,8 +20,15 @@ module.exports = class LMSProxy
       # appInsights.setAuthenticatedUserContext learnerId.replace(/[,;=| ]+/g, "_"), apikey.replace(/[,;=| ]+/g, "_")
 
       @createFormattedName()
+
+      # If the module has changed, and we want to clear out all the
       if stateData?
-        aristotle.globals.vars = stateData.globalVars
+        if stateData.version.storeVersion < aristotle.version.storeVersion || !stateData.version.storeVersion?
+          console.log "if"
+          aristotle.globals.vars = {}
+        else
+          console.log "else"
+          aristotle.globals.vars = stateData.globalVars
       cb()
     else
       console.log "couldn't start the course"
@@ -34,7 +41,7 @@ module.exports = class LMSProxy
     aristotle.episode.gotoLocationByTitle @store.location.slide
 
   saveState : (currentSlide) ->
-    @store = {}
+    @store = {version: aristotle.version}
     # global variabls
     @store.globalVars = aristotle.globals.vars
 
