@@ -7,8 +7,6 @@ nextRankId: cadet
 # CHAPTER 1
 chapters:
   -
-    dev:
-      startIndex: 9
     title: Loading Introduction
     kind: intro
     slides:
@@ -30,14 +28,13 @@ chapters:
                 btnConfig: {width: 160, lines: true}
                 btns:
                   -
-                    txt: Play Test Sound
-                    click: {cmd: playsound, data: {content: SFX_SoundTestButton.mp3}}
-                  -
                     txt: Proceed
                     click: {cmd: slides.next-slide}
             -
               kind: sound-test
-              config: {}
+              config:
+                sound: SFX_SoundTestButton.mp3
+
         duration: {kind: ux}
       # Animation Load Warcore ==========================================
       -

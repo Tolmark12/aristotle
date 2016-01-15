@@ -1,9 +1,12 @@
-.sound-test { width:1024px; height:768px;  position:absolute; display:flex; flex-direction:column;   top:0; left:0; align-items:center; pointer-events: none;
-  .txt      { font-size:30px; font-family:$fun_cond; color:white; padding:0 30px; letter-spacing:3px; text-transform:uppercase; }
-  .volume, .silence{ display:flex; align-items:center;  }
-  $space-between: 60px;
-  .volume   { margin-top:auto; margin-bottom:$space-between/2;
+$space-between: 60px;
+.sound-test         { width:1024px; height:768px;  position:absolute; display:flex; flex-direction:column;   top:0; left:0; align-items:center; pointer-events: none;
+  .txt              { font-size:30px; font-family:$fun_cond; color:white; padding:0 30px; letter-spacing:3px; margin:0 30px; }
+  .volume, .silence { display:flex; align-items:center; text-align:center;   }
+  .volume           { margin-top:auto; margin-bottom:$space-between/2;
     svg:first-child { transform: scaleX(-1) }
   }
-  .silence  { margin-bottom:auto; margin-top:$space-between/2;  }
+  .silence          { margin-bottom:auto; margin-top:$space-between/2;  }
+  .btn              { pointer-events: all; margin:10px 0 60px;padding:7px 25px; letter-spacing:0.08em; font-size:20px; font-weight:500px; background:#6B989F; cursor:pointer;
+    &:hover         { background:$orange; }
+  }
 }
