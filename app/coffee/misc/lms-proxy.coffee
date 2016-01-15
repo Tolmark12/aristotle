@@ -25,12 +25,9 @@ module.exports = class LMSProxy
       if stateData?
         if !stateData.version?
           aristotle.globals.vars = {}
-          console.log "if"
         else if stateData.version.storeVersion < aristotle.version.storeVersion || !stateData.version.storeVersion?
-          console.log "else if"
           aristotle.globals.vars = {}
         else
-          console.log "else"
           aristotle.globals.vars = stateData.globalVars
       cb()
     else
