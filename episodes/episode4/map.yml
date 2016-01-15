@@ -707,7 +707,7 @@ chapters:
               text: "Arnold Aren't you going to follow him around?"
               audio: Story_5_Ctanlee_29.mp3
             d:
-              next: 2000
+              next: 13200
               pos: []
             e:
               pos: [100,100]
