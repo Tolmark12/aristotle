@@ -88,6 +88,7 @@ chapters:
           - {cmd: highlight, data: {id: control-ns, level: bca } }
           - {cmd: highlight, data: {id: tape-back, level: bca} }
           - {cmd: highlight, data: {id: c-app-server, level: bca} }
+          - {cmd: highlight, data: {id: c-app-server2, level: bca} }
           - {cmd: highlight, data: {id: operator-ws, level: bca } }
           - {cmd: highlight, data: {id: tech-ws, level: bca} }
           - {cmd: highlight, data: {id: file-server, level: pca} }
