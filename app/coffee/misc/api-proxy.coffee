@@ -16,7 +16,7 @@ module.exports = class APIproxy
     PubSub.subscribe 'meta.quiz.question.finish' , (m, data)=> @finishQuizQuestion data
 
   startChapter : (data)->
-    appInsights.trackPageView data.title
+    appInsights.trackPageView "Episode#{aristotle.episodeNum} : #{data.title}"
     @chapter =
       EpisodeTitle         : "Episode #{aristotle.episodeNum}"
       LearningStartTimeUtc : @now()
@@ -31,7 +31,7 @@ module.exports = class APIproxy
   startChoice : (data)->
     @chapter.picks[data.id] = { StartTimeUtc: @now(), Activities:[] }
   finishChoice : (data)->
-    aristotle.globals.get("episode#{aristotle.episodeNum}_choices").push data.choice
+    @addPick data
     @chapter.picks[data.id].EndTimeUtc  = @now()
     @chapter.picks[data.id].Selection   = data.choice
     @chapter.picks[data.id].ChoiceName  = data.id
@@ -97,6 +97,16 @@ module.exports = class APIproxy
     console.log JSON.stringify(data)
     @postData JSON.stringify(data)
 
+
+  addPick : (data) ->
+    picks = aristotle.globals.get("episode#{aristotle.episodeNum}_choices")
+    console.log picks
+    # If there is already a choice for this category, replace it
+    for pick, i in picks
+      if pick.id == data.id
+        picks.splice i, 1
+    picks.push data
+    console.log picks
 
   postData : (jsonData) ->
     xhr = new XMLHttpRequest()

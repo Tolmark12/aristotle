@@ -5,11 +5,9 @@ AssetPreloader = require 'misc/asset-preloader'
 module.exports = class Episode
 
   constructor: (@trainingData, @movie, @ux, @chrome) ->
-    if !aristotle.globals.get("episode#{aristotle.episodeNum}_choices")?
-      console.log "setting"
+    if !aristotle.globals.get("episode#{aristotle.episodeNum}_choices", false)?
       aristotle.globals.set "episode#{aristotle.episodeNum}_choices", []
 
-    @userChoices          = []
     aristotle.episode     = @
     @episodeNum           = @trainingData.episode
     @isLastEpisode        = @trainingData.isLastEpisode
