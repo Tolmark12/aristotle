@@ -1,40 +1,43 @@
-APIproxy        = require "misc/api-proxy"
-ChromeUI        = require "chrome/chrome-ui"
-Commander       = require 'misc/commander'
-DevTools        = require 'misc/dev-tools'
-Dictionary      = require 'misc/dictionary'
-Episode         = require "episode/episode"
-EpisodeLoader   = require 'misc/episode-loader'
-GlobalVars      = require 'misc/global-vars'
-isInternetExp   = require 'misc/browser-detect'
-JsonLoader      = require 'misc/json-loader'
-LMSProxy        = require 'misc/lms-proxy'
-Logger          = require 'misc/logger'
-Movie           = require 'movie/movie'
-Parser          = require 'misc/parser'
-PausableDelays  = require 'misc/pausable-delays'
-SlideUX         = require 'slide-ux/slide-ux'
-SoundFX         = require 'misc/sfx'
-SvgCartographer = require 'misc/svg-cartographer'
+AnimationQuality = require 'misc/animation-quality'
+APIproxy         = require "misc/api-proxy"
+ChromeUI         = require "chrome/chrome-ui"
+Commander        = require 'misc/commander'
+DevTools         = require 'misc/dev-tools'
+Dictionary       = require 'misc/dictionary'
+Episode          = require "episode/episode"
+EpisodeLoader    = require 'misc/episode-loader'
+GlobalVars       = require 'misc/global-vars'
+isInternetExp    = require 'misc/browser-detect'
+JsonLoader       = require 'misc/json-loader'
+LMSProxy         = require 'misc/lms-proxy'
+Logger           = require 'misc/logger'
+Movie            = require 'movie/movie'
+Parser           = require 'misc/parser'
+PausableDelays   = require 'misc/pausable-delays'
+SlideUX          = require 'slide-ux/slide-ux'
+SoundFX          = require 'misc/sfx'
+SvgCartographer  = require 'misc/svg-cartographer'
 
 class Aristotle
 
   constructor: (@$el, @episodesDir, @localDir, @devEpisodeNum, @isDevMode, @isLocal, sudo=false) ->
-    bodymovin.setQuality 'low'
     window.aristotle = @
-    aristotle.sudo = sudo
-    aristotle.isIE = isInternetExp()
-    jsonLoaer      = new JsonLoader()
-    globals        = new GlobalVars()
-    commander      = new Commander()
-    dictionary     = new Dictionary()
-    lmsProxy       = new LMSProxy @isLocal
-    apiProxy       = new APIproxy()
-    parser         = new Parser()
-    soundFx        = new SoundFX()
-    pausableDelays = new PausableDelays()
-    cartographer   = new SvgCartographer()
-    shadowIcons    = new pxicons.ShadowIcons()
+    aristotle.sudo   = sudo
+    aristotle.isIE   = isInternetExp()
+    animationQuality = new AnimationQuality()
+    jsonLoaer        = new JsonLoader()
+    globals          = new GlobalVars()
+    commander        = new Commander()
+    dictionary       = new Dictionary()
+    lmsProxy         = new LMSProxy @isLocal
+    apiProxy         = new APIproxy()
+    parser           = new Parser()
+    soundFx          = new SoundFX()
+    pausableDelays   = new PausableDelays()
+    cartographer     = new SvgCartographer()
+    shadowIcons      = new pxicons.ShadowIcons()
+    PubSub.publish 'animations.go.low'
+
     @setDevMode @isDevMode
     lmsProxy.begin @begin
 

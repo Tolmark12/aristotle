@@ -7,6 +7,8 @@ nextRankId: cadet
 # CHAPTER 1
 chapters:
   -
+    dev:
+      startIndex: 9
     title: Loading Introduction
     kind: intro
     slides:
@@ -25,7 +27,7 @@ chapters:
               kind: dialogue-page
               config:
                 title: Are you listening?
-                btnConfig: {width: 250, lines: true}
+                btnConfig: {width: 160, lines: true}
                 btns:
                   -
                     txt: Play Test Sound
@@ -168,7 +170,7 @@ chapters:
               kind: dialogue-page
               config:
                 title: Call Sign Selection
-                btnConfig: {lines: true, width: 280}
+                btnConfig: {lines: true, width: 190}
                 btns:
                   -
                     txt: Use This Call Sign
@@ -255,7 +257,7 @@ chapters:
               audio: Story_1_Ctanlee_12e.mp3
             c:
               emo: right
-              pos: [150,500]
+              pos: [150,420]
               text: "Far across the galaxy, an ancient evil has set its eyes upon us. The robot Overmind Sektimus desires to attack Earth and enslave all humankind. He has launched his Metal Swarm, the greatest space armada ever constructed by robots, against our planet. "
               audio: Story_1_Ctanlee_16.mp3
         duration: {kind: dialogue }
@@ -330,7 +332,7 @@ chapters:
               kind: dialogue-page
               config:
                 title: Gut Check
-                btnConfig: {lines: true, height: 100, width: 230}
+                btnConfig: {lines: true, width: 153}
                 btns:
                   -
                     txt: Panicking
@@ -339,7 +341,7 @@ chapters:
                     txt: I Threw Up a Bit in My Mouth
                     click: {cmd: ctanlee.activate, data: d}
                   -
-                    txt: Let's Kick Some Bot
+                    txt: Let's Kick<br/>Some Bot
                     click: {cmd: ctanlee.activate, data: e}
         duration: {kind: ux }
       # Introduce Navigation Ranks  ==========================================

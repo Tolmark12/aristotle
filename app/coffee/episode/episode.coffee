@@ -6,6 +6,7 @@ module.exports = class Episode
 
   constructor: (@trainingData, @movie, @ux, @chrome) ->
     if !aristotle.globals.get("episode#{aristotle.episodeNum}_choices")?
+      console.log "setting"
       aristotle.globals.set "episode#{aristotle.episodeNum}_choices", []
 
     @userChoices          = []
