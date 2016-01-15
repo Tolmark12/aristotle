@@ -88,3 +88,6 @@ recovery:
 eisac:
   title: "Electricity Information Sharing and Analysis Center (E-ISAC)"
   text: "This organization is the primary security communications channel for the electricity sector and helps us prepare for and respond to cyber and physical threats, vulnerabilities, and incidents."
+vulnerability_assessment:
+  title: "Vulnerability Assessment"
+  text: "A process that identifies security holes (vulnerabilities) in our systems. Includes a security analysis of networks, CRCAs, and other systems an attacker may try to compromise."
