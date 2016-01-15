@@ -679,12 +679,12 @@ chapters:
               pos: [625,620]
             d:
               emo: left
-              pos: [625,650]
+              pos: [625,630]
               text: "Now he's running the vulnerability assessment and fixing all the issues."
               audio: Story_4_Ctanlee_29.mp3
             e:
               next: 5000
-              pos: [625,650]
+              pos: [625,630]
             f:
               emo: left
               pos: [150,500]
