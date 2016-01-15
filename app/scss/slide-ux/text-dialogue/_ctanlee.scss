@@ -4,12 +4,13 @@
       svg            { }
     }
   }
-  $opacity      : 0.77;
-  $xtra-padding : 15px;
   .speech-box        {
     &.disabled       { display:none}
   }
 
+  $opacity      : 0.77;
+  $xtra-padding : 15px;
+  
   .text              { pointer-events:none; position:absolute; top:70px; left:47px; width:200px; background:rgba(black, $opacity); padding:10px; color:white; font-style:italic; line-height:1.6;
     span.next        { pointer-events:all; position:relative; cursor:pointer; padding-left:$xtra-padding;
       &:after        { padding-right:$xtra-padding+10; position:absolute; top:0px; content:""; display:inline-block; width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 7px; border-color: transparent transparent transparent #ffb61a; }
