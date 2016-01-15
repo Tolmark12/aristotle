@@ -30,48 +30,6 @@ chapters:
             - {depth: 8, content: $portBuild, jumpToEnd: true, cache: true }
             - {depth: 9, content: $changeBuild, jumpToEnd: true, cache: true }
         duration: {kind: time, seconds: 1 }
-      # 3 Simulation Auditbot ==========================================
-      -
-        sfx:
-          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
-          - {content: ~g/SFX_AttackSlamdown_AuditBot.mp3, delay: 6000, volume: 1}
-        movie:
-          layers:
-            - {depth: 11, content: 5_auditbot_fail.json, vcr: true }
-        dialogue:
-          defaults:
-            next: audio
-          timeline:
-            - {action: a }
-            - {action: b }
-            - {action: c }
-            - {action: d }
-            - {action: e }
-            - {action: f }
-          actions:
-            a:
-              next: 1500
-              pos: []
-            b:
-              pos: [100,100]
-              text: "Who are you? This isn't time for a scheduled audit."
-              audio: Story_5_Ctanlee_28.mp3
-            c:
-              next: 13500
-              pos: []
-            d:
-              next: 8500
-              pos: [100,100]
-              text: "Arnold Aren't you going to follow him around?"
-              audio: Story_5_Ctanlee_29.mp3
-            e:
-              next: 2000
-              pos: []
-            f:
-              pos: [100,100]
-              text: "He's blacked out part of the Grid. Simulator Pause!"
-              audio: Story_5_Ctanlee_30.mp3
-        duration: {kind: ux }
       # 1 Zoom to Asset Views ==========================================
       -
         movie:
@@ -679,7 +637,7 @@ chapters:
       -
         sfx:
           #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
-          - {content: ~g/SFX_AttackSlamdown_AuditBot.mp3, delay: 3000, volume: 1}
+          - {content: ~g/SFX_AttackSlamdown_AuditBot.mp3, delay: 6000, volume: 1}
         movie:
           layers:
             - {depth: 11, content: 5_auditbot_fail.json, vcr: true }
@@ -692,24 +650,27 @@ chapters:
             - {action: c }
             - {action: d }
             - {action: e }
+            - {action: f }
           actions:
             a:
               next: 1500
               pos: []
             b:
-              next: 7500
               pos: [100,100]
               text: "Who are you? This isn't time for a scheduled audit."
               audio: Story_5_Ctanlee_28.mp3
             c:
+              next: 13500
+              pos: []
+            d:
               next: 8500
               pos: [100,100]
               text: "Arnold Aren't you going to follow him around?"
               audio: Story_5_Ctanlee_29.mp3
-            d:
-              next: 13200
-              pos: []
             e:
+              next: 2000
+              pos: []
+            f:
               pos: [100,100]
               text: "He's blacked out part of the Grid. Simulator Pause!"
               audio: Story_5_Ctanlee_30.mp3
