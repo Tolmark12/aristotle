@@ -243,6 +243,7 @@ chapters:
             - {action: l }
             - {action: m }
             - {action: n }
+            - {action: o }
           actions:
             a:
               pos: [570,400]
@@ -257,50 +258,52 @@ chapters:
               text: What is this?
               audio: Story_6_Ctanlee_5.mp3
             d:
-              next: 11000
               pos: []
               text: "[Low chuckle] A little surprise just for you old friend."
               audio: Story_6_Sektimus_3.mp3
               actor: sektimus
             e:
+              pos: []
+              next: 6000
+            f:
               emo: right
               next: 6000
               pos: [270,470]
               text: The Incident Response Team has been convened. This is definitely a Cyber Security Incident.
               audio: Story_6_Ctanlee_6.mp3
-            f:
+            g:
               next: 3000
               pos: [270,300]
               text: How are they going to respond?
               audio: Story_6_Ctanlee_7.mp3
-            g:
+            h:
               next: 1500
               pos: []
-            h:
+            i:
               pos: [270,300]
               text: Good call, team. Get the people out.
               audio: Story_6_Ctanlee_8.mp3
-            i:
+            j:
               next: 500
               pos: []
-            j:
+            k:
               pos: []
               audio: Story_6_Sektimus_4.mp3
               actor: sektimus
               text: "[chuckles] I'll now accept your concession CTANLEE, and your resignation from the training program, human. [still chuckling]"
-            k:
+            l:
               next: 1500
               pos: []
-            l:
+            m:
               pos: [270,300]
               text: Not so fast, Sektimus. The wager was against all the CIP Standards and we still have one training chapter left.
               audio: Story_6_Ctanlee_10.mp3
-            m:
+            n:
               pos: []
               audio: Story_6_Sektimus_5.mp3
               actor: sektimus
               text: "[chuckles] It matters not. Complete your worthless training. I'll observe."
-            n:
+            o:
               pos: [270,300]
               text: Hold your head high, Cadet. We're not beaten yet.
               audio: Story_6_Ctanlee_11.mp3
@@ -363,7 +366,7 @@ chapters:
             - {action: c }
           actions:
             a:
-              next: 12000
+              next: 15000
               pos: []
             b:
               audio: Story_6_Sektimus_6.mp3
@@ -380,7 +383,8 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: 6_3_2_rebuild_sektimus_dialogue.json }
+            - {depth: 12, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
+            - {depth: 13, content: 6_3_2_rebuild_sektimus_dialogue.json }
         dialogue:
           defaults:
             next: audio
@@ -393,7 +397,7 @@ chapters:
               actor: sektimus
               text: What is this [enraged]? This isn't fair! These defenses don't exist.
             e:
-              pos: [300,220]
+              pos: [300,420]
               text: The WarCore is simply simulating the results from following the CIP Standards. Our Incident Response Team reported the Bot-Tron attack to E-ISAC and NERC used the information to build new experimental defenses for the industry against Bot-Tron Overlords. Proceed with your selection, Cadet.
               audio: Story_6_Ctanlee_16.mp3
         duration: {kind: dialogue }
@@ -406,13 +410,13 @@ chapters:
           - {content: $nercSFX, volume: 1}
         movie:
           layers:
-            - {depth: 12, content: $nercBuild }
+            - {depth: 13, content: $nercBuild }
         duration: {kind: time, seconds: 4 }
       # 3 Sektimus Interlude ==========================================
       -
         movie:
           layers:
-            - {depth: 12, content: $nercPass, vcr: true }
+            - {depth: 13, content: $nercPass, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -431,7 +435,7 @@ chapters:
               actor: sektimus
               text: No, no no no no. Nooooooo!
             c:
-              next: 4000
+              next: 2000
               pos: []
             d:
               pos: []

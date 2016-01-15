@@ -30,25 +30,6 @@ chapters:
             - {depth: 8, content: $portBuild, jumpToEnd: true, cache: true }
             - {depth: 9, content: $changeBuild, jumpToEnd: true, cache: true }
         duration: {kind: time, seconds: 1 }
-      # 1 Dialogue Information Access ==========================================
-      -
-        title: Information Access
-        movie:
-          layers:
-            - {depth: 11, content: clear }
-        duration: {kind: ux}
-        ux:
-          components:
-            -
-              kind: dialogue
-              config:
-                hasLabels: true
-                title: Information Access
-                body: For <a data-label="defender">Defenders</a>, access to <a data-label="bcsi">BCSI</a> is typically granted along with their <a data-label="physical_access">Physical Access</a> and <a data-label="electronic_access">Electronic Access</a>. Vendors, consultants, and other employees without this level of access often need to see <a data-label="bcsi">BCSI</a>, so <a data-label="cip">CIP</a> allows organizations flexibility to define how they share this information. For example, some organizations require vendors to sign an NDA before receiving <a data-label="bcsi">BCSI</a> and confirm in writing they have destroyed <a data-label="bcsi">BCSI</a> at the conclusion of a project.
-                btn:
-                  style: lightning
-                  text: continue
-                  action: {cmd: slides.next-slide}
       # 1 Zoom to Asset Views ==========================================
       -
         movie:

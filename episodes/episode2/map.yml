@@ -120,6 +120,8 @@ chapters:
       - !!inc/file ./episodes/episode2/yaml/_pacs-selector.yaml
       # 1 Animate PACS Build ==========================================
       -
+        sfx:
+            - {content: $pacsSFX, delay: 1000, volume: 1}
         movie:
           layers:
             - {depth: 7, content: $pacsBuild, cache: true }
@@ -138,7 +140,7 @@ chapters:
               pos: [170,400]
               text: Your new PSP. Mesmerizing…
               audio: Story_3_Ctanlee_7.mp3
-        duration: {kind: time, seconds: 7.5 }
+        duration: {kind: dialogue }
       # 1 Dialogue Perimeter Try Again ==========================================
       -
         title: Let's Try Again
@@ -223,7 +225,7 @@ chapters:
   # ----------------------------------------------
   -
     title: Chapter 2
-    subtitle: Software Defenses
+    subtitle: Electronic Security Perimeter
     kind: chapter
     slides:
       # 2 Dialogue Electronic Attack ==========================================

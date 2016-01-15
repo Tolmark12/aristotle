@@ -109,7 +109,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 8, content: ~g/perimeter_shelf.json }
+            - {depth: 8, content: ~g/perimeter_ports.json }
         duration: {kind: time, seconds: 1.5 }
       # 1 Port Defense Selector ==========================================
       - !!inc/file ./episodes/episode3/yaml/_port-defense-selector.yaml
@@ -241,6 +241,9 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Dialogue Patch Assets ==========================================
       -
+        movie:
+          layers:
+            - {depth: 9, content: workstation_pointers.json }
         title: Patching Your Assets
         duration: {kind: ux}
         ux:
@@ -257,6 +260,9 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Dialogue Malicious Code Defense ==========================================
       -
+        movie:
+          layers:
+            - {depth: 9, content: clear }
         title: Malicious Code Defenses
         duration: {kind: ux}
         ux:
@@ -553,7 +559,7 @@ chapters:
         movie:
           layers:
             - {depth: 9, content: clear }
-            - {depth: 9, content: workstation_1.json }
+            - {depth: 9, content: workstation_assets_1.json }
         duration: {kind: ux}
         ux:
           components:
@@ -572,7 +578,7 @@ chapters:
         title: Updating Assets
         movie:
           layers:
-            - {depth: 9, content: workstation_5.json }
+            - {depth: 9, content: workstation_assets_2.json }
         duration: {kind: ux}
         ux:
           components:

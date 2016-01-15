@@ -11,12 +11,12 @@ dialogue:
       audio: Story_5_Ctanlee_6.mp3
     b:
       emo: happy
-      text: "You'll feel a slight puff of air."
-      audio: Story_5_Ctanlee_8.mp3
-    c:
-      emo: surprize
       text: "You have nothing to hide, right?"
       audio: Story_5_Ctanlee_7.mp3
+    c:
+      emo: surprize
+      text: "You'll feel a slight puff of air."
+      audio: Story_5_Ctanlee_8.mp3
 ux:
   components:
     -
