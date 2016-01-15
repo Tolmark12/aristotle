@@ -100,13 +100,11 @@ module.exports = class APIproxy
 
   addPick : (data) ->
     picks = aristotle.globals.get("episode#{aristotle.episodeNum}_choices")
-    console.log picks
     # If there is already a choice for this category, replace it
     for pick, i in picks
       if pick.id == data.id
         picks.splice i, 1
     picks.push data
-    console.log picks
 
   postData : (jsonData) ->
     xhr = new XMLHttpRequest()
