@@ -19,7 +19,10 @@ module.exports = class Ctanlee
     token4  = PubSub.subscribe 'ctanlee.gohome', (a, data)=> @returnToStation()
     token5  = PubSub.subscribe 'ctanlee.goto',   (a, data)=> @goto data
     token6  = PubSub.subscribe 'ctanlee.stop',   (a, data)=> @$faceHolder.velocity "stop", true
-    @tokens = [token1,token2,token3,token4,token5,token6]
+    token7  = PubSub.subscribe 'cc.on',          (a, data)=> @enableCc()
+    token8  = PubSub.subscribe 'cc.off',         (a, data)=> @disableCc()
+
+    @tokens = [token1,token2,token3,token4,token5,token6,token7,token8]
 
     $parent.append @$el
     @returnToStation()
@@ -72,6 +75,10 @@ module.exports = class Ctanlee
   hideText : () -> @$speechBox.addClass "hidden"
   showNext : () -> @$nextBtn.removeClass "hidden"
   hideNext : () -> @$nextBtn.addClass "hidden"
+
+  enableCc  : () -> @$speechBox.removeClass "disabled"
+  disableCc : () -> @$speechBox.addClass "disabled"
+
 
   complete : () -> @returnToStation()
 

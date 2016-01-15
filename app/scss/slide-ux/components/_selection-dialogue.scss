@@ -1,6 +1,6 @@
 @import "selection-icons";
 
-.selection-dialogue  { display:flex; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight:100; color:#CCC;
+.selection-dialogue  { font-size:16px; display:flex; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight:100; color:white;
   .left-section,
   .right-section     { display:flex; flex-direction:column; background:rgba(#020308, 0.8); min-width:340px; max-width: 380px;  padding:20px;
     .subtitle        { margin:15px 0; }
@@ -41,6 +41,9 @@
         &.mini-generation{ @include mini-icon( 'd4' ); }
         &.mini-substation{ @include mini-icon( 'd6' ); }
       }
+    }
+    .blurb           { font-weight:400; color:$yellow; @include blue-border; padding-bottom: 20px;
+      span           { color:white; }
     }
     .header          { display:flex; align-items:center;
       .line          { width:50%; content:""; @include blue-border; display:inline-block; height:2px; }

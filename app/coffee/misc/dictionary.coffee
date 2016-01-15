@@ -32,6 +32,41 @@ module.exports = class Dictionary
       escort_leash        :   '"PSP Buddy", Escort Leash'
       tractor_beam        :   'Visitor Tractor Beam'
 
+    @categories =
+      "Generation Plant"                             : "Facility Type"
+      "Substation"                                   : "Facility Type"
+      "Control Center"                               : "Facility Type"
+      'The Background Probe'                         : 'Access Control System'
+      'The Risk Detector'                            : 'Access Control System'
+      'Voight-Kampff Assessor'                       : 'Access Control System'
+      'Double Deuce Pulverizer'                      : 'Asset Change Tool'
+      'Mr. Fusion'                                   : 'Asset Change Tool'
+      'The De-Materializer'                          : 'Asset Change Tool'
+      'The Burninator'                               : 'Electronic Access Control System'
+      'The Great Wall'                               : 'Electronic Access Control System'
+      'Gated Community'                              : 'Electronic Access Control System'
+      'Brit Beacon, Scholar. Gentleman. Bot Hunter.' : 'NERC Defense'
+      'Speeder With Tow Cables'                      : 'NERC Defense'
+      'Orbital Kinetic Strike'                       : 'NERC Defense'
+      'Card Guard XT'                                : 'Physical Access Control System'
+      'HAL 9000 Eye Scanner'                         : 'Physical Access Control System'
+      'Watery Grave Kraken Sensor'                   : 'Physical Access Control System'
+      'Port Duct Tape'                               : 'Physical Port Security'
+      'The Kragle'                                   : 'Physical Port Security'
+      'Port Umpire'                                  : 'Physical Port Security'
+      'Guest Log Book'                               : 'Visitor Escort Procedure'
+      '"PSP Buddy", Escort Leash'                    : 'Visitor Escort Procedure'
+      'Visitor Tractor Beam'                         : 'Visitor Escort Procedure'
+
+
+
+
+  getCategory : (term) ->
+    if @categories[term]? then return @categories[term]
+    aristotle.throw "Tried to use an unknown category: `#{term}`"
+
+
+
   get : (term) ->
     if @terms[term]? then return @terms[term]
     aristotle.throw "Tried to use an unknown term: `#{term}`"

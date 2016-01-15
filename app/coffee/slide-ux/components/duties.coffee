@@ -30,17 +30,19 @@ module.exports = class Duties extends Component
     $userContent = $ jadeTemplate['slide-ux/components/duty-details']( data )
     @$content.append $userContent
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
-    $("#acknowledge", $userContent).on "click", ()=> @dutyAcknowledged()
+    $("#acknowledge", $userContent).on "click", (e)=> @dutyAcknowledged $(e.currentTarget)
 
 
-  dutyAcknowledged : () ->
+  dutyAcknowledged : ($btn) ->
+    $btn.addClass 'clicked'
+
     if !@acknowledgedDuties[ @duties.currentItem().id ]?
       @numAcknowledgedDuties++
       @acknowledgedDuties[ @duties.currentItem().id ] = ""
       @$currentActiveButton.addClass "complete"
 
     if @numAcknowledgedDuties == @duties.totalItems
-      PubSub.publish 'meta.duties.finish' 
+      PubSub.publish 'meta.duties.finish'
       PubSub.publish 'continue.show'
     else
       # Loop through the duties and trigger the first uncompleted duty we find

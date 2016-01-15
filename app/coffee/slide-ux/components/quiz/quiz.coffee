@@ -26,7 +26,11 @@ module.exports = class Quiz extends Component
     @superInit @$el, @$node, @data
 
   setChoicePercentages : () ->
-    apiProxy.getChoicePercentages aristotle.episode.userChoices, (results)=>
+    choices = []
+    for choice in aristotle.globals.get("episode#{aristotle.episodeNum}_choices")
+      choices.push aristotle.dictionary.getCategory choice
+
+    apiProxy.getChoicePercentages choices, (results)=>
       if !results
         @decisionPercentages = false
       else
@@ -37,25 +41,12 @@ module.exports = class Quiz extends Component
           # For each average within this category
           for selection in category.Breakdowns
             # loop throuh all of the user's choices and see if there is a match
-            for userChoice in aristotle.episode.userChoices
+            for userChoice in aristotle.globals.get("episode#{aristotle.episodeNum}_choices")
               if userChoice == selection.Selection
                 @decisionPercentages.push
-                  popularPercentage : selection.PercentOfTotal * 100
+                  popularPercentage : Math.round(selection.PercentOfTotal * 100)
                   choice            : selection.Selection
                   category          : category.ChoiceName
-      # console.log @decisionPercentages
-    ###
-    [  # Results
-      {
-        "ChoiceName": "Access Control System",
-        "Breakdowns": [
-            { Selection: "The Background Probe"   , PercentOfTotal: 0.6}
-            { Selection: "The Risk Detector"      , PercentOfTotal: 0.4}
-            { Selection: "Voight-Kampff Assessor" , PercentOfTotal: 0}
-        ]
-      }
-    ]
-    ###
 
    #######  ##     ## #### ########
   ##     ## ##     ##  ##       ##

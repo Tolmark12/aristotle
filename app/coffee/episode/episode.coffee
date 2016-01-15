@@ -5,6 +5,9 @@ AssetPreloader = require 'misc/asset-preloader'
 module.exports = class Episode
 
   constructor: (@trainingData, @movie, @ux, @chrome) ->
+    if !aristotle.globals.get("episode#{aristotle.episodeNum}_choices")?
+      aristotle.globals.set "episode#{aristotle.episodeNum}_choices", []
+
     @userChoices          = []
     aristotle.episode     = @
     @episodeNum           = @trainingData.episode
@@ -84,7 +87,7 @@ module.exports = class Episode
       @playChapter slide.title
     else
       @playChapter()
-      
+
     PubSub.publish 'movie.rehydrate-layers', layersAr
 
 

@@ -1,0 +1,72 @@
+.flip-container {
+  background:red;
+	perspective: 1000px;
+	vertical-align:top;
+	position:absolute;
+	display:block;
+	font-size:25px;
+  font-weight:bold;
+
+  .flipper {
+
+  	transition: 0.5s ease-out;
+  	transform-style: preserve-3d;
+  	/* flipper backface is visible so that static flipper still appears */
+  	backface-visibility: visible;
+  	position:relative;
+
+    .front, .back {
+    	/* Backface visibility works great for all but IE. As such, we mark the backface visible in IE and manage visibility ourselves */
+    	backface-visibility: hidden;
+    	-ms-backface-visibility: visible;
+      position:absolute;
+    }
+  }
+  .flipper .front, &.flipped .flipper .front {
+  	transform: rotateY(0deg);
+  }
+
+  .flipper .back, &.flipped .flipper .back {
+  	transform: rotateY(-180deg);
+  }
+}
+
+.flip-container.flipped .flipper {
+	transform: rotateY(180deg);
+}
+
+
+// -------------
+// .flip-container .flipper .front {
+//     background-color: skyblue;
+//     color: tomato;
+// }
+//
+// .flip-container .flipper .back {
+//     background-color: tomato;
+//     color: skyblue;
+// }
+// -------------
+
+
+
+
+.flip-container .flipper .front, .flip-container.flipped .flipper .back {
+	/* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+	animation: stayvisible 0.5s both;
+	-ms-animation: donothing 0.5s;
+	-ms-transition: visibility 0s linear 0.17s;
+	visibility: visible;
+}
+.flip-container.flipped .flipper .front, .flip-container .flipper .back {
+	/* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+	animation: stayvisible 0.5s both;
+	-ms-animation: donothing 0.5s;
+	-ms-transition: visibility 0s linear 0.17s;
+	visibility: hidden;
+}
+@keyframes stayvisible { from { visibility: visible; } to { visibility: visible; } }
+@-webkit-keyframes stayvisible { from { visibility: visible; } to { visibility: visible; } }
+@-moz-keyframes stayvisible { from { visibility: visible; } to { visibility: visible; } }
+@-o-keyframes stayvisible { from { visibility: visible; } to { visibility: visible; } }
+@-ms-keyframes donothing { 0% { } 100% { } }

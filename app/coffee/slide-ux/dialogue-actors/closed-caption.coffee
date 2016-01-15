@@ -20,10 +20,13 @@ module.exports = class ClosedCaption
       @ccIsOn = false
       @ccDisplay.addClass 'hidden'
       @$icon.addClass 'off'
+      PubSub.publish 'cc.off',
     else
       @ccIsOn = true
       @ccDisplay.removeClass 'hidden'
       @$icon.removeClass 'off'
+      PubSub.publish 'cc.on',
+
 
   # ------------------------------------ API
 
