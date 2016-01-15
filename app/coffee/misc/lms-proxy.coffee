@@ -23,8 +23,11 @@ module.exports = class LMSProxy
 
       # If the module has changed, and we want to clear out all the
       if stateData?
-        if stateData.version.storeVersion < aristotle.version.storeVersion || !stateData.version.storeVersion?
+        if !stateData.version?
+          aristotle.globals.vars = {}
           console.log "if"
+        else if stateData.version.storeVersion < aristotle.version.storeVersion || !stateData.version.storeVersion?
+          console.log "else if"
           aristotle.globals.vars = {}
         else
           console.log "else"
