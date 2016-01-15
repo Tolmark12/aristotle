@@ -61,8 +61,8 @@ h1, h2 {
 
 @font-face {
   font-family: 'Function';
-  src: url("../assets/fonts/functionpro_demi_macroman/FunctionPro-DEMI-webfont.eot");
-  src: url("../assets/fonts/functionpro_demi_macroman/FunctionPro-DEMI-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-DEMI-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-DEMI-webfont.woff") format("woff"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-DEMI-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-DEMI-webfont.svg#function_prodemi") format("svg");
+  src: url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.eot");
+  src: url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.woff") format("woff"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.svg#function_prodemi") format("svg");
   font-weight: 400;
   font-style: normal; }
 
