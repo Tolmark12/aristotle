@@ -2,5 +2,6 @@
   "companyName"      : "Arizona Public Service",
   "trainingVersion"  : "MetaMythic.CipDefender.v1",
   "companyRegulator" : "WECC",
-  "moduleAudience"   : "Electronic Asset Sustainer"
+  "moduleAudience"   : "Electronic Asset Sustainer",
+  "apikey"           : "MetaMythic-43dbb0161e95"
 }

@@ -110,7 +110,7 @@ module.exports = class APIproxy
     xhr = new XMLHttpRequest()
     xhr.open "POST", "https://cipdefenderapi.azurewebsites.net:443/api/Learning", true
     xhr.setRequestHeader 'Content-Type', 'application/json; charset=UTF-8'
-    xhr.setRequestHeader 'Authorization', "Basic #{btoa('MetaMythic-43dbb0161e95:')}"
+    xhr.setRequestHeader 'Authorization', "Basic #{btoa( aristotle.globals.get('apikey') + ':')}"
 
     xhr.addEventListener "load", (e)=>
       if e.currentTarget.status > 299
@@ -139,7 +139,7 @@ module.exports = class APIproxy
     xhr = new XMLHttpRequest()
     xhr.open "POST", "https://cipdefenderapi.azurewebsites.net/api/metrics/choices", true
     xhr.setRequestHeader 'Content-Type', 'application/json; charset=UTF-8'
-    xhr.setRequestHeader 'Authorization', "Basic #{btoa('MetaMythic-43dbb0161e95:')}"
+    xhr.setRequestHeader 'Authorization', "Basic #{btoa( aristotle.globals.get('apikey') + ':' )}"
 
     xhr.addEventListener "load", (e)=>
       if e.currentTarget.status > 299
@@ -163,7 +163,7 @@ module.exports = class APIproxy
     xhr = new XMLHttpRequest()
     xhr.open "POST", "https://cipdefenderapi.azurewebsites.net/api/metrics/choices", true
     xhr.setRequestHeader 'Content-Type',  'application/json; charset=UTF-8'
-    xhr.setRequestHeader 'Authorization', "Basic #{btoa('MetaMythic-43dbb0161e95:')}"
+    xhr.setRequestHeader 'Authorization', "Basic #{btoa( aristotle.globals.get('apikey') + ':' )}"
     xhr.addEventListener "load", (e)=>
       if e.currentTarget.status > 299
         console.log "API responded with #{e.currentTarget.status} when trying to get the choice %'s for the quiz section'"

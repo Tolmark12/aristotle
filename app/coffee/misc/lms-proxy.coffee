@@ -16,9 +16,6 @@ module.exports = class LMSProxy
       @userId     = elbScorm.GetUserID()      # I assume: asf0h30asbu30
       stateData   = elbScorm.GetResumeData()  # ojb
 
-      # Microsoft app insights
-      # appInsights.setAuthenticatedUserContext learnerId.replace(/[,;=| ]+/g, "_"), apikey.replace(/[,;=| ]+/g, "_")
-
       @createFormattedName()
 
       # If the module has changed, and we want to clear out all the

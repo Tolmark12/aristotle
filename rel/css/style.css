@@ -400,6 +400,8 @@ body.body-quiz-results .chrome {
     padding: 20px;
     top: auto;
     bottom: 0; }
+    .slide-ux .cc .closed-caption.disabled {
+      display: none; }
     .slide-ux .cc .closed-caption .text {
       background: black;
       display: inline;
