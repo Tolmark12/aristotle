@@ -45,17 +45,21 @@ module.exports = class AudioTrack
       incrament      = (1 - @sound.volume) / ticks
     else
       incrament      = @sound.volume / ticks * -1
-
     sound          = @sound
     tickCounter    = 0
     fadeInterval   = setInterval ()=>
-      if ++tickCounter == ticks then clearInterval(fadeInterval)
       sound.volume += incrament
+      if ++tickCounter == ticks
+        clearInterval(fadeInterval)
+        if doDestroy
+          @destroy()
     ,
       tickDuration
 
   fadeOut : (fadeDurationMs, doDestroy=false)->
+    return if @isDead
     @fade fadeDurationMs, -1, doDestroy
 
   fadeIn  : (fadeDurationMs, doDestroy=false)->
+    return if @isDead
     @fade fadeDurationMs, 1, doDestroy

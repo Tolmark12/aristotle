@@ -4,6 +4,7 @@ subtitle: Organizing Our Defenses
 rankId: cadet
 nextRankId: cadet-first-class
 labels: !!inc/file ./episodes/global/_labels.yaml
+action: {cmd: playsound, data:{content: ~g/test-loop.mp3, loop: true, slot: test} }
   # skipSlate: true
 chapters:
   # ----------------------------------------------
