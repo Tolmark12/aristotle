@@ -1,0 +1,40 @@
+{
+    "duties":[
+      {
+          "title":"Know Your Incident Reponse Plan",
+          "content":"
+		<p>Your Incident Response Plan is located on the CIPv5 SharePoint Site http://CIP. You will be notified by the Incident Response Team if you have a defined role in the Plan.</p>
+		<h1>POTENTIAL ISSUES</h1>
+		<ul>
+		    <li>Not knowing the location of the Plan</li>
+		    <li>Not knowing your role on the Plan if you have a defined role.</li>
+		</ul>
+		"
+                },
+                {
+                  "title":"Respond to Incidents",
+                  "content":"
+		<p>When a potential incident is suspected, do the following:</p>
+		<ul>
+		<li>Inform your leader</li>
+		<li>Leader shall contact via phone call David Boynton, Director of Information Security and Compliance.</li>
+		<li>If he's not available, leave a message for him to return your call immediately.  DO NOT communicate the details of your concerns in a message.</li>
+		</ul>
+		<p>DO NOT send an email with details of the concern.</p>
+
+                 "
+                },
+                {
+                  "title":"Test the Incident Response Plan",
+                  "content":"
+		<p>Your organization will perform an annual incident response test that will convene the Incident Response Team. In a test or real incident, you may be called on to aid the team, either as a full member, supporting member, or perhaps just to order pizza for them since they may be so busy they forget to eat.</p>
+		<h1>POTENTIAL ISSUES</h1>
+		<ul>
+		    <li>Not contributing to the Incident Response Team when asked.</li>
+		    <li>Not getting the correct toppings on the pizza</li>
+		</ul>
+
+                  "
+                }
+            ]
+}

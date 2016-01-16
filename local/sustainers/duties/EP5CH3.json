@@ -1,0 +1,77 @@
+{
+    "duties":[
+                {
+                  "title":"Know Your Recovery Plan",
+                  "content":"
+		<p>Your Recovery Plan is located on the CIP v5 SharePoint Site http://CIP . You will be notified by your leader if you have a defined role in the Plan.</p>
+		<h1>POTENTIAL ISSUES</h1>
+		<ul>
+		    <li>Not knowing the location of the Recovery Plan.</li>
+		    <li>Not knowing your role on the Recovery Plan if you have a defined role.</li>
+		</ul>
+                  "
+                },
+                {
+                  "title":"Maintain the Recovery Plan",
+                  "content":"
+		<p>It is your responsibility to ensure that plans are created for back up and storage of information for each class of asset that you have responsibility for. Ensure that recovery plans are detailed enough to provide real value in the event of use. </p>
+		<p>Keep the plan current with changes to your team and assets. Any changes must be reflected in the plan inside 60 days. </p>
+
+		<p><b>Tip:</b> Recovery checklists that can be printed out in a crisis are a best practice. </p>
+		</p>
+		<h1>POTENTIAL ISSUES</h1>
+		<ul>
+		    <li>Not having a recovery plan for each asset category.</li>
+		    <li>Not updating the plan for team or asset changes within 60 days.</li>
+		</ul>
+
+                  "
+                },
+                {
+                  "title":"Backup Your CRCAs",
+                  "content":"
+		<p>The preparation for recovery starts with the Recovery Plan, but will likely have tangible activities for you to perform through the year like performing regular system backups and testing those backups.</p>
+		<h1>POTENTIAL ISSUES</h1>
+		<ul>
+		    <li>Not performing the backups needed to sustain the plan</li>
+		    <li>Not testing backups when required</li>
+		</ul>
+                  "
+                },
+                {
+                  "title":"Recover From An Incident",
+                  "content":"
+		<p>When an asset is fried to a crisp or a facility is unavailable because of a Cyber Security Incident, don't lose hope. We have a Recovery Plan to handle this. Everyone can have a part to play in recovery, so be ready to support the instructions of the Recovery Team.</p>
+		<p>For small events, you may just need to give the IT people space to do their job. An encouraging word and a drink go a long way towards reducing stress that may arise with the recovery team on these occasions.</p>
+		<p>However, for large incidents like a control center becoming unavailable, you may have a more significant contribution. Your schedule may change and you may need to work from a different location for a time.</p>
+		<h1>POTENTIAL ISSUES</h1>
+		<ul>
+		    <li>Not following the recovery plan after a crisis.</li>
+		    <li>When oil hits the fan - running around, screaming instead of calmly following your recovery plan.</li>
+		</ul>
+
+                  "
+                },
+                {
+                  "title":"Secure Forensic Data",
+                  "content":"
+		<p>If you're involved in a real incident, do what you reasonably can to secure data that may be useful for authorities after the incident is over.</p>
+		<p>For example, if you reported a suspicious vehicle and took a picture of the license plate, don't lose that information. If you saw strange spacecraft operating over the facility, don't lose those pictures either - no one will believe you anyways without a picture.</p>
+		<p>Try not to delete relevant emails, remove information from CRCA's, or destroy information that might be useful in an investigation.</p>
+		<h1>POTENTIAL ISSUES</h1>
+		<p>Not retaining records relevant to an actual incident</p>
+
+                  "
+                },
+                {
+                  "title":"Create Lessons Learned",
+                  "content":"
+		<p>Following a test or actual recovery event, you may be involved with a review of the event to create a "lessons learned" document. Your notes and experiences will be important in discovering how we can do better and applying that learning afterwards.</p>
+		<p>Lessons learned need to be compiled into a report within 90 days.</p>
+		<h1>POTENTIAL ISSUES</h1>
+		<p>Not helping with the development of the lessons learned in a timely and accurate manner</p>
+
+                  "
+                }
+            ]
+}

@@ -5,7 +5,7 @@ module.exports = class EpisodeLoader
 
   # Load the local config vars
   loadConfigData : () ->
-    aristotle.getJson "local/config.json", (data)=>
+    aristotle.getJson "local/#{aristotle.configFile}", (data)=>
       for key, val of data
         aristotle.globals.set key, val, false
 
@@ -15,8 +15,6 @@ module.exports = class EpisodeLoader
   # Load the Episode
   loadEpisode: ()->
     mapName = aristotle.globals.get("episodeMapFiles")[aristotle.episodeNum]
-    console.log mapName
-
     aristotle.getJson aristotle.getAssetPath( mapName ), (data)=>
       @callback data
 

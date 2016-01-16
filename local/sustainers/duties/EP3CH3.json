@@ -1,0 +1,30 @@
+{
+    "duties":[
+      {
+          "title":"Approve Valid Changes",
+          "content":"
+		<p>You (asset owners) have the primary responsibility for approving changes to CRCAs in your domain. Make sure you understand what the requested change is and why it needs to be performed before approving it. Change control procedures will cover your bases, but when in doubt about what you’re approving, ask the Regulatory team.</p>
+		<h1>POTENTIAL ISSUES</h1>
+		<p>Approving or directing a change that hasn’t followed change control procedures.</p>
+		"
+                },
+                {
+                  "title":"Follow Change Control Processes",
+                  "content":"
+		<p>Any acts that change a CRCA must follow the change control procedure to ensure that:
+		<ol>
+		<li>Baseline configurations are created/updated</li>
+		<li>Security impacts are assessed and mitigated</li>
+		<li>The changes are approved before the assets receive their changes.</li>
+		</ol>
+		</p>
+		<p>When removing existing CRCAs, it is your responsibility to follow all the steps of your change control procedures to ensure that the BCSI is properly removed before the asset leaves a PSP.</p>
+		<h1>POTENTIAL ISSUES</h1>
+		<ul>
+		    <li>Making any hardware or software changes to CRCAs without following the change control procedure</li>
+		    <li>Removing an CRCA from a PSP without properly disposing of the device.</li>
+		</ul>
+                  "
+                }
+            ]
+}

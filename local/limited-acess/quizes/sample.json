@@ -1,0 +1,70 @@
+{
+  "config": {
+    "question-value": 120,
+    "questions": [
+      {
+        "question": "True or false, Robots are better than Humans?",
+        "value" : 240,
+        "answers": [
+          {
+            "a": "True",
+            "r": "Hmm, I question your loyalty"
+          },
+          {
+            "a": "False",
+            "r": "Nice Job, I think not!",
+            "c": true
+          }
+        ]
+      },
+      {
+        "question": "What is the shortest distance between two points",
+        "answers": [
+          {
+            "a": "A parallel line",
+            "r": "Better luck next time"
+          },
+          {
+            "a": "A straight line",
+            "r": "Nice, I knew you were smart!",
+            "c": true
+          },
+          {
+            "a": "A curve",
+            "r": "Better luck next time"
+          },
+          {
+            "a": "A Hexagonic Vector",
+            "r": "Nope, I think not"
+          }
+        ]
+      },
+      {
+        "question": "Where is Rome located?",
+        "answers": [
+          {
+            "a": "Russia",
+            "r": "Better luck next time"
+          },
+          {
+            "a": "Italy",
+            "r": "Nice, I knew you were smart!",
+            "c": true
+          },
+          {
+            "a": "Wherever there is love",
+            "r": "Hopeless romantic I see."
+          },
+          {
+            "a": "Canada",
+            "r": "Geography isn't your strong point is it.."
+          },
+          {
+            "a": "The Pacific Rim",
+            "r": "Nope."
+          }
+        ]
+      }
+    ]
+  }
+}

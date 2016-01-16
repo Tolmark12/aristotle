@@ -25,12 +25,23 @@ module.exports = class Duties extends Component
       @activateDuty e.currentTarget, e.currentTarget.getAttribute 'id'
     $(@$dutyButtons[0]).trigger "click"
 
-  setUserHtml : (data) ->
+  setUserHtml : (data, html) ->
+    data.html = html
     @$content.empty()
     $userContent = $ jadeTemplate['slide-ux/components/duty-details']( data )
     @$content.append $userContent
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
     $("#acknowledge", $userContent).on "click", (e)=> @dutyAcknowledged $(e.currentTarget)
+
+  getUserHtml : (data) ->
+    me   = @
+    path = aristotle.getAssetPath("~l/#{aristotle.globals.get('dutiesDir')}/#{ data.content }")
+    xobj = new XMLHttpRequest()
+    xobj.open 'GET', path, true
+    xobj.onreadystatechange = ()->
+      if xobj.readyState == 4 && xobj.status == 200
+        me.setUserHtml data, xobj.responseText
+    xobj.send(null)
 
 
   dutyAcknowledged : ($btn) ->
@@ -63,7 +74,7 @@ module.exports = class Duties extends Component
     @$currentActiveButton = $(el)
     @$dutyButtons.removeClass "active"
     @$currentActiveButton.addClass "active"
-    @setUserHtml @duties.currentItem()
+    @getUserHtml @duties.currentItem()
 
   getData: (jsonFile)->
     @loadJson aristotle.getAssetPath(jsonFile), (json)=>

@@ -10,7 +10,7 @@ module.exports = class Quiz extends Component
     PubSub.publish "ctanlee.hide"
 
     # Load the quiz from external json
-    @loadJson "~l/#{aristotle.globals.get('quizDir')}/#{ data.source }.json"
+    @loadJson "~l/#{aristotle.globals.get('quizDir')}/#{ @data.source }.json"
 
   loadJson : (path) ->
     aristotle.getJson aristotle.getAssetPath(path), (data)=>
