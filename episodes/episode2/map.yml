@@ -188,22 +188,33 @@ chapters:
             - {action: b }
             - {action: c }
             - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
           actions:
             a:
               pos: []
               next: 10000
             b:
               pos: [170,400]
-              text: Access Denied, Bot. Uh oh, looks like the robots are trying again.
-              audio: Story_3_Ctanlee_8.mp3
+              text: Access Denied, Bot.
+              audio: Story_3_Ctanlee_8a.mp3
             c:
-              pos: []
-              next: 7000
+              pos: [170,400]
+              next: 1000
             d:
+              emo: left
+              pos: [170,400]
+              text: Uh oh, looks like the robots are trying again.
+              audio: Story_3_Ctanlee_8b.mp3
+            e:
+              pos: []
+              next: 6000
+            f:
               pos: [370,300]
               text: Alerted and Defended. Rust in peace, robots.
               audio: Story_3_Ctanlee_9.mp3
-            e:
+            g:
               pos: [100,100]
               text: Chapter complete, Cadet. Duty time.
               audio: Story_3_Ctanlee_15.mp3
