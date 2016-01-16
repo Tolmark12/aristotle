@@ -6,12 +6,15 @@ dialogue:
     pos: [50, 70]
   actions:
     a:
+      emo: right
       text: "My grandfather twice removed was a circuit breaker."
       audio: Story_2_Ctanlee_1.mp3
     b:
+      emo: right
       text: "I dated a boiler once. She was hot."
       audio: Story_2_Ctanlee_2.mp3
     c:
+      emo: right
       text: "The nerve center of the BES. My 1s and 0s are tingling."
       audio: Story_2_Ctanlee_3.mp3
 ux:

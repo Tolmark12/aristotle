@@ -33,7 +33,7 @@ chapters:
           actions:
             a:
               emo: down
-              pos: [500,600]
+              pos: [500,550]
               text: "The simulator is loaded! Track your progress through the episode here. Now we just need a facility."
               audio: Story_2_Ctanlee_X43.mp3
         duration: {kind: dialogue }
@@ -308,13 +308,13 @@ chapters:
               text: "Your duties are listed here. Click on a duty to review it."
               audio: Story_2_Ctanlee_31.mp3
             b:
-              pos: [640, 600]
-              emo: happy
+              pos: [640, 400]
+              emo: down
               text: "Click I acknowledge at the bottom of the duty when you are done."
               audio: Story_2_Ctanlee_32.mp3
             c:
-              pos: [640, 680]
-              emo: happy
+              pos: [640, 600]
+              emo: down
               text: "When all duties are acknowledged, you can click CONTINUE to proceed."
               audio: Story_2_Ctanlee_33.mp3
         ux:
@@ -589,24 +589,25 @@ chapters:
             - {action: e }
           actions:
             a:
-              pos: [100,100]
+              pos: [200,220]
               next: 1000
             b:
-              pos: [100,100]
+              pos: [200,220]
+              emo: down
               text: Oh, we have a visitor. Where are you going?
               audio: Story_2_Ctanlee_12.mp3
             c:
               next: 3000
-              pos: [100,100]
+              pos: [400,220]
               text: "Visiting the control room, are we?"
               audio: Story_2_Ctanlee_X38.mp3
             d:
               next: 4000
-              pos: [100,100]
+              pos: [200,150]
               text: "Hey! That's BES Cyber System Information."
               audio: Story_2_Ctanlee_X39.mp3
             e:
-              pos: [100,100]
+              pos: [500,100]
               text: "Stop. Stop. Don't leave with that! Simulation Pause!"
               audio: Story_2_Ctanlee_15.mp3
         duration: {kind: ux }
@@ -647,19 +648,18 @@ chapters:
           actions:
             a:
               pos: [200, 200]
-              emo: surprise
               next: 7400
             b:
-              pos: [100,100]
+              pos: [400,220]
               text: "I think Rod saw what she did. Stop her!"
               audio: Story_2_Ctanlee_19.mp3
               next: 3500
             c:
-              pos: [100,100]
+              pos: [300,100]
               text: "Simulation Pause! Oh My!"
               audio: Story_2_Ctanlee_20.mp3
             d:
-              pos: [100,100]
+              pos: [300,100]
               emo: happy
               text: "We're 100% compliant, though my algorithms predict a 98% chance of lawsuit for the dogpile method."
               audio: Story_2_Ctanlee_21.mp3

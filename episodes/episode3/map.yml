@@ -123,11 +123,6 @@ chapters:
         duration: {kind: time, seconds: 3 }
       # 1 Animate Install Port Security ==========================================
       -
-        sfx:
-          - {content: $portSFX, delay: 8500, volume: 0.5}
-          - {content: $portSFX, delay: 10000, volume: 0.5}
-          - {content: $portSFX, delay: 16500, volume: 0.5}
-          - {content: $portSFX, delay: 20000, volume: 0.5}
         movie:
           layers:
             - {depth: 8, content: clear }
@@ -317,7 +312,6 @@ chapters:
               next: 1000
               pos: []
             d:
-              pos: []
               audio: Story_4_Warcore_1.mp3
               actor: warcore
               text: Working… Done.
@@ -325,17 +319,14 @@ chapters:
               next: 2000
               pos: []
             f:
-              pos: []
               audio: Story_4_Sektimus_1a.mp3
               actor: sektimus
               text: CTANLEE-EEE, CTANLEE-EEE. Ah, there you, my old "friend"
             g:
-              pos: []
               audio: Story_4_Sektimus_1b.mp3
               actor: sektimus
               text:  I'm here to spend some time with you - I know failure hurts and I want to make sure this failure hurts you especially deeply.
             h:
-              pos: []
               audio: Story_4_Sektimus_1c.mp3
               actor: sektimus
               text: Where is your "Cadet" right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind a steaming pipe in a plant basement? Or did they take the long drive in their work truck, never to return?
@@ -350,17 +341,14 @@ chapters:
               next: 1000
               pos: []
             l:
-              pos: []
               audio: Story_4_Sektimus_2a.mp3
               actor: sektimus
               text: What?? You're still here? Do you know who you contend with, human?
             m:
-              pos: []
               audio: Story_4_Sektimus_2b.mp3
               actor: sektimus
               text: I am wielder of the ancient chip of Katra-Non, guardian of the Digium, chosen successor of Nexitar, master strategist of the Robot Hegemony, destroyer of the Charnel Nebula, builder of the Metal Swarm, enslaver of worlds.
             n:
-              pos: []
               audio: Story_4_Sektimus_2c.mp3
               actor: sektimus
               text: I am LEGION.
@@ -368,17 +356,14 @@ chapters:
               next: 1000
               pos: []
             p:
-              pos: []
               audio: Story_4_Sektimus_3a.mp3
               actor: sektimus
               text: Human. Your limited mind might have trouble comprehending the situation, so let me use simple terms.
             q:
-              pos: []
               audio: Story_4_Sektimus_3b.mp3
               actor: sektimus
               text: CIP will not save you. CTANLEE will not save you. Abandon this training and I won't extend your suffering after I conquer Earth.
             r:
-              pos: []
               audio: Story_4_Sektimus_3c.mp3
               actor: Will you accept this, my final offer?
               text: Human.
@@ -494,21 +479,22 @@ chapters:
               next: 26000
               pos: []
             d:
-              pos: [100,100]
+              pos: [500,200]
               text: "Wait a second! Don't plug that computer into the ESP network - Who knows what that MimeBot installed on it. It's a security nightmare!"
               audio: Story_4_Ctanlee_20.mp3
             e:
               next: 11500
-              pos: []
+              pos: [500,200]
             f:
-              pos: [100,100]
+              emo: left
+              pos: [500,300]
               text: "The computer just dialed out to the KettleHead. He's taking command of the system."
               audio: Story_4_Ctanlee_21.mp3
             g:
               next: 1500
-              pos: []
+              pos: [500,300]
             h:
-              pos: [100,100]
+              pos: [600,250]
               text: "We know how this will end. Simulator pause!"
               audio: Story_4_Ctanlee_22.mp3
         duration: {kind: ux }
@@ -544,12 +530,13 @@ chapters:
               next: 17500
               pos: []
             b:
+              emo: left
               next: 6800
-              pos: [100,100]
+              pos: [300,350]
               text: "No problem. I'm sure Richard cleaned all that data off…"
               audio: Story_4_Ctanlee_23.mp3
             c:
-              pos: [100,100]
+              pos: [300,350]
               text: "Orrrrrr not. Simulator Pause!"
               audio: Story_4_Ctanlee_24.mp3
         duration: {kind: ux}
@@ -627,7 +614,7 @@ chapters:
         movie:
           layers:
             - {depth: 9, content: $changeBuild, events: [complete] }
-        duration: {kind: time, seconds: 3}
+        duration: {kind: time, seconds: 5}
       # 3 Dialogue Mulligan ==========================================
       -
         title: Calling a Mulligan
@@ -671,15 +658,15 @@ chapters:
               pos: []
             b:
               emo: left
-              pos: [625,620]
+              pos: [625,600]
               text: "And let's check in on the team. Richard set up the workstation and documented the configuration. Good job, Richard."
               audio: Story_4_Ctanlee_28.mp3
             c:
               next: 1000
-              pos: [625,620]
+              pos: [625,600]
             d:
               emo: left
-              pos: [625,630]
+              pos: [625,610]
               text: "Now he's running the vulnerability assessment and fixing all the issues."
               audio: Story_4_Ctanlee_29.mp3
             e:

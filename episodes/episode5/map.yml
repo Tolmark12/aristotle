@@ -365,6 +365,7 @@ chapters:
             - {action: a }
             - {action: b }
             - {action: c }
+            - {action: d }
           actions:
             a:
               next: 15000
@@ -374,6 +375,9 @@ chapters:
               actor: sektimus
               text: CTANLEE, this means nothing. I'll just send my Bot-Tron back.
             c:
+              next: 1000
+              pos: []
+            d:
               pos: [550,300]
               text: "Defender, please pick your NERC Bot-Tron Defense."
               audio: Story_6_Ctanlee_12.mp3
@@ -395,6 +399,8 @@ chapters:
       -
         movie:
           layers:
+            - {depth: 12, content: clear }
+            - {depth: 13, content: clear }
             - {depth: 14, content: $nercPass, vcr: true }
         dialogue:
           defaults:
@@ -624,7 +630,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 1, content: 6_6_defenders_doors.json }
+            - {depth: 14, content: 6_6_defenders_doors.json }
         dialogue:
           defaults:
             next: audio
