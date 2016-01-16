@@ -21,7 +21,7 @@ SvgCartographer  = require 'misc/svg-cartographer'
 class Aristotle
 
   constructor: (@$el, @episodesDir, @localDir, @devEpisodeNum, @isDevMode, @isLocal, sudo=false) ->
-    @version         = { major:0, minor:1, feature:0, storeVersion:1 } 
+    @version         = { major:0, minor:1, feature:0, storeVersion:1 }
     window.aristotle = @
     aristotle.sudo   = sudo
     aristotle.isIE   = isInternetExp()
@@ -84,10 +84,6 @@ class Aristotle
   setDevMode : (devMode) ->
     logger             = new Logger $('body'), devMode
     aristotle.devTools = new DevTools devMode
-
-  getEpisodeRoot : (episodeNum) ->
-    if !episodeNum? then episodeNum = @episodeNum
-    return "#{@episodesDir}/episode#{episode}/"
 
   setInitialEpisodeNum : () ->
     # If a previous location has been stored, use that

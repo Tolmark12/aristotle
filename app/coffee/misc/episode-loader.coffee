@@ -14,7 +14,10 @@ module.exports = class EpisodeLoader
 
   # Load the Episode
   loadEpisode: ()->
-    aristotle.getJson aristotle.getAssetPath("map.json"), (data)=>
+    mapName = aristotle.globals.get("episodeMapFiles")[aristotle.episodeNum]
+    console.log mapName
+
+    aristotle.getJson aristotle.getAssetPath( mapName ), (data)=>
       @callback data
 
 

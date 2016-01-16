@@ -3,5 +3,15 @@
   "trainingVersion"  : "MetaMythic.CipDefender.v1",
   "companyRegulator" : "WECC",
   "moduleAudience"   : "Electronic Asset Sustainer",
-  "apikey"           : "MetaMythic-43dbb0161e95"
+  "apikey"           : "MetaMythic-43dbb0161e95",
+  "quizRoot"         : "quizes",
+  "dutiesRoot"       : "duties",
+  "episodeMapFiles"  : {
+    "0" : "map.json",
+    "1" : "map.json",
+    "2" : "map.json",
+    "3" : "map.json",
+    "4" : "map.json",
+    "5" : "map.json"
+  }
 }
