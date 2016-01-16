@@ -47,8 +47,11 @@ chapters:
       # 1 Simulation A ==========================================
       -
         sfx:
-          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.3, loop: true }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 6500, volume: 0.1, loop: 2 }
+          - {content: ~3/CIN_RobotTossing.mp3, delay: 100, volume: 0.1, loop: 2 }
           - {content: ~g/SFX_AttackSlamdown_FlashBot.mp3, delay: 22000, volume: 1}
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 31000, volume: 0.1, loop: 2 }
           - {content: ~3/2001_Space.mp3, delay: 35400, volume: 1}
         movie:
           layers:
