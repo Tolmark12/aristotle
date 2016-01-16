@@ -399,8 +399,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 12, content: clear }
-            - {depth: 13, content: clear }
+            - {depth: 13, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
             - {depth: 14, content: $nercPass, vcr: true }
         dialogue:
           defaults:
@@ -432,7 +431,8 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 14, content: sektimus_goodbye.json }
+            - {depth: 14, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
+            - {depth: 15, content: sektimus_goodbye.json }
         dialogue:
           defaults:
             next: audio
@@ -492,6 +492,8 @@ chapters:
         action: [{cmd: ctanlee.show}]
         movie:
           layers:
+            - {depth: 14, content: clear }
+            - {depth: 15, content: clear }
             - {depth: 12, content: $nercBuild, jumpToEnd: true, cache: true }
             - {depth: 13, content: 6_6_defenders_enter.json, events: [complete] }
         dialogue:
@@ -520,6 +522,7 @@ chapters:
         movie:
           layers:
             - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
+            - {depth: 4, content: clear }
             - {depth: 12, content: clear }
             - {depth: 11, content: clear }
             - {depth: 10, content: clear }
@@ -547,7 +550,6 @@ chapters:
           layers:
             - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
             - {depth: 3, content: clear }
-            - {depth: 4, content: clear }
         duration: {kind: listen, event: layer.13.complete }
       # 4 - 0,1,2 Clear ==========================================
       -
@@ -613,12 +615,12 @@ chapters:
               audio: Story_7_Ctanlee_6.mp3
             g:
               emo: down
-              pos: [513,240]
+              pos: [650,350]
               text: "Defenders both at your organization"
               audio: Story_7_Ctanlee_7.mp3
             h:
               emo: right
-              pos: [513,240]
+              pos: [300,450]
               text: "…and at many other organization just like yours."
               audio: Story_7_Ctanlee_8.mp3
             i:

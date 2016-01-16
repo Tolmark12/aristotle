@@ -46,12 +46,12 @@ chapters:
       -
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.3 }
-          - {content: ~2/CIN_RobotMovement.mp3, delay: 700, volume: 0.1 }
+          - {content: ~2/CIN_RobotMovement.mp3, delay: 700, volume: 0.08 }
           - {content: ~2/CIN_RobotMovement.mp3, delay: 12000, volume: 0.1, loop: 3 }
-          - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 3400, volume: 0.5}
-          - {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3, delay: 12600, volume: 0.5}
-          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 14500, volume: 0.3 }
-          - {content: ~2/CIN_RipServerFromWall.mp3, delay: 14500, volume: 0.2 }
+          - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 3400, volume: 0.4}
+          - {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3, delay: 12600, volume: 0.3}
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 14500, volume: 0.2 }
+          - {content: ~2/CIN_RipServerFromWall.mp3, delay: 14500, volume: 0.1 }
           - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 15810, volume: 0.3 }
         movie:
           layers:
@@ -188,22 +188,33 @@ chapters:
             - {action: b }
             - {action: c }
             - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
           actions:
             a:
               pos: []
               next: 7000
             b:
               pos: [170,400]
-              text: Access Denied, Bot. Uh oh, looks like the robots are trying again.
-              audio: Story_3_Ctanlee_8.mp3
+              text: Access Denied, Bot.
+              audio: Story_3_Ctanlee_8a.mp3
             c:
-              pos: []
-              next: 7000
+              pos: [170,400]
+              next: 1000
             d:
+              emo: left
+              pos: [170,400]
+              text: Uh oh, looks like the robots are trying again.
+              audio: Story_3_Ctanlee_8b.mp3
+            e:
+              pos: []
+              next: 6000
+            f:
               pos: [370,300]
               text: Alerted and Defended. Rust in peace, robots.
               audio: Story_3_Ctanlee_9.mp3
-            e:
+            g:
               pos: [100,100]
               text: Chapter complete, Cadet. Duty time.
               audio: Story_3_Ctanlee_15.mp3
