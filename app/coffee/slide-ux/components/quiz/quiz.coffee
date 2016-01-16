@@ -28,7 +28,7 @@ module.exports = class Quiz extends Component
   setChoicePercentages : () ->
     choices = []
     for choice in aristotle.globals.get("episode#{aristotle.episodeNum}_choices")
-      choices.push aristotle.dictionary.getCategory choice
+      choices.push choice.id
 
     apiProxy.getChoicePercentages choices, (results)=>
       if !results
@@ -42,7 +42,7 @@ module.exports = class Quiz extends Component
           for selection in category.Breakdowns
             # loop throuh all of the user's choices and see if there is a match
             for userChoice in aristotle.globals.get("episode#{aristotle.episodeNum}_choices")
-              if userChoice == selection.Selection
+              if userChoice.choice == selection.Selection
                 @decisionPercentages.push
                   popularPercentage : Math.round(selection.PercentOfTotal * 100)
                   choice            : selection.Selection

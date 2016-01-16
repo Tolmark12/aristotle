@@ -17,6 +17,7 @@ module.exports = class AudioTrack
 
   destroy : ()->
     @isDead = true
+    @sound.stop()
     @sound.removeEventListener "complete"
     @sound.destroy()
 

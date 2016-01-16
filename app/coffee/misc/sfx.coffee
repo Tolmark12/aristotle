@@ -4,6 +4,7 @@ module.exports = class SoundFX
 
   constructor: () ->
     @count = 0
+    @slots = {}
     PubSub.subscribe 'vcr.play',        (m, data)=> @vcrPlay()
     PubSub.subscribe 'vcr.pause',       (m, data)=> @vcrPause()
     PubSub.subscribe 'vcr.replay',      (m, data)=> @vcrReplay()
@@ -52,15 +53,35 @@ module.exports = class SoundFX
       @playSound data
 
   playSound : (data, saveToSfxStore) ->
+    me = @
     track = new AudioTrack data.content
     track.play {volume:data.volume, loop:data.loop, offset:data.offset}, ()->
-      # track.isDonePlaying = true
+
+      # If this was in a slot, remove it from the slot
+      if data.slot?
+        delete me.slots[data.slot]
+
+      # destroy the track and run any complete callbacks
       track.destroy()
       if data.complete?
         aristotle.commander.do data.complete
+
     if saveToSfxStore
       id = "s#{@count++}"
       @sfx[id] = { track:track, data:data }
       track.sfxId = id
+
+    if data.slot?
+      @clearSlotIfNeeded data, track
+
+  clearSlotIfNeeded : (data, track) ->
+    # If there is audio in this slot, destroy it
+    if @slots[data.slot]?
+      console.log "destroyed old sound"
+      @slots[data.slot].destroy()
+
+    @slots[data.slot] = track
+
+
 
 
