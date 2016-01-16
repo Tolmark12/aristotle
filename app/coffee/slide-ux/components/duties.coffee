@@ -7,7 +7,7 @@ module.exports = class Duties extends Component
     super data
     @numAcknowledgedDuties = 0
     @acknowledgedDuties    = {} # Store the ids of each duty that's acknowledged
-    @getData data.definition
+    @getData "~l/#{aristotle.globals.get('dutiesDir')}/#{ data.definition }.json"
     @$node  = $ "<div class='duties'/>"
     PubSub.publish 'meta.duties.start'
     @superInit $el, @$node, data
@@ -71,7 +71,6 @@ module.exports = class Duties extends Component
       obj = JSON.parse json.replace /(\r\n|\n|\r)/gm,""
       @build obj
       # @callback JSON.parse(json)
-
 
   loadJson : (path, onComplete) ->
     xobj = new XMLHttpRequest()

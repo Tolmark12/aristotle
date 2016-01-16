@@ -4,8 +4,8 @@
   "companyRegulator" : "WECC",
   "moduleAudience"   : "Electronic Asset Sustainer",
   "apikey"           : "MetaMythic-43dbb0161e95",
-  "quizRoot"         : "quizes",
-  "dutiesRoot"       : "duties",
+  "quizDir"          : "quizes",
+  "dutiesDir"        : "duties",
   "episodeMapFiles"  : {
     "0" : "map.json",
     "1" : "map.json",
