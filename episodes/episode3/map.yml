@@ -48,11 +48,19 @@ chapters:
       -
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true }
-          - {content: ~3/CIN_HumanWalking.mp3, delay: 6500, volume: 0.1, loop: 2 }
-          - {content: ~3/CIN_RobotTossing.mp3, delay: 100, volume: 0.1, loop: 2 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 100, volume: 0.1, loop: 0 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 2000, volume: 0.1, loop: 0 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 3500, volume: 0.1, loop: 0 }
+          - {content: ~3/CIN_RobotTossing.mp3, delay: 5800, volume: 0.1, loop: 1 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 5000, volume: 0.08, loop: 2 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 7500, volume: 0.1, loop: 0 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 9200, volume: 0.1, loop: 0 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 11000, volume: 0.1, loop: 0 }
           - {content: ~g/SFX_AttackSlamdown_FlashBot.mp3, delay: 22000, volume: 1}
-          - {content: ~3/CIN_HumanWalking.mp3, delay: 31000, volume: 0.1, loop: 2 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 30800, volume: .08, loop: 1 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 31000, volume: 0.08, loop: 2 }
           - {content: ~3/2001_Space.mp3, delay: 35400, volume: 1}
+          - {content: ~3/CIN_TransmisionLinesBurning.mp3, delay: 55000, volume: .3}
         movie:
           layers:
             - {depth: 8, content: kettle_bush_attack.json, vcr: true }
