@@ -28,7 +28,7 @@ module.exports = class ClosedCaption
       @turnCcOff()
     else
       @turnCcOn()
-
+    aristotle.globals.set "ccIsOn", @ccIsOn
 
   # ------------------------------------ API
 
@@ -37,14 +37,12 @@ module.exports = class ClosedCaption
     @ccDisplay.addClass 'hidden'
     @$icon.addClass 'off'
     PubSub.publish 'cc.off'
-    aristotle.globals.set "ccIsOn", @ccIsOn
 
   turnCcOn : () ->
     @ccIsOn = true
     @ccDisplay.removeClass 'hidden'
     @$icon.removeClass 'off'
     PubSub.publish 'cc.on'
-    aristotle.globals.set "ccIsOn", @ccIsOn
 
   say : (text, txtPos) ->
     @showText()

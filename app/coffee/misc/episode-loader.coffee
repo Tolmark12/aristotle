@@ -21,7 +21,6 @@ module.exports = class EpisodeLoader
   # Microsoft app insights
   setMicrosoftTrackingData : () ->
     if !EpisodeLoader.hasSetMsftData
-      console.log "hit"
       EpisodeLoader.hasSetMsftData = true
       learnerId = aristotle.globals.get 'userId'
       apikey    = aristotle.globals.get 'apikey'
