@@ -47,7 +47,7 @@ chapters:
       # 1 Simulation A ==========================================
       -
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.3, loop: true }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 6500, volume: 0.1, loop: 2 }
           - {content: ~3/CIN_RobotTossing.mp3, delay: 100, volume: 0.1, loop: 2 }
           - {content: ~g/SFX_AttackSlamdown_FlashBot.mp3, delay: 22000, volume: 1}
@@ -279,6 +279,9 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
       -
+        sfx:
+          - {content: ~g/MU_Attack_Music.mp3, delay: 3000, volume: 0.15, loop: true }
+          - {content: ~3/CIN_Quarantine.mp3, delay: 7800, volume: .1 }
         movie:
           layers:
             - {depth: 9, content: fatline_e41.json }
