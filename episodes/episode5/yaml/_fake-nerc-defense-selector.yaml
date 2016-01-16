@@ -1,22 +1,25 @@
 title: Removing Access
-duration: {kind: time, seconds: 2.5}
+movie:
+  layers:
+    - {depth: 12, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
+    - {depth: 13, content: 6_3_2_rebuild_sektimus_dialogue.json }
 dialogue:
   defaults:
-    next: none
-    pos: [50, 70]
+    next: audio
+  timeline:
+    - {action: d }
+    - {action: e }
   actions:
-    a:
-      emo: happy
-      text: "Crikey!"
-      audio: Story_6_Ctanlee_13.mp3
-    b:
-      emo: happy
-      text: "On target."
-      audio: Story_6_Ctanlee_14.mp3
-    c:
-      emo: surprize
-      text: "Really! That's a thing? I love it."
-      audio: Story_6_Ctanlee_15.mp3
+    d:
+      audio: Story_6_Sektimus_7.mp3
+      actor: sektimus
+      text: What is this [enraged]? This isn't fair! These defenses don't exist.
+    e:
+      emo: left
+      pos: [700,370]
+      text: The WarCore is simply simulating the results from following the CIP Standards. Our Incident Response Team reported the Bot-Tron attack to E-ISAC and NERC used the information to build new experimental defenses for the industry against Bot-Tron Overlords. Proceed with your selection, Cadet.
+      audio: Story_6_Ctanlee_16.mp3
+duration: {kind: dialogue }
 ux:
   components:
     -

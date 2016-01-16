@@ -63,7 +63,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Keep a Sharp Lookout
-                body: All Defenders must be on the lookout for shady persons photographing our facilities, attempting to gain information via phone, email or other means, and doing otherwise shifty things. Disappearance of vehicle passes, personnel identification, uniforms, or BCSI is also suspicious. <br/><br/>Further, if you have <a data-label="electronic_access">Electronic Access</a> to <a data-label="crca">CRCAs</a>, keep an eye out for anything that doesn't seem right on your system. This includes windows or messages that you don't recognize, unusual system slowdowns, files out of place, or otherwise strange system behavior. <br/><br/>Report any of these promptly because an attack may be in progress.
+                body: All Defenders must be on the lookout for shady persons photographing our facilities, attempting to gain information via phone, email or other means, and doing otherwise shifty things. Disappearance of vehicle passes, personnel identification, uniforms, or <a data-label="bcsi">BCSI</a> is also suspicious. <br/><br/>Further, if you have <a data-label="electronic_access">Electronic Access</a> to <a data-label="crca">CRCAs</a>, keep an eye out for anything that doesn't seem right on your system. This includes windows or messages that you don't recognize, unusual system slowdowns, files out of place, or otherwise strange system behavior. <br/><br/>Report any of these promptly because an attack may be in progress.
                 btn:
                   style: lightning
                   text: continue
@@ -82,7 +82,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Electronic Monitoring
-                body: Nearly all of our <a data-label="crca">CRCAs</a> generate events that may be indications of an attack&#58; unauthorized access, firewall alerts, failed logins, unexpected system changes, and detection of malicious code are just a few examples. <br/><br/>Our technical <a data-label="defender">Defenders</a> - like Richard - must monitor and analyze these events to detect if they represent a <a data-label="cyber_security_incident">Cyber Security Incident</a>. They will also perform regular Vulnerability Assessment on our defenses to proactively look for security problems.
+                body: 'Nearly all of our <a data-label="crca">CRCAs</a> generate events that may be indications of an attack. Unauthorized access, firewall alerts, failed logins, unexpected system changes, and detection of malicious code are just a few examples. <br/><br/>Our technical <a data-label="defender">Defenders</a> - like Richard - must monitor and analyze these events to detect if they represent a <a data-label="cyber_security_incident">Cyber Security Incident</a>. In addition, they will perform regular <a data-label="vulnerability_assessment" class="new">Vulnerability Assessments</a> on our defenses to proactively look for security problems.'
                 btn:
                   style: lightning
                   text: continue
@@ -98,7 +98,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Guard Duty
-                body: Monitoring the defenses is a big job that requires involvement from all <a data-label="defender">Defenders</a>, so let's learn our duties.
+                body: All this monitoring is a big job that requires involvement from all <a data-label="defender">Defenders</a>, so let's learn our duties.
                 btn:
                   style: lightning
                   text: continue
@@ -130,7 +130,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Local and National Response
-                body: When our monitoring efforts detect an attack, the <a data-label="cip">Standards</a> require that we convene an <a data-label="team" class="new">Incident Response Team</a> to coordinate our efforts to repel the attackers and a <a data-label="csirp" class="new">Cyber Security Incident Response Plan</a> with processes that ensure our response is swift and effective. <br/><br/>An incursion on our territory might be part of a larger, coordinated attack against the <a data-label="bes">Bulk Electric System</a>, so our Incident Response Team must promptly report significant incidents to <a data-label="nerc">NERC's</a> <a data-label="eisac" class="new">Electricity Information Sharing and Analysis Center (E-ISAC)</a>. E-ISAC handles response to attacks at the national level.
+                body: When our monitoring efforts detect an attack, the <a data-label="cip">Standards</a> require that we convene an <a data-label="team" class="new">Incident Response Team</a> to coordinate our efforts to repel the attackers and a <a data-label="csirp" class="new">Cyber Security Incident Response Plan</a> with processes that ensure we handle an attack swiftly and effectively. <br/><br/>An incursion on our territory might be part of a larger, coordinated attack against the <a data-label="bes">Bulk Electric System</a>, so our Incident Response Team must promptly report significant incidents to <a data-label="eisac" class="new">E-ISAC</a>, the organization that coordinates response to attacks at the national level.
                 btn:
                   style: lightning
                   text: continue
@@ -146,7 +146,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Maintaining Readiness
-                body: We must test our <a data-label="csirp">Cyber Security Incident Response Plan</a> yearly with a simulation and use our lessons-learned to improve the plan. Other events may cause the <a data-label="csirp">Plan</a> to change, like employees moving out of roles, so we must keep the information in the plan up-to-date.
+                body: We must test our <a data-label="csirp">Cyber Security Incident Response Plan</a> yearly with a simulation and use our lessons-learned to improve the plan. Other events may cause the <a data-label="csirp">Plan</a> to change - like employees moving out of roles - so we must keep the information in the plan up-to-date.
                 btn:
                   style: lightning
                   text: continue
@@ -162,7 +162,7 @@ chapters:
               config:
                 hasLabels: true
                 title: No Need for Simulation
-                body: Many of us will have defined roles on the <a data-label="team">Incident Response Team</a>, help approve the <a data-label="csirp">Cyber Security Incident Response Plan</a>, or be involved in yearly testing. During an actual attack, any <a data-label="defender">Defender</a> may be called upon to assist the <a data-label="team">Team</a>, so we must all be ready. <br/><br/>Our facility Defenders have already been detecting and responding to <a data-label="cyber_security_incident">Cyber Security Incident</a> in each simulated attack, so we'll skip the simulator for this chapter.
+                body: Many of us will have defined roles on the <a data-label="team">Incident Response Team</a>, help approve the <a data-label="csirp">Cyber Security Incident Response Plan</a>, or be involved in yearly testing. During an actual attack, any <a data-label="defender">Defender</a> may be called upon for support, so we must all be ready. <br/><br/>Our facility Defenders have already been detecting and responding to <a data-label="cyber_security_incident">Cyber Security Incidents</a> in each simulated attack, so we'll skip the simulator for this chapter.
                 btn:
                   style: lightning
                   text: review duties
@@ -201,7 +201,7 @@ chapters:
               text: Your wait is over. I'm uploading scripts that contain an attack your Cadet cannot defeat.
             d:
               emo: down
-              pos: [270,420]
+              pos: [670,420]
               text: WarCore, can you scan this signal for Malware?
               audio: Story_6_Ctanlee_2.mp3
             e:
@@ -273,14 +273,15 @@ chapters:
               audio: Story_6_Ctanlee_6.mp3
             g:
               next: 3000
-              pos: [270,300]
+              pos: [270,200]
               text: How are they going to respond?
               audio: Story_6_Ctanlee_7.mp3
             h:
+              emo: down
               next: 1500
-              pos: []
+              pos: [270,200]
             i:
-              pos: [270,300]
+              pos: [270,200]
               text: Good call, team. Get the people out.
               audio: Story_6_Ctanlee_8.mp3
             j:
@@ -331,7 +332,7 @@ chapters:
               config:
                 hasLabels: true
                 title: The Recovery Plan
-                body: After an attack, assets may be damaged (or incinerated), so we must have a <a data-label="recovery" class="new">Recovery Plan<a/> that helps our <a data-label="defender">Defenders<a/> restore functionality quickly. The Recovery Plan defines the data backups, spare equipment and parts, and steps needed to restore each type of <a data-label="crca">CRCA<a/>. The Plan also guides Defenders on how to preserve forensic data from the attack needed for subsequent investigations. <br/><br/>Similar to the <a data-label="csirp">Cyber Security Incident Response Plan<a/>, we are expected to keep our Recovery Plan up-to-date and test it yearly. We also must regularly test that our data backups are working and usable for recovery purposes.
+                body: After an attack, assets may be damaged (or incinerated), so we must have a <a data-label="recovery" class="new">Recovery Plan<a/> that helps our <a data-label="defender">Defenders<a/> restore functionality quickly. The Recovery Plan defines the data backups, spare equipment and parts, and steps needed to restore each type of <a data-label="crca">CRCA<a/>. The Plan also guides Defenders on how to preserve forensic data from the attack useful for subsequent investigations. <br/><br/>We are expected to keep our Recovery Plan up-to-date and test it yearly, often concurrently with the yearly test of our <a data-label="csirp">Incident Response Plan</a>. We must also regularly test that our data backups are working and usable for recovery purposes.
                 btn:
                   style: lightning
                   text: continue
@@ -379,28 +380,6 @@ chapters:
         duration: {kind: dialogue }
       # 3 Sektimus Nerc Defense Selector ? ==========================================
       - !!inc/file ./episodes/episode5/yaml/_fake-nerc-defense-selector.yaml
-      # 3 Simulation Recovery ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 12, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
-            - {depth: 13, content: 6_3_2_rebuild_sektimus_dialogue.json }
-        dialogue:
-          defaults:
-            next: audio
-          timeline:
-            - {action: d }
-            - {action: e }
-          actions:
-            d:
-              audio: Story_6_Sektimus_7.mp3
-              actor: sektimus
-              text: What is this [enraged]? This isn't fair! These defenses don't exist.
-            e:
-              pos: [300,420]
-              text: The WarCore is simply simulating the results from following the CIP Standards. Our Incident Response Team reported the Bot-Tron attack to E-ISAC and NERC used the information to build new experimental defenses for the industry against Bot-Tron Overlords. Proceed with your selection, Cadet.
-              audio: Story_6_Ctanlee_16.mp3
-        duration: {kind: dialogue }
       # 3 Sektimus Nerc Defense Selector ? ==========================================
       - !!inc/file ./episodes/episode5/yaml/_nerc-defense-selector.yaml
       # 3 Animate Nerc Build ==========================================
@@ -410,13 +389,13 @@ chapters:
           - {content: $nercSFX, volume: 1}
         movie:
           layers:
-            - {depth: 13, content: $nercBuild }
+            - {depth: 14, content: $nercBuild }
         duration: {kind: time, seconds: 4 }
       # 3 Sektimus Interlude ==========================================
       -
         movie:
           layers:
-            - {depth: 13, content: $nercPass, vcr: true }
+            - {depth: 14, content: $nercPass, vcr: true }
         dialogue:
           defaults:
             next: audio
@@ -445,6 +424,9 @@ chapters:
         duration: {kind: ux }
       # 3 Sektimus Interlude ==========================================
       -
+        movie:
+          layers:
+            - {depth: 14, content: sektimus_goodbye.json }
         dialogue:
           defaults:
             next: audio
@@ -501,6 +483,7 @@ chapters:
   # ----------------------------------------------
       # 4 Shutting Down slide ==========================================
       -
+        action: [{cmd: ctanlee.show}]
         movie:
           layers:
             - {depth: 12, content: $nercBuild, jumpToEnd: true, cache: true }
@@ -542,12 +525,6 @@ chapters:
             - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
             - {depth: 9, content: clear }
             - {depth: 8, content: clear }
-        duration: {kind: listen, event: layer.13.complete }
-      # 4 -7,8 Clear ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
             - {depth: 7, content: clear }
             - {depth: 6, content: clear }
         duration: {kind: listen, event: layer.13.complete }
@@ -580,43 +557,14 @@ chapters:
         movie:
           layers:
             - {depth: 13, content: 6_6_defenders_blink_out.json, events: [complete] }
-        dialogue:
-          defaults:
-            next: audio
-          timeline:
-            - {action: a }
-            - {action: b }
-            - {action: c }
-          actions:
-            a:
-              pos: [500,600]
-              text: "Our training comes to an end…"
-              audio: Story_7_Ctanlee_2.mp3
-            b:
-              emo: left
-              pos: [650,384]
-              text: " …and you have earned the title of Defender."
-              audio: Story_7_Ctanlee_3.mp3
-            c:
-              emo: down
-              pos: [650,384]
-              text: "I know you will wear this title and perform your duties with honor."
-              audio: Story_7_Ctanlee_4.mp3
         duration: {kind: listen, event: layer.13.complete }
-      # 4 Rank Advance ==========================================
+      # 4 Movie ==========================================
       -
         sfx:
           - {content: ~g/SFX_Level_Defender.mp3, volume:1}
         movie:
           layers:
-            - {depth: 13, content: clear }
-            - {depth: 0, background: black, content: ~g/cyber_cadet.json, events: [complete] }
-        duration: {kind: listen, event: layer.0.complete }
-      # 4 Movie ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 0, content: ~5/7-Conclusion.mp4 }
+            - {depth: 13, content: 7-Conclusion.mp4 }
         dialogue:
           defaults:
             next: audio
@@ -626,28 +574,49 @@ chapters:
             - {action: c }
             - {action: d }
             - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
           actions:
             a:
-              pos: [650,384]
-              text: "Now it's time for you to leave the WarCore and protect your infrastructure."
-              audio: Story_7_Ctanlee_5.mp3
+              pos: []
+              next: 7000
             b:
-              pos: [513,384]
-              text: "but You will not be alone in this fight. Even now many Defenders are being prepared to stand with you."
-              audio: Story_7_Ctanlee_6.mp3
+              pos: [500,600]
+              text: "Our training comes to an end…"
+              audio: Story_7_Ctanlee_2.mp3
             c:
-              emo: down
-              pos: [513,384]
-              text: "Defenders both at your organization"
-              audio: Story_7_Ctanlee_7.mp3
+              emo: left
+              pos: [700,384]
+              text: " …and you have earned the title of Defender."
+              audio: Story_7_Ctanlee_3.mp3
             d:
               emo: down
-              pos: [513,384]
+              pos: [700,384]
+              text: "I know you will wear this title and perform your duties with honor."
+              audio: Story_7_Ctanlee_4.mp3
+            e:
+              pos: [700,384]
+              text: "Now it's time for you to leave the WarCore and protect your infrastructure."
+              audio: Story_7_Ctanlee_5.mp3
+            f:
+              emo: left
+              pos: [513,240]
+              text: "but You will not be alone in this fight. Even now many Defenders are being prepared to stand with you."
+              audio: Story_7_Ctanlee_6.mp3
+            g:
+              emo: down
+              pos: [513,240]
+              text: "Defenders both at your organization"
+              audio: Story_7_Ctanlee_7.mp3
+            h:
+              emo: right
+              pos: [513,240]
               text: "…and at many other organization just like yours."
               audio: Story_7_Ctanlee_8.mp3
-            e:
-              emo: down
-              pos: [513,384]
+            i:
+              pos: [513,240]
               text: "You and your fellow Defenders truly are this planet's greatest hope."
               audio: Story_7_Ctanlee_9.mp3
         duration: {kind: dialogue }
@@ -667,7 +636,6 @@ chapters:
               pos: [513,384]
               next: 1200
             b:
-              emo: down
               pos: [513,384]
               text: "Now go out and protect your infrastructure. Farewell, Defender."
               audio: Story_7_Ctanlee_10.mp3
