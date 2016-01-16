@@ -93,7 +93,7 @@ chapters:
               next: 7000
               pos: []
             f:
-              pos: [100,100]
+              pos: [200,300]
               text: "Great Gravy! What's up with your thumb?"
               audio: Story_5_Ctanlee_3.mp3
             g:
@@ -282,7 +282,7 @@ chapters:
               text: "So now we're safe to give Cindy the physical and electronic access she needs. Richard will configure this."
               audio: Story_5_Ctanlee_17.mp3
             h:
-              next: 15700
+              next: 16700
               pos: []
             i:
               emo: down
@@ -743,12 +743,13 @@ chapters:
               next: 28000
               pos: []
             b:
+              emo: left
               next: 2000
-              pos: [100,100]
+              pos: [100,700]
               text: "Nice job Arnold!"
               audio: Story_5_Ctanlee_34.mp3
             c:
-              pos: [100,100]
+              pos: [400,700]
               text: "Parting is such sweet sorrow, AuditBot."
               audio: Story_5_Ctanlee_35.mp3
         duration: {kind: ux }
