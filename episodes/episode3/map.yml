@@ -68,21 +68,22 @@ chapters:
               next: 13000
               pos: []
             b:
-              pos: [100,100]
+              emo: right
+              pos: [170,550]
               text: "No, no, no. Don't be fooled by that!"
               audio: Story_4_Ctanlee_1.mp3
             c:
               next: 33500
               pos: []
             d:
-              pos: [100,100]
+              pos: [170,550]
               text: "These robots have taken control of the operator console and are overloading our transmission lines."
               audio: Story_4_Ctanlee_2.mp3
             e:
               next: 1500
-              pos: []
+              pos: [170,550]
             f:
-              pos: [100,100]
+              pos: [300,240]
               text: "Simulator Pause!"
               audio: Story_4_Ctanlee_3.mp3
         duration: {kind: ux }
@@ -141,7 +142,7 @@ chapters:
               audio: Story_4_Ctanlee_7.mp3
             b:
               pos: [100,100]
-              next: 14500
+              next: 16000
             c:
               pos: [100,100]
               text: "You sure know how to accessorize."
@@ -183,14 +184,15 @@ chapters:
               next: 9500
               pos: []
             b:
-              pos: [100,100]
+              emo: down
+              pos: [600,240]
               text: "Hey FlashBot, do you feel the rejection?"
               audio: Story_4_Ctanlee_10.mp3
             c:
               next: 2000
-              pos: []
+              pos: [700,240]
             d:
-              pos: [100,100]
+              pos: [530,400]
               text: "Duty Time!"
               audio: Story_4_Ctanlee_11.mp3
         duration: {kind: ux }
@@ -301,11 +303,11 @@ chapters:
             - {action: r }
           actions:
             a:
-              pos: [170,50]
+              pos: [170,300]
               text: Defender, Sektimus is trying to communicate with us again.
               audio: Story_4_Ctanlee_12.mp3
             b:
-              pos: [270,400]
+              pos: [200,400]
               text: WarCore, patch him through.
               audio: Story_4_Ctanlee_13.mp3
             c:
@@ -331,7 +333,7 @@ chapters:
               actor: sektimus
               text: Where is your "Cadet" right now .. Oh, oh wait … let me guess. Hiding under their desk? Quivering behind a steaming pipe in a plant basement? Or did they take the long drive in their work truck, never to return?
             i:
-              next: 2000
+              next: 1500
               pos: []
             j:
               pos: [270,400]
@@ -472,27 +474,29 @@ chapters:
               next: 7000
               pos: []
             b:
-              pos: [100,100]
+              emo: down
+              pos: [400,280]
               text: "Looks like Rod's workstation is old and causing problems. His supervisor requested an upgrade."
               audio: Story_4_Ctanlee_19.mp3
             c:
               next: 26000
               pos: []
             d:
-              pos: [500,200]
+              emo: down
+              pos: [700,240]
               text: "Wait a second! Don't plug that computer into the ESP network - Who knows what that MimeBot installed on it. It's a security nightmare!"
               audio: Story_4_Ctanlee_20.mp3
             e:
               next: 11500
-              pos: [500,200]
+              pos: []
             f:
               emo: left
-              pos: [500,300]
+              pos: [320,360]
               text: "The computer just dialed out to the KettleHead. He's taking command of the system."
               audio: Story_4_Ctanlee_21.mp3
             g:
               next: 1500
-              pos: [500,300]
+              pos: [320,360]
             h:
               pos: [600,250]
               text: "We know how this will end. Simulator pause!"
@@ -530,13 +534,13 @@ chapters:
               next: 17500
               pos: []
             b:
-              emo: left
               next: 6800
-              pos: [300,350]
+              pos: [300,300]
               text: "No problem. I'm sure Richard cleaned all that data off…"
               audio: Story_4_Ctanlee_23.mp3
             c:
-              pos: [300,350]
+              emo: down
+              pos: [300,300]
               text: "Orrrrrr not. Simulator Pause!"
               audio: Story_4_Ctanlee_24.mp3
         duration: {kind: ux}
@@ -658,7 +662,7 @@ chapters:
               pos: []
             b:
               emo: left
-              pos: [625,600]
+              pos: [625,570]
               text: "And let's check in on the team. Richard set up the workstation and documented the configuration. Good job, Richard."
               audio: Story_4_Ctanlee_28.mp3
             c:
@@ -671,7 +675,7 @@ chapters:
               audio: Story_4_Ctanlee_29.mp3
             e:
               next: 5000
-              pos: [625,630]
+              pos: [625,610]
             f:
               emo: left
               pos: [150,500]
@@ -684,7 +688,7 @@ chapters:
               audio: Story_4_Ctanlee_31.mp3
             h:
               next: 9000
-              pos: [700,100]
+              pos: [700,490]
               text: "You fought well, bot. But we fought so much better. Now let's dispose of that old workstation."
               audio: Story_4_Ctanlee_32.mp3
         duration: {kind: ux }

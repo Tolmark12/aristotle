@@ -79,21 +79,23 @@ chapters:
               next: 2000
               pos: []
             b:
-              pos: [520,490]
+              emo: left
+              pos: [710,390]
               text: "Rod? Jumping up and down. Look at him go. What? He just won the lottery! Look at that! Look at Rod go. Give me a high five Rod! Yes… well…. if I had hands. <br/><br/>We need a new operator."
               audio: Story_5_Ctanlee_1.mp3
             c:
               next: 3000
               pos: []
             d:
-              pos: [350,480]
+              pos: [450,430]
               text: "And Jerry in HR can help us hire a successor."
               audio: Story_5_Ctanlee_2.mp3
             e:
               next: 7000
               pos: []
             f:
-              pos: [200,300]
+              emo: down
+              pos: [200,450]
               text: "Great Gravy! What's up with your thumb?"
               audio: Story_5_Ctanlee_3.mp3
             g:
@@ -107,7 +109,7 @@ chapters:
               next: 2000
               pos: []
             j:
-              pos: [100,100]
+              pos: [500,300]
               text: "Simulator pause!"
               audio: ~3/Story_4_Ctanlee_3.mp3
         duration: {kind: ux }
@@ -190,7 +192,7 @@ chapters:
               next: 3000
             b:
               emo: left
-              pos: [600,400]
+              pos: [600,500]
               text: "Lisa started the access removal process for Rod."
               audio: Story_5_Ctanlee_9.mp3
             c:
@@ -199,7 +201,8 @@ chapters:
               text: "Brad will update documentation and Richard will disable Rod's accounts."
               audio: Story_5_Ctanlee_10.mp3
             d:
-              pos: [400,200]
+              emo: left
+              pos: [700,250]
               text: "Compliance fist bumps all-around. Rod's access was removed in under 24 hours. Now let's deal with that unsavory human."
               audio: Story_5_Ctanlee_11.mp3
         duration: {kind: ux}
@@ -219,15 +222,14 @@ chapters:
             - {action: c }
           actions:
             a:
-              emo: down
-              pos: [300,500]
+              pos: [250,500]
               text: "Jerry will now use his Personnel Risk Assessment. This will catch you."
               audio: Story_5_Ctanlee_12.mp3
             b:
-              pos: [300,500]
+              pos: [250,500]
               next: 2500
             c:
-              pos: [300,500]
+              pos: [250,500]
               text: "I relish your demise, unworthy opponent. Let's hire a worthy successor for Rod."
               audio: Story_5_Ctanlee_13.mp3
         duration: {kind: ux }
@@ -265,19 +267,18 @@ chapters:
               pos: [380,570]
             d:
               emo: left
-              pos: [320,400]
+              pos: [290,400]
               text: "That's some top quality training."
               audio: Story_5_Ctanlee_15.mp3
             e:
               next: 1000
-              pos: [320,400]
+              pos: [290,400]
             f:
               emo: right
               pos: [350,400]
               text: "Lisa approves Cindy's access and Brad updates documentation."
               audio: Story_5_Ctanlee_16.mp3
             g:
-              emo: down
               pos: [550,450]
               text: "So now we're safe to give Cindy the physical and electronic access she needs. Richard will configure this."
               audio: Story_5_Ctanlee_17.mp3
@@ -402,7 +403,8 @@ chapters:
               next: 15000
               pos: []
             d:
-              pos: [780,350]
+              emo: left
+              pos: [730,420]
               text: "He has access. Simulator pause."
               audio: Story_5_Ctanlee_20.mp3
         duration: {kind: ux }
@@ -455,14 +457,14 @@ chapters:
               next: 12500
               pos: []
             d:
-              pos: [100,100]
+              pos: [100,200]
               text: "Richard was notified of your login attempts and discovered the firewall issue that let you in. He is fixing it now."
               audio: Story_5_Ctanlee_22.mp3
             e:
               next: 3500
-              pos: [100,100]
+              pos: [100,200]
             f:
-              pos: [100,100]
+              pos: [100,400]
               text: "The spirit is willing, but the metal is weak."
               audio: Story_5_Ctanlee_23.mp3
         duration: {kind: ux }
@@ -656,22 +658,23 @@ chapters:
               next: 1500
               pos: []
             b:
-              pos: [100,100]
+              pos: [790,485]
               text: "Who are you? This isn't time for a scheduled audit."
               audio: Story_5_Ctanlee_28.mp3
             c:
               next: 13500
               pos: []
             d:
-              next: 8500
-              pos: [100,100]
+              emo: down
+              pos: [580,475]
               text: "Arnold Aren't you going to follow him around?"
               audio: Story_5_Ctanlee_29.mp3
             e:
-              next: 2000
+              next: 8500
               pos: []
             f:
-              pos: [100,100]
+              emo: down
+              pos: [650,220]
               text: "He's blacked out part of the Grid. Simulator Pause!"
               audio: Story_5_Ctanlee_30.mp3
         duration: {kind: ux }
@@ -745,11 +748,11 @@ chapters:
             b:
               emo: left
               next: 2000
-              pos: [100,700]
+              pos: [100,600]
               text: "Nice job Arnold!"
               audio: Story_5_Ctanlee_34.mp3
             c:
-              pos: [400,700]
+              pos: [780,380]
               text: "Parting is such sweet sorrow, AuditBot."
               audio: Story_5_Ctanlee_35.mp3
         duration: {kind: ux }
