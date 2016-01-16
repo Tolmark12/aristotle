@@ -207,20 +207,18 @@ chapters:
               text: "With CIPv5 clearance, it's time for you to learn the reason for this training."
               audio: Story_1_Ctanlee_10.mp3
             c:
-              emo: down
               pos: [450,450]
               text: "We operate part of the North American Bulk Electric System - this system is made up of power plants, transmission substations, control centers and their supporting operations."
               audio: Story_1_Ctanlee_11.mp3
             d:
               emo: left
-              pos: [500,250]
+              pos: [500,200]
               text: "All these facilities working together provide power to homes, businesses, industry, and other vital services."
               audio: Story_1_Ctanlee_12.mp3
             e:
-              pos: [170,330]
+              pos: [170,310]
               text: "But there's a problem. Hackers, terrorists, and other nasty people want to disrupt our ability to provide this power. These facilities are highly connected and automated through computer technology and therefore vulnerable to a cyber-attack."
               audio: Story_1_Ctanlee_12b.mp3
-              emo: down
             f:
               pos: [400,300]
               text: "Just imagine a day without power."
@@ -247,7 +245,7 @@ chapters:
           actions:
             a:
               next: 500
-              pos: []
+              pos: [350,400]
             b:
               pos: [350,400]
               text: "That's the official story from the government. But there's more to the story that I can reveal with your clearance level - and the full truth is far more serious."
@@ -277,12 +275,12 @@ chapters:
               text: "Sektimus desires to weaken us , so he sent advance forces to destroy Earth's most critical infrastructure - our power grid - before the Metal Swarm arrives."
               audio: Story_1_Ctanlee_17.mp3
             b:
-              emo: left
+              emo: right
               pos: [250,500]
               text: "Several models of robots were sent in this advance force, each specifically designed to attack an aspect of the computer systems that run our facilities. These robots and their human allies have targeted us."
               audio: Story_1_Ctanlee_18.mp3
             c:
-              pos: [350,400]
+              pos: [380,400]
               text: "The government is aware of Sektimus and his advance forces. They secretly directed NERC to create the CIP Standards to help defend against their attacks."
               audio: Story_1_Ctanlee_19.mp3
             d:
@@ -313,13 +311,18 @@ chapters:
               text: "You now know the full story about CIP - How are you feeling?"
               audio: Story_1_Ctanlee_21.mp3
             c:
+              pos: [513,384]
               text: "Pull yourself together soldier! Take a deep breath and lets crack on."
               audio: Story_1_Dialogue_Panicking.mp3
               next: {cmd: slides.next-slide}
             d:
+              pos: [513,384]
+              text: "Swallow your spew and take heed: mouthpuke is a sign you are taking this seriously."
               audio: Story_1_Dialogue_Puke.mp3
               next: {cmd: slides.next-slide}
             e:
+              pos: [513,384]
+              text: "That's the spirit!"
               audio: Story_1_Dialogue_Spirit.mp3
               next: {cmd: slides.next-slide}
 

@@ -220,14 +220,14 @@ chapters:
           actions:
             a:
               emo: down
-              pos: [150,500]
+              pos: [300,500]
               text: "Jerry will now use his Personnel Risk Assessment. This will catch you."
               audio: Story_5_Ctanlee_12.mp3
             b:
-              pos: [150,500]
+              pos: [300,500]
               next: 2500
             c:
-              pos: [150,500]
+              pos: [300,500]
               text: "I relish your demise, unworthy opponent. Let's hire a worthy successor for Rod."
               audio: Story_5_Ctanlee_13.mp3
         duration: {kind: ux }

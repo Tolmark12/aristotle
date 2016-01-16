@@ -165,16 +165,16 @@ chapters:
       -
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.3 }
-          - {content: ~2/CIN_RobotMovement.mp3, volume: 0.1, loop: 2 }
-          - {content: $pacsSFX, delay: 4200, volume: 0.3 }
-          - {content: ~2/CIN_RobotMovement.mp3, delay: 7500, volume: 0.1, loop: 2 }
-          - {content: ~2/CIN_PhysicalAttack_DoorRipAndCrash, delay: 13000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 14000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 16000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_RunningMen, delay: 17000, volume: 1 }
-          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 18000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_Laser.mp3, delay: 21000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_BlastedRobot.mp3, delay: 21400, volume: 0.05 }
+          - {content: ~2/CIN_RobotMovement.mp3, delay: 3000, volume: 0.1, loop: 2 }
+          - {content: $pacsSFX, delay: 7200, volume: 0.3 }
+          - {content: ~2/CIN_RobotMovement.mp3, delay: 10500, volume: 0.1, loop: 2 }
+          - {content: ~2/CIN_PhysicalAttack_DoorRipAndCrash, delay: 16000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 17000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 19000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_RunningMen, delay: 20000, volume: 1 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 21000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Laser.mp3, delay: 24000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_BlastedRobot.mp3, delay: 24400, volume: 0.05 }
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
@@ -191,7 +191,7 @@ chapters:
           actions:
             a:
               pos: []
-              next: 7000
+              next: 10000
             b:
               pos: [170,400]
               text: Access Denied, Bot. Uh oh, looks like the robots are trying again.
@@ -284,7 +284,7 @@ chapters:
 
           actions:
             a:
-              pos: [170,50]
+              pos: [170,200]
               text: Hmm, the button didn't work. WarCore, can you analyze this?
               audio: ~2/Story_3_Ctanlee_16.mp3
             b:
@@ -297,7 +297,7 @@ chapters:
               text: What is this? … We're receiving a communication. It's much too powerful.
               audio: ~2/Story_3_Ctanlee_18.mp3
             d:
-              pos: [170,50]
+              pos: [170,350]
               text: I don't like this at all. WarCore, I want you to isolate that transmission. Put it in a security perimeter. Bring up your backup and tertiary memory banks - you'll need it. This is more powerful than anything I've seen in a long time.
               audio: ~2/Story_3_Ctanlee_19.mp3
             e:
