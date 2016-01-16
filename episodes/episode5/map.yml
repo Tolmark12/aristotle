@@ -5,6 +5,7 @@ rankId: master-cadet
 nextRankId: defender
 isLastEpisode: true
 labels: !!inc/file ./episodes/global/_labels.yaml
+action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
 
 # CHAPTER 1
 chapters:

@@ -35,3 +35,27 @@ module.exports = class AudioTrack
       if config.loop == true && typeof config.loop != "number"
         config.loop = -1
     config.pan = 1
+
+  fade : (fadeDurationMs, direction=1, doDestroy=false) ->
+    seconds        = fadeDurationMs/1000
+    ticksPerSecond = 20
+    ticks          = seconds * ticksPerSecond
+    tickDuration   = fadeDurationMs / ticks
+    if direction == 1
+      incrament      = (1 - @sound.volume) / ticks
+    else
+      incrament      = @sound.volume / ticks * -1
+
+    sound          = @sound
+    tickCounter    = 0
+    fadeInterval   = setInterval ()=>
+      if ++tickCounter == ticks then clearInterval(fadeInterval)
+      sound.volume += incrament
+    ,
+      tickDuration
+
+  fadeOut : (fadeDurationMs, doDestroy=false)->
+    @fade fadeDurationMs, -1, doDestroy
+
+  fadeIn  : (fadeDurationMs, doDestroy=false)->
+    @fade fadeDurationMs, 1, doDestroy

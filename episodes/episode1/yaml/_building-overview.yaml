@@ -1,3 +1,4 @@
+action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
 duration: {kind: dialogue}
 # movie:
 #   layers:

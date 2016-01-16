@@ -10,8 +10,9 @@ module.exports = class SoundFX
     PubSub.subscribe 'vcr.replay',      (m, data)=> @vcrReplay()
     PubSub.subscribe 'slides.changing', (m, data)=> @flushSfxStore()
     PubSub.subscribe 'sfx.add',         (m, data)=> @parseSFX data
-    PubSub.subscribe 'playsound',       (m, data)=>
-      @playSound data
+    PubSub.subscribe 'playsound',       (m, data)=> @playSound data
+    PubSub.subscribe 'sound.fadeout',   (m, data)=> @fadeOutSound data
+    PubSub.subscribe 'sound.fadein',    (m, data)=> @fadeInSound data
 
   # ------------------------------------ VCR
 
@@ -74,10 +75,17 @@ module.exports = class SoundFX
     if data.slot?
       @clearSlotIfNeeded data, track
 
+  fadeOutSound : (data) ->
+    if data.slot?
+      @slots[data.slot].fadeOut( data.duration )
+
+  fadeInSound : (data) ->
+    if data.slot?
+      @slots[data.slot].fadeIn( data.duration )
+
   clearSlotIfNeeded : (data, track) ->
     # If there is audio in this slot, destroy it
     if @slots[data.slot]?
-      console.log "destroyed old sound"
       @slots[data.slot].destroy()
 
     @slots[data.slot] = track
