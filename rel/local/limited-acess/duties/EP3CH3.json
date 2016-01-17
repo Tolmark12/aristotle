@@ -1,0 +1,28 @@
+{
+    "duties":[
+      {
+          "title":"Don't Physically Change Assets",
+          "content":"
+		<p>Don't add or remove workstations, servers, or otherwise make any changes to devices without following the change control process. This may seem obvious, but realize that you could inadvertently change something and cause a security breach by plugging your personal device into a CRCA.</p>
+		<p>The only groups who should be physically adding, updating, or removing assets are the teams that manage those devices. </p>
+		<h1>POTENTIAL ISSUES</h1>
+		<ul>
+		<li>Adding a device to an ESP network.</li>
+		<li>Removing CRCAs from an ESP network or a PSP.</li>
+		</ul>
+	"
+	},
+	{
+	  "title":"Don't Electronically Change Assets",
+	  "content":"
+		<p>Don't install/remove software without following the change control process. This may also seem obvious, but this can be as simple as bringing a corporate or personal laptop to a facility and transferring your MP3 collection to your workstation to listen to music while you work. Be vigilant.</p>
+		<p>If you need to get data or software onto your workstation or an asset, use the <b>APS Software Installation Menu</b> or if your selection is not on the installation menu, request it through <b>Get it Here</b> on <b>Inside APS</b>.  </p>
+		<h1>POTENTIAL ISSUES</h1>
+		<ul>
+		<li>Running or installing non-approved software on CRCAs (even if it doesn’t require administrator permissions).</h1>
+		<li>Transferring files to an ESP network through unapproved mechanisms.</li>
+		</ul>
+	  "
+	}
+    ]
+}

@@ -1,0 +1,17 @@
+{
+  "companyName"      : "Arizona Public Service",
+  "trainingVersion"  : "MetaMythic.CipDefender.v1",
+  "companyRegulator" : "WECC",
+  "moduleAudience"   : "Electronic Asset Sustainer",
+  "apikey"           : "MetaMythic-43dbb0161e95",
+  "quizDir"          : "sustainers/quizes",
+  "dutiesDir"        : "sustainers/duties",
+  "episodeMapFiles"  : {
+    "0" : "map.json",
+    "1" : "map.json",
+    "2" : "map.json",
+    "3" : "map.json",
+    "4" : "map.json",
+    "5" : "map.json"
+  }
+}
