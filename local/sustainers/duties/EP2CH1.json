@@ -2,51 +2,15 @@
     "duties":[
       {
           "title":"Know Your PSPs",
-          "content":"
-	     <p>Badge readers are the primary way for you to access PSPs. We know everyone wants APS to use Kraken Sensors, but they just weren't practical in this desert heat. Our badge readers look like this:</p>
-	     <p><img class='float-right' src='badge-reader.png' /></p>
-	     <p>Access to the PSPs at the <b>Four Corners Power Plant</b> and the in-scope substation control houses are restricted and access is controlled by badge reader. Additionally, substation control houses are equipped with ring down phones to Corporate Security.  PSPs are clearly identified with signs. </p>
-	     <p>If you work at the <b>Energy Control Center/DOMS EMS Room</b> in Deer Valley or the <b>Backup Control Center/502 Data Center</b> at the 502 Building, access is controlled by badge reader and requires a PIN code be entered first.</p>
-              "
-                },
-                {
-                  "title":"Protect Your PSPs",
-                  "content":"
-		   <p>If you have physical access to PSPs, always, always, always scan in and scan out. Always. The easiest way to forget this is to tailgate someone in or out. Tailgating is bad. Tailgating is what caused the fall of the Hydroternal Utility on Nedritux III, allowing the robots to finally breach their defenses. Don't let that happen to you.</p>
-		   <p>If your badge won't open a door to a PSP, you are considered a Visitor and require escort until you are granted access or until access issues are resolved. Don't go around door controls, even if you think you should have access.</p>
-		   <p>If you do or see someone enter or leave a PSP without scanning, contact your leader immediately so they can manually document the PSP visit, ensure we have evidence of compliance and provide coaching to the employee.</p>
-		   <h1>POTENTIAL ISSUES</h1>
-		   <ul>
-		       <li>Not scanning before entering a PSP (following someone in)</li>
-		       <li>No scanning before exiting a PSP (following someone out)</li>
-		       <li>Tailgating in</li>
-		       <li>Tailgating out</li>
-		       <li>Tailgating both directions</li>
-		       <li>Tailgating tailgators</li>
-		       <li>Starting a tailgator congo line</li>
-		       <li>Yeah, I know. We've said it a lot. But tailgating is one of the most common violations. Be vigilant. Be aware.</li>
-		       <li>Not reporting if you or someone else entered or exited a PSP without scanning</li>
-			</ul>
-                  "
+          "content":"EP2Ch1_1.html"
                 },
                 {
 		  "title":"Validate PSP Access",
-		  "content":"
-			<p>Corporate Security will monitor access attempts to PSPs and validate access for each person entering a PSP.   In the event that an unauthorized person gains access to a PSP, Corporate Security generates a notification of unauthorized access and initiate the Incident Response Plan.</p>
-		  
-		  "
+		  "content":"EP2Ch1_2.html"
                 },
                 {
 		  "title":"Maintain PSP Devices",
-		  "content":"
-		   <p>IT and Corporate Security test each access control system at PSPs (like door card scanners) at least once every 24 months to ensure they function properly.</p>
-		   <p>If you are on the Corporate Security team, you are to retain access logs for at least 90 days.</p>
-		   <h1>POTENTIAL ISSUES</h1>
-		   <ul>
-		   <li>Not maintaining log records for at least 90 days</li>
-		   <li>Not testing each PSP access control device and documenting results within 24 calendar months</li>
-		</ul>
-		  "
+		  "content":"EP2Ch1_3.html"
 		}
             ]
 }

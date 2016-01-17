@@ -2,31 +2,11 @@
     "duties":[
       {
           "title":"Report Any Misses",
-          "content":"
-	      <p>When a compliance concern is noted, do the following:
-	      <ul>
-	      	<li>Inform your leader.</li>
-	      	<li>Leader shall contact via phone call Cocco, Manager of NERC Regulatory.</li>
-	      	<li>If she's not available, leave a message for her to return your call immediately.  DO NOT communicate the details of your concerns in a message.</li>
-	      </ul>
-	      <p>DO NOT send an email with details of the concern.</p>
-	      </p>
-	      <h1>POTENTIAL ISSUES</h1>
-		<p>Not promptly reporting any suspected or actual violations.</p>
-              "
+          "content":"EP1Ch3_1.html "
                 },
                 {
                   "title":"Assist With Audits",
-                  "content":"
-	      <p>You may be a subject-matter expert at an audit to answer questions or provide additional evidence proving our compliance. Act professionally, answer clearly, honestly and with confidence, and demonstrate the value we place on our work keeping the infrastructure secure.</p>
-	      <h1>POTENTIAL ISSUES</h1>
-	      <ul>
-	          <li>Not handling audits professionally and ethically</li>
-	          <li>Not providing evidence when requested or providing it in a format that auditors can’t view</li>
-	          <li>Giving the wrong answer or making answers up</li>
-	          <li>Providing poor quality coffee to auditors</li>
-		</ul>
-                  "
+                  "content":"EP1Ch3_2.html"
                 }
             ]
 }

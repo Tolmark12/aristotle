@@ -15,7 +15,7 @@ isDevMode  = getQueryVariable 'dev'
 isLocal    = getQueryVariable('local') == "true"
 sudo       = getQueryVariable('sudo')  == "true"
 
-configFile = "config-general-awareness.json"
+configFile = "config-sustainers.json"
 
 # Load either the user specified episode, or a default one
 aristotle = new Aristotle $(".holder"), configFile, "episodes", "local", episode, isDevMode, isLocal, sudo

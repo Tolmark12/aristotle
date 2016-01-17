@@ -110,7 +110,7 @@ chapters:
           components:
             -
               kind: duties
-              config: {definition: ~l/duties/EP5CH1.json}
+              config: {definition: EP5CH1}
         duration: {kind: ux}
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 2
@@ -474,7 +474,7 @@ chapters:
       #    components:
       #      -
       #        kind: duties
-      #        config: {definition: ~l/duties/EP5CH3.json}
+      #        config: {definition: EP5CH3}
       #  duration: {kind: ux}
       # 3 Quiz ==========================================
       -
@@ -484,7 +484,7 @@ chapters:
             -
               kind: quiz
               config:
-                source: ~l/quizes/sample.json
+                source: sample
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 4
   # ----------------------------------------------

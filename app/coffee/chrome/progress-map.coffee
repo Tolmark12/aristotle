@@ -31,11 +31,11 @@ module.exports = class ProgressMap
 
     $milestone.on "mouseover", (e)=> @onMileStoneOver $(e.currentTarget)
     $milestone.on "mouseout",  (e)=> @onMileStoneOut $(e.currentTarget)
-
   parseEpisodeData : (data) ->
     items = []
     for chapter in data.chapters
-      items.push {kind: "chapter", title:chapter.title, id: @titleToId(chapter.title) }
+
+      items.push {kind: "chapter", title:"#{chapter.title} - #{chapter.subtitle}", id: @titleToId(chapter.title) }
       for slide in chapter.slides
         item = @getItem slide
         if slide.title?

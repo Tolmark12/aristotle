@@ -2,26 +2,11 @@
     "duties":[
       {
           "title":"Don't Plug and Play",
-          "content":"
-		<p>Don't plug USB drives, cell phones, portable hard drives, or other devices into CRCAs, even if you're just plugging them in to charge them.</p>
-		<h1>POTENTIAL ISSUES</h1>
-		<ul>
-		    <li>Plugging any device into a physical port on a CRCA without following the change control procedure.</li>
-		    <li>Removing port plugs on assets.</li>
-		</ul>
-              "
+          "content":"EP3Ch1_1.html"
                 },
                 {
                   "title":"Sustain Port Defenses",
-                  "content":"
-		<p>You may be responsible for configuring port defenses, be they firewalls, TCP wrappers, port plugs, or configuration to follow the Ports & Services Expected State Process. For ports open by choice or because port controls aren’t supported, you may be asked to help document the reason.</p>
-		<h1>POTENTIAL ISSUES</h1>
-		<ul>
-		    <li>Not disabling physical ports on a CRCA</li>
-		    <li>Not sustaining logical port controls on a CRCA.</li>
-		    <li>Not documenting exceptions for open logical ports with the Compliance Team</li>
-		</ul>
-                  "
+                  "content":"EP3_Ch1_2.html"
                 }
             ]
 }

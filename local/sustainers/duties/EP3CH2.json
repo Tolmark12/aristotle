@@ -2,26 +2,11 @@
     "duties":[
       {
           "title":"Patch Those Assets",
-          "content":"
-		<p>If you belong to the ISS group, you must assess each security patch within 35 days of discovery.</p>
-		<p>The system teams and asset owners must apply that patch or document a mitigation plan inside 35 days of assessment. This process is defined in the <b>Security Patch Management Process</b>. To mitigate patches, work with ISS to define, document and execute a mitigation plan.</p>
-		<h1>POTENTIAL ISSUES</h1>
-		<ul>
-		    <li>Not assessing patches for CRCAs within 35 days of release</li>
-		    <li>Not applying patches to CRCAs within 35 days of assessment</li>
-		    <li>Not documenting a mitigation plan within 35 of release</li>
-		    <li>Not documenting inapplicability of unapplied patches</li>
-		    <li>Not having documented progress on a mitigation plan</li>
-		</ul>
-              "
+          "content":"EP3Ch2_1.html"
                 },
                 {
                   "title":"Inoculate your CRCAs",
-                  "content":"
-		<p>ISS/Systems Teams - You must update anti-virus signatures as soon as possible following availability from vendor. If there is an issue encountered during testing of anti-virus signatures, follow steps in the antivirus and malware prevention management process.</p>
-		<h1>POTENTIAL ISSUES</h1>
-		<p>Not updating antivirus in the timeframe specified by your process</p>
-		"
+                  "content":"EP3Ch2_2.html"
                 }
             ]
 }

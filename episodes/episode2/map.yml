@@ -230,7 +230,7 @@ chapters:
           components:
             -
               kind: duties
-              config: {definition: ~l/duties/EP2CH1.json}
+              config: {definition: EP2CH1}
         duration: {kind: ux}
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 2
@@ -733,7 +733,7 @@ chapters:
           components:
             -
               kind: duties
-              config: {definition: ~l/duties/EP2CH2.json}
+              config: {definition: EP2CH2}
         duration: {kind: ux}
       # 2 Quiz ==========================================
       -
@@ -744,7 +744,7 @@ chapters:
             -
               kind: quiz
               config:
-                source: ~l/quizes/sample.json
+                source: sample
       # 2 Rank Advance ==========================================
       -
         sfx:

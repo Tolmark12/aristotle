@@ -16,6 +16,7 @@ Parser           = require 'misc/parser'
 PausableDelays   = require 'misc/pausable-delays'
 SlideUX          = require 'slide-ux/slide-ux'
 SoundFX          = require 'misc/sfx'
+smallScreenZoom  = require 'misc/small-screen-zoomer'
 SvgCartographer  = require 'misc/svg-cartographer'
 
 class Aristotle
@@ -40,6 +41,7 @@ class Aristotle
     PubSub.publish 'animations.go.low'
     @setDevMode @isDevMode
     lmsProxy.begin @begin
+    smallScreenZoom()
 
     PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data
 
