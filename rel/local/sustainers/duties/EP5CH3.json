@@ -2,27 +2,27 @@
     "duties":[
                 {
                   "title":"Know Your Recovery Plan",
-                  "content":"EP5Ch3_1.html"
+                  "content":"EP5CH3_1.html"
                 },
                 {
                   "title":"Maintain the Recovery Plan",
-                  "content":"EP5Ch3_2.html"
+                  "content":"EP5CH3_2.html"
                 },
                 {
                   "title":"Backup Your CRCAs",
-                  "content":"EP5Ch3_3.html"
+                  "content":"EP5CH3_3.html"
                 },
                 {
                   "title":"Recover From An Incident",
-                  "content":"EP5Ch3_4.html"
+                  "content":"EP5CH3_4.html"
                 },
                 {
                   "title":"Secure Forensic Data",
-                  "content":"EP5Ch3_5.html"
+                  "content":"EP5CH3_5.html"
                 },
                 {
                   "title":"Create Lessons Learned",
-                  "content":"EP5Ch3_6.html"
+                  "content":"EP5CH3_6.html"
                 }
             ]
 }
