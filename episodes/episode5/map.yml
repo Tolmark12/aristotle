@@ -170,6 +170,9 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
       -
+        sfx:
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.15, loop: true }
+          - {content: ~3/CIN_Quarantine.mp3, delay: 100, volume: .1 }
         movie:
           layers:
             - {depth: 12, content: 6_1_sektimus_intercept.json }
@@ -222,6 +225,9 @@ chapters:
       - !!inc/file ./episodes/episode5/yaml/_simple-sektimus-e6.yaml
       # 2 Sektimus Interlude ==========================================
       -
+        sfx:
+          - {content: ~g/MU_BotTronAttack.mp3, delay: 3300, volume: 0.2, loop: true }
+          - {content: ~g/SFX_AttackSlamdown_BotTron.mp3, delay: 12400, volume: .3 }
         movie:
           layers:
             - {depth: 0, content: red-sky.svg }
@@ -241,7 +247,6 @@ chapters:
             - {action: i }
             - {action: j }
             - {action: k }
-            - {action: l }
             - {action: m }
             - {action: n }
             - {action: o }
@@ -267,7 +272,7 @@ chapters:
               pos: []
               next: 6000
             f:
-              emo: right
+              emo: down
               next: 6000
               pos: [270,470]
               text: The Incident Response Team has been convened. This is definitely a Cyber Security Incident.
@@ -282,22 +287,19 @@ chapters:
               next: 1500
               pos: [270,200]
             i:
-              pos: [270,200]
+              pos: [170,500]
               text: Good call, team. Get the people out.
               audio: Story_6_Ctanlee_8.mp3
             j:
-              next: 500
+              next: 6000
               pos: []
             k:
               pos: []
               audio: Story_6_Sektimus_4.mp3
               actor: sektimus
               text: "[chuckles] I'll now accept your concession CTANLEE, and your resignation from the training program, human. [still chuckling]"
-            l:
-              next: 1500
-              pos: []
             m:
-              pos: [270,300]
+              pos: [270,220]
               text: Not so fast, Sektimus. The wager was against all the CIP Standards and we still have one training chapter left.
               audio: Story_6_Ctanlee_10.mp3
             n:
@@ -356,6 +358,8 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Simulation Recovery ==========================================
       -
+        sfx:
+          - {content: $facilitySFX, delay: 3000, volume:0.8}
         movie:
           layers:
             - {depth: 12, content: 6_3_1_rebuild_sektimus_dialogue.json }
@@ -398,6 +402,8 @@ chapters:
         duration: {kind: time, seconds: 4 }
       # 3 Sektimus Interlude ==========================================
       -
+        sfx:
+          - {content: ~g/MU_BotTronDefenseMusic.mp3, volume: 0.2, loop: true }
         movie:
           layers:
             - {depth: 13, content: 6_3_2_rebuild_sektimus_dialogue_background.json }

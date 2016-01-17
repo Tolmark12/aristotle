@@ -260,6 +260,9 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
       -
+        sfx:
+          - {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15, loop: true }
+          - {content: ~3/CIN_Quarantine.mp3, delay: 33700, volume: .1 }
         movie:
           layers:
             - {depth: 7, content: fatline_extended.json }

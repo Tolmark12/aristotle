@@ -55,8 +55,17 @@ chapters:
       # 1 Simulation A ==========================================
       -
         sfx:
-          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
-          - {content: ~g/SFX_AttackSlamdown_UnsavoryHuman.mp3, delay: 35000, volume: 1}
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
+          - {content: ~4/CIN_HumanExcited.mp3, delay: 3700, volume: .2 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 4700, volume: .2 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 13000, volume: .2, loop: 2}
+          - {content: ~4/CIN_HumanExcited.mp3, delay: 17300, volume: .1 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 22500, volume: .2 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 23500, volume: 0.1 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 27000, volume: .2, loop: 2 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 29000, volume: 0.1 }
+          - {content: ~g/SFX_AttackSlamdown_UnsavoryHuman.mp3, delay: 35000, volume: .5}
+          - {content: ~4/CIN_RobotsMovingExplosion.mp3, delay: 51400, volume: .4}
         movie:
           layers:
             - {depth: 10, content: 5_defender_access_fail.json, vcr: true }
@@ -175,6 +184,11 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulation Compliance ==========================================
       -
+        sfx:
+          - {content: ~4/CIN_HumanExcited.mp3, delay: 100, volume: .2 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 100, volume: .1, loop: 1 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 800, volume: .2 }
+          - {content: ~4/CIN_Typing.mp3, delay: 5700, volume: .05, loop: 2 }
         movie:
           layers:
             - {depth: 11, content: $accessPassA, vcr: true }
@@ -209,7 +223,10 @@ chapters:
       # 1 Simulation Retry Unsavory Fail ==========================================
       -
         sfx:
-          - {content: $accessSFX, delay: 5600, volume: 0.1 }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 2500, volume: .1 }
+          - {content: ~4/CIN_ScannerShock.mp3, delay: 5400, volume: 0.4 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 8000, volume: .1 }
         movie:
           layers:
             - {depth: 11, content: $accessPassB, vcr: true }
@@ -236,7 +253,15 @@ chapters:
       # 1 Simulation Retry Cindy Pass ==========================================
       -
         sfx:
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 4500, volume: .1 }
           - {content: $accessSFX, delay: 8000, volume: 0.1 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 13000, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 20000, volume: .1, loop: 1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 29000, volume: .1 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 34000, volume: .1 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 37000, volume: .2 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 37000, volume: .1, loop: 1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 43000, volume: .05 }
         movie:
           layers:
             - {depth: 11, content: $accessPassC, vcr: true }
@@ -362,6 +387,13 @@ chapters:
       # 2 Dialogue User Accounts 1 ==========================================
       -
         title: Account Attacks
+        sfx:
+          - {content: ~4/CIN_Typing.mp3, delay: 2100, volume: .1, loop: 1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 6000, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 8500, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 11000, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 13500, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 15700, volume: .1, loop: 1 }
         movie:
           layers:
             - {depth: 11, content: ~g/user_account_1.json  }
@@ -380,6 +412,13 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Simulation Brute Force Fail ==========================================
       -
+        sfx:
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
+          - {content: ~4/CIN_Typing.mp3, delay: 9500, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 11890, volume: .1}
+          - {content: ~4/CIN_Typing.mp3, delay: 14200, volume: .1, loop: 2}
+          - {content: ~4/CIN_Typing.mp3, delay: 19200, volume: .1 }
+          - {content: ~4/CIN_AccessGranted.mp3, delay: 21500, volume: .1 }
         movie:
           layers:
             - {depth: 11, content: 5_user_account_fail.json, vcr: true }
@@ -432,6 +471,11 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Simulation Retry Brute Force Pass ==========================================
       -
+        sfx:
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
+          - {content: ~4/CIN_Typing.mp3, delay: 6600, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3, delay: 8730, volume: .1}
+          - {content: ~4/CIN_Typing.mp3, delay: 11200, volume: .1, loop: 1}
         movie:
           layers:
             - {depth: 11, content: 5_user_account_pass.json, vcr: true }
@@ -492,6 +536,9 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
       -
+        sfx:
+          - {content: ~g/MU_Attack_Music.mp3, delay: 2000, volume: 0.15, loop: true }
+          - {content: ~3/CIN_Quarantine.mp3, delay: 1100, volume: .1 }
         movie:
           layers:
             - {depth: 11, content: intercept_e5_1.json }

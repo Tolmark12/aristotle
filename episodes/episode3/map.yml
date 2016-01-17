@@ -47,12 +47,20 @@ chapters:
       # 1 Simulation A ==========================================
       -
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.3, loop: true }
-          - {content: ~3/CIN_HumanWalking.mp3, delay: 6500, volume: 0.1, loop: 2 }
-          - {content: ~3/CIN_RobotTossing.mp3, delay: 100, volume: 0.1, loop: 2 }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 100, volume: 0..05, loop: 0 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 2000, volume: 0.05, loop: 0 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 3500, volume: 0.05, loop: 0 }
+          - {content: ~3/CIN_RobotTossing.mp3, delay: 5800, volume: 0.1, loop: 1 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 5000, volume: 0.08, loop: 2 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 7500, volume: 0.05, loop: 0 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 9200, volume: 0.05, loop: 0 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 11000, volume: 0.05, loop: 0 }
           - {content: ~g/SFX_AttackSlamdown_FlashBot.mp3, delay: 22000, volume: 1}
-          - {content: ~3/CIN_HumanWalking.mp3, delay: 31000, volume: 0.1, loop: 2 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 30800, volume: .08, loop: 1 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 31000, volume: 0.08, loop: 2 }
           - {content: ~3/2001_Space.mp3, delay: 35400, volume: 1}
+          - {content: ~3/CIN_TransmisionLinesBurning.mp3, delay: 55000, volume: .2}
         movie:
           layers:
             - {depth: 8, content: kettle_bush_attack.json, vcr: true }
@@ -127,6 +135,13 @@ chapters:
         duration: {kind: time, seconds: 3 }
       # 1 Animate Install Port Security ==========================================
       -
+        sfx:
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 6800, volume: 0.08, loop: 0 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 10000, volume: 0.08, loop: 1 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 12000, volume: .08, loop: 1 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 14500, volume: .08, loop: 1 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 14000, volume: 0.08, loop: 0 }
+          - {content: $portSFX, delay: 17500, volume: 1}
         movie:
           layers:
             - {depth: 8, content: clear }
@@ -170,7 +185,8 @@ chapters:
       -
         sfx:
           #- {content: ~g/MU_Attack_With_Defense_Music.wav, delay: 1000, volume: 0.5}
-          - {content: $portSFX, delay: 7900, volume: 0.5}
+          - {content: ~3/CIN_FlashDriveRejection.mp3, delay: 7900, volume: 0.5}
+          - {content: ~3/CIN_HumanTossing.mp3, delay: 12200, volume: .8, loop: 0 }
         movie:
           layers:
             - {depth: 10, content: $portDefend, vcr: true }
@@ -279,6 +295,9 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
       -
+        sfx:
+          - {content: ~g/MU_Attack_Music.mp3, delay: 3000, volume: 0.15, loop: true }
+          - {content: ~3/CIN_Quarantine.mp3, delay: 7800, volume: .1 }
         movie:
           layers:
             - {depth: 9, content: fatline_e41.json }
@@ -456,7 +475,27 @@ chapters:
       -
         sfx:
           #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 100, volume: 0.04, loop: 1 }
+          - {content: ~3/CIN_TypingComputerCrash.mp3, delay: 5900, volume: 0.08, loop: 0 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 9800, volume: 0.04, loop: 0 }
+          - {content: ~3/CIN_VehicleRunning.mp3, delay: 14500, volume: 0.1, loop: 0 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 14500, volume: 0.04, loop: 0 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 15000, volume: .08, loop: 1 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 16300, volume: .08, loop: 0 }
           - {content: ~g/SFX_AttackSlamdown_MimeBot.mp3, delay: 21000, volume: 0.2}
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 30000, volume: 0.04, loop: 1 }
+          - {content: ~3/CIN_VehicleRunning.mp3, delay: 33000, volume: 0.08, loop: 1 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 33000, volume: 0.04, loop: 1 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 33000, volume: .08, loop: 0 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 34000, volume: .08, loop: 1 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 35000, volume: .08, loop: 1 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 35500, volume: 0.04, loop: 1 }
+          - {content: ~3/CIN_AssetConnection.mp3, delay: 47000, volume: 0.08, loop: 0 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 49000, volume: 0.04, loop: 1 }
+          - {content: ~3/CIN_HumanExcited.mp3, delay: 50400, volume: .08, loop: 0 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 50100, volume: .08, loop: 1 }
+          - {content: ~3/CIN_ComputerDialOut.mp3, delay: 57000, volume: 0.08, loop: 0 }
+          - {content: ~3/CIN_RobotHacking.mp3, delay: 61000, volume: 0.08, loop: 0 }
         movie:
           layers:
             - {depth: 9, content: change_assets_fail.json, vcr: true }
