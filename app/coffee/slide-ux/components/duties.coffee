@@ -38,22 +38,8 @@ module.exports = class Duties extends Component
     path = aristotle.getAssetPath("~l/#{aristotle.globals.get('dutiesDir')}/#{ data.content }")
     # path = "http://aristotle.gopagoda.io/local/sustainers/duties/EP1CH1_1.html"
     xobj = new XMLHttpRequest()
-    xobj.upload.addEventListener "progress", (e)=>
-      console.log ":: progress ::"
-      console.log e
-    xobj.upload.addEventListener "load",     (e)=>
-      console.log ":: load ::"
-      console.log e
-    xobj.upload.addEventListener "error",    (e)=>
-      console.log ":: error ::"
-      console.log e
-    xobj.upload.addEventListener "abort",    (e)=>
-      console.log ":: abort ::"
-      console.log e
     xobj.onreadystatechange = ()->
       if xobj.readyState == 4 && xobj.status == 200
-        console.log ":: complete ::"
-        console.log xobj.responseText
         me.setUserHtml data, xobj.responseText
 
     xobj.open 'GET', path, true
