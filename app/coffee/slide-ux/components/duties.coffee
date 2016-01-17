@@ -35,10 +35,9 @@ module.exports = class Duties extends Component
 
   getUserHtml : (data) ->
     me   = @
-    # path = aristotle.getAssetPath("~l/#{aristotle.globals.get('dutiesDir')}/#{ data.content }")
-    path = "http://aristotle.gopagoda.io/local/sustainers/duties/EP1CH1_1.html"
+    path = aristotle.getAssetPath("~l/#{aristotle.globals.get('dutiesDir')}/#{ data.content }")
+    # path = "http://aristotle.gopagoda.io/local/sustainers/duties/EP1CH1_1.html"
     xobj = new XMLHttpRequest()
-    xobj.open 'GET', path, true
     xobj.upload.addEventListener "progress", (e)=>
       console.log ":: progress ::"
       console.log e
@@ -56,6 +55,8 @@ module.exports = class Duties extends Component
         console.log ":: complete ::"
         console.log xobj.responseText
         me.setUserHtml data, xobj.responseText
+
+    xobj.open 'GET', path, true
     xobj.send(null)
 
 
