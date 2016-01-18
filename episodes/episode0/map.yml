@@ -201,6 +201,7 @@ chapters:
             - {action: e }
             - {action: f }
             - {action: g }
+            - {action: h }
           actions:
             a:
               emo: left
@@ -223,13 +224,17 @@ chapters:
               audio: Story_1_Ctanlee_12.mp3
             e:
               pos: [170,310]
-              text: "But there's a problem. Hackers, terrorists, and other nasty people want to disrupt our ability to provide this power. These facilities are highly connected and automated through computer technology and therefore vulnerable to a cyber-attack."
-              audio: Story_1_Ctanlee_12b.mp3
+              text: "But there's a problem. Hackers, terrorists, and other nasty people want to disrupt our ability to provide this power."
+              audio: Story_1_Ctanlee_12b1.mp3
             f:
+              pos: [270,310]
+              text: "These facilities are highly connected and automated through computer technology and therefore vulnerable to a cyber-attack."
+              audio: Story_1_Ctanlee_12b2.mp3
+            g:
               pos: [400,300]
               text: "Just imagine a day without power."
               audio: Story_1_Ctanlee_12c.mp3
-            g:
+            h:
               pos: [350,400]
               text: "To protect this critical infrastructure, the government ordered the North American Electric Reliability Corporation - NERC - to create the Critical Infrastructure Protection standards that define how each utility must protect their facilities from attack."
               audio: Story_1_Ctanlee_12d.mp3
@@ -277,6 +282,8 @@ chapters:
             - {action: b }
             - {action: c }
             - {action: d }
+            - {action: e }
+            - {action: f }
           actions:
             a:
               pos: [350,400]
@@ -285,17 +292,25 @@ chapters:
             b:
               emo: right
               pos: [250,500]
-              text: "Several models of robots were sent in this advance force, each specifically designed to attack an aspect of the computer systems that run our facilities. These robots and their human allies have targeted us."
-              audio: Story_1_Ctanlee_18.mp3
+              text: "Several models of robots were sent in this advance force, each specifically designed to attack an aspect of the computer systems that run our facilities."
+              audio: Story_1_Ctanlee_18a.mp3
             c:
+              pos: [250,500]
+              text: "These robots and their human allies have targeted us."
+              audio: Story_1_Ctanlee_18b.mp3
+            d:
               pos: [380,400]
               text: "The government is aware of Sektimus and his advance forces. They secretly directed NERC to create the CIP Standards to help defend against their attacks."
               audio: Story_1_Ctanlee_19.mp3
-            d:
+            e:
               emo: left
               pos: [550,500]
-              text: "So while the CIP Standards protect us from hackers and terrorists on Earth, these are mere pawns in an intergalactic struggle that threatens all humankind. CIP is Earth's secret weapon against this threat."
-              audio: Story_1_Ctanlee_19b.mp3
+              text: "So while the CIP Standards protect us from hackers and terrorists on Earth, these are mere pawns in an intergalactic struggle that threatens all humankind."
+              audio: Story_1_Ctanlee_19b1.mp3
+            f:
+              pos: [550,300]
+              text: "CIP is Earth's secret weapon against this threat."
+              audio: Story_1_Ctanlee_19b2.mp3
         duration: {kind: dialogue }
       # Dialogue Gut Check  ==========================================
       -
@@ -333,7 +348,6 @@ chapters:
               text: "That's the spirit!"
               audio: Story_1_Dialogue_Spirit.mp3
               next: {cmd: slides.next-slide}
-
         ux:
           components:
             -

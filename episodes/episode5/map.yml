@@ -657,3 +657,7 @@ chapters:
               text: "Now go out and protect your infrastructure. Farewell, Defender."
               audio: Story_7_Ctanlee_10.mp3
         duration: {kind: dialogue }
+      # 4 Ctanlee Gone ==========================================
+      -
+        action: [{cmd: ctanlee.hide}]
+        duration: {kind: time, seconds: 2 }
