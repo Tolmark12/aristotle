@@ -670,6 +670,7 @@ chapters:
     slides:
       # 3 Dialogue Visitor Access ==========================================
       -
+        fid: ep4-ch3-a
         title: Visitor Access
         duration: {kind: ux}
         ux:
@@ -686,6 +687,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Simulation Auditbot ==========================================
       -
+        fid: ep4-ch3-b
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
           - {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2 }
@@ -732,6 +734,7 @@ chapters:
         duration: {kind: ux }
       # 3 Dialogue Visitor Escort Procedure ==========================================
       -
+        fid: ep4-ch3-c
         title: The Visitor Escort Procedure
         duration: {kind: ux}
         ux:
@@ -748,6 +751,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Dialogue Visitor Escort Procedure ==========================================
       -
+        fid: ep4-ch3-d
         title: Visitor Limits
         duration: {kind: ux}
         ux:
@@ -764,6 +768,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Zoom Perimeter View ==========================================
       -
+        fid: ep4-ch3-e
         movie:
           layers:
             - {depth: 11, content: ~g/perimeter_door.json }
@@ -773,6 +778,7 @@ chapters:
       - !!inc/file ./episodes/episode4/yaml/_visitor-escort-selector.yaml
       # 3 Animate Selector Build ==========================================
       -
+        fid: ep4-ch3-g
         sfx:
           - {content: $visitorSFX, volume: .3}
         movie:
@@ -782,6 +788,7 @@ chapters:
         duration: {kind: time, seconds: 3.5}
       # 3 Simulation Visitor Tracked ==========================================
       -
+        fid: ep4-ch3-h
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
           - {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2, loop: 3 }
@@ -820,6 +827,7 @@ chapters:
         duration: {kind: ux }
       # 3 Dialogue Home Stretch ==========================================
       -
+        fid: ep4-ch3-i
         title: On the Home Stretch
         duration: {kind: ux}
         ux:
@@ -836,6 +844,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Duties ==========================================
       -
+        fid: ep4-ch3-j
         title: Duties
         movie:
           layers:
@@ -849,6 +858,7 @@ chapters:
         duration: {kind: ux}
       # 3 Quiz ==========================================
       -
+        fid: ep4-ch3-k
         duration: {kind: ux}
         ux:
           components:

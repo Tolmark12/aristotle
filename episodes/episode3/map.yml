@@ -233,6 +233,7 @@ chapters:
   # ------------------------------------ CHAPTER 2
   # ----------------------------------------------
   -
+    fid: "ep3-ch2"
     title: Chapter 2
     subtitle: Software Defenses
     kind: chapter
