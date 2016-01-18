@@ -4,11 +4,11 @@ subtitle: Organizing Our Defenses
 rankId: recruit
 skipSlate: true
 nextRankId: cadet
-ctanlee: !!inc/file ./episodes/global/_ctanlee.yaml
 
 # CHAPTER 1
 chapters:
   -
+    ctanlee: !!inc/file ./episodes/global/_ctanlee.yaml
     title: Loading Introduction
     kind: intro
     slides:
