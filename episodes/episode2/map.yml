@@ -221,6 +221,7 @@ chapters:
         duration: {kind: ux }
       # 1 Duties ==========================================
       -
+        title: Duties
         movie:
           layers:
             - {depth: 7, content: clear }
@@ -260,6 +261,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
       -
+        title: A Disturbance
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15, loop: true }
           - {content: ~3/CIN_Quarantine.mp3, delay: 33700, volume: .1 }
@@ -728,6 +730,7 @@ chapters:
         duration: {kind: ux }
       # 2 Duties ==========================================
       -
+        title: Duties
         action:
           - {cmd: ctanlee.gohome}
         movie:

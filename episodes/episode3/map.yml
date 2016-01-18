@@ -217,6 +217,7 @@ chapters:
         duration: {kind: ux }
       # 1 Duties ==========================================
       -
+        title: Duties
         movie:
           layers:
             - {depth: 9, content: clear }
@@ -441,6 +442,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Duties ==========================================
       -
+        title: Duties
         ux:
           components:
             -
@@ -791,6 +793,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Duties ==========================================
       -
+        title: Duties
         action: {cmd: ctanlee.gohome}
         ux:
           components:

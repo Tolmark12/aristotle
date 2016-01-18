@@ -38,7 +38,6 @@ module.exports = class Duties extends Component
     path = aristotle.getAssetPath("~l/#{aristotle.globals.get('dutiesDir')}/#{ data.content }")
     xobj = new XMLHttpRequest()
     xobj.onreadystatechange = ()->
-      console.log xobj
       if xobj.readyState == 4 && xobj.status == 200
         me.setUserHtml data, xobj.responseText
       # If there is an issue with duties, skip and go to the next

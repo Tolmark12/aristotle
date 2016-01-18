@@ -1,6 +1,7 @@
 module.exports = class Question
 
   constructor: (@$parent, @data, @questionValue=120, @answerCallback) ->
+    @totalPoints = 0
     PubSub.publish 'meta.quiz.question.start', {id:@data.index+1}
     @wrongGuesses = 0
     @countWrongAnswers()
@@ -8,6 +9,7 @@ module.exports = class Question
   build : () ->
     @$node = $ jadeTemplate['slide-ux/components/quiz/question']( @data )
     @$parent.prepend @$node
+    @$questionTotal = $ "#question-total", @$node
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
     $(".answer-wrapper", @$node).on "click", @onAnswerClick
 
@@ -26,14 +28,19 @@ module.exports = class Question
     @answerCallback @guessedRight
     @clickResults $el, @guessedRight
 
+    @$questionTotal.html @totalPoints
+
 
   clickResults : ($el, guessedRight) ->
     if guessedRight
       result = 'right'
       points = @pointsEarned()
+      @totalPoints = @pointsEarned()
+
     else
       result = 'wrong'
       points = (@questionValue/2) / @totalWrongAnswers
+      @totalPoints -= points
 
     $node = $ jadeTemplate['slide-ux/components/quiz/points-float']( {points:points, result:result} )
     $el.append $node

@@ -317,6 +317,7 @@ chapters:
               emo: down
               text: "When all duties are acknowledged, you can click CONTINUE to proceed."
               audio: Story_2_Ctanlee_33.mp3
+        title: Duties
         ux:
           components:
             -
@@ -542,6 +543,7 @@ chapters:
           layers:
             - {depth: 6, content: clear }
             - {depth: 7, content: clear }
+        title: Duties
         ux:
           components:
             -
@@ -687,6 +689,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Duties ==========================================
       -
+        title: Duties
         ux:
           components:
             -

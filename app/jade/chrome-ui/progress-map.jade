@@ -1,5 +1,5 @@
 .progress-map.bottom-item
   each milestone in milestones
-    .milestone(id="#{milestone.id}" data-title="#{ milestone.title }" class=milestone.icon === "chapter-progress-chapter" ? "chapter" : undefined )
+    .milestone(id="#{milestone.id}" data-title="#{ milestone.title }" data-chapter="#{ milestone.chapter }" data-txt="#{ milestone.txt }" class=milestone.icon === "chapter-progress-chapter" ? "chapter" : undefined )
       img.shadow-icon(data-src="#{ milestone.icon }")
   

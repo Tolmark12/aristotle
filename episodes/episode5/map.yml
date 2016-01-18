@@ -108,6 +108,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Duties ==========================================
       -
+        title: Duties
         ux:
           components:
             -

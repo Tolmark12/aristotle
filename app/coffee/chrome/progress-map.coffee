@@ -35,12 +35,14 @@ module.exports = class ProgressMap
     items = []
     for chapter in data.chapters
 
-      items.push {kind: "chapter", title:"#{chapter.title} - #{chapter.subtitle}", id: @titleToId(chapter.title) }
+      items.push {kind: "chapter", chapter:chapter.title, title:"#{chapter.title}", txt:"#{chapter.title} - #{chapter.subtitle}", id: @titleToId(chapter.title) }
       for slide in chapter.slides
-        item = @getItem slide
+        item = @getItem slide, chapter.title
         if slide.title?
           if !item? then item = {kind: "slide"}
-          item.title = slide.title
+          item.title   = slide.title
+          item.txt     = slide.title
+          item.chapter = chapter.title
 
         if item?
           item.id = @titleToId(item.title)
@@ -60,27 +62,27 @@ module.exports = class ProgressMap
     title = title.replace /([\!\?\'])/g, '' # remove any '!' or '?' symbols
     title.toLowerCase()
 
-  getItem : (slide) ->
+  getItem : (slide, chapter) ->
     return null if !slide.ux?
     return null if !slide.ux.components?
     for component in slide.ux.components
       if component.kind == "quiz"
-        return {kind:"quiz", title:"quiz"}
+        return {kind:"quiz", title:"quiz", txt:"Quiz", chapter:chapter}
       else if component.kind == "duties"
-        return {kind:"duties", title:"Duty Review"}
+        return {kind:"duties", title:"Duty Review", txt:"Duty Review", chapter:chapter}
     return null
 
   # ------------------------------------ Events
 
   onChapterClick : ($el) ->
     return if !$el.hasClass "viewed" #Stop if this slide hasn't been viewed
-    PubSub.publish 'episode.goto', $el.attr "data-title"
+    PubSub.publish 'episode.goto', {slide:$el.attr("data-title"), chapter:$el.attr("data-chapter")}
   onMileStoneClick : ($el) ->
     # return if !$el.hasClass "viewed" #Stop if this slide hasn't been viewed
-    PubSub.publish 'episode.goto', $el.attr "data-title"
+    PubSub.publish 'episode.goto', {slide:$el.attr("data-title"), chapter:$el.attr("data-chapter")}
   onMileStoneOver  : ($el) ->
     return if !$el.hasClass "viewed" #Stop if this slide hasn't been viewed
-    PubSub.publish 'label.attach', { el:$el, content:{title: $el.attr("data-title")} }
+    PubSub.publish 'label.attach', { el:$el, content:{title: $el.attr("data-txt")} }
   onMileStoneOut   : ($el) ->
     PubSub.publish 'label.destroy', $el
 

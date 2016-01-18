@@ -20,7 +20,6 @@ module.exports = class Episode
   begin : () =>
     aristotle.devTools.go @trainingData.dev, @trainingData.chapters
 
-    # @token1 = PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data
     PubSub.publish("episode.loaded", @trainingData);
 
     @createChapters @trainingData
@@ -52,7 +51,8 @@ module.exports = class Episode
 
   # Goto a certain point in the training based on the title of the
   # slide, chapter, quiz or duties element
-  gotoLocationByTitle : (title) ->
+  gotoLocationByTitle : (title, chapTitle) ->
+
     PubSub.publish 'movie.layers.clear-all'
     layers = {}
 
@@ -64,7 +64,7 @@ module.exports = class Episode
 
       # Loop throught slides building the layer views, and looking for the matching title
       for slide in chapter.slides
-        if slide.title == title
+        if slide.title == title && chapterTitle == chapTitle
           slideTitle = slide.title
           breakLoop1 = true; break
 
@@ -112,8 +112,8 @@ module.exports = class Episode
 
   playChapter     : (firstSlide=null) =>
     # PubSub.publish 'state.rehydrate'
-    @chapters.getCurrentItem().start firstSlide
     PubSub.publish 'chapter.started', @chapters.getCurrentItem().chapterData.title
+    @chapters.getCurrentItem().start firstSlide
 
   episodeComplete : () ->
     if @isLastEpisode

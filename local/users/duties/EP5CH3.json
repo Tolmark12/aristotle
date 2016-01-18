@@ -1,0 +1,29 @@
+{
+    "duties":[
+
+                {
+                  "title":"Know Your Incident Response Plan",
+                  "content":"EP5CH3_1.html"
+                },
+                {
+                  "title":"Respond to Incidents",
+                  "content":"EP5CH3_2.html"
+                },
+                {
+                  "title":"Test the Incident Response Plan",
+                  "content":"EP5CH3_3.html"
+                },
+                {
+                  "title":"Know Your Recovery Plan",
+                  "content":"EP5CH3_5.html"
+                },
+                {
+                  "title":"Recover From An Incident",
+                  "content":"EP5CH3_8.html"
+                },
+                {
+                  "title":"Secure Forensic Data",
+                  "content":"EP5CH3_9.html"
+                }
+            ]
+}
