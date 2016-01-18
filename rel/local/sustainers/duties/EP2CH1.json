@@ -1,0 +1,16 @@
+{
+    "duties":[
+      {
+          "title":"Know Your PSPs",
+          "content":"EP2CH1_1.html"
+                },
+                {
+		  "title":"Validate PSP Access",
+		  "content":"EP2CH1_2.html"
+                },
+                {
+		  "title":"Maintain PSP Devices",
+		  "content":"EP2CH1_3.html"
+		}
+            ]
+}
