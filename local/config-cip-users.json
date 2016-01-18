@@ -14,5 +14,7 @@
     "3" : "map.json",
     "4" : "map.json",
     "5" : "map.json"
-  }
+  },
+  "filter":{}
+  
 }

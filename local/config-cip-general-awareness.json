@@ -14,5 +14,10 @@
     "3" : "map.json",
     "4" : "map.json",
     "5" : "map.json"
+  },
+  "filters":{
+    "2":{
+      "ep2-ch2-sektimus":""
+    }
   }
 }

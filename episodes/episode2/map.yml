@@ -263,6 +263,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
       -
+        fid: ep2-ch2-sektimus
         title: A Disturbance
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15, loop: true }
