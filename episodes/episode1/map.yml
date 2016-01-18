@@ -71,6 +71,7 @@ chapters:
                   a: {title: "BCA"}
       # 1 Zoom Assets overview  ==========================================
       -
+        action: {cmd: animations.go.high}
         title: Asset Overview
         movie:
           layers:
@@ -294,6 +295,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Duties with CTANLEE Guidance ==========================================
       -
+        action: {cmd animations.go.low}
         dialogue:
           timeline:
             - {action: a }

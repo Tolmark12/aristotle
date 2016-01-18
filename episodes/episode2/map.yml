@@ -128,6 +128,7 @@ chapters:
         duration: {kind: time, seconds: 3.5 }
       # 1 Animate Perimeter Build ==========================================
       -
+        action: {cmd animations.go.high}
         movie:
           layers:
             - {depth: 6, content: perimeter_physical.json }
@@ -144,6 +145,7 @@ chapters:
         duration: {kind: dialogue}
       # 1 Dialogue Perimeter Try Again ==========================================
       -
+        action: {cmd animations.go.low}
         title: Let's Try Again
         movie:
           zoom: {scale: 1}
