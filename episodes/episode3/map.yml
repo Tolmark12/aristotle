@@ -184,7 +184,7 @@ chapters:
       # 1 Simulation==========================================
       -
         sfx:
-          #- {content: ~g/MU_Attack_With_Defense_Music.wav, delay: 1000, volume: 0.5}
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true }
           - {content: ~3/CIN_FlashDriveRejection.mp3, delay: 7900, volume: 0.5}
           - {content: ~3/CIN_HumanTossing.mp3, delay: 12200, volume: 0.2, loop: 0 }
         movie:

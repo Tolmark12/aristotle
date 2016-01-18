@@ -5,7 +5,7 @@ rankId: master-cadet
 nextRankId: defender
 isLastEpisode: true
 labels: !!inc/file ./episodes/global/_labels.yaml
-action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
+action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
 
 # CHAPTER 1
 chapters:
@@ -108,7 +108,6 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Duties ==========================================
       -
-        title: Duties
         ux:
           components:
             -
@@ -171,14 +170,14 @@ chapters:
                   style: lightning
                   text: review duties
                   action: {cmd: slides.next-slide}
-      # 2 Sektimus Interlude A ==========================================
+      # 2 Sektimus Interlude ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .1, slot: music} }
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.15, loop: true }
           - {content: ~3/CIN_Quarantine.mp3, delay: 100, volume: .1 }
         movie:
           layers:
-            - {depth: 12, content: 6_8_special_sektimus_intercept.json }
+            - {depth: 12, content: 6_1_sektimus_intercept.json }
         dialogue:
           defaults:
             next: audio
@@ -190,108 +189,48 @@ chapters:
             - {action: e }
             - {action: f }
             - {action: g }
-            - {action: h }
-            - {action: i }
-            - {action: j }
-            - {action: k }
-            - {action: l }
-            - {action: m }
           actions:
             a:
-              pos: [270,300]
-              text: Wait… I sense a disturbance in the Core. Someone I've not felt for a long time…
-              audio: ~g/Story_6alt_Ctanlee_1.mp3
-            b:
-              pos: [370,300]
-              emo: surprise
-              text: We're receiving a communication. It's much too powerful.
-              audio: ~g/Story_6alt_Ctanlee_2.mp3
-            c:
-              audio: ~g/Story_6alt_Warcore_1.mp3
-              actor: warcore
-              text: Signal captured. Starting live feed.
-            d:
               pos: []
-              audio: ~g/Story_6alt_Sektimus_1.mp3
+              audio: Story_6_Sektimus_1.mp3
               actor: sektimus
-              text: Where are you little mind? What did the humans call you long ago? … WarMind? Such a pretentious name.
-            e:
-              pos: [370,400]
-              text:  It's Sektimus...
-              audio: ~g/Story_6alt_Ctanlee_3.mp3
-            f:
-              actor: sektimus
-              text: My, my, my - you HAVE been busy. … No matter. It will benefit you not. While you've spent your energy on humans, I've had many cycles to improve my Metal Swarm and now it is perfe-
-              audio: ~g/Story_6alt_Sektimus_2.mp3
-            g:
-              actor: sektimus
-              text: What is this? Who are you? A human. You've already loaded a human into your pitiful training system!
-              audio: ~g/Story_6alt_Sektimus_3.mp3
-            h:
-              actor: sektimus
-              text: Listen to me, human. Fighting me will only prolong your suffering. My forces on Earth are already undermining your Bulk Electric System, preparing the way for my Metal Swarm.
-              audio: ~g/Story_6alt_Sektimus_4.mp3
-            i:
-              actor: sektimus
-              text: CIP will not save you. CTANLEE will not save you. Abandon this training and I won't extend your suffering after I conquer Earth.
-              audio: ~g/Story_6alt_Sektimus_5.mp3
-            j:
-              emo: right
-              pos: [270,400]
-              text: All words and no action, Sektimus.
-              audio: ~g/Story_6alt_Ctanlee_4.mp3
-            k:
-              pos: [270,400]
-              text: This Cadet has a facility that has defeated every attack your robots are programmed with.
-              audio: ~g/Story_6alt_Ctanlee_5a.mp3
-            l:
-              pos: [270,400]
-              text: If you can give us an attack that our CIP defenses can't handle then we'll concede that this CIP training is futile and no match for your power.
-              audio: ~g/Story_6alt_Ctanlee_5b.mp3
-            m:
-              pos: [270,400]
-              text: Cadet, do you accept this challenge with me?
-              audio: ~g/Story_6alt_Ctanlee_5c.mp3
-        duration: {kind: dialogue }
-      # 2 Sektimus Are you Ready? ==========================================
-      - !!inc/file ./episodes/episode4/yaml/_simple-sektimus-e5.yaml
-      # 2 Sektimus Interlude B ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 12, content: 6_9_special_sektimus_intercept.json }
-        dialogue:
-          defaults:
-            next: audio
-          timeline:
-            - {action: a }
-            - {action: b }
-            - {action: c }
-            - {action: d }
-          actions:
-            a:
-              actor: sektimus
-              text: I accept the challenge as well…
-              audio: ~g/Story_6alt_Sektimus_6.mp3
+              text: Skip the simulation? So confident aren't we? CIP has my robots all figured out, doesn't it?
             b:
-              actor: sektimus
-              text: I'm uploading scripts that contain an attack your Cadet cannot defeat.
-              audio: ~g/Story_6alt_Sektimus_7.mp3
-            c:
               emo: right
               pos: [270,400]
-              text: WarCore, can you scan this signal for Malware?
-              audio: ~g/Story_6alt_Ctanlee_6.mp3
+              text: All words and no action, Sektimus. We are waiting for an attack that will defeat our CIP-secured facility.
+              audio: Story_6_Ctanlee_1.mp3
+            c:
+              pos: []
+              audio: Story_6_Sektimus_2.mp3
+              actor: sektimus
+              text: Your wait is over. I'm uploading scripts that contain an attack your Cadet cannot defeat.
             d:
+              emo: down
+              pos: [670,420]
+              text: WarCore, can you scan this signal for Malware?
+              audio: Story_6_Ctanlee_2.mp3
+            e:
+              pos: []
+              audio: Story_6_Warcore_1.mp3
               actor: warcore
               text: Scanning. Signal Clean. CTANLEE, these appear to be simple parameters for configuring my simulator with a new attack.
-              audio: ~g/Story_6alt_Warcore_2.mp3
+            f:
+              pos: []
+              next: 1800
+            g:
+              pos: [270,400]
+              text: Cadet, are you ready to put your facility to the test?
+              audio: Story_6_Ctanlee_3.mp3
         duration: {kind: dialogue }
-      # 2 BotTron Attack ==========================================
+      # 2 Sektimus Are you Ready? ==========================================
+      - !!inc/file ./episodes/episode5/yaml/_simple-sektimus-e6.yaml
+      # 2 Sektimus Interlude ==========================================
       -
         sfx:
           - {content: ~g/MU_BotTronAttack.mp3, delay: 3300, volume: 0.2, loop: true }
           - {content: ~g/SFX_AttackSlamdown_BotTron.mp3, delay: 12400, volume: .3 }
+          - {content: ~5/SFX_BotTron_Attack.mp3, delay: 20000, volume: 1 }
         movie:
           layers:
             - {depth: 0, content: red-sky.svg }
@@ -386,6 +325,7 @@ chapters:
     slides:
       # 3 Dialogue Recovery Plan ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .08, slot: music} }
         title: The Recovery Plan
         movie:
           layers:
@@ -457,7 +397,9 @@ chapters:
       - !!inc/file ./episodes/episode5/yaml/_nerc-defense-selector.yaml
       # 3 Animate Nerc Build ==========================================
       -
-        action: {cmd: ctanlee.gohome}
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3, loop: true, volume: .2, slot: music} }
         sfx:
           - {content: $nercSFX, volume: 1}
         movie:
@@ -466,8 +408,6 @@ chapters:
         duration: {kind: time, seconds: 4 }
       # 3 Sektimus Interlude ==========================================
       -
-        sfx:
-          - {content: ~g/MU_BotTronDefenseMusic.mp3, volume: 0.2, loop: true }
         movie:
           layers:
             - {depth: 13, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
@@ -500,6 +440,7 @@ chapters:
         duration: {kind: ux }
       # 3 Sektimus Interlude ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .08, slot: music} }
         movie:
           layers:
             - {depth: 14, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
@@ -640,7 +581,7 @@ chapters:
       # 4 Movie ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_Defender.mp3, volume: 1}
+          - {content: ~g/SFX_Level_Defender.mp3, volume:1}
         movie:
           layers:
             - {depth: 13, content: 7-Conclusion.mp4 }
