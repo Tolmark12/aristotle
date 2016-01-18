@@ -36,11 +36,17 @@ module.exports = class Duties extends Component
   getUserHtml : (data) ->
     me   = @
     path = aristotle.getAssetPath("~l/#{aristotle.globals.get('dutiesDir')}/#{ data.content }")
-    # path = "http://aristotle.gopagoda.io/local/sustainers/duties/EP1CH1_1.html"
     xobj = new XMLHttpRequest()
     xobj.onreadystatechange = ()->
+      console.log xobj
       if xobj.readyState == 4 && xobj.status == 200
         me.setUserHtml data, xobj.responseText
+      # If there is an issue with duties, skip and go to the next
+      else if xobj.status == 404
+        return if me.thrown404
+        me.thrown404 = true
+        aristotle.throw "Couldn't find the duties file #{data.content}, check the json file for typos."
+        PubSub.publish 'slides.next-slide'
 
     xobj.open 'GET', path, true
     xobj.send(null)

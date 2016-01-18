@@ -9,7 +9,7 @@
     .answers
       .bank.left
         each answer in answers1
-          .answer
+          .answer(class="#{answer.isPerfect ? 'ace' : ''}")
             .name= answer.name
             .score= answer.score
             .perfect
@@ -17,7 +17,7 @@
                 img.shadow-icon(data-src="perfect-answer")
       .bank
         each answer in answers2
-          .answer
+          .answer(class="#{answer.isPerfect ? 'ace' : ''}")
             .name= answer.name
             .score= answer.score
             .pefect

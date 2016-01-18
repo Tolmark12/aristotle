@@ -12,3 +12,8 @@
 @include include-font($fun,      'functionpro_bold_macroman/FunctionPro-Bold', 'function_pro_bookbold', 500, normal);
 // bold condensed
 @include include-font($fun_cond, 'functionpro_boldcondensed_macroman/FunctionPro-CondensedBold', 'function_probold_condensed', 500, normal);
+// bold condensed oblique
+@include include-font($fun_cond, 'functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl', 'function_proBldCnOb', 500, italic);
+// bold condensed oblique
+@include include-font($fun_cond, 'functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl', 'function_proExBldCnOb', 600, italic);
+

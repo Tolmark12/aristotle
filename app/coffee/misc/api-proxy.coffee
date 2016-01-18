@@ -12,7 +12,7 @@ module.exports = class APIproxy
     PubSub.subscribe 'meta.quiz.start'           , (m, data)=> @startQuiz data
     PubSub.subscribe 'meta.quiz.finish'          , (m, data)=> @finishQuiz data
     PubSub.subscribe 'meta.quiz.question.start'  , (m, data)=> @startQuizQuestion data
-    PubSub.subscribe 'meta.quiz.question.answer' , (m, data)=> @addActivity data
+    PubSub.subscribe 'meta.quiz.question.answer' , (m, data)=> @addQuizActivity data
     PubSub.subscribe 'meta.quiz.question.finish' , (m, data)=> @finishQuizQuestion data
 
   startChapter : (data)->
@@ -57,7 +57,7 @@ module.exports = class APIproxy
 
   startQuizQuestion : (data)->
     @chapter.quiz.questions[data.id] = { StartTimeUtc: @now(), QuestionNumber:data.id, Activities:[] }
-  addActivity : (data) ->
+  addQuizActivity : (data) ->
     @chapter.quiz.questions[data.id].Activities.push { ActivityName: data.answer, EventTimeUtc: @now() }
   finishQuizQuestion : (data)->
     @chapter.quiz.questions[data.id].EndTimeUtc = @now()

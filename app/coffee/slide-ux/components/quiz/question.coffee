@@ -46,7 +46,7 @@ module.exports = class Question
 
   isPerfect : () -> @wrongGuesses == 0
 
-  getName : () ->if @name? then @name else " #{@data.index+1}"
+  getName : () ->if @name? then @name else "Question #{@data.index+1}"
 
   getScore : () -> "#{@pointsEarned()}/#{@questionValue}"
 

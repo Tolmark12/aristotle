@@ -48,7 +48,7 @@ chapters:
       -
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true }
-          - {content: ~3/CIN_TreeMoving.mp3, delay: 100, volume: 0..05, loop: 0 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 100, volume: 0.05, loop: 0 }
           - {content: ~3/CIN_TreeMoving.mp3, delay: 2000, volume: 0.05, loop: 0 }
           - {content: ~3/CIN_TreeMoving.mp3, delay: 3500, volume: 0.05, loop: 0 }
           - {content: ~3/CIN_RobotTossing.mp3, delay: 5800, volume: 0.1, loop: 1 }

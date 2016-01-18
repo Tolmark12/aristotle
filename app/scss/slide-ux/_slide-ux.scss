@@ -89,8 +89,8 @@ input{border:none; }
 $arrow-size    : 8px;
 $bg-color      : rgba(#020308, 0.8);
 $horiz-padding : 9px;
-.label-trigger          { color: white; cursor:pointer; position:relative; display:inline-block; border-bottom:solid 1px rgba($yellow, 0.3); font-weight:400;
-  &.new                 { color: #6C989F; }
+.label-trigger          { color: white; cursor:pointer; position:relative; display:inline-block;  font-weight:400;
+  &.new                 { color: #6C989F; font-weight:500; }
   &:hover               { color: $orange; }
   .label-wrapper        { left:50%; }
 }

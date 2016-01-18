@@ -80,6 +80,20 @@ h1, h2 {
   font-weight: 500;
   font-style: normal; }
 
+@font-face {
+  font-family: 'Function Condensed';
+  src: url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.eot");
+  src: url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.woff") format("woff"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.svg#function_proBldCnOb") format("svg");
+  font-weight: 500;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Function Condensed';
+  src: url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.eot");
+  src: url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.woff") format("woff"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.svg#function_proExBldCnOb") format("svg");
+  font-weight: 600;
+  font-style: italic; }
+
 .aristotle {
   width: 1024px;
   height: 768px;
@@ -1127,7 +1141,17 @@ body.body-quiz-results .chrome {
         width: 600px;
         height: 41px; }
       .slide-ux .quiz-results .total:before {
-        content: "TOTAL"; }
+        content: "TOTAL";
+        font-color: #6B989F;
+        font-size: 26px;
+        letter-spacing: 0.05em;
+        font-family: 'Function Condensed';
+        font-weight: 200; }
+      .slide-ux .quiz-results .total .score {
+        width: 150px;
+        font-size: 28px;
+        font-weight: bold;
+        color: #335E6E; }
     .slide-ux .quiz-results .answers {
       display: flex;
       justify-content: space-around; }
@@ -1138,10 +1162,15 @@ body.body-quiz-results .chrome {
         display: flex;
         align-items: center;
         padding: 3px 0; }
+        .slide-ux .quiz-results .answers .answer.ace .score {
+          color: #335E6E; }
         .slide-ux .quiz-results .answers .answer .name {
           width: 150px;
+          font-color: #6B989F;
           font-size: 26px;
-          font-family: 'Function Condensed'; }
+          letter-spacing: 0.05em;
+          font-family: 'Function Condensed';
+          font-weight: 200; }
         .slide-ux .quiz-results .answers .answer .score {
           width: 150px;
           font-size: 28px;
@@ -1157,10 +1186,15 @@ body.body-quiz-results .chrome {
       .slide-ux .quiz-results .decisions * {
         font-family: 'Function Condensed'; }
       .slide-ux .quiz-results .decisions:before {
+        font-color: #6B989F;
         font-size: 26px;
+        letter-spacing: 0.05em;
+        font-family: 'Function Condensed';
+        font-weight: 200;
         content: "DECISIONS";
         display: inline-block; }
       .slide-ux .quiz-results .decisions .decision-bank {
+        letter-spacing: 0.08em;
         border-left: solid 2px #6B989F;
         padding-left: 25px;
         margin-left: 20px; }
@@ -1168,10 +1202,13 @@ body.body-quiz-results .chrome {
           margin: 10px 0; }
           .slide-ux .quiz-results .decisions .decision-bank .decision .txt {
             font-size: 26px;
-            color: #335E6E; }
+            color: #335E6E;
+            font-weight: 500;
+            font: 'Function Condensed';
+            font-style: italic; }
             .slide-ux .quiz-results .decisions .decision-bank .decision .txt span {
               color: #FB9130;
-              font-weight: bold;
+              font-weight: 600;
               font-size: 26px; }
               .slide-ux .quiz-results .decisions .decision-bank .decision .txt span.perc:after {
                 content: "%";
@@ -1587,10 +1624,10 @@ input {
   cursor: pointer;
   position: relative;
   display: inline-block;
-  border-bottom: solid 1px rgba(254, 182, 68, 0.3);
   font-weight: 400; }
   .label-trigger.new {
-    color: #6C989F; }
+    color: #6C989F;
+    font-weight: 500; }
   .label-trigger:hover {
     color: #F9773E; }
   .label-trigger .label-wrapper {
