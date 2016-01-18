@@ -42,6 +42,8 @@ chapters:
         duration: {kind: ux}
       # Animation Load Warcore ==========================================
       -
+        sfx:
+          #- {content: ~g/MU_Ambient_Facility_no_notes.mp3, volume: 1, loop: true }
         title: Load Warcore
         movie:
           layers:
@@ -234,6 +236,8 @@ chapters:
         duration: {kind: dialogue }
       # Animation Sektimus Launch  ==========================================
       -
+        sfx:
+          #- {content: ~g/CIN_Intro_Sektimus.mp3, volume: 2, loop: 0 }
         title: Sektimus
         action: {cmd: chrome.hide}
         movie:
