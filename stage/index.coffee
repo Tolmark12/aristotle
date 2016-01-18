@@ -24,8 +24,6 @@ switch role
   else                              configFile = "config-cip-sustainers.json"
 
 
-console.log configFile
-
 # Load either the user specified episode, or a default one
 aristotle = new Aristotle $(".holder"), configFile, "episodes", "local", episode, isDevMode, isLocal, sudo
 if cache == "false" then aristotle.dontCache = true
