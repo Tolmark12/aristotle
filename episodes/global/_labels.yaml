@@ -30,7 +30,7 @@ bcsi:
   text: "Information useful for an attacker planning an attack. Examples include maps, security plans, network diagrams, and configuration information stored on hard drives, file shares, and in filing cabinets."
 crca:
   title: "CIP-Related Cyber Assets (CRCA)"
-  text: "A single term that used to cover all the crazy CIP acronyms for assets that have security requirements. CRCA is used to refer to these asset types: BES Cyber Assets, Protected Cyber Assets, Electronic Access and Monitoring Systems, and Physical Access Control Systems."
+  text: "A single term that covers all the crazy CIP acronyms for assets that have security requirements. CRCA is used to refer to these asset types: BES Cyber Assets, Protected Cyber Assets, Electronic Access and Monitoring Systems, and Physical Access Control Systems."
 electronic_access:
   title: "Electronic Access"
   text: "The ability to logon to workstations, servers, and other CRCAs."
@@ -91,3 +91,6 @@ eisac:
 vulnerability_assessment:
   title: "Vulnerability Assessment"
   text: "A process that identifies security holes (vulnerabilities) in our systems. Includes a security analysis of networks, CRCAs, and other systems an attacker may try to compromise."
+self-report:
+  title: "Self-Report"
+  text: "If we discover a potential non-compliance issue outside of an audit and report the issue to our regulator. We still may receive a violation, but regulators will look more favorably on self-reports than issues caught during an audit."

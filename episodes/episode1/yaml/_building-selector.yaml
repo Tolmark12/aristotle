@@ -72,5 +72,5 @@ ux:
                   facilitySFX: ~1/SFX_FacilityType_ControlCenter.mp3
             btnTxt: Control Center
             icon: mini-control-center
-            blurb: "<span>Monitor to Operator Ratio:</span> 8:1 <br/><span>Favorite Beverage:</span> Coffee <br/><span>Second Favorite Beverage: Coffee </span><br/><span>CIP Impact:</span> Medium Impact Facility"
+            blurb: "<span>Monitor to Operator Ratio:</span> 8:1 <br/><span>Favorite Beverage:</span> Coffee <br/><span>Second Favorite Beverage:</span> Coffee<br/><span>CIP Impact:</span> Medium Impact Facility"
             details: "Controls critical substations and generation plants and houses the Energy Management System. This particular center also operates a sweet anti-spacecraft Tesla Cannon, critical to the defense of the BES from the bots. <br/><br/>With this setup you could run a killer game of tic-tac-toe or Global Thermonuclear War. Would you like to play a game?"

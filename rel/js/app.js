@@ -2193,7 +2193,7 @@ module.exports = APIproxy = (function() {
     })(this));
     PubSub.subscribe('meta.quiz.question.answer', (function(_this) {
       return function(m, data) {
-        return _this.addQuesitonActivity(data);
+        return _this.addActivity(data);
       };
     })(this));
     PubSub.subscribe('meta.quiz.question.finish', (function(_this) {
@@ -2276,7 +2276,7 @@ module.exports = APIproxy = (function() {
     };
   };
 
-  APIproxy.prototype.addQuesitonActivity = function(data) {
+  APIproxy.prototype.addActivity = function(data) {
     return this.chapter.quiz.questions[data.id].Activities.push({
       ActivityName: data.answer,
       EventTimeUtc: this.now()
@@ -5511,7 +5511,7 @@ module.exports = Question = (function() {
     if (this.name != null) {
       return this.name;
     } else {
-      return "Quesiton " + (this.data.index + 1);
+      return " " + (this.data.index + 1);
     }
   };
 

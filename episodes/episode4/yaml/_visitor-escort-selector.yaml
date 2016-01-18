@@ -45,7 +45,7 @@ ux:
                   visitorSFX: ~4/SFX_VisitorEscortSystem_GuestLogBook.mp3
             btnTxt: Guest Log Book
             icon: mini-log-book
-            blurb: "Self-expression: -100% <br/>Risk of theft: 0%"
+            blurb: "<span>Self-expression:</span> -100% <br/><span>Risk of theft:</span> 0%"
             details: "Just your regular, every day, ho-hum, visitor log book, focus tested for maximum generic-ness. Yeah, you have to actually log entry/exit with a pencil and make sure your visitors follow you around. <br/>And there's risk of papercuts, too."
           -
             click:
@@ -59,7 +59,7 @@ ux:
                   visitorSFX: ~4/SFX_VisitorEscortSystem_EscortLeash.mp3
             btnTxt: PSP Buddy Escort Leash
             icon: mini-escort-leash
-            blurb: "Length: 1 Meter (normal), 3 Meters (stretched) <br/>Alternate Use: Facility Roof Bungee Jumping"
+            blurb: "<span>Length:</span> 1 Meter (normal), 3 Meters (stretched) <br/><span>Alternate Use:</span> Facility Roof Bungee Jumping"
             details: "Don't let that visitor stray. Patented harness is fully supported by the visitor’s torso - not the sensitive lower stomach area. Automatic entry/exit logging included. <br/>Product Slogan - \"While we're in the PSP, you're stuck close to me\""
           -
             click:

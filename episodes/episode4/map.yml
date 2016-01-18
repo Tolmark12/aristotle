@@ -225,7 +225,7 @@ chapters:
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
           - {content: ~4/CIN_HumanWalking.mp3, delay: 2500, volume: .1 }
-          - {content: ~4/CIN_ScannerShock.mp3, delay: 5400, volume: 0.4 }
+          - {content: ~4/CIN_ScannerShock.mp3, delay: 5000, volume: 0.4 }
           - {content: ~4/CIN_HumanWalking.mp3, delay: 8000, volume: .1 }
         movie:
           layers:
@@ -254,7 +254,7 @@ chapters:
       -
         sfx:
           - {content: ~4/CIN_HumanWalking.mp3, delay: 4500, volume: .1 }
-          - {content: $accessSFX, delay: 8000, volume: 0.1 }
+          - {content: $accessSFX, delay: 7600, volume: 0.1 }
           - {content: ~4/CIN_HumanWalking.mp3, delay: 13000, volume: .1 }
           - {content: ~4/CIN_Typing.mp3, delay: 20000, volume: .1, loop: 1 }
           - {content: ~4/CIN_Typing.mp3, delay: 29000, volume: .1 }
@@ -685,8 +685,11 @@ chapters:
       # 3 Simulation Auditbot ==========================================
       -
         sfx:
-          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
-          - {content: ~g/SFX_AttackSlamdown_AuditBot.mp3, delay: 6000, volume: 1}
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2 }
+          - {content: ~g/SFX_AttackSlamdown_AuditBot.mp3, delay: 6000, volume: .3}
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 15200, volume: .2, loop: 2 }
+          - {content: ~4/CIN_BlackOutGrid.mp3, delay: 29500, volume: 1}
         movie:
           layers:
             - {depth: 11, content: 5_auditbot_fail.json, vcr: true }
@@ -752,7 +755,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Visitor Limits
-                body: The <a data-label="visitor_escort">Visitor Escort Procedure</a> is for <a data-label="physical_access">Physical Access</a> inside a <a data-label="psp">PSP</a> only. Visitors are not allowed to use workstations, servers, and other <a data-label="crca"> CRCAs. If a Visitor needs to interact with a system, they must relay instructions to a Defender with <a data-label="electronic_access">Electronic Access</a> to the system. To protect our <a data-label="bcsi">BCSI</a>, visitors are not allowed to take pictures inside a <a data-label="psp">PSP</a>. <br/><br/>Even if you are trained as a Defender, you are considered a Visitor (and must be escorted) to any PSPs you don't have documented <a data-label="physical_access">Physical Access</a> to. Access to one PSP doesn't mean access to all.
+                body: The <a data-label="visitor_escort">Visitor Escort Procedure</a> is for <a data-label="physical_access">Physical Access</a> inside a <a data-label="psp">PSP</a> only. Visitors are not allowed to use workstations, servers, and other <a data-label="crca">CRCAs</a>. If a Visitor needs to interact with a system, they must relay instructions to a Defender with <a data-label="electronic_access">Electronic Access</a> to the system. To protect our <a data-label="bcsi">BCSI</a>, visitors are not allowed to take pictures inside a <a data-label="psp">PSP</a>. <br/><br/>Even if you are trained as a Defender, you are considered a Visitor (and must be escorted) to any PSPs you don't have documented <a data-label="physical_access">Physical Access</a> to. Access to one PSP doesn't mean access to all.
                 btn:
                   style: lightning
                   text: continue
@@ -777,6 +780,16 @@ chapters:
         duration: {kind: time, seconds: 3.5}
       # 3 Simulation Visitor Tracked ==========================================
       -
+        sfx:
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2, loop: 3 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 13900, volume: .2 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 14900, volume: .2 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 17500, volume: .2 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 23400, volume: .2 }
+          - {content: ~4/CIN_DoorOpen.mp3, delay: 24900, volume: .2 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 12900, volume: .2, loop: 5 }
+          - {content: ~4/CIN_HumanWalking.mp3, delay: 27300, volume: .2, loop: 2 }
         movie:
           layers:
             - {depth: 11, content: clear }

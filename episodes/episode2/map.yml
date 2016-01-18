@@ -104,7 +104,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Physical Access Control
-                body: To prevent physical attacks, <a data-label="cip">CIP</a> requires that we physically surround our  <a data-label="crca">CRCAs</a> with  <a data-label="psp" class="new">Physical Security Perimeter (PSP)</a> made up of walls, fences, and doors to keep the robots and their allies out. We install physical access controls that only allow authorized Defenders inside the PSP, log all access attempts, and alert when unauthorized people (or robots) try to gain access. An example of an access control is an ID-badge reader on the outside of the door connected to a computer inside that operates the reader and performs logging and alerting. These controls are considered  <a data-label="crca">CRCAs</a> and our  <a data-label="medium">Medium Impact</a> facilities must have one control per door, while  <a data-label="high">High Impact</a> facilities require two independent controls per door.
+                body: To prevent physical attacks, we must physically surround our <a data-label="crca">CRCAs</a> with <a data-label="psp" class="new">Physical Security Perimeters (PSPs)</a> made up of walls, fences, and doors to keep the robots and their allies out. We install physical access controls that only allow Defenders inside the <a data-label="psp">PSP</a>, log all usage, and alert when unauthorized people (or robots) try to gain access. Our <a data-label="medium">Medium Impact</a> facilities must have one control per door, while <a data-label="high">High Impact</a> facilities require two independent controls per door.
                 btn:
                   style: lightning
                   text: continue
@@ -165,16 +165,16 @@ chapters:
       -
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.3 }
-          - {content: ~2/CIN_RobotMovement.mp3, volume: 0.1, loop: 2 }
-          - {content: $pacsSFX, delay: 4200, volume: 0.3 }
-          - {content: ~2/CIN_RobotMovement.mp3, delay: 7500, volume: 0.1, loop: 2 }
-          - {content: ~2/CIN_PhysicalAttack_DoorRipAndCrash, delay: 13000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 14000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 16000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_RunningMen, delay: 17000, volume: 1 }
-          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 18000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_Laser.mp3, delay: 21000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_BlastedRobot.mp3, delay: 21400, volume: 0.05 }
+          - {content: ~2/CIN_RobotMovement.mp3, delay: 3000, volume: 0.1, loop: 1 }
+          - {content: $pacsSFX, delay: 7200, volume: 0.3 }
+          - {content: ~2/CIN_RobotMovement.mp3, delay: 10500, volume: 0.1, loop: 3 }
+          - {content: ~2/CIN_PhysicalAttack_DoorRipAndCrash, delay: 16000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 17000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 19000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_RunningMen, delay: 21000, volume: 1 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 21000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Laser.mp3, delay: 24000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_BlastedRobot.mp3, delay: 24400, volume: 0.05 }
         action: {cmd: ctanlee.gohome}
         movie:
           layers:
@@ -194,7 +194,7 @@ chapters:
           actions:
             a:
               pos: []
-              next: 7000
+              next: 10000
             b:
               pos: [170,400]
               text: Access Denied, Bot.
@@ -209,7 +209,7 @@ chapters:
               audio: Story_3_Ctanlee_8b.mp3
             e:
               pos: []
-              next: 6000
+              next: 7600
             f:
               pos: [370,300]
               text: Alerted and Defended. Rust in peace, robots.
@@ -253,7 +253,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Electronic Attacks
-                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a  <a data-label="crca">CRCA</a> attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction. <br/><br/>Let's see how this might work.
+                body: The robots aren't limited to physical attacks and have more tricks up their armatures. Anytime we have a <a data-label="crca">CRCA</a> attached to a network, they will seek a way to remotely connect to the asset, take control of it, and cause destruction. <br/><br/>The robots are preparing an electronic attack from their secret base on Earth! Let's see what happens.
                 btn:
                   style: lightning
                   text: run simulation
@@ -381,7 +381,7 @@ chapters:
             t:
               audio: ~2/Story_3_Sektimus_6b.mp3
               actor: sektimus
-              text: Heed my advice. Go. Hide. Enjoy what little time you have left. [deep laughs that turn to legion laughs]
+              text: Heed my advice. Go. Hide. Enjoy what little time you have left.
             u:
               audio: ~2/Story_3_Warcore_5.mp3
               actor: warcore
@@ -503,14 +503,12 @@ chapters:
           layers:
             - {depth: 8, content: $eacmsBuild, cache: true }
         duration: {kind: time, seconds: 3.5 }
-      # 2 Dialogue - Run Simulator ==========================================
+      # 2 Animate Perimeter Build ==========================================
       -
-        title: Toasty
         movie:
           layers:
             - {depth: 7, content: perimeter_electronic.json }
           zoom: {scale: 1 }
-        duration: {kind: ux}
         dialogue:
           timeline:
             - {action: a }
@@ -524,6 +522,10 @@ chapters:
               pos: [170,400]
               text: Ah the ESP. I feel safer already. It's like a big electric blanket wrapped around my assets.
               audio: Story_3_Ctanlee_30.mp3
+        duration: {kind: dialogue}
+      # 2 Dialogue - Run Simulator ==========================================
+      -
+        title: Toasty
         ux:
           components:
             -
@@ -535,6 +537,7 @@ chapters:
                   style: lightning
                   text: run simulation
                   action: {cmd: slides.next-slide}
+        duration: {kind: ux }
       # 2 Simulator - Firewall Good ==========================================
       -
         movie:

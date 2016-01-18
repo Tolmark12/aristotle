@@ -45,7 +45,7 @@ ux:
                   portSFX: ~3/SFX_PhysicalPortSecurity_DuctTape.mp3
             btnTxt: Port Duct Tape
             icon: mini-duct-tape
-            blurb: "Celebrity Sponsor: MacGyver <br/>Also Fixes: Everything"
+            blurb: "<span>Celebrity Sponsor:</span> MacGyver <br/><span>Also Fixes:</span> Everything"
             details: "Do we really need to explain this? <br/>The Defender's Secret Weapon"
           -
             click:
@@ -60,7 +60,7 @@ ux:
                   portSFX: ~3/SFX_PhysicalPortSecurity_TheKragle.mp3
             btnTxt: The Kragle
             icon: mini-kragle
-            blurb: "Variants: Regular Glue, Super Glue, Ludicrous Glue. <br/>Other Uses: Fixing Cuts, Fingernails, and Pantyhose Runs."
+            blurb: "<span>Variants:</span> Regular Glue, Super Glue, Ludicrous Glue. <br/><span>Other Uses:</span> Fixing Cuts, Fingernails, and Pantyhose Runs."
             details: "Are people always plugging things into your assets and messing with your stuff? Make those physical ports permanently unavailable to people and robots alike with a good injection of this sticky filler. <br/>Every port is awesome!"
           -
             click:
@@ -75,5 +75,5 @@ ux:
                   portSFX: ~3/SFX_PhysicalPortSecurity_PortUmpie.mp3
             btnTxt: Port Umpire
             icon: mini-umpire
-            blurb: "Ejections: Too Many to Count <br/>Bad Calls: Never!"
+            blurb: "<span>Ejections:</span> Too Many to Count <br/><span>Bad Calls:</span> Never!"
             details: "Officiates the game of asset port defense, ensuring Defenders follow the rules when they throw devices at our physical ports. Following the grand tradition of the game, any illegal devices are promptly ejected. <br/>Product Version 5.0 - The Umpire Strikes Back"

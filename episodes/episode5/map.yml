@@ -54,6 +54,8 @@ chapters:
       -
         title: Keep a Sharp Lookout
         duration: {kind: ux}
+        sfx:
+          - {content: ~5/CIN_PersonSneaking.mp3, delay: 500, volume: 0.08 }
         movie:
           layers:
             - {depth: 12, content: e5_skittering.json }
@@ -131,7 +133,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Local and National Response
-                body: When our monitoring efforts detect an attack, the <a data-label="cip">Standards</a> require that we convene an <a data-label="team" class="new">Incident Response Team</a> to coordinate our efforts to repel the attackers and a <a data-label="csirp" class="new">Cyber Security Incident Response Plan</a> with processes that ensure we handle an attack swiftly and effectively. <br/><br/>An incursion on our territory might be part of a larger, coordinated attack against the <a data-label="bes">Bulk Electric System</a>, so our Incident Response Team must promptly report significant incidents to <a data-label="eisac" class="new">E-ISAC</a>, the organization that coordinates response to attacks at the national level.
+                body: When our monitoring efforts detect an attack, the <a data-label="cip">Standards</a> require that we convene an <a data-label="team" class="new">Incident Response Team</a> to coordinate our efforts to repel the attackers and a <a data-label="csirp" class="new">Incident Response Plan</a> with processes that ensure we handle an attack swiftly and effectively. <br/><br/>An incursion on our territory might be part of a larger, coordinated attack against the <a data-label="bes">Bulk Electric System</a>, so our Incident Response Team must promptly report significant incidents to <a data-label="eisac" class="new">E-ISAC</a>, the organization that coordinates response to attacks at the national level.
                 btn:
                   style: lightning
                   text: continue
@@ -147,7 +149,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Maintaining Readiness
-                body: We must test our <a data-label="csirp">Cyber Security Incident Response Plan</a> yearly with a simulation and use our lessons-learned to improve the plan. Other events may cause the <a data-label="csirp">Plan</a> to change - like employees moving out of roles - so we must keep the information in the plan up-to-date.
+                body: We must test our <a data-label="csirp">Incident Response Plan</a> yearly with a simulation and use our lessons-learned to improve the plan. Other events may cause the <a data-label="csirp">Plan</a> to change - like employees moving out of roles - so we must keep the information in the plan up-to-date.
                 btn:
                   style: lightning
                   text: continue
@@ -163,7 +165,7 @@ chapters:
               config:
                 hasLabels: true
                 title: No Need for Simulation
-                body: Many of us will have defined roles on the <a data-label="team">Incident Response Team</a>, help approve the <a data-label="csirp">Cyber Security Incident Response Plan</a>, or be involved in yearly testing. During an actual attack, any <a data-label="defender">Defender</a> may be called upon for support, so we must all be ready. <br/><br/>Our facility Defenders have already been detecting and responding to <a data-label="cyber_security_incident">Cyber Security Incidents</a> in each simulated attack, so we'll skip the simulator for this chapter.
+                body: Many of us will have defined roles on the <a data-label="team">Incident Response Team</a>, help approve the <a data-label="csirp">Incident Response Plan</a>, or be involved in yearly testing. During an actual attack, any <a data-label="defender">Defender</a> may be called upon for support, so we must all be ready. <br/><br/>Our facility Defenders have already been detecting and responding to <a data-label="cyber_security_incident">Cyber Security Incidents</a> in each simulated attack, so we'll skip the simulator for this chapter.
                 btn:
                   style: lightning
                   text: review duties
@@ -265,7 +267,7 @@ chapters:
               audio: Story_6_Ctanlee_5.mp3
             d:
               pos: []
-              text: "[Low chuckle] A little surprise just for you old friend."
+              text: "A little surprise just for you old friend."
               audio: Story_6_Sektimus_3.mp3
               actor: sektimus
             e:
@@ -297,7 +299,7 @@ chapters:
               pos: []
               audio: Story_6_Sektimus_4.mp3
               actor: sektimus
-              text: "[chuckles] I'll now accept your concession CTANLEE, and your resignation from the training program, human. [still chuckling]"
+              text: "I'll now accept your concession CTANLEE, and your resignation from the training program, human. [still chuckling]"
             m:
               pos: [270,220]
               text: Not so fast, Sektimus. The wager was against all the CIP Standards and we still have one training chapter left.
@@ -306,7 +308,7 @@ chapters:
               pos: []
               audio: Story_6_Sektimus_5.mp3
               actor: sektimus
-              text: "[chuckles] It matters not. Complete your worthless training. I'll observe."
+              text: "It matters not. Complete your worthless training. I'll observe."
             o:
               pos: [270,300]
               text: Hold your head high, Cadet. We're not beaten yet.
@@ -359,7 +361,7 @@ chapters:
       # 3 Simulation Recovery ==========================================
       -
         sfx:
-          - {content: $facilitySFX, delay: 3000, volume:0.8}
+          - {content: ~5/CIN_FacilityRecovery.mp3, delay: 7500, volume: 0.08 }
         movie:
           layers:
             - {depth: 12, content: 6_3_1_rebuild_sektimus_dialogue.json }

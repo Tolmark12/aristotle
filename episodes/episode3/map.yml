@@ -112,7 +112,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Port Security
-                body: As you can see, many attacks happen when someone plugs a compromised USB drive or cell phone into a physical port on a <a data-label="crca">CRCA</a>, bypassing our perimeter defenses. We protect an asset's physical ports from accidental plug-ins through physical locks, tamper tape, or similar methods. <br/><br/>Just like we added a firewall to control electronic communication into the <a data-label="esp">ESP</a>, we install software firewalls (or similar protections) on <a data-label="crca">CRCAs</a> to deny unauthorized electronic communication with that asset. <br/><br/>Technical <a data-label="defender">Defenders</a> typically install these protections, but everyone must be vigilant not to go around them.
+                body: As you can see, many attacks happen when someone plugs a compromised USB drive or cell phone into a physical port on a <a data-label="crca">CRCA</a>, bypassing our perimeter defenses. We protect an asset's physical ports from accidental plug-ins through physical locks, tamper tape, or similar methods. <br/><br/>In addition, just like we added a firewall to control electronic communication into the <a data-label="esp">ESP</a>, we install software firewalls (or similar protections) on <a data-label="crca">CRCAs</a> to deny unauthorized electronic communication with that asset. <br/><br/>Technical <a data-label="defender">Defenders</a> typically install these protections, but everyone must be vigilant not to go around them.
                 btn:
                   style: lightning
                   text: continue
@@ -250,7 +250,7 @@ chapters:
               config:
                 hasLabels: true
                 title: The Softer Side of Defense
-                body: We just built physical and electronic perimeters around each <a data-label="crca">CRCA</a>, so now it's time to protect the "insides" of our assets.
+                body: We just protected the physical and electronic connections to each <a data-label="crca">CRCA</a>, so now it's time to protect the &#8220;insides&#8221; of our assets.
                 btn:
                   style: lightning
                   text: continue
@@ -269,7 +269,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Patching Your Assets
-                body: The software installed on our <a data-label="crca">CRCAs</a> often have security flaws that our enemies will use to launch attacks. Most software companies provide updates called "patches" that fix these flaws as they are discovered, so we regularly check for and install security-related patches for all software on our <a data-label="crca">CRCAs</a> - the operating system, control system software, or your Global Robo-Nuclear WarTM game. <br/><br/>We assess new patches at least once every 35 days, and install them on assets within 35 days of assessment. Patches that cause system reliability issues can be skipped if a mitigation plan is created.
+                body: The software installed on our <a data-label="crca">CRCAs</a> often have security flaws that our enemies will use to launch attacks. Most software companies provide updates called "patches" that fix these flaws as they are discovered, so we regularly check for and install security-related patches for all software on our <a data-label="crca">CRCAs</a>, including the operating system, control system software, or your Global Robo-Nuclear War&#8482; game. <br/><br/>We assess new patches at least once every 35 days, and install them on assets within 35 days of assessment. Patches that cause system reliability issues can be skipped if a mitigation plan is created.
                 btn:
                   style: lightning
                   text: continue
@@ -389,8 +389,8 @@ chapters:
               text: CIP will not save you. CTANLEE will not save you. Abandon this training and I won't extend your suffering after I conquer Earth.
             r:
               audio: Story_4_Sektimus_3c.mp3
-              actor: Will you accept this, my final offer?
-              text: Human.
+              actor: sektimus
+              text: Will you accept this, my final offer?
         duration: {kind: dialogue }
       # 2 Sektimus Will you Train? ==========================================
       - !!inc/file ./episodes/episode3/yaml/_simple-sektimus.yaml
@@ -434,7 +434,7 @@ chapters:
               config:
                 hasLabels: true
                 title: It's a Team Effort
-                body: Richard has been given the responsibility at our facility to keep the servers and workstations patched and anti-virus updated. Go Richard! <br/><br/>It's common that technical <a data-label="defender">Defenders</a> like Richard install patches and maintain the antivirus software, but every <a data-label="defender">Defender</a> has a role to play. System users often experience downtime or computer restarts during patch installations, so please be patient. Users can also inadvertently install malware on a computer, so we must all be vigilant.
+                body: Richard has been given the responsibility at our facility to keep the servers and workstations patched and anti-virus updated. Go Richard! <br/><br/>It's common that technical <a data-label="defender">Defenders</a> like Richard install patches and maintain the antivirus software, but every <a data-label="defender">Defender</a> has a role to play. System users often experience downtime or computer restarts during patch installations, so please be patient. Any of us can inadvertently install malware on a computer, so we must all be vigilant.
                 btn:
                   style: lightning
                   text: review duties
