@@ -242,8 +242,8 @@ chapters:
       -
         actions:
           - {cmd: chrome.hide}
-          - {cmd: sound.fadeout, data:{content: ~g/MU_Ambient_Facility_no_notes.mp3, loop: true, volume: 1, delay:13000, duration: 500, slot: ambience, destroy: true } }
-          - {cmd: sound.fadein, data:{content: ~0/CIN_Intro_Sektimus.mp3, volume: .1, delay:13000, duration: 500, slot: sektimus, destroy: true } }
+          - {cmd: sound.fadeout, data:{ delay:13000, duration: 500, slot: ambience } }
+          - {cmd: playsound, data:{ content: ~0/CIN_Intro_Sektimus.mp3, volume: .1, delay:13000, duration: 500, slot: sektimus, destroy: true } }
         title: Sektimus
         movie:
           layers:
