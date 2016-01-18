@@ -41,7 +41,7 @@ ux:
                   nerc: brit_beacon
                   nercBuild: ~5/brit_beacon_build.json
                   nercPass: ~5/brit_beacon_pass.json
-                  nercSFX: ~5/SFX_NERCDefense_BritBeacon.mp3
+                  nercSFX: ~5/SFX_Brit_Defense.mp3
             btnTxt: Brit Beacon, Scholar. Gentleman. Bot Hunter.
             icon: mini-brit-beacon
             blurb: "<span>Moustache Length:</span> +4 inches <br/><span>Rifle Name:</span> Lord Brimstone"
@@ -55,7 +55,7 @@ ux:
                   nerc: speeder
                   nercBuild: ~5/speeder_build.json
                   nercPass: ~5/speeder_pass.json
-                  nercSFX: ~5/SFX_NERCDefense_Speeder.mp3
+                  nercSFX: ~5/SFX_Speeder_Defense.mp3
             btnTxt: Speeder with Tow Cables
             icon: mini-speeder
             blurb: "<span>Tow Cable Length:</span> 800 meters <br/><span>Last deployed:</span> Planet Hoth"
@@ -69,7 +69,7 @@ ux:
                   nerc: orbital_strike
                   nercBuild: ~5/orbital_strike_build.json
                   nercPass: ~5/orbital_strike_pass.json
-                  nercSFX: ~5/SFX_NERCDefense_Satellite.mp3
+                  nercSFX: ~5/SFX_Kinetic_Defense.mp3
             btnTxt: Kinetic Orbital Strike
             icon: mini-orbital-strike
             blurb: "<span>Size:</span> Classified <br/><span>Use:</span> Classified <br/><span>Material:</span> Classified <br/><span>Launching Satellite:</span> Classified"

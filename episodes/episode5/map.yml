@@ -172,8 +172,8 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .1, slot: music} }
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.15, loop: true }
           - {content: ~3/CIN_Quarantine.mp3, delay: 100, volume: .1 }
         movie:
           layers:
@@ -230,6 +230,7 @@ chapters:
         sfx:
           - {content: ~g/MU_BotTronAttack.mp3, delay: 3300, volume: 0.2, loop: true }
           - {content: ~g/SFX_AttackSlamdown_BotTron.mp3, delay: 12400, volume: .3 }
+          - {content: ~5/SFX_BotTron_Attack.mp3, delay: 20000, volume: 1 }
         movie:
           layers:
             - {depth: 0, content: red-sky.svg }
@@ -324,6 +325,7 @@ chapters:
     slides:
       # 3 Dialogue Recovery Plan ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .08, slot: music} }
         title: The Recovery Plan
         movie:
           layers:
@@ -395,7 +397,9 @@ chapters:
       - !!inc/file ./episodes/episode5/yaml/_nerc-defense-selector.yaml
       # 3 Animate Nerc Build ==========================================
       -
-        action: {cmd: ctanlee.gohome}
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3, loop: true, volume: .2, slot: music} }
         sfx:
           - {content: $nercSFX, volume: 1}
         movie:
@@ -404,8 +408,6 @@ chapters:
         duration: {kind: time, seconds: 4 }
       # 3 Sektimus Interlude ==========================================
       -
-        sfx:
-          - {content: ~g/MU_BotTronDefenseMusic.mp3, volume: 0.2, loop: true }
         movie:
           layers:
             - {depth: 13, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
@@ -438,6 +440,7 @@ chapters:
         duration: {kind: ux }
       # 3 Sektimus Interlude ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .08, slot: music} }
         movie:
           layers:
             - {depth: 14, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
