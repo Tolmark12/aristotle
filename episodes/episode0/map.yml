@@ -240,7 +240,7 @@ chapters:
         duration: {kind: dialogue }
       # Animation Sektimus Launch  ==========================================
       -
-        actions:
+        action:
           - {cmd: chrome.hide}
           - {cmd: sound.fadeout, data: {delay: 13000, duration: 500, slot: ambience} }
           - {cmd: playsound, data: {content: ~0/CIN_Intro_Sektimus.mp3, volume: .1, delay: 13000, duration: 500, slot: sektimus, destroy: true} }
