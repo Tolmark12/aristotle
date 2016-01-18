@@ -47,7 +47,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Perimeter and Asset Access
-                body: Our defenses are up! Now we need to ensure only authorized <a data-label="defender">Defenders</a> have the access they need&#58; <ul><li><a data-label="physical_access" class="new">Physical Access</a> to open the door and enter the <a data-label="psp">PSP</a>.</li><li><a data-label="electronic_access" class="new">Electronic Access<a/> to logon to workstations, servers, and other <a data-label="crca">CRCAs</a>.</li><li><a data-label="information_access" class="new">Information Access</a> to file shares, filing cabinets, and other <a data-label="bcsi">BCSI</a> locations.</li></ul>The robots obviously want any access they can get, so let's see what can happen.
+                body: Our defenses are up! Now we need to ensure only authorized <a data-label="defenders">Defenders</a> have the access they need&#58; <ul><li><a data-label="physical_access" class="new">Physical Access</a> to open the door and enter the <a data-label="psp">PSP</a>.</li><li><a data-label="electronic_access" class="new">Electronic Access<a/> to logon to workstations, servers, and other <a data-label="crca">CRCAs</a>.</li><li><a data-label="information_access" class="new">Information Access</a> to file shares, filing cabinets, and other <a data-label="bcsi">BCSI</a> locations.</li></ul>The robots obviously want any access they can get, so let's see what can happen.
                 btn:
                   style: lightning
                   text: run simulation
@@ -136,7 +136,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Removing Access
-                body: Our <a data-label="defender">Defenders</a> never removed Rod's door system and workstation accounts after he quit his job, so he still has Physical and Electronic Access. Once a <a data-label="defender">Defender</a> leaves their job, we must disable Physical Access and Electronic Access within 24 hours. This effectively cuts the person off from our facilities and CRCAs. Any user accounts must be completely removed and shared passwords they know changed within 30 days.
+                body: Our <a data-label="defenders">Defenders</a> never removed Rod's door system and workstation accounts after he quit his job, so he still has Physical and Electronic Access. Once a <a data-label="defenders">Defender</a> leaves their job, we must disable Physical Access and Electronic Access within 24 hours. This effectively cuts the person off from our facilities and CRCAs. Any user accounts must be completely removed and shared passwords they know changed within 30 days.
                 btn:
                   style: lightning
                   text: continue
@@ -152,7 +152,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Granting Access
-                body: In the simulation, we granted <a data-label="physical_access">Physical Access</a> to a malicious agent of the robots. To avoid this, we must carefully evaluate employees, vendors and contractors before we give them <a data-label="physical_access">Physical Access</a> or <a data-label="electronic_access">Electronic Access</a> to our assets. This is the required process&#58; <ol><li>Personnel Risk Assessment - Check the person's background for risks and criminal activity</li><li>Cyber-Security Training - Teach the person about cyber threats and their duties as a <a data-label="defender">Defender</a></li><li>Compliance Documentation - Document access needed and management approval</li><li>Configure Access - Grant the person access to facilities, assets, and information</li></ol>
+                body: In the simulation, we granted <a data-label="physical_access">Physical Access</a> to a malicious agent of the robots. To avoid this, we must carefully evaluate employees, vendors and contractors before we give them <a data-label="physical_access">Physical Access</a> or <a data-label="electronic_access">Electronic Access</a> to our assets. This is the required process&#58; <ol><li>Personnel Risk Assessment - Check the person's background for risks and criminal activity</li><li>Cyber-Security Training - Teach the person about cyber threats and their duties as a <a data-label="defenders">Defender</a></li><li>Compliance Documentation - Document access needed and management approval</li><li>Configure Access - Grant the person access to facilities, assets, and information</li></ol>
                 btn:
                   style: lightning
                   text: continue
@@ -330,7 +330,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Information Access
-                body: For <a data-label="defender">Defenders</a>, access to <a data-label="bcsi">BCSI</a> is typically granted along with their <a data-label="physical_access">Physical Access</a> and <a data-label="electronic_access">Electronic Access</a>. Vendors, consultants, and other employees without this level of access often need to see <a data-label="bcsi">BCSI</a>, so <a data-label="cip">CIP</a> allows organizations flexibility to define how they share this information. For example, some organizations require vendors to sign an NDA before receiving <a data-label="bcsi">BCSI</a> and confirm in writing they have destroyed <a data-label="bcsi">BCSI</a> at the conclusion of a project.
+                body: For <a data-label="defenders">Defenders</a>, access to <a data-label="bcsi">BCSI</a> is typically granted along with their <a data-label="physical_access">Physical Access</a> and <a data-label="electronic_access">Electronic Access</a>. Vendors, consultants, and other employees without this level of access often need to see <a data-label="bcsi">BCSI</a>, so <a data-label="cip">CIP</a> allows organizations flexibility to define how they share this information. For example, some organizations require vendors to sign an NDA before receiving <a data-label="bcsi">BCSI</a> and confirm in writing they have destroyed <a data-label="bcsi">BCSI</a> at the conclusion of a project.
                 btn:
                   style: lightning
                   text: continue
@@ -346,7 +346,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Access Audits
-                body: Any complex process requires oversight, so we annually review our documented access permissions to ensure we provide the fewest permissions needed for our <a data-label="defender">Defenders</a> to perform their jobs. We also do a quarterly check of actual permissions in the systems against the documented permissions to discover any mismatches and correct them. <br/><br/><a data-label="cip">CIP</a> has given our <a data-label="defender">Defenders</a> processes to securely remove access, grant access, and audit our work. Let's learn your duties.
+                body: Any complex process requires oversight, so we annually review our documented access permissions to ensure we provide the fewest permissions needed for our <a data-label="defenders">Defenders</a> to perform their jobs. We also do a quarterly check of actual permissions in the systems against the documented permissions to discover any mismatches and correct them. <br/><br/><a data-label="cip">CIP</a> has given our <a data-label="defenders">Defenders</a> processes to securely remove access, grant access, and audit our work. Let's learn your duties.
                 btn:
                   style: lightning
                   text: review duties
@@ -464,7 +464,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Brute-Force Defenses
-                body: We protect against <a data-label="brute">Brute-Force</a> and other <a data-label="user_account">User Account</a> attacks with regular password changes and account locking/alerting. We must change our passwords at least once a year. We also lock accounts after several failed logins and/or implement alerts so a technical <a data-label="defender">Defender</a> can investigate if an attack is underway. <br/><br/>Richard just enabled locking and alerting on all user accounts, so let's see if the Kettlehead's <a data-label="brute">Brute-Force Attack</a> is still effective.
+                body: We protect against <a data-label="brute">Brute-Force</a> and other <a data-label="user_account">User Account</a> attacks with regular password changes and account locking/alerting. We must change our passwords at least once a year. We also lock accounts after several failed logins and/or implement alerts so a technical <a data-label="defenders">Defender</a> can investigate if an attack is underway. <br/><br/>Richard just enabled locking and alerting on all user accounts, so let's see if the Kettlehead's <a data-label="brute">Brute-Force Attack</a> is still effective.
                 btn:
                   style: lightning
                   text: run simulation
@@ -529,7 +529,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Shared and Default Accounts
-                body: Some older <a data-label="crca">CRCAs</a> don't allow us to create accounts for each user. If multiple <a data-label="defender">Defenders</a> need access to these devices, they must share the same username and password to login. If you use one of these <a data-label="shared" class="new">Shared Account</a>, act as if it's your personal account and don't share the login information with others. <br/><br/>Some <a data-label="crca">CRCAs</a> come pre-configured with accounts, so we disable or rename these <a data-label="default" class="new">Default Account</a> and change their passwords before putting the <a data-label="crca">CRCA</a> into in service. <br/><br/>We've covered protecting user accounts, shared accounts, and default accounts. Time to review our duties.
+                body: Some older <a data-label="crca">CRCAs</a> don't allow us to create accounts for each user. If multiple <a data-label="defenders">Defenders</a> need access to these devices, they must share the same username and password to login. If you use one of these <a data-label="shared" class="new">Shared Account</a>, act as if it's your personal account and don't share the login information with others. <br/><br/>Some <a data-label="crca">CRCAs</a> come pre-configured with accounts, so we disable or rename these <a data-label="default" class="new">Default Account</a> and change their passwords before putting the <a data-label="crca">CRCA</a> into in service. <br/><br/>We've covered protecting user accounts, shared accounts, and default accounts. Time to review our duties.
                 btn:
                   style: lightning
                   text: review duties

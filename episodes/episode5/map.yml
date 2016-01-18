@@ -85,7 +85,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Electronic Monitoring
-                body: 'Nearly all of our <a data-label="crca">CRCAs</a> generate events that may be indications of an attack. Unauthorized access, firewall alerts, failed logins, unexpected system changes, and detection of malicious code are just a few examples. <br/><br/>Our technical <a data-label="defender">Defenders</a> - like Richard - must monitor and analyze these events to detect if they represent a <a data-label="cyber_security_incident">Cyber Security Incident</a>. In addition, they will perform regular <a data-label="vulnerability_assessment" class="new">Vulnerability Assessments</a> on our defenses to proactively look for security problems.'
+                body: 'Nearly all of our <a data-label="crca">CRCAs</a> generate events that may be indications of an attack. Unauthorized access, firewall alerts, failed logins, unexpected system changes, and detection of malicious code are just a few examples. <br/><br/>Our technical <a data-label="defenders">Defenders</a> - like Richard - must monitor and analyze these events to detect if they represent a <a data-label="cyber_security_incident">Cyber Security Incident</a>. In addition, they will perform regular <a data-label="vulnerability_assessment" class="new">Vulnerability Assessments</a> on our defenses to proactively look for security problems.'
                 btn:
                   style: lightning
                   text: continue
@@ -101,7 +101,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Guard Duty
-                body: All this monitoring is a big job that requires involvement from all <a data-label="defender">Defenders</a>, so let's learn our duties.
+                body: All this monitoring is a big job that requires involvement from all <a data-label="defenders">Defenders</a>, so let's learn our duties.
                 btn:
                   style: lightning
                   text: continue
@@ -165,7 +165,7 @@ chapters:
               config:
                 hasLabels: true
                 title: No Need for Simulation
-                body: Many of us will have defined roles on the <a data-label="team">Incident Response Team</a>, help approve the <a data-label="csirp">Incident Response Plan</a>, or be involved in yearly testing. During an actual attack, any <a data-label="defender">Defender</a> may be called upon for support, so we must all be ready. <br/><br/>Our facility Defenders have already been detecting and responding to <a data-label="cyber_security_incident">Cyber Security Incidents</a> in each simulated attack, so we'll skip the simulator for this chapter.
+                body: Many of us will have defined roles on the <a data-label="team">Incident Response Team</a>, help approve the <a data-label="csirp">Incident Response Plan</a>, or be involved in yearly testing. During an actual attack, any <a data-label="defenders">Defender</a> may be called upon for support, so we must all be ready. <br/><br/>Our facility Defenders have already been detecting and responding to <a data-label="cyber_security_incident">Cyber Security Incidents</a> in each simulated attack, so we'll skip the simulator for this chapter.
                 btn:
                   style: lightning
                   text: review duties
@@ -337,7 +337,7 @@ chapters:
               config:
                 hasLabels: true
                 title: The Recovery Plan
-                body: After an attack, assets may be damaged (or incinerated), so we must have a <a data-label="recovery" class="new">Recovery Plan<a/> that helps our <a data-label="defender">Defenders<a/> restore functionality quickly. The Recovery Plan defines the data backups, spare equipment and parts, and steps needed to restore each type of <a data-label="crca">CRCA<a/>. The Plan also guides Defenders on how to preserve forensic data from the attack useful for subsequent investigations. <br/><br/>We are expected to keep our Recovery Plan up-to-date and test it yearly, often concurrently with the yearly test of our <a data-label="csirp">Incident Response Plan</a>. We must also regularly test that our data backups are working and usable for recovery purposes.
+                body: After an attack, assets may be damaged (or incinerated), so we must have a <a data-label="recovery" class="new">Recovery Plan<a/> that helps our <a data-label="defenders">Defenders<a/> restore functionality quickly. The Recovery Plan defines the data backups, spare equipment and parts, and steps needed to restore each type of <a data-label="crca">CRCA<a/>. The Plan also guides Defenders on how to preserve forensic data from the attack useful for subsequent investigations. <br/><br/>We are expected to keep our Recovery Plan up-to-date and test it yearly, often concurrently with the yearly test of our <a data-label="csirp">Incident Response Plan</a>. We must also regularly test that our data backups are working and usable for recovery purposes.
                 btn:
                   style: lightning
                   text: continue
@@ -353,7 +353,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Yes We Can!
-                body: <a data-label="defender">Defender</a>, it's time to put our <a data-label="recovery">Recovery Plan</a> into action and repair our facility.
+                body: <a data-label="defenders">Defender</a>, it's time to put our <a data-label="recovery">Recovery Plan</a> into action and repair our facility.
                 btn:
                   style: lightning
                   text: run simulation

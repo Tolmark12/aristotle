@@ -112,7 +112,7 @@ chapters:
               config:
                 hasLabels: true
                 title: Port Security
-                body: As you can see, many attacks happen when someone plugs a compromised USB drive or cell phone into a physical port on a <a data-label="crca">CRCA</a>, bypassing our perimeter defenses. We protect an asset's physical ports from accidental plug-ins through physical locks, tamper tape, or similar methods. <br/><br/>In addition, just like we added a firewall to control electronic communication into the <a data-label="esp">ESP</a>, we install software firewalls (or similar protections) on <a data-label="crca">CRCAs</a> to deny unauthorized electronic communication with that asset. <br/><br/>Technical <a data-label="defender">Defenders</a> typically install these protections, but everyone must be vigilant not to go around them.
+                body: As you can see, many attacks happen when someone plugs a compromised USB drive or cell phone into a physical port on a <a data-label="crca">CRCA</a>, bypassing our perimeter defenses. We protect an asset's physical ports from accidental plug-ins through physical locks, tamper tape, or similar methods. <br/><br/>In addition, just like we added a firewall to control electronic communication into the <a data-label="esp">ESP</a>, we install software firewalls (or similar protections) on <a data-label="crca">CRCAs</a> to deny unauthorized electronic communication with that asset. <br/><br/>Technical <a data-label="defenders">Defenders</a> typically install these protections, but everyone must be vigilant not to go around them.
                 btn:
                   style: lightning
                   text: continue
@@ -434,7 +434,7 @@ chapters:
               config:
                 hasLabels: true
                 title: It's a Team Effort
-                body: Richard has been given the responsibility at our facility to keep the servers and workstations patched and anti-virus updated. Go Richard! <br/><br/>It's common that technical <a data-label="defender">Defenders</a> like Richard install patches and maintain the antivirus software, but every <a data-label="defender">Defender</a> has a role to play. System users often experience downtime or computer restarts during patch installations, so please be patient. Any of us can inadvertently install malware on a computer, so we must all be vigilant.
+                body: Richard has been given the responsibility at our facility to keep the servers and workstations patched and anti-virus updated. Go Richard! <br/><br/>It's common that technical <a data-label="defenders">Defenders</a> like Richard install patches and maintain the antivirus software, but every <a data-label="defenders">Defender</a> has a role to play. System users often experience downtime or computer restarts during patch installations, so please be patient. Any of us can inadvertently install malware on a computer, so we must all be vigilant.
                 btn:
                   style: lightning
                   text: review duties
