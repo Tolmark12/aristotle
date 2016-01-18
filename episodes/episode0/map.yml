@@ -58,11 +58,11 @@ chapters:
               next: 6000
               text: Welcome to the WarCore. Booting system...
               actor: warcore
-              audio: Story_1_Warcore_1.m4a
+              audio: Story_1_Warcore_1.mp3
             b:
               text: The system is ready for login. I will now access your records.
               actor: warcore
-              audio: Story_1_Warcore_2.m4a
+              audio: Story_1_Warcore_2.mp3
         duration: {kind: dialogue }
       # Animation Quarantine ==========================================
       -
@@ -84,12 +84,12 @@ chapters:
             a:
               text: Your user has not logged in before. You'll be quarantined until your authorization records are confirmed.
               actor: warcore
-              audio: Story_1_Warcore_3.m4a
+              audio: Story_1_Warcore_3.mp3
             b:
               next: 6000
               text: I'll send for the WarCore authority now. Alerting CTANLEE!
               actor: warcore
-              audio: Story_1_Warcore_4.m4a
+              audio: Story_1_Warcore_4.mp3
             c:
               pos: [513,384,0]
               text: Hello potentially dangerous entity! I am CTANLEE.
