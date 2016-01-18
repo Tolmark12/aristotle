@@ -8,6 +8,8 @@ nextRankId: cadet
 # CHAPTER 1
 chapters:
   -
+    dev:
+      startIndex: 9
     ctanlee: !!inc/file ./episodes/global/_ctanlee.yaml
     title: Loading Introduction
     kind: intro
@@ -365,6 +367,9 @@ chapters:
                   -
                     txt: Let's Kick<br/>Some Bot
                     click: {cmd: ctanlee.activate, data: e}
+            -
+              kind: gut-check
+              config: {}
         duration: {kind: ux }
       # Introduce Navigation Ranks  ==========================================
       -
