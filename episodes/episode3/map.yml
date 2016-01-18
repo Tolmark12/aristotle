@@ -186,7 +186,7 @@ chapters:
         sfx:
           #- {content: ~g/MU_Attack_With_Defense_Music.wav, delay: 1000, volume: 0.5}
           - {content: ~3/CIN_FlashDriveRejection.mp3, delay: 7900, volume: 0.5}
-          - {content: ~3/CIN_HumanTossing.mp3, delay: 12200, volume: .8, loop: 0 }
+          - {content: ~3/CIN_HumanTossing.mp3, delay: 12200, volume: 0.2, loop: 0 }
         movie:
           layers:
             - {depth: 10, content: $portDefend, vcr: true }
@@ -474,28 +474,28 @@ chapters:
       # 3 Simulation Attack ==========================================
       -
         sfx:
-          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
-          - {content: ~3/CIN_HumanWalking.mp3, delay: 100, volume: 0.04, loop: 1 }
-          - {content: ~3/CIN_TypingComputerCrash.mp3, delay: 5900, volume: 0.08, loop: 0 }
-          - {content: ~3/CIN_HumanWalking.mp3, delay: 9800, volume: 0.04, loop: 0 }
-          - {content: ~3/CIN_VehicleRunning.mp3, delay: 14500, volume: 0.4, loop: 0 }
-          - {content: ~3/CIN_HumanWalking.mp3, delay: 14500, volume: 0.04, loop: 0 }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: .1, loop: true }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 100, volume: .04, loop: 1 }
+          - {content: ~3/CIN_TypingComputerCrash.mp3, delay: 5900, volume: .08, loop: 0 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 9800, volume: .04, loop: 0 }
+          - {content: ~3/CIN_VehicleRunning.mp3, delay: 14500, volume: .4, loop: 0 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 14500, volume: .04, loop: 0 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 15000, volume: .08, loop: 1 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 16300, volume: .08, loop: 0 }
-          - {content: ~g/SFX_AttackSlamdown_MimeBot.mp3, delay: 21000, volume: 0.2}
-          - {content: ~3/CIN_HumanWalking.mp3, delay: 30000, volume: 0.04, loop: 1 }
-          - {content: ~3/CIN_VehicleRunning.mp3, delay: 33000, volume: 0.4, loop: 1 }
-          - {content: ~3/CIN_HumanWalking.mp3, delay: 33000, volume: 0.04, loop: 1 }
+          - {content: ~g/SFX_AttackSlamdown_MimeBot.mp3, delay: 21000, volume: .2}
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 30000, volume: .04, loop: 1 }
+          - {content: ~3/CIN_VehicleRunning.mp3, delay: 33000, volume: .4, loop: 0 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 33000, volume: .04, loop: 1 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 33000, volume: .08, loop: 0 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 34000, volume: .08, loop: 1 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 35000, volume: .08, loop: 1 }
-          - {content: ~3/CIN_HumanWalking.mp3, delay: 35500, volume: 0.04, loop: 1 }
-          - {content: ~3/CIN_AssetConnection.mp3, delay: 47000, volume: 0.08, loop: 0 }
-          - {content: ~3/CIN_HumanWalking.mp3, delay: 49000, volume: 0.04, loop: 1 }
-          - {content: ~3/CIN_HumanExcited.mp3, delay: 50400, volume: .08, loop: 0 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 35300, volume: .04, loop: 0 }
+          - {content: ~3/CIN_AssetConnection.mp3, delay: 47000, volume: .08, loop: 0 }
+          - {content: ~3/CIN_HumanWalking.mp3, delay: 48500, volume: .04, loop: 1 }
+          - {content: ~3/CIN_HumanExcited.mp3, delay: 50400, volume: .04, loop: 0 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 50100, volume: .08, loop: 1 }
-          - {content: ~3/CIN_ComputerDialOut.mp3, delay: 57000, volume: 0.08, loop: 0 }
-          - {content: ~3/CIN_RobotHacking.mp3, delay: 61000, volume: 0.08, loop: 0 }
+          - {content: ~3/CIN_ComputerDialOut.mp3, delay: 57000, volume: .04, loop: 0 }
+          - {content: ~3/CIN_RobotHacking.mp3, delay: 61200, volume: .06, loop: 0 }
         movie:
           layers:
             - {depth: 9, content: change_assets_fail.json, vcr: true }
@@ -562,14 +562,17 @@ chapters:
       # 3 Simulation Attack ==========================================
       -
         sfx:
-          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: .1, loop: true }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 2000, volume: 0.04, loop: 1 }
-          - {content: ~3/CIN_DoorOpen.mp3, delay: 4000, volume: .08, loop: 1 }
-          - {content: ~3/CIN_ThrowAwayComputer.mp3, delay: 7200, volume: .04, loop: 0 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 4000, volume: .08, loop: 0 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 4800, volume: .08, loop: 0 }
+          - {content: ~3/CIN_ThrowAwayComputer.mp3, delay: 7400, volume: .04, loop: 0 }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 9000, volume: 0.04, loop: 1 }
-          - {content: ~3/CIN_TreeMoving.mp3, delay: 92000, volume: .08, loop: 0 }
+          - {content: ~3/CIN_TreeMoving.mp3, delay: 8100, volume: .08, loop: 0 }
           - {content: ~3/CIN_RobotGetComputer.mp3, delay: 11000, volume: 0.08, loop: 0 }
-          - {content: ~3/CIN_RobotHacking.mp3, delay: 22000, volume: 0.08, loop: 0 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 9000, volume: .08, loop: 0 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 10000, volume: .08, loop: 0 }
+          - {content: ~3/CIN_RobotHacking.mp3, delay: 22000, volume: 0.06, loop: 0 }
         movie:
           layers:
             - {depth: 9, content: change_assets_fail_part_2.json, vcr: true }
@@ -693,27 +696,30 @@ chapters:
       # 3 Simulation Asset Change ==========================================
       -
         sfx:
-          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: .1, loop: true }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 500, volume: 0.04, loop: 0 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 1900, volume: .08, loop: 0 }
-          - {content: ~3/CIN_VehicleRunning.mp3, delay: 2200, volume: .4, loop: 0 }
+          - {content: ~3/CIN_VehicleRunning.mp3, delay: 1900, volume: .4, loop: 0 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 4000, volume: .08, loop: 0 }
-          - {content: ~3/CIN_HumanTossing.mp3, delay: 5000, volume: .08, loop: 1 }
+          - {content: ~3/CIN_HumanTossing.mp3, delay: 4400, volume: .08, loop: 1 }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 18200, volume: 0.04, loop: 0 }
-          - {content: ~3/CIN_DoorOpen.mp3, delay: 19500, volume: .08, loop: 1 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 19500, volume: .08, loop: 0 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 20800, volume: .08, loop: 0 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 21600, volume: .08, loop: 1 }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 21500, volume: 0.04, loop: 0 }
           - {content: ~3/CIN_AssetConnection.mp3, delay: 28200, volume: 0.08, loop: 0 }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 28700, volume: 0.04, loop: 0 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 30900, volume: .08, loop: 1 }
-          - {content: ~3/CIN_DoorOpen.mp3, delay: 32800, volume: .08, loop: 1 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 32800, volume: .08, loop: 0 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 35000, volume: .08, loop: 0 }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 33500, volume: 0.04, loop: 0 }
-          - {content: $changeSFX, delay: 38600, volume: 1}
+          - {content: $changeSFX, delay: 38000, volume: 1}
           - {content: ~3/CIN_HumanWalking.mp3, delay: 39000, volume: 0.04, loop: 2 }
-          - {content: ~3/CIN_DoorOpen.mp3, delay: 41000, volume: .08, loop: 1 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 41000, volume: .08, loop: 0 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 44000, volume: .08, loop: 0 }
           - {content: ~3/CIN_ThrowAwayComputer.mp3, delay: 45000, volume: .08, loop: 0 }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 45000, volume: 0.04, loop: 1 }
-          - {content: ~3/CIN_DoorOpen.mp3, delay: 46000, volume: .08, loop: 1 }
+          - {content: ~3/CIN_DoorOpen.mp3, delay: 46000, volume: .08, loop: 0 }
         movie:
           layers:
             - {depth: 11, content: $changePass, vcr: true }
