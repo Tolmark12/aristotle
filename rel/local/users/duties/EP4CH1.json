@@ -1,0 +1,24 @@
+{
+    "duties":[
+      {
+          "title":"PRA Process Gives You Access",
+          "content":"EP4CH1_1.html"
+                },
+                {
+                  "title":"PRA Process Gives Vendors Access",
+                  "content":"EP4CH1_2.html"
+                },
+                {
+                  "title":"Maintain Your Defender Status",
+                  "content":"EP4CH1_3.html"
+                },
+                {
+                  "title":"Notify of Access Changes Promptly",
+                  "content":"EP4CH1_4.html"
+                },
+                {
+                  "title":"Share Your BCSI Data With Care",
+                  "content":"EP4CH1_5.html"
+                }
+            ]
+}

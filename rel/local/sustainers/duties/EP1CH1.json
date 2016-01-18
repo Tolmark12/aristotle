@@ -1,0 +1,16 @@
+{
+    "duties":[
+      {
+          "title":"Know Your Facilities",
+          "content":"EP1CH1_1.html"
+                },
+                {
+                  "title":"Know Your CRCAs and BCSI",
+                  "content":"EP1CH1_2.html"
+                },
+                {
+                  "title":"Review Inventory Annually",
+                  "content":"EP1CH1_3.html"
+                }
+            ]
+}
