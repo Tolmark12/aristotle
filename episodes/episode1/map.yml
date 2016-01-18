@@ -43,7 +43,7 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: .05, slot: ambience} }
         sfx:
-          - {content: $facilitySFX, volume:0.8}
+          - {content: $facilitySFX, volume: .1}
         movie:
           layers:
             - {depth: 3, cache: true, content: $facilityBuild}

@@ -64,7 +64,7 @@ chapters:
           - {content: ~4/CIN_DoorOpen.mp3, delay: 23500, volume: 0.1 }
           - {content: ~4/CIN_HumanWalking.mp3, delay: 27000, volume: .2, loop: 2 }
           - {content: ~4/CIN_DoorOpen.mp3, delay: 29000, volume: 0.1 }
-          - {content: ~g/SFX_AttackSlamdown_UnsavoryHuman.mp3, delay: 35000, volume: .5}
+          - {content: ~g/SFX_AttackSlamdown_UnsavoryHuman.mp3, delay: 35000, volume: .3}
           - {content: ~4/CIN_RobotsMovingExplosion.mp3, delay: 51400, volume: .4}
         movie:
           layers:

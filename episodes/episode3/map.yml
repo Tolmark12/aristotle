@@ -56,7 +56,7 @@ chapters:
           - {content: ~3/CIN_TreeMoving.mp3, delay: 7500, volume: 0.05, loop: 0 }
           - {content: ~3/CIN_TreeMoving.mp3, delay: 9200, volume: 0.05, loop: 0 }
           - {content: ~3/CIN_TreeMoving.mp3, delay: 11000, volume: 0.05, loop: 0 }
-          - {content: ~g/SFX_AttackSlamdown_FlashBot.mp3, delay: 22000, volume: 1}
+          - {content: ~g/SFX_AttackSlamdown_FlashBot.mp3, delay: 22000, volume: .3}
           - {content: ~3/CIN_DoorOpen.mp3, delay: 30800, volume: .08, loop: 1 }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 31000, volume: 0.08, loop: 2 }
           - {content: ~3/2001_Space.mp3, delay: 35400, volume: 1}

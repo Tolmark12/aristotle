@@ -48,7 +48,7 @@ chapters:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.3 }
           - {content: ~2/CIN_RobotMovement.mp3, delay: 700, volume: 0.08 }
           - {content: ~2/CIN_RobotMovement.mp3, delay: 12000, volume: 0.1, loop: 3 }
-          - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 3400, volume: 0.4}
+          - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 3400, volume: 0.2}
           - {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3, delay: 12600, volume: 0.3}
           - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 14500, volume: 0.2 }
           - {content: ~2/CIN_RipServerFromWall.mp3, delay: 14500, volume: 0.1 }
@@ -430,11 +430,12 @@ chapters:
       # 2 Simulation Kettle E Attack ==========================================
       -
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 1.0}
-          - {content: ~g/SFX_AttackSlamdown_KettleHeadEAttackMode.mp3, delay: 6300, volume: 1.0 }
-          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 29000, volume: 1.0 }
-          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 32000, volume: 1.0 }
-          - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 35900, volume: 1.0 }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: .1}
+          - {content: ~g/SFX_AttackSlamdown_KettleHeadEAttackMode.mp3, delay: 6300, volume: .2 }
+          - {content: ~2/CIN_RobotHacking.mp3, delay: 17500, volume: .2 }
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 29000, volume: .4 }
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 32000, volume: .4 }
+          - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 35900, volume: .4 }
         movie:
           layers:
             - {depth: 7, content: kettle_e_attack_pngs.json, vcr: true }
@@ -503,7 +504,7 @@ chapters:
       # 2 Animate PACS Build ==========================================
       -
         sfx:
-            - {content: $eacmsSFX, delay: 700, volume: 1}
+            - {content: $eacmsSFX, delay: 700, volume: .4}
         movie:
           layers:
             - {depth: 8, content: $eacmsBuild, cache: true }
@@ -673,7 +674,7 @@ chapters:
       # 2 Simulator - Firewall Lower ==========================================
       -
         sfx:
-          - {content: ~g/SFX_AttackSlamdown_VirusBot.mp3, delay: 16100, volume: 1}
+          - {content: ~g/SFX_AttackSlamdown_VirusBot.mp3, delay: 16100, volume: .3 }
         movie:
           layers:
             - {depth: 11, content: $eacmsAnimateBadLower, vcr: true }
