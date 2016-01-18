@@ -19,7 +19,6 @@ module.exports = class Episode
 
   begin : () =>
     aristotle.devTools.go @trainingData.dev, @trainingData.chapters
-
     PubSub.publish("episode.loaded", @trainingData);
 
     @createChapters @trainingData
