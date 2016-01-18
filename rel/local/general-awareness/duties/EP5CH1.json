@@ -1,12 +1,8 @@
 {
-  "duties":[
-    {
-      "title":"Know Your Facilities",
-      "content":"EP1CH1.html"
-    },
-    {
-      "title":"Know Your CRCAs and BCSI",
-      "content":"EP1CH1.html"
-    }
-  ]
+    "duties":[
+      {
+          "title":"Always Be On Guard",
+        "content": "EP5CH1_1.html"
+                }
+            ]
 }

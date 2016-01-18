@@ -1,6 +1,6 @@
 {
   "companyName"      : "Arizona Public Service",
-  "moduleId"         : "APS.CipDefender.v1",
+  "moduleId"         : "Aps.CipDefender.v1",
   "moduleTitle"      : "CIP Defender - Sustainers",
   "companyRegulator" : "WECC",
   "moduleAudience"   : "CIP Sustainers",

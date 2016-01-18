@@ -4,7 +4,7 @@ subtitle: Asset Defenses
 rankId: technical-cadet
 nextRankId: cyber-cadet
 labels: !!inc/file ./episodes/global/_labels.yaml
-action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
+action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
 # CHAPTER 1
 chapters:
   # ----------------------------------------------
@@ -813,7 +813,7 @@ chapters:
       # 3 Rank Advance ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_CyberCadet.mp3, volume:1}
+          - {content: ~g/SFX_Level_CyberCadet.mp3, volume: 1}
         movie:
           layers:
             - {depth: 11, background: black, content: ~g/cyber_cadet.json, events: [complete] }

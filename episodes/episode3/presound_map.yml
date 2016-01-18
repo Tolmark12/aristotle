@@ -455,7 +455,7 @@ chapters:
       # 3 Simulation Attack ==========================================
       -
         sfx:
-          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume:.5}
+          #- {content: ~g/MU_Attack_Music.wav, delay: 1000, volume: .5}
           - {content: ~g/SFX_AttackSlamdown_MimeBot.mp3, delay: 21000, volume: 0.2}
         movie:
           layers:
@@ -734,7 +734,7 @@ chapters:
       # 3 Rank Advance ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_CyberCadet.mp3, volume:1}
+          - {content: ~g/SFX_Level_CyberCadet.mp3, volume: 1}
         movie:
           layers:
             - {depth: 11, background: black, content: ~g/cyber_cadet.json, events: [complete] }

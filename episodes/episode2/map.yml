@@ -3,7 +3,7 @@ title: Episode 2
 subtitle: Perimeter Defenses
 rankId: cadet-first-class
 nextRankId: technical-cadet
-action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
+action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
 labels: !!inc/file ./episodes/global/_labels.yaml
 # CHAPTER 1
 chapters:
@@ -670,7 +670,7 @@ chapters:
       # 2 Simulator - Firewall Lower ==========================================
       -
         sfx:
-          - {content: ~g/SFX_AttackSlamdown_VirusBot.mp3, delay: 16100, volume:1}
+          - {content: ~g/SFX_AttackSlamdown_VirusBot.mp3, delay: 16100, volume: 1}
         movie:
           layers:
             - {depth: 11, content: $eacmsAnimateBadLower, vcr: true }
@@ -757,7 +757,7 @@ chapters:
       # 2 Rank Advance ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_TechnicalCadet.mp3, volume:1}
+          - {content: ~g/SFX_Level_TechnicalCadet.mp3, volume: 1}
         movie:
           layers:
             - {depth: 9, background: black, content: ~g/technical_cadet.json, events: [complete] }

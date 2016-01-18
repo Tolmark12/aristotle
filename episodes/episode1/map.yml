@@ -42,7 +42,7 @@ chapters:
       # 1 Selector Build ==========================================
       -
         sfx:
-          - {content: $facilitySFX, volume:0.8}
+          - {content: $facilitySFX, volume: 0.8}
         movie:
           layers:
             - {depth: 3, cache: true, content: $facilityBuild}
@@ -708,7 +708,7 @@ chapters:
       # 3 Rank Advance ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_CadetFirstClass.mp3, volume:1}
+          - {content: ~g/SFX_Level_CadetFirstClass.mp3, volume: 1}
         movie:
           layers:
             - {depth: 7, background: black, content: ~g/cadet_first_class.json, events: [complete] }

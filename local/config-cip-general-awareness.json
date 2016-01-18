@@ -1,6 +1,6 @@
 {
   "companyName"      : "Arizona Public Service",
-  "moduleId"         : "APS.CipAwareness.v1",
+  "moduleId"         : "Aps.CipAwareness.v1",
   "moduleTitle"      : "CIP Defender - General Awareness",
   "companyRegulator" : "WECC",
   "moduleAudience"   : "CIP General Awareness",
