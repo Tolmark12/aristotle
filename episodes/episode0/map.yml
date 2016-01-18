@@ -15,7 +15,8 @@ chapters:
       # Animation Split Screen Advance ==========================================
       -
         sfx:
-          - {content: ~g/Intro_Credits.mp3, volume: 0.8}
+          - {content: ~g/Intro_Credits.mp3, volume: 0.2}
+          - {content: ~0/SFX_Defender_Door_Open.mp3, delay: 7300, volume: 0.8, loop: 0 }
         action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}, {cmd: chrome.hidename}, {cmd: chrome.hideicons}]
         movie:
           layers:
@@ -242,8 +243,8 @@ chapters:
       -
         action:
           - {cmd: chrome.hide}
-          - {cmd: sound.fadeout, data: {delay: 13000, duration: 500, slot: ambience} }
-          - {cmd: playsound, data: {content: ~0/CIN_Intro_Sektimus.mp3, volume: .1, delay: 13000, duration: 500, slot: sektimus, destroy: true} }
+          - {cmd: sound.fadeout, data: {delay: 15000, duration: 500, slot: ambience} }
+          - {cmd: playsound, data: {content: ~0/CIN_Intro_Sektimus.mp3, volume: .4, delay: 15000, duration: 500, slot: sektimus, destroy: true} }
         title: Sektimus
         movie:
           layers:
@@ -314,6 +315,7 @@ chapters:
         duration: {kind: dialogue }
       # Dialogue Gut Check  ==========================================
       -
+        action: {cmd: sound.fadein, data: {delay: 1000, duration: 500, slot: ambience} }
         title: Gut Check
         movie:
           layers:

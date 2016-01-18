@@ -41,8 +41,9 @@ chapters:
       - !!inc/file ./episodes/episode1/yaml/_building-selector.yaml
       # 1 Selector Build ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: .05, slot: ambience} }
         sfx:
-          - {content: $facilitySFX, volume: 0.8}
+          - {content: $facilitySFX, volume:0.8}
         movie:
           layers:
             - {depth: 3, cache: true, content: $facilityBuild}
@@ -231,7 +232,7 @@ chapters:
           layers:
             - {depth: 7, content: asset_bcsi_label.json }
         action:
-          - {cmd: label.hide, data: {id: all}  }
+          - {cmd: label.hide, data: {id: all} }
           - {cmd: highlight, data: {id: filing-cabinet, level: bcsi} }
           - {cmd: highlight, data: {id: map, level: bcsi} }
           - {cmd: highlight, data: {id: monitor, level: bcsi} }
@@ -319,7 +320,6 @@ chapters:
               emo: down
               text: "When all duties are acknowledged, you can click CONTINUE to proceed."
               audio: Story_2_Ctanlee_33.mp3
-        title: Duties
         ux:
           components:
             -
@@ -545,7 +545,6 @@ chapters:
           layers:
             - {depth: 6, content: clear }
             - {depth: 7, content: clear }
-        title: Duties
         ux:
           components:
             -
@@ -579,6 +578,16 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Animation Violation ==========================================
       -
+        sfx:
+          - {content: ~g/MU_Attack_Music.mp3, delay: 500, volume: 0.1, loop: true }
+          - {content: ~1/CIN_DoorOpen.mp3, delay: 1500, volume: 0.08, loop: 0 }
+          - {content: ~1/CIN_HumanWalking.mp3, delay: 2000, volume: 0.08, loop: 0 }
+          - {content: ~1/SFX_Camera.mp3, delay: 6000, volume: 1, loop: 0 }
+          - {content: ~1/CIN_HumanWalking.mp3, delay: 7000, volume: 0.08, loop: 1 }
+          - {content: ~1/CIN_DoorOpen.mp3, delay: 9500, volume: 0.08, loop: 0 }
+          - {content: ~1/CIN_DoorOpen.mp3, delay: 12000, volume: 0.08, loop: 0 }
+          - {content: ~1/CIN_HumanWalking.mp3, delay: 12800, volume: 0.08, loop: 0 }
+          - {content: ~1/CIN_DoorOpen.mp3, delay: 13000, volume: 0.08, loop: 0 }
         movie:
           layers:
             - {depth: 6, content: violation.json, vcr: true }
@@ -637,6 +646,12 @@ chapters:
         duration: {kind: time, seconds: 1 }
       # 3 Animation Good Catch ==========================================
       -
+        sfx:
+          - {content: ~g/MU_Attack_Music.mp3, delay: 500, volume: 0.1, loop: true }
+          - {content: ~1/CIN_HumanWalking.mp3, delay: 500, volume: 0.08, loop: 1 }
+          - {content: ~1/SFX_Camera.mp3, delay: 7000, volume: 1, loop: 0 }
+          - {content: ~1/CIN_HumanWalking.mp3, delay: 9100, volume: 0.08, loop: 0 }
+          - {content: ~1/SFX_Tackle.mp3, delay: 10500, volume: 1, loop: 0 }
         movie:
           layers:
             - {depth: 6, content: clear }
@@ -691,7 +706,6 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Duties ==========================================
       -
-        title: Duties
         ux:
           components:
             -
@@ -710,7 +724,7 @@ chapters:
       # 3 Rank Advance ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_CadetFirstClass.mp3, volume: 1}
+          - {content: ~g/SFX_Level_CadetFirstClass.mp3, volume:1}
         movie:
           layers:
             - {depth: 7, background: black, content: ~g/cadet_first_class.json, events: [complete] }
