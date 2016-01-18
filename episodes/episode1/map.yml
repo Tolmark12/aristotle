@@ -42,7 +42,7 @@ chapters:
       # 1 Selector Build ==========================================
       -
         sfx:
-          - {content: $facilitySFX, volume:0.8}
+          - {content: $facilitySFX, volume: 0.8}
         movie:
           layers:
             - {depth: 3, cache: true, content: $facilityBuild}
@@ -317,6 +317,7 @@ chapters:
               emo: down
               text: "When all duties are acknowledged, you can click CONTINUE to proceed."
               audio: Story_2_Ctanlee_33.mp3
+        title: Duties
         ux:
           components:
             -
@@ -542,6 +543,7 @@ chapters:
           layers:
             - {depth: 6, content: clear }
             - {depth: 7, content: clear }
+        title: Duties
         ux:
           components:
             -
@@ -687,6 +689,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Duties ==========================================
       -
+        title: Duties
         ux:
           components:
             -
@@ -705,7 +708,7 @@ chapters:
       # 3 Rank Advance ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_CadetFirstClass.mp3, volume:1}
+          - {content: ~g/SFX_Level_CadetFirstClass.mp3, volume: 1}
         movie:
           layers:
             - {depth: 7, background: black, content: ~g/cadet_first_class.json, events: [complete] }

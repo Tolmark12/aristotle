@@ -84,7 +84,7 @@ module.exports = class APIproxy
 
     data = {
       LearningContext:{
-        ModuleId        : aristotle.globals.get "trainingVersion"
+        ModuleId        : aristotle.globals.get "moduleId"
         ModuleAudience  : aristotle.globals.get "moduleAudience"
         SessionId       : aristotle.globals.get "sessionKey"
         StudentId       : aristotle.lmsProxy.userId
@@ -93,8 +93,6 @@ module.exports = class APIproxy
       }
       Chapters: [ chapterData ]
     }
-    console.log data
-    console.log JSON.stringify(data)
     @postData JSON.stringify(data)
 
 
@@ -142,6 +140,7 @@ module.exports = class APIproxy
     xhr.setRequestHeader 'Authorization', "Basic #{btoa( aristotle.globals.get('apikey') + ':' )}"
 
     xhr.addEventListener "load", (e)=>
+      console.log e
       if e.currentTarget.status > 299
         console.log "API responded with #{e.currentTarget.status} when trying to get the choice %'s for the quiz section'"
         cb {}
@@ -153,13 +152,13 @@ module.exports = class APIproxy
 
     obj =
       MetricsContext:
-        ModuleId  : aristotle.globals.get "trainingVersion"
+        ModuleId  : aristotle.globals.get "moduleId"
       ChoiceNames : choices
 
     xhr.send JSON.stringify(obj)
 
   test : () ->
-    console.log aristotle.globals.get "trainingVersion"
+    console.log aristotle.globals.get "moduleId"
     xhr = new XMLHttpRequest()
     xhr.open "POST", "https://cipdefenderapi.azurewebsites.net/api/metrics/choices", true
     xhr.setRequestHeader 'Content-Type',  'application/json; charset=UTF-8'
@@ -177,7 +176,7 @@ module.exports = class APIproxy
 
     obj =
       MetricsContext:
-        ModuleId: aristotle.globals.get "trainingVersion"
+        ModuleId: aristotle.globals.get "moduleId"
       ChoiceNames:[
         "Access Control System"
         "The Burninator"

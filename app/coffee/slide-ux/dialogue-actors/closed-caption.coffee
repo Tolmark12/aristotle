@@ -5,8 +5,10 @@ module.exports = class ClosedCaption
     $parent.append @$el
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
 
-    @ccDisplay = $ ".closed-caption", @$el
-    @ccDisplay.css display:'none'
+    token7  = PubSub.subscribe 'cc.on',   (a, data)=> @enableCc()
+    token8  = PubSub.subscribe 'cc.off',  (a, data)=> @disableCc()
+
+    @ccDisplay  = $ ".closed-caption", @$el
 
     @$speechBox = $ ".text", @$el
     @hideText()
@@ -34,13 +36,11 @@ module.exports = class ClosedCaption
 
   turnCcOff : () ->
     @ccIsOn = false
-    @ccDisplay.addClass 'hidden'
     @$icon.addClass 'off'
     PubSub.publish 'cc.off'
 
   turnCcOn : () ->
     @ccIsOn = true
-    @ccDisplay.removeClass 'hidden'
     @$icon.removeClass 'off'
     PubSub.publish 'cc.on'
 
@@ -54,8 +54,8 @@ module.exports = class ClosedCaption
     else
       @character = 'ctanlee'
 
-  showText : () -> @ccDisplay.fadeIn()
-  hideText : () -> @ccDisplay.fadeOut()
+  showText : () -> @ccDisplay.removeClass "hidden"
+  hideText : () -> @ccDisplay.addClass "hidden"
 
   enableCc  : () -> @ccDisplay.removeClass "disabled"
   disableCc : () -> @ccDisplay.addClass "disabled"

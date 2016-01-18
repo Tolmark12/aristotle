@@ -42,7 +42,7 @@ chapters:
         duration: {kind: ux}
       # Animation Load Warcore ==========================================
       -
-        action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility_no_notes.mp3, loop: true, volume: 1, slot: ambience} }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility_no_notes.mp3, loop: true, volume: 1, slot: ambience} }
         title: Load Warcore
         movie:
           layers:
@@ -58,11 +58,11 @@ chapters:
               next: 6000
               text: Welcome to the WarCore. Booting system...
               actor: warcore
-              audio: Story_1_Warcore_1.m4a
+              audio: Story_1_Warcore_1.mp3
             b:
               text: The system is ready for login. I will now access your records.
               actor: warcore
-              audio: Story_1_Warcore_2.m4a
+              audio: Story_1_Warcore_2.mp3
         duration: {kind: dialogue }
       # Animation Quarantine ==========================================
       -
@@ -84,12 +84,12 @@ chapters:
             a:
               text: Your user has not logged in before. You'll be quarantined until your authorization records are confirmed.
               actor: warcore
-              audio: Story_1_Warcore_3.m4a
+              audio: Story_1_Warcore_3.mp3
             b:
               next: 6000
               text: I'll send for the WarCore authority now. Alerting CTANLEE!
               actor: warcore
-              audio: Story_1_Warcore_4.m4a
+              audio: Story_1_Warcore_4.mp3
             c:
               pos: [513,384,0]
               text: Hello potentially dangerous entity! I am CTANLEE.
@@ -240,10 +240,11 @@ chapters:
         duration: {kind: dialogue }
       # Animation Sektimus Launch  ==========================================
       -
-        action: {cmd: sound.fadeout, data:{content: ~g/MU_Ambient_Facility_no_notes.mp3, loop: true, volume: 1, delay:13000, duration: 500, slot: ambience, destroy: true } }
-        action: {cmd: sound.fadein, data:{content: ~0/CIN_Intro_Sektimus.mp3, volume: .1, delay:13000, duration: 500, slot: sektimus, destroy: true } }
+        actions:
+          - {cmd: chrome.hide}
+          - {cmd: sound.fadeout, data: {delay: 13000, duration: 500, slot: ambience} }
+          - {cmd: playsound, data: {content: ~0/CIN_Intro_Sektimus.mp3, volume: .1, delay: 13000, duration: 500, slot: sektimus, destroy: true} }
         title: Sektimus
-        action: {cmd: chrome.hide}
         movie:
           layers:
             - {depth: 1, content: sektimus_pngs.json }
@@ -404,7 +405,7 @@ chapters:
       -
         action: {cmd: chrome.hide}
         sfx:
-          - {content: ~g/SFX_Level_Cadet.mp3, volume:1}
+          - {content: ~g/SFX_Level_Cadet.mp3, volume: 1}
         movie:
           layers:
             - {depth: 0, background: black, content: ~g/cadet.json, events: [complete] }

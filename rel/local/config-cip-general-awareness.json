@@ -1,0 +1,18 @@
+{
+  "companyName"      : "Arizona Public Service",
+  "moduleId"         : "Aps.CipAwareness.v1",
+  "moduleTitle"      : "CIP Defender - General Awareness",
+  "companyRegulator" : "WECC",
+  "moduleAudience"   : "CIP General Awareness",
+  "apikey"           : "MetaMythic-43dbb0161e95",
+  "quizDir"          : "general-awareness/quizes",
+  "dutiesDir"        : "general-awareness/duties",
+  "episodeMapFiles"  : {
+    "0" : "map.json",
+    "1" : "map.json",
+    "2" : "map.json",
+    "3" : "map.json",
+    "4" : "map.json",
+    "5" : "map.json"
+  }
+}

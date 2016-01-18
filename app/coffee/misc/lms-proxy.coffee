@@ -8,6 +8,7 @@ module.exports = class LMSProxy
     PubSub.subscribe 'state.load',      (m, data)=> @loadState()
     PubSub.subscribe 'state.rehydrate', (m, data)=> @rehydrate()
     PubSub.subscribe 'slide.activated', (m, data)=> @saveState data
+    PubSub.subscribe 'chapter.started', (m, data)=> @chapterTitle = data
 
   begin : (cb) ->
     if elbScorm.initCourse()
@@ -37,9 +38,9 @@ module.exports = class LMSProxy
 
   rehydrate : () ->
     if !@store? then return
-    aristotle.episode.gotoLocationByTitle @store.location.slide
+    aristotle.episode.gotoLocationByTitle @store.location.slide, @store.location.chapter
 
-  saveState : (currentSlide) ->
+  saveState : (currentSlide, chapter) ->
     @store = {version: aristotle.version}
     # global variabls
     @store.globalVars = aristotle.globals.vars
@@ -48,7 +49,8 @@ module.exports = class LMSProxy
     @store.layerState = aristotle.movie.dehydrateLayerState()
 
     if aristotle.episode?
-      @store.location = {episodeNum:aristotle.episode.episodeNum, slide:currentSlide}
+      ch = if chapter? then chapter else @chapterTitle
+      @store.location = {episodeNum:aristotle.episode.episodeNum, slide:currentSlide, chapter: ch}
       elbScorm.SetResumeData @store
 
   completeEpisode : (newEpisodeNum) ->

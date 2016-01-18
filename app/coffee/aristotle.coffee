@@ -43,7 +43,7 @@ class Aristotle
     lmsProxy.begin @begin
     smallScreenZoom()
 
-    PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data
+    PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data.slide, data.chapter
 
   begin : () =>
     @setInitialEpisodeNum()
@@ -101,8 +101,8 @@ class Aristotle
     if !@episodeNum?
       @episodeNum = "0"
 
-  gotoLocationByTitle : (title) ->
-    aristotle.lmsProxy.saveState title
+  gotoLocationByTitle : (title, chapter) ->
+    aristotle.lmsProxy.saveState title, chapter
     @init()
 
 window.Aristotle = Aristotle

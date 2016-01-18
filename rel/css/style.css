@@ -978,6 +978,17 @@ body.body-quiz-results .chrome {
     /*
 	Some vertical flip updates
 */ }
+    .slide-ux .quiz .question-total {
+      position: absolute;
+      top: 23px;
+      left: 795px;
+      font-family: 'Function Condensed';
+      font-size: 18px;
+      color: #FEB644; }
+      .slide-ux .quiz .question-total:before {
+        content: "Question Total Score";
+        margin-right: 5px;
+        color: #618E95; }
     .slide-ux .quiz .flip-container {
       perspective: 1000;
       transform-style: preserve-3d; }
@@ -1141,7 +1152,7 @@ body.body-quiz-results .chrome {
         width: 600px;
         height: 41px; }
       .slide-ux .quiz-results .total:before {
-        content: "TOTAL";
+        content: "Episode Total Score";
         font-color: #6B989F;
         font-size: 26px;
         letter-spacing: 0.05em;

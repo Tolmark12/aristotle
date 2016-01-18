@@ -3,7 +3,7 @@ title: Episode 2
 subtitle: Perimeter Defenses
 rankId: cadet-first-class
 nextRankId: technical-cadet
-action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
+action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
 labels: !!inc/file ./episodes/global/_labels.yaml
 # CHAPTER 1
 chapters:
@@ -221,6 +221,7 @@ chapters:
         duration: {kind: ux }
       # 1 Duties ==========================================
       -
+        title: Duties
         movie:
           layers:
             - {depth: 7, content: clear }
@@ -260,6 +261,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
       -
+        title: A Disturbance
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15, loop: true }
           - {content: ~3/CIN_Quarantine.mp3, delay: 33700, volume: .1 }
@@ -668,7 +670,7 @@ chapters:
       # 2 Simulator - Firewall Lower ==========================================
       -
         sfx:
-          - {content: ~g/SFX_AttackSlamdown_VirusBot.mp3, delay: 16100, volume:1}
+          - {content: ~g/SFX_AttackSlamdown_VirusBot.mp3, delay: 16100, volume: 1}
         movie:
           layers:
             - {depth: 11, content: $eacmsAnimateBadLower, vcr: true }
@@ -728,6 +730,7 @@ chapters:
         duration: {kind: ux }
       # 2 Duties ==========================================
       -
+        title: Duties
         action:
           - {cmd: ctanlee.gohome}
         movie:
@@ -754,7 +757,7 @@ chapters:
       # 2 Rank Advance ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_TechnicalCadet.mp3, volume:1}
+          - {content: ~g/SFX_Level_TechnicalCadet.mp3, volume: 1}
         movie:
           layers:
             - {depth: 9, background: black, content: ~g/technical_cadet.json, events: [complete] }

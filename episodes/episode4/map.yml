@@ -4,7 +4,7 @@ subtitle: Manning the Defenses
 rankId: cyber-cadet
 nextRankId: master-cadet
 labels: !!inc/file ./episodes/global/_labels.yaml
-action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
+action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
 # CHAPTER 1
 chapters:
   # ----------------------------------------------
@@ -353,6 +353,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Duties ==========================================
       -
+        title: Duties
         action: {cmd: ctanlee.gohome}
         ux:
           components:
@@ -651,6 +652,7 @@ chapters:
         duration: {kind: dialogue }
       # 2 Duties ==========================================
       -
+        title: Duties
         action: {cmd: ctanlee.gohome}
         ux:
           components:
@@ -834,6 +836,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Duties ==========================================
       -
+        title: Duties
         movie:
           layers:
             - {depth: 13, content: clear }
@@ -856,7 +859,7 @@ chapters:
       # 3 Rank Advance ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_MasterCadet.mp3, volume:1}
+          - {content: ~g/SFX_Level_MasterCadet.mp3, volume: 1}
         movie:
           layers:
             - {depth: 13, background: black, content: ~g/master_cadet.json, events: [complete] }

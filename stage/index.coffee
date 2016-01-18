@@ -15,7 +15,16 @@ isDevMode  = getQueryVariable 'dev'
 isLocal    = getQueryVariable('local') == "true"
 sudo       = getQueryVariable('sudo')  == "true"
 
-configFile = "config-sustainers.json"
+role       = getQueryVariable('role')
+
+switch role
+  when "cip-general-awareness" then configFile = "config-cip-general-awareness.json"
+  when "cip-sustainers"        then configFile = "config-cip-sustainers.json"
+  when "cip-users"             then configFile = "config-cip-users.json"
+  else                              configFile = "config-cip-sustainers.json"
+
+
+console.log configFile
 
 # Load either the user specified episode, or a default one
 aristotle = new Aristotle $(".holder"), configFile, "episodes", "local", episode, isDevMode, isLocal, sudo

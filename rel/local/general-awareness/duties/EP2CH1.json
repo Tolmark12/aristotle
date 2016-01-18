@@ -1,12 +1,12 @@
 {
-  "duties":[
-    {
-      "title":"Know Your Facilities",
-      "content":"EP1CH1.html"
-    },
-    {
-      "title":"Know Your CRCAs and BCSI",
-      "content":"EP1CH1.html"
-    }
-  ]
+    "duties":[
+      {
+          "title":"Know Your PSPs",
+          "content":"EP2CH1_1.html"
+                },
+                {
+                  "title":"Protect Your PSPs",
+                  "content":"EP2CH1_2.html"
+                }
+            ]
 }
