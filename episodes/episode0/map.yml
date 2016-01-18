@@ -405,7 +405,7 @@ chapters:
       -
         action: {cmd: chrome.hide}
         sfx:
-          - {content: ~g/SFX_Level_Cadet.mp3, volume:1}
+          - {content: ~g/SFX_Level_Cadet.mp3, volume: 1}
         movie:
           layers:
             - {depth: 0, background: black, content: ~g/cadet.json, events: [complete] }
