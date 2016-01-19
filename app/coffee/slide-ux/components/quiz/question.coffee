@@ -39,7 +39,6 @@ module.exports = class Question
     else
       @answerCallback @rightGuesses == @totalRightAnswers
     @clickResults $el, guessedRight
-
     @$questionTotal.html @totalPoints
 
 

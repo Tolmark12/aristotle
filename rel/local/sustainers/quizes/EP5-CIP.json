@@ -67,7 +67,7 @@
         ]
       },
       {
-        "gimme": true,
+        "gimee": true,
         "question": "BONUS: How engaging did you find this training?",
         "answers": [
           {
@@ -98,7 +98,7 @@
         ]
       },
       {
-        "gimme": true,
+        "gimee": true,
         "question": "BONUS: Was this training valuable and worthwhile for reminding you or helping you understand the concepts of CIP and your duties to protect our infrastructure?",
         "answers": [
           {
@@ -129,7 +129,7 @@
         ]
       },
       {
-        "gimme": true,
+        "gimee": true,
         "question": "BONUS: Would you recommend training like this for other difficult or dry topics like CIP compliance?",
         "answers": [
           {

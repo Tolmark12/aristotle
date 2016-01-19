@@ -25,12 +25,13 @@
                 img.shadow-icon(data-src="perfect-answer")
     .decisions
       .decision-bank
-        each decision in decisions
-          .decision
-            .txt You and <span class="perc">#{decision.popularPercentage}</span> of Defenders chose the <span>#{decision.choice}</span> #{decision.category}
-            .value-bar
-              .bg
-              .fg(style="width:#{decision.popularPercentage}%")
+        if decisions != false
+          each decision in decisions
+            .decision
+              .txt You and <span class="perc">#{decision.popularPercentage}</span> of Defenders chose the <span>#{decision.choice}</span> #{decision.category}
+              .value-bar
+                .bg
+                .fg(style="width:#{decision.popularPercentage}%")
     .buttons
       .quiz-btn#continue
         img.shadow-icon(data-src="quiz-btn")

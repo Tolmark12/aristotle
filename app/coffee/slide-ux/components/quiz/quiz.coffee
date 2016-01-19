@@ -34,19 +34,23 @@ module.exports = class Quiz extends Component
       if !results
         @decisionPercentages = false
       else
-        # console.log results
-        @decisionPercentages = []
-        # For each category returned from the api
-        for category in results
-          # For each average within this category
-          for selection in category.Breakdowns
-            # loop throuh all of the user's choices and see if there is a match
-            for userChoice in aristotle.globals.get("episode#{aristotle.episodeNum}_choices")
-              if userChoice.choice == selection.Selection
-                @decisionPercentages.push
-                  popularPercentage : Math.round(selection.PercentOfTotal * 100)
-                  choice            : selection.Selection
-                  category          : category.ChoiceName
+        try
+          # console.log results
+          @decisionPercentages = []
+          # For each category returned from the api
+          for category in results
+            # For each average within this category
+            for selection in category.Breakdowns
+              # loop throuh all of the user's choices and see if there is a match
+              for userChoice in aristotle.globals.get("episode#{aristotle.episodeNum}_choices")
+                if userChoice.choice == selection.Selection
+                  @decisionPercentages.push
+                    popularPercentage : Math.round(selection.PercentOfTotal * 100)
+                    choice            : selection.Selection
+                    category          : category.ChoiceName
+        catch error
+          @decisionPercentages = false
+
 
    #######  ##     ## #### ########
   ##     ## ##     ##  ##       ##
