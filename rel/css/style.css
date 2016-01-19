@@ -992,6 +992,7 @@ body.body-quiz-results .chrome {
 	Some vertical flip updates
 */ }
     .slide-ux .quiz .question-total {
+      display: none;
       position: absolute;
       top: 23px;
       left: 795px;
