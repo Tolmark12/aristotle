@@ -365,6 +365,7 @@ chapters:
   # ------------------------------------ CHAPTER 2
   # ----------------------------------------------
   -
+    fid: ep4-ch2
     title: Chapter 2
     subtitle: User Accounts
     kind: chapter
