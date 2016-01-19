@@ -361,7 +361,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 6, content: factory_workers_loop.json, loop: true }
+            - {depth: 6, content: ~1/factory_workers_loop.json, loop: true }
         duration: {kind: time, seconds: .2}
       # 2 Dialogue More Defenders ==========================================
       -
