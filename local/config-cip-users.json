@@ -15,6 +15,11 @@
     "4" : "map.json",
     "5" : "map.json"
   },
-  "filter":{}
-  
+  "filters":{
+    "5":{
+      "ep5-ch2-sektimus-general-awareness-a":"",
+      "ep5-ch2-sektimus-general-awareness-selector":"",
+      "ep5-ch2-sektimus-general-awareness-b":""
+    }
+  }
 }

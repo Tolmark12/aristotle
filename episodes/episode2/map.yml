@@ -410,6 +410,7 @@ chapters:
         duration: {kind: dialogue }
       # 2 Dialogue Electronic Attack ==========================================
       -
+        fid: ep2-ch2-a
         title: Electronic Attacks
         movie:
           layers:

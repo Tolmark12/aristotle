@@ -460,6 +460,7 @@ chapters:
     slides:
       # 3 Dialogue Changing Assets ==========================================
       -
+        fid: ep3-ch3-a
         title: Changing Assets
         duration: {kind: ux}
         ux:
@@ -476,6 +477,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Simulation Attack ==========================================
       -
+        fid: ep3-ch3-b
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: .1, loop: true }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 100, volume: .04, loop: 1 }
@@ -549,6 +551,7 @@ chapters:
         duration: {kind: ux }
       # 3 Dialogue More Problems ==========================================
       -
+        fid: ep3-ch3-c
         title: More Problems
         duration: {kind: ux}
         ux:
@@ -564,6 +567,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Simulation Attack ==========================================
       -
+        fid: ep3-ch3-d
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: .1, loop: true }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 2000, volume: 0.04, loop: 1 }
@@ -603,6 +607,7 @@ chapters:
         duration: {kind: ux}
       # 3 Dialogue Baseline Configuration 1 ==========================================
       -
+        fid: ep3-ch3-e
         title: Adding Assets
         movie:
           layers:
@@ -623,6 +628,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Dialogue Baseline Configuration 5 ==========================================
       -
+        fid: ep3-ch3-f
         title: Updating Assets
         movie:
           layers:
@@ -642,6 +648,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Dialogue Disposing Assets ==========================================
       -
+        fid: ep3-ch3-g
         title: Disposing Assets
         movie:
           layers:
@@ -661,6 +668,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Zoom Perimeter View ==========================================
       -
+        fid: ep3-ch3-h
         movie:
           layers:
             - {depth: 10, content: ~g/perimeter_change.json }
@@ -670,6 +678,7 @@ chapters:
       - !!inc/file ./episodes/episode3/yaml/_asset-change-selector.yaml
       # 3 Animate Selector Build ==========================================
       -
+        fid: ep3-ch3-j
         sfx:
           - {content: $changeSFX, volume: 1}
         movie:
@@ -678,6 +687,7 @@ chapters:
         duration: {kind: time, seconds: 5}
       # 3 Dialogue Mulligan ==========================================
       -
+        fid: ep3-ch3-k
         title: Calling a Mulligan
         action: {cmd: ctanlee.gohome}
         movie:
@@ -698,6 +708,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Simulation Asset Change ==========================================
       -
+        fid: ep3-ch3-l
         sfx:
           - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: .1, loop: true }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 500, volume: 0.04, loop: 0 }
@@ -776,6 +787,7 @@ chapters:
         duration: {kind: ux }
       # 3 Dialogue Duties review ==========================================
       -
+        fid: ep3-ch3-m
         title: Bravo Cadet!
         movie:
           layers:
@@ -794,6 +806,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Duties ==========================================
       -
+        fid: ep3-ch3-n
         title: Duties
         action: {cmd: ctanlee.gohome}
         ux:
@@ -804,6 +817,7 @@ chapters:
         duration: {kind: ux}
       # 3 Quiz ==========================================
       -
+        fid: ep3-ch3-o
         duration: {kind: ux}
         ux:
           components:
