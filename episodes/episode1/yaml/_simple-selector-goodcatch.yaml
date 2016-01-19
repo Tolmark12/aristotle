@@ -24,7 +24,7 @@ ux:
       config:
         hasLabels: true
         title: Round Two
-        subTitle: Wow, I guess that is one method for stopping <a data-label=“bcsi”>BCSI</a> from leaving the facility. How would an auditor classify this?
+        subTitle: Wow, I guess that is one method for stopping <a data-label="bcsi">BCSI</a> from leaving the facility. How would an auditor classify this?
         items:
           -
             btnTxt: Good Catch
