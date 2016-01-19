@@ -14,5 +14,36 @@
     "3" : "map.json",
     "4" : "map.json",
     "5" : "map.json"
+  },
+  "filters":{
+    "2":{
+      "ep2-ch2-sektimus":"",
+      "ep2-ch2-a":""
+    },
+    "3":{
+      "ep3-ch2":"",
+      "ep3-ch3-a":"",
+      "ep3-ch3-b":"",
+      "ep3-ch3-c":"",
+      "ep3-ch3-d":"",
+      "ep3-ch3-e":"",
+      "ep3-ch3-f":"",
+      "ep3-ch3-g":"",
+      "ep3-ch3-h":"",
+      "ep3-ch3-i":"",
+      "ep3-ch3-j":"",
+      "ep3-ch3-k":"",
+      "ep3-ch3-l":"",
+      "ep3-ch3-m":"",
+      "ep3-ch3-n":"",
+      "ep3-ch3-o":""
+    },
+    "4":{
+      "ep4-ch2":""
+    },
+    "5":{
+      "ep5-ch2-sektimus-normal-a":"",
+      "ep5-ch2-sektimus-normal-selector":""
+    }
   }
 }

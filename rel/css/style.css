@@ -920,6 +920,17 @@ body.body-quiz-results .chrome {
       margin-top: 60px; }
       .slide-ux .episode-bookend.episode-outro .fist svg * {
         fill: #335E6E; }
+  .slide-ux .gut-check {
+    position: absolute;
+    top: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .slide-ux .gut-check .txt {
+      margin-top: -100px;
+      letter-spacing: 0.07em;
+      font-weight: 500;
+      font-size: 24px; }
   .slide-ux .personal-info-intro {
     position: absolute;
     top: 50%;
@@ -1149,7 +1160,7 @@ body.body-quiz-results .chrome {
       align-items: center;
       justify-content: space-around; }
       .slide-ux .quiz-results .total .value-bar {
-        width: 600px;
+        width: 500px;
         height: 41px; }
       .slide-ux .quiz-results .total:before {
         content: "Episode Total Score";
@@ -1162,7 +1173,8 @@ body.body-quiz-results .chrome {
         width: 150px;
         font-size: 28px;
         font-weight: bold;
-        color: #335E6E; }
+        color: #335E6E;
+        width: 170px; }
     .slide-ux .quiz-results .answers {
       display: flex;
       justify-content: space-around; }

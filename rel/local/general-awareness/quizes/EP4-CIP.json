@@ -1,0 +1,75 @@
+{
+  "config": {
+    "question-value": 120,  
+    "questions": [
+      {
+        "question": "It's OK to take pictures of PSPs, CRCAs and BCSI, as long as I don't share the pictures on Facebook",
+        "answers": [
+          {
+            "a": "True",
+            "r": "Hmmmm. No."
+          },
+          {
+            "a": "False",
+            "r": "Correct. You must always follow BCSI transit procedures.",
+            "c": true
+          }
+        ]
+      },
+      {
+        "question": "(Finish the sentence) I can share BCSI with ...",
+        "answers": [
+          {
+            "a": "Any APS employee",
+            "r": "Not just any APS employee..."
+          },
+          {
+            "a": "Any vendor",
+            "r": "Definitely not"
+          },
+          {
+            "a": "Any vendor I've worked with for more than five years",
+            "r": "Time doesn't matter"
+          },
+          {
+            "a": "Employees and vendors only when the BCSI transit procedures are followed",
+            "r": "The procedure is paramount",
+            "c": true
+          }
+        ]
+      },
+      {
+        "question": "If you are arrested, are issued a warrant, or receive a criminal indictment, you must...",
+        "answers": [
+          {
+            "a": "Self-report to your leader so your access can be evaluated",
+            "r": "Yes!",
+            "c": true
+          },
+          {
+            "a": "Do nothing - this is my personal business.",
+            "r": "Sorry, it's not personal once it impacts national security."
+          }
+        ]
+      },
+      {
+        "question": "When following the Visitor Escort Procedure, the scan order is...",
+        "answers": [
+          {
+            "a": "Employee with Access Scans, All Visitors Scan, Employee With Access Scans",
+            "r": "Yes!",
+            "c": true
+          },
+          {
+            "a": "Employee with Access Scans, All Visitors Scan",
+            "r": "Close, but not right."
+          },
+          {
+            "a": "All Visitors Scan, Employee with Access Scans",
+            "r": "Sorry."
+          }
+        ]
+      }
+    ]
+  }
+}

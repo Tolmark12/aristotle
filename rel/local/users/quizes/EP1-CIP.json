@@ -1,0 +1,138 @@
+{
+  "config": {
+    "question-value": 120,
+    "questions": [
+      {
+        "question": "What are APS's High Impact Facilities? (pick 2)",
+        "value": 240,
+        "answers": [
+          {
+            "a": "20 Large Substations",
+            "r": "These are Medium Impact"
+          },
+          {
+            "a": "Four Corners Power Plant",
+            "r": "This is Medium Impact"
+          },
+          {
+            "a": "HQ Building",
+            "r": "No"
+          },
+          {
+            "a": "Control Center",
+            "r": "Yes!",
+            "c": true
+          },
+          {
+            "a": "Backup Control Center",
+            "r": "Correct!",
+            "c": true
+          }
+        ]
+      },
+      {
+        "question": "What are APS's Medium Impact Facilities? (pick 2)",
+        "value": 240,
+        "answers": [
+          {
+            "a": "20 Large Substations",
+            "r": "Yes!",
+            "c": true
+          },
+          {
+            "a": "Four Corners Power Plant",
+            "r": "Correct!",
+            "c": true
+          },
+          {
+            "a": "HQ Building",
+            "r": "No"
+          },
+          {
+            "a": "Control Center",
+            "r": "This is High Impact"
+          },
+          {
+            "a": "Backup Control Center",
+            "r": "This is High Impact"
+          }
+        ]
+      },
+      {
+        "question": "How do we easily identify CRCAs when inside a PSP?",
+        "answers": [
+          {
+            "a": "Look for the red \"Critical Asset\" sticker on them",
+            "r": "Excellent!",
+            "c": true
+          },
+          {
+            "a": "Pull up the CRCAs asset inventory on your phone and look it up",
+            "r": "Nope, doesn't work that way."
+          },
+          {
+            "a": "Find an IT or technical person and ask them",
+            "r": "There's an easier way"
+          }
+        ]
+      },
+      {
+        "question": "What are examples of BCSI information? (pick 3)",
+        "value": 360,
+        "answers": [
+          {
+            "a": "Data on CRCA hard drives",
+            "r": "Yes",
+            "c": true
+          },
+          {
+            "a": "Timecards",
+            "r": "Important for your pay, but not as useful for attackers."
+          },
+          {
+            "a": "Control System network diagrams",
+            "r": "Very useful for an attacker",
+            "c": true
+          },
+          {
+            "a": "Control server configuration information",
+            "r": "Attackers love this information",
+            "c": true
+          },
+          {
+            "a": "Job posting boards",
+            "r": "Nope"
+          }
+        ]
+      },
+      {
+        "question": "Our core job as CIP Defenders is to 1.) Perform security duties and 2.) Create evidence of those duties",
+        "answers": [
+          {
+            "a": "True",
+            "r": "In it's simplest form, yes",
+            "c": true
+          },
+          {
+            "a": "False",
+            "r": "Sorry. It might seem simple, but this is our essential job."
+          }
+        ]
+      },
+      {
+        "question": "What should we do if we discover we missed a CIP Standard? ",
+        "answers": [
+          {
+            "a": "Tell Your Leader  - We can learn from our mistakes and Regulators look better on Self-Reports.",
+            "r": "Yes!",
+            "c": true
+          },
+          {
+            "a": "Tell No One - And hope an auditor or someone else doesn't discover it.",
+            "r": "This is never the right approach."
+          }
+        ]
+      }
+    ]
+  }
+}

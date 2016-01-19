@@ -1,0 +1,33 @@
+{
+  "config": {
+    "question-value": 120,  
+    "questions": [
+      {
+        "question": "What devices are acceptable to plug into your CRCAs?",
+        "answers": [
+          {
+            "a": "A cell phone to listen to music",
+            "r": "Nope"
+          },
+          {
+            "a": "A cell phone to charge it only",
+            "r": "Not even for that"
+          },
+          {
+            "a": "Your corporate workstation",
+            "r": "Not even that"
+          },
+          {
+            "a": "A personal USB drive to copy files",
+            "r": "Even that isn't safe"
+          },
+          {
+            "a": "None of the above",
+            "r": "Exactly",
+            "c": true
+          }
+        ]
+      }
+    ]
+  }
+}
