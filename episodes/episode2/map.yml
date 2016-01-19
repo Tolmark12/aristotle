@@ -529,6 +529,7 @@ chapters:
               pos: [170,400]
               text: Ah the ESP. I feel safer already. It's like a big electric blanket wrapped around my assets.
               audio: Story_3_Ctanlee_30.mp3
+              next: audio
         duration: {kind: dialogue}
       # 2 Dialogue - Run Simulator ==========================================
       -
