@@ -207,7 +207,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<div class=\"gut-check\"><div class=\"txt\">How Are you feeling?</div></div>");;return buf.join("");
+buf.push("<div class=\"gut-check\"><div class=\"txt\">How are you feeling?</div></div>");;return buf.join("");
 };
 
 jadeTemplate['slide-ux/components/personal-info-intro'] = function template(locals) {

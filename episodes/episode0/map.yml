@@ -407,7 +407,7 @@ chapters:
               audio: Story_1_Ctanlee_24.mp3
             d:
               pos: [350,300]
-              text: "Cadet, By the end of this training you will be a full CIP defender. Let us begin Episode 1 and load the simulator."
+              text: "Cadet, By the end of this training you will be a full CIP Defender. Let us begin Episode 1 and load the simulator."
               audio: Story_1_Ctanlee_25.mp3
         duration: {kind: dialogue }
       # Rank Advance ==========================================
