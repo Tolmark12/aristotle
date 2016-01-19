@@ -757,7 +757,7 @@ chapters:
             -
               kind: quiz
               config:
-                source: sample
+                source: EP2-CIP
       # 2 Rank Advance ==========================================
       -
         sfx:

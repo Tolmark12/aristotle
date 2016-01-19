@@ -810,7 +810,7 @@ chapters:
             -
               kind: quiz
               config:
-                source: sample
+                source: EP3-CIP
       # 3 Rank Advance ==========================================
       -
         sfx:

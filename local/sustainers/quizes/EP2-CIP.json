@@ -1,0 +1,108 @@
+{
+  "config": {
+    "question-value": 120,  
+    "questions": [
+      {
+        "question": "How do we control access to the PSPs at APS?",
+        "answers": [
+          {
+            "a": "Eye Scanner",
+            "r": "Not quite"
+          },
+          {
+            "a": "Fingerprint Reader",
+            "r": "Good idea, but not correct."
+          },
+          {
+            "a": "Badge Reader",
+            "r": "Right!",
+            "c": true
+          }
+        ]
+      },
+      {
+        "question": "As long as we have access to one PSP, we can enter any PSP at APS",
+        "answers": [
+          {
+            "a": "True",
+            "r": "No. Access to one does not mean access to all."
+          },
+          {
+            "a": "False",
+            "r": "Correct!",
+            "c": true
+          }
+        ]
+      },
+      {
+        "question": "What are some ways to violate PSP CIP requirements? (pick 3)",
+        "value": 360,
+        "answers": [
+          {
+            "a": "Forcing a PSP Door",
+            "r": "Correct",
+            "c": true
+          },
+          {
+            "a": "Tailgating into a PSP",
+            "r": "Yeah, don't do this.",
+            "c": true
+          },
+          {
+            "a": "Reporting that you forgot to badge in, so manual log entries can be made",
+            "r": "No, this would prevent a violation"
+          },
+          {
+            "a": "Propping a PSP door open",
+            "r": "Yes, bad idea",
+            "c": true
+          },
+          {
+            "a": "Using your badge to scan before entering a PSP",
+            "r": "No, this is what you SHOULD always do."
+          }
+        ]
+      },
+      {
+        "question": "What should you do if you accidentally tailgate or allow someone to tailgate you?",
+        "answers": [
+          {
+            "a": "Cry softly to yourself",
+            "r": "Sorry, you can do this later"
+          },
+          {
+            "a": "Go back into the PSP, scanning twice",
+            "r": "Door systems don't work that way."
+          },
+          {
+            "a": "Notify your leader (so manual log entries can be created)",
+            "r": "Exactly!",
+            "c": true
+          },
+          {
+            "a": "Leave a confession note on the PSP door",
+            "r": "Not right now. Maybe later"
+          }
+        ]
+      },
+      {
+        "question": "What's your duty to keep the ESP secure?",
+        "answers": [
+          {
+            "a": "Polish CRCAs regularly",
+            "r": "Clean does not equal secure"
+          },
+          {
+            "a": "Follow APS change control processes when making network changes",
+            "r": "That's right",
+            "c": true
+          },
+          {
+            "a": "If a cable looks loose, plug it in",
+            "r": "No, don't touch it. Just report it."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -71,7 +71,7 @@ module.exports = class Quiz extends Component
     @currentQuestion = @questions.currentItem()
     @currentQuestion.build()
 
-  onQuestionAnswered : (gotItRight) => if gotItRight then @showNext()
+  onQuestionAnswered : (completed) => if completed then @showNext()
 
   onNextClick : () =>
     @hideNext()

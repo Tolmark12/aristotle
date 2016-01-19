@@ -855,7 +855,7 @@ chapters:
             -
               kind: quiz
               config:
-                source: sample
+                source: EP4-CIP
       # 3 Rank Advance ==========================================
       -
         sfx:

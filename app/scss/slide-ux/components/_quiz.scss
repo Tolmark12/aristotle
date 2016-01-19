@@ -76,9 +76,9 @@ $ace-color: #335E6E;
   .content                  { padding:10px 80px;  }
   .quiz-header              { height:30px; padding:15px; background:$yellow; color:white; letter-spacing:3px; font-family:$fun_cond; text-transform:uppercase; font-size:30px; text-align:center; line-height:30px; }
   .total                    { @include blue-border(); padding: 20px 0; margin:20px 0; display:flex; align-items:center; justify-content:space-around;
-    .value-bar              { width: 600px; height:41px; }
+    .value-bar              { width: 500px; height:41px; }
     &:before                { content:"Episode Total Score"; @include thin-text;}
-    .score                  { @include score-text; color:$ace-color; }
+    .score                  { @include score-text; color:$ace-color; width:170px; }
   }
   .answers                  { display:flex; justify-content:space-around;
     .bank                   {

@@ -1,10 +1,11 @@
 module.exports = class Question
 
   constructor: (@$parent, @data, @questionValue=120, @answerCallback) ->
-    @totalPoints = 0
     PubSub.publish 'meta.quiz.question.start', {id:@data.index+1}
+    @totalPoints  = 0
     @wrongGuesses = 0
-    @countWrongAnswers()
+    @rightGuesses = 0
+    @countRightAndWrongAnswers()
 
   build : () ->
     @$node = $ jadeTemplate['slide-ux/components/quiz/question']( @data )
@@ -14,19 +15,30 @@ module.exports = class Question
     $(".answer-wrapper", @$node).on "click", @onAnswerClick
 
   onAnswerClick : (e)=>
-    return if @guessedRight # don't allow any more clicks if they've already guessed right
+    return if @complete # don't allow any more clicks if they've already guessed all the right answers
     $el = $(e.currentTarget)
     $el.addClass "flipped"
     $response     = $(".response", e.currentTarget)
-    @guessedRight = $response.hasClass 'right'
+    guessedRight = $response.hasClass 'right'
     PubSub.publish 'meta.quiz.question.answer', {id:@data.index+1, answer:$(".front .txt", $(e.currentTarget) ).text() }
 
-    if !@guessedRight
+    if !guessedRight
       @wrongGuesses++
     else
+      @rightGuesses++
+
+    if @data.gimee
+      @complete = true
+      PubSub.publish 'meta.quiz.question.finish', {id:@data.index+1, score:@questionValue }
+    else if @rightGuesses == @totalRightAnswers
+      @complete = true
       PubSub.publish 'meta.quiz.question.finish', {id:@data.index+1, score:@pointsEarned() }
-    @answerCallback @guessedRight
-    @clickResults $el, @guessedRight
+
+    if @complete
+      @answerCallback true
+    else
+      @answerCallback @rightGuesses == @totalRightAnswers
+    @clickResults $el, guessedRight
 
     @$questionTotal.html @totalPoints
 
@@ -34,7 +46,8 @@ module.exports = class Question
   clickResults : ($el, guessedRight) ->
     if guessedRight
       result = 'right'
-      points = @pointsEarned()
+      wrongGuessValue = (@questionValue/2) / @totalWrongAnswers
+      points = (@questionValue - (wrongGuessValue * @wrongGuesses)) / @totalRightAnswers
       @totalPoints = @pointsEarned()
 
     else
@@ -46,10 +59,14 @@ module.exports = class Question
     $el.append $node
     $node.velocity {opacity:1, top:-35}, {duration:1000, easing:"easeinoutquint"}
 
-  countWrongAnswers : () ->
+  countRightAndWrongAnswers : () ->
     @totalWrongAnswers = 0
+    @totalRightAnswers = 0
     for answer in @data.answers
-      @totalWrongAnswers++ if !answer.c
+      if answer.c
+        @totalRightAnswers++
+      else
+        @totalWrongAnswers++
 
   isPerfect : () -> @wrongGuesses == 0
 

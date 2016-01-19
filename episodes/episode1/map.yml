@@ -720,7 +720,7 @@ chapters:
             -
               kind: quiz
               config:
-                source: sample
+                source: EP1-CIP
       # 3 Rank Advance ==========================================
       -
         sfx:

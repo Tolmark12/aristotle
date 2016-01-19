@@ -1,0 +1,150 @@
+{
+  "config": {
+    "question-value": 120,
+    "questions": [
+      {
+        "question": "If I see something suspicious, I should report the incident promptly to ",
+        "answers": [
+          {
+            "a": "Corporate Security",
+            "r": "Yes",
+            "c": true
+          },
+          {
+            "a": "Regulatory",
+            "r": "Sorry"
+          },
+          {
+            "a": "HR",
+            "r": "Nope"
+          }
+        ]
+      },
+      {
+        "question": "I have a duty to try to preserve any forensic evidence from an incident",
+        "answers": [
+          {
+            "a": "True",
+            "r": "Yes. Do your best to save emails, notes, and photos.",
+            "c": true
+          },
+          {
+            "a": "False",
+            "r": "Sorry. We need to try to keep this information."
+          }
+        ]
+      },
+      {
+        "question": "When a Cyber Security Incident happens, my responsibility is to ...",
+        "answers": [
+          {
+            "a": "Run around screaming",
+            "r": "Get a hold of yourself, Cadet"
+          },
+          {
+            "a": "Help however I can as directed by the Incident Response Team",
+            "r": "Exactly",
+            "C": true
+          },
+          {
+            "a": "Run to the nearest PSP and wait in front of the door for instructions",
+            "r": "Nice idea, but you may just get in the way"
+          }
+        ]
+      },
+      {
+        "gimme": true,
+        "question": "BONUS: How engaging did you find this training?",
+        "answers": [
+          {
+            "a": "I prefer not to answer",
+            "r": "Thanks for your feedback",
+            "c": true
+          },
+          {
+            "a": "1 - Worse than most training",
+            "r": "Thanks for your feedback",
+            "c": true
+          },
+          {
+            "a": "2 - No better, but no worse than most training",
+            "r": "Thanks for your feedback",
+            "c": true
+          },
+          {
+            "a": "3 - More engaging than most training",
+            "r": "Awesome. Good to hear.",
+            "c": true
+          },
+          {
+            "a": "4 - Extremely engaging! Tops the charts.",
+            "r": "Awesome! Thanks for your feedback",
+            "c": true
+          }
+        ]
+      },
+      {
+        "gimme": true,
+        "question": "BONUS: Was this training valuable and worthwhile for reminding you or helping you understand the concepts of CIP and your duties to protect our infrastructure?",
+        "answers": [
+          {
+            "a": "I prefer not to answer",
+            "r": "Thanks for your feedback",
+            "c": true
+          },
+          {
+            "a": "1 - Worse than most training",
+            "r": "Thanks for your feedback",
+            "c": true
+          },
+          {
+            "a": "2 - No better, but no worse than most training",
+            "r": "Thanks for your feedback",
+            "c": true
+          },
+          {
+            "a": "3 - More worthwhile than most training",
+            "r": "Awesome. Good to hear.",
+            "c": true
+          },
+          {
+            "a": "4 - Extremely worthwhile! Tops the charts.",
+            "r": "Awesome! Thanks for your feedback",
+            "c": true
+          }
+        ]
+      },
+      {
+        "gimme": true,
+        "question": "BONUS: Would you recommend training like this for other difficult or dry topics like CIP compliance?",
+        "answers": [
+          {
+            "a": "I prefer not to answer",
+            "r": "Thanks for your feedback",
+            "c": true
+          },
+          {
+            "a": "1 - No. Let's never do this kind of training again.",
+            "r": "Thanks for your feedback",
+            "c": true
+          },
+          {
+            "a": "2 - I'm neutral or undecided on the matter.",
+            "r": "Thanks for your feedback",
+            "c": true
+          },
+          {
+            "a": "3 - Yes, I'd recommend this training.",
+            "r": "Awesome. Good to hear.",
+            "c": true
+          },
+          {
+            "a": "4 - Yes, yes, yes! This is how training should be done.",
+            "r": "Awesome! Thanks for your feedback",
+            "c": true
+          }
+        ]
+      }
+    ]
+  }
+}

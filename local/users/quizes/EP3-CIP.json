@@ -1,0 +1,47 @@
+{
+  "config": {
+    "question-value": 120,  
+    "questions": [
+      {
+        "question": "What devices are acceptable to plug into your CRCAs?",
+        "answers": [
+          {
+            "a": "A cell phone to listen to music",
+            "r": "Nope"
+          },
+          {
+            "a": "A cell phone to charge it only",
+            "r": "Not even for that"
+          },
+          {
+            "a": "Your corporate workstation",
+            "r": "Not even that"
+          },
+          {
+            "a": "A personal USB drive to copy files",
+            "r": "Even that isn't safe"
+          },
+          {
+            "a": "None of the above",
+            "r": "Exactly",
+            "c": true
+          }
+        ]
+      },
+      {
+        "question": "It's OK to install software on our workstations or CRCAs as long as we ask an IT person to do it",
+        "answers": [
+          {
+            "a": "True",
+            "r": "Nope. We must follow the processes to ensure compliance. "
+          },
+          {
+            "a": "False",
+            "r": "Right. Use the APS Software Installation Menu or Get it Here�on�Inside APS to follow processes",
+            "c": true
+          }
+        ]
+      }
+    ]
+  }
+}
