@@ -347,7 +347,7 @@ chapters:
       -
         fid: ep5-ch2-sektimus-normal-b
         sfx:
-          - {content: ~g/MU_BotTronAttack.mp3, delay: 3300, volume: 0.2, loop: true }
+          - {content: ~g/MU_BotTronAttack.mp3, delay: 3300, volume: 0.2, loop: 1 }
           - {content: ~g/SFX_AttackSlamdown_BotTron.mp3, delay: 12400, volume: .3 }
           - {content: ~5/SFX_BotTron_Attack.mp3, delay: 20000, volume: 1 }
         movie:

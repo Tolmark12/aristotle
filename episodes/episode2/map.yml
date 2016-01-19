@@ -266,7 +266,7 @@ chapters:
         fid: ep2-ch2-sektimus
         title: A Disturbance
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15, loop: true }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15 }
           - {content: ~3/CIN_Quarantine.mp3, delay: 33700, volume: .1 }
         movie:
           layers:

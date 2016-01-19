@@ -55,7 +55,7 @@ chapters:
       # 1 Simulation A ==========================================
       -
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08 }
           - {content: ~4/CIN_HumanExcited.mp3, delay: 3700, volume: .2 }
           - {content: ~4/CIN_HumanWalking.mp3, delay: 4700, volume: .2 }
           - {content: ~4/CIN_HumanWalking.mp3, delay: 13000, volume: .2, loop: 2}
@@ -223,7 +223,7 @@ chapters:
       # 1 Simulation Retry Unsavory Fail ==========================================
       -
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08 }
           - {content: ~4/CIN_HumanWalking.mp3, delay: 2500, volume: .1 }
           - {content: ~4/CIN_ScannerShock.mp3, delay: 5000, volume: 0.4 }
           - {content: ~4/CIN_HumanWalking.mp3, delay: 8000, volume: .1 }
@@ -415,7 +415,7 @@ chapters:
       # 2 Simulation Brute Force Fail ==========================================
       -
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08 }
           - {content: ~4/CIN_Typing.mp3, delay: 9500, volume: .1 }
           - {content: ~4/CIN_Typing.mp3, delay: 11890, volume: .1}
           - {content: ~4/CIN_Typing.mp3, delay: 14200, volume: .1, loop: 2}
@@ -474,7 +474,7 @@ chapters:
       # 2 Simulation Retry Brute Force Pass ==========================================
       -
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08 }
           - {content: ~4/CIN_Typing.mp3, delay: 6600, volume: .1 }
           - {content: ~4/CIN_Typing.mp3, delay: 8730, volume: .1}
           - {content: ~4/CIN_Typing.mp3, delay: 11200, volume: .1, loop: 1}
@@ -539,7 +539,7 @@ chapters:
       # 2 Sektimus Interlude ==========================================
       -
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 2000, volume: 0.15, loop: true }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 2000, volume: 0.15 }
           - {content: ~3/CIN_Quarantine.mp3, delay: 1100, volume: .1 }
         movie:
           layers:
@@ -688,7 +688,7 @@ chapters:
       # 3 Simulation Auditbot ==========================================
       -
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08 }
           - {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2 }
           - {content: ~g/SFX_AttackSlamdown_AuditBot.mp3, delay: 6000, volume: .3}
           - {content: ~4/CIN_HumanWalking.mp3, delay: 15200, volume: .2, loop: 2 }
@@ -784,7 +784,7 @@ chapters:
       # 3 Simulation Visitor Tracked ==========================================
       -
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08, loop: true }
+          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.08 }
           - {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2, loop: 3 }
           - {content: ~4/CIN_DoorOpen.mp3, delay: 13900, volume: .2 }
           - {content: ~4/CIN_DoorOpen.mp3, delay: 14900, volume: .2 }
