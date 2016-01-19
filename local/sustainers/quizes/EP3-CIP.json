@@ -1,6 +1,6 @@
 {
   "config": {
-    "question-value": 120,  
+    "question-value": 120,
     "questions": [
       {
         "question": "What devices are acceptable to plug into your CRCAs?",
@@ -94,7 +94,7 @@
         ]
       },
       {
-        "question": "(Finish the sentence) If a patch causes a reliability problem�",
+        "question": "(Finish the sentence) If a patch causes a reliability problem...",
         "answers": [
           {
             "a": "We still have to install it within 35 days",

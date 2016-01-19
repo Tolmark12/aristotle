@@ -60,7 +60,7 @@ ux:
                   portSFX: ~3/SFX_PhysicalPortSecurity_TheKragle.mp3
             btnTxt: The Kragle
             icon: mini-kragle
-            blurb: "<span>Variants:</span> Regular Glue, Super Glue, Ludicrous Glue. <br/><span>Other Uses:</span> Fixing Cuts, Fingernails, and Pantyhose Runs."
+            blurb: "<span>Variants:</span> Regular Glue, Super Glue,<br/>Ludicrous Glue. <br/><span>Other Uses:</span> Fixing Cuts, Fingernails, and Pantyhose Runs."
             details: "Are people always plugging things into your assets and messing with your stuff? Make those physical ports permanently unavailable to people and robots alike with a good injection of this sticky filler. <br/>Every port is awesome!"
           -
             click:
