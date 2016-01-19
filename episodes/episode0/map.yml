@@ -17,7 +17,7 @@ chapters:
         fid: intro
         sfx:
           - {content: ~g/Intro_Credits.mp3, volume: 0.2}
-          - {content: ~0/SFX_Defender_Door_Open.mp3, delay: 7300, volume: 0.8, loop: 0 }
+          - {content: ~0/SFX_Defender_Door_Open.mp3, delay: 7300, volume: 0.8 }
         action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}, {cmd: chrome.hidename}, {cmd: chrome.hideicons}]
         movie:
           layers:
@@ -187,8 +187,8 @@ chapters:
       # Call Sign and Animation Power Grid  ==========================================
       -
         sfx:
-          - {content: ~0/SFX_Sektimus_Fleet_Impacts.mp3, delay: 92800, volume: 1, loop: 0 }
-          - {content: ~0/SFX_Crater.mp3, delay: 100000, volume: 1, loop: 0 }
+          - {content: ~0/SFX_Sektimus_Fleet_Impacts.mp3, delay: 92800, volume: 1 }
+          - {content: ~0/SFX_Crater.mp3, delay: 100000, volume: 1 }
         title: Powergrid
         action: [ {cmd: chrome.show}, {cmd: chrome.showname} ]
         movie:
