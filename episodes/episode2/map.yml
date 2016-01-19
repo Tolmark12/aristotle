@@ -550,7 +550,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 7, content: factory_workers_loop.json, loop: true }
+            - {depth: 7, content: ~1/factory_workers_loop.json, loop: true }
             - {depth: 9, content: $eacmsAnimateGood, vcr: true }
         dialogue:
           defaults:
