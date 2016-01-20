@@ -154,7 +154,12 @@ module.exports = class Layer
     oldOnionLayer = @currentOnionLayer
     aristotle.timeout ()=>
       oldOnionLayer.velocity 'stop', true
-      oldOnionLayer.velocity {opacity:0}, {duration:200, complete:()=> oldOnionLayer.remove() }
+      oldOnionLayer.velocity {opacity:0}, {
+        duration:200, complete:()=>
+          if @isAnimation
+            @animation.destroy()
+          oldOnionLayer.remove()
+      }
     ,
       200
 
