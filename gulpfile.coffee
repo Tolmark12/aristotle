@@ -30,7 +30,7 @@ wrap         = require 'gulp-wrap'
 
 yaml         = require('gulp-yaml')
 yamlinc      = require('gulp-yaml-include')
-
+argv         = require('yargs').argv
 
 # Paths to source files
 
@@ -47,6 +47,14 @@ fontPath          = 'app/fonts/**/*.@(ttf|svg|eot|ttf|woff|woff2)'
 episodeScriptPath = ['episodes/**/*.yml','episodes/**/*.yaml']
 episodeAssetPath  = 'episodes/**/*.!(yml|yaml)'
 localAssetPath    = 'local/**/*'
+
+# If run with --dev, use smaller locations
+if argv.dev
+  # coffeeStagePath   = 'stage/**/*.koffee'
+  episodeScriptPath = ['episodes-dev/**/*.yml','episodes-dev/**/*.yaml']
+  episodeAssetPath  = 'episodes-dev/**/*.!(yml|yaml)'
+  localAssetPath    = 'local-dev/**/*'
+
 
 parseSVG = (cb)->
   gulp.src svgPath

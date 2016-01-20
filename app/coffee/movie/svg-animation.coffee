@@ -3,13 +3,13 @@ module.exports = class SVGAnimation
   constructor: ( el, json, data ) ->
     if !data.loop? then data.loop = false
     @animation = bodymovin.loadAnimation {
-             wrapper   : el[0]
-             animType  : 'svg'
-             loop      : data.loop
-             prerender : true
-             autoplay  : false
-             path      : json
-           }
+       wrapper   : el[0]
+       animType  : 'svg'
+       loop      : data.loop
+       prerender : true
+       autoplay  : false
+       path      : json
+     }
 
     if data.nativeEvents? then @addNativeEvents data.nativeEvents
 
