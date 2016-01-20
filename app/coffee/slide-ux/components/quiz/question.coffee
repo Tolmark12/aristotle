@@ -2,10 +2,10 @@ module.exports = class Question
 
   constructor: (@$parent, @data, @questionValue=120, @answerCallback) ->
     PubSub.publish 'meta.quiz.question.start', {id:@data.index+1}
-    @totalPoints  = 0
-    @wrongGuesses = 0
     @rightGuesses = 0
-    @countRightAndWrongAnswers()
+    @wrongGuesses = 0
+    @runningTotal = 0
+    @setAnswerValues()
 
   build : () ->
     @$node = $ jadeTemplate['slide-ux/components/quiz/question']( @data )
@@ -14,67 +14,73 @@ module.exports = class Question
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
     $(".answer-wrapper", @$node).on "click", @onAnswerClick
 
-  onAnswerClick : (e)=>
-    return if @complete # don't allow any more clicks if they've already guessed all the right answers
+  onAnswerClick : (e) =>
+    return if @complete
     $el = $(e.currentTarget)
     $el.addClass "flipped"
-    $response     = $(".response", e.currentTarget)
+    $response    = $(".response", e.currentTarget)
     guessedRight = $response.hasClass 'right'
     PubSub.publish 'meta.quiz.question.answer', {id:@data.index+1, answer:$(".front .txt", $(e.currentTarget) ).text() }
 
-    if !guessedRight
-      @wrongGuesses++
-    else
-      @rightGuesses++
+    if guessedRight then @rightGuesses++ else @wrongGuesses++
 
     if @data.gimee
-      @complete = true
-      PubSub.publish 'meta.quiz.question.finish', {id:@data.index+1, score:@questionValue }
-    else if @rightGuesses == @totalRightAnswers
-      @complete = true
-      PubSub.publish 'meta.quiz.question.finish', {id:@data.index+1, score:@pointsEarned() }
-
-    if @complete
-      @answerCallback true
+      @answeredGimee $el
     else
-      @answerCallback @rightGuesses == @totalRightAnswers
-    @clickResults $el, guessedRight
-    @$questionTotal.html @totalPoints
+      @answeredNormal guessedRight, $el
 
+    @answerCallback @complete
 
-  clickResults : ($el, guessedRight) ->
+  answeredGimee : ($answer) ->
+    @runningTotal = @questionValue
+    @showAnswerPoints @questionValue, "right", $answer
+    @setQuestionComplete()
+    console.log @questionValue, @wrongAnswerValue, @wrongGuesses
+
+  answeredNormal : (guessedRight, $answer) ->
     if guessedRight
-      result = 'right'
-      wrongGuessValue = (@questionValue/2) / @totalWrongAnswers
-      points = (@questionValue - (wrongGuessValue * @wrongGuesses)) / @totalRightAnswers
-      @totalPoints = @pointsEarned()
-
+      @runningTotal += @rightAnswerValue
+      @showAnswerPoints @rightAnswerValue, "right", $answer
     else
-      result = 'wrong'
-      points = (@questionValue/2) / @totalWrongAnswers
-      @totalPoints -= points
+      @runningTotal -= @wrongAnswerValue
+      @showAnswerPoints @wrongAnswerValue, "wrong", $answer
+    if @rightPossible == @rightGuesses
+      @setQuestionComplete()
 
-    $node = $ jadeTemplate['slide-ux/components/quiz/points-float']( {points:points, result:result} )
-    $el.append $node
-    $node.velocity {opacity:1, top:-35}, {duration:1000, easing:"easeinoutquint"}
 
-  countRightAndWrongAnswers : () ->
-    @totalWrongAnswers = 0
-    @totalRightAnswers = 0
+  setAnswerValues : () ->
+    @countPossibleRightsAndWrongs()
+    @rightAnswerValue = Math.round  @questionValue / @rightPossible
+    # Don't divide by 0 :-)
+    if @wrongPossible == 0
+      @wrongAnswerValue = 0
+    else
+      @wrongAnswerValue = Math.round (@questionValue / 2) / @wrongPossible
+
+
+  countPossibleRightsAndWrongs : () ->
+    @wrongPossible = 0
+    @rightPossible = 0
     for answer in @data.answers
       if answer.c
-        @totalRightAnswers++
+        @rightPossible++
       else
-        @totalWrongAnswers++
+        @wrongPossible++
 
-  isPerfect : () -> @wrongGuesses == 0
+  setQuestionComplete : () ->
+    @complete = true
+    @$node.addClass "complete"
+    PubSub.publish 'meta.quiz.question.finish', {id:@data.index+1, score:@pointsEarned() }
 
-  getName : () ->if @name? then @name else "Question #{@data.index+1}"
+  getName       : () -> if @name? then @name else "Question #{@data.index+1}"
+  getScore      : () -> "#{@pointsEarned()}/#{@questionValue}"
+  pointsEarned  : () -> @questionValue - (@wrongAnswerValue * @wrongGuesses)
+  isPerfect     : () -> @wrongGuesses == 0
 
-  getScore : () -> "#{@pointsEarned()}/#{@questionValue}"
-
-  pointsEarned : () ->
-    wrongGuessValue = (@questionValue/2) / @totalWrongAnswers
-    @questionValue - (wrongGuessValue * @wrongGuesses)
+  showAnswerPoints : (points, result, $answer) ->
+    $node = $ jadeTemplate['slide-ux/components/quiz/points-float']( {points:points, result:result} )
+    $answer.append $node
+    $node.velocity {opacity:1, top:-35}, {duration:1000, easing:"easeinoutquint"}
+    @$questionTotal.html @runningTotal
 
   destroy : () -> @$node.remove()

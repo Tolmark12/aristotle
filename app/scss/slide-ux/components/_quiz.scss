@@ -1,5 +1,5 @@
 .quiz                       { background:#335E6E; width:100%; height:100%; display:flex; flex-direction:column;
-  .question-total           { display:none; position:absolute; top:23px; left:795px; font-family:$fun_cond; font-size:18px; color:$yellow;
+  .question-total           { position:absolute; top:23px; left:795px; font-family:$fun_cond; font-size:18px; color:$yellow;
     &:before                { content:"Question Total Score"; margin-right:5px; color: #618E95; }
   }
   @import      'quiz-card-flipping';
@@ -13,19 +13,24 @@
   }
   .questions                { min-width:760px; height: 100%; margin:0 auto; background: #E6E6E6;
     .question               { display:flex; flex-direction:column; align-items:center;
+      &.complete            {
+        .answers            {
+          .answer-wrapper   { pointer-events:none; }
+        }
+      }
       // Question
       .question-index       { font-family: $fun_cond; font-size:30px; color:#335E6E; border-bottom:2px solid #6B989F; padding:0 80px; margin:30px 0 0 0;}
-      .question-text        { font-weight:bold; font-size:19px; color:#335E6E; margin:20px 0 80px;}
+      .question-text        { padding:0 40px; font-weight:bold; font-size:19px; color:#335E6E; margin:20px 0 80px;}
       // Answers
       .answers              { display:flex; width:100%; justify-content: space-around; height:370px;
         .answer-wrapper     { width:200px; cursor:pointer; position:relative;
-          .points               { position:absolute; left: 50%; transform: translate(-50%); top:0; opacity:0; font-size:24px; font-weight:bold;
-            &:before            { margin-right:3px; }
-            &.right             { color:green;
-              &:before          { content:"+"}
+          .points           { position:absolute; left: 50%; transform: translate(-50%); top:0; opacity:0; font-size:24px; font-weight:bold;
+            &:before        { margin-right:3px; }
+            &.right         { color:green;
+              &:before      { content:"+"}
             }
-            &.wrong             { color:#E03F07;
-              &:before          { content:"-"}
+            &.wrong         { color:#E03F07;
+              &:before      { content:"-"}
             }
           }
           &.flipped         { pointer-events:none;
@@ -38,7 +43,7 @@
 
       }
       .card                 { width: 200px; height: 330px;
-        .txt                { position:absolute; @include center-absolute; color:white; text-align:center;
+        .txt                { position:absolute; @include center-absolute; color:white; text-align:center; width: 160px;
           .status           { margin-bottom:20px; text-transform:uppercase; font-style:italic; }
         }
         // svg                 { filter:url(#dropshadow) }
@@ -68,8 +73,8 @@
   }
 }
 
-@mixin thin-text(){font-color:#6B989F; font-size:26px; letter-spacing:0.05em;font-family:$fun_cond; font-weight:200; }
-@mixin score-text(){width:150px; font-size:28px; font-weight:bold;}
+@mixin thin-text()          { font-color:#6B989F; font-size:26px; letter-spacing:0.05em;font-family:$fun_cond; font-weight:200; }
+@mixin score-text()         { width:150px; font-size:28px; font-weight:bold;}
 $ace-color: #335E6E;
 
 .quiz-results               { width:100%; height:100%; background:white; color:#6B989F;

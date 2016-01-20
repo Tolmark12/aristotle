@@ -48,7 +48,7 @@ episodeScriptPath = ['episodes/**/*.yml','episodes/**/*.yaml']
 episodeAssetPath  = 'episodes/**/*.!(yml|yaml)'
 localAssetPath    = 'local/**/*'
 
-# If run with --dev, use smaller locations
+# If run with --dev, use less files to speeeed it up :-)
 if argv.dev
   # coffeeStagePath   = 'stage/**/*.koffee'
   episodeScriptPath = ['episodes-dev/**/*.yml','episodes-dev/**/*.yaml']
