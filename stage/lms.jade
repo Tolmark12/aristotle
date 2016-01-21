@@ -6,13 +6,15 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
   body(style="background:black")
-    //- script(src="bower-libs/jquery/dist/jquery.js")
-    script(src="stage/js/lms.js")
+    // build:js js/lms.js
+    script(src="bower-libs/warcore-lms-interface/SCORM_API_wrapper.js")
+    script(src="stage/js/master.js")
+    // build
     
     a(href="javascript:lms.launchTraining()" style="color:white;") asdf
     
-    // build:remove 
-    //- script(src="http://localhost:35729/livereload.js")
-    script(src="http://aristotle.dev:35729/livereload.js")
-    // endbuild
+    //- // build:remove 
+    //- //- script(src="http://localhost:35729/livereload.js")
+    //- script(src="http://aristotle.dev:35729/livereload.js")
+    //- // endbuild
     

@@ -96,18 +96,26 @@ module.exports = class Episode
       chapters.push new Chapter( chapterData, @movie, @ux, @chapterComplete )
     @chapters = new Sequence chapters
 
+  start           : () -> @playChapter()
+  chapterComplete : () =>
+    # PubSub.publish 'state.save'
+    # @chapters.getCurrentItem().destroy()
+    # @nextChapter()
+    @refreshChapter()
+
+  refreshChapter : () ->
+    if @chapters.isAtLastItem()
+      @episodeComplete()
+    else
+      @chapters.next()
+      PubSub.publish "refresh.on.chapter", @chapters.getCurrentItem().title
+
   nextChapter : () =>
     if @chapters.isAtLastItem()
       @episodeComplete()
     else
       @chapters.next()
       @playChapter()
-
-  start           : () -> @playChapter()
-  chapterComplete : () =>
-    PubSub.publish 'state.save'
-    @chapters.getCurrentItem().destroy()
-    @nextChapter()
 
   playChapter     : (firstSlide=null) =>
     # PubSub.publish 'state.rehydrate'
@@ -119,8 +127,9 @@ module.exports = class Episode
       aristotle.localStorageProxy.completeCourse()
     else
       newEpisodeNum = String(Number(aristotle.episodeNum) + 1)
-      aristotle.localStorageProxy.completeEpisode newEpisodeNum
-      PubSub.publish 'episode.load', newEpisodeNum
+      # aristotle.localStorageProxy.completeEpisode newEpisodeNum
+      aristotle.localStorageProxy.refreshOnEpisode newEpisodeNum
+      # PubSub.publish 'episode.load', newEpisodeNum
 
   destroy : () ->
     # PubSub.unsubscribe @token1

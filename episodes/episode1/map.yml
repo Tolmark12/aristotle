@@ -80,7 +80,7 @@ chapters:
             - {depth: 7, content: asset_bca_pca_label.json }
             - {depth: 8, content: asset_network_connections.json }
         duration: {kind: time, seconds: 3 }
-        
+
       # 1 Highlight PCA BCA Equipment  ==========================================
       -
         action:

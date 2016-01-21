@@ -1,80 +1,73 @@
 module.exports = class LocalStorageProxy
 
-  constructor: (isLocal) ->
+  constructor: (cb) ->
     # for local testing, simulate the lms API
-    if isLocal then @initScormStubs()
     aristotle.localStorageProxy = @
-    PubSub.subscribe 'state.save',      (m, data)=> @saveState()
-    PubSub.subscribe 'state.load',      (m, data)=> @loadState()
-    PubSub.subscribe 'state.rehydrate', (m, data)=> @rehydrate()
-    PubSub.subscribe 'slide.activated', (m, data)=> @saveState data
-    PubSub.subscribe 'chapter.started', (m, data)=> @chapterTitle = data
-
-  begin : (cb) ->
-    if elbScorm.initCourse()
-      @loadState()
-      @user       = elbScorm.GetUserName()    # ex:       Kingsley, James
-      @userId     = elbScorm.GetUserID()      # I assume: asf0h30asbu30
-      stateData   = elbScorm.GetResumeData()  # ojb
-
-      @createFormattedName()
-
-      # If the module has changed, and we want to clear out all the
-      if stateData?
-        if !stateData.version?
-          aristotle.globals.vars = {}
-        else if stateData.version.storeVersion < aristotle.version.storeVersion || !stateData.version.storeVersion?
-          aristotle.globals.vars = {}
-        else
-          aristotle.globals.vars = stateData.globalVars
-      aristotle.globals.vars.user   = @user
-      aristotle.globals.vars.userId = @userId
-      cb()
-    else
-      console.log "couldn't start the course"
-
-  loadState : () ->
-    @store = elbScorm.GetResumeData()
+    PubSub.subscribe 'state.save',         (m, data)=> @saveState()
+    PubSub.subscribe 'state.load',         (m, data)=> @loadState()
+    PubSub.subscribe 'state.rehydrate',    (m, data)=> @rehydrate()
+    PubSub.subscribe 'slide.activated',    (m, data)=> @saveState data
+    PubSub.subscribe 'chapter.started',    (m, data)=> @chapterTitle = data
+    PubSub.subscribe 'refresh.on.chapter', (m, data)=> @refreshOnChapter data
+    @loadState()
+    @setAristotleVars()
+    cb()
 
   rehydrate : () ->
     if !@store? then return
     aristotle.episode.gotoLocationByTitle @store.location.slide, @store.location.chapter
 
+  begin : (cb) ->
+    @user   = @store.user
+    @userId = @store.userId
+    @createFormattedName()
+    if @store.globalVars?
+      aristotle.globals.vars = @store.globalVars
+    else
+      aristotle.globals.vars = {}
+
+    aristotle.globals.vars.user   = @user
+    aristotle.globals.vars.userId = @userId
+    cb()
+
   saveState : (currentSlide, chapter) ->
-    @store = {version: aristotle.version}
     # global variabls
     @store.globalVars = aristotle.globals.vars
-
-    # layer state
-    @store.layerState = aristotle.movie.dehydrateLayerState()
 
     if aristotle.episode?
       ch = if chapter? then chapter else @chapterTitle
       @store.location = {episodeNum:aristotle.episode.episodeNum, slide:currentSlide, chapter: ch}
-      elbScorm.SetResumeData @store
+      @saveToLocalStorage @store
+
+  refreshOnChapter : (chapterTitle) ->
+    @saveState chapterTitle, chapterTitle
+    @triggerRefresh()
+
+  refreshOnEpisode : (newEpisodeNum) ->
+    @store.globalVars  = aristotle.globals.vars
+    @store.location    = {episodeNum:newEpisodeNum}
+    @saveToLocalStorage @store
+    @triggerRefresh()
 
   completeEpisode : (newEpisodeNum) ->
     @store = if @store? then @store else {}
     @store.location = {episodeNum:newEpisodeNum}
-    elbScorm.SetResumeData @store
 
   createFormattedName : () ->
     x = @user.split ','
     @name = "#{x[1]} #{x[0]}"
 
-  completeCourse : () ->
-    elbScorm.SetComplete()
+  setAristotleVars : () ->
+    aristotle.configFile    = @store.initParams.configFile
+    aristotle.devEpisodeNum = @store.initParams.episode
+    aristotle.episodesDir   = @store.initParams.episodeRoot
+    aristotle.isDevMode     = @store.initParams.isDevMode
+    aristotle.isLocal       = @store.initParams.isLocal
+    aristotle.localDir      = @store.initParams.localRoot
+    aristotle.sudo          = @store.initParams.sudo
 
-  # ------------------------------------ For Local Testing
-
-  initScormStubs : () ->
-    window.elbScorm = {}
-    elbScorm.initCourse    =     ()-> true
-    elbScorm.GetUserName   =     ()-> "Ricks, Justin"
-    elbScorm.GetUserID     =     ()-> "abcdefg1234567"
-    elbScorm.GetCompanName =     ()-> "Arizona Public Works"
-    elbScorm.SetResumeData = (data)-> localStorage.setItem( "currentState", JSON.stringify(data) )
-    elbScorm.GetResumeData =     ()-> JSON.parse( localStorage.getItem("currentState") )
-    elbScorm.SetComplete   =     ()-> console.log "course is complete"
-
+  loadState          : ()     -> @store = JSON.parse localStorage.getItem("glob")
+  completeCourse     : ()     -> localStorage.setItem "course.complete", "true"
+  saveToLocalStorage : (data) -> localStorage.setItem "glob", JSON.stringify(data)
+  triggerRefresh     : ()     -> localStorage.setItem "refresh.window", Date.now()
 

@@ -37,6 +37,7 @@ argv         = require('yargs').argv
 jadeStagePath     = 'stage/*.jade'
 jadePath          = 'app/jade/**/*.jade'
 mainJsFile        = './app/coffee/aristotle.coffee'
+mainStageJsFile   = './stage/coffee/master.coffee'
 cssPath           = 'app/scss/**/*.scss'
 cssStagePath      = 'stage/stage.scss'
 coffeePath        = 'app/coffee/**/*.coffee'
@@ -107,9 +108,10 @@ js = (cb)->
     .on('end', cb)
 
 jsStage = (cb)->
-  gulp.src coffeeStagePath
+  gulp.src mainStageJsFile
     .pipe plumber()
-    .pipe coffee( bare: true ).on('error', gutil.log).on( 'error', gutil.beep )
+    .pipe coffeeify({options: { debug: true, paths: [__dirname + '/node_modules', __dirname + '/stage/coffee/'] } })
+    # .pipe coffee( bare: true ).on('error', gutil.log).on( 'error', gutil.beep )
     .pipe gulp.dest('server/stage/js')
     .on('end', cb)
 

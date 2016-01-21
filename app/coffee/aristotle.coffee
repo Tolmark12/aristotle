@@ -21,29 +21,28 @@ SvgCartographer   = require 'misc/svg-cartographer'
 
 class Aristotle
 
-  constructor: (@$el, @configFile, @episodesDir, @localDir, @devEpisodeNum, @isDevMode, @isLocal, sudo=false) ->
-    @version         = { major:0, minor:1, feature:0, storeVersion:1 }
-    window.aristotle = @
-    aristotle.sudo   = sudo
-    aristotle.isIE   = isInternetExp()
-    animationQuality = new AnimationQuality()
-    jsonLoaer        = new JsonLoader()
-    globals          = new GlobalVars()
-    commander        = new Commander()
-    dictionary       = new Dictionary()
-    localStorageProxy         = new LocalStorageProxy @isLocal
-    apiProxy         = new APIproxy()
-    parser           = new Parser()
-    soundFx          = new SoundFX()
-    pausableDelays   = new PausableDelays()
-    cartographer     = new SvgCartographer()
-    shadowIcons      = new pxicons.ShadowIcons()
+  constructor: (@$el) ->
+    window.aristotle  = @
+    @localStorageProxy = new LocalStorageProxy @letsGo
+    PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data.slide, data.chapter
+
+  letsGo : () =>
+    aristotle.isIE    = isInternetExp()
+    animationQuality  = new AnimationQuality()
+    jsonLoaer         = new JsonLoader()
+    globals           = new GlobalVars()
+    commander         = new Commander()
+    dictionary        = new Dictionary()
+    apiProxy          = new APIproxy()
+    parser            = new Parser()
+    soundFx           = new SoundFX()
+    pausableDelays    = new PausableDelays()
+    cartographer      = new SvgCartographer()
+    shadowIcons       = new pxicons.ShadowIcons()
     PubSub.publish 'animations.go.low'
     @setDevMode @isDevMode
-    localStorageProxy.begin @begin
+    @localStorageProxy.begin @begin
     smallScreenZoom()
-
-    PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data.slide, data.chapter
 
   begin : () =>
     @setInitialEpisodeNum()
@@ -93,13 +92,16 @@ class Aristotle
         if aristotle.localStorageProxy.store.location.episodeNum
           @episodeNum = aristotle.localStorageProxy.store.location.episodeNum
 
+    console.log JSON.parse( JSON.stringify(aristotle.localStorageProxy.store) )
+
     # If we're in dev mode and specified an episode, use that
-    if @isDevMode && @devEpisodeNum?
+    if @isDevMode && @devEpisodeNum != false
       @episodeNum = @devEpisodeNum
 
     # If neither of the above conditions, default to first episode
-    if !@episodeNum?
+    if !@episodeNum
       @episodeNum = "0"
+
 
   gotoLocationByTitle : (title, chapter) ->
     aristotle.localStorageProxy.saveState title, chapter
