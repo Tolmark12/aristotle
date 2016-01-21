@@ -87,8 +87,8 @@ module.exports = class APIproxy
         ModuleId        : aristotle.globals.get "moduleId"
         ModuleAudience  : aristotle.globals.get "moduleAudience"
         SessionId       : aristotle.globals.get "sessionKey"
-        StudentId       : aristotle.lmsProxy.userId
-        StudentName     : aristotle.lmsProxy.user
+        StudentId       : aristotle.localStorageProxy.userId
+        StudentName     : aristotle.localStorageProxy.user
         StudentCallsign : aristotle.globals.get "callSign"
       }
       Chapters: [ chapterData ]

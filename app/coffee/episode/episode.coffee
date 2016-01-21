@@ -38,11 +38,11 @@ module.exports = class Episode
     ]})
 
     # If there is a previous location...
-    if aristotle.lmsProxy.store?
-      if aristotle.lmsProxy.store.location?
-        if aristotle.lmsProxy.store.location.episodeNum == @episodeNum
-          if aristotle.lmsProxy.store.location.slide?
-            aristotle.lmsProxy.rehydrate()
+    if aristotle.localStorageProxy.store?
+      if aristotle.localStorageProxy.store.location?
+        if aristotle.localStorageProxy.store.location.episodeNum == @episodeNum
+          if aristotle.localStorageProxy.store.location.slide?
+            aristotle.localStorageProxy.rehydrate()
             return
 
     # else, start from the begining
@@ -116,10 +116,10 @@ module.exports = class Episode
 
   episodeComplete : () ->
     if @isLastEpisode
-      aristotle.lmsProxy.completeCourse()
+      aristotle.localStorageProxy.completeCourse()
     else
       newEpisodeNum = String(Number(aristotle.episodeNum) + 1)
-      aristotle.lmsProxy.completeEpisode newEpisodeNum
+      aristotle.localStorageProxy.completeEpisode newEpisodeNum
       PubSub.publish 'episode.load', newEpisodeNum
 
   destroy : () ->

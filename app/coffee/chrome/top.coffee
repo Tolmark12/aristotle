@@ -10,7 +10,7 @@ module.exports = class Top
     @build()
 
   build : () ->
-    name = aristotle.lmsProxy.user.split ","
+    name = aristotle.localStorageProxy.user.split ","
     [callsign, episodeNum] = @getVars()
     data    = {name:"#{name[1]} \"#{callsign}\" #{name[0]}", episode:episodeNum}
     @getRank data, episodeNum
@@ -25,7 +25,7 @@ module.exports = class Top
     $(".badge", @$top).on "mouseout",  (e)=> @badgeMouseout e
 
   updateCallsign : (callSign) ->
-    name = aristotle.lmsProxy.user.split ","
+    name = aristotle.localStorageProxy.user.split ","
     $(".name", @$top).html "#{name[1]} \"#{callSign}\" #{name[0]}"
 
   showName  : () -> @$name.css( {display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}

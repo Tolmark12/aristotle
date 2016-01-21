@@ -1,23 +1,23 @@
-AnimationQuality = require 'misc/animation-quality'
-APIproxy         = require "misc/api-proxy"
-ChromeUI         = require "chrome/chrome-ui"
-Commander        = require 'misc/commander'
-DevTools         = require 'misc/dev-tools'
-Dictionary       = require 'misc/dictionary'
-Episode          = require "episode/episode"
-EpisodeLoader    = require 'misc/episode-loader'
-GlobalVars       = require 'misc/global-vars'
-isInternetExp    = require 'misc/browser-detect'
-JsonLoader       = require 'misc/json-loader'
-LMSProxy         = require 'misc/lms-proxy'
-Logger           = require 'misc/logger'
-Movie            = require 'movie/movie'
-Parser           = require 'misc/parser'
-PausableDelays   = require 'misc/pausable-delays'
-SlideUX          = require 'slide-ux/slide-ux'
-SoundFX          = require 'misc/sfx'
-smallScreenZoom  = require 'misc/small-screen-zoomer'
-SvgCartographer  = require 'misc/svg-cartographer'
+AnimationQuality  = require 'misc/animation-quality'
+APIproxy          = require "misc/api-proxy"
+ChromeUI          = require "chrome/chrome-ui"
+Commander         = require 'misc/commander'
+DevTools          = require 'misc/dev-tools'
+Dictionary        = require 'misc/dictionary'
+Episode           = require "episode/episode"
+EpisodeLoader     = require 'misc/episode-loader'
+GlobalVars        = require 'misc/global-vars'
+isInternetExp     = require 'misc/browser-detect'
+JsonLoader        = require 'misc/json-loader'
+LocalStorageProxy = require 'misc/local-storage-proxy'
+Logger            = require 'misc/logger'
+Movie             = require 'movie/movie'
+Parser            = require 'misc/parser'
+PausableDelays    = require 'misc/pausable-delays'
+SlideUX           = require 'slide-ux/slide-ux'
+SoundFX           = require 'misc/sfx'
+smallScreenZoom   = require 'misc/small-screen-zoomer'
+SvgCartographer   = require 'misc/svg-cartographer'
 
 class Aristotle
 
@@ -31,7 +31,7 @@ class Aristotle
     globals          = new GlobalVars()
     commander        = new Commander()
     dictionary       = new Dictionary()
-    lmsProxy         = new LMSProxy @isLocal
+    localStorageProxy         = new LocalStorageProxy @isLocal
     apiProxy         = new APIproxy()
     parser           = new Parser()
     soundFx          = new SoundFX()
@@ -40,7 +40,7 @@ class Aristotle
     shadowIcons      = new pxicons.ShadowIcons()
     PubSub.publish 'animations.go.low'
     @setDevMode @isDevMode
-    lmsProxy.begin @begin
+    localStorageProxy.begin @begin
     smallScreenZoom()
 
     PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data.slide, data.chapter
@@ -88,10 +88,10 @@ class Aristotle
 
   setInitialEpisodeNum : () ->
     # If a previous location has been stored, use that
-    if aristotle.lmsProxy.store?
-      if aristotle.lmsProxy.store.location?
-        if aristotle.lmsProxy.store.location.episodeNum
-          @episodeNum = aristotle.lmsProxy.store.location.episodeNum
+    if aristotle.localStorageProxy.store?
+      if aristotle.localStorageProxy.store.location?
+        if aristotle.localStorageProxy.store.location.episodeNum
+          @episodeNum = aristotle.localStorageProxy.store.location.episodeNum
 
     # If we're in dev mode and specified an episode, use that
     if @isDevMode && @devEpisodeNum?
@@ -102,7 +102,7 @@ class Aristotle
       @episodeNum = "0"
 
   gotoLocationByTitle : (title, chapter) ->
-    aristotle.lmsProxy.saveState title, chapter
+    aristotle.localStorageProxy.saveState title, chapter
     @init()
 
 window.Aristotle = Aristotle

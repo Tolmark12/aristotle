@@ -1,9 +1,9 @@
-module.exports = class LMSProxy
+module.exports = class LocalStorageProxy
 
   constructor: (isLocal) ->
     # for local testing, simulate the lms API
     if isLocal then @initScormStubs()
-    aristotle.lmsProxy = @
+    aristotle.localStorageProxy = @
     PubSub.subscribe 'state.save',      (m, data)=> @saveState()
     PubSub.subscribe 'state.load',      (m, data)=> @loadState()
     PubSub.subscribe 'state.rehydrate', (m, data)=> @rehydrate()
