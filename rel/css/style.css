@@ -992,7 +992,6 @@ body.body-quiz-results .chrome {
 	Some vertical flip updates
 */ }
     .slide-ux .quiz .question-total {
-      display: none;
       position: absolute;
       top: 23px;
       left: 795px;
@@ -1058,6 +1057,8 @@ body.body-quiz-results .chrome {
         display: flex;
         flex-direction: column;
         align-items: center; }
+        .slide-ux .quiz .questions .question.complete .answers .answer-wrapper {
+          pointer-events: none; }
         .slide-ux .quiz .questions .question .question-index {
           font-family: 'Function Condensed';
           font-size: 30px;
@@ -1066,6 +1067,7 @@ body.body-quiz-results .chrome {
           padding: 0 80px;
           margin: 30px 0 0 0; }
         .slide-ux .quiz .questions .question .question-text {
+          padding: 0 40px;
           font-weight: bold;
           font-size: 19px;
           color: #335E6E;
@@ -1112,7 +1114,8 @@ body.body-quiz-results .chrome {
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
-            text-align: center; }
+            text-align: center;
+            width: 160px; }
             .slide-ux .quiz .questions .question .card .txt .status {
               margin-bottom: 20px;
               text-transform: uppercase;

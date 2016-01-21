@@ -15,6 +15,7 @@ module.exports = class AssetPreploader
 
     createjs.Sound.alternateExtensions = ["mp3", "m4a"]
     preloadQueue = new createjs.LoadQueue()
+    # preloadQueue.setMaxConnections 10
     preloadQueue.installPlugin createjs.Sound
 
     # On load progress
