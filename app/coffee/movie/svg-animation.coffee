@@ -16,7 +16,8 @@ module.exports = class SVGAnimation
     if data.vcr
       PubSub.publish 'vcr-control.show', @
 
-    @animation.addEventListener 'data_ready', ()=>
+    @dateReadyListner = @animation.addEventListener 'data_ready', ()=>
+      @animation.removeEventListener 'data_ready', @datadateReadyListner
       if data.jumpToEnd?
         @animation.setCurrentRawFrameValue @animation.totalFrames
       else

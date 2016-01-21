@@ -5,20 +5,24 @@ module.exports = class AudioTrack
     AudioTrack.initSoundSettings()
     @sound = createjs.Sound.createInstance @src
 
-  play : (config={}, onComplete) ->
+  play : (config={}, @onComplete) ->
     @parseConfig config
     @sound.play config
-    @addOnComplete onComplete
+    if @onComplete?
+      @addOnComplete()
 
-  addOnComplete : (onComplete) ->
-    if onComplete? then @sound.addEventListener "complete", ()-> onComplete()
+  addOnComplete : () ->
+    @completeListener = @sound.addEventListener "complete", ()=>
+      @sound.removeEventListener "complete", @completeListener
+      @onComplete()
 
   stop : ()-> @sound.stop()
 
   destroy : ()->
     @isDead = true
     @sound.stop()
-    @sound.removeEventListener "complete"
+    if @completeListener?
+      @sound.removeEventListener "complete", @completeListener
     @sound.destroy()
 
   @initSoundSettings : (volume=1) ->

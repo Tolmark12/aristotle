@@ -35,11 +35,13 @@ module.exports = class VCRControls
 
     @animation = svgAnimation.animation
 
-    @animation.addEventListener 'enterFrame', ()=>
+    @enterFrame = @animation.addEventListener 'enterFrame', ()=>
       perc = @animation.currentFrame / @animation.totalFrames
       @$playhead.css width: "#{Math.round( perc * 100)}%"
 
-    @animation.addEventListener 'complete', ()=>
+    @complete = @animation.addEventListener 'complete', ()=>
+      @animation.removeEventListener 'enterFrame', @enterFrame
+      @animation.removeEventListener 'complete', @complete
       @isComplete = true
       @$attic.removeClass 'hidden'
       @$pauseAndPlayBtn.addClass 'complete'
@@ -66,4 +68,5 @@ module.exports = class VCRControls
   replayClick   : () ->
     @isComplete = false
     PubSub.publish 'vcr.replay'
+
   continueClick : () -> @completeCb()
