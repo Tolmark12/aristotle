@@ -156,8 +156,8 @@ module.exports = class Layer
       oldOnionLayer.velocity 'stop', true
       oldOnionLayer.velocity {opacity:0}, {
         duration:200, complete:()=>
-          if @isAnimation
-            @animation.destroy()
+          # if @isAnimation
+            # @animation.destroy()
           oldOnionLayer.remove()
       }
     ,
