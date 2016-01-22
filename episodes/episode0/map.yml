@@ -48,7 +48,7 @@ chapters:
         title: Load Warcore
         movie:
           layers:
-            - {depth: 1, background: black, content: commandline.json,}
+            - {depth: 1, background: black, content: commandline_test.json,}
         dialogue:
           defaults:
             next: audio

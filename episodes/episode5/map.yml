@@ -623,7 +623,7 @@ chapters:
       -
         action:
           - {cmd: ctanlee.show}
-          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3, delay: 1000, volume: 0.08, loop: true, slot: music} }
         movie:
           layers:
             - {depth: 14, content: clear }
@@ -780,5 +780,5 @@ chapters:
       -
         action:
           - {cmd: ctanlee.hide}
-          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }  
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         duration: {kind: time, seconds: 2 }
