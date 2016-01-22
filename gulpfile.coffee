@@ -48,6 +48,7 @@ fontPath          = 'app/fonts/**/*.@(ttf|svg|eot|ttf|woff|woff2)'
 episodeScriptPath = ['episodes/**/*.yml','episodes/**/*.yaml']
 episodeAssetPath  = 'episodes/**/*.!(yml|yaml)'
 localAssetPath    = 'local/**/*'
+randomJs          = 'stage/*.coffee'
 
 # If run with --dev, use less files to speeeed it up :-)
 if argv.dev
@@ -114,6 +115,14 @@ jsStage = (cb)->
     # .pipe coffee( bare: true ).on('error', gutil.log).on( 'error', gutil.beep )
     .pipe gulp.dest('server/stage/js')
     .on('end', cb)
+
+if argv.dev
+  jsStage = (cb)->
+    gulp.src './stage/*.coffee'
+      .pipe plumber()
+      .pipe coffee( bare: true ).on('error', gutil.log).on( 'error', gutil.beep )
+      .pipe gulp.dest('server/stage/js')
+      .on('end', cb)
 
 ##############################
 # TODO: I should move all the copy assets methods into on

@@ -33,18 +33,20 @@ module.exports = class VCRControls
     # bodymovin.setQuality('low')
     @reset()
 
-    @animation = svgAnimation.animation
+    @animation = svgAnimation
 
-    @enterFrame = @animation.addEventListener 'enterFrame', ()=>
-      perc = @animation.currentFrame / @animation.totalFrames
+    enterFrame = @animation.animation.addEventListener 'enterFrame', ()=>
+      perc = @animation.animation.currentFrame / @animation.animation.totalFrames
       @$playhead.css width: "#{Math.round( perc * 100)}%"
 
-    @complete = @animation.addEventListener 'complete', ()=>
-      @animation.removeEventListener 'enterFrame', @enterFrame
-      @animation.removeEventListener 'complete', @complete
+
+    complete = @animation.animation.addEventListener 'complete', ()=>
       @isComplete = true
       @$attic.removeClass 'hidden'
       @$pauseAndPlayBtn.addClass 'complete'
+
+    @animation.trackEventHandler enterFrame, 'enterFrame'
+    @animation.trackEventHandler complete, 'complete'
 
   reset : () ->
     @isPaused   = false

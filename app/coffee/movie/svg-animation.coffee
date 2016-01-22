@@ -1,6 +1,7 @@
 module.exports = class SVGAnimation
 
   constructor: ( el, json, data ) ->
+    @eventHandlers = []
     if !data.loop? then data.loop = false
     @animation = bodymovin.loadAnimation {
        wrapper   : el[0]
@@ -16,8 +17,7 @@ module.exports = class SVGAnimation
     if data.vcr
       PubSub.publish 'vcr-control.show', @
 
-    @dateReadyListner = @animation.addEventListener 'data_ready', ()=>
-      @animation.removeEventListener 'data_ready', @datadateReadyListner
+    handle = @animation.addEventListener 'data_ready', ()=>
       if data.jumpToEnd?
         @animation.setCurrentRawFrameValue @animation.totalFrames
       else
@@ -27,38 +27,43 @@ module.exports = class SVGAnimation
           @play()
       @addEvents data
 
+    @trackEventHandler 'data_ready', handle
+
+
   addEvents : (data) ->
     if data.events?
       for event in data.events
-        @animation.addEventListener event, ()=>
-          @animation.removeEventListener event
+        handle = @animation.addEventListener event, ()=>
           PubSub.publish "layer.#{data.depth}.#{event}"
+        @trackEventHandler event, handle
 
   addNativeEvents : (events) ->
     for event, cb of events
-      @animation.addEventListener event, cb
+      handle = @animation.addEventListener event, cb
+      @trackEventHandler event, handle
 
   addOnComplete : (onComplete) ->
-    @animation.addEventListener "complete", ()=>
-      # @animation.removeEventListener "complete"
+    handle = @animation.addEventListener "complete", ()=>
       onComplete()
+    @trackEventHandler "complete", handle
+
 
   play   : () => @animation.play();
   stop   : () -> @animation.stop()
   destroy: () ->
     if @animation?
-
+      @destroyEvents()
       try
+        console.log "destroying!"
         @animation.destroy()
       catch error
         console.log @animation.renderer
         console.log @animation.renderer.layers
 
-      if @interval?
-        clearInterval @interval
 
-  traceFrames : () ->
-    @interval = setInterval ()=>
-      console.log @animation.currentRawFrame, @animation.currentFrame, @animation.totalFrames
-    ,
-      500
+  trackEventHandler : (event, handler) ->
+    @eventHandlers.push {event:event, handler:handler}
+
+  destroyEvents : () ->
+    for evnt in @eventHandlers
+      @animation.removeEventListener evnt.event, evnt.handler

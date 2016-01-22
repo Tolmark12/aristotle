@@ -92,8 +92,6 @@ class Aristotle
         if aristotle.localStorageProxy.store.location.episodeNum
           @episodeNum = aristotle.localStorageProxy.store.location.episodeNum
 
-    console.log JSON.parse( JSON.stringify(aristotle.localStorageProxy.store) )
-
     # If we're in dev mode and specified an episode, use that
     if @isDevMode && @devEpisodeNum != false
       @episodeNum = @devEpisodeNum

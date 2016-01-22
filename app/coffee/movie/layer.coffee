@@ -54,21 +54,33 @@ module.exports = class Layer
     else
       kind = layerData.content.split(".")[1]
     switch kind
-      when "json"  then @addAnimation( @currentOnionLayer, layerData )
-      when "svg"   then @addSvg( @currentOnionLayer, layerData )
+      when "json"
+        if @animation?
+          @doomedAnimation = @animation
+        @addAnimation @currentOnionLayer, layerData
+      when "svg"
+        @addSvg @currentOnionLayer, layerData
       when "gif", "jpg", "jpeg","png"
-                        @addImage @currentOnionLayer, layerData.content, layerData.repeat, layerData.position
-      when "clear" then @empty()
+        @addImage @currentOnionLayer, layerData.content, layerData.repeat, layerData.position
+      when "clear"
+        @empty()
       when "mp4"
-                        @addVideo @currentOnionLayer, layerData.content
+        @addVideo @currentOnionLayer, layerData.content
       when "none"  then "do nothing"
       else              aristotle.throw "tried to add unrecognized layer type '#{kind}'", true
 
-  # cache : ()->
-  #   html2canvas( @$layer ).then (canvas)=>
-  #     @fadeAndRemoveOldLayer()
-  #     @currentOnionLayer = @addOnionLayer()
-  #     @currentOnionLayer.append Canvas2Image.convertToPNG(canvas, 1024, 768)
+  addAnimation : ($holder, layerData) ->
+    @isAnimation = true
+    @animation  = new SVGAnimation $holder, aristotle.getAssetPath(layerData.content), layerData
+    if layerData.cache
+      @animation.addOnComplete ()=>
+        # Added a timeout because reconstituting animations required us to
+        # jump to the end of the animation, and it seemed like the animation
+        # didn't exist yet to cache.
+        setTimeout ()=>
+          @cache()
+        ,
+          10
 
   cache : () ->
     return if @isCached || !@isAnimation || aristotle.dontCache
@@ -80,6 +92,7 @@ module.exports = class Layer
     $img = $( $.parseHTML("<img />") )
     img  = $img[0]
     window.traceLayer = @
+    @doomedAnimation  = @animation
     try
       svg.toDataURL 'image/png', {
           renderer: 'canvg',
@@ -91,7 +104,6 @@ module.exports = class Layer
         }
     catch error
       console.log error
-
 
   uncache : () ->
     return if !@isCached
@@ -109,29 +121,50 @@ module.exports = class Layer
     tempObj.jumpToEnd = true
     @addTheCorrectContent tempObj
 
-  updateEffects : (fx) ->
-    if fx.clear then @$layer.attr class:'layer'
-    if fx.effects?
-      for effect in fx.effects
-        @$layer.addClass effect
+  addOnionLayer : () ->
+    $onionLayer = $ jadeTemplate['movie/onion-layer']( {} )
+    @$layer.prepend $onionLayer
+    $onionLayer
 
-  updateBackground : (layerData) ->
-    return if !layerData.background?
-    @currentOnionLayer.css background: layerData.background
+  fadeAndRemoveOldLayer : () ->
+    oldOnionLayer = @currentOnionLayer
+    aristotle.timeout ()=>
+      oldOnionLayer.velocity 'stop', true
+      oldOnionLayer.velocity {opacity:0}, {
+        duration:200, complete:()=>
+          if @doomedAnimation?
+            @destroyDoomedAnimation()
+          oldOnionLayer.remove()
+      }
+    ,
+      200
 
-  addAnimation : ($holder, layerData) ->
-    @isAnimation = true
-    @animation  = new SVGAnimation $holder, aristotle.getAssetPath(layerData.content), layerData
-    if layerData.cache
-      @animation.addOnComplete ()=>
-        # Added a timeout because reconstituting animations required us to
-        # jump to the end of the animation, and it seemed like the animation
-        # didn't exist yet to cache.
-        setTimeout ()=>
-          @cache()
-        ,
-          10
+  empty : () ->
+    @$layer.empty()
+    @destroyDoomedAnimation()
+    @destroyAnimation()
 
+  destroyDoomedAnimation : () ->
+    return if !@doomedAnimation?
+    console.log 'destroyed doomed!'
+    @doomedAnimation.destroy()
+    @doomedAnimation = null
+
+  destroyAnimation : () ->
+    return if !@animation?
+    console.log 'destroyed animation!'
+    @animation.destroy()
+    @animation = null
+
+  addFilter : (filterId) -> $("svg", @currentOnionLayer).css filter:"url(##{filterId})"
+  removeFilters : () -> $("svg", @currentOnionLayer).css filter: "none"
+
+  destroy : () ->
+    @$layer.remove()
+    @destroyDoomedAnimation()
+    @destroyAnimation()
+
+  # ------------------------------------ Temp placing out of my mind
 
   addSvg : ($holder, layerData) ->
     me = @
@@ -145,27 +178,19 @@ module.exports = class Layer
     $vid = $ jadeTemplate['movie/video']( {src:aristotle.getAssetPath(file)} )
     $holder.append $vid
 
-  addOnionLayer : () ->
-    $onionLayer = $ jadeTemplate['movie/onion-layer']( {} )
-    @$layer.prepend $onionLayer
-    $onionLayer
+  updateEffects : (fx) ->
+    if fx.clear then @$layer.attr class:'layer'
+    if fx.effects?
+      for effect in fx.effects
+        @$layer.addClass effect
 
-  fadeAndRemoveOldLayer : () ->
-    oldOnionLayer = @currentOnionLayer
-    aristotle.timeout ()=>
-      oldOnionLayer.velocity 'stop', true
-      oldOnionLayer.velocity {opacity:0}, {
-        duration:200, complete:()=>
-          # if @isAnimation
-            # @animation.destroy()
-          oldOnionLayer.remove()
-      }
-    ,
-      200
+  updateBackground : (layerData) ->
+    return if !layerData.background?
+    @currentOnionLayer.css background: layerData.background
 
-  empty : () -> @$layer.empty()
-  addFilter : (filterId) -> $("svg", @currentOnionLayer).css filter:"url(##{filterId})"
-  removeFilters : () -> $("svg", @currentOnionLayer).css filter: "none"
 
-  destroy : () ->
-    @$layer.remove()
+  # cache : ()->
+  #   html2canvas( @$layer ).then (canvas)=>
+  #     @fadeAndRemoveOldLayer()
+  #     @currentOnionLayer = @addOnionLayer()
+  #     @currentOnionLayer.append Canvas2Image.convertToPNG(canvas, 1024, 768)

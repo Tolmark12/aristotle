@@ -34,7 +34,8 @@ module.exports = class AssetPreploader
   lookForFiles : (item, storage, regex)->
     type = typeof item
     if type == "string"
-      if  /.mp3|.m4a|.json|.svg|.jpg|.jpeg|.png/.test(item) then storage.push {src:"#{aristotle.getAssetPath(item)}",  id:item}
+      if  /.mp3|.m4a|.json/.test(item) then storage.push {src:"#{aristotle.getAssetPath(item)}",  id:item}
+      # if  /.mp3|.m4a|.json|.svg|.jpg|.jpeg|.png/.test(item) then storage.push {src:"#{aristotle.getAssetPath(item)}",  id:item}
 
     else if type == "object"
       if Array.isArray(item)
