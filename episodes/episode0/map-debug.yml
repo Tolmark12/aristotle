@@ -42,13 +42,43 @@ chapters:
                 sound: SFX_SoundTestButton.mp3
 
         duration: {kind: ux}
+      -
+        title: A
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility_no_notes.mp3, loop: true, volume: 1, slot: ambience} }
+        duration: {kind: time, seconds: 1}
+
+      -
+        title: B
+        movie:
+          layers:
+            - {depth: 1, background: black, content: commandline.json}
+        duration: {kind: time, seconds: 10}
+      -
+        title: C
+        dialogue:
+          timeline:
+            - {action: a }
+            - {action: b }
+          actions:
+            a:
+              next: audio
+              text: Welcome to the WarCore. Booting system...
+              actor: warcore
+              audio: Story_1_Warcore_1.mp3
+            b:
+              next: audio
+              text: The system is ready for login. I will now access your records.
+              actor: warcore
+              audio: Story_1_Warcore_2.mp3
+        duration: {kind: dialogue }
+
       # Animation Load Warcore ==========================================
       -
         title: Load Warcore
         action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility_no_notes.mp3, loop: true, volume: 1, slot: ambience} }
         movie:
           layers:
-            - {depth: 1, background: black, content: commandline.json,}
+            - {depth: 1, background: black, content: commandline.json}
         dialogue:
           defaults:
             next: audio
@@ -107,6 +137,10 @@ chapters:
               text: "The warcore will now confirm your identity."
               audio: Story_1_Ctanlee_4.mp3
         duration: {kind: dialogue }
+  -
+    title: TEMP BREAK
+    kind: intro
+    slides:
       # Dialogue Clearance Level  ==========================================
       -
         title: Authorization Results
