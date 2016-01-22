@@ -3,6 +3,8 @@ $size: 10px;
   .error, .message { width:$size; height:$size; border-radius:50%; cursor: pointer; margin:5px 2px; border:solid 2px white;
     &:hover        { opacity:0.8 }
   }
-  .error           { background:#CC0089; }
-  .message         { background:#1f5e8b; }
+  .error           { background:#CC0089; display:none; }
+}
+.logs{
+  .message         { font-size:13px; font-family:monospace; font-weight:bold; color:#00d1ff; margin-top:20px;position:absolute; top:0; left:100px; background:black; padding:5px; margin:0; }
 }

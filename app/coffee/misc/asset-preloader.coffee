@@ -1,6 +1,9 @@
 module.exports = class AssetPreploader
 
   constructor: (data, @callback, @progressCallback) ->
+    if !data?
+      @callback()
+
     @preloadAssets data
 
     # + Possibly destroying at the start of each load would allow us to not need to refresh the page
@@ -39,6 +42,12 @@ module.exports = class AssetPreploader
 
     # Load it!
     @preloadQueue.loadManifest assets
+
+    # for asset in assets
+      # console.log "--"
+      # console.log "#{asset.type}"
+      # console.log "#{asset.mimeType}"
+      # console.log "#{asset.src}"
 
   lookForFiles : (item, storage, regex)->
     type = typeof item

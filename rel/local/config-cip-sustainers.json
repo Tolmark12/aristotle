@@ -8,7 +8,7 @@
   "quizDir"          : "sustainers/quizes",
   "dutiesDir"        : "sustainers/duties",
   "episodeMapFiles"  : {
-    "0" : "map.json",
+    "0" : "map-debug.json",
     "1" : "map.json",
     "2" : "map.json",
     "3" : "map.json",

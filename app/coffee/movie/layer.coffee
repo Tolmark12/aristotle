@@ -146,13 +146,11 @@ module.exports = class Layer
 
   destroyDoomedAnimation : () ->
     return if !@doomedAnimation?
-    console.log 'destroyed doomed!'
     @doomedAnimation.destroy()
     @doomedAnimation = null
 
   destroyAnimation : () ->
     return if !@animation?
-    console.log 'destroyed animation!'
     @animation.destroy()
     @animation = null
 

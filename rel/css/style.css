@@ -1797,9 +1797,21 @@ input {
     .logger .error:hover, .logger .message:hover {
       opacity: 0.8; }
   .logger .error {
-    background: #CC0089; }
-  .logger .message {
-    background: #1f5e8b; }
+    background: #CC0089;
+    display: none; }
+
+.logs .message {
+  font-size: 13px;
+  font-family: monospace;
+  font-weight: bold;
+  color: #00d1ff;
+  margin-top: 20px;
+  position: absolute;
+  top: 0;
+  left: 100px;
+  background: black;
+  padding: 5px;
+  margin: 0; }
 
 .generic-ui {
   pointer-events: none;

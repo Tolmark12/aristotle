@@ -30,11 +30,10 @@ module.exports = class Parser
         @parseObject item
 
   getAssetPath : (asset) =>
-    #
-    if asset == "map.json"                          then contentDir = ""
+    if       /map(.+)?\.json/.test(asset)        then contentDir = ""
     else if  /.mp3|.m4a/.test(asset)                then contentDir = "sounds/"
-    else if /.json/.test(asset)                     then contentDir = "animations/"
-    else if /.svg|.jpg|.jpeg|.png|.mp4/.test(asset) then contentDir = "assets/"
+    else if  /.json/.test(asset)                     then contentDir = "animations/"
+    else if  /.svg|.jpg|.jpeg|.png|.mp4/.test(asset) then contentDir = "assets/"
 
     if asset.charAt(0) == "~"
       pathId = asset.substr(1, 1)
