@@ -44,11 +44,11 @@ chapters:
         duration: {kind: ux}
       # Animation Load Warcore ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility_no_notes.mp3, loop: true, volume: 1, slot: ambience} }
         title: Load Warcore
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility_no_notes.mp3, loop: true, volume: 1, slot: ambience} }
         movie:
           layers:
-            - {depth: 1, background: black, content: commandline_test.json,}
+            - {depth: 1, background: black, content: commandline.json,}
         dialogue:
           defaults:
             next: audio
