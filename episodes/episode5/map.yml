@@ -345,9 +345,9 @@ chapters:
       - !!inc/file ./episodes/episode5/yaml/_simple-sektimus-e6.yaml
       # 2 Sektimus Interlude Normal B ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_With_Defense_Music.mp3, delay: 3300, volume: 0.2, loop: true, slot: music} }
         fid: ep5-ch2-sektimus-normal-b
         sfx:
-          - {content: ~g/MU_BotTronAttack.mp3, delay: 3300, volume: 0.2, loop: 1 }
           - {content: ~g/SFX_AttackSlamdown_BotTron.mp3, delay: 12400, volume: .3 }
           - {content: ~5/SFX_BotTron_Attack.mp3, delay: 20000, volume: 1 }
         movie:
@@ -444,7 +444,7 @@ chapters:
     slides:
       # 3 Dialogue Recovery Plan ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .08, slot: music} }
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         title: The Recovery Plan
         movie:
           layers:
@@ -481,6 +481,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Simulation Recovery ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 15000, volume: 0.1, loop: true, slot: music} }
         sfx:
           - {content: ~5/CIN_FacilityRecovery.mp3, delay: 7500, volume: 0.08 }
         movie:
@@ -559,7 +560,6 @@ chapters:
         duration: {kind: ux }
       # 3 Sektimus Interlude ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .08, slot: music} }
         movie:
           layers:
             - {depth: 14, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
@@ -608,6 +608,7 @@ chapters:
       #  duration: {kind: ux}
       # 3 Quiz ==========================================
       -
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         duration: {kind: ux}
         ux:
           components:
@@ -620,7 +621,9 @@ chapters:
   # ----------------------------------------------
       # 4 Shutting Down slide ==========================================
       -
-        action: [{cmd: ctanlee.show}]
+        action:
+          - {cmd: ctanlee.show}
+          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         movie:
           layers:
             - {depth: 14, content: clear }
@@ -657,12 +660,6 @@ chapters:
             - {depth: 12, content: clear }
             - {depth: 11, content: clear }
             - {depth: 10, content: clear }
-        duration: {kind: listen, event: layer.13.complete }
-      # 4 -9,10,11 Clear ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
             - {depth: 9, content: clear }
             - {depth: 8, content: clear }
             - {depth: 7, content: clear }
@@ -781,5 +778,7 @@ chapters:
         duration: {kind: dialogue }
       # 4 Ctanlee Gone ==========================================
       -
-        action: [{cmd: ctanlee.hide}]
+        action:
+          - {cmd: ctanlee.hide}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }  
         duration: {kind: time, seconds: 2 }

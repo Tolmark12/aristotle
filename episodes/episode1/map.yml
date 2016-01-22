@@ -41,7 +41,7 @@ chapters:
       - !!inc/file ./episodes/episode1/yaml/_building-selector.yaml
       # 1 Selector Build ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: .05, slot: ambience} }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: .2, slot: ambience} }
         sfx:
           - {content: $facilitySFX, volume: .1}
         movie:
@@ -579,8 +579,8 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Animation Violation ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 500, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 500, volume: 0.1, loop: true }
           - {content: ~1/CIN_DoorOpen.mp3, delay: 1500, volume: 0.08 }
           - {content: ~1/CIN_HumanWalking.mp3, delay: 2000, volume: 0.08 }
           - {content: ~1/SFX_Camera.mp3, delay: 6000, volume: 1 }
@@ -648,7 +648,6 @@ chapters:
       # 3 Animation Good Catch ==========================================
       -
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 500, volume: 0.1, loop: true }
           - {content: ~1/CIN_HumanWalking.mp3, delay: 500, volume: 0.08, loop: 1 }
           - {content: ~1/SFX_Camera.mp3, delay: 7000, volume: 1 }
           - {content: ~1/CIN_HumanWalking.mp3, delay: 9100, volume: 0.08 }
@@ -691,7 +690,9 @@ chapters:
       # 3 Dialogue One Down ==========================================
       -
         title: One Episode Down
-        action: {cmd: ctanlee.gohome}
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }          
         duration: {kind: ux}
         ux:
           components:

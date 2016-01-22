@@ -46,8 +46,8 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulation A ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1 }
           - {content: ~3/CIN_TreeMoving.mp3, delay: 100, volume: 0.05 }
           - {content: ~3/CIN_TreeMoving.mp3, delay: 2000, volume: 0.05 }
           - {content: ~3/CIN_TreeMoving.mp3, delay: 3500, volume: 0.05 }
@@ -101,6 +101,7 @@ chapters:
       # 1 Dialogue Ports==========================================
       -
         title: Port Security
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         movie:
           layers:
             - {depth: 8, content: clear }
@@ -183,8 +184,8 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulation==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1 }
           - {content: ~3/CIN_FlashDriveRejection.mp3, delay: 7900, volume: 0.5}
           - {content: ~3/CIN_HumanTossing.mp3, delay: 12200, volume: 0.2 }
         movie:
@@ -222,7 +223,9 @@ chapters:
           layers:
             - {depth: 9, content: clear }
             - {depth: 10, content: clear }
-        action: {cmd: ctanlee.gohome}
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         ux:
           components:
             -
@@ -297,8 +300,8 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 3000, volume: 0.15, loop: true, slot: music} }
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 3000, volume: 0.15 }
           - {content: ~3/CIN_Quarantine.mp3, delay: 7800, volume: .1 }
         movie:
           layers:
@@ -425,6 +428,7 @@ chapters:
       # 2 Dialogue Software Defense ==========================================
       -
         title: It's a Team Effort
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         movie:
           layers:
             - {depth: 9, content: clear }
@@ -478,8 +482,8 @@ chapters:
       # 3 Simulation Attack ==========================================
       -
         fid: ep3-ch3-b
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: .1 }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 100, volume: .04, loop: 1 }
           - {content: ~3/CIN_TypingComputerCrash.mp3, delay: 5900, volume: .08 }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 9800, volume: .04 }
@@ -569,7 +573,6 @@ chapters:
       -
         fid: ep3-ch3-d
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: .1 }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 2000, volume: 0.04, loop: 1 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 4000, volume: .08 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 4800, volume: .08 }
@@ -609,6 +612,7 @@ chapters:
       -
         fid: ep3-ch3-e
         title: Adding Assets
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         movie:
           layers:
             - {depth: 9, content: clear }
@@ -709,8 +713,8 @@ chapters:
       # 3 Simulation Asset Change ==========================================
       -
         fid: ep3-ch3-l
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: .1 }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 500, volume: 0.04 }
           - {content: ~3/CIN_DoorOpen.mp3, delay: 1900, volume: .08 }
           - {content: ~3/CIN_VehicleRunning.mp3, delay: 1900, volume: .4 }
@@ -789,6 +793,7 @@ chapters:
       -
         fid: ep3-ch3-m
         title: Bravo Cadet!
+        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         movie:
           layers:
             - {depth: 11, content: clear }

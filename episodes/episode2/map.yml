@@ -44,8 +44,8 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulator Robot Attack ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.3 }
           - {content: ~2/CIN_RobotMovement.mp3, delay: 700, volume: 0.08 }
           - {content: ~2/CIN_RobotMovement.mp3, delay: 12000, volume: 0.1, loop: 3 }
           - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 3400, volume: 0.2}
@@ -95,7 +95,9 @@ chapters:
         movie:
           layers:
             - {depth: 6, content: clear }
-        action: {cmd: ctanlee.gohome}
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         duration: {kind: ux}
         ux:
           components:
@@ -165,8 +167,8 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulator Robot Attack Perimeter ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.3 }
           - {content: ~2/CIN_RobotMovement.mp3, delay: 3000, volume: 0.1, loop: 1 }
           - {content: $pacsSFX, delay: 7200, volume: 0.3 }
           - {content: ~2/CIN_RobotMovement.mp3, delay: 10500, volume: 0.1, loop: 3 }
@@ -228,7 +230,9 @@ chapters:
           layers:
             - {depth: 7, content: clear }
             - {depth: 8, content: clear }
-        action: {cmd: ctanlee.gohome}
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         ux:
           components:
             -
@@ -265,8 +269,8 @@ chapters:
       -
         fid: ep2-ch2-sektimus
         title: A Disturbance
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15, loop: true, slot: music} }
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15 }
           - {content: ~3/CIN_Quarantine.mp3, delay: 33700, volume: .1 }
         movie:
           layers:
@@ -431,7 +435,6 @@ chapters:
       # 2 Simulation Kettle E Attack ==========================================
       -
         sfx:
-          - {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: .1}
           - {content: ~g/SFX_AttackSlamdown_KettleHeadEAttackMode.mp3, delay: 6300, volume: .2 }
           - {content: ~2/CIN_RobotHacking.mp3, delay: 17500, volume: .2 }
           - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 29000, volume: .4 }
@@ -476,7 +479,9 @@ chapters:
       # 2 Dialogue - Electronic Attack ==========================================
       -
         title: Electronic Attacks
-        action: {cmd: ctanlee.gohome}
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         movie:
           layers:
             - {depth: 7, content: clear }
@@ -617,6 +622,7 @@ chapters:
         duration: {kind: ux }
       # 2 Simulator - Firewall Upper ==========================================
       -
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         movie:
           layers:
             - {depth: 7, content: clear }
@@ -739,6 +745,7 @@ chapters:
         title: Duties
         action:
           - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         movie:
           layers:
             - {depth: 9, content: clear }

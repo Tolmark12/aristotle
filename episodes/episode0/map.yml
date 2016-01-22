@@ -186,9 +186,6 @@ chapters:
         duration: {kind: ux}
       # Call Sign and Animation Power Grid  ==========================================
       -
-        sfx:
-          - {content: ~0/SFX_Sektimus_Fleet_Impacts.mp3, delay: 92800, volume: 1 }
-          - {content: ~0/SFX_Crater.mp3, delay: 100000, volume: 1 }
         title: Powergrid
         action: [ {cmd: chrome.show}, {cmd: chrome.showname} ]
         movie:
@@ -245,10 +242,12 @@ chapters:
         duration: {kind: dialogue }
       # Animation Sektimus Launch  ==========================================
       -
+        sfx:
+          - {content: ~0/SFX_Sektimus_Fleet_Impacts.mp3, delay: 26800, volume: 1 }
         action:
           - {cmd: chrome.hide}
           - {cmd: sound.fadeout, data: {delay: 15000, duration: 500, slot: ambience} }
-          - {cmd: playsound, data: {content: ~0/CIN_Intro_Sektimus.mp3, volume: .4, delay: 15000, duration: 500, slot: sektimus, destroy: true} }
+          - {cmd: playsound, data: {content: ~0/CIN_Intro_Sektimus.mp3, volume: .4, delay: 15000, slot: sektimus, destroy: true} }
         title: Sektimus
         movie:
           layers:
@@ -276,6 +275,7 @@ chapters:
         duration: {kind: dialogue }
       # Animation Robot Introduction  ==========================================
       -
+        action: {cmd: playsound, data: {content: ~0/SFX_Crater.mp3, volume: 1, slot: crater} }
         movie:
           layers:
             - {depth: 1, content: smoke1.json }
@@ -319,7 +319,9 @@ chapters:
         duration: {kind: dialogue }
       # Dialogue Gut Check  ==========================================
       -
-        action: {cmd: sound.fadein, data: {delay: 1000, duration: 500, slot: ambience} }
+        action:
+          - {cmd: sound.fadein, data: {delay: 1000, duration: 500, slot: ambience} }
+          - {cmd: sound.fadeout, data: {duration: 500, slot: crater, detroy: true} }
         title: Gut Check
         movie:
           layers:
