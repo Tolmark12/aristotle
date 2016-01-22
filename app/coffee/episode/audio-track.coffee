@@ -1,6 +1,7 @@
 module.exports = class AudioTrack
 
   constructor: (@src) ->
+    @eventHandlers = []
     @src = parse @src
     AudioTrack.initSoundSettings()
     @sound = createjs.Sound.createInstance @src
@@ -12,17 +13,17 @@ module.exports = class AudioTrack
       @addOnComplete()
 
   addOnComplete : () ->
-    @completeListener = @sound.addEventListener "complete", ()=>
-      @sound.removeEventListener "complete", @completeListener
+    handle = @sound.addEventListener "complete", ()=>
       @onComplete()
+    @trackEventHandler 'complete', handle
 
   stop : ()-> @sound.stop()
 
   destroy : ()->
+    @destroyEvents()
     @isDead = true
+    @sound.removeAllEventListeners()
     @sound.stop()
-    if @completeListener?
-      @sound.removeEventListener "complete", @completeListener
     @sound.destroy()
 
   @initSoundSettings : (volume=1) ->
@@ -67,3 +68,11 @@ module.exports = class AudioTrack
   fadeIn  : (fadeDurationMs, doDestroy=false)->
     return if @isDead
     @fade fadeDurationMs, 1, doDestroy
+
+
+  trackEventHandler : (event, handler) ->
+    @eventHandlers.push {event:event, handler:handler}
+
+  destroyEvents : () ->
+    for evnt in @eventHandlers
+      @animation.removeEventListener evnt.event, evnt.handler
