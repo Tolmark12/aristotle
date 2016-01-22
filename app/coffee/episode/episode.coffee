@@ -58,6 +58,7 @@ module.exports = class Episode
     # Loop throught the chapters
     for chapter in aristotle.episodeData.chapters
       chapterTitle = chapter.title
+
       if chapter.title == title # If this is a chapter..
         break
 
@@ -81,7 +82,7 @@ module.exports = class Episode
     @chapters.activateItemByParam 'title', chapterTitle
 
     # If there is a specific slide to play..
-    if slide?
+    if slideTitle?
       @playChapter slide.title
     else
       @playChapter()

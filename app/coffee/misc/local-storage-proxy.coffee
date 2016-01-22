@@ -1,6 +1,7 @@
 module.exports = class LocalStorageProxy
 
   constructor: (cb) ->
+    window.zap = (obj)-> JSON.parse( JSON.stringify(obj) )
     # for local testing, simulate the lms API
     aristotle.localStorageProxy = @
     PubSub.subscribe 'state.save',         (m, data)=> @saveState()

@@ -26,8 +26,8 @@ module.exports = class VCRControls
   replay : () ->
     @$attic.addClass 'hidden'
     @$pauseAndPlayBtn.removeClass 'complete'
-    @animation.goToAndStop 0
-    @animation.play()
+    @animation.animation.goToAndStop 0
+    @animation.animation.play()
 
   activate : (svgAnimation, @completeCb) ->
     # bodymovin.setQuality('low')

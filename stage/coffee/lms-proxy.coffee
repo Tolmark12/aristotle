@@ -47,7 +47,6 @@ module.exports = class LMSProxy
     elbScorm.SetResumeData JSON.parse(glob)
 
   onStorageChange : (e) ->
-    console.log e.key
     # If this is a change to the glob
     if e.key == "glob"
       @saveGlobToLMS()
@@ -55,8 +54,6 @@ module.exports = class LMSProxy
     else if e.key == "course.complete"
       elbScorm.SetComplete()
     else if e.key == "refresh.window"
-      console.log "hmmmmmmmm"
-      a=0
       @refreshWindowCb()
 
   # ----------------- #
