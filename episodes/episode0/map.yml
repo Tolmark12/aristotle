@@ -44,11 +44,11 @@ chapters:
         duration: {kind: ux}
       # Animation Load Warcore ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility_no_notes.mp3, loop: true, volume: 1, slot: ambience} }
         title: Load Warcore
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility_no_notes.mp3, loop: true, volume: 1, slot: ambience} }
         movie:
           layers:
-            - {depth: 1, content: commandline.json,}
+            - {depth: 1, background: black, content: commandline.json,}
         dialogue:
           defaults:
             next: audio
@@ -60,11 +60,11 @@ chapters:
               next: 6000
               text: Welcome to the WarCore. Booting system...
               actor: warcore
-              audio: Story_1_Warcore_1.mp3
+              audio: Story_1_Ctanlee_1.mp3
             b:
               text: The system is ready for login. I will now access your records.
               actor: warcore
-              audio: Story_1_Warcore_2.mp3
+              audio: Story_1_Ctanlee_1.mp3
         duration: {kind: dialogue }
       # Animation Quarantine ==========================================
       -
