@@ -75,4 +75,4 @@ module.exports = class AudioTrack
 
   destroyEvents : () ->
     for evnt in @eventHandlers
-      @animation.removeEventListener evnt.event, evnt.handler
+      @sound.removeEventListener evnt.event, evnt.handler
