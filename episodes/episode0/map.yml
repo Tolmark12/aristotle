@@ -71,7 +71,7 @@ chapters:
         title: Quarantine
         movie:
           layers:
-            - {depth: 1, content: quarantine.json, action: {cmd: chrome.hide} }
+            - {depth: 1, content: quarantine.json}
         action: [{cmd: ctanlee.show}]
         dialogue:
           defaults:
