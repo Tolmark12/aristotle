@@ -54,7 +54,6 @@ module.exports = class SVGAnimation
     if @animation?
       @destroyEvents()
       try
-        console.log "destroying!"
         @animation.destroy()
       catch error
         console.log @animation.renderer

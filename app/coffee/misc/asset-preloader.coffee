@@ -1,8 +1,10 @@
-module.exports = class AssetPreploader
-
+module.exports = class AssetPreloader
+  @count :0
   constructor: (data, @callback, @progressCallback) ->
+    @id = AssetPreloader.count++
     if !data?
       @callback()
+      return
 
     @preloadAssets data
 

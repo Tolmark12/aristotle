@@ -1,6 +1,7 @@
 module.exports = class Logger
 
   constructor: ($el, isDevMode) ->
+    @messages = ""
     PubSub.subscribe 'logger.print', (m, data)=> @print data.str, data.clearPrevious
 
     $node = $ jadeTemplate['misc/logger']( {} )
@@ -22,11 +23,12 @@ module.exports = class Logger
     if !isDevMode then $node.css display: "none"
 
   print : (str, clearPrevious) ->
+    @messages += str +  "</br>"
     @showLogNotifier()
     if clearPrevious
-      @$logNotifyer.html "#{str} </br>"
+      @$logNotifyer.html str
     else
-      @$logNotifyer.html @$logNotifyer.contents() + str
+      @$logNotifyer.html @messages
 
 
   log   : (msg) =>

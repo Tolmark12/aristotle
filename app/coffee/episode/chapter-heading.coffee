@@ -1,4 +1,4 @@
-Preloader = require 'misc/asset-preloader'
+AssetPreloader = require 'misc/asset-preloader'
 
 module.exports = class ChapterHeading
 
@@ -10,9 +10,11 @@ module.exports = class ChapterHeading
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
     @preload data
 
-  preload : (data) -> preloader = new Preloader data, @complete, @update
+  preload : (data) ->
+    preloader = new AssetPreloader data, @complete, @update
 
-  update : (perc) => @$fg.css width: "#{Math.round(perc*100)}%"
+  update : (perc) =>
+    @$fg.css width: "#{Math.round(perc*100)}%"
 
   complete : ()=>
     @$node.addClass 'complete'

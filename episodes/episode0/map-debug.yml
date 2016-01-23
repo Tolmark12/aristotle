@@ -60,16 +60,24 @@ chapters:
             - {action: a }
             - {action: b }
           actions:
-            a:
-              next: audio
-              text: Welcome to the WarCore. Booting system...
-              actor: warcore
-              audio: Story_1_Warcore_1.mp3
             b:
               next: audio
               text: The system is ready for login. I will now access your records.
               actor: warcore
               audio: Story_1_Warcore_2.mp3
+        duration: {kind: dialogue }
+      -
+        title: C
+        dialogue:
+          timeline:
+            - {action: a }
+            - {action: b }
+          actions:
+            a:
+              next: audio
+              text: Welcome to the WarCore. Booting system...
+              actor: warcore
+              audio: Story_1_Warcore_1.mp3
         duration: {kind: dialogue }
 
       # Animation Load Warcore ==========================================

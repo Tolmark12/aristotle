@@ -5,15 +5,25 @@ module.exports = class AudioTrack
     @src = parse @src
     AudioTrack.initSoundSettings()
     @sound = createjs.Sound.createInstance @src
+    @sound.addEventListener "failed", (e)=>
+      @tr "SOUND FAILED"
+
+
+  # TEMP
+  tr : (str)->
+    PubSub.publish 'logger.print', {str: "str"}
+  # TEMP
+
 
   play : (config={}, @onComplete) ->
     @parseConfig config
-    @sound.play config
     if @onComplete?
       @addOnComplete()
+    @sound.play config
 
   addOnComplete : () ->
     handle = @sound.addEventListener "complete", ()=>
+      @tr "> Sound Complete"
       @onComplete()
     @trackEventHandler 'complete', handle
 

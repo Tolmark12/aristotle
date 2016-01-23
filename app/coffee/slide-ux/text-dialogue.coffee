@@ -103,8 +103,6 @@ module.exports = class TextDialogue
 
   playNextAction : () ->
     if @track? then @track.stop()
-    console.log "SEQUENCE:"
-    console.log @sequence.isAtLastItem()
     if @sequence.isAtLastItem()
       @complete()
     else

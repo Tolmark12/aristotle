@@ -9,7 +9,8 @@ module.exports = class Slide
     # @token1 = PubSub.subscribe 'vcr.replay', ()=> @runSoundFx @slideData.sfx
 
   play : (onComplete) =>
-    PubSub.publish 'logger.print', {str: "SLIDE #{@slideData.index}", clearPrevious:true }
+    PubSub.publish 'logger.print', {str: "SLIDE #{@slideData.index}", clearPrevious:false }
+
     if @slideData.title?
       PubSub.publish 'slide.activated', @slideData.title
     @movie.populate @slideData.movie

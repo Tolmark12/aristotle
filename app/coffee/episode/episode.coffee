@@ -97,7 +97,8 @@ module.exports = class Episode
       chapters.push new Chapter( chapterData, @movie, @ux, @chapterComplete )
     @chapters = new Sequence chapters
 
-  start           : () -> @playChapter()
+  start           : () ->
+    @playChapter()
   chapterComplete : () =>
     # PubSub.publish 'state.save'
     # @chapters.getCurrentItem().destroy()
