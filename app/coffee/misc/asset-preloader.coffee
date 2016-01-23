@@ -21,9 +21,6 @@ module.exports = class AssetPreloader
       @callback()
       return
 
-    # + Maybe this would fix an issue in IE where it seems to get slammed?
-    # @preloadQueue.setMaxConnections 1
-
     createjs.Sound.alternateExtensions = ["mp3", "m4a"]
     @preloadQueue = new createjs.LoadQueue()
     @preloadQueue.installPlugin createjs.Sound
@@ -33,11 +30,18 @@ module.exports = class AssetPreloader
     # On load progress
     if @progressCallback?
       @progressHandler = @preloadQueue.on "progress", (e)=>
+        @preloadQueue.setPaused true
+        setTimeout ()=>
+          @preloadQueue.setPaused false
+        ,
+          2000
         if e.loaded > 1 then e.loaded = 1
         @progressCallback e.loaded
 
     # On load complete
     @completeHandler = @preloadQueue.on "complete", ()=>
+      return if @isComplete
+      @isComplete = true
       @callback data
       @preloadQueue.removeEventListener @progressHandler
       @preloadQueue.removeEventListener @completeHandler
