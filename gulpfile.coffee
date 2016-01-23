@@ -57,7 +57,6 @@ if argv.dev
   episodeAssetPath  = 'episodes-dev/**/*.!(yml|yaml)'
   localAssetPath    = 'local-dev/**/*'
 
-
 parseSVG = (cb)->
   gulp.src svgPath
     .pipe shadow {
@@ -116,7 +115,7 @@ jsStage = (cb)->
     .pipe gulp.dest('server/stage/js')
     .on('end', cb)
 
-if argv.dev
+if argv.load
   jsStage = (cb)->
     gulp.src './stage/*.coffee'
       .pipe plumber()

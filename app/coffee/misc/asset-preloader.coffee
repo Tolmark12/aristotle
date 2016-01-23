@@ -27,15 +27,9 @@ module.exports = class AssetPreloader
 
     window.jax = @preloadQueue
 
-    # On load progress
+    # # On load progress
     if @progressCallback?
       @progressHandler = @preloadQueue.on "progress", (e)=>
-        @preloadQueue.setPaused true
-        setTimeout ()=>
-          @preloadQueue.setPaused false
-        ,
-          2000
-        if e.loaded > 1 then e.loaded = 1
         @progressCallback e.loaded
 
     # On load complete
@@ -46,8 +40,13 @@ module.exports = class AssetPreloader
       @preloadQueue.removeEventListener @progressHandler
       @preloadQueue.removeEventListener @completeHandler
 
+
+    # Put the mp3's first!!!
+    assets = @orderFilesForLoad assets
+
     # Load it!
     @preloadQueue.loadManifest assets
+
 
     # for asset in assets
       # console.log "--"
@@ -58,7 +57,8 @@ module.exports = class AssetPreloader
   lookForFiles : (item, storage, regex)->
     type = typeof item
     if type == "string"
-      if  /.mp3|.m4a|.json/.test(item) then storage.push {src:"#{aristotle.getAssetPath(item)}",  id:item}
+      if  /.mp3|.m4a|.json/.test(item)
+        storage.push {src:aristotle.getAssetPath(item),  id:item}
       # if  /.mp3|.m4a|.json|.svg|.jpg|.jpeg|.png/.test(item) then storage.push {src:"#{aristotle.getAssetPath(item)}",  id:item}
 
     else if type == "object"
@@ -68,3 +68,16 @@ module.exports = class AssetPreloader
       else
         for key, child of item
           @lookForFiles child, storage, regex
+
+  orderFilesForLoad : (ar) ->
+    mp3s  = []
+    json  = []
+    other = []
+    for item in ar
+      if /.mp3|.m4a/.test item.id
+        mp3s.push item
+      else if /.json/.test item.id
+        json.push item
+      else
+        other.push item
+    return mp3s.concat other, json

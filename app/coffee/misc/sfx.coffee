@@ -77,11 +77,13 @@ module.exports = class SoundFX
 
   fadeOutSound : (data) =>
     if data.slot?
-      @slots[data.slot].fadeOut data.duration, data.destroy
+      if @slides[data.slot]?
+        @slots[data.slot].fadeOut data.duration, data.destroy
 
   fadeInSound : (data) =>
     if data.slot?
-      @slots[data.slot].fadeIn data.duration, data.destroy
+      if @slides[data.slot]?
+        @slots[data.slot].fadeIn data.duration, data.destroy
 
   checkForDelay : (cb, data) ->
     if data.delay?

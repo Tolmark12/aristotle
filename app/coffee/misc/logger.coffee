@@ -2,7 +2,7 @@ module.exports = class Logger
 
   constructor: ($el, isDevMode) ->
     @messages = ""
-    PubSub.subscribe 'logger.print', (m, data)=> @print data.str, data.clearPrevious
+    # PubSub.subscribe 'logger.print', (m, data)=> @print data.str, data.clearPrevious
 
     $node = $ jadeTemplate['misc/logger']( {} )
     $el.append $node
