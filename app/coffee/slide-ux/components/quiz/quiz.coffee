@@ -117,7 +117,7 @@ module.exports = class Quiz extends Component
 
   getResults : () ->
     obj                 = {}
-    obj.episodeNumber   = 2
+    obj.episodeNumber   = aristotle.episodeNum
     totalPointsPossible = 0
     totalPointsEarned   = 0
 

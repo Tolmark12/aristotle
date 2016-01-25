@@ -6,7 +6,7 @@ module.exports = class ChapterHeading
     @$el = $('body')
     @$node = $ jadeTemplate['misc/chapter-heading']( {title:data.title, subtitle:data.subtitle} )
     @$el.append @$node
-    @$fg = $ ".fg", @$node
+    @$fg = $ ".fg", @$node # (Forground progress bar)
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$node
     @preload data
 
@@ -14,6 +14,7 @@ module.exports = class ChapterHeading
     preloader = new AssetPreloader data, @complete, @update
 
   update : (perc) =>
+    if perc > 1 then perc = 1 # Don't allow the bar to grow longer than 1..
     @$fg.css width: "#{Math.round(perc*100)}%"
 
   complete : ()=>
