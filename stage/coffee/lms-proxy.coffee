@@ -55,6 +55,7 @@ module.exports = class LMSProxy
       elbScorm.SetComplete()
       window.courseComplete = true
     else if e.key == "refresh.window"
+      console.log "Calling window refresh.."
       @refreshWindowCb()
 
   # ----------------- #

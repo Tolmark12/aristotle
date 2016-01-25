@@ -130,6 +130,9 @@ module.exports = class Quiz extends Component
         score: question.getScore()
         isPerfect: question.isPerfect()
 
+    if !@decisionPercentages?
+      @decisionPercentages = []
+
     [obj.answers1, obj.answers2] = @splitArrayInHalf answers
     obj.score           = "#{totalPointsEarned} / #{totalPointsPossible}"
     obj.scorePercentage = (totalPointsEarned / totalPointsPossible)*100

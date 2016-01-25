@@ -128,6 +128,7 @@ module.exports = class Episode
     if @isLastEpisode
       aristotle.localStorageProxy.completeCourse()
     else
+      console.log "Episode Complete."
       newEpisodeNum = String(Number(aristotle.episodeNum) + 1)
       # aristotle.localStorageProxy.completeEpisode newEpisodeNum
       aristotle.localStorageProxy.refreshOnEpisode newEpisodeNum

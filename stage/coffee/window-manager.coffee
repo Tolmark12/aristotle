@@ -10,6 +10,8 @@ module.exports = class WindowManager
     @trainingWindow = window.open "index.html", "_training#{@count++}", "top:#{y}, left=#{x}, location=no, status=no, toolbar=no, scrollbars=no, resizable=no, width=1024, height=768"
 
   refreshTraining : () =>
+    console.log "Refreshing Window."
+
     if @isIE
       x = @trainingWindow.screenLeft
       y = @trainingWindow.screenTop
