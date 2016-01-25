@@ -28,7 +28,9 @@
     > *           { padding:14px 0}
     .name         { color:$yeller; font-size:18px; padding:0; }
     .type         { @include blue-border(); padding:0 0 10px; }
-    .description  { text-align:left; }
+    .description  { text-align:left;
+      span        { color:$yellow; display:block; margin-top:15px; text-align:center; }
+    }
     .quote        { @include blue-border(); }
     .personal1    { padding:10px 0 0; color:$orange; font-style:italic;}
     .personal2    { }

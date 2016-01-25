@@ -257,21 +257,21 @@ chapters:
                     name: Filing Cabinets
                     type: BCSI Location
                     network: N/A
-                    description: Holds network diagrams, substation diagrams, and other documents classified as BCSI that we need to protect. <br/><br/>Paper? Really? Are we not living in the 21st century?
+                    description: Holds network diagrams, substation diagrams, and other documents classified as BCSI that we need to protect. <span>Paper? Really? Are we not living in the 21st century?</span>
                   -
                     image: iStock_000041358150_Medium_k.jpg
                     hit: map-hit
                     name: System Mapboard
                     type: BCSI Location
                     network: N/A
-                    description: Gives the operator a visual map of the system they are controlling. A system operator might see the power grid they are managing, while a power plant operator may see a visual picture of the components of the facility. The mapboard is sometimes a physical map with lights and numeric displays. For our facility, it's a giant digital display. <br/><br/>Sometimes I find myself just staring at it…
+                    description: Gives the operator a visual map of the system they are controlling. A system operator might see the power grid they are managing, while a power plant operator may see a visual picture of the components of the facility. The mapboard is sometimes a physical map with lights and numeric displays. For our facility, it's a giant digital display. <span>Sometimes I find myself just staring at it…</span>
                   -
                     image: iStock_000008213570_Medium_l.jpg
                     hit: monitor-hit
                     name: Operator Monitors
                     type: BCSI Location
                     network: N/A
-                    description: Operators like lots of monitors to see all their systems. These monitors often have BCSI on-screen, so we must be sure to protect the information from being photographed or copied. <br/><br/>NEED MORE MONITORS!
+                    description: Operators like lots of monitors to see all their systems. These monitors often have BCSI on-screen, so we must be sure to protect the information from being photographed or copied. <span>NEED MORE MONITORS!</span>
       # 1 Dialogue Duty Call ==========================================
       -
         title: Duty Call!
