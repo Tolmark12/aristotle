@@ -158,7 +158,7 @@ chapters:
                     name: Operator Workstation
                     type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: This workstation allows the operator to log into the control system, view data, and issue controls. It's their primary tool for operating Bulk Electric System components. <br/><br/>Defined by Webster's Dictionary as 'an extension of an operator's arm
+                    description: This workstation allows the operator to log into the control system, view data, and issue controls. It's their primary tool for operating Bulk Electric System components. <br/><br/>Defined by Webster's Dictionary as "an extension of an operator's arm."
                   -
                     image: iStock_000012331544_Medium_g.jpg
                     hit: tech-ws-hit
@@ -186,7 +186,7 @@ chapters:
                     name: Network Printer
                     type: Protected Cyber Asset (PCA)
                     network: ESP
-                    description: This printer is attached to the controls network so the technical Defender can print out schematics and diagrams. Since it's on the same network as the BES cyber Assets, we need to protect it. <br/><br/>Nothing beats curling up with a warm newly printed document and a glass of milk.
+                    description: This printer is attached to the controls network so the technical Defender can print out schematics and diagrams. Since it's on the same network as the BES Cyber Assets, we need to protect it. <br/><br/>Nothing beats curling up with a warm newly printed document and a glass of milk.
       # 1 UnTagged BCA PCA Assets  ==========================================
       -
         action:
@@ -220,7 +220,7 @@ chapters:
               config:
                 hasLabels: true
                 title: BES Cyber System Information
-                body: In addition to assets, facilities also contain <a data-label="bcsi" class="new">BES Cyber System Information (BCSI)</a> information that we must protect. This includes maps, security plans, network diagrams, configuration information, and other information useful for a bot planning an attack. <a data-label="bcsi">BCSI</a> is found in many places - the hard drives of our <a data-label="crca">CRCAs</a>, on file shares, whiteboards, and in filing cabinets. <br/><br/>Let's inspect some of the <a data-label="bcsi">BCSI</a> locations the Compliance Team identified at your facility.
+                body: In addition to assets, facilities also contain <a data-label="bcsi" class="new">BES Cyber System Information (BCSI)</a> that we must protect. This includes maps, security plans, network diagrams, configuration information, and other information useful for a bot planning an attack. <a data-label="bcsi">BCSI</a> is found in many places - the hard drives of our <a data-label="crca">CRCAs</a>, on file shares, whiteboards, and in filing cabinets. <br/><br/>Let's inspect some of the <a data-label="bcsi">BCSI</a> locations the Compliance Team identified at your facility.
                 btn:
                   style: lightning
                   text: tag BCSI
@@ -692,7 +692,7 @@ chapters:
         title: One Episode Down
         action:
           - {cmd: ctanlee.gohome}
-          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }          
+          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         duration: {kind: ux}
         ux:
           components:
