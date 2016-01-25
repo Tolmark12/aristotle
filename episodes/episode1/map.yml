@@ -455,8 +455,8 @@ chapters:
                     personal1: Proud of
                     personal2: Family, America, personal safety record, fixing things with his bare hands, and the big one that got away. REALLY! - it was THAT big!!
                     duties:
-                      - Using ID Card to Access Facilities
-                      - Following Change Control Procedures Before Working on a BES Cyber Asset
+                      - Using ID Card to Access Facilities &colon; Door System Logs
+                      - Following Change Control Procedures Before Working on a BES Cyber Asset &colon; Change Control Checklist
                     evidences:
                       - Door System Logs
                       - Change Control Checklist
@@ -468,8 +468,8 @@ chapters:
                     personal1: Remembers fondly
                     personal2: That one time during the CIPv5 transition that she participated in a conference call on her phone, a separate WebEx on her laptop, all while leading a team meeting in person.
                     duties:
-                      - Approve Cyber Security Program
-                      - Delegate Duties and Responsibilities
+                      - Approve Cyber Security Program &colon; Signed Cyber Security Program
+                      - Delegate Duties and Responsibilities &colon; Signed delegations documentation
                     evidences:
                       - Signed Cyber Security Program
                       - Signed delegations documentation
@@ -481,8 +481,8 @@ chapters:
                     personal1: Holds record for
                     personal2: Reviewing 247 resumes in one day
                     duties:
-                      - Check backgrounds and criminal history of new employees
-                      - Notify when employees are terminated so their access can be disabled
+                      - Check backgrounds and criminal history of new employees &colon; Dated personnel risk assessment records
+                      - Notify when employees are terminated so their access can be disabled &colon; Dated workflow with approvals
                     evidences:
                       - Dated personnel risk assessment records
                       - Dated workflow with approvals
@@ -494,8 +494,8 @@ chapters:
                     personal1: Favorite possession
                     personal2: A list of CIP acronyms signed by all members of the CIP Drafting Committee.
                     duties:
-                      - Ensuring Compliance Requirements are documented in the Cyber Security Program
-                      - Regular Review and Approvals of Facilities and Assets
+                      - Ensuring Compliance Requirements are documented in the Cyber Security Program &colon; Signed and dated Cyber Security Program with accompanying processes
+                      - Regular Review and Approvals of Facilities and Assets &colon; Signed and dated lists of assets
                     evidences:
                       - Signed and dated Cyber Security Program with accompanying processes
                       - Signed and dated lists of assets
@@ -507,8 +507,8 @@ chapters:
                     personal1: Daily caffeine quota is
                     personal2: 5 cups of coffee, 3 energy drinks
                     duties:
-                      - Using ID Card to Access Facilities
-                      - Not Plugging Your Cell Phone Into Your Control System Workstation
+                      - Using ID Card to Access Facilities &colon; Door System Logs
+                      - Not Plugging Your Cell Phone Into Your Control System Workstation &colon; Computer System Events
                     evidences:
                       - Door System Logs
                       - Computer System Events
@@ -520,8 +520,8 @@ chapters:
                     personal1: Lifetime accomplishment
                     personal2: Playing World of Warcraft 47.38 hours in a row.
                     duties:
-                      - Patching Servers
-                      - Updating Antivirus on BCAs
+                      - Patching Servers &colon; Production Change Forms
+                      - Updating Antivirus on BCAs &colon; Task Documentation
                     evidences:
                       - Production Change Forms
                       - Task Documentation
@@ -533,8 +533,8 @@ chapters:
                     personal1: Happiest when
                     personal2: A good plan comes together.
                     duties:
-                      - Approving facility-related Cyber Assets on the Cyber Asset Lists
-                      - Using ID Card to Access Facilities
+                      - Approving facility-related Cyber Assets on the Cyber Asset Lists &colon; Dated workflow with approvals
+                      - Using ID Card to Access Facilities &colon; Door System Logs
                     evidences:
                       - Dated workflow with approvals
                       - Door System Logs
