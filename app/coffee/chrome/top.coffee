@@ -6,7 +6,8 @@ module.exports = class Top
     token4  = PubSub.subscribe "chrome.showepisodes", (m, data)=> @showIcons()
     token5  = PubSub.subscribe "chrome.hidename",     (m, data)=> @hideName()
     token6  = PubSub.subscribe "chrome.hideepisodes", (m, data)=> @hideIcons()
-    @tokens = [token2, token3, token4, token5, token6 ]
+    token7  = PubSub.subscribe "meta.chapter.start",  (m, data)=> @setTitle aristotle.episode.trainingData.subtitle, data.subtitle
+    @tokens = [token2, token3, token4, token5, token6, token7 ]
     @build()
 
   build : () ->
@@ -27,6 +28,11 @@ module.exports = class Top
   updateCallsign : (callSign) ->
     name = aristotle.localStorageProxy.user.split ","
     $(".name", @$top).html "#{name[1]} \"#{callSign}\" #{name[0]}"
+
+  setTitle : (episodeTitle, chapterTitle) ->
+    $("h1", @$mode).text episodeTitle
+    $("h2", @$mode).text chapterTitle
+    @showMode()
 
   showName  : () -> @$name.css( {display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}
   hideName  : () -> @$name.css  {display:"none"}

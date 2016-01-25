@@ -252,15 +252,28 @@ h1, h2 {
           .chrome .top .main .episodes .badge:not(.active) svg .white * {
             fill: black; }
   .chrome .top .learn-mode {
+    position: relative;
     margin-left: 5px;
-    padding: 0 30px 0 20px;
+    padding: 0 7px 0 20px;
     background: rgba(0, 0, 0, 0.35);
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    -webkit-clip-path: polygon(0 0, 100% 0%, 82% 100%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0%, 82% 100%, 0% 100%); }
+    justify-content: center; }
+    .chrome .top .learn-mode:after {
+      height: 0;
+      width: 0;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      border-top: 60px solid rgba(0, 0, 0, 0.35);
+      border-right: 20px solid transparent;
+      right: -20px; }
+    .chrome .top .learn-mode h2:before {
+      content: "[ "; }
+    .chrome .top .learn-mode h2:after {
+      content: " ]"; }
 
 body.body-quiz-results .chrome {
   z-index: 4;
