@@ -455,11 +455,8 @@ chapters:
                     personal1: Proud of
                     personal2: Family, America, personal safety record, fixing things with his bare hands, and the big one that got away. REALLY! - it was THAT big!!
                     duties:
-                      - Using ID Card to Access Facilities &colon; Door System Logs
-                      - Following Change Control Procedures Before Working on a BES Cyber Asset &colon; Change Control Checklist
-                    evidences:
-                      - Door System Logs
-                      - Change Control Checklist
+                      - <span>Using ID Card to Access Facilities</span> Door System Logs
+                      - <span>Following Change Control Procedures Before Working on a BES Cyber Asset</span> Change Control Checklist
                   -
                     hit: shelly
                     label: {text: Shelly, face: right }
@@ -468,11 +465,8 @@ chapters:
                     personal1: Remembers fondly
                     personal2: That one time during the CIPv5 transition that she participated in a conference call on her phone, a separate WebEx on her laptop, all while leading a team meeting in person.
                     duties:
-                      - Approve Cyber Security Program &colon; Signed Cyber Security Program
-                      - Delegate Duties and Responsibilities &colon; Signed delegations documentation
-                    evidences:
-                      - Signed Cyber Security Program
-                      - Signed delegations documentation
+                      - <span>Approve Cyber Security Program</span> Signed Cyber Security Program
+                      - <span>Delegate Duties and Responsibilities</span> Signed delegations documentation
                   -
                     hit: jerry
                     label: {text: Jerry, face: right }
@@ -481,11 +475,8 @@ chapters:
                     personal1: Holds record for
                     personal2: Reviewing 247 resumes in one day
                     duties:
-                      - Check backgrounds and criminal history of new employees &colon; Dated personnel risk assessment records
-                      - Notify when employees are terminated so their access can be disabled &colon; Dated workflow with approvals
-                    evidences:
-                      - Dated personnel risk assessment records
-                      - Dated workflow with approvals
+                      - <span>Check backgrounds and criminal history of new employees</span> Dated personnel risk assessment records
+                      - <span>Notify when employees are terminated so their access can be disabled</span> Dated workflow with approvals
                   -
                     hit: brad
                     label: {text: Brad, face: right }
@@ -494,11 +485,8 @@ chapters:
                     personal1: Favorite possession
                     personal2: A list of CIP acronyms signed by all members of the CIP Drafting Committee.
                     duties:
-                      - Ensuring Compliance Requirements are documented in the Cyber Security Program &colon; Signed and dated Cyber Security Program with accompanying processes
-                      - Regular Review and Approvals of Facilities and Assets &colon; Signed and dated lists of assets
-                    evidences:
-                      - Signed and dated Cyber Security Program with accompanying processes
-                      - Signed and dated lists of assets
+                      - <span>Ensuring Compliance Requirements are documented in the Cyber Security Program</span> Signed and dated Cyber Security Program with accompanying processes
+                      - <span>Regular Review and Approvals of Facilities and Assets</span> Signed and dated lists of assets
                   -
                     hit: rod
                     label: {text: Rod, face: top, arrow: right}
@@ -507,11 +495,8 @@ chapters:
                     personal1: Daily caffeine quota is
                     personal2: 5 cups of coffee, 3 energy drinks
                     duties:
-                      - Using ID Card to Access Facilities &colon; Door System Logs
-                      - Not Plugging Your Cell Phone Into Your Control System Workstation &colon; Computer System Events
-                    evidences:
-                      - Door System Logs
-                      - Computer System Events
+                      - <span>Using ID Card to Access Facilities</span> Door System Logs
+                      - <span>Not Plugging Your Cell Phone Into Your Control System Workstation</span> Computer System Events
                   -
                     hit: richard
                     label: {text: Richard, face: top, arrow: right}
@@ -520,11 +505,8 @@ chapters:
                     personal1: Lifetime accomplishment
                     personal2: Playing World of Warcraft 47.38 hours in a row.
                     duties:
-                      - Patching Servers &colon; Production Change Forms
-                      - Updating Antivirus on BCAs &colon; Task Documentation
-                    evidences:
-                      - Production Change Forms
-                      - Task Documentation
+                      - <span>Patching Servers</span> Production Change Forms
+                      - <span>Updating Antivirus on BCAs</span> Task Documentation
                   -
                     hit: lisa
                     label: {text: Lisa, face: top, arrow: right}
@@ -533,11 +515,8 @@ chapters:
                     personal1: Happiest when
                     personal2: A good plan comes together.
                     duties:
-                      - Approving facility-related Cyber Assets on the Cyber Asset Lists &colon; Dated workflow with approvals
-                      - Using ID Card to Access Facilities &colon; Door System Logs
-                    evidences:
-                      - Dated workflow with approvals
-                      - Door System Logs
+                      - <span>Approving facility-related Cyber Assets on the Cyber Asset Lists</span> Dated workflow with approvals
+                      - <span>Using ID Card to Access Facilities</span> Door System Logs
       # 2 Duties ==========================================
       -
         action:

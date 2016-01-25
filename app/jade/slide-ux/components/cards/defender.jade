@@ -8,8 +8,6 @@
       h3 Duties And Evidence
       .defender-duties
         each duty in duties
-          .evidence=duty
-        each evidence in evidences
-          .evidence=evidence
+          .evidence!=duty
     .got-it-btn
       img.shadow-icon(data-src="btn-got-it")
