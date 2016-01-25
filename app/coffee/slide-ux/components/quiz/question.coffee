@@ -35,7 +35,6 @@ module.exports = class Question
     @runningTotal = @questionValue
     @showAnswerPoints @questionValue, "right", $answer
     @setQuestionComplete()
-    console.log @questionValue, @wrongAnswerValue, @wrongGuesses
 
   answeredNormal : (guessedRight, $answer) ->
     if guessedRight

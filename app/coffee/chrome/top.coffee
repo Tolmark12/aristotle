@@ -77,7 +77,7 @@ module.exports = class Top
         data.badge = "rank-badge-cyber-cadet"
       when 5
         data.rank  = "Master Cadet"
-        data.badge = "rank-badge-cyber-cadet"
+        data.badge = "rank-badge-master-cadet"
 
   getEpisodeTagline : (episodeNum) ->
     switch episodeNum

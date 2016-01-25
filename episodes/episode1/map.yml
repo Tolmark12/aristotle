@@ -116,77 +116,77 @@ chapters:
                     name: Control System
                     type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: The facility control system is specialized hardware and software that controls the operation of a physical asset like a Breaker, Generator, or Tesla Cannon. For example, the system allows users to open and close breakers, ramp a generator up and down, and aim and fire the Tesla cannon. <br/><br/>I have the power!
+                    description: The facility control system is specialized hardware and software that controls the operation of a physical asset like a Breaker, Generator, or Tesla Cannon. For example, the system allows users to open and close breakers, ramp a generator up and down, and aim and fire the Tesla cannon. <span>I have the power!</span>
                   -
                     image: iStock_000024244345_Medium_c.jpg
                     hit: com-rack-hit
                     name: Communications Equipment
                     type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: Dial-in modems, remote terminal units, and other equipment that allows remote monitoring and operation of the control system is in this rack. Typically these devices communicate to the primary and any backup control centers. These devices are treated independently by CIP, but we'll group them together for simplicity. <br/><br/>Reach out and touch some asset.
+                    description: Dial-in modems, remote terminal units, and other equipment that allows remote monitoring and operation of the control system is in this rack. Typically these devices communicate to the primary and any backup control centers. These devices are treated independently by CIP, but we'll group them together for simplicity. <span>Reach out and touch some asset.</span>
                   -
                     image: iStock_000005695963_Medium_a.jpg
                     hit: control-ns-hit
                     name: Controls Network Switch
                     type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: This network switch connects all the servers, workstations, and other cyber assets on the control system network. <br/><br/>Now we're talking! errr … electronically speaking.
+                    description: This network switch connects all the servers, workstations, and other cyber assets on the control system network. <span>Now we're talking! errr … electronically speaking.</span>
                   -
                     image: iStock_000013815869_Medium_e.jpg
                     hit: tape-back-hit
                     name: Tape Backup Server
                     type: Protected Cyber Asset (PCA)
                     network: ESP
-                    description: Servers can crash and data can be lost, so well-managed facilities like yours will have servers that make regular copies of data from other servers on the control system network. Since the Backup Server is on the same network as the BES Cyber Assets, we need to protect it. <br/><br/>Why do we fall? So we can learn to back our data up.
+                    description: Servers can crash and data can be lost, so well-managed facilities like yours will have servers that make regular copies of data from other servers on the control system network. Since the Backup Server is on the same network as the BES Cyber Assets, we need to protect it. <span>Why do we fall? So we can learn to back our data up.</span>
                   -
                     image: iStock_000016348944_Medium_d.jpg
                     hit: c-app-server-hit
                     name: Control System Application Server 1
                     type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: Most control systems have supporting software that collects data and builds sophisticated visualizations and displays for operators. This is the server that performs these functions in your facility. <br/><br/>I live to serve… except the part about being alive.
+                    description: Most control systems have supporting software that collects data and builds sophisticated visualizations and displays for operators. This is the server that performs these functions in your facility. <span>I live to serve… except the part about being alive.</span>
                   -
                     image: iStock_000016348944_Medium_d.jpg
                     hit: c-app-server2-hit
                     name: Control System Application Server 2
                     type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: Many control systems provide advanced functionality for operators of the control system through ancillary software. Some examples include advanced network modeling and sophisticated relaying systems. <br/><br/>Yeah, it looks the same as the other server. It's not.
+                    description: Many control systems provide advanced functionality for operators of the control system through ancillary software. Some examples include advanced network modeling and sophisticated relaying systems. <span>Yeah, it looks the same as the other server. It's not.</span>
                   -
                     image: iStock_000018703133_Medium_j.jpg
                     hit: operator-ws-hit
                     name: Operator Workstation
                     type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: This workstation allows the operator to log into the control system, view data, and issue controls. It's their primary tool for operating Bulk Electric System components. <br/><br/>Defined by Webster's Dictionary as "an extension of an operator's arm."
+                    description: This workstation allows the operator to log into the control system, view data, and issue controls. It's their primary tool for operating Bulk Electric System components. <span>Defined by Webster's Dictionary as "an extension of an operator's arm."</span>
                   -
                     image: iStock_000012331544_Medium_g.jpg
                     hit: tech-ws-hit
                     name: Technician Workstation
                     type: BES Cyber Asset (BCA)
                     network: ESP
-                    description: A laptop used by technical Defenders to troubleshoot and monitor cyber assets inside the facility. It has specialized software installed that can monitor the network and troubleshoot server issues. <br/><br/>Be on your guard. There are older and fouler things in the depths of the network.
+                    description: A laptop used by technical Defenders to troubleshoot and monitor cyber assets inside the facility. It has specialized software installed that can monitor the network and troubleshoot server issues. <span>Be on your guard. There are older and fouler things in the depths of the network.</span>
                   -
                     image: iStock_000016348944_Medium_d.jpg
                     hit: file-server-hit
                     name: File Server
                     type: BCSI Location
                     network: BCSI Location
-                    description: Contains maps, network diagrams and other reference and maintenance information useful to have in the facility. It's not on the controls network, but we must be careful to protect the BCSI on the server. <br/><br/>Keep it secret, keep it safe.
+                    description: Contains maps, network diagrams and other reference and maintenance information useful to have in the facility. It's not on the controls network, but we must be careful to protect the BCSI on the server. <span>Keep it secret, keep it safe.</span>
                   -
                     image: iStock_000068955545_Medium_i.jpg
                     hit: map-computer-hit
                     name: Mapboard Computer
                     type: Protected Cyber Asset (PCA)
                     network: ESP
-                    description: Displays data on the mapboard that is collected from the control system. It's on the control system network, but can't issue commands, so it's a Protected Cyber Asset. <br/><br/>Big things come in small packages.
+                    description: Displays data on the mapboard that is collected from the control system. It's on the control system network, but can't issue commands, so it's a Protected Cyber Asset. <span>Big things come in small packages.</span>
                   -
                     image: iStock_000057458210_Medium_f.jpg
                     hit: printer-hit
                     name: Network Printer
                     type: Protected Cyber Asset (PCA)
                     network: ESP
-                    description: This printer is attached to the controls network so the technical Defender can print out schematics and diagrams. Since it's on the same network as the BES Cyber Assets, we need to protect it. <br/><br/>Nothing beats curling up with a warm newly printed document and a glass of milk.
+                    description: This printer is attached to the controls network so the technical Defender can print out schematics and diagrams. Since it's on the same network as the BES Cyber Assets, we need to protect it. <span>Nothing beats curling up with a warm newly printed document and a glass of milk.</span>
       # 1 UnTagged BCA PCA Assets  ==========================================
       -
         action:

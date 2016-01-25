@@ -15,6 +15,7 @@ Quiz              = require 'slide-ux/components/quiz/quiz'
 SelectionDialogue = require 'slide-ux/components/selection-dialogue'
 SimpleSelection   = require 'slide-ux/components/simple-selection'
 SoundTest         = require 'slide-ux/components/sound-test'
+TrainingComplete  = require 'slide-ux/components/training-complete'
 GenericUiElements = require 'slide-ux/generic-ui'
 
 module.exports = class SlideUX
@@ -48,6 +49,7 @@ module.exports = class SlideUX
       when "selection-dialogue"  then component = new SelectionDialogue @$el, componentData.config
       when "simple-selection"    then component = new SimpleSelection @$el, componentData.config
       when "sound-test"          then component = new SoundTest @$el, componentData.config
+      when "training-complete"   then component = new TrainingComplete @$el, componentData.config
       when "quiz"                then component = new Quiz @$el, componentData.config
       else
         aristotle.throw "tried to create an unrecognized component type: `#{componentData.kind}`"

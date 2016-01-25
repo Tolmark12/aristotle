@@ -13,7 +13,7 @@ dialogue:
     d:
       audio: Story_6_Sektimus_7.mp3
       actor: sektimus
-      text: What is this [enraged]? This isn't fair! These defenses don't exist.
+      text: What is this? This isn't fair! These defenses don't exist.
     e:
       emo: left
       pos: [700,370]

@@ -53,6 +53,7 @@ module.exports = class LMSProxy
     # On course complete
     else if e.key == "course.complete"
       elbScorm.SetComplete()
+      window.courseComplete = true
     else if e.key == "refresh.window"
       @refreshWindowCb()
 
