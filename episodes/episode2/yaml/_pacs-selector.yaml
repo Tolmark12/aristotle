@@ -45,8 +45,9 @@ ux:
                   pacsSFX: ~2/SFX_PhysicalAccessControlSystem_TheCardGuardXT.mp3
             btnTxt: The Card Guard XT
             icon: mini-card-scanner
-            blurb: "Uses personal ID badge to confirm user against database. <br/>I'm gonna need to see some ID"
+            blurb: "Uses personal ID badge to confirm user against database."
             details: "Personalized Lanyard Coolness Factor <br/>-3 Bad Photo Penalty <br/>+10 Robot Articulation Challenge"
+            quote: I'm gonna need to see some ID
           -
             click:
               - {cmd: ctanlee.activate, data: b}
@@ -59,8 +60,9 @@ ux:
                   pacsSFX: ~2/SFX_PhysicalAccessControlSystem_HAL9000EyeScanner.mp3
             btnTxt: HAL 9000 Eye Scanner
             icon: mini-hal-scanner
-            blurb: "Uses optical recognition to match user against database. <br/>I'm sorry Dave, but I can't let you in without proper access."
+            blurb: "Uses optical recognition to match user against database."
             details: "+2 Style Points <br/>Eye of the Beholder Bonus <br/>+5 Robot Recognition"
+            quote: I'm sorry Dave, but I can't let you in without proper access.
           -
             click:
               - {cmd: ctanlee.activate, data: c}
@@ -73,5 +75,6 @@ ux:
                   pacsSFX: ~2/SFX_PhysicalAccessControlSystem_WateryGraveKrakenSensor.mp3
             btnTxt: Watery Grave Kraken Sensor
             icon: mini-kraken-scanner
-            blurb: "Kraken tentacle analyzes user body shape against database. <br/>Don't forget to bring a towel."
+            blurb: "Kraken tentacle analyzes user body shape against database."
             details: "+5 Facility Envy Points <br/>Enemy Intimidation Bonus <br/>10% Chance of Robot Electrocution"
+            quote: Don't forget to bring a towel.
