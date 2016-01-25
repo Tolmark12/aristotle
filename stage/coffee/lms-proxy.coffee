@@ -4,7 +4,7 @@ module.exports = class LMSProxy
   constructor : (isLocal, @refreshWindowCb) ->
     if isLocal then @initScormStubs()
     @version = { major:0, minor:1, feature:0, storeVersion:1 }
-    window.addEventListener 'storage', (e)=> @onStorageChange e
+    window.addEventListener 'storage',      (e)=> @onStorageChange e
 
   begin : (queryStringVars, cb) ->
     # Try to start the course
