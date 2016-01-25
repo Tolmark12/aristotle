@@ -77,12 +77,12 @@ module.exports = class SoundFX
 
   fadeOutSound : (data) =>
     if data.slot?
-      if @slides[data.slot]?
+      if @slots[data.slot]?
         @slots[data.slot].fadeOut data.duration, data.destroy
 
   fadeInSound : (data) =>
     if data.slot?
-      if @slides[data.slot]?
+      if @slots[data.slot]?
         @slots[data.slot].fadeIn data.duration, data.destroy
 
   checkForDelay : (cb, data) ->
@@ -93,7 +93,6 @@ module.exports = class SoundFX
         data.delay
     else
       cb data
-
 
   clearSlotIfNeeded : (data, track) ->
     # If there is audio in this slot, destroy it
