@@ -42,8 +42,8 @@
         "question": "If you are arrested, are issued a warrant, or receive a criminal indictment, you must...",
         "answers": [
           {
-            "a": "Self-report to your leader so your access can be evaluated",
-            "r": "Yes!",
+            "a": "Self-report to your leader and security.",
+            "r": "Yes! Access will need to be re-evaluated.",
             "c": true
           },
           {

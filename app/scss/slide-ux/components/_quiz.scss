@@ -1,5 +1,5 @@
 .quiz                       { background:#335E6E; width:100%; height:100%; display:flex; flex-direction:column;
-  .question-total           { position:absolute; top:23px; left:795px; font-family:$fun_cond; font-size:18px; color:$yellow;
+  .question-total           { position:absolute; top:14px; left:795px; font-family:$fun_cond; font-size:30px; color:$yellow;
     &:before                { content:"Question Total Score"; margin-right:5px; color: #618E95; }
   }
   @import      'quiz-card-flipping';

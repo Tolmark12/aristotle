@@ -106,11 +106,11 @@
         ]
       },
       {
-        "question": "Our core job as CIP Defenders is to 1.) Perform security duties and 2.) Create evidence of those duties",
+        "question": "Our core job as CIP Defenders is to 1) Perform security duties and 2) Create evidence of those duties",
         "answers": [
           {
             "a": "True",
-            "r": "In it's simplest form, yes",
+            "r": "In its simplest form, yes",
             "c": true
           },
           {
@@ -120,10 +120,10 @@
         ]
       },
       {
-        "question": "What should we do if we discover we missed a CIP Standard? ",
+        "question": "What should you do if you believe a CIP requirement was not performed properly?",
         "answers": [
           {
-            "a": "Tell Your Leader  - We can learn from our mistakes and Regulators look better on Self-Reports.",
+            "a": "Tell Your Leader  - We can all learn from our mistakes.",
             "r": "Yes!",
             "c": true
           },

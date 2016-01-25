@@ -993,10 +993,10 @@ body.body-quiz-results .chrome {
 */ }
     .slide-ux .quiz .question-total {
       position: absolute;
-      top: 23px;
+      top: 14px;
       left: 795px;
       font-family: 'Function Condensed';
-      font-size: 18px;
+      font-size: 30px;
       color: #FEB644; }
       .slide-ux .quiz .question-total:before {
         content: "Question Total Score";
@@ -1309,7 +1309,13 @@ body.body-quiz-results .chrome {
           padding-right: 3px; }
     .slide-ux .selection-dialogue .left-section {
       margin-right: 5px;
-      border: 3px solid #F9773E; }
+      border: 3px solid #FEB644; }
+      .slide-ux .selection-dialogue .left-section .quote {
+        text-align: center;
+        color: #FEB644;
+        margin-bottom: 20px; }
+        .slide-ux .selection-dialogue .left-section .quote:before, .slide-ux .selection-dialogue .left-section .quote:after {
+          content: '"'; }
       .slide-ux .selection-dialogue .left-section .item-info {
         display: none; }
       .slide-ux .selection-dialogue .left-section .mini-icon {

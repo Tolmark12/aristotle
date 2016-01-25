@@ -75,7 +75,7 @@
             "r": "Door systems don't work that way."
           },
           {
-            "a": "Notify your leader (so manual log entries can be created)",
+            "a": "Notify Security (so manual log entries can be created)",
             "r": "Exactly!",
             "c": true
           },

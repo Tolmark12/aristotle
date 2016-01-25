@@ -1,28 +1,44 @@
 {
     "duties":[
                 {
-                  "title":"Know Your Recovery Plan",
+                  "title":"Know Your Incident Response Plan",
                   "content":"EP5CH3_1.html"
                 },
                 {
-                  "title":"Maintain the Recovery Plan",
+                  "title":"Responding to an Incident",
                   "content":"EP5CH3_2.html"
                 },
                 {
-                  "title":"Backup Your CRCAs",
+                  "title":"Testing the Incident Response Plan",
                   "content":"EP5CH3_3.html"
                 },
                 {
-                  "title":"Recover From An Incident",
+                  "title":"Maintain the Incident Response Plan",
                   "content":"EP5CH3_4.html"
                 },
                 {
-                  "title":"Secure Forensic Data",
+                  "title":"Know Your Recovery Plan",
                   "content":"EP5CH3_5.html"
                 },
                 {
-                  "title":"Create Lessons Learned",
+                  "title":"Maintain the Recovery Plan",
                   "content":"EP5CH3_6.html"
+                },
+                {
+                  "title":"Backup Your CRCAs",
+                  "content":"EP5CH3_7.html"
+                },
+                {
+                  "title":"Recover From An Incident",
+                  "content":"EP5CH3_8.html"
+                },
+                {
+                  "title":"Secure Forensic Data",
+                  "content":"EP5CH3_9.html"
+                },
+                {
+                  "title":"Create Lessons Learned",
+                  "content":"EP5CH3_10.html"
                 }
             ]
 }
