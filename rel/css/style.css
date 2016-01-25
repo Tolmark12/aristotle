@@ -507,6 +507,10 @@ body.body-quiz-results .chrome {
       border-top: solid 2px #6B989F;
       padding: 0 0 15px;
       flex-direction: column; }
+      .slide-ux .defender-wrap .defender-card .info .evidence span {
+        color: #FEB644; }
+        .slide-ux .defender-wrap .defender-card .info .evidence span:after {
+          content: ": "; }
     .slide-ux .defender-wrap .defender-card .got-it-btn {
       padding: 0;
       width: 100%;
@@ -538,6 +542,11 @@ body.body-quiz-results .chrome {
         padding: 0 0 10px; }
       .slide-ux .card-wrap .card .description {
         text-align: left; }
+        .slide-ux .card-wrap .card .description span {
+          color: #FEB644;
+          display: block;
+          margin-top: 15px;
+          text-align: center; }
       .slide-ux .card-wrap .card .quote {
         border-bottom: solid 2px #6B989F; }
       .slide-ux .card-wrap .card .personal1 {
@@ -1575,6 +1584,14 @@ body.body-quiz-results .chrome {
       cursor: pointer; }
       .slide-ux .sound-test .btn:hover {
         background: #F9773E; }
+  .slide-ux .training-complete .txt {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 60px;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    text-align: center; }
   .slide-ux .button {
     letter-spacing: 0.03em;
     color: white;
