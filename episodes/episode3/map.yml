@@ -53,6 +53,7 @@ chapters:
           - {content: ~3/CIN_TreeMoving.mp3, delay: 3500, volume: 0.05 }
           - {content: ~3/CIN_RobotTossing.mp3, delay: 5800, volume: 0.1, loop: 1 }
           - {content: ~3/CIN_HumanWalking.mp3, delay: 5000, volume: 0.08, loop: 2 }
+          - {content: ~3/CIN_Whistling.mp3, delay: 5000, volume: 0.08 }
           - {content: ~3/CIN_TreeMoving.mp3, delay: 7500, volume: 0.05 }
           - {content: ~3/CIN_TreeMoving.mp3, delay: 9200, volume: 0.05 }
           - {content: ~3/CIN_TreeMoving.mp3, delay: 11000, volume: 0.05 }

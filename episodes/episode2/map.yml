@@ -439,7 +439,7 @@ chapters:
           - {content: ~2/CIN_RobotHacking.mp3, delay: 17500, volume: .2 }
           - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 29000, volume: .4 }
           - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 32000, volume: .4 }
-          - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 35900, volume: .4 }
+          - {content: ~2/SFX_AssetExplosion.mp3, delay: 35900, volume: .4 }
         movie:
           layers:
             - {depth: 7, content: kettle_e_attack_pngs.json, vcr: true }

@@ -483,7 +483,7 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 15000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~5/CIN_FacilityRecovery.mp3, delay: 7500, volume: 0.08 }
+          - {content: ~5/CIN_FacilityRecovery.mp3, volume: 0.08 }
         movie:
           layers:
             - {depth: 12, content: 6_3_1_rebuild_sektimus_dialogue.json }
