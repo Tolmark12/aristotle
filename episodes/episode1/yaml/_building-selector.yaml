@@ -45,8 +45,7 @@ ux:
             btnTxt: Substation
             icon: mini-substation
             blurb: "<span>Rating:</span> 345kV <br/><span>Tough and Gritty Workers:</span> Yes <br/><span>CIP Impact:</span> Medium Impact Facility"
-            details: "A large substation critical to the operation of the Bulk Electric System - it even has a small control room. That large circuit breaker makes me tingly all over! <br/><br/>Work location of some of the hottest workers this side of the interconnection."
-            quote: Hard hats, arc flash protection gear, and rubber lineman's gloves mean the sweat never stops at this facility.
+            details: "A large substation critical to the operation of the Bulk Electric System - it even has a small control room. That large circuit breaker makes me tingly all over! <br/><br/>Work location of some of the hottest workers this side of the interconnection. Hard hats, arc flash protection gear, and rubber lineman's gloves mean the sweat never stops at this facility."
           -
             click:
               - {cmd: ctanlee.activate, data: b}
@@ -60,8 +59,7 @@ ux:
             btnTxt: Generation Plant
             icon: mini-generation
             blurb: "<span>Collar Color:</span> Mostly Blue and 100% Proud Of It <br/><span>Capacity:</span> 1600MW <br/><span>CIP Impact:</span> Medium Impact Facility"
-            details: "A large fossil plant. If the unit doesn't look big enough to generate that many MW, use your imagination. This is a simulator after all. <br/><br/>Coal ash, blistering steam, high voltage electricity, and enough kinetic energy to tear a building apart?"
-            quote: If Mike Rowe started a show called Dangerous Jobs, these workers would be the stars.
+            details: "A large fossil plant. If the unit doesn't look big enough to generate that many MW, use your imagination. This is a simulator after all. <br/><br/>Coal ash, blistering steam, high voltage electricity, and enough kinetic energy to tear a building apart? If Mike Rowe started a show called Dangerous Jobs, these workers would be the stars."
           -
             click:
               - {cmd: ctanlee.activate, data: c}
@@ -75,5 +73,4 @@ ux:
             btnTxt: Control Center
             icon: mini-control-center
             blurb: "<span>Monitor to Operator Ratio:</span> 8:1 <br/><span>Favorite Beverage:</span> Coffee <br/><span>Second Favorite Beverage:</span> Coffee<br/><span>CIP Impact:</span> Medium Impact Facility"
-            details: "Controls critical substations and generation plants and houses the Energy Management System. This particular center also operates a sweet anti-spacecraft Tesla Cannon, critical to the defense of the BES from the bots."
-            quote: With this setup you could run a killer game of tic-tac-toe or Global Thermonuclear War. Would you like to play a game?
+            details: "Controls critical substations and generation plants and houses the Energy Management System. This particular center also operates a sweet anti-spacecraft Tesla Cannon, critical to the defense of the BES from the bots. With this setup you could run a killer game of tic-tac-toe or Global Thermonuclear War. Would you like to play a game?"

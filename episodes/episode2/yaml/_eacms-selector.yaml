@@ -48,7 +48,8 @@ ux:
             btnTxt: The Burninator
             icon: mini-burninator
             blurb: "<span>Temperature:</span> 419 degrees <br/><span>Spontaneous Combustion Chance:</span> 7%"
-            details: "Less-important cyber assets will burn with envy when they see your BCA and PCA protected by the hottest firewall on the market. <br/>Warning: The temperaflame paint job will locally combust skin when touched. No leaning."
+            details: "Less-important cyber assets will burn with envy when they see your BCA and PCA protected by the hottest firewall on the market. <br/>Warning: The temperaflame paint job will locally combust skin when touched."
+            quote: No leaning.
           -
             click:
               - {cmd: ctanlee.activate, data: b}
@@ -64,7 +65,8 @@ ux:
             btnTxt: The Great Wall
             icon: mini-great-wall
             blurb: "<span>Manufactured By:</span> Foxconn <br/><span>Facility Tourism:</span> +50%"
-            details: "This firewall stops packets with the force of the Red Army and comes preconfigured to block Facebook, bloggers, and other political malcontents. <br/>Chopsticks included."
+            details: "This firewall stops packets with the force of the Red Army and comes preconfigured to block Facebook, bloggers, and other political malcontents."
+            quote: Chopsticks included.
           -
             click:
               - {cmd: ctanlee.activate, data: c}
@@ -80,4 +82,5 @@ ux:
             btnTxt: Gated Community
             icon: mini-gated
             blurb: "<span>Leather Trim:</span> Yes <br/><span>Security Provided:</span> 24x7"
-            details: "Nothing says get off my ESP like the firewall designed by legendary cyber-curmudgeon Jakobs Remington. <br/>Comes with optional Brandy Snifter - Please don't drink and deny "
+            details: "Nothing says get off my ESP like the firewall designed by legendary cyber-curmudgeon Jakobs Remington. <br/>Comes with optional Brandy Snifter -"
+            quote: Please don't drink and deny.

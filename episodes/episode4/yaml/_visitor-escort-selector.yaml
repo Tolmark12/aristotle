@@ -46,7 +46,8 @@ ux:
             btnTxt: Guest Log Book
             icon: mini-log-book
             blurb: "<span>Self-expression:</span> -100% <br/><span>Risk of theft:</span> 0%"
-            details: "Just your regular, every day, ho-hum, visitor log book, focus tested for maximum generic-ness. Yeah, you have to actually log entry/exit with a pencil and make sure your visitors follow you around. <br/>And there's risk of papercuts, too."
+            details: "Just your regular, every day, ho-hum, visitor log book, focus tested for maximum generic-ness. Yeah, you have to actually log entry/exit with a pencil and make sure your visitors follow you around."
+            quote: And there's risk of papercuts, too.
           -
             click:
               - {cmd: ctanlee.activate, data: b}
@@ -60,7 +61,8 @@ ux:
             btnTxt: PSP Buddy Escort Leash
             icon: mini-escort-leash
             blurb: "<span>Length:</span> 1 Meter (normal), 3 Meters (stretched) <br/><span>Alternate Use:</span> Facility Roof Bungee Jumping"
-            details: "Don't let that visitor stray. Patented harness is fully supported by the visitor’s torso - not the sensitive lower stomach area. Automatic entry/exit logging included. <br/>Product Slogan - \"While we're in the PSP, you're stuck close to me\""
+            details: "Don't let that visitor stray. Patented harness is fully supported by the visitor’s torso - not the sensitive lower stomach area. Automatic entry/exit logging included."
+            quote: Product Slogan - While we're in the PSP, you're stuck close to me.
           -
             click:
               - {cmd: ctanlee.activate, data: c}
@@ -74,4 +76,5 @@ ux:
             btnTxt: Visitor Tractor Beam
             icon: mini-tractor-beam
             blurb: "To Boldly Go Where No Visitor Has Gone Before…"
-            details: "Your visitor will always stay in your orbit with this futuristic escort aid. Automatic entry/exit logging included. <br/>Early versions caused \"accidents\" with visitors wearing red shirts. The manufacturer reports the issue is fixed with a simple firmware upgrade."
+            details: "Your visitor will always stay in your orbit with this futuristic escort aid. Automatic entry/exit logging included."
+            quote: Early versions caused "accidents" with visitors wearing red shirts. The manufacturer reports the issue is fixed with a simple firmware upgrade.
