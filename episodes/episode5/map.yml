@@ -227,7 +227,7 @@ chapters:
       # 2 Sektimus Interlude General Awareness A ==========================================
       -
         fid: ep5-ch2-sektimus-general-awareness-a
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .15, slot: ambience} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .15, slot: music} }
         sfx:
           - {content: ~3/CIN_Quarantine.mp3, delay: 13600, volume: .1 }
         movie:
@@ -419,7 +419,7 @@ chapters:
               pos: []
               audio: Story_6_Sektimus_4.mp3
               actor: sektimus
-              text: "I'll now accept your concession CTANLEE, and your resignation from the training program, human. [still chuckling]"
+              text: "I'll now accept your concession CTANLEE, and your resignation from the training program, human."
             m:
               pos: [270,220]
               text: Not so fast, Sektimus. The wager was against all the CIP Standards and we still have one training chapter left.
