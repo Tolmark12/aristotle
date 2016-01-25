@@ -781,9 +781,7 @@ chapters:
         action:
           - {cmd: ctanlee.hide}
           - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
-        # duration: {kind: time, seconds: 2 }
-        ux:
-          components:
-            -
-              kind: training-complete
-              config: {}
+        movie:
+          layers:
+            - {depth: 15, content: close_training.json }
+        duration: {kind: time, seconds: 0.1 }
