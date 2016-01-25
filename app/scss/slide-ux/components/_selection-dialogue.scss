@@ -10,7 +10,11 @@
       li  &:before   { content:"•"; margin-left:-10px; padding-right:3px;}
     }
   }
-  .left-section      { margin-right:5px; border:3px solid $orange;
+  .left-section      { margin-right:5px; border:3px solid $yellow;
+    .quote           { text-align:center; color:$yellow; margin-bottom:20px;
+      &:before,
+      &:after        { content:'"';  }
+    }
     .item-info       { display:none; }
     .mini-icon       { text-align:center;
       .icon          { display:none;

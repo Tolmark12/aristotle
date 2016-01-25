@@ -61,4 +61,5 @@ module.exports = class SelectionDialogue extends Component
     $("#icon-#{item.id}", @$node).addClass "active"
     $(".blurb", @$node).html item.blurb
     $(".details", @$node).html item.details
+    $(".quote", @$node).html item.quote
     aristotle.commander.do item.click
