@@ -47,7 +47,8 @@ ux:
             btnTxt: Double Deuce Pulverizer
             icon: mini-double-deuce
             blurb: "<span>Testosterone Level:</span> +400% <br/><span>Never Been To:</span> Band Camp"
-            details: "The legendary Double Deuce Pulverizer is guaranteed to blow minds and turn your assets into craters full of nothing but smoking envy and inferiority complex-riddled rubble. <br/>Product Jingle - Twice the fists for twice the fun, it's the disposal device for everyone!"
+            details: "The legendary Double Deuce Pulverizer is guaranteed to blow minds and turn your assets into craters full of nothing but smoking envy and inferiority complex-riddled rubble."
+            quote: Product Jingle - Twice the fists for twice the fun, it's the disposal device for everyone!
           -
             click:
               - {cmd: ctanlee.activate, data: b}
@@ -61,7 +62,8 @@ ux:
             btnTxt: Mr. Fusion
             icon: mini-mr-fusion
             blurb: "<span>Flux Capacity:</span> 1.21 <br/><span>Patent Approved:</span> 1985"
-            details: "Emmett Brown Laboratories presents Mr. Fusion, the disposal device for discerning utilities. Heated plasma will incinerate your cyber assets, while generating enough energy to make your coffee or run your time travel device. Buy this one lightning-quick if you know watts good for you. <br/>Safety Manual Tip: This is heavy."
+            details: "Emmett Brown Laboratories presents Mr. Fusion, the disposal device for discerning utilities. Heated plasma will incinerate your cyber assets, while generating enough energy to make your coffee or run your time travel device. Buy this one lightning-quick if you know watts good for you."
+            quote: Safety Manual Tip&colon; This is heavy.
           -
             click:
               - {cmd: ctanlee.activate, data: c}
@@ -75,4 +77,5 @@ ux:
             btnTxt: The De-Materializer
             icon: mini-dematerializer
             blurb: "<span>Projectile Type:</span> Zalinski Shell <br/><span>Firing Method:</span> Pneumatic Rail Gun"
-            details: "New technology from Deflagration Industries promises to completely eradicate BCSI. The De-Materializer will blow Cyber Assets to their constituent atoms, along with everything within a zone of twelve thousand square yards if the blast shield isn't engaged. <br/>Auditors are reported to look very favorably on these devices (they like big explosions)."
+            details: "New technology from Deflagration Industries promises to completely eradicate BCSI. The De-Materializer will blow Cyber Assets to their constituent atoms, along with everything within a zone of twelve thousand square yards if the blast shield isn't engaged."
+            quote: Auditors are reported to look very favorably on these devices (they like big explosions).
