@@ -36,13 +36,17 @@ module.exports = class DynamicAssets
     for event, action of events
       # if it's a global command ie: {cmd: do.something, data: somedata}
       if action.cmd?
-        $el.on event, ()-> aristotle.commander.do action
+        $el.on "#{event}.#{id}", ()-> aristotle.commander.do action
 
       # if it's a function..
       else if typeof action == "function"
-        $el.on event, ()-> action id
+        $el.on "#{event}.#{id}", ()-> action id
 
-  destroyGhost : (ghostId) -> $("##{ghostId}-ghost").remove()
+  destroyGhost : (data) ->
+    $el = $("##{data.id}-ghost")
+    for event, action of data.events
+      $el.off "#{event}.#{data.id}"
+    $el.remove()
 
 
   ##          ###    ########  ######## ##        ######

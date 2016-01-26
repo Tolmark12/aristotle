@@ -16,7 +16,8 @@ module.exports = class TextDialogue
       @cc.disableCc()
       @ctanlee.disableCc()
 
-    $('html').on "keydown", (e)=> if e.which == 39 then @playNextAction() # Allow right arrow to play next slide
+    if aristotle.isDevMode
+      $('html').on "keydown", (e)=> if e.which == 39 then @playNextAction() # Allow right arrow to play next slide
 
     token1  = PubSub.subscribe 'ctanlee.activate',            (a, data)=> @playAction(data)
     token2  = PubSub.subscribe 'ctanlee.add-event-listener',  (a, data)=> @addEventListener data
@@ -33,7 +34,12 @@ module.exports = class TextDialogue
 
   activate : (@data) ->
     if !@data.timeline? then return
-    @timeline = @data.timeline
+
+    # copy the items out of the timeline
+    @timeline = []
+    for item in @data.timeline
+      @timeline.push item
+
     @sequence = new Sequence @timeline
     @playAction @sequence.getCurrentItem().action
 
@@ -113,6 +119,7 @@ module.exports = class TextDialogue
     @actor.complete()
 
   playNextAction : () ->
+    return if !@sequence?
     if @track? then @track.stop()
     if @sequence.isAtLastItem()
       @complete()

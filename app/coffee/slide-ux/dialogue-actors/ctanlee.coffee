@@ -42,8 +42,8 @@ module.exports = class Ctanlee
   stopTalking  : () ->
     @isTalking = false
     clearTimeout @timeout
-    @$currentAnimation.stop true
-    @$currentAnimation.velocity({scale:1}, {duration:300, easing:'easeinoutquint'})
+    @$currentAnimDiv.stop true
+    @$currentAnimDiv.velocity({scale:1}, {duration:300, easing:'easeinoutquint'})
 
   bounce : ->
     duration  = 500 + Math.random() * 300
@@ -54,10 +54,10 @@ module.exports = class Ctanlee
 
     @timeout = setTimeout ()=>
       scale = 0.8 + (Math.random()/3)
-      @$currentAnimation.stop true
-      @$currentAnimation.css transform: "scale(#{scale})"
-      @$currentAnimation.velocity({scale:scale}, {duration:0})
-      @$currentAnimation.velocity({scale:1}, {delay:10, duration:duration, easing:[500, 15]})
+      @$currentAnimDiv.stop true
+      @$currentAnimDiv.css transform: "scale(#{scale})"
+      @$currentAnimDiv.velocity({scale:scale}, {duration:0})
+      @$currentAnimDiv.velocity({scale:1}, {delay:10, duration:duration, easing:[500, 15]})
       if @isTalking
         @bounce()
     ,
@@ -66,7 +66,7 @@ module.exports = class Ctanlee
   special : (data)->
     if data.pos?
       @goto data
-    if data.emo? || !@$currentAnimation?
+    if data.emo? || !@$currentAnimDiv?
       @setEmotion data.emo
     else
       @setEmotion "idle"
@@ -91,9 +91,9 @@ module.exports = class Ctanlee
   setEmotion : (emotion) ->
     resetDuration = 100
     @resetRotation resetDuration
-    @$oldAnimation     = @$currentAnimation
-    @$currentAnimation = $('<div class="animation"/>')
-    @$faceHolder.append @$currentAnimation
+    @$oldAnimDiv     = @$currentAnimDiv
+    @$currentAnimDiv = $('<div class="animation"/>')
+    @$faceHolder.append @$currentAnimDiv
 
     switch emotion
       when "angry"    then path = 'ctanlee-angry.json'
@@ -113,12 +113,13 @@ module.exports = class Ctanlee
       nativeEvents:
         data_ready : ()=> @destroyOldFace()
         complete   : ()=> @idle()
-    @animation = new Animation @$currentAnimation, path, data
+    @animation = new Animation @$currentAnimDiv, path, data
 
   destroyOldFace : () ->
     if @oldAnimation?
       @oldAnimation.destroy()
-      @$oldAnimation.remove()
+      @$oldAnimDiv.remove()
+      @$oldAnimDiv  = null
       @oldAnimation = null
 
   resetRotation : (time=100) ->

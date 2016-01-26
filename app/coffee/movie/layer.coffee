@@ -7,12 +7,10 @@ module.exports = class Layer
     @$layer = $ jadeTemplate['movie/layer']( {depth:@depth} )
     $el.append @$layer
 
-
   report : () ->
     cachedOrNot = if @isCached then "cached" else "not cached"
     symbol      = if @isCached then "√" else "-"
-    msg =  "#{symbol} Layer #{@depth} : #{@pristineLayerData.content} is #{cachedOrNot}"
-    console.log msg
+    console.log   "#{symbol} Layer #{@depth} : #{@pristineLayerData.content} is #{cachedOrNot}"
 
   update : (@pristineLayerData) =>
     @layerData = jQuery.extend true, {}, @pristineLayerData
@@ -89,8 +87,7 @@ module.exports = class Layer
     $svg.attr style:"", xmlns:""
     $svg.removeAttr "xmlns" #Have no idea! But if I don't do this, the animation won't cache in ie X-P
     svg  = $svg[0]
-    $img = $( $.parseHTML("<img />") )
-    img  = $img[0]
+    img  = $( $.parseHTML("<img />") )[0]
     window.traceLayer = @
     @doomedAnimation  = @animation
     try
@@ -103,13 +100,13 @@ module.exports = class Layer
             @currentOnionLayer.append img
         }
     catch error
-      console.log error
+      aristotle.throw error
 
   uncache : () ->
     return if !@isCached
     @isCached = false
     @fadeAndRemoveOldLayer()
-    @currentOnionLayer    = @addOnionLayer()
+    @currentOnionLayer = @addOnionLayer()
 
     # Copy layer data into a temp object
     tempObj = {}
@@ -135,14 +132,10 @@ module.exports = class Layer
           if @doomedAnimation?
             @destroyDoomedAnimation()
           oldOnionLayer.remove()
+          oldOnionLayer = null
       }
     ,
       200
-
-  empty : () ->
-    @$layer.empty()
-    @destroyDoomedAnimation()
-    @destroyAnimation()
 
   destroyDoomedAnimation : () ->
     return if !@doomedAnimation?
@@ -158,16 +151,25 @@ module.exports = class Layer
   removeFilters : () -> $("svg", @currentOnionLayer).css filter: "none"
 
   destroy : () ->
+    @empty()
     @$layer.remove()
+
+  empty : () ->
+    @$layer.empty()
     @destroyDoomedAnimation()
     @destroyAnimation()
+    @currentOnionLayer = null
 
+
+  # ------------------------------------
+  # ------------------------------------
   # ------------------------------------ Temp placing out of my mind
 
   addSvg : ($holder, layerData) ->
     me = @
     $holder.load aristotle.getAssetPath(layerData.content), ()->
       if layerData.cache then me.cache()
+      me = null
 
   addImage : ($holder, file, repeat="no-repeat", position="left") ->
     $holder.css background: "url(#{aristotle.getAssetPath(file)}) #{repeat} #{position}"

@@ -28,7 +28,6 @@ module.exports = class SlideUX
 
   populate : (data) ->
     @removeCurrentComponents()
-    @components = []
     return if !data?.components?
     for component in data.components
       @components.push @addComponent component
@@ -59,6 +58,7 @@ module.exports = class SlideUX
   removeCurrentComponents : () ->
     for component in @components
       component.destroy()
+    @components = []
 
   destroy : () ->
     @removeCurrentComponents()

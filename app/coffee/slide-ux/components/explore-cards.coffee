@@ -45,7 +45,7 @@ module.exports = class ExploreCards extends Component
 
   destroy : () ->
     for ghostId in @ghosts
-      PubSub.publish 'ghostux.remove', ghostId
+      PubSub.publish 'ghostux.remove', {id:ghostId, events:{click:""}}
     super()
 
 

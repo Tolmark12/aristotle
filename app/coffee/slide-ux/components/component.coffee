@@ -19,10 +19,10 @@ module.exports = class Component
     $a = $("a[data-label]", @$node)
     $a.addClass "label-trigger"
 
-    $a.on "mouseover", (e)=>
+    over = $a.on "mouseover", (e)=>
       @addLabel e
 
-    $a.on "mouseout", (e)=>
+    out = $a.on "mouseout", (e)=>
       @removeLabel e
 
   addLabel : (e) ->
@@ -43,4 +43,13 @@ module.exports = class Component
       100
 
   destroy : () ->
-    @$node.remove()
+    if @$node?
+      @$node.remove()
+    @$node = null
+
+  trackEventHandler : (item, event, handler) ->
+    @eventHandlers.push {item:item, event:event, handler:handler}
+
+  destroyEvents : () ->
+    for evnt in @eventHandlers
+      evnt.item.removeEventListener evnt.event, evnt.handler
