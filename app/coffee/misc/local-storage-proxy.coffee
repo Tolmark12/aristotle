@@ -45,7 +45,6 @@ module.exports = class LocalStorageProxy
     @triggerRefresh()
 
   refreshOnEpisode : (newEpisodeNum) ->
-    console.log "Sending refresh command to local storage"
     @store.globalVars  = aristotle.globals.vars
     @store.location    = {episodeNum:newEpisodeNum}
     @saveToLocalStorage @store

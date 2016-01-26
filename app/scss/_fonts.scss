@@ -5,7 +5,7 @@
 // medium condensed
 @include include-font($fun_cond, 'functionpro_mediumcondensed_macroman/FunctionPro-Condensed', 'function_promedium_condensed', 200, normal);
 // medium condensed oblique
-@include include-font($fun_cond, 'functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique', 'function_proMdCnOb', 300, italic);
+@include include-font($fun_cond, 'functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique', 'function_proMdCnOb', 300, italic);
 // demi
 @include include-font($fun,      'functionpro_demi_macroman/FunctionPro-Demi', 'function_prodemi', 400, normal);
 // bold

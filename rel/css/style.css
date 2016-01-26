@@ -54,8 +54,8 @@ h1, h2 {
 
 @font-face {
   font-family: 'Function Condensed';
-  src: url("../assets/fonts/functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique-webfont.eot");
-  src: url("../assets/fonts/functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique-webfont.woff") format("woff"), url("../assets/fonts/functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_mediumcondensedobligue_macroman/FunctionPro-CondensedOblique-webfont.svg#function_proMdCnOb") format("svg");
+  src: url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.eot");
+  src: url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.woff") format("woff"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.svg#function_proMdCnOb") format("svg");
   font-weight: 300;
   font-style: italic; }
 

@@ -49,6 +49,7 @@ module.exports = class Quiz extends Component
                     choice            : selection.Selection
                     category          : category.ChoiceName
         catch error
+          # appInsights.trackException("error message1"); 
           @decisionPercentages = false
 
 
