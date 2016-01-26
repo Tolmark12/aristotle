@@ -1,6 +1,7 @@
 module.exports = class AudioTrack
-
+  @count = 0
   constructor: (@src) ->
+    @id = AudioTrack.count++
     @eventHandlers = []
     try
       @src = parse @src
