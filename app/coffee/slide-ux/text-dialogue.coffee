@@ -47,21 +47,32 @@ module.exports = class TextDialogue
     if audio?
       if @track? then @track.stop()
       @track = new AudioTrack(audio)
-      # Play, then on complete, play the next action if that is how next is defined
-      @track.play {}, ()=>
-        @track.destroy()
-        @track = null
-        @actor.stopTalking()
-        @actor.hideText()
-        # If next should trigger the next audio..
+
+      if @track != false
+        # Play, then on complete, play the next action if that is how next is defined
+        @track.play {}, ()=>
+          @track.destroy()
+          @track = null
+          @actor.stopTalking()
+          @actor.hideText()
+          # If next should trigger the next audio..
+          if next == 'audio'
+            @playNextAction()
+          # else if it's an object, run a general aristotle command
+          else if typeof next == "object"
+            aristotle.commander.do next
+      else
         if next == 'audio'
           @playNextAction()
-        # else if it's an object, run a general aristotle command
         else if typeof next == "object"
           aristotle.commander.do next
 
+
     # If "next" param is to be a click generated via the actor
     if next == 'click' then @actor.showNext() else @actor.hideNext()
+
+    # In the strange event there there is no audio, but next is audio..
+    if next == 'audio' && !audio? then @playNextAction()
 
     # If "next" param is a number, count that many milliseconds and play next
     if typeof next == "number"

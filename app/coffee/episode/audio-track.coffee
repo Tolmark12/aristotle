@@ -2,18 +2,18 @@ module.exports = class AudioTrack
 
   constructor: (@src) ->
     @eventHandlers = []
-    @src = parse @src
-    AudioTrack.initSoundSettings()
-    @sound = createjs.Sound.createInstance @src
-    @sound.addEventListener "failed", (e)=>
-      @tr "SOUND FAILED"
-
+    try
+      @src = parse @src
+      AudioTrack.initSoundSettings()
+      @sound = createjs.Sound.createInstance @src
+    catch error
+      appInsights.trackException "Audio Track - Issue parsing the `@src` variable, was set to `#{@src}`"
+      return false
 
   # TEMP
   tr : (str)->
     PubSub.publish 'logger.print', {str: "str"}
   # TEMP
-
 
   play : (config={}, @onComplete) ->
     @parseConfig config

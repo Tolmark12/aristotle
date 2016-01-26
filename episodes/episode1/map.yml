@@ -4,6 +4,7 @@ subtitle: Organizing Our Defenses
 rankId: cadet
 nextRankId: cadet-first-class
 labels: !!inc/file ./episodes/global/_labels.yaml
+
   # skipSlate: true
 chapters:
   # ----------------------------------------------

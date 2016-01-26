@@ -56,6 +56,8 @@ module.exports = class SoundFX
   playSound : (data, saveToSfxStore) ->
     me = @
     track = new AudioTrack data.content
+    return if !track
+    
     track.play {volume:data.volume, loop:data.loop, offset:data.offset}, ()->
 
       # If this was in a slot, remove it from the slot
