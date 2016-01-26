@@ -43,13 +43,16 @@ module.exports = class TextDialogue
     @sequence = new Sequence @timeline
     @playAction @sequence.getCurrentItem().action
 
-  say : (text, audio, next, txtPos) ->
+  say : (text, audio, next, txtPos, action) ->
+    console.log action
+    # If there is text, show it
     if text?
       @actor.say text, txtPos
       @actor.startTalking()
     else
       @actor.hideText()
 
+    # If there is audio, play it
     if audio?
       if @track? then @track.stop()
       @track = new AudioTrack(audio)
@@ -146,7 +149,7 @@ module.exports = class TextDialogue
       aristotle.commander.do action.action, true
 
     @actor.special action
-    @say action.text, action.audio, action.next, action.txtPos
+    @say action.text, action.audio, action.next, action.txtPos, action
 
 
   getIndexOfAction : (action) ->

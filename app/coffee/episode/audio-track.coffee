@@ -10,11 +10,6 @@ module.exports = class AudioTrack
       appInsights.trackException "Audio Track - Issue parsing the `@src` variable, was set to `#{@src}`"
       return false
 
-  # TEMP
-  tr : (str)->
-    PubSub.publish 'logger.print', {str: "str"}
-  # TEMP
-
   play : (config={}, @onComplete) ->
     @parseConfig config
     if @onComplete?
@@ -23,7 +18,6 @@ module.exports = class AudioTrack
 
   addOnComplete : () ->
     handle = @sound.addEventListener "complete", ()=>
-      @tr "> Sound Complete"
       @onComplete()
     @trackEventHandler 'complete', handle
 
@@ -57,9 +51,9 @@ module.exports = class AudioTrack
     ticks          = seconds * ticksPerSecond
     tickDuration   = fadeDurationMs / ticks
     if direction == 1
-      incrament      = (1 - @sound.volume) / ticks
+      incrament    = (1 - @sound.volume) / ticks
     else
-      incrament      = @sound.volume / ticks * -1
+      incrament    = @sound.volume / ticks * -1
     sound          = @sound
     tickCounter    = 0
     fadeInterval   = setInterval ()=>

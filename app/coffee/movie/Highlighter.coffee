@@ -19,7 +19,7 @@ module.exports = class Highlighter
   highlightElement : ( elementId, color, label ) ->
     $item = $ "##{elementId}", @$el
     $item.attr "class", "filter-highlighted"
-    if $item.length == 0 then aristotle.throw "tried to highlight an element with the id `#{elementId}`, but found no elements with that id.", true
+    # if $item.length == 0 then aristotle.throw "tried to highlight an element with the id `#{elementId}`, but found no elements with that id.", true
 
     switch color
       when 'bca'  then filterId = "highlightBCA"
@@ -27,14 +27,17 @@ module.exports = class Highlighter
       when 'bcsi' then filterId = "highlightBCSI"
 
     $item.css filter : "url(##{filterId})"
+    $item = null
 
   unHighlightElement : ( elementId ) ->
     $item = $ "##{elementId}", @$el
     $item.attr "class", ""
     if $item.length == 0 then aristotle.throw "tried to unhighlight an element with the id `#{elementId}`, but found no elements with that id.", true
     $item.css filter : "auto"
+    $item = null
 
   unhighlightAll : () ->
     $items = $ ".filter-highlighted"
     $items.attr "class", ""
     $items.css filter : "initial"
+    $items = null
