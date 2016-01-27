@@ -31,12 +31,19 @@ module.exports = class Episode
       aristotle.commander.do @trainingData.action
 
   showIntro : (data) ->
-    if aristotle.devTools.skipSlate then @playChapter(); return
-
+    me = @
+    if aristotle.devTools.skipSlate then @checkPrevLocationAndBegin(data); return
     @ux.populate( {components:[
       {kind: "episode-intro", config: {title:data.title, subtitle:data.subtitle, episode:data.episode}}
     ]})
+    setTimeout ()->
+      me.ux.removeCurrentComponents()
+      me.checkPrevLocationAndBegin data
+    ,
+      2000
 
+
+  checkPrevLocationAndBegin : (data) ->
     # If there is a previous location...
     if aristotle.localStorageProxy.store?
       if aristotle.localStorageProxy.store.location?
@@ -46,12 +53,11 @@ module.exports = class Episode
             return
 
     # else, start from the begining
-    setTimeout @playChapter, 3000
+    @playChapter()
 
   # Goto a certain point in the training based on the title of the
   # slide, chapter, quiz or duties element
   gotoLocationByTitle : (title, chapTitle) ->
-
     PubSub.publish 'movie.layers.clear-all'
     layers = {}
 
@@ -87,9 +93,10 @@ module.exports = class Episode
     else
       @playChapter()
 
-    PubSub.publish 'movie.rehydrate-layers', layersAr
-
-
+    # Only rehydrate layers if there are layers to rehydrate !-{
+    # Almost lost sanity - 9am Jan 27, 2015
+    if layersAr.length > 0
+      PubSub.publish 'movie.set-dried-layers', layersAr
 
   createChapters : (trainingData) ->
     chapters = []
@@ -119,16 +126,18 @@ module.exports = class Episode
       @chapters.next()
       @playChapter()
 
-  playChapter     : (firstSlide=null) =>
-    # PubSub.publish 'state.rehydrate'
+  playChapter     : (@firstSlide=null) =>
+    @chapters.getCurrentItem().preload @chapterGo
+
+  chapterGo : ()=>
+    PubSub.publish 'movie.rehydrate-layers'
     PubSub.publish 'chapter.started', @chapters.getCurrentItem().chapterData.title
-    @chapters.getCurrentItem().start firstSlide
+    @chapters.getCurrentItem().start @firstSlide
 
   episodeComplete : () ->
     if @isLastEpisode
       aristotle.localStorageProxy.completeCourse()
     else
-      console.log "Episode Complete."
       newEpisodeNum = String(Number(aristotle.episodeNum) + 1)
       # aristotle.localStorageProxy.completeEpisode newEpisodeNum
       aristotle.localStorageProxy.refreshOnEpisode newEpisodeNum

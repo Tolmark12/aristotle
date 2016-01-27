@@ -12,7 +12,7 @@ module.exports = class EpisodeLoader
       @setMicrosoftTrackingData()
       @loadEpisode()
 
-  # Load the Episode
+  # Load the Episode map data
   loadEpisode: ()->
     mapName = aristotle.globals.get("episodeMapFiles")[aristotle.episodeNum]
     aristotle.getJson aristotle.getAssetPath( mapName ), (data)=>

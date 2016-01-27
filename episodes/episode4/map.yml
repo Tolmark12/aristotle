@@ -537,6 +537,7 @@ chapters:
                   text: review duties
                   action: {cmd: slides.next-slide}
       # 2 Sektimus Interlude ==========================================
+      # !SUSPECT
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.15, loop: true, slot: music} }
         sfx:

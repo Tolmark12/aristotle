@@ -26,7 +26,11 @@ module.exports = class Movie
     token10 = PubSub.subscribe 'movie.layers.cache-all',(m, data)     => @cacheAllLayers()
     token11 = PubSub.subscribe 'movie.layers.cache-all-but',(m, data) => @cacheAllBut data
     token12 = PubSub.subscribe 'movie.report', (m, data)              => @report()
-    token13 = PubSub.subscribe 'movie.rehydrate-layers', (m, data)    => @rehydrateLayerState data
+    token13 = PubSub.subscribe 'movie.set-dried-layers', (m, data)    => @driedLayers = data
+    token14 = PubSub.subscribe 'movie.rehydrate-layers', (m, data)    =>
+      if @driedLayers?
+        @rehydrateLayerState @driedLayers
+        @driedLayers = null
     @tokens = [token1, token2, token3, token4, token5, token6, token7, token8, token9, token10, token11, token12, token13 ]
 
   report : () ->

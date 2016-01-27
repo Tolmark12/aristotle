@@ -40,10 +40,10 @@ module.exports = class AssetPreloader
       @preloadQueue.removeEventListener @progressHandler
       @preloadQueue.removeEventListener @completeHandler
 
+    assets = @removeDuplicates assets
 
     # Put the mp3's first!!!
     assets = @orderFilesForLoad assets
-
     # Load it!
     @preloadQueue.loadManifest assets
 
@@ -81,3 +81,12 @@ module.exports = class AssetPreloader
       else
         other.push item
     return mp3s.concat other, json
+
+  removeDuplicates : (ar)->
+    items = {}
+    newArray = []
+    for item in ar
+      if !items[item.id]?
+        items[item.id] = ""
+        newArray.push item
+    newArray

@@ -15,9 +15,9 @@ chapters:
       -
         fid: ep2-ch2-sektimus
         title: A Disturbance
-        # action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15, loop: true, slot: music} }
-        # sfx:
-        #   - {content: ~3/CIN_Quarantine.mp3, delay: 33700, volume: .1 }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15, loop: true, slot: music} }
+        sfx:
+          - {content: ~3/CIN_Quarantine.mp3, delay: 33700, volume: .1 }
         movie:
           layers:
             - {depth: 7, content: ~2/fatline_extended.json }
@@ -28,9 +28,32 @@ chapters:
             - {action: a }
             - {action: b }
             - {action: c }
+            - {action: d }
+            - {action: e }
+            - {action: f }
+            - {action: g }
+            - {action: h }
+            - {action: i }
+            - {action: j }
+            - {action: k }
+            - {action: l }
+            - {action: m }
+            - {action: n }
+            - {action: o }
+            - {action: p }
+            - {action: q }
+            - {action: r }
+            - {action: s }
+            - {action: t }
+            - {action: u }
+            - {action: v }
+            - {action: w }
+            - {action: x }
+            - {action: y }
 
           actions:
             a:
+              fake-delay: 2000
               pos: [170,50]
               text: Hmm, the button didn't work. WarCore, can you analyze this?
               audio: ~2/Story_3_Ctanlee_16.mp3
@@ -146,4 +169,4 @@ chapters:
         movie:
           layers:
             - {depth: 1, content: ~0/splitdoor.json, events: [complete] }
-        duration: {kind: ux}
+        duration: {kind: listen, event: layer.1.complete}

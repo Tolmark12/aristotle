@@ -11,6 +11,7 @@ isInternetExp     = require 'misc/browser-detect'
 JsonLoader        = require 'misc/json-loader'
 LocalStorageProxy = require 'misc/local-storage-proxy'
 Logger            = require 'misc/logger'
+LogStache         = require 'misc/logstache'
 Movie             = require 'movie/movie'
 Parser            = require 'misc/parser'
 PausableDelays    = require 'misc/pausable-delays'
@@ -33,6 +34,7 @@ class Aristotle
     globals           = new GlobalVars()
     commander         = new Commander()
     dictionary        = new Dictionary()
+    logStache         = new LogStache()
     apiProxy          = new APIproxy()
     parser            = new Parser()
     soundFx           = new SoundFX()
@@ -53,6 +55,7 @@ class Aristotle
       @init()
 
     PubSub.publish 'episode.load', @episodeNum
+    log "*************** EPISODE #{@episodeNum}"
 
   init : () ->
     # If chromeui exists, then an episode is already

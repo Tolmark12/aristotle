@@ -11,7 +11,6 @@ module.exports = class SVGAnimation
        autoplay  : false
        path      : json
      }
-
     if data.nativeEvents? then @addNativeEvents data.nativeEvents
 
     if data.vcr
@@ -48,17 +47,17 @@ module.exports = class SVGAnimation
     @trackEventHandler "complete", handle
 
 
-  play   : () => @animation.play();
-  stop   : () -> @animation.stop()
-  destroy: () ->
-    if @animation?
-      @destroyEvents()
-      try
-        @animation.destroy()
-      catch error
-        console.log @animation.renderer
-        console.log @animation.renderer.layers
-
+  play    : () => @animation.play();
+  stop    : () -> @animation.stop()
+  destroy : () ->
+    # if @animation?
+    #   @destroyEvents()
+    #   try
+    #     @animation.destroy()
+    #   catch error
+    #     console.log error
+    #     console.log @animation.renderer
+    #     console.log @animation.renderer.layers
 
   trackEventHandler : (event, handler) ->
     @eventHandlers.push {event:event, handler:handler}

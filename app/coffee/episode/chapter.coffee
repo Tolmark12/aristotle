@@ -6,10 +6,15 @@ module.exports = class Chapter
   constructor: ( @chapterData, @movie, @ux, @onChapterCompete ) ->
     @title = @chapterData.title
 
-  start : (@firstSlideTitle) ->
-    PubSub.publish 'meta.chapter.start', @chapterData
+
+  preload : (cb) ->
     aristotle.devTools.go @chapterData.dev, @chapterData.slides
-    chapterHeading = new ChapterHeading @chapterData, @startSlides
+    chapterHeading = new ChapterHeading @chapterData, cb
+
+  start : (@firstSlideTitle) ->
+    log "--------------- #{@chapterData.title}"
+    PubSub.publish 'meta.chapter.start', @chapterData
+    @startSlides()
 
   startSlides : () =>
     @slides = new Slides @chapterData, @movie, @ux, @onSlidesComplete
