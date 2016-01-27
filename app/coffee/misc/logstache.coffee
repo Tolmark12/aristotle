@@ -14,14 +14,25 @@ module.exports = class LogStache
 
   clear     : ()-> localStorage.removeItem "logstache"
   toConsole : ()-> console.log @logs
-  save      : () -> localStorage.setItem "logstache", JSON.stringify @logs
+  save      : ()-> localStorage.setItem "logstache", JSON.stringify @logs
 
-  download : ()->
+  download : () ->
+    blob = new Blob [localStorage.getItem("logstache")], {type: 'text/plain'}
+    fileName = 'logs.json'
+    if aristotle.isIE
+      window.navigator.msSaveBlob blob, fileName
+    else
+      downloadLink           = document.createElement "a"
+      downloadLink.download  = fileName
+      downloadLink.innerHTML = "Download File"
+      downloadLink.href      = window.URL.createObjectURL blob
+      downloadLink.click()
+
+  downloadOLD : ()->
     str = "data:text/csv;charset=utf-8,"
     str += localStorage.getItem "logstache"
     encodedUri = encodeURI str
     window.open encodedUri
-
 
   getLogStache : () ->
     storedStache = JSON.parse( localStorage.getItem("logstache") )

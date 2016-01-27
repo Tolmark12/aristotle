@@ -13,6 +13,6 @@ class Master
     @windowManager = new WindowManager()
     @lmsProxy      = new LMSProxy settings.isLocal, @windowManager.refreshTraining
     @lmsProxy.begin settings, ()=>
-      @windowManager.launchTraining 3024, 3000
+      @windowManager.launchTraining()
 
 master = new Master()
