@@ -97,14 +97,21 @@ module.exports = class TextDialogue
 
 
     # If "next" param is to be a click generated via the actor
-    if next == 'click' then @actor.showNext() else @actor.hideNext()
+    if next == 'click'
+      @actor.showNext()
+    else
+      @actor.hideNext()
 
     # In the strange event there there is no audio, but next is audio..
-    if next == 'audio' && !audio? then @playNextAction()
+    if next == 'audio' && !audio?
+      log "  -> VERY Unusual, `next` was audio, but no audio initialized, playing next action"
+      @playNextAction()
 
     # If "next" param is a number, count that many milliseconds and play next
     if typeof next == "number"
+      @timeoutDuration = next
       aristotle.timeout ()=>
+        log "  -> timeout complete (#{@timeoutDuration}ms), playing next action"
         @playNextAction()
       ,
         next
