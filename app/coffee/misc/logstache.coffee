@@ -1,9 +1,6 @@
 module.exports = class LogStache
 
   constructor : () ->
-    window.log = ()->
-    return
-    
     @logs = @getLogStache()
     window.log = @log
     window.logstache = @

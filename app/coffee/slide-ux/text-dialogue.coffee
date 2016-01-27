@@ -16,8 +16,8 @@ module.exports = class TextDialogue
       @cc.disableCc()
       @ctanlee.disableCc()
 
-    if aristotle.isDevMode
-      $('html').on "keydown", (e)=> if e.which == 39 then @playNextAction() # Allow right arrow to play next slide
+    # if aristotle.isDevMode
+      # $('html').on "keydown", (e)=> if e.which == 39 then @playNextAction() # Allow right arrow to play next slide
 
     token1  = PubSub.subscribe 'ctanlee.activate',            (a, data)=> @playAction(data)
     token2  = PubSub.subscribe 'ctanlee.add-event-listener',  (a, data)=> @addEventListener data
@@ -40,7 +40,7 @@ module.exports = class TextDialogue
     for item in @data.timeline
       @timeline.push item
 
-    log "Activating new Dialogue Timeline with #{@timeline.length} items"
+    log "Activating new Dialogue Timeline with #{@timeline.length} items ========================="
     @sequence = new Sequence @timeline
     @playAction @sequence.getCurrentItem().action
 
@@ -144,6 +144,7 @@ module.exports = class TextDialogue
   # ------------------------------------ Slide Sequencing
 
   complete : () ->
+    log "Dialogue timeline complete, publishing complete message ^^^^^^^^^^^^^^^^^^^^^^^^^"
     PubSub.publish 'dialogue.complete'
     @actor.complete()
 

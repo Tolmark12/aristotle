@@ -7,7 +7,12 @@ module.exports = class AudioTrack
       @src = parse @src
       AudioTrack.initSoundSettings()
       @sound = createjs.Sound.createInstance @src
+      handle = @sound.addEventListener "failed", ()->
+        log "AudioTrack - Sound Failed!"
+      @trackEventHandler 'complete', handle
+
     catch error
+      log "AudioTrack - Caught error adding audio track"
       appInsights.trackException "Audio Track - Issue parsing the `@src` variable, was set to `#{@src}`"
       return false
 
@@ -30,6 +35,7 @@ module.exports = class AudioTrack
     @sound.removeAllEventListeners()
     @sound.stop()
     @sound.destroy()
+    log "  +> track#{@id} destroyed"
 
   @initSoundSettings : (volume=1) ->
     return if AudioTrack.ppc?
@@ -79,5 +85,6 @@ module.exports = class AudioTrack
     @eventHandlers.push {event:event, handler:handler}
 
   destroyEvents : () ->
+    log "  +> track#{@id} events removed"
     for evnt in @eventHandlers
       @sound.removeEventListener evnt.event, evnt.handler
