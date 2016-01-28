@@ -42,13 +42,14 @@ cssPath           = 'app/scss/**/*.scss'
 cssStagePath      = 'stage/stage.scss'
 coffeePath        = 'app/coffee/**/*.coffee'
 coffeeStagePath   = 'stage/**/*.coffee'
-assetPath         = ['app/images/**/*']
+assetPath         = 'app/images/**/*'
 svgPath           = 'app/assets/compiled/*.svg'
 fontPath          = 'app/fonts/**/*.@(ttf|svg|eot|ttf|woff|woff2)'
 episodeScriptPath = ['episodes/**/*.yml','episodes/**/*.yaml']
 episodeAssetPath  = 'episodes/**/*.!(yml|yaml)'
 localAssetPath    = 'local/**/*'
 randomJs          = 'stage/*.coffee'
+htaccessPath      = 'stage/.htaccess'
 
 # If run with --dev, use less files to speeeed it up :-)
 if argv.dev
@@ -146,6 +147,11 @@ localAssets = (destination, cb)->
     .pipe gulp.dest(destination)
     .on('end', cb)
 
+copyHtaccess = (destination, cb)->
+  gulp.src htaccessPath
+    .pipe gulp.dest(destination)
+    .on('end', cb)
+
 ##############################
 
 episodeScript = (destination, cb) ->
@@ -230,6 +236,7 @@ compileFiles = (doWatch=false, cb) ->
     {meth:episodeScript, glob:episodeScriptPath,  params:['server/episodes', onComplete] }
     {meth:fonts,         glob:fontPath,           params:['server/assets/fonts', onComplete], dontWatch:true }
     {meth:copyAssets,    glob:assetPath,          params:['server/assets/', onComplete]}
+    {meth:copyHtaccess,  glob:htaccessPath,       params:['server/', onComplete]}
   ]
 
   createWatcher = (item, params)-> watch( { glob:item.glob }, => item.meth.apply(null, params).pipe( livereload() ) )
@@ -260,7 +267,8 @@ gulp.task 'copyFonts', ['bowerLibs'],                   ()    -> fonts('rel/asse
 gulp.task 'copyEpisodeScripts', ['copyFonts'],          ()    -> episodeScript('rel/episodes', ->)
 gulp.task 'copyEpisodeAssets', ['copyEpisodeScripts'],  ()    -> episodeAssets('rel/episodes', ->)
 gulp.task 'copyLocalAssets', ['copyEpisodeAssets'],     ()    -> localAssets('rel/local', ->)
-gulp.task 'copyStatics', ['copyLocalAssets'],           ()    -> copyAssets('rel/assets', ->)
+gulp.task 'copyHtaccess', ['copyLocalAssets'],          ()    -> copyHtaccess('rel/', ->)
+gulp.task 'copyStatics', ['copyHtaccess'],              ()    -> copyAssets('rel/assets', ->)
 gulp.task 'releaseCompile', ['copyStatics'],            (cb)  -> compileFiles(false, cb)
 gulp.task 'minify',['releaseCompile'],                  ()    -> minifyAndJoin();
 gulp.task 'rel', ['rel:clean', 'bumpVersion', 'minify'],      -> #pushViaGit()
