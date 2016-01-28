@@ -38,15 +38,16 @@ module.exports = class Duties extends Component
     path = aristotle.getAssetPath("~l/#{aristotle.globals.get('dutiesDir')}/#{ data.content }")
     xobj = new XMLHttpRequest()
     xobj.onreadystatechange = ()->
-      if xobj.readyState == 4 && xobj.status == 200
-        me.setUserHtml data, xobj.responseText
-      # If there is an issue with duties, skip and go to the next
-      else
-        return if me.thrown404
-        me.thrown404 = true
-        log "Couldn't load the duties file!"
-        aristotle.throw "Couldn't find the duties file #{data.content}, check the json file for typos."
-        PubSub.publish 'slides.next-slide'
+      if xobj.readyState == 4
+        if xobj.status == 200
+          me.setUserHtml data, xobj.responseText
+        # If there is an issue with duties, skip and go to the next
+        else
+          return if me.thrown404
+          me.thrown404 = true
+          log "Couldn't load the duties file!"
+          aristotle.throw "Couldn't find the duties file #{data.content}, check the json file for typos."
+          PubSub.publish 'slides.next-slide'
 
     xobj.open 'GET', path, true
     xobj.send(null)
