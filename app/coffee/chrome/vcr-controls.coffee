@@ -17,11 +17,11 @@ module.exports = class VCRControls
 
   play  : ()->
     @$pauseAndPlayBtn.removeClass 'paused'
-    @animation.play()
+    @animation.animation.play()
 
   pause : ()->
     @$pauseAndPlayBtn.addClass 'paused'
-    @animation.pause()
+    @animation.animation.pause()
 
   replay : () ->
     @$attic.addClass 'hidden'

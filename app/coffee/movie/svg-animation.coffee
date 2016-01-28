@@ -13,7 +13,7 @@ module.exports = class SVGAnimation
      }
     if data.nativeEvents? then @addNativeEvents data.nativeEvents
 
-    if data.vcr
+    if data.vcr && !data.jumpToEnd
       PubSub.publish 'vcr-control.show', @
 
     handle = @animation.addEventListener 'data_ready', ()=>

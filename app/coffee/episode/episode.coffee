@@ -130,7 +130,7 @@ module.exports = class Episode
     @chapters.getCurrentItem().preload @chapterGo
 
   chapterGo : ()=>
-    PubSub.publish 'movie.rehydrate-layers'
+    PubSub.publishSync 'movie.rehydrate-layers'
     PubSub.publish 'chapter.started', @chapters.getCurrentItem().chapterData.title
     @chapters.getCurrentItem().start @firstSlide
 

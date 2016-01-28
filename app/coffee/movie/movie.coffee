@@ -134,6 +134,7 @@ module.exports = class Movie
         if !layerData.loop
           layerData.jumpToEnd = true
         @addLayer layerData
+    console.log "Rehydrated Layers"
 
   publishScaleAndTransform : () ->
     PubSub.publish 'scale.update',  @scale
