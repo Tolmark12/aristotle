@@ -41,9 +41,10 @@ module.exports = class Duties extends Component
       if xobj.readyState == 4 && xobj.status == 200
         me.setUserHtml data, xobj.responseText
       # If there is an issue with duties, skip and go to the next
-      else if xobj.status == 404
+      else
         return if me.thrown404
         me.thrown404 = true
+        log "Couldn't load the duties file!"
         aristotle.throw "Couldn't find the duties file #{data.content}, check the json file for typos."
         PubSub.publish 'slides.next-slide'
 
