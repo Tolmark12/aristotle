@@ -7,9 +7,13 @@ module.exports = class AudioTrack
       @src = parse @src
       AudioTrack.initSoundSettings()
       @sound = createjs.Sound.createInstance @src
-      handle = @sound.addEventListener "failed", ()->
+      handle = @sound.addEventListener "failed", ()=>
         log "AudioTrack - Sound Failed!"
-      @trackEventHandler 'complete', handle
+        if @onComplete?
+           @onComplete()
+           @destroy()
+
+      @trackEventHandler 'failed', handle
 
     catch error
       log "AudioTrack - Caught error adding audio track"
