@@ -9,6 +9,7 @@ module.exports = class AudioTrack
       @sound = createjs.Sound.createInstance @src
       handle = @sound.addEventListener "failed", ()=>
         log "AudioTrack - Sound Failed!"
+        log "On Complete defined? #{@onComplete?}"
         if @onComplete?
            @onComplete()
            @destroy()
