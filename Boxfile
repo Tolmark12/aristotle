@@ -3,3 +3,5 @@ build:
 web1:
   type: php
   httpd_document_root: rel
+  httpd_access_log: true
+  httpd_error_log: true
