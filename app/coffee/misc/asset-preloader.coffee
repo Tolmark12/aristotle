@@ -11,10 +11,10 @@ module.exports = class AssetPreloader
     # + Possibly destroying at the start of each load would allow us to not need to refresh the page
     # @preloadQueue.destroy();
 
-  preloadAssets: (data)->
+  preloadAssets: (@data)->
     assets = []
     regex = /.+\.(svg)/
-    @lookForFiles data, assets, regex
+    @lookForFiles @data, assets, regex
 
     # If there are no assets, return and callback
     if assets.length == 0
@@ -27,18 +27,12 @@ module.exports = class AssetPreloader
 
     window.jax = @preloadQueue
 
+    @erroredFiles = []
     # # On load progress
     if @progressCallback?
-      @progressHandler = @preloadQueue.on "progress", (e)=>
-        @progressCallback e.loaded
-
-    # On load complete
-    @completeHandler = @preloadQueue.on "complete", ()=>
-      return if @isComplete
-      @isComplete = true
-      @callback data
-      @preloadQueue.removeEventListener @progressHandler
-      @preloadQueue.removeEventListener @completeHandler
+      @progressHandler = @preloadQueue.on "progress", @progressHandler
+    @completeHandler   = @preloadQueue.on "complete", @completeHandler
+    @errorHandler      = @preloadQueue.on "error",    @errorHandler
 
     assets = @removeDuplicates assets
 
@@ -47,12 +41,38 @@ module.exports = class AssetPreloader
     # Load it!
     @preloadQueue.loadManifest assets
 
+  tryToLoadErroredFiles : () ->
+    log "Attempting to reload #{@erroredFiles.length} files"
+    @erroredFiles = @orderFilesForLoad @erroredFiles
+    @preloadQueue.loadManifest @erroredFiles
+    @erroredFiles = []
 
-    # for asset in assets
-      # console.log "--"
-      # console.log "#{asset.type}"
-      # console.log "#{asset.mimeType}"
-      # console.log "#{asset.src}"
+  # ------------------------------------ Event Handlers
+
+  progressHandler : (e)=>
+    @progressCallback e.loaded
+
+  completeHandler : ()=>
+    if @erroredFiles.length > 0
+      setTimeout ()=>
+        @tryToLoadErroredFiles()
+      ,
+        900
+    else
+      return if @isComplete
+      @isComplete = true
+      @callback @data
+      @removeEventListeners()
+
+  errorHandler : (e)=>
+    log "FILE LOAD ERROR : #{e.data.id}"
+    createjs.Sound.removeSound e.data.id
+    @erroredFiles.push {src: e.data.src, id: e.data.id}
+
+  removeEventListeners : () ->
+    @preloadQueue.removeEventListener @progressHandler
+    @preloadQueue.removeEventListener @completeHandler
+    @preloadQueue.removeEventListener @errorHandler
 
   lookForFiles : (item, storage, regex)->
     type = typeof item
