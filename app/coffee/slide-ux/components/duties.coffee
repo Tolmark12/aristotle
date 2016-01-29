@@ -35,7 +35,7 @@ module.exports = class Duties extends Component
 
   getUserHtml : (data) ->
     me   = @
-    path = aristotle.getAssetPath("~l/#{aristotle.globals.get('dutiesDir')}/#{ data.content }")
+    path = aristotle.getAssetPath("~l/#{aristotle.globals.get('dutiesDir')}/#{ data.content }?v=#{new Date().getTime()}")
     xobj = new XMLHttpRequest()
     xobj.onreadystatechange = ()->
       if xobj.readyState == 4

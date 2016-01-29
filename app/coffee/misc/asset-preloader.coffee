@@ -12,6 +12,7 @@ module.exports = class AssetPreloader
     # @preloadQueue.destroy();
 
   preloadAssets: (@data)->
+    @generateRandomStr()
     assets = []
     regex = /.+\.(svg)/
     @lookForFiles @data, assets, regex
@@ -65,9 +66,11 @@ module.exports = class AssetPreloader
       @removeEventListeners()
 
   errorHandler : (e)=>
+    @generateRandomStr()
     log "FILE LOAD ERROR : #{e.data.id}"
     createjs.Sound.removeSound e.data.id
-    @erroredFiles.push {src: e.data.src, id: e.data.id}
+    path = e.data.src.split("?")[0]
+    @erroredFiles.push {src: "#{path}?v=#{@stamp}", id: e.data.id}
 
   removeEventListeners : () ->
     @preloadQueue.removeEventListener @progressHandler
@@ -78,7 +81,7 @@ module.exports = class AssetPreloader
     type = typeof item
     if type == "string"
       if  /.mp3|.m4a|.json/.test(item)
-        storage.push {src:aristotle.getAssetPath(item),  id:item}
+        storage.push {src:"#{aristotle.getAssetPath(item)}?v=#{@stamp}",  id:item}
       # if  /.mp3|.m4a|.json|.svg|.jpg|.jpeg|.png/.test(item) then storage.push {src:"#{aristotle.getAssetPath(item)}",  id:item}
 
     else if type == "object"
@@ -101,6 +104,8 @@ module.exports = class AssetPreloader
       else
         other.push item
     return mp3s.concat other, json
+
+  generateRandomStr : () -> @stamp = new Date().getTime()
 
   removeDuplicates : (ar)->
     items = {}
