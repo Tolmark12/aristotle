@@ -1,35 +1,43 @@
 module.exports = class LocalStorageProxy
 
-  constructor: (cb) ->
+  constructor: (@cb) ->
     window.zap = (obj)-> JSON.parse( JSON.stringify(obj) )
     # for local testing, simulate the lms API
     aristotle.localStorageProxy = @
     PubSub.subscribe 'state.save',         (m, data)=> @saveState()
-    PubSub.subscribe 'state.load',         (m, data)=> @loadState()
+    # PubSub.subscribe 'state.load',         (m, data)=> @loadState()
     PubSub.subscribe 'state.rehydrate',    (m, data)=> @rehydrate()
     PubSub.subscribe 'slide.activated',    (m, data)=> @saveState data
     PubSub.subscribe 'chapter.started',    (m, data)=> @chapterTitle = data
     PubSub.subscribe 'refresh.on.chapter', (m, data)=> @refreshOnChapter data
     @loadState()
     @setAristotleVars()
-    cb()
-
     window.addEventListener 'message', (e)=> @receiveMessage(e)
 
   receiveMessage : (e) ->
-    console.log "received message in the training"
-    data =
-      message: 'Communication coming from remote!'
-    @sendMessage e.source, data, e.data.domain
+    @msgTargWindow = e.source
+    @msgDomain     = e.data.domain
+    if e.data.message == "init"
+      @init(e.data.data)
 
-  sendMessage : (targetWindow, data, domain) ->
-    targetWindow.postMessage(data, domain)
+  sendMessage : (msg, data) ->
+    packet =
+      message : msg
+      data    : data
+    @msgTargWindow.postMessage(packet, @msgDomain)
+
+  init : (data) ->
+    console.log "initialized.."
+    console.log data
+    @store = data
+    @sendMessage "initialized", null
+    @begin()
 
   rehydrate : () ->
     if !@store? then return
     aristotle.episode.gotoLocationByTitle @store.location.slide, @store.location.chapter
 
-  begin : (cb) ->
+  begin : () ->
     @user   = @store.user
     @userId = @store.userId
     @createFormattedName()
@@ -40,7 +48,7 @@ module.exports = class LocalStorageProxy
 
     aristotle.globals.vars.user   = @user
     aristotle.globals.vars.userId = @userId
-    cb()
+    @cb()
 
   saveState : (currentSlide, chapter) ->
     # global variabls

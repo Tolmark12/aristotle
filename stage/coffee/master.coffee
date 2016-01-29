@@ -5,16 +5,18 @@ WindowManager  = require 'window-manager'
 class Master
 
   constructor: () ->
-    @begin()
-
-  begin : () ->
+    @targetDomain = "http://localhost:5654"
     settingsConfig = new SettingsConfig()
-    settings       = settingsConfig.getQueryVars()
-    @windowManager = new WindowManager()
-    @lmsProxy      = new LMSProxy settings.isLocal, @windowManager.refreshTraining
-    @lmsProxy.begin settings, ()=>
-      @windowManager.launchTraining()
-      @lmsProxy.trainingWindow = @windowManager.trainingWindow
-      console.log @windowManager.trainingWindow
+    @settings       = settingsConfig.getQueryVars()
+    # @windowManager.launchTraining()
+    # @lmsProxy.trainingWindow = @windowManager.trainingWindow
+    # @lmsProxy.begin settings, ()=>
+      # console.log @windowManager.trainingWindow
+    @windowManager = new WindowManager @targetDomain, @begin
+    @windowManager.launchTraining()
+
+  begin : ()=>
+    @lmsProxy = new LMSProxy @settings.isLocal, @windowManager.refreshTraining, @targetDomain, @windowManager.trainingWindow
+    @lmsProxy.begin @settings
 
 master = new Master()

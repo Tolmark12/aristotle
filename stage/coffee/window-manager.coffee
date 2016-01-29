@@ -1,13 +1,18 @@
 module.exports = class WindowManager
 
-  constructor: () ->
+  constructor: (@targetDomain, @onTrainingLoadedCb) ->
 
   launchTraining : (x=0, y=0) ->
     $(window).on 'beforeunload', () ->
       if !window.courseComplete
         return "Closing this window will close your training, Stay on this page if you wish to continue your training.";
+    @trainingWindow = window.open "#{@targetDomain}/index.html", "_training", "top:#{y}, left=#{x}, location=no, status=no, toolbar=no, scrollbars=no, resizable=no, width=1024, height=768"
 
-    @trainingWindow = window.open "index.html", "_training", "top:#{y}, left=#{x}, location=no, status=no, toolbar=no, scrollbars=no, resizable=no, width=1024, height=768"
+    if @trainingWindow.document.readyState == "complete"
+      @onTrainingLoadedCb()
+    else
+      @trainingWindow.addEventListener "load", ()=>
+        @onTrainingLoadedCb()
 
   refreshTraining : () =>
     if @isIE

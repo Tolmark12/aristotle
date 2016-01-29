@@ -1,33 +1,39 @@
 
 module.exports = class LMSProxy
 
-  constructor : (isLocal, @refreshWindowCb) ->
+  constructor : (isLocal, @refreshWindowCb, @targetDomain, @trainingWindow) ->
     if isLocal then @initScormStubs()
     @version = { major:0, minor:1, feature:0, storeVersion:1 }
     window.addEventListener 'storage', (e)=> @onStorageChange e
     window.addEventListener 'message', (e)=> @onWindowMessage e
     window.lmsproxy = @
 
-  sendMessage : () ->
-    data =
-      message : "hangin in there?"
-      domain  : "#{window.location.protocol}//#{window.location.host}"
 
-    @trainingWindow.postMessage(data, 'http://localhost:5654')
+  sendMessage : (msg, data) ->
+    packet =
+      message : msg
+      domain  : "#{window.location.protocol}//#{window.location.host}"
+      data    : data
+    @trainingWindow.postMessage(packet, @targetDomain)
 
   onWindowMessage : (e) ->
-    console.log "received message in the master"
-    console.log e
+    clearInterval @initialSendInterval
+    if e.data.message == "initialized"
+      console.log "YAY!!!"
+      clearInterval @initialSendInterval
+
+
+
     return
     # If this is a change to the glob
-    if e.key == "glob"
+    if e.message == "glob"
       @saveGlobToLMS()
     # On course complete
-    else if e.key == "course.complete"
+    else if e.message == "course.complete"
       window.courseComplete = true
       elbScorm.SetComplete()
-    else if e.key == "refresh.window"
-      @refreshWindowCb()
+    else if e.message == "refresh.window"
+      @refreshWindowCb @setTrainingWindow
 
   begin : (queryStringVars, cb) ->
     # Try to start the course
@@ -56,7 +62,12 @@ module.exports = class LMSProxy
       glob.userId     = @userId
       glob.initParams = queryStringVars
       @saveGlobToLocalStorage glob
-      cb()
+      @initialSendInterval = setInterval ()=>
+        @sendMessage "init", glob
+      ,
+        2000
+
+      # cb()
     else
       console.log "couldn't start the course"
 
