@@ -54,7 +54,7 @@ module.exports = class LMSProxy
           @glob.globalVars = stateData.globalVars
           @glob.location   = stateData.location
       else
-        glob = {}
+        @glob = {}
 
       @glob.version    = @version
       @glob.user       = @user
