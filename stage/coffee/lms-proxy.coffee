@@ -4,7 +4,30 @@ module.exports = class LMSProxy
   constructor : (isLocal, @refreshWindowCb) ->
     if isLocal then @initScormStubs()
     @version = { major:0, minor:1, feature:0, storeVersion:1 }
-    window.addEventListener 'storage',      (e)=> @onStorageChange e
+    window.addEventListener 'storage', (e)=> @onStorageChange e
+    window.addEventListener 'message', (e)=> @onWindowMessage e
+    window.lmsproxy = @
+
+  sendMessage : () ->
+    data =
+      message : "hangin in there?"
+      domain  : "#{window.location.protocol}//#{window.location.host}"
+
+    @trainingWindow.postMessage(data, 'http://localhost:5654')
+
+  onWindowMessage : (e) ->
+    console.log "received message in the master"
+    console.log e
+    return
+    # If this is a change to the glob
+    if e.key == "glob"
+      @saveGlobToLMS()
+    # On course complete
+    else if e.key == "course.complete"
+      window.courseComplete = true
+      elbScorm.SetComplete()
+    else if e.key == "refresh.window"
+      @refreshWindowCb()
 
   begin : (queryStringVars, cb) ->
     # Try to start the course
@@ -45,6 +68,8 @@ module.exports = class LMSProxy
   saveGlobToLMS : () ->
     glob = localStorage.getItem "glob"
     elbScorm.SetResumeData JSON.parse(glob)
+
+
 
   onStorageChange : (e) ->
     # If this is a change to the glob

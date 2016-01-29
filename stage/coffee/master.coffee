@@ -14,5 +14,7 @@ class Master
     @lmsProxy      = new LMSProxy settings.isLocal, @windowManager.refreshTraining
     @lmsProxy.begin settings, ()=>
       @windowManager.launchTraining()
+      @lmsProxy.trainingWindow = @windowManager.trainingWindow
+      console.log @windowManager.trainingWindow
 
 master = new Master()

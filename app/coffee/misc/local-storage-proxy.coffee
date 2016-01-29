@@ -14,6 +14,17 @@ module.exports = class LocalStorageProxy
     @setAristotleVars()
     cb()
 
+    window.addEventListener 'message', (e)=> @receiveMessage(e)
+
+  receiveMessage : (e) ->
+    console.log "received message in the training"
+    data =
+      message: 'Communication coming from remote!'
+    @sendMessage e.source, data, e.data.domain
+
+  sendMessage : (targetWindow, data, domain) ->
+    targetWindow.postMessage(data, domain)
+
   rehydrate : () ->
     if !@store? then return
     aristotle.episode.gotoLocationByTitle @store.location.slide, @store.location.chapter
