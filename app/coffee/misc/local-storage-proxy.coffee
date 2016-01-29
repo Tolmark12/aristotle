@@ -11,7 +11,6 @@ module.exports = class LocalStorageProxy
     PubSub.subscribe 'chapter.started',    (m, data)=> @chapterTitle = data
     PubSub.subscribe 'refresh.on.chapter', (m, data)=> @refreshOnChapter data
     @loadState()
-    @setAristotleVars()
     window.addEventListener 'message', (e)=> @receiveMessage(e)
     console.log "listening.."
 
@@ -33,6 +32,7 @@ module.exports = class LocalStorageProxy
     console.log "initialized.."
     console.log data
     @store = data
+    @setAristotleVars()
     @sendMessage "initialized", null
     @begin()
 
