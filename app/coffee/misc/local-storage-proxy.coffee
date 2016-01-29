@@ -13,8 +13,11 @@ module.exports = class LocalStorageProxy
     @loadState()
     @setAristotleVars()
     window.addEventListener 'message', (e)=> @receiveMessage(e)
+    console.log "listening.."
 
   receiveMessage : (e) ->
+    console.log "receiving.."
+    console.log e
     @msgTargWindow = e.source
     @msgDomain     = e.data.domain
     if e.data.message == "init"

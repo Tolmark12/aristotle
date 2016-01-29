@@ -5,7 +5,7 @@ WindowManager  = require 'window-manager'
 class Master
 
   constructor: () ->
-    @targetDomain = "http://localhost:5654"
+    @targetDomain = "http://twoway.gopagoda.io"
     settingsConfig = new SettingsConfig()
     @settings       = settingsConfig.getQueryVars()
     # @windowManager.launchTraining()
