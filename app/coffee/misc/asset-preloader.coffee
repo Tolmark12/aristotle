@@ -1,5 +1,6 @@
 module.exports = class AssetPreloader
   @count :0
+
   constructor: (data, @callback, @progressCallback) ->
     @id = AssetPreloader.count++
     if !data?
@@ -69,8 +70,15 @@ module.exports = class AssetPreloader
     @generateRandomStr()
     log "FILE LOAD ERROR : #{e.data.id}"
     createjs.Sound.removeSound e.data.id
-    path = e.data.src.split("?")[0]
-    @erroredFiles.push {src: "#{path}?v=#{@stamp}", id: e.data.id}
+
+    # If it has a unique id, split it off and add another one
+    path = e.data.src.split("?")
+    if path.length == 1
+      fullPath = path[0]
+    else
+      fullPath = "#{path[0]}?v=#{@stamp}"
+
+    @erroredFiles.push {src: fullPath, id: e.data.id}
 
   removeEventListeners : () ->
     @preloadQueue.removeEventListener @progressHandler
@@ -81,8 +89,8 @@ module.exports = class AssetPreloader
     type = typeof item
     if type == "string"
       if  /.mp3|.m4a|.json/.test(item)
-        storage.push {src:"#{aristotle.getAssetPath(item)}?v=#{@stamp}",  id:item}
-      # if  /.mp3|.m4a|.json|.svg|.jpg|.jpeg|.png/.test(item) then storage.push {src:"#{aristotle.getAssetPath(item)}",  id:item}
+        fullPath = "#{aristotle.getAssetPath(item)}"
+        storage.push {src:fullPath,  id:item}
 
     else if type == "object"
       if Array.isArray(item)
@@ -98,12 +106,14 @@ module.exports = class AssetPreloader
     other = []
     for item in ar
       if /.mp3|.m4a/.test item.id
+        item.src += "?v=#{@stamp}"
         mp3s.push item
       else if /.json/.test item.id
         json.push item
       else
         other.push item
     return mp3s.concat other, json
+
 
   generateRandomStr : () -> @stamp = new Date().getTime()
 
@@ -115,3 +125,5 @@ module.exports = class AssetPreloader
         items[item.id] = ""
         newArray.push item
     newArray
+
+window.AssetPreloader = AssetPreloader

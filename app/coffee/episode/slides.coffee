@@ -65,7 +65,6 @@ module.exports = class Slides
   playSlide         : () ->
     PubSub.publish 'slides.changing'
     @slides.getCurrentItem().play @slideComplete
-    console.log "playing Slide"
 
   slideShowComplete : () -> @onShowComplete()
   getCurrentIndex   : () -> @slides.getCurrentItem().slideData.index
