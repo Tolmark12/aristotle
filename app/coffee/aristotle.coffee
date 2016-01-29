@@ -27,8 +27,10 @@ class Aristotle
     globals            = new GlobalVars()
     @localStorageProxy = new LocalStorageProxy @letsGo
     PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data.slide, data.chapter
+    console.log "constructor"
 
   letsGo : () =>
+    console.log "lets go..?"
     aristotle.isIE    = isInternetExp()
     animationQuality  = new AnimationQuality()
     jsonLoaer         = new JsonLoader()

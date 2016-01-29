@@ -63,6 +63,7 @@ module.exports = class LMSProxy
       glob.initParams = queryStringVars
       @saveGlobToLocalStorage glob
       @initialSendInterval = setInterval ()=>
+        console.log "sending.."
         @sendMessage "init", glob
       ,
         2000
