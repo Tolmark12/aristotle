@@ -48,7 +48,7 @@ module.exports = class AssetPreloader
     @erroredFiles = @orderFilesForLoad @erroredFiles
     @preloadQueue.loadManifest @erroredFiles
     @erroredFiles = []
-    
+    console.log "...."
 
   # ------------------------------------ Event Handlers
 
