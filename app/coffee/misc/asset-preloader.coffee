@@ -70,15 +70,7 @@ module.exports = class AssetPreloader
     @generateRandomStr()
     log "FILE LOAD ERROR : #{e.data.id}"
     createjs.Sound.removeSound e.data.id
-
-    # If it has a unique id, split it off and add another one
-    path = e.data.src.split("?")
-    if path.length == 1
-      fullPath = path[0]
-    else
-      fullPath = "#{path[0]}?v=#{@stamp}"
-
-    @erroredFiles.push {src: fullPath, id: e.data.id}
+    @erroredFiles.push {src: e.data.src, id: e.data.id}
 
   removeEventListeners : () ->
     @preloadQueue.removeEventListener @progressHandler
@@ -106,7 +98,6 @@ module.exports = class AssetPreloader
     other = []
     for item in ar
       if /.mp3|.m4a/.test item.id
-        item.src += "?v=#{@stamp}"
         mp3s.push item
       else if /.json/.test item.id
         json.push item
