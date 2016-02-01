@@ -13,7 +13,6 @@ module.exports = class AssetPreloader
     # @preloadQueue.destroy();
 
   preloadAssets: (@data)->
-    @generateRandomStr()
     assets = []
     regex = /.+\.(svg)/
     @lookForFiles @data, assets, regex
@@ -67,7 +66,6 @@ module.exports = class AssetPreloader
       @removeEventListeners()
 
   errorHandler : (e)=>
-    @generateRandomStr()
     log "FILE LOAD ERROR : #{e.data.id}"
     createjs.Sound.removeSound e.data.id
     @erroredFiles.push {src: e.data.src, id: e.data.id}
@@ -106,8 +104,6 @@ module.exports = class AssetPreloader
     return mp3s.concat other, json
 
 
-  generateRandomStr : () -> @stamp = new Date().getTime()
-
   removeDuplicates : (ar)->
     items = {}
     newArray = []
@@ -117,4 +113,4 @@ module.exports = class AssetPreloader
         newArray.push item
     newArray
 
-window.AssetPreloader = AssetPreloader
+# window.AssetPreloader = AssetPreloader
