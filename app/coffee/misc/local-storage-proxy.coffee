@@ -82,6 +82,7 @@ module.exports = class LocalStorageProxy
     aristotle.isLocal       = @store.initParams.isLocal
     aristotle.localDir      = @store.initParams.localRoot
     aristotle.sudo          = @store.initParams.sudo
+    aristotle.logstache     = @store.initParams.logstache
 
   completeCourse     : ()     -> @sendMessage "course.complete", ""
   saveToLms          : (data) -> @sendMessage "persist.to.lms", data

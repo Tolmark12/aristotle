@@ -5,8 +5,10 @@ module.exports = class ClosedCaption
     $parent.append @$el
     shadowIconsInstance.svgReplaceWithString pxSvgIconString, @$el
 
-    token7  = PubSub.subscribe 'cc.on',   (a, data)=> @enableCc()
-    token8  = PubSub.subscribe 'cc.off',  (a, data)=> @disableCc()
+    PubSub.subscribe 'cc.on',       (a, data)=> @enableCc()
+    PubSub.subscribe 'cc.off',      (a, data)=> @disableCc()
+    PubSub.subscribe 'cc.temp.on',  (a, data)=> @tempEnable()
+    PubSub.subscribe 'cc.temp.off', (a, data)=> @tempDisable()
 
     @ccDisplay  = $ ".closed-caption", @$el
 
@@ -57,8 +59,20 @@ module.exports = class ClosedCaption
   showText : () -> @ccDisplay.removeClass "hidden"
   hideText : () -> @ccDisplay.addClass "hidden"
 
-  enableCc  : () -> @ccDisplay.removeClass "disabled"
-  disableCc : () -> @ccDisplay.addClass "disabled"
+  enableCc    : () -> @ccDisplay.removeClass "disabled"
+  disableCc   : () -> @ccDisplay.addClass "disabled"
+
+  # Temporarily enable CC because an audio file couldn't load
+  tempEnable  : () ->
+    console.log "temp enabling..."
+    @oldCcWasOff = !@ccIsOn
+    @turnCcOn()
+  # If CC was temporarily enabled, disable it after broken audio file is finished
+  tempDisable : () ->
+    console.log "temp disabling..."
+    if @oldCcWasOff
+      @oldCcWasOff = null
+      @turnCcOff()
 
   showNext     : () -> #@$nextBtn.removeClass "hidden"
   hideNext     : () -> #@$nextBtn.addClass "hidden"

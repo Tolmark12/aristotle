@@ -7,9 +7,6 @@ module.exports = class TextDialogue
 
   constructor: ($parent) ->
     aristotle.dialogue = @
-    @avgMsPerChar      = [
-
-    ]
 
     @cc      = new ClosedCaption $parent, @playNextAction
     @ctanlee = new Ctanlee $parent, @playNextAction
@@ -18,9 +15,6 @@ module.exports = class TextDialogue
     if !aristotle.globals.get "ccIsOn", false
       @cc.disableCc()
       @ctanlee.disableCc()
-
-    # if aristotle.isDevMode
-      # $('html').on "keydown", (e)=> if e.which == 39 then @playNextAction() # Allow right arrow to play next slide
 
     token1  = PubSub.subscribe 'ctanlee.activate',            (a, data)=> @playAction(data)
     token2  = PubSub.subscribe 'ctanlee.add-event-listener',  (a, data)=> @addEventListener data
@@ -54,30 +48,32 @@ module.exports = class TextDialogue
     else
       @actor.hideText()
 
+    if @timeout?
+      clearTimeout @timeout
 
     # If there is audio, play it
     if audio?
 
       # If there is an old undestroyed track, take care of it
-      console.log audio
       if @track?
         @track.stop()
         @track.destroy()
 
       # If this audio file errored out on load..
       if aristotle.deadFiles[audio]?
-        guestimatedAudioDuration = 1000
+        PubSub.publish 'cc.temp.on'
         if next == "audio"
-          aristotle.timeout ()=>
-            console.log "play next ACTION!"
+          @timeout = aristotle.timeout ()=>
+            PubSub.publish 'cc.temp.off'
             @playNextAction()
           ,
-            guestimatedAudioDuration
+            70 * text.length # (our dialogue averages about 70 ms per character)
 
       else
         @track = new AudioTrack(audio)
         if @track != false
           # Play, then on complete, play the next action if that is how next is defined
+
           @track.play {}, ()=>
             if !@track?
               @playNextAction()
@@ -89,7 +85,6 @@ module.exports = class TextDialogue
             # If next should trigger the next audio..
             if next == 'audio'
               @playNextAction()
-              @lastTimeStamp = 
             # else if it's an object, run a general aristotle command
             else if typeof next == "object"
               aristotle.commander.do next

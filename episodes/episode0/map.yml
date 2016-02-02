@@ -11,6 +11,8 @@ chapters:
     ctanlee: !!inc/file ./episodes/global/_ctanlee.yaml
     title: Loading Introduction
     kind: intro
+    dev:
+      startIndex: 3
     slides:
       # Animation Split Screen Advance ==========================================
       -
