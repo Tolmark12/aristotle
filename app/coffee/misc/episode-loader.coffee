@@ -25,9 +25,9 @@ module.exports = class EpisodeLoader
   setMicrosoftTrackingData : () ->
     if !EpisodeLoader.hasSetMsftData
       EpisodeLoader.hasSetMsftData = true
-      learnerId = aristotle.globals.get 'userId'
-      apikey    = aristotle.globals.get 'apikey'
-      appInsights.setAuthenticatedUserContext learnerId.replace(/[,;=| ]+/g, "_"), apikey.replace(/[,;=| ]+/g, "_")
+      sessionKey = aristotle.globals.get 'sessionKey'
+      apikey     = aristotle.globals.get 'apikey'
+      appInsights.setAuthenticatedUserContext sessionKey.replace(/[,;=| ]+/g, "_"), apikey.replace(/[,;=| ]+/g, "_")
 
   filter : (episodeData, filters) ->
     @filterItems episodeData.chapters, filters
