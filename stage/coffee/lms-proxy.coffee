@@ -69,7 +69,6 @@ module.exports = class LMSProxy
 
   startSendinInitSignal : () =>
     @initialSendInterval = setInterval ()=>
-      console.log "sending.."
       @sendMessage "init", @glob
     ,
       2000

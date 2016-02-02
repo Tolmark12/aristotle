@@ -7,6 +7,9 @@ module.exports = class TextDialogue
 
   constructor: ($parent) ->
     aristotle.dialogue = @
+    @avgMsPerChar      = [
+
+    ]
 
     @cc      = new ClosedCaption $parent, @playNextAction
     @ctanlee = new Ctanlee $parent, @playNextAction
@@ -40,12 +43,10 @@ module.exports = class TextDialogue
     for item in @data.timeline
       @timeline.push item
 
-    log "Activating new Dialogue Timeline with #{@timeline.length} items ========================="
     @sequence = new Sequence @timeline
     @playAction @sequence.getCurrentItem().action
 
   say : (text, audio, next, txtPos) ->
-    log "Speaking: "
     # If there is text, show it
     if text?
       @actor.say text, txtPos
@@ -53,47 +54,51 @@ module.exports = class TextDialogue
     else
       @actor.hideText()
 
+
     # If there is audio, play it
     if audio?
-      log "  -> audio detected"
+
+      # If there is an old undestroyed track, take care of it
+      console.log audio
       if @track?
-        log "  -> destroyed previous track : #{@track.id} (unusual)"
         @track.stop()
         @track.destroy()
 
-      @track = new AudioTrack(audio)
-      log "  -> track#{@track.id} : has been initialized : #{@track.src}"
-
-      if @track != false
-        # Play, then on complete, play the next action if that is how next is defined
-        log "  -> track#{@track.id} : is playing"
-        @track.play {}, ()=>
-          if !@track?
-            log "  -> on track complete, track didn't exist and the next action was fired (unusual)"
+      # If this audio file errored out on load..
+      if aristotle.deadFiles[audio]?
+        guestimatedAudioDuration = 1000
+        if next == "audio"
+          aristotle.timeout ()=>
+            console.log "play next ACTION!"
             @playNextAction()
-            return
-          log "  -> track#{@track.id} : is complete, destroying"
-          @track.destroy()
-          @track = null
-          @actor.stopTalking()
-          @actor.hideText()
-          # If next should trigger the next audio..
-          if next == 'audio'
-            log "  -> the `next` of the track we just destroyed was `audio`, playing next action"
-            @playNextAction()
-          # else if it's an object, run a general aristotle command
-          else if typeof next == "object"
-            log "  -> the next of the track we just destroyed was a command, running now."
-            aristotle.commander.do next
+          ,
+            guestimatedAudioDuration
 
       else
-        log " ! Track was false for some reason "
-        if next == 'audio'
-          log " ! Playing next"
-          @playNextAction()
-        else if typeof next == "object"
-          log " ! Running Command"
-          aristotle.commander.do next
+        @track = new AudioTrack(audio)
+        if @track != false
+          # Play, then on complete, play the next action if that is how next is defined
+          @track.play {}, ()=>
+            if !@track?
+              @playNextAction()
+              return
+            @track.destroy()
+            @track = null
+            @actor.stopTalking()
+            @actor.hideText()
+            # If next should trigger the next audio..
+            if next == 'audio'
+              @playNextAction()
+              @lastTimeStamp = 
+            # else if it's an object, run a general aristotle command
+            else if typeof next == "object"
+              aristotle.commander.do next
+
+        else
+          if next == 'audio'
+            @playNextAction()
+          else if typeof next == "object"
+            aristotle.commander.do next
 
 
     # If "next" param is to be a click generated via the actor
@@ -104,14 +109,12 @@ module.exports = class TextDialogue
 
     # In the strange event there there is no audio, but next is audio..
     if next == 'audio' && !audio?
-      log "  -> VERY Unusual, `next` was audio, but no audio initialized, playing next action"
       @playNextAction()
 
     # If "next" param is a number, count that many milliseconds and play next
     if typeof next == "number"
       @timeoutDuration = next
       aristotle.timeout ()=>
-        log "  -> timeout complete (#{@timeoutDuration}ms), playing next action"
         @playNextAction()
       ,
         next
@@ -144,7 +147,6 @@ module.exports = class TextDialogue
   # ------------------------------------ Slide Sequencing
 
   complete : () ->
-    log "Dialogue timeline complete, publishing complete message ^^^^^^^^^^^^^^^^^^^^^^^^^"
     PubSub.publish 'dialogue.complete'
     @actor.complete()
 
