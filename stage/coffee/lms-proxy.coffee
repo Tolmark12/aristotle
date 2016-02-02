@@ -3,7 +3,9 @@ module.exports = class LMSProxy
 
   constructor : (@settings, @refreshWindowCb, @targetDomain, @trainingWindow) ->
     if @settings.isLocal then @initScormStubs()
-    @version = { major:0, minor:1, feature:0, storeVersion:1 }
+    @version = { major:0, minor:9, feature:1, storeVersion:1 }
+    @settings.version = @version
+    console.log "v.#{@version.major}.#{@version.minor}.#{@version.feature} : #{@version.storeVersion}"
     window.addEventListener 'message', (e)=> @onWindowMessage e
     window.lmsproxy = @
 
