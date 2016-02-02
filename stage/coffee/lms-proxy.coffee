@@ -31,6 +31,7 @@ module.exports = class LMSProxy
     else if e.data.message == "course.complete"
       window.courseComplete = true
       elbScorm.SetComplete()
+      log "Course Complete"
       console.log "LMS.HTML : The Course has been completed"
 
 
@@ -72,17 +73,6 @@ module.exports = class LMSProxy
       @sendMessage "init", @glob
     ,
       2000
-
-  # onStorageChange : (e) ->
-  #   # If this is a change to the glob
-  #   if e.key == "glob"
-  #     @saveGlobToLMS()
-  #   # On course complete
-  #   else if e.key == "course.complete"
-  #     window.courseComplete = true
-  #     elbScorm.SetComplete()
-  #   else if e.key == "refresh.window"
-  #     @refreshWindowCb @startSendinInitSignal
 
   # ----------------- #
   # For Local Testing #
