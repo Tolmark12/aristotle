@@ -128,7 +128,7 @@ chapters:
         action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         movie:
           layers:
-            - {depth: 10, content: Clear }
+            - {depth: 10, content: clear}
         duration: {kind: ux}
         ux:
           components:

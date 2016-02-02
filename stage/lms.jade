@@ -4,18 +4,25 @@ html(lang="en")
   head
     title Metamythic
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    
+    // build:css5 lms.css
+    link(href="stage/css/stage.css", rel="stylesheet")
+    // endbuild
+    
+    
+  body()
 
-  body(style="background:#28292B; text-align:center" )
-    img(src="assets/fist.png" style="display:block; margin:0 auto")
-    p(style="line-height:24px; font-family:Arial; text-align:left; font-size:18px; color:#6B989F; width:283px; margin:0 auto; margin-top:15px;") Closing this window will disconnect you from the Warcore, only do so if you need to take a break from the training or upon course completion.
-    // build:js js/lms.js
+    #holder
+      iframe#iframe(src="http://localhost:5654/index.html" width="100%" height="768px" scrolling="no")
+      //- iframe#iframe(src="https://twoway.pagodabox.io/index.html" width="100%" height="768px" scrolling="no")
+    
+    // build:js lms.js
     script(src="bower-libs/jquery/dist/jquery.js")
     script(src="bower-libs/warcore-lms-interface/SCORM_API_wrapper.js")
     script(src="stage/js/master.js")
     // build
     
-    //- // build:remove 
-    //- //- script(src="http://localhost:35729/livereload.js")
-    //- script(src="http://aristotle.dev:35729/livereload.js")
-    //- // endbuild
+    // build:remove 
+    script(src="http://localhost:35729/livereload.js")
+    // endbuild
     

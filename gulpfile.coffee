@@ -270,5 +270,9 @@ gulp.task 'copyLocalAssets', ['copyEpisodeAssets'],     ()    -> localAssets('re
 gulp.task 'copyHtaccess', ['copyLocalAssets'],          ()    -> copyHtaccess('rel/', ->)
 gulp.task 'copyStatics', ['copyHtaccess'],              ()    -> copyAssets('rel/assets', ->)
 gulp.task 'releaseCompile', ['copyStatics'],            (cb)  -> compileFiles(false, cb)
-gulp.task 'minify',['releaseCompile'],                  ()    -> minifyAndJoin();
+gulp.task 'minify',['releaseCompile'],                  ()    -> minifyAndJoin()
 gulp.task 'rel', ['rel:clean', 'bumpVersion', 'minify'],      -> #pushViaGit()
+
+# ----------- Only Build JS ----------- #
+
+gulp.task 'js', -> minifyAndJoin()

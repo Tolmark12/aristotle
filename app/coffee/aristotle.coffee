@@ -23,7 +23,8 @@ SvgCartographer   = require 'misc/svg-cartographer'
 class Aristotle
 
   constructor: (@$el) ->
-    window.aristotle  = @
+    window.aristotle   = @
+    globals            = new GlobalVars()
     @localStorageProxy = new LocalStorageProxy @letsGo
     PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data.slide, data.chapter
 
@@ -31,7 +32,6 @@ class Aristotle
     aristotle.isIE    = isInternetExp()
     animationQuality  = new AnimationQuality()
     jsonLoaer         = new JsonLoader()
-    globals           = new GlobalVars()
     commander         = new Commander()
     dictionary        = new Dictionary()
     logStache         = new LogStache()
@@ -43,8 +43,8 @@ class Aristotle
     shadowIcons       = new pxicons.ShadowIcons()
     PubSub.publish 'animations.go.low'
     @setDevMode @isDevMode
-    @localStorageProxy.begin @begin
     smallScreenZoom()
+    @begin()
 
   begin : () =>
     @setInitialEpisodeNum()

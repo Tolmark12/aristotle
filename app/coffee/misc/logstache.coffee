@@ -2,8 +2,12 @@ module.exports = class LogStache
 
   constructor : () ->
     @logs = @getLogStache()
-    window.log = @log
-    window.logstache = @
+    if aristotle.logstache
+      window.log = @log
+      window.logstache = @
+    else
+      window.log = ->
+      @clear()
 
   log : (args...)=>
     if args.length == 1

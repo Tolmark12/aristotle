@@ -2,7 +2,13 @@ module.exports = class AssetPreloader
   @count :0
 
   constructor: (data, @callback, @progressCallback) ->
+    # Create a single object with reference to
+    # all the dead file ids
+    if !aristotle.deadFiles?
+      aristotle.deadFiles = {}
+
     @id = AssetPreloader.count++
+    @totalRetries = 0
     if !data?
       @callback()
       return
@@ -54,16 +60,26 @@ module.exports = class AssetPreloader
     @progressCallback e.loaded
 
   completeHandler : ()=>
+    # If there are files that couldn't load, try to load them again.
     if @erroredFiles.length > 0
-      setTimeout ()=>
-        @tryToLoadErroredFiles()
-      ,
-        900
+      # Only try to reload the files `n` number of times
+      if @totalRetries++ < 5
+        setTimeout ()=>
+          @tryToLoadErroredFiles()
+        ,
+          900
+      else
+        # Copy all of the errored files into a global collection of dead files
+        @noteDeadFiles @erroredFiles
+        @continueWhenComplete()
     else
-      return if @isComplete
-      @isComplete = true
-      @callback @data
-      @removeEventListeners()
+      @continueWhenComplete()
+
+  continueWhenComplete : () ->
+    return if @isComplete
+    @isComplete = true
+    @callback @data
+    @removeEventListeners()
 
   errorHandler : (e)=>
     log "FILE LOAD ERROR : #{e.data.id}"
@@ -113,4 +129,10 @@ module.exports = class AssetPreloader
         newArray.push item
     newArray
 
-# window.AssetPreloader = AssetPreloader
+  # Create a reference to all of the dead files
+  noteDeadFiles : (erroredFiles) ->
+    for item in erroredFiles
+      aristotle.deadFiles[item.id] = ""
+
+
+window.AssetPreloader = AssetPreloader
