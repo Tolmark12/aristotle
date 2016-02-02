@@ -50,6 +50,7 @@ module.exports = class AssetPreloader
 
   tryToLoadErroredFiles : () ->
     log "Attempting to reload #{@erroredFiles.length} files"
+    appInsights.trackEvent "Preload : Retrying Errored Files", { TotalFiles:@erroredFiles.length, AttemptNum:@totalRetries, Files: @printStr(@erroredFiles), SessionId: aristotle.globals.get("sessionKey"), Episode:aristotle.episodeNum }
     @erroredFiles = @orderFilesForLoad @erroredFiles
     @preloadQueue.loadManifest @erroredFiles
     @erroredFiles = []
@@ -133,6 +134,12 @@ module.exports = class AssetPreloader
   noteDeadFiles : (erroredFiles) ->
     for item in erroredFiles
       aristotle.deadFiles[item.id] = ""
+    appInsights.trackEvent "Preload : Unable To Load Files", { TotalFiles:erroredFiles.length, Files: @printStr(erroredFiles), SessionId: aristotle.globals.get("sessionKey"), Episode:aristotle.episodeNum }
 
+  printStr : (ar) ->
+    returnAr = []
+    for item in ar
+      returnAr.push item.id
+    returnAr.join ","
 
 window.AssetPreloader = AssetPreloader
