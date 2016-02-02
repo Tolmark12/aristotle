@@ -45,6 +45,10 @@ module.exports = class SoundFX
       @addSoundEffect data
 
   addSoundEffect : (data) ->
+    if aristotle.deadFiles[data.content]?
+      @clearSlotIfNeeded data
+      return
+
     if data.delay?
       aristotle.timeout ()=>
         @playSound data, true
@@ -57,7 +61,7 @@ module.exports = class SoundFX
     me = @
     track = new AudioTrack data.content
     return if !track
-    
+
     track.play {volume:data.volume, loop:data.loop, offset:data.offset}, ()->
 
       # If this was in a slot, remove it from the slot
@@ -101,8 +105,10 @@ module.exports = class SoundFX
     if @slots[data.slot]?
       @slots[data.slot].destroy()
 
-    @slots[data.slot] = track
-
+    if track?
+      @slots[data.slot] = track
+    else
+      delete @slots[data.slot]
 
 
 

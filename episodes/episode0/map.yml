@@ -11,8 +11,6 @@ chapters:
     ctanlee: !!inc/file ./episodes/global/_ctanlee.yaml
     title: Loading Introduction
     kind: intro
-    dev:
-      startIndex: 3
     slides:
       # Animation Split Screen Advance ==========================================
       -
@@ -59,6 +57,7 @@ chapters:
             - {action: b }
           actions:
             a:
+              next: 6000
               text: Welcome to the WarCore. Booting system...
               actor: warcore
               audio: Story_1_Warcore_1.mp3
@@ -89,6 +88,7 @@ chapters:
               actor: warcore
               audio: Story_1_Warcore_3.mp3
             b:
+              next: 6000
               text: I'll send for the WarCore authority now. Alerting CTANLEE!
               actor: warcore
               audio: Story_1_Warcore_4.mp3
@@ -97,10 +97,12 @@ chapters:
               text: Hello potentially dangerous entity! I am CTANLEE.
               audio: Story_1_Ctanlee_1.mp3
             d:
+              next: 8900
               pos: [513,384,0]
               text: "I'm in charge of training new CIP Defenders. I'm sorry for the quarantine, but I do need to confirm you are authorized before you can enter the WarCore."
               audio: Story_1_Ctanlee_2.mp3
             e:
+              next: 5900
               pos: [513,384,0]
               text: "The warcore will now confirm your identity."
               audio: Story_1_Ctanlee_4.mp3
