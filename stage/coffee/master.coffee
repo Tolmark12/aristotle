@@ -5,8 +5,9 @@ WindowManager  = require 'window-manager'
 class Master
 
   constructor: () ->
-    @targetDomain   = "https://twoway.pagodabox.io"
+    # @targetDomain   = "https://twoway.pagodabox.io"
     # @targetDomain   = "http://localhost:5654"
+    @targetDomain   = "https://cipv5web-t"
     settingsConfig  = new SettingsConfig()
     @settings       = settingsConfig.getQueryVars()
     @windowManager  = new WindowManager @targetDomain, @begin
