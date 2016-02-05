@@ -33,7 +33,6 @@ module.exports = class LMSProxy
     else if e.data.message == "course.complete"
       window.courseComplete = true
       elbScorm.SetComplete()
-      log "Course Complete"
       console.log "LMS.HTML : The Course has been completed"
 
 
