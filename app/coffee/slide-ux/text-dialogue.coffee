@@ -58,9 +58,10 @@ module.exports = class TextDialogue
       if @track?
         @track.stop()
         @track.destroy()
+        @track = null
 
       # If this audio file errored out on load..
-      if aristotle.deadFiles[audio]?
+      if aristotle.deadFiles[audio]? || !aristotle.sound
         PubSub.publish 'cc.temp.on'
         if next == "audio"
           @timeout = aristotle.timeout ()=>

@@ -15,7 +15,8 @@
     "SVG.toDataURL": "Tolmark12/SVG.toDataURL",
     "velocity": "~1.1.0",
     "warcore-lms-interface": "Tolmark12/warcore-lms-interface",
-    "ms-analytics": "./z-misc-js/ms-analytics"
+    "ms-analytics": "./z-misc-js/ms-analytics",
+    "howler.js": "howler#~1.1.29"
   },
   "ignore": [
     "app",

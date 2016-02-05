@@ -10,6 +10,7 @@ module.exports = class SettingsConfig
       isLocal     : @getQueryVariable('local') == "true"
       sudo        : @getQueryVariable('sudo')  == "true"
       role        : @getQueryVariable 'role'
+      sound       : @getQueryVariable('sound') == "true"
       episodeRoot : "episodes"
       localRoot   : "local"
 

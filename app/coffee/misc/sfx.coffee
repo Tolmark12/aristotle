@@ -3,6 +3,8 @@ AudioTrack = require 'episode/audio-track'
 module.exports = class SoundFX
 
   constructor: () ->
+    if !aristotle.sound then return
+
     @count = 0
     @slots = {}
     PubSub.subscribe 'vcr.play',        (m, data)=> @vcrPlay()

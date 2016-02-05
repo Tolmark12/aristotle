@@ -2,6 +2,9 @@ module.exports = class AssetPreloader
   @count :0
 
   constructor: (data, @callback, @progressCallback) ->
+    if !aristotle.soundLibrary?
+      aristotle.soundLibrary = {}
+
     # Create a single object with reference to
     # all the dead file ids
     if !aristotle.deadFiles?
@@ -13,27 +16,59 @@ module.exports = class AssetPreloader
       @callback()
       return
 
-    @preloadAssets data
 
-    # + Possibly destroying at the start of each load would allow us to not need to refresh the page
-    # @preloadQueue.destroy();
+    # Prepare to preload assets
+    ar = []
+    @lookForFiles data, ar
+    [@mp3s, @otherFiles]  = @separateMp3s ar
+    @mp3s                 = @removeDuplicates @mp3s
+    @otherFiles           = @removeDuplicates @otherFiles
+    @soundsLoaded         = 0
+    @totalSounds          = @mp3s.length
 
-  preloadAssets: (@data)->
-    assets = []
-    regex = /.+\.(svg)/
-    @lookForFiles @data, assets, regex
+    # Only load sounds if the training has sound turned on
+    if aristotle.sound
+      # Load all the sounds, one at a time
+      @loadNextSound()
+    else
+      @preloadOtherFiles @otherFiles
 
-    # If there are no assets, return and callback
+  loadNextSound : ()->
+    data =
+      urls      : [@mp3s[@soundsLoaded].src]
+      onload    : @onSoundLoaded
+      onloaderr : @onSoundError
+
+    sound           = new Howl(data).load()
+    @loadingSoundId = @mp3s[@soundsLoaded].id
+    aristotle.soundLibrary[ @loadingSoundId ] = sound
+
+  onSoundLoaded : () =>
+    @soundsLoaded++
+    @maybeLoadNext()
+
+  onSoundError  : () =>
+    @soundsLoaded++
+    aristotle.soundLibrary[ @loadingSoundId ] = "ERRORED"
+    @maybeLoadNext()
+
+  maybeLoadNext : () ->
+    if @soundsLoaded != @totalSounds
+      @loadNextSound()
+    else
+      @preloadJson
+      @preloadOtherFiles @otherFiles
+      for mp3 in @mp3s
+        console.log mp3.id + ' : ' + mp3.src
+
+
+
+  preloadOtherFiles   : (assets) ->
     if assets.length == 0
       @callback()
       return
 
-    createjs.Sound.alternateExtensions = ["mp3", "m4a"]
     @preloadQueue = new createjs.LoadQueue()
-    @preloadQueue.installPlugin createjs.Sound
-
-    window.jax = @preloadQueue
-
     @erroredFiles = []
     # # On load progress
     if @progressCallback?
@@ -41,10 +76,6 @@ module.exports = class AssetPreloader
     @completeHandler   = @preloadQueue.on "complete", @completeHandler
     @errorHandler      = @preloadQueue.on "error",    @errorHandler
 
-    assets = @removeDuplicates assets
-
-    # Put the mp3's first!!!
-    assets = @orderFilesForLoad assets
     # Load it!
     @preloadQueue.loadManifest assets
 
@@ -92,7 +123,7 @@ module.exports = class AssetPreloader
     @preloadQueue.removeEventListener @completeHandler
     @preloadQueue.removeEventListener @errorHandler
 
-  lookForFiles : (item, storage, regex)->
+  lookForFiles : (item, storage)->
     type = typeof item
     if type == "string"
       if  /.mp3|.m4a|.json/.test(item)
@@ -102,10 +133,10 @@ module.exports = class AssetPreloader
     else if type == "object"
       if Array.isArray(item)
         for child in item
-          @lookForFiles child, storage, regex
+          @lookForFiles child, storage
       else
         for key, child of item
-          @lookForFiles child, storage, regex
+          @lookForFiles child, storage
 
   orderFilesForLoad : (ar) ->
     mp3s  = []
@@ -120,6 +151,18 @@ module.exports = class AssetPreloader
         other.push item
     return mp3s.concat other, json
 
+  separateMp3s : (ar) ->
+    mp3s  = []
+    json  = []
+    other = []
+    for item in ar
+      if /.mp3|.m4a/.test item.id
+        mp3s.push item
+      else if /.json/.test item.id
+        json.push item
+      else
+        other.push item
+    return [ mp3s, other.concat(json) ]
 
   removeDuplicates : (ar)->
     items = {}
