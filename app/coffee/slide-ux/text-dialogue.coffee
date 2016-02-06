@@ -40,6 +40,9 @@ module.exports = class TextDialogue
     @sequence = new Sequence @timeline
     @playAction @sequence.getCurrentItem().action
 
+
+  # WOAH! This method has gotten way out of hand,
+  # break it up into functional chunks!!
   say : (text, audio, next, txtPos) ->
     # If there is text, show it
     if text?
@@ -60,21 +63,31 @@ module.exports = class TextDialogue
         @track.destroy()
         @track = null
 
-      # If this audio file errored out on load..
+      # If this audio file errored out on load, or the sound is disabled
       if aristotle.deadFiles[audio]? || !aristotle.sound
         PubSub.publish 'cc.temp.on'
-        if next == "audio"
-          @timeout = aristotle.timeout ()=>
+
+        # If the next item in the list was meant to trigger at the end
+        # of the sound, or at the end of the sound we are running an action:
+        if next == "audio" || typeof next == "object"
+          me = @
+          # Wait as long as the audio would have played, then either play
+          # the next item in the list, or run an aristotle command
+          @timeout = aristotle.timeout ()->
             PubSub.publish 'cc.temp.off'
-            @playNextAction()
+            if next == 'audio'
+              me.playNextAction()
+            else if typeof next == "object"
+              aristotle.commander.do next
           ,
             70 * text.length # (our dialogue averages about 70 ms per character)
 
       else
         @track = new AudioTrack(audio)
         if @track != false
-          # Play, then on complete, play the next action if that is how next is defined
 
+          # Play, then on complete, play the next action if that
+          # is how next is defined
           @track.play {}, ()=>
             if !@track?
               @playNextAction()

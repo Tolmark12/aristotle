@@ -64,12 +64,10 @@ module.exports = class ClosedCaption
 
   # Temporarily enable CC because an audio file couldn't load
   tempEnable  : () ->
-    console.log "temp enabling..."
     @oldCcWasOff = !@ccIsOn
     @turnCcOn()
   # If CC was temporarily enabled, disable it after broken audio file is finished
   tempDisable : () ->
-    console.log "temp disabling..."
     if @oldCcWasOff
       @oldCcWasOff = null
       @turnCcOff()
