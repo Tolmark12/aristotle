@@ -30,13 +30,13 @@ module.exports = class AudioTrack
 
   stop : ()-> @sound.stop()
 
-  destroy : ()->
+  destroy : (doUnloadFromMemory)->
     @isDead = true
     @sound.stop()
     @destroyEvents()
-    # @sound.destroy()
+    if doUnloadFromMemory
+      @sound.unload()
     @sound = null
-    log "  +> track#{@id} destroyed"
 
   config : (config) ->
     if !@sound? then return

@@ -34,6 +34,7 @@ module.exports = class AssetPreloader
       @preloadOtherFiles @otherFiles
 
   loadNextSound : ()->
+    console.log @mp3s[@soundsLoaded].src
     data =
       urls      : [@mp3s[@soundsLoaded].src]
       onload    : @onSoundLoaded
@@ -58,10 +59,6 @@ module.exports = class AssetPreloader
     else
       @preloadJson
       @preloadOtherFiles @otherFiles
-      for mp3 in @mp3s
-        console.log mp3.id + ' : ' + mp3.src
-
-
 
   preloadOtherFiles   : (assets) ->
     if assets.length == 0

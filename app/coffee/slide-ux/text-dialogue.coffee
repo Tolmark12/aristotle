@@ -60,7 +60,7 @@ module.exports = class TextDialogue
       # If there is an old undestroyed track, take care of it
       if @track?
         @track.stop()
-        @track.destroy()
+        @track.destroy true
         @track = null
 
       # If this audio file errored out on load, or the sound is disabled
@@ -92,7 +92,7 @@ module.exports = class TextDialogue
             if !@track?
               @playNextAction()
               return
-            @track.destroy()
+            @track.destroy true
             @track = null
             @actor.stopTalking()
             @actor.hideText()
