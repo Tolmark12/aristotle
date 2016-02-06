@@ -4,7 +4,9 @@
       .flip             { transform: scaleX(-1); }
       .words            { display:flex; flex-direction:column; align-items:center; text-align:center; margin:0 100px; white-space:nowrap;
         .title          { color: $yeller; text-transform:uppercase; font-weight:bold; font-size:20px; letter-spacing:0.2em; }
-        .sub-title      { color:#5D5F63; text-transform:uppercase; font-size:15px; margin-top:10px; letter-spacing:0.2em; }
+        .sub-title      { color:#5D5F63; text-transform:uppercase; font-size:15px; margin-top:10px; letter-spacing:0.2em;
+          span          { display:block; font-size:12px; letter-spacing:0; color:#345D6E; }
+        }
       }
     }
     .bar                { width:650px; height:9px; position:relative; margin-top:60px;

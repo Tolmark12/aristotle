@@ -1918,10 +1918,16 @@ input {
           font-size: 20px;
           letter-spacing: 0.2em; }
         .chapter-heading-bg .chapter-heading .title .words .sub-title {
-          color: white;
+          color: #5D5F63;
           text-transform: uppercase;
-          font-size: 20px;
+          font-size: 15px;
+          margin-top: 10px;
           letter-spacing: 0.2em; }
+          .chapter-heading-bg .chapter-heading .title .words .sub-title span {
+            display: block;
+            font-size: 12px;
+            letter-spacing: 0;
+            color: #345D6E; }
     .chapter-heading-bg .chapter-heading .bar {
       width: 650px;
       height: 9px;

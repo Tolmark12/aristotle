@@ -35,7 +35,6 @@ module.exports = class AudioTrack
     @sound.stop()
     @destroyEvents()
     if doUnloadFromMemory
-      console.log "unloading.. #{@src}"
       delete aristotle.soundLibrary[@src]
       @sound.unload()
     @sound = null

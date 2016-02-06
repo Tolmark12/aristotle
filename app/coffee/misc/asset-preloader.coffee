@@ -38,6 +38,7 @@ module.exports = class AssetPreloader
       @preloadOtherFiles @otherFiles
 
   loadNextSound : ()->
+    @setContextCb "Loading Sounds  <span>#{@mp3s[@soundsLoaded].id}</span>"
     data =
       urls      : [@mp3s[@soundsLoaded].src]
       onload    : @onSoundLoaded

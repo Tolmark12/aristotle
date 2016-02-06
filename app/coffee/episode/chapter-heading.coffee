@@ -18,7 +18,7 @@ module.exports = class ChapterHeading
     @$fg.css width: "#{Math.round(perc*100)}%"
 
   setLoadingContext : (message) ->
-    $(".sub-title" , @$node).text message
+    $(".sub-title" , @$node).html message
 
   complete : ()=>
     @$node.addClass 'complete'
