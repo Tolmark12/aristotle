@@ -10,6 +10,10 @@ module.exports = class AudioTrack
     @sound         = aristotle.soundLibrary[@src]
 
   play : (config={}, @onComplete) ->
+    if !@sound?
+      appInsights.trackException "Tried to play the sound `#{@src}` that didn't exist for some reason"
+      return
+
     @config config
     if @onComplete?
       @addOnComplete()
