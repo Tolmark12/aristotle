@@ -1,34 +1,36 @@
 module.exports = class SVGAnimation
 
+
+  # WHOA! THIS NEEDS A SERIOUS CLEANUP
   constructor: ( el, json, data, hardCopyData=false ) ->
     @eventHandlers = []
     if !data.loop? then data.loop = false
-
     if hardCopyData
       parsedJson = JSON.parse(JSON.stringify(preloader.preloadQueue.getResult(json)))
     else
       parsedJson = preloader.preloadQueue.getResult json
 
-    if !parsedJson?
-      return
+    config =
+       wrapper       : el[0]
+       animType      : 'svg'
+       loop          : data.loop
+       prerender     : true
+       autoplay      : false
 
-    dir = aristotle.getAssetPath json, true
+    # We have the json
+    if parsedJson?
+      dir = aristotle.getAssetPath json, true
 
-    # Check for images, if we find some, point to the right path
-    for item in parsedJson.assets
-      if item.p?
-        item.p = "#{dir}#{item.p}"
+      # Check for images, if we find some, point to the right path
+      for item in parsedJson.assets
+        if item.p?
+          item.p = "#{dir}#{item.p}"
+      config.animationData = parsedJson
+    else
+      config.path = aristotle.getAssetPath json
 
-    @animation = bodymovin.loadAnimation {
-       wrapper   : el[0]
-       animType  : 'svg'
-       loop      : data.loop
-       prerender : true
-       autoplay  : false
-       path      : 'episodes/episode0/animations'
-       animationData: parsedJson
-      #  path      : json
-     }
+
+    @animation = bodymovin.loadAnimation config
 
     if data.nativeEvents?
       @addNativeEvents data.nativeEvents
@@ -36,14 +38,28 @@ module.exports = class SVGAnimation
     if data.vcr && !data.jumpToEnd
       PubSub.publish 'vcr-control.show', @
 
-    if data.jumpToEnd?
-      @animation.setCurrentRawFrameValue @animation.totalFrames
-    else
-      if data.delay?
-        aristotle.timeout @play, data.delay
+    # We have the json
+    if parsedJson?
+      if data.jumpToEnd?
+        @animation.setCurrentRawFrameValue @animation.totalFrames
       else
-        @play()
-    @addEvents data
+        if data.delay?
+          aristotle.timeout @play, data.delay
+        else
+          @play()
+          @addEvents data
+
+    # We dont' have the json yet, so we have to load it
+    else
+      @animation.addEventListener 'data_ready', ()=>
+        if data.jumpToEnd?
+          @animation.setCurrentRawFrameValue @animation.totalFrames
+        else
+          if data.delay?
+            aristotle.timeout @play, data.delay
+          else
+            @play()
+        @addEvents data
 
 
   addEvents : (data) ->

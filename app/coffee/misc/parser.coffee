@@ -29,17 +29,20 @@ module.exports = class Parser
       if typeof item == "object"
         @parseObject item
 
-  getAssetPath : (asset) =>
-    if       /map(.+)?\.json/.test(asset)        then contentDir = ""
-    else if  /.mp3|.m4a/.test(asset)                then contentDir = "sounds/"
+  getAssetPath : (asset, justGetTheParentDir=false) =>
+    if       /map(.+)?\.json/.test(asset)            then contentDir = ""
+    else if  /.mp3|.m4a/.test(asset)                 then contentDir = "sounds/"
     else if  /.json/.test(asset)                     then contentDir = "animations/"
     else if  /.svg|.jpg|.jpeg|.png|.mp4/.test(asset) then contentDir = "assets/"
 
     if asset.charAt(0) == "~"
       pathId = asset.substr(1, 1)
-      asset      = asset.substr(3)
+      asset  = asset.substr(3)
     else
       pathId = aristotle.episodeNum
+
+    if justGetTheParentDir
+      asset = ""
 
     # global path : ~g/some-asset.mp3
     if pathId == "g"

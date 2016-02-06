@@ -106,14 +106,14 @@ module.exports = class Ctanlee
       when "unhappy"  then path = 'ctanlee-unhappy.json'
       else                 path = 'ctanlee-idle.json'
 
-    path = aristotle.getAssetPath "~g/ctanlee/#{path}"
+    path = "~g/ctanlee/#{path}"
     @oldAnimation = @animation
     data =
       delay: resetDuration
       nativeEvents:
         data_ready : ()=> @destroyOldFace()
         complete   : ()=> @idle()
-    @animation = new Animation @$currentAnimDiv, path, data
+    @animation = new Animation @$currentAnimDiv, path, data, true
 
   destroyOldFace : () ->
     if @oldAnimation?

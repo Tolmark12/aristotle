@@ -29,16 +29,17 @@ module.exports = class AssetPreloader
     # Only load sounds if the training has sound turned on
     if aristotle.sound
       # Load all the sounds, one at a time
-      if @setContextCb
+      if @setContextCb?
         @setContextCb "Loading Sounds"
       @loadNextSound()
     else
-      if @setContextCb
+      if @setContextCb?
         @setContextCb "Loading Animation"
       @preloadOtherFiles @otherFiles
 
   loadNextSound : ()->
-    @setContextCb "Loading Sounds  <span>#{@mp3s[@soundsLoaded].id}</span>"
+    if @setContextCb?
+      @setContextCb "Loading Sounds  <span>#{@mp3s[@soundsLoaded].id}</span>"
     data =
       src         : [@mp3s[@soundsLoaded].src]
       onload      : @onSoundLoaded
@@ -60,7 +61,8 @@ module.exports = class AssetPreloader
     @maybeLoadNext()
 
   maybeLoadNext : () ->
-    @progressCb @soundsLoaded/@totalSounds
+    if @progressCb?
+      @progressCb @soundsLoaded/@totalSounds
     if @soundsLoaded != @totalSounds
       @loadNextSound()
     else
@@ -69,6 +71,7 @@ module.exports = class AssetPreloader
       @preloadOtherFiles @otherFiles
 
   preloadOtherFiles   : (assets) ->
+    window.preloader = @
     if assets.length == 0
       @callback()
       return

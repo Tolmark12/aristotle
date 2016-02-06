@@ -69,7 +69,7 @@ module.exports = class Layer
 
   addAnimation : ($holder, layerData) ->
     @isAnimation = true
-    @animation  = new SVGAnimation $holder, aristotle.getAssetPath(layerData.content), layerData
+    @animation  = new SVGAnimation $holder, layerData.content, layerData
     if layerData.cache
       @animation.addOnComplete ()=>
         # Added a timeout because reconstituting animations required us to
