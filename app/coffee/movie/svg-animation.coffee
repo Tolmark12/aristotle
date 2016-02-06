@@ -1,32 +1,49 @@
 module.exports = class SVGAnimation
 
-  constructor: ( el, json, data ) ->
+  constructor: ( el, json, data, hardCopyData=false ) ->
     @eventHandlers = []
     if !data.loop? then data.loop = false
+
+    if hardCopyData
+      parsedJson = JSON.parse(JSON.stringify(preloader.preloadQueue.getResult(json)))
+    else
+      parsedJson = preloader.preloadQueue.getResult json
+
+    if !parsedJson?
+      return
+
+    dir = aristotle.getAssetPath json, true
+
+    # Check for images, if we find some, point to the right path
+    for item in parsedJson.assets
+      if item.p?
+        item.p = "#{dir}#{item.p}"
+
     @animation = bodymovin.loadAnimation {
        wrapper   : el[0]
        animType  : 'svg'
        loop      : data.loop
        prerender : true
        autoplay  : false
-       path      : json
+       path      : 'episodes/episode0/animations'
+       animationData: parsedJson
+      #  path      : json
      }
-    if data.nativeEvents? then @addNativeEvents data.nativeEvents
+
+    if data.nativeEvents?
+      @addNativeEvents data.nativeEvents
 
     if data.vcr && !data.jumpToEnd
       PubSub.publish 'vcr-control.show', @
 
-    handle = @animation.addEventListener 'data_ready', ()=>
-      if data.jumpToEnd?
-        @animation.setCurrentRawFrameValue @animation.totalFrames
+    if data.jumpToEnd?
+      @animation.setCurrentRawFrameValue @animation.totalFrames
+    else
+      if data.delay?
+        aristotle.timeout @play, data.delay
       else
-        if data.delay?
-          aristotle.timeout @play, data.delay
-        else
-          @play()
-      @addEvents data
-
-    @trackEventHandler 'data_ready', handle
+        @play()
+    @addEvents data
 
 
   addEvents : (data) ->
