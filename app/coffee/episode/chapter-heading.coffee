@@ -11,11 +11,14 @@ module.exports = class ChapterHeading
     @preload data
 
   preload : (data) ->
-    preloader = new AssetPreloader data, @complete, @update
+    preloader = new AssetPreloader data, @complete, @update, @setLoadingContext
 
   update : (perc) =>
     if perc > 1 then perc = 1 # Don't allow the bar to grow longer than 1..
     @$fg.css width: "#{Math.round(perc*100)}%"
+
+  setLoadingContext : (message) ->
+    $(".sub-title" , @$node).text message
 
   complete : ()=>
     @$node.addClass 'complete'

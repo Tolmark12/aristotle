@@ -1,7 +1,7 @@
 module.exports = class AssetPreloader
   @count :0
 
-  constructor: (data, @callback, @progressCallback) ->
+  constructor: (data, @callback, @progressCb, @setContextCb) ->
     if !aristotle.soundLibrary?
       aristotle.soundLibrary = {}
 
@@ -29,12 +29,15 @@ module.exports = class AssetPreloader
     # Only load sounds if the training has sound turned on
     if aristotle.sound
       # Load all the sounds, one at a time
+      if @setContextCb
+        @setContextCb "Loading Sounds"
       @loadNextSound()
     else
+      if @setContextCb
+        @setContextCb "Loading Animation"
       @preloadOtherFiles @otherFiles
 
   loadNextSound : ()->
-    console.log @mp3s[@soundsLoaded].src
     data =
       urls      : [@mp3s[@soundsLoaded].src]
       onload    : @onSoundLoaded
@@ -54,10 +57,12 @@ module.exports = class AssetPreloader
     @maybeLoadNext()
 
   maybeLoadNext : () ->
+    @progressCb @soundsLoaded/@totalSounds
     if @soundsLoaded != @totalSounds
       @loadNextSound()
     else
-      @preloadJson
+      if @setContextCb
+        @setContextCb "Loading Animation"
       @preloadOtherFiles @otherFiles
 
   preloadOtherFiles   : (assets) ->
@@ -68,7 +73,7 @@ module.exports = class AssetPreloader
     @preloadQueue = new createjs.LoadQueue()
     @erroredFiles = []
     # # On load progress
-    if @progressCallback?
+    if @progressCb?
       @progressHandler = @preloadQueue.on "progress", @progressHandler
     @completeHandler   = @preloadQueue.on "complete", @completeHandler
     @errorHandler      = @preloadQueue.on "error",    @errorHandler
@@ -86,7 +91,7 @@ module.exports = class AssetPreloader
   # ------------------------------------ Event Handlers
 
   progressHandler : (e)=>
-    @progressCallback e.loaded
+    @progressCb e.loaded
 
   completeHandler : ()=>
     # If there are files that couldn't load, try to load them again.
