@@ -42,7 +42,7 @@ chapters:
       - !!inc/file ./episodes/episode1/yaml/_building-selector.yaml
       # 1 Selector Build ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: .2, slot: ambience} }
+        #action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: .2, slot: ambience} }
         sfx:
           - {content: $facilitySFX, volume: .1}
         movie:
