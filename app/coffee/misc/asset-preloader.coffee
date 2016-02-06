@@ -40,9 +40,10 @@ module.exports = class AssetPreloader
   loadNextSound : ()->
     @setContextCb "Loading Sounds  <span>#{@mp3s[@soundsLoaded].id}</span>"
     data =
-      urls      : [@mp3s[@soundsLoaded].src]
-      onload    : @onSoundLoaded
-      onloaderr : @onSoundError
+      src         : [@mp3s[@soundsLoaded].src]
+      onload      : @onSoundLoaded
+      onloaderror : @onSoundError
+      preload     : false
 
     sound           = new Howl(data).load()
     @loadingSoundId = @mp3s[@soundsLoaded].id
@@ -52,7 +53,8 @@ module.exports = class AssetPreloader
     @soundsLoaded++
     @maybeLoadNext()
 
-  onSoundError  : () =>
+  onSoundError  : (id, errorCode) =>
+    appInsights.trackEvent "Preload : Error loading Sound. ID:#{id}, CODE:#{errorCode}"
     @soundsLoaded++
     aristotle.soundLibrary[ @loadingSoundId ] = "ERRORED"
     @maybeLoadNext()
