@@ -3,6 +3,8 @@ module.exports = class SVGAnimation
 
   # WHOA! THIS NEEDS A SERIOUS CLEANUP
   constructor: ( el, json, data, hardCopyData=false ) ->
+    if data.reusable then hardCopyData = true
+
     @eventHandlers = []
     if !data.loop? then data.loop = false
     if hardCopyData
@@ -40,7 +42,7 @@ module.exports = class SVGAnimation
 
     # We have the json
     if parsedJson?
-      
+
       # If they're trying to listen for data ready, fire
       # that right away, because the data is already loaded
       if data.nativeEvents?

@@ -441,6 +441,8 @@ chapters:
     title: Chapter 3
     subtitle: Recovering From Battle
     kind: chapter
+    dev:
+      startIndex: 12
     slides:
       # 3 Dialogue Recovery Plan ==========================================
       -
@@ -655,7 +657,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
+            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete], reusable: true }
             - {depth: 4, content: clear }
             - {depth: 12, content: clear }
             - {depth: 11, content: clear }
@@ -669,14 +671,14 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
+            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete], reusable: true }
             - {depth: 5, content: clear }
         duration: {kind: listen, event: layer.13.complete }
       # 4 - 3,4,5,6 Clear ==========================================
       -
         movie:
           layers:
-            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete] }
+            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete], reusable: true }
             - {depth: 3, content: clear }
         duration: {kind: listen, event: layer.13.complete }
       # 4 - 0,1,2 Clear ==========================================
