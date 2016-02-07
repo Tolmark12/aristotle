@@ -84,6 +84,8 @@ module.exports = class AssetPreloader
     @completeHandler   = @preloadQueue.on "complete", @completeHandler
     @errorHandler      = @preloadQueue.on "error",    @errorHandler
 
+    @addCtanleeAnimations assets
+
     # Load it!
     @preloadQueue.loadManifest assets
 
@@ -186,6 +188,24 @@ module.exports = class AssetPreloader
     for item in erroredFiles
       aristotle.deadFiles[item.id] = ""
     appInsights.trackEvent "Preload : Unable To Load Files", { TotalFiles:erroredFiles.length, Files: @printStr(erroredFiles), SessionId: aristotle.globals.get("sessionKey"), Episode:aristotle.episodeNum }
+
+
+  addCtanleeAnimations : (assets) ->
+    ar = [
+      'ctanlee-angry.json'
+      'ctanlee-happy.json'
+      'ctanlee-idle.json'
+      'ctanlee-look-down.json'
+      'ctanlee-look-left.json'
+      'ctanlee-look-right.json'
+      'ctanlee-surprise.json'
+      'ctanlee-unhappy.json'
+      'ctanlee-idle.json'
+    ]
+
+    for item in ar
+      ctanlee = "~g/ctanlee/#{item}"
+      assets.push {src:"#{aristotle.getAssetPath(ctanlee)}",  id:ctanlee}
 
   printStr : (ar) ->
     returnAr = []

@@ -40,6 +40,13 @@ module.exports = class SVGAnimation
 
     # We have the json
     if parsedJson?
+      
+      # If they're trying to listen for data ready, fire
+      # that right away, because the data is already loaded
+      if data.nativeEvents?
+        if data.nativeEvents.data_ready?
+          data.nativeEvents.data_ready()
+
       if data.jumpToEnd?
         @animation.setCurrentRawFrameValue @animation.totalFrames
       else

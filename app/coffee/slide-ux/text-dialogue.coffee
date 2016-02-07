@@ -89,6 +89,7 @@ module.exports = class TextDialogue
           # Play, then on complete, play the next action if that
           # is how next is defined
           @track.play {}, ()=>
+
             if !@track?
               @playNextAction()
               return
