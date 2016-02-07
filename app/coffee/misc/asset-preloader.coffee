@@ -41,12 +41,11 @@ module.exports = class AssetPreloader
     if @setContextCb?
       @setContextCb "Loading Sounds  <span>#{@mp3s[@soundsLoaded].id}</span>"
     data =
-      src         : [@mp3s[@soundsLoaded].src]
+      urls        : [@mp3s[@soundsLoaded].src]
       onload      : @onSoundLoaded
       onloaderror : @onSoundError
-      preload     : false
 
-    sound           = new Howl(data).load()
+    sound           = new Howl data
     @loadingSoundId = @mp3s[@soundsLoaded].id
     aristotle.soundLibrary[ @loadingSoundId ] = sound
 
