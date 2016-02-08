@@ -3,55 +3,55 @@
     "./sprites/episode1/chapter3/sprite.mp3"
   ],
   "sprite": {
-    "MU_Attack_Music": [
+    "~g/MU_Attack_Music.mp3": [
       0,
       27428.571428571428
     ],
-    "CIN_DoorOpen": [
+    "~1/CIN_DoorOpen.mp3": [
       28250,
       1097.142857142856
     ],
-    "CIN_HumanWalking": [
+    "~1/CIN_HumanWalking.mp3": [
       30500,
       2063.6734693877515
     ],
-    "SFX_Camera": [
+    "~1/SFX_Camera.mp3": [
       33750,
       1149.3877551020405
     ],
-    "Story_2_Ctanlee_12": [
+    "Story_2_Ctanlee_12.mp3": [
       36000,
       3604.897959183674
     ],
-    "Story_2_Ctanlee_X38": [
+    "Story_2_Ctanlee_X38.mp3": [
       40250,
       2011.4285714285743
     ],
-    "Story_2_Ctanlee_X39": [
+    "Story_2_Ctanlee_X39.mp3": [
       43500,
       3944.489795918365
     ],
-    "Story_2_Ctanlee_15": [
+    "Story_2_Ctanlee_15.mp3": [
       47750,
       3970.612244897957
     ],
-    "SFX_Tackle": [
+    "~1/SFX_Tackle.mp3": [
       52000,
       1933.0612244897977
     ],
-    "Story_2_Ctanlee_19": [
+    "Story_2_Ctanlee_19.mp3": [
       54250,
       2768.979591836732
     ],
-    "Story_2_Ctanlee_20": [
+    "Story_2_Ctanlee_20.mp3": [
       57500,
       2977.9591836734694
     ],
-    "Story_2_Ctanlee_21": [
+    "Story_2_Ctanlee_21.mp3": [
       60750,
       7235.918367346941
     ],
-    "SFX_Level_CadetFirstClass": [
+    "~g/SFX_Level_CadetFirstClass.mp3": [
       69000,
       7941.224489795914
     ]

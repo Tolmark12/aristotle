@@ -3,87 +3,87 @@
     "./sprites/episode5/chapter2/sprite.mp3"
   ],
   "sprite": {
-    "MU_Attack_Music": [
+    "~g/MU_Attack_Music.mp3": [
       0,
       27428.571428571428
     ],
-    "CIN_Quarantine": [
+    "~3/CIN_Quarantine.mp3": [
       28250,
       2377.1428571428573
     ],
-    "Story_6_Sektimus_1": [
+    "Story_6_Sektimus_1.mp3": [
       31500,
       8489.795918367348
     ],
-    "Story_6_Ctanlee_1": [
+    "Story_6_Ctanlee_1.mp3": [
       40750,
       5825.306122448978
     ],
-    "Story_6_Sektimus_2": [
+    "Story_6_Sektimus_2.mp3": [
       47000,
       7157.551020408164
     ],
-    "Story_6_Ctanlee_2": [
+    "Story_6_Ctanlee_2.mp3": [
       55250,
       3369.7959183673447
     ],
-    "Story_6_Warcore_1": [
+    "Story_6_Warcore_1.mp3": [
       59500,
       9064.489795918362
     ],
-    "Story_6_Ctanlee_3": [
+    "Story_6_Ctanlee_3.mp3": [
       69750,
       3604.897959183674
     ],
-    "MU_Attack_With_Defense_Music": [
+    "~g/MU_Attack_With_Defense_Music.mp3": [
       74000,
       27428.57142857143
     ],
-    "SFX_AttackSlamdown_BotTron": [
+    "~g/SFX_AttackSlamdown_BotTron.mp3": [
       102250,
       9351.836734693876
     ],
-    "SFX_BotTron_Attack": [
+    "~5/SFX_BotTron_Attack.mp3": [
       112500,
       30432.6530612245
     ],
-    "Story_6_Ctanlee_4": [
+    "Story_6_Ctanlee_4.mp3": [
       143750,
       4257.959183673478
     ],
-    "Story_6_Ctanlee_5": [
+    "Story_6_Ctanlee_5.mp3": [
       149000,
       2298.775510204081
     ],
-    "Story_6_Sektimus_3": [
+    "Story_6_Sektimus_3.mp3": [
       152250,
       4884.897959183661
     ],
-    "Story_6_Ctanlee_6": [
+    "Story_6_Ctanlee_6.mp3": [
       157500,
       5433.469387755111
     ],
-    "Story_6_Ctanlee_7": [
+    "Story_6_Ctanlee_7.mp3": [
       163750,
       1802.4489795918441
     ],
-    "Story_6_Ctanlee_8": [
+    "Story_6_Ctanlee_8.mp3": [
       166000,
       2403.265306122449
     ],
-    "Story_6_Sektimus_4": [
+    "Story_6_Sektimus_4.mp3": [
       169250,
       8411.428571428558
     ],
-    "Story_6_Ctanlee_10": [
+    "Story_6_Ctanlee_10.mp3": [
       178500,
       7340.408163265294
     ],
-    "Story_6_Sektimus_5": [
+    "Story_6_Sektimus_5.mp3": [
       186750,
       5746.938775510216
     ],
-    "Story_6_Ctanlee_11": [
+    "Story_6_Ctanlee_11.mp3": [
       193000,
       3422.0408163265292
     ]

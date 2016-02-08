@@ -17,9 +17,6 @@ module.exports = class AudioSprite
   off    : (event, fn, id) -> @sound.off event, fn, id
 
 
-  onLoad : () =>
-    @loadedCb()
-    console.log "loaded!"
+  onLoad : () => @loadedCb()
 
-  onLoadError : () ->
-    console.log "errored"
+  onLoadError : () -> console.log "Could not load the audio sprite"
