@@ -92,14 +92,15 @@ module.exports = class SVGAnimation
   play    : () => @animation.play();
   stop    : () -> @animation.stop()
   destroy : () ->
-    # if @animation?
-    #   @destroyEvents()
-    #   try
-    #     @animation.destroy()
-    #   catch error
-    #     console.log error
-    #     console.log @animation.renderer
-    #     console.log @animation.renderer.layers
+    if @animation?
+      @destroyEvents()
+      try
+        @animation.destroy()
+      catch error
+        console.log "couldn't destroy animation"
+        # console.log error
+        # console.log @animation.renderer
+        # console.log @animation.renderer.layers
 
   trackEventHandler : (event, handler) ->
     @eventHandlers.push {event:event, handler:handler}

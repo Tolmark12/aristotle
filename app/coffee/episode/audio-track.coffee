@@ -2,7 +2,6 @@ module.exports = class AudioTrack
 
   @count = 0
 
-
   constructor: (@src) ->
     @id            = AudioTrack.count++
     @eventHandlers = []
@@ -13,20 +12,13 @@ module.exports = class AudioTrack
     if @onComplete?
       @addOnComplete()
 
-    # @config config
-    # @sound.play()
-
-
   addOnComplete : () ->
     handle = ()=>
       @onComplete()
     aristotle.soundLib.on 'end', handle, @soundId
-    # @sound.on "end", handle
     @trackEventHandler 'end', handle
 
-  stop : ()->
-    console.log "stop!"
-    aristotle.soundLib.stop @soundId
+  stop : ()-> aristotle.soundLib.stop @soundId
 
   destroy : (doUnloadFromMemory)->
     @isDead = true
@@ -46,34 +38,11 @@ module.exports = class AudioTrack
     if config.volume?
       @sound.volume config.volume
 
-  fade : (fadeDurationMs, direction=1, doDestroy=false) ->
-    seconds        = fadeDurationMs/1000
-    ticksPerSecond = 20
-    ticks          = seconds * ticksPerSecond
-    tickDuration   = fadeDurationMs / ticks
-    if direction == 1
-      incrament    = (1 - @sound.volume) / ticks
-    else
-      incrament    = @sound.volume / ticks * -1
-    sound          = @sound
-    tickCounter    = 0
-    fadeInterval   = setInterval ()=>
-      sound.volume += incrament
-      if ++tickCounter == ticks
-        clearInterval(fadeInterval)
-        if doDestroy
-          @destroy()
-    ,
-      tickDuration
-
   fadeOut : (fadeDurationMs, doDestroy=false)->
-    return if @isDead
-    @fade fadeDurationMs, -1, doDestroy
+    aristotle.soundLib.volume 0, @soundId
 
   fadeIn  : (fadeDurationMs, doDestroy=false)->
-    return if @isDead
-    @fade fadeDurationMs, 1, doDestroy
-
+    aristotle.soundLib.volume 1, @soundId
 
   trackEventHandler : (event, handler) ->
     @eventHandlers.push {event:event, handler:handler}
