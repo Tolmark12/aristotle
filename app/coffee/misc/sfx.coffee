@@ -47,10 +47,6 @@ module.exports = class SoundFX
       @addSoundEffect data
 
   addSoundEffect : (data) ->
-    if aristotle.deadFiles[data.content]?
-      @clearSlotIfNeeded data
-      return
-
     if data.delay?
       aristotle.timeout ()=>
         @playSound data, true

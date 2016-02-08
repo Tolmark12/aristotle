@@ -7,37 +7,31 @@ module.exports = class AudioTrack
     @id            = AudioTrack.count++
     @eventHandlers = []
     @src           = parse @src
-    @sound         = aristotle.soundLibrary[@src]
 
   play : (config={}, @onComplete) ->
-    if !@sound?
-      appInsights.trackException "Tried to play the sound `#{@src}` that didn't exist for some reason"
-      return
-
-    @config config
+    @soundId = aristotle.soundLib.play @src
     if @onComplete?
       @addOnComplete()
-    @sound.play()
-    # if @onComplete?
-    #   @addOnComplete()
-    # @sound.play config
+
+    # @config config
+    # @sound.play()
+
 
   addOnComplete : () ->
     handle = ()=>
       @onComplete()
-    @sound.on "end", handle
+    aristotle.soundLib.on 'end', handle, @soundId
+    # @sound.on "end", handle
     @trackEventHandler 'end', handle
 
-  stop : ()-> @sound.stop()
+  stop : ()->
+    console.log "stop!"
+    aristotle.soundLib.stop @soundId
 
   destroy : (doUnloadFromMemory)->
     @isDead = true
-    @sound.stop()
+    aristotle.soundLib.stop @soundId
     @destroyEvents()
-    if doUnloadFromMemory
-      delete aristotle.soundLibrary[@src]
-      @sound.unload()
-    @sound = null
 
   config : (config) ->
     if !@sound? then return
@@ -86,4 +80,4 @@ module.exports = class AudioTrack
 
   destroyEvents : () ->
     for evnt in @eventHandlers
-      @sound.off evnt.event, evnt.handler
+      aristotle.soundLib.off evnt.event, evnt.handler, @soundId

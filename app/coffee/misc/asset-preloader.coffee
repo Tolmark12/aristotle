@@ -1,15 +1,9 @@
+AudioSprite = require 'misc/audio-sprite'
+
 module.exports = class AssetPreloader
   @count :0
 
   constructor: (data, @callback, @progressCb, @setContextCb) ->
-    if !aristotle.soundLibrary?
-      aristotle.soundLibrary = {}
-
-    # Create a single object with reference to
-    # all the dead file ids
-    if !aristotle.deadFiles?
-      aristotle.deadFiles = {}
-
     @id = AssetPreloader.count++
     @totalRetries = 0
     if !data?
@@ -17,59 +11,15 @@ module.exports = class AssetPreloader
       return
 
 
-    # Prepare to preload assets
-    ar = []
-    @lookForFiles data, ar
-    [@mp3s, @otherFiles]  = @separateMp3s ar
-    @mp3s                 = @removeDuplicates @mp3s
-    @otherFiles           = @removeDuplicates @otherFiles
-    @soundsLoaded         = 0
-    @totalSounds          = @mp3s.length
+    # Preload the sprite json
+    @files = []
+    data.sprite = "~s/sprite.json"
 
-    # Only load sounds if the training has sound turned on
-    if aristotle.sound
-      # Load all the sounds, one at a time
-      if @setContextCb?
-        @setContextCb "Loading Sounds"
-      @loadNextSound()
-    else
-      if @setContextCb?
-        @setContextCb "Loading Animation"
-      @preloadOtherFiles @otherFiles
+    @lookForFiles data, @files
+    @files = @removeDuplicates @files
+    @preloadFiles @files
 
-  loadNextSound : ()->
-    if @setContextCb?
-      @setContextCb "Loading Sounds  <span>#{@mp3s[@soundsLoaded].id}</span>"
-    data =
-      urls        : [@mp3s[@soundsLoaded].src]
-      onload      : @onSoundLoaded
-      onloaderror : @onSoundError
-
-    sound           = new Howl data
-    @loadingSoundId = @mp3s[@soundsLoaded].id
-    aristotle.soundLibrary[ @loadingSoundId ] = sound
-
-  onSoundLoaded : () =>
-    @soundsLoaded++
-    @maybeLoadNext()
-
-  onSoundError  : (id, errorCode) =>
-    appInsights.trackEvent "Preload : Error loading Sound. ID:#{id}, CODE:#{errorCode}"
-    @soundsLoaded++
-    aristotle.soundLibrary[ @loadingSoundId ] = "ERRORED"
-    @maybeLoadNext()
-
-  maybeLoadNext : () ->
-    if @progressCb?
-      @progressCb @soundsLoaded/@totalSounds
-    if @soundsLoaded != @totalSounds
-      @loadNextSound()
-    else
-      if @setContextCb
-        @setContextCb "Loading Animation"
-      @preloadOtherFiles @otherFiles
-
-  preloadOtherFiles   : (assets) ->
+  preloadFiles   : (assets) ->
     window.preloader = @
     if assets.length == 0
       @callback()
@@ -79,14 +29,21 @@ module.exports = class AssetPreloader
     @erroredFiles = []
     # # On load progress
     if @progressCb?
-      @progressHandler = @preloadQueue.on "progress", @progressHandler
-    @completeHandler   = @preloadQueue.on "complete", @completeHandler
-    @errorHandler      = @preloadQueue.on "error",    @errorHandler
+      @progressHandle = @preloadQueue.on "progress", @onProgress
+    @completeHandle   = @preloadQueue.on "complete", @onComplete
+    @errorHandle      = @preloadQueue.on "error",    @onError
 
     @addCtanleeAnimations assets
 
     # Load it!
     @preloadQueue.loadManifest assets
+
+
+  createAudioSprite : () ->
+    audioSprite = new AudioSprite @spriteLoadComplete
+
+  spriteLoadComplete : () =>
+    @callback @data
 
   tryToLoadErroredFiles : () ->
     log "Attempting to reload #{@erroredFiles.length} files"
@@ -97,10 +54,10 @@ module.exports = class AssetPreloader
 
   # ------------------------------------ Event Handlers
 
-  progressHandler : (e)=>
+  onProgress : (e)=>
     @progressCb e.loaded
 
-  completeHandler : ()=>
+  onComplete : ()=>
     # If there are files that couldn't load, try to load them again.
     if @erroredFiles.length > 0
       # Only try to reload the files `n` number of times
@@ -119,23 +76,26 @@ module.exports = class AssetPreloader
   continueWhenComplete : () ->
     return if @isComplete
     @isComplete = true
-    @callback @data
+    @createAudioSprite()
     @removeEventListeners()
 
-  errorHandler : (e)=>
+  onError : (e)=>
     log "FILE LOAD ERROR : #{e.data.id}"
     createjs.Sound.removeSound e.data.id
     @erroredFiles.push {src: e.data.src, id: e.data.id}
 
   removeEventListeners : () ->
-    @preloadQueue.removeEventListener @progressHandler
-    @preloadQueue.removeEventListener @completeHandler
-    @preloadQueue.removeEventListener @errorHandler
+    @preloadQueue.removeEventListener @progressHandle
+    @preloadQueue.removeEventListener @completeHandle
+    @preloadQueue.removeEventListener @errorHandle
+
+  # ------------------------------------ HELPERS
 
   lookForFiles : (item, storage)->
     type = typeof item
     if type == "string"
-      if  /.mp3|.m4a|.json/.test(item)
+      # if  /.mp3|.m4a|.json/.test(item)
+      if  /.json/.test(item)
         fullPath = "#{aristotle.getAssetPath(item)}"
         storage.push {src:fullPath,  id:item}
 
@@ -182,13 +142,6 @@ module.exports = class AssetPreloader
         newArray.push item
     newArray
 
-  # Create a reference to all of the dead files
-  noteDeadFiles : (erroredFiles) ->
-    for item in erroredFiles
-      aristotle.deadFiles[item.id] = ""
-    appInsights.trackEvent "Preload : Unable To Load Files", { TotalFiles:erroredFiles.length, Files: @printStr(erroredFiles), SessionId: aristotle.globals.get("sessionKey"), Episode:aristotle.episodeNum }
-
-
   addCtanleeAnimations : (assets) ->
     ar = [
       'ctanlee-angry.json'
@@ -213,3 +166,51 @@ module.exports = class AssetPreloader
     returnAr.join ","
 
 window.AssetPreloader = AssetPreloader
+
+# ------------------------------------ ------------------------------------
+
+    # @soundsLoaded    = 0
+    # @totalSounds     = @mp3s.length
+
+    # # Only load sounds if the training has sound turned on
+    # if aristotle.sound
+    #   # Load all the sounds, one at a time
+    #   if @setContextCb?
+    #     @setContextCb "Loading Sounds"
+    #   @loadNextSound()
+    # else
+    #   if @setContextCb?
+    #     @setContextCb "Loading Animation"
+    #   @preloadFiles @files
+
+  # loadNextSound : ()->
+  #   if @setContextCb?
+  #     @setContextCb "Loading Sounds  <span>#{@mp3s[@soundsLoaded].id}</span>"
+  #   data =
+  #     urls        : [@mp3s[@soundsLoaded].src]
+  #     onload      : @onSoundLoaded
+  #     onloaderror : @onSoundError
+  #
+  #   sound           = new Howl data
+  #   @loadingSoundId = @mp3s[@soundsLoaded].id
+  #   aristotle.soundLibrary[ @loadingSoundId ] = sound
+  #
+  # onSoundLoaded : () =>
+  #   @soundsLoaded++
+  #   @maybeLoadNext()
+  #
+  # onSoundError  : (id, errorCode) =>
+  #   appInsights.trackEvent "Preload : Error loading Sound. ID:#{id}, CODE:#{errorCode}"
+  #   @soundsLoaded++
+  #   aristotle.soundLibrary[ @loadingSoundId ] = "ERRORED"
+  #   @maybeLoadNext()
+  #
+  # maybeLoadNext : () ->
+  #   if @progressCb?
+  #     @progressCb @soundsLoaded/@totalSounds
+  #   if @soundsLoaded != @totalSounds
+  #     @loadNextSound()
+  #   else
+  #     if @setContextCb
+  #       @setContextCb "Loading Animation"
+  #     @preloadFiles @files

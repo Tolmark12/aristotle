@@ -15,7 +15,9 @@ module.exports = class Episode
     aristotle.labels      = @trainingData.labels
     @nextRankId           = @trainingData.nextRankId
     @chrome.build()
-    new AssetPreloader @trainingData.action, @begin
+
+    # new AssetPreloader @trainingData.action, @begin
+    @begin()
 
   begin : () =>
     aristotle.devTools.go @trainingData.dev, @trainingData.chapters
@@ -100,8 +102,8 @@ module.exports = class Episode
 
   createChapters : (trainingData) ->
     chapters = []
-    for chapterData in trainingData.chapters
-      chapters.push new Chapter( chapterData, @movie, @ux, @chapterComplete )
+    for chapterData, i in trainingData.chapters
+      chapters.push new Chapter( chapterData, @movie, @ux, @chapterComplete, i )
     @chapters = new Sequence chapters
 
   start           : () ->

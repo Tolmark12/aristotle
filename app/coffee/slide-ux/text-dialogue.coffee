@@ -63,52 +63,53 @@ module.exports = class TextDialogue
         @track.destroy()
         @track = null
 
-      # If this audio file errored out on load, or the sound is disabled
-      if aristotle.deadFiles[audio]? || !aristotle.sound
-        PubSub.publish 'cc.temp.on'
+      # # If this audio file errored out on load, or the sound is disabled
+      # if aristotle.deadFiles[audio]? || !aristotle.sound
+      #   PubSub.publish 'cc.temp.on'
+      #
+      #   # If the next item in the list was meant to trigger at the end
+      #   # of the sound, or at the end of the sound we are running an action:
+      #   if next == "audio" || typeof next == "object"
+      #     me = @
+      #     # Wait as long as the audio would have played, then either play
+      #     # the next item in the list, or run an aristotle command
+      #     @timeout = aristotle.timeout ()->
+      #       PubSub.publish 'cc.temp.off'
+      #       if next == 'audio'
+      #         me.playNextAction()
+      #       else if typeof next == "object"
+      #         aristotle.commander.do next
+      #     ,
+      #       70 * text.length # (our dialogue averages about 70 ms per character)
+      #
+      #else
 
-        # If the next item in the list was meant to trigger at the end
-        # of the sound, or at the end of the sound we are running an action:
-        if next == "audio" || typeof next == "object"
-          me = @
-          # Wait as long as the audio would have played, then either play
-          # the next item in the list, or run an aristotle command
-          @timeout = aristotle.timeout ()->
-            PubSub.publish 'cc.temp.off'
-            if next == 'audio'
-              me.playNextAction()
-            else if typeof next == "object"
-              aristotle.commander.do next
-          ,
-            70 * text.length # (our dialogue averages about 70 ms per character)
+      @track = new AudioTrack(audio)
+      if @track != false
 
-      else
-        @track = new AudioTrack(audio)
-        if @track != false
+        # Play, then on complete, play the next action if that
+        # is how next is defined
+        @track.play {}, ()=>
 
-          # Play, then on complete, play the next action if that
-          # is how next is defined
-          @track.play {}, ()=>
-
-            if !@track?
-              @playNextAction()
-              return
-            @track.destroy()
-            @track = null
-            @actor.stopTalking()
-            @actor.hideText()
-            # If next should trigger the next audio..
-            if next == 'audio'
-              @playNextAction()
-            # else if it's an object, run a general aristotle command
-            else if typeof next == "object"
-              aristotle.commander.do next
-
-        else
+          if !@track?
+            @playNextAction()
+            return
+          @track.destroy()
+          @track = null
+          @actor.stopTalking()
+          @actor.hideText()
+          # If next should trigger the next audio..
           if next == 'audio'
             @playNextAction()
+          # else if it's an object, run a general aristotle command
           else if typeof next == "object"
             aristotle.commander.do next
+
+      else
+        if next == 'audio'
+          @playNextAction()
+        else if typeof next == "object"
+          aristotle.commander.do next
 
 
     # If "next" param is to be a click generated via the actor

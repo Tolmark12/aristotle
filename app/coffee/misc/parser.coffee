@@ -50,6 +50,9 @@ module.exports = class Parser
     # local path : ~l/some-asset.json
     else if pathId == "l"
       return "#{aristotle.localDir}/#{asset}"
+    else if pathId == "s"
+      path = "#{aristotle.episodesDir}/sprites/episode#{aristotle.episodeNum}/chapter#{aristotle.chapterNum}/#{asset}"
+      return path
     # normal path : some-asset.mp3
     else if Number(pathId) != NaN
       return "#{aristotle.episodesDir}/episode#{pathId}/#{contentDir}#{asset}"

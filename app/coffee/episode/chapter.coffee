@@ -3,11 +3,12 @@ ChapterHeading = require 'episode/chapter-heading'
 
 module.exports = class Chapter
 
-  constructor: ( @chapterData, @movie, @ux, @onChapterCompete ) ->
+  constructor: ( @chapterData, @movie, @ux, @onChapterCompete, @chapterIndex ) ->
     @title = @chapterData.title
 
 
   preload : (cb) ->
+    aristotle.chapterNum = @chapterIndex+1
     aristotle.devTools.go @chapterData.dev, @chapterData.slides
     chapterHeading = new ChapterHeading @chapterData, cb
 
