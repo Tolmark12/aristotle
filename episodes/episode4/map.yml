@@ -57,13 +57,13 @@ chapters:
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
           - {content: ~4/CIN_HumanExcited.mp3, delay: 3700, volume: .2 }
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 4700, volume: .2 }
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 13000, volume: .2, loop: 2}
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 4700, volume: .2 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 13000, volume: .2, loop: 2}
           - {content: ~4/CIN_HumanExcited.mp3, delay: 17300, volume: .1 }
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 22500, volume: .2 }
-          - {content: ~4/CIN_DoorOpen.mp3, delay: 23500, volume: 0.1 }
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 27000, volume: .2, loop: 2 }
-          - {content: ~4/CIN_DoorOpen.mp3, delay: 29000, volume: 0.1 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 22500, volume: .2 }
+          #- {content: ~4/CIN_DoorOpen.mp3, delay: 23500, volume: 0.1 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 27000, volume: .2, loop: 2 }
+          #- {content: ~4/CIN_DoorOpen.mp3, delay: 29000, volume: 0.1 }
           - {content: ~g/SFX_AttackSlamdown_UnsavoryHuman.mp3, delay: 35000, volume: .3}
           - {content: ~4/CIN_RobotsMovingExplosion.mp3, delay: 51400, volume: .4}
         movie:
@@ -187,8 +187,8 @@ chapters:
       -
         sfx:
           - {content: ~4/CIN_HumanExcited.mp3, delay: 100, volume: .2 }
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 100, volume: .1, loop: 1 }
-          - {content: ~4/CIN_DoorOpen.mp3, delay: 800, volume: .2 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 100, volume: .1, loop: 1 }
+          #- {content: ~4/CIN_DoorOpen.mp3, delay: 800, volume: .2 }
           - {content: ~4/CIN_Typing.mp3, delay: 5700, volume: .05, loop: 2 }
         movie:
           layers:
@@ -225,9 +225,9 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 2500, volume: .1 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 2500, volume: .1 }
           - {content: ~4/CIN_ScannerShock.mp3, delay: 5000, volume: 0.4 }
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 8000, volume: .1 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 8000, volume: .1 }
         movie:
           layers:
             - {depth: 11, content: $accessPassB, vcr: true }
@@ -255,14 +255,14 @@ chapters:
       -
         action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         sfx:
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 4500, volume: .1 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 4500, volume: .1 }
           - {content: $accessSFX, delay: 7600, volume: 0.1 }
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 13000, volume: .1 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 13000, volume: .1 }
           - {content: ~4/CIN_Typing.mp3, delay: 20000, volume: .1, loop: 1 }
           - {content: ~4/CIN_Typing.mp3, delay: 29000, volume: .1 }
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 34000, volume: .1 }
-          - {content: ~4/CIN_DoorOpen.mp3, delay: 37000, volume: .2 }
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 37000, volume: .1, loop: 1 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 34000, volume: .1 }
+          #- {content: ~4/CIN_DoorOpen.mp3, delay: 37000, volume: .2 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 37000, volume: .1, loop: 1 }
           - {content: ~4/CIN_Typing.mp3, delay: 43000, volume: .05 }
         movie:
           layers:
@@ -691,9 +691,9 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2 }
           - {content: ~g/SFX_AttackSlamdown_AuditBot.mp3, delay: 6000, volume: .3}
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 15200, volume: .2, loop: 2 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 15200, volume: .2, loop: 2 }
           - {content: ~4/CIN_BlackOutGrid.mp3, delay: 29500, volume: 1}
         movie:
           layers:
@@ -788,14 +788,14 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2, loop: 3 }
-          - {content: ~4/CIN_DoorOpen.mp3, delay: 13900, volume: .2 }
-          - {content: ~4/CIN_DoorOpen.mp3, delay: 14900, volume: .2 }
-          - {content: ~4/CIN_DoorOpen.mp3, delay: 17500, volume: .2 }
-          - {content: ~4/CIN_DoorOpen.mp3, delay: 23400, volume: .2 }
-          - {content: ~4/CIN_DoorOpen.mp3, delay: 24900, volume: .2 }
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 12900, volume: .2, loop: 5 }
-          - {content: ~4/CIN_HumanWalking.mp3, delay: 27300, volume: .2, loop: 2 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2, loop: 3 }
+          #- {content: ~4/CIN_DoorOpen.mp3, delay: 13900, volume: .2 }
+          #- {content: ~4/CIN_DoorOpen.mp3, delay: 14900, volume: .2 }
+          #- {content: ~4/CIN_DoorOpen.mp3, delay: 17500, volume: .2 }
+          #- {content: ~4/CIN_DoorOpen.mp3, delay: 23400, volume: .2 }
+          #- {content: ~4/CIN_DoorOpen.mp3, delay: 24900, volume: .2 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 12900, volume: .2, loop: 5 }
+          #- {content: ~4/CIN_HumanWalking.mp3, delay: 27300, volume: .2, loop: 2 }
         movie:
           layers:
             - {depth: 11, content: clear }

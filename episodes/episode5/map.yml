@@ -349,7 +349,7 @@ chapters:
         fid: ep5-ch2-sektimus-normal-b
         sfx:
           - {content: ~g/SFX_AttackSlamdown_BotTron.mp3, delay: 12400, volume: .3 }
-          - {content: ~5/SFX_BotTron_Attack.mp3, delay: 20000, volume: 1 }
+          - {content: ~5/SFX_BotTron_Attack.mp3, delay: 35000, volume: 1 }
         movie:
           layers:
             - {depth: 0, content: red-sky.svg }
