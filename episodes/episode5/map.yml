@@ -441,8 +441,6 @@ chapters:
     title: Chapter 3
     subtitle: Recovering From Battle
     kind: chapter
-    dev:
-      startIndex: 12
     slides:
       # 3 Dialogue Recovery Plan ==========================================
       -
@@ -521,7 +519,7 @@ chapters:
       -
         action:
           - {cmd: ctanlee.gohome}
-          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3, loop: true, volume: .2, slot: music} }
+          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3, loop: true, volume: .1, slot: music} }
         sfx:
           - {content: $nercSFX, volume: 1}
         movie:
