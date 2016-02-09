@@ -131,12 +131,12 @@ module.exports = class TextDialogue
         next
 
   pauseTimeline : () ->
-    @track?.sound.paused = true
+    @track?.pause()
     @actor?.stopTalking()
     PubSub.publish "timers.pause"
 
   playTimeline  : () ->
-    @track?.sound.paused = false
+    @track?.play()
     @actor?.startTalking()
     PubSub.publish "timers.resume"
 

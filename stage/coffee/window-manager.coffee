@@ -9,4 +9,3 @@ module.exports = class WindowManager
   refreshTraining : (cb) =>
     document.getElementById('iframe').src = document.getElementById('iframe').src
     cb()
-
