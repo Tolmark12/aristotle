@@ -1,0 +1,11 @@
+{
+  "sprite": {
+    "~g/MU_Ambient_Facility.mp3?amb": [
+      0,
+      153312.6530612245
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode1/chapter2/amb.mp3"
+  ]
+}

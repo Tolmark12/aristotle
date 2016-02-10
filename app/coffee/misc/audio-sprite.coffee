@@ -1,7 +1,7 @@
 module.exports = class AudioSprite
 
   constructor: ( @loadedCb, sprites ) ->
-    window.addEventListener "beforeunload", ()=> @unloadAudio()
+    window.addEventListener "onunload", ()=> @unloadAudio()
     aristotle.soundLib = @
     @sprites           = {}
     @ids               = {}
@@ -70,3 +70,4 @@ module.exports = class AudioSprite
   unloadAudio : () =>
     for sprite in @sprites
       sprite.unload()
+    true

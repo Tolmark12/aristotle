@@ -1,0 +1,16 @@
+<!--Maintain the ESP-->
+<p>If you are technical and belong to the IT, TD&C, and Fossil groups, you are responsible for the equipment in PSPs, so be sure that you don't add any assets to the ESP network without following change control procedures (detailed later).</p>
+<p>IT Network team - your firewall configuration must deny all traffic by default and only allow traffic that has a business purpose documented. You will likely be called upon to produce documentation of firewall rules as evidence, so be prepared for this.</p>
+<p>IT Network team - Ensure that the dial-up connections we maintain require authentication.</p>
+<p>ISS and IT Networks - Ensure the Intrusion Detection Systems and other electronic security systems are functioning with at least one enabled with each ESP.</p>
+<p>IT Network and Windows groups - We support remote logins to ESPs for Defenders at T&D, Fossil, and EMS, as well as some external vendors. You maintain jumpboxes and access, so you are responsible to ensure communication is encrypted and access requires more than one factor of authentication.</p>
+<h1>POTENTIAL ISSUES</h1>
+<ul>
+    <li>Not denying all traffic through the firewalls by default</li>
+    <li>Not maintaining documentation for rules that allow traffic through a firewall</li>
+    <li>Not requiring authentication for dial-up connections to CRCAs inside an ESP</li>
+    <li>Not inspecting inbound or outbound traffic with security system like firewalls or Intrusion Detection Systems</li>
+    <li>Allowing interactive remote connections directly to CRCAs in the ESP</li>
+    <li>Not authenticating interactive remote access using more than one factor</li>
+    <li>Not encrypting interactive remote access traffic to the jumpbox and from the jumpbox to the ESP</li>
+</ul>

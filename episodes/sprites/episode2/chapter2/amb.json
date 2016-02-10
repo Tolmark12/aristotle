@@ -1,0 +1,15 @@
+{
+  "sprite": {
+    "~g/MU_Ambient_Facility.mp3?amb": [
+      0,
+      153312.6530612245
+    ],
+    "~g/MU_Attack_Music.mp3?amb": [
+      154250,
+      27428.571428571417
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode2/chapter2/amb.mp3"
+  ]
+}

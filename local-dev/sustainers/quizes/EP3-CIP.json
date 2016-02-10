@@ -1,0 +1,116 @@
+{
+  "config": {
+    "question-value": 120,
+    "questions": [
+      {
+        "question": "What devices are acceptable to plug into your CRCAs?",
+        "answers": [
+          {
+            "a": "A cell phone to listen to music",
+            "r": "Nope"
+          },
+          {
+            "a": "A cell phone to charge it only",
+            "r": "Not even for that"
+          },
+          {
+            "a": "Your corporate workstation",
+            "r": "Not even that"
+          },
+          {
+            "a": "A personal USB drive to copy files",
+            "r": "Even that isn't safe"
+          },
+          {
+            "a": "None of the above",
+            "r": "Exactly",
+            "c": true
+          }
+        ]
+      },
+      {
+        "question": "What must be done when making a change to a CRCA? (pick 3)",
+        "value": 360,
+        "answers": [
+          {
+            "a": "Baseline Configuration Created/Updated",
+            "r": "Correct",
+            "c": true
+          },
+          {
+            "a": "Install all available Microsoft Office feature patches",
+            "r": "Nope. This isn't part of the process."
+          },
+          {
+            "a": "Get approval for changes",
+            "r": "Yes. Always",
+            "c": true
+          },
+          {
+            "a": "Assess security impacts and mitigate any issues",
+            "r": "An important step",
+            "c": true
+          },
+          {
+            "a": "Request approval from NERC for the change",
+            "r": "Not necessary."
+          }
+        ]
+      },
+      {
+        "question": "How often do new security patches need to be assessed?",
+        "answers": [
+          {
+            "a": "Every two weeks",
+            "r": "Not that fast"
+          },
+          {
+            "a": "Monthly (every 35 days)",
+            "r": "Yes!",
+            "c": true
+          },
+          {
+            "a": "Quarterly",
+            "r": "Not fast enough"
+          }
+        ]
+      },
+      {
+        "question": "Once assessed, how quickly do patches need to be installed?",
+        "answers": [
+          {
+            "a": "Within two weeks from assessment",
+            "r": "Not that fast"
+          },
+          {
+            "a": "Within one month (35 days) of assessment",
+            "r": "Yes!",
+            "c": true
+          },
+          {
+            "a": "In the same quarter as assessment",
+            "r": "Not fast enough"
+          }
+        ]
+      },
+      {
+        "question": "(Finish the sentence) If a patch causes a reliability problem...",
+        "answers": [
+          {
+            "a": "We still have to install it within 35 days",
+            "r": "No. The best security increases reliability"
+          },
+          {
+            "a": "We don't have to install it.",
+            "r": "That's partially true, but not quite right"
+          },
+          {
+            "a": "We don't have to install it - if we document and follow a mitigation plan.",
+            "r": "Yes! The mitigation plan is key",
+            "c": true
+          }
+        ]
+      }
+    ]
+  }
+}

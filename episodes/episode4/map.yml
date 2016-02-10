@@ -4,7 +4,6 @@ subtitle: Manning the Defenses
 rankId: cyber-cadet
 nextRankId: master-cadet
 labels: !!inc/file ./episodes/global/_labels.yaml
-#action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
 # CHAPTER 1
 chapters:
   # ----------------------------------------------
@@ -14,7 +13,7 @@ chapters:
     title: Chapter 1
     subtitle: Defender Access
     kind: chapter
-    sprites: [~s/dialogue.json, ~s/sfx.json]
+    sprites: [~s/dialogue.json, ~s/sfx.json, ~s/amb.json]
     slides:
       # 1 Background Build in ==========================================
       -
@@ -36,6 +35,7 @@ chapters:
         movie:
           layers:
             - {depth: 10, content: ~g/perimeter_e5_physical.json }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         duration: {kind: time, seconds: 1 }
       # 1 Dialogue Intro ==========================================
       -
@@ -55,7 +55,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulation A ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, delay: 1000, volume: 0.1, loop: true, slot: ambience} }
         sfx:
           - {content: ~4/CIN_HumanExcited.mp3?sfx, delay: 3700, volume: .2 }
           #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 4700, volume: .2 }
@@ -126,7 +126,7 @@ chapters:
       # 1 Dialogue Removing Access ==========================================
       -
         title: Removing Access
-        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         movie:
           layers:
             - {depth: 10, content: clear}
@@ -224,7 +224,7 @@ chapters:
         duration: {kind: ux}
       # 1 Simulation Retry Unsavory Fail ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, delay: 1000, volume: 0.1, loop: true, slot: ambience} }
         sfx:
           #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 2500, volume: .1 }
           - {content: ~4/CIN_ScannerShock.mp3?sfx, delay: 5000, volume: 0.4 }
@@ -254,7 +254,7 @@ chapters:
         duration: {kind: ux }
       # 1 Simulation Retry Cindy Pass ==========================================
       -
-        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         sfx:
           #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 4500, volume: .1 }
           - {content: $accessSFX, delay: 7600, volume: 0.1 }
@@ -353,7 +353,9 @@ chapters:
       # 1 Duties ==========================================
       -
         title: Duties
-        action: {cmd: ctanlee.gohome}
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: ambience} }
         ux:
           components:
             -
@@ -368,12 +370,13 @@ chapters:
     title: Chapter 2
     subtitle: User Accounts
     kind: chapter
-    sprites: [~s/dialogue.json, ~s/sfx.json]
+    sprites: [~s/dialogue.json, ~s/sfx.json, ~s/amb.json]
     slides:
       # 2 Dialogue User Accounts ==========================================
       -
         title: User Accounts
         duration: {kind: ux}
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         ux:
           components:
             -
@@ -414,7 +417,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Simulation Brute Force Fail ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, delay: 1000, volume: 0.1, loop: true, slot: ambience} }
         sfx:
           - {content: ~4/CIN_Typing.mp3?sfx, delay: 9500, volume: .1 }
           - {content: ~4/CIN_Typing.mp3?sfx, delay: 11890, volume: .1}
@@ -451,7 +454,7 @@ chapters:
         duration: {kind: ux }
       # 2 Simulation Brute Force Fail Clear ==========================================
       -
-        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         movie:
           layers:
             - {depth: 11, content: clear }
@@ -474,7 +477,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 2 Simulation Retry Brute Force Pass ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, delay: 1000, volume: 0.1, loop: true, slot: ambience} }
         sfx:
           - {content: ~4/CIN_Typing.mp3?sfx, delay: 6600, volume: .1 }
           - {content: ~4/CIN_Typing.mp3?sfx, delay: 8730, volume: .1}
@@ -517,7 +520,7 @@ chapters:
         duration: {kind: ux }
       # 2 Simulation Brute Force Pass Clear ==========================================
       -
-        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         movie:
           layers:
             - {depth: 11, content: clear }
@@ -541,7 +544,7 @@ chapters:
       # 2 Sektimus Interlude ==========================================
       # !SUSPECT
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.15, loop: true, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, delay: 1000, volume: 0.15, loop: true, slot: ambience} }
         sfx:
           - {content: ~3/CIN_Quarantine.mp3?sfx, delay: 1100, volume: .1 }
         movie:
@@ -640,7 +643,7 @@ chapters:
         duration: {kind: dialogue }
       # 2 Sektimus Interlude Clear ==========================================
       -
-        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         movie:
           layers:
             - {depth: 11, content: clear }
@@ -658,7 +661,9 @@ chapters:
       # 2 Duties ==========================================
       -
         title: Duties
-        action: {cmd: ctanlee.gohome}
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: ambience} }
         ux:
           components:
             -
@@ -672,12 +677,13 @@ chapters:
     title: Chapter 3
     subtitle: Visitor Access
     kind: chapter
-    sprites: [~s/dialogue.json, ~s/sfx.json]
+    sprites: [~s/dialogue.json, ~s/sfx.json, ~s/amb.json]
     slides:
       # 3 Dialogue Visitor Access ==========================================
       -
         title: Visitor Access
         duration: {kind: ux}
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         ux:
           components:
             -
@@ -692,7 +698,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Simulation Auditbot ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, delay: 1000, volume: 0.1, loop: true, slot: ambience} }
         sfx:
           #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 3500, volume: .2 }
           - {content: ~g/SFX_AttackSlamdown_AuditBot.mp3?sfx, delay: 6000, volume: .3}
@@ -739,7 +745,7 @@ chapters:
       # 3 Dialogue Visitor Escort Procedure ==========================================
       -
         title: The Visitor Escort Procedure
-        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         duration: {kind: ux}
         ux:
           components:
@@ -789,7 +795,7 @@ chapters:
         duration: {kind: time, seconds: 3.5}
       # 3 Simulation Visitor Tracked ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, delay: 1000, volume: 0.1, loop: true, slot: ambience} }
         movie:
           layers:
             - {depth: 11, content: clear }
@@ -819,7 +825,7 @@ chapters:
       # 3 Dialogue Home Stretch ==========================================
       -
         title: On the Home Stretch
-        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         duration: {kind: ux}
         ux:
           components:
@@ -839,7 +845,9 @@ chapters:
         movie:
           layers:
             - {depth: 13, content: clear }
-        action: {cmd: ctanlee.gohome}
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: ambience} }
         ux:
           components:
             -

@@ -5,7 +5,6 @@ rankId: master-cadet
 nextRankId: defender
 isLastEpisode: true
 labels: !!inc/file ./episodes/global/_labels.yaml
-#action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
 
 # CHAPTER 1
 chapters:
@@ -16,7 +15,7 @@ chapters:
     title: Chapter 1
     subtitle: Monitoring Our Defenses
     kind: chapter
-    sprites: [sfx]
+    sprites: [~s/amb.json, ~s/amb.json]
     slides:
       # 1 Background Build in ==========================================
       -
@@ -38,6 +37,7 @@ chapters:
       # 1 Dialogue Intro ==========================================
       -
         title: Monitoring Our Defenses
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         duration: {kind: ux}
         ux:
           components:
@@ -114,6 +114,9 @@ chapters:
             -
               kind: duties
               config: {definition: EP5CH1}
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: ambience} }
         duration: {kind: ux}
   # ----------------------------------------------
   # ------------------------------------ CHAPTER 2
@@ -122,12 +125,13 @@ chapters:
     title: Chapter 2
     subtitle: Marshalling the Response
     kind: chapter
-    sprites: [~s/dialogue.json, ~s/sfx.json]
+    sprites: [~s/dialogue.json, ~s/sfx.json, ~s/amb.json]
     slides:
       # 2 Dialogue Response ==========================================
       -
         title: Local and National Response
         duration: {kind: ux}
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         ux:
           components:
             -
@@ -175,7 +179,7 @@ chapters:
       # 2 Sektimus Interlude Normal A ==========================================
       -
         fid: ep5-ch2-sektimus-normal-a
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .1, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, loop: true, volume: .1, slot: ambience} }
         sfx:
           - {content: ~3/CIN_Quarantine.mp3?sfx, delay: 100, volume: .1 }
         movie:
@@ -229,7 +233,7 @@ chapters:
       # 2 Sektimus Interlude General Awareness A ==========================================
       -
         fid: ep5-ch2-sektimus-general-awareness-a
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .15, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, loop: true, volume: .15, slot: ambience} }
         sfx:
           - {content: ~3/CIN_Quarantine.mp3?sfx, delay: 13600, volume: .1 }
         movie:
@@ -347,7 +351,7 @@ chapters:
       - !!inc/file ./episodes/episode5/yaml/_simple-sektimus-e6.yaml
       # 2 Sektimus Interlude Normal B ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_With_Defense_Music.mp3, delay: 3300, volume: 0.2, loop: true, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_With_Defense_Music.mp3?amb, delay: 3300, volume: 0.2, loop: true, slot: ambience} }
         fid: ep5-ch2-sektimus-normal-b
         sfx:
           - {content: ~g/SFX_AttackSlamdown_BotTron.mp3?sfx, delay: 12400, volume: .3 }
@@ -443,11 +447,11 @@ chapters:
     title: Chapter 3
     subtitle: Recovering From Battle
     kind: chapter
-    sprites: [~s/dialogue.json, ~s/sfx.json]
+    sprites: [~s/dialogue.json, ~s/sfx.json, ~s/amb.json]
     slides:
       # 3 Dialogue Recovery Plan ==========================================
       -
-        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         title: The Recovery Plan
         movie:
           layers:
@@ -484,7 +488,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 3 Simulation Recovery ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 15000, volume: 0.1, loop: true, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, delay: 15000, volume: 0.1, loop: true, slot: ambience} }
         sfx:
           - {content: ~5/CIN_FacilityRecovery.mp3?sfx, volume: 0.08 }
         movie:
@@ -522,7 +526,7 @@ chapters:
       -
         action:
           - {cmd: ctanlee.gohome}
-          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3, loop: true, volume: .1, slot: music} }
+          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3?amb, loop: true, volume: .1, slot: ambience} }
         sfx:
           - {content: $nercSFX, volume: 1}
         movie:
@@ -601,17 +605,18 @@ chapters:
               audio: Story_6_Ctanlee_17.mp3
         duration: {kind: dialogue }
       # 3 Duties ==========================================
-      #-
-      #  action: {cmd: ctanlee.gohome}
-      #  ux:
-      #    components:
-      #      -
-      #        kind: duties
-      #        config: {definition: EP5CH3}
-      #  duration: {kind: ux}
+      -
+        action:
+          - {cmd: ctanlee.gohome}
+          - {cmd: sound.fadeout, data: {duration: 500, slot: ambience} }
+        ux:
+          components:
+            -
+              kind: duties
+              config: {definition: EP5CH3}
+        duration: {kind: ux}
       # 3 Quiz ==========================================
       -
-        action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         duration: {kind: ux}
         ux:
           components:
@@ -626,7 +631,7 @@ chapters:
       -
         action:
           - {cmd: ctanlee.show}
-          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3, delay: 1000, volume: 0.08, loop: true, slot: music} }
+          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3?amb, delay: 1000, volume: 0.08, loop: true, slot: ambience} }
         movie:
           layers:
             - {depth: 14, content: clear }
@@ -674,12 +679,6 @@ chapters:
           layers:
             - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete], reusable: true }
             - {depth: 5, content: clear }
-        duration: {kind: listen, event: layer.13.complete }
-      # 4 - 3,4,5,6 Clear ==========================================
-      -
-        movie:
-          layers:
-            - {depth: 13, content: 6_6_defenders_wave_loop.json, events: [complete], reusable: true }
             - {depth: 3, content: clear }
         duration: {kind: listen, event: layer.13.complete }
       # 4 - 0,1,2 Clear ==========================================
@@ -783,7 +782,7 @@ chapters:
       -
         action:
           - {cmd: ctanlee.hide}
-          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+          - {cmd: sound.fadeout, data: {duration: 500, slot: ambience} }
         movie:
           layers:
             - {depth: 15, content: close_training.json }

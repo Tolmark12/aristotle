@@ -1,0 +1,19 @@
+{
+  "sprite": {
+    "~4/CIN_Typing.mp3?sfx": [
+      0,
+      1593.4693877551022
+    ],
+    "~4/CIN_AccessGranted.mp3?sfx": [
+      2250,
+      1097.1428571428569
+    ],
+    "~3/CIN_Quarantine.mp3?sfx": [
+      4500,
+      2377.1428571428573
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode4/chapter2/sfx.mp3"
+  ]
+}

@@ -42,7 +42,7 @@ ux:
                   pacs: card-scanner
                   pacsBuild: ~2/card_scanner_build.json
                   pacsPass: ~2/card_scanner_pass.json
-                  pacsSFX: ~2/SFX_PhysicalAccessControlSystem_TheCardGuardXT.mp3
+                  pacsSFX: ~2/SFX_PhysicalAccessControlSystem_TheCardGuardXT.mp3?sfx
             btnTxt: The Card Guard XT
             icon: mini-card-scanner
             blurb: "Uses personal ID badge to confirm user against database."
@@ -57,7 +57,7 @@ ux:
                   pacs: hal-scanner
                   pacsBuild: ~2/hal_scanner_build.json
                   pacsPass: ~2/hal_scanner_pass.json
-                  pacsSFX: ~2/SFX_PhysicalAccessControlSystem_HAL9000EyeScanner.mp3
+                  pacsSFX: ~2/SFX_PhysicalAccessControlSystem_HAL9000EyeScanner.mp3?sfx
             btnTxt: HAL 9000 Eye Scanner
             icon: mini-hal-scanner
             blurb: "Uses optical recognition to match user against database."
@@ -72,7 +72,7 @@ ux:
                   pacs: kraken-scanner
                   pacsBuild: ~2/kraken_scanner_build.json
                   pacsPass: ~2/kraken_scanner_pass.json
-                  pacsSFX: ~2/SFX_PhysicalAccessControlSystem_WateryGraveKrakenSensor.mp3
+                  pacsSFX: ~2/SFX_PhysicalAccessControlSystem_WateryGraveKrakenSensor.mp3?sfx
             btnTxt: Watery Grave Kraken Sensor
             icon: mini-kraken-scanner
             blurb: "Kraken tentacle analyzes user body shape against database."

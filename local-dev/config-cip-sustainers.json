@@ -1,0 +1,25 @@
+{
+  "companyName"      : "Arizona Public Service",
+  "moduleId"         : "Aps.CipDefender.v1",
+  "moduleTitle"      : "CIP Defender - Sustainers",
+  "companyRegulator" : "WECC",
+  "moduleAudience"   : "CIP Sustainers",
+  "apikey"           : "APS-c29277b6c2f2",
+  "quizDir"          : "sustainers/quizes",
+  "dutiesDir"        : "sustainers/duties",
+  "episodeMapFiles"  : {
+    "0" : "map.json",
+    "1" : "map.json",
+    "2" : "map.json",
+    "3" : "map.json",
+    "4" : "map.json",
+    "5" : "map.json"
+  },
+  "filters":{
+    "5":{
+      "ep5-ch2-sektimus-general-awareness-a":"",
+      "ep5-ch2-sektimus-general-awareness-selector":"",
+      "ep5-ch2-sektimus-general-awareness-b":""
+    }
+  }
+}
