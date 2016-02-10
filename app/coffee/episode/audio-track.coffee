@@ -9,6 +9,7 @@ module.exports = class AudioTrack
 
   play : (config={}, @onComplete) ->
     @soundId = aristotle.soundLib.play @src
+    @config config
     if @onComplete?
       @addOnComplete()
 
@@ -20,24 +21,20 @@ module.exports = class AudioTrack
 
   pause : ()-> aristotle.soundLib.pause @soundId
   stop  : ()-> aristotle.soundLib.stop @soundId
+  loop  : ()-> aristotle.soundLib.loop @soundId
 
   destroy : (doUnloadFromMemory)->
     @isDead = true
     aristotle.soundLib.stop @soundId
     @destroyEvents()
 
-  config : (config) ->
-    if !@sound? then return
 
-    if config.loop?
-      # Fix this
-      if typeof config.loop == "number"
-        x="nothing"
-      else
-        @sound.loop = true
+  config : (config) ->
+    if config.loop
+      @loop()
 
     if config.volume?
-      @sound.volume config.volume
+      aristotle.soundLib.volume config.volume, @soundId
 
   fadeOut : (fadeDurationMs, doDestroy=false)->
     aristotle.soundLib.volume 0, @soundId

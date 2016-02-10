@@ -1,3 +1,4 @@
+action: {cmd: playsound, data:{content: Story_2_Ctanlee_2.mp3, loop: true, volume: 0.1, slot: ambience} }
 title: Pick Your Facility
 duration: {kind: ux}
 dialogue:

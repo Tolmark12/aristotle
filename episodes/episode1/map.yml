@@ -14,7 +14,7 @@ chapters:
     title: Chapter 1
     subtitle: Facilities and Cyber Assets
     kind: chapter
-    sprites: [~s/dialogue.json]
+    sprites: [~s/dialogue.json, ~s/amb.json]
     slides:
       # 1 Background Build in ==========================================
       -

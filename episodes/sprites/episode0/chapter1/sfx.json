@@ -1,20 +1,12 @@
 {
   "sprite": {
-    "~g/Intro_Credits.mp3?sfx": [
-      0,
-      13165.714285714286
-    ],
-    "~0/SFX_Defender_Door_Open.mp3?sfx": [
-      14250,
-      2612.244897959183
-    ],
     "~0/SFX_Sektimus_Fleet_Impacts.mp3?sfx": [
-      17500,
+      0,
       11206.530612244896
     ],
     "~g/SFX_Level_Cadet.mp3?sfx": [
-      29750,
-      7941.224489795921
+      12250,
+      7941.224489795918
     ]
   },
   "src": [

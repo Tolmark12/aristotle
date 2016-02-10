@@ -31,11 +31,16 @@ module.exports = class AudioSprite
     @ids[id] = spriteName
     return id
 
-  pause  : (id)            -> @getSoundById( id ).pause id
-  stop   : (id)            -> @getSoundById( id ).stop id
-  volume : (volume, id)    -> @getSoundById( id ).volume volume, id
-  on     : (event, fn, id) -> @getSoundById( id ).on  event, fn, id
-  off    : (event, fn, id) -> @getSoundById( id ).off event, fn, id
+  pause  : (id)              -> @getSoundById( id ).pause id
+  stop   : (id)              -> @getSoundById( id ).stop id
+  volume : (volume, id)      -> @getSoundById( id ).volume volume, id
+  loop   : (id, doLoop=true) ->
+    console.log doLoop, id
+    console.log @getSoundById( id ).playing()
+    console.log @getSoundById( id ).loop
+    @getSoundById( id ).loop doLoop, id
+  on     : (event, fn, id)   -> @getSoundById( id ).on  event, fn, id
+  off    : (event, fn, id)   -> @getSoundById( id ).off event, fn, id
 
   # ------------------------------------ Helpers
 
@@ -48,12 +53,9 @@ module.exports = class AudioSprite
     if @sprites[spriteName]?
       return @sprites[spriteName]
     else
-      aristotle.throw "Couldn't find the sound `#{name}` in any of the sprites!"
+      aristotle.throw "Couldn't find the sound `#{spriteName}` in any of the sprites, you probably forgot to add the sprite json file to the chapter.."
 
   isolateSpriteName : (fileName) ->
-    console.log "...."
-    console.log typeof fileName
-    console.log fileName
     splits = fileName.split("?")
     if splits.length == 1
       return "dialogue"
