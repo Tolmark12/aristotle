@@ -61,6 +61,9 @@ module.exports = class SoundFX
     track = new AudioTrack data.content
     return if !track
 
+    if data.slot?
+      @clearSlotIfNeeded data, track
+
     track.play {volume:data.volume, loop:data.loop, offset:data.offset}, ()->
 
       # If this was in a slot, remove it from the slot
@@ -76,9 +79,6 @@ module.exports = class SoundFX
       id = "s#{@count++}"
       @sfx[id] = { track:track, data:data }
       track.sfxId = id
-
-    if data.slot?
-      @clearSlotIfNeeded data, track
 
   fadeOutSound : (data) =>
     if data.slot?
