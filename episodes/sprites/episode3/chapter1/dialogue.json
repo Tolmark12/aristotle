@@ -1,0 +1,63 @@
+{
+  "sprite": {
+    "~g/MU_Attack_Music.mp3": [
+      0,
+      27428.571428571428
+    ],
+    "Story_4_Ctanlee_1.mp3": [
+      28250,
+      3030.204081632654
+    ],
+    "Story_4_Ctanlee_2.mp3": [
+      32500,
+      5172.244897959182
+    ],
+    "Story_4_Ctanlee_3.mp3": [
+      38750,
+      1358.3673469387777
+    ],
+    "Story_4_Ctanlee_4.mp3": [
+      41000,
+      2951.8367346938776
+    ],
+    "Story_4_Ctanlee_5.mp3": [
+      44250,
+      4362.448979591839
+    ],
+    "Story_4_Ctanlee_6.mp3": [
+      49500,
+      3552.6530612244896
+    ],
+    "~3/SFX_PhysicalPortSecurity_DuctTape.mp3": [
+      53750,
+      2377.1428571428573
+    ],
+    "~3/SFX_PhysicalPortSecurity_TheKragle.mp3": [
+      57000,
+      2377.1428571428573
+    ],
+    "~3/SFX_PhysicalPortSecurity_PortUmpie.mp3": [
+      60250,
+      2377.1428571428573
+    ],
+    "Story_4_Ctanlee_7.mp3": [
+      63500,
+      4649.795918367346
+    ],
+    "Story_4_Ctanlee_8.mp3": [
+      68750,
+      2403.265306122449
+    ],
+    "Story_4_Ctanlee_10.mp3": [
+      72000,
+      2560.0000000000023
+    ],
+    "Story_4_Ctanlee_11.mp3": [
+      75250,
+      1358.3673469387777
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode3/chapter1/dialogue.mp3"
+  ]
+}

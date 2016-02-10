@@ -16,6 +16,7 @@ chapters:
     title: Chapter 1
     subtitle: Monitoring Our Defenses
     kind: chapter
+    sprites: [sfx]
     slides:
       # 1 Background Build in ==========================================
       -
@@ -55,7 +56,7 @@ chapters:
         title: Keep a Sharp Lookout
         duration: {kind: ux}
         sfx:
-          - {content: ~5/CIN_PersonSneaking.mp3, delay: 500, volume: 0.08 }
+          - {content: ~5/CIN_PersonSneaking.mp3?sfx, delay: 500, volume: 0.08 }
         movie:
           layers:
             - {depth: 12, content: e5_skittering.json }
@@ -121,6 +122,7 @@ chapters:
     title: Chapter 2
     subtitle: Marshalling the Response
     kind: chapter
+    sprites: [~s/dialogue.json, ~s/sfx.json]
     slides:
       # 2 Dialogue Response ==========================================
       -
@@ -175,7 +177,7 @@ chapters:
         fid: ep5-ch2-sektimus-normal-a
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .1, slot: music} }
         sfx:
-          - {content: ~3/CIN_Quarantine.mp3, delay: 100, volume: .1 }
+          - {content: ~3/CIN_Quarantine.mp3?sfx, delay: 100, volume: .1 }
         movie:
           layers:
             - {depth: 12, content: 6_1_sektimus_intercept.json }
@@ -229,7 +231,7 @@ chapters:
         fid: ep5-ch2-sektimus-general-awareness-a
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, loop: true, volume: .15, slot: music} }
         sfx:
-          - {content: ~3/CIN_Quarantine.mp3, delay: 13600, volume: .1 }
+          - {content: ~3/CIN_Quarantine.mp3?sfx, delay: 13600, volume: .1 }
         movie:
           layers:
             - {depth: 12, content: ~5/6_1_alt_sektimus_intercept.json }
@@ -348,8 +350,8 @@ chapters:
         action: {cmd: playsound, data: {content: ~g/MU_Attack_With_Defense_Music.mp3, delay: 3300, volume: 0.2, loop: true, slot: music} }
         fid: ep5-ch2-sektimus-normal-b
         sfx:
-          - {content: ~g/SFX_AttackSlamdown_BotTron.mp3, delay: 12400, volume: .3 }
-          - {content: ~5/SFX_BotTron_Attack.mp3, delay: 35000, volume: 1 }
+          - {content: ~g/SFX_AttackSlamdown_BotTron.mp3?sfx, delay: 12400, volume: .3 }
+          - {content: ~5/SFX_BotTron_Attack.mp3?sfx, delay: 35000, volume: 1 }
         movie:
           layers:
             - {depth: 0, content: red-sky.svg }
@@ -441,6 +443,7 @@ chapters:
     title: Chapter 3
     subtitle: Recovering From Battle
     kind: chapter
+    sprites: [~s/dialogue.json, ~s/sfx.json]
     slides:
       # 3 Dialogue Recovery Plan ==========================================
       -
@@ -483,7 +486,7 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 15000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~5/CIN_FacilityRecovery.mp3, volume: 0.08 }
+          - {content: ~5/CIN_FacilityRecovery.mp3?sfx, volume: 0.08 }
         movie:
           layers:
             - {depth: 12, content: 6_3_1_rebuild_sektimus_dialogue.json }
@@ -697,7 +700,7 @@ chapters:
       # 4 Movie ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_Defender.mp3, volume:1}
+          - {content: ~g/SFX_Level_Defender.mp3?sfx, volume:1}
         movie:
           layers:
             - {depth: 13, content: 7-Conclusion.mp4 }

@@ -1,0 +1,11 @@
+{
+  "sprite": {
+    "~5/CIN_PersonSneaking.mp3?sfx": [
+      0,
+      2560
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode5/chapter1/sfx.mp3"
+  ]
+}

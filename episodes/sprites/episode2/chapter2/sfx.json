@@ -1,0 +1,35 @@
+{
+  "sprite": {
+    "~3/CIN_Quarantine.mp3?sfx": [
+      0,
+      2377.1428571428573
+    ],
+    "~g/SFX_AttackSlamdown_KettleHeadEAttackMode.mp3?sfx": [
+      3250,
+      5929.7959183673465
+    ],
+    "~2/CIN_RobotHacking.mp3?sfx": [
+      9500,
+      2377.1428571428573
+    ],
+    "~2/CIN_PhysicalAttack_Screams.mp3?sfx": [
+      12750,
+      2063.673469387755
+    ],
+    "~2/SFX_AssetExplosion.mp3?sfx": [
+      16000,
+      4911.020408163267
+    ],
+    "~g/SFX_AttackSlamdown_VirusBot.mp3?sfx": [
+      21250,
+      2586.122448979591
+    ],
+    "~g/SFX_Level_TechnicalCadet.mp3?sfx": [
+      24500,
+      7941.224489795921
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode2/chapter2/sfx.mp3"
+  ]
+}

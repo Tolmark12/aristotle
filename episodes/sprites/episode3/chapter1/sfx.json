@@ -1,0 +1,31 @@
+{
+  "sprite": {
+    "~3/CIN_Whistling.mp3?sfx": [
+      0,
+      3813.877551020408
+    ],
+    "~g/SFX_AttackSlamdown_FlashBot.mp3?sfx": [
+      4250,
+      2586.122448979592
+    ],
+    "~3/2001_Space.mp3?sfx": [
+      7500,
+      15568.979591836736
+    ],
+    "~3/CIN_TransmisionLinesBurning.mp3?sfx": [
+      23750,
+      2716.7346938775518
+    ],
+    "~3/CIN_FlashDriveRejection.mp3?sfx": [
+      27000,
+      1097.142857142856
+    ],
+    "~3/CIN_HumanTossing.mp3?sfx": [
+      29250,
+      783.6734693877538
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode3/chapter1/sfx.mp3"
+  ]
+}

@@ -14,6 +14,7 @@ chapters:
     title: Chapter 1
     subtitle: Defender Access
     kind: chapter
+    sprites: [~s/dialogue.json, ~s/sfx.json]
     slides:
       # 1 Background Build in ==========================================
       -
@@ -56,16 +57,16 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~4/CIN_HumanExcited.mp3, delay: 3700, volume: .2 }
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 4700, volume: .2 }
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 13000, volume: .2, loop: 2}
-          - {content: ~4/CIN_HumanExcited.mp3, delay: 17300, volume: .1 }
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 22500, volume: .2 }
-          #- {content: ~4/CIN_DoorOpen.mp3, delay: 23500, volume: 0.1 }
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 27000, volume: .2, loop: 2 }
-          #- {content: ~4/CIN_DoorOpen.mp3, delay: 29000, volume: 0.1 }
-          - {content: ~g/SFX_AttackSlamdown_UnsavoryHuman.mp3, delay: 35000, volume: .3}
-          - {content: ~4/CIN_RobotsMovingExplosion.mp3, delay: 51400, volume: .4}
+          - {content: ~4/CIN_HumanExcited.mp3?sfx, delay: 3700, volume: .2 }
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 4700, volume: .2 }
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 13000, volume: .2, loop: 2}
+          - {content: ~4/CIN_HumanExcited.mp3?sfx, delay: 17300, volume: .1 }
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 22500, volume: .2 }
+          #- {content: ~4/CIN_DoorOpen.mp3?sfx, delay: 23500, volume: 0.1 }
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 27000, volume: .2, loop: 2 }
+          #- {content: ~4/CIN_DoorOpen.mp3?sfx, delay: 29000, volume: 0.1 }
+          - {content: ~g/SFX_AttackSlamdown_UnsavoryHuman.mp3?sfx, delay: 35000, volume: .3}
+          - {content: ~4/CIN_RobotsMovingExplosion.mp3?sfx, delay: 51400, volume: .4}
         movie:
           layers:
             - {depth: 10, content: 5_defender_access_fail.json, vcr: true }
@@ -186,10 +187,10 @@ chapters:
       # 1 Simulation Compliance ==========================================
       -
         sfx:
-          - {content: ~4/CIN_HumanExcited.mp3, delay: 100, volume: .2 }
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 100, volume: .1, loop: 1 }
-          #- {content: ~4/CIN_DoorOpen.mp3, delay: 800, volume: .2 }
-          - {content: ~4/CIN_Typing.mp3, delay: 5700, volume: .05, loop: 2 }
+          - {content: ~4/CIN_HumanExcited.mp3?sfx, delay: 100, volume: .2 }
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 100, volume: .1, loop: 1 }
+          #- {content: ~4/CIN_DoorOpen.mp3?sfx, delay: 800, volume: .2 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 5700, volume: .05, loop: 2 }
         movie:
           layers:
             - {depth: 11, content: $accessPassA, vcr: true }
@@ -225,9 +226,9 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 2500, volume: .1 }
-          - {content: ~4/CIN_ScannerShock.mp3, delay: 5000, volume: 0.4 }
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 8000, volume: .1 }
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 2500, volume: .1 }
+          - {content: ~4/CIN_ScannerShock.mp3?sfx, delay: 5000, volume: 0.4 }
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 8000, volume: .1 }
         movie:
           layers:
             - {depth: 11, content: $accessPassB, vcr: true }
@@ -255,15 +256,15 @@ chapters:
       -
         action: {cmd: sound.fadeout, data: {duration: 500, slot: music} }
         sfx:
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 4500, volume: .1 }
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 4500, volume: .1 }
           - {content: $accessSFX, delay: 7600, volume: 0.1 }
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 13000, volume: .1 }
-          - {content: ~4/CIN_Typing.mp3, delay: 20000, volume: .1, loop: 1 }
-          - {content: ~4/CIN_Typing.mp3, delay: 29000, volume: .1 }
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 34000, volume: .1 }
-          #- {content: ~4/CIN_DoorOpen.mp3, delay: 37000, volume: .2 }
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 37000, volume: .1, loop: 1 }
-          - {content: ~4/CIN_Typing.mp3, delay: 43000, volume: .05 }
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 13000, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 20000, volume: .1, loop: 1 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 29000, volume: .1 }
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 34000, volume: .1 }
+          #- {content: ~4/CIN_DoorOpen.mp3?sfx, delay: 37000, volume: .2 }
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 37000, volume: .1, loop: 1 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 43000, volume: .05 }
         movie:
           layers:
             - {depth: 11, content: $accessPassC, vcr: true }
@@ -367,6 +368,7 @@ chapters:
     title: Chapter 2
     subtitle: User Accounts
     kind: chapter
+    sprites: [~s/dialogue.json, ~s/sfx.json]
     slides:
       # 2 Dialogue User Accounts ==========================================
       -
@@ -388,12 +390,12 @@ chapters:
       -
         title: Account Attacks
         sfx:
-          - {content: ~4/CIN_Typing.mp3, delay: 2100, volume: .1, loop: 1 }
-          - {content: ~4/CIN_Typing.mp3, delay: 6000, volume: .1 }
-          - {content: ~4/CIN_Typing.mp3, delay: 8500, volume: .1 }
-          - {content: ~4/CIN_Typing.mp3, delay: 11000, volume: .1 }
-          - {content: ~4/CIN_Typing.mp3, delay: 13500, volume: .1 }
-          - {content: ~4/CIN_Typing.mp3, delay: 15700, volume: .1, loop: 1 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 2100, volume: .1, loop: 1 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 6000, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 8500, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 11000, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 13500, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 15700, volume: .1, loop: 1 }
         movie:
           layers:
             - {depth: 11, content: ~g/user_account_1.json  }
@@ -414,11 +416,11 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~4/CIN_Typing.mp3, delay: 9500, volume: .1 }
-          - {content: ~4/CIN_Typing.mp3, delay: 11890, volume: .1}
-          - {content: ~4/CIN_Typing.mp3, delay: 14200, volume: .1, loop: 2}
-          - {content: ~4/CIN_Typing.mp3, delay: 19200, volume: .1 }
-          - {content: ~4/CIN_AccessGranted.mp3, delay: 21500, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 9500, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 11890, volume: .1}
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 14200, volume: .1, loop: 2}
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 19200, volume: .1 }
+          - {content: ~4/CIN_AccessGranted.mp3?sfx, delay: 21500, volume: .1 }
         movie:
           layers:
             - {depth: 11, content: 5_user_account_fail.json, vcr: true }
@@ -474,9 +476,9 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~4/CIN_Typing.mp3, delay: 6600, volume: .1 }
-          - {content: ~4/CIN_Typing.mp3, delay: 8730, volume: .1}
-          - {content: ~4/CIN_Typing.mp3, delay: 11200, volume: .1, loop: 1}
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 6600, volume: .1 }
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 8730, volume: .1}
+          - {content: ~4/CIN_Typing.mp3?sfx, delay: 11200, volume: .1, loop: 1}
         movie:
           layers:
             - {depth: 11, content: 5_user_account_pass.json, vcr: true }
@@ -541,7 +543,7 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.15, loop: true, slot: music} }
         sfx:
-          - {content: ~3/CIN_Quarantine.mp3, delay: 1100, volume: .1 }
+          - {content: ~3/CIN_Quarantine.mp3?sfx, delay: 1100, volume: .1 }
         movie:
           layers:
             - {depth: 11, content: intercept_e5_1.json }
@@ -670,6 +672,7 @@ chapters:
     title: Chapter 3
     subtitle: Visitor Access
     kind: chapter
+    sprites: [~s/dialogue.json, ~s/sfx.json]
     slides:
       # 3 Dialogue Visitor Access ==========================================
       -
@@ -691,10 +694,10 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2 }
-          - {content: ~g/SFX_AttackSlamdown_AuditBot.mp3, delay: 6000, volume: .3}
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 15200, volume: .2, loop: 2 }
-          - {content: ~4/CIN_BlackOutGrid.mp3, delay: 29500, volume: 1}
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 3500, volume: .2 }
+          - {content: ~g/SFX_AttackSlamdown_AuditBot.mp3?sfx, delay: 6000, volume: .3}
+          #- {content: ~4/CIN_HumanWalking.mp3?sfx, delay: 15200, volume: .2, loop: 2 }
+          - {content: ~4/CIN_BlackOutGrid.mp3?sfx, delay: 29500, volume: 1}
         movie:
           layers:
             - {depth: 11, content: 5_auditbot_fail.json, vcr: true }
@@ -787,15 +790,6 @@ chapters:
       # 3 Simulation Visitor Tracked ==========================================
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
-        sfx:
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 3500, volume: .2, loop: 3 }
-          #- {content: ~4/CIN_DoorOpen.mp3, delay: 13900, volume: .2 }
-          #- {content: ~4/CIN_DoorOpen.mp3, delay: 14900, volume: .2 }
-          #- {content: ~4/CIN_DoorOpen.mp3, delay: 17500, volume: .2 }
-          #- {content: ~4/CIN_DoorOpen.mp3, delay: 23400, volume: .2 }
-          #- {content: ~4/CIN_DoorOpen.mp3, delay: 24900, volume: .2 }
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 12900, volume: .2, loop: 5 }
-          #- {content: ~4/CIN_HumanWalking.mp3, delay: 27300, volume: .2, loop: 2 }
         movie:
           layers:
             - {depth: 11, content: clear }
@@ -864,7 +858,7 @@ chapters:
       # 3 Rank Advance ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_MasterCadet.mp3, volume: 1}
+          - {content: ~g/SFX_Level_MasterCadet.mp3?sfx, volume: 1}
         movie:
           layers:
             - {depth: 13, background: black, content: ~g/master_cadet.json, events: [complete] }

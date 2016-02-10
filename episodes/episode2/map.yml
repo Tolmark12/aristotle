@@ -14,9 +14,12 @@ chapters:
     title: Chapter 1
     subtitle: Physical Security Perimeter
     kind: chapter
+    sprites: [~s/dialogue.json, ~s/sfx.json, ~s/amb.json]
     slides:
       # 1 Background Build in ==========================================
       -
+        sfx:
+          action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         movie:
           layers:
             - {depth: 0, content: ~1/c1-sky.svg }
@@ -46,13 +49,13 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          #- {content: ~2/CIN_RobotMovement.mp3, delay: 700, volume: 0.08 }
-          #- {content: ~2/CIN_RobotMovement.mp3, delay: 12000, volume: 0.1, loop: 3 }
-          - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 3400, volume: 0.2}
-          #- {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3, delay: 12600, volume: 0.3}
-          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 14500, volume: 0.2 }
-          #- {content: ~2/CIN_RipServerFromWall.mp3, delay: 14500, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 15810, volume: 0.3 }
+          #- {content: ~2/CIN_RobotMovement.mp3?sfx, delay: 700, volume: 0.08 }
+          #- {content: ~2/CIN_RobotMovement.mp3?sfx, delay: 12000, volume: 0.1, loop: 3 }
+          - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3?sfx, delay: 3400, volume: 0.2}
+          #- {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3?sfx, delay: 12600, volume: 0.3}
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3?sfx, delay: 14500, volume: 0.2 }
+          #- {content: ~2/CIN_RipServerFromWall.mp3?sfx, delay: 14500, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3?sfx, delay: 15810, volume: 0.3 }
         movie:
           layers:
             - {depth: 6, content: kettle_attack_pngs.json, vcr: true }
@@ -167,19 +170,20 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulator Robot Attack Perimeter ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        action:
+          - {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+          - {cmd: ctanlee.gohome}
         sfx:
-          #- {content: ~2/CIN_RobotMovement.mp3, delay: 3000, volume: 0.1, loop: 1 }
+          #- {content: ~2/CIN_RobotMovement.mp3?sfx, delay: 3000, volume: 0.1, loop: 1 }
           - {content: $pacsSFX, delay: 7200, volume: 0.3 }
-          # - {content: ~2/CIN_RobotMovement.mp3, delay: 10500, volume: 0.1, loop: 3 }
-          - {content: ~2/CIN_PhysicalAttack_DoorRipAndCrash, delay: 16000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 17000, volume: 0.1 }
-          # - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 19000, volume: 0.1 }
+          # - {content: ~2/CIN_RobotMovement.mp3?sfx, delay: 10500, volume: 0.1, loop: 3 }
+          - {content: ~2/CIN_PhysicalAttack_DoorRipAndCrash.mp3?sfx, delay: 16000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3?sfx, delay: 17000, volume: 0.1 }
+          # - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3?sfx, delay: 19000, volume: 0.1 }
           - {content: ~2/CIN_PhysicalDefense_RunningMen, delay: 21000, volume: 1 }
-          # - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3, delay: 21000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_Laser.mp3, delay: 24000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_BlastedRobot.mp3, delay: 24400, volume: 0.05 }
-        action: {cmd: ctanlee.gohome}
+          # - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3?sfx, delay: 21000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Laser.mp3?sfx, delay: 24000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_BlastedRobot.mp3?sfx, delay: 24400, volume: 0.05 }
         movie:
           layers:
             - {depth: 6, content: clear }
@@ -246,6 +250,7 @@ chapters:
     title: Chapter 2
     subtitle: Electronic Security Perimeter
     kind: chapter
+    sprites: [~s/dialogue.json, ~s/sfx.json]
     slides:
       # 2 Dialogue Electronic Attack ==========================================
       -
@@ -272,7 +277,7 @@ chapters:
         title: A Disturbance
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15, loop: true, slot: music} }
         sfx:
-          - {content: ~3/CIN_Quarantine.mp3, delay: 33700, volume: .1 }
+          - {content: ~3/CIN_Quarantine.mp3?sfx, delay: 33700, volume: .1 }
         movie:
           layers:
             - {depth: 7, content: fatline_extended.json }
@@ -436,11 +441,11 @@ chapters:
       # 2 Simulation Kettle E Attack ==========================================
       -
         sfx:
-          - {content: ~g/SFX_AttackSlamdown_KettleHeadEAttackMode.mp3, delay: 6300, volume: .2 }
-          - {content: ~2/CIN_RobotHacking.mp3, delay: 17500, volume: .2 }
-          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 29000, volume: .4 }
-          - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 32000, volume: .4 }
-          - {content: ~2/SFX_AssetExplosion.mp3, delay: 35900, volume: .4 }
+          - {content: ~g/SFX_AttackSlamdown_KettleHeadEAttackMode.mp3?sfx, delay: 6300, volume: .2 }
+          - {content: ~2/CIN_RobotHacking.mp3?sfx, delay: 17500, volume: .2 }
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3?sfx, delay: 29000, volume: .4 }
+          - {content: ~2/CIN_PhysicalAttack_Screams.mp3?sfx, delay: 32000, volume: .4 }
+          - {content: ~2/SFX_AssetExplosion.mp3?sfx, delay: 35900, volume: .4 }
         movie:
           layers:
             - {depth: 7, content: kettle_e_attack_pngs.json, vcr: true }
@@ -683,7 +688,7 @@ chapters:
       # 2 Simulator - Firewall Lower ==========================================
       -
         sfx:
-          - {content: ~g/SFX_AttackSlamdown_VirusBot.mp3, delay: 16100, volume: .3 }
+          - {content: ~g/SFX_AttackSlamdown_VirusBot.mp3?sfx, delay: 16100, volume: .3 }
         movie:
           layers:
             - {depth: 11, content: $eacmsAnimateBadLower, vcr: true }
@@ -771,7 +776,7 @@ chapters:
       # 2 Rank Advance ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_TechnicalCadet.mp3, volume: 1}
+          - {content: ~g/SFX_Level_TechnicalCadet.mp3?sfx, volume: 1}
         movie:
           layers:
             - {depth: 9, background: black, content: ~g/technical_cadet.json, events: [complete] }

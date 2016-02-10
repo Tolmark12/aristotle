@@ -1,0 +1,19 @@
+{
+  "sprite": {
+    "~3/CIN_Quarantine.mp3?sfx": [
+      0,
+      2377.1428571428573
+    ],
+    "~g/SFX_AttackSlamdown_BotTron.mp3?sfx": [
+      3250,
+      9351.836734693878
+    ],
+    "~5/SFX_BotTron_Attack.mp3?sfx": [
+      13500,
+      30432.653061224486
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode5/chapter2/sfx.mp3"
+  ]
+}
