@@ -3,7 +3,6 @@ title: Episode 2
 subtitle: Perimeter Defenses
 rankId: cadet-first-class
 nextRankId: technical-cadet
-#action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3, loop: true, volume: 0.05, slot: ambience} }
 labels: !!inc/file ./episodes/global/_labels.yaml
 # CHAPTER 1
 chapters:
@@ -18,8 +17,7 @@ chapters:
     slides:
       # 1 Background Build in ==========================================
       -
-        sfx:
-          action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         movie:
           layers:
             - {depth: 0, content: ~1/c1-sky.svg }
@@ -47,7 +45,7 @@ chapters:
                   action: {cmd: slides.next-slide}
       # 1 Simulator Robot Attack ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, delay: 1000, volume: 0.1, loop: true, slot: ambience} }
         sfx:
           #- {content: ~2/CIN_RobotMovement.mp3?sfx, delay: 700, volume: 0.08 }
           #- {content: ~2/CIN_RobotMovement.mp3?sfx, delay: 12000, volume: 0.1, loop: 3 }
@@ -100,7 +98,7 @@ chapters:
             - {depth: 6, content: clear }
         action:
           - {cmd: ctanlee.gohome}
-          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+          - {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         duration: {kind: ux}
         ux:
           components:
@@ -150,7 +148,7 @@ chapters:
         duration: {kind: dialogue}
       # 1 Dialogue Perimeter Try Again ==========================================
       -
-        action: {cmd animations.go.low}
+        action: {cmd: animations.go.low}
         title: Let's Try Again
         movie:
           zoom: {scale: 1}
@@ -171,7 +169,7 @@ chapters:
       # 1 Simulator Robot Attack Perimeter ==========================================
       -
         action:
-          - {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+          - {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, delay: 1000, volume: 0.1, loop: true, slot: ambience} }
           - {cmd: ctanlee.gohome}
         sfx:
           #- {content: ~2/CIN_RobotMovement.mp3?sfx, delay: 3000, volume: 0.1, loop: 1 }
@@ -182,7 +180,7 @@ chapters:
           # - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3?sfx, delay: 19000, volume: 0.1 }
           - {content: ~2/CIN_PhysicalDefense_RunningMen, delay: 21000, volume: 1 }
           # - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3?sfx, delay: 21000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_Laser.mp3?sfx, delay: 24000, volume: 0.1 }
+          #- {content: ~2/CIN_PhysicalDefense_Laser.mp3?sfx, delay: 24000, volume: 0.1 }
           - {content: ~2/CIN_PhysicalDefense_BlastedRobot.mp3?sfx, delay: 24400, volume: 0.05 }
         movie:
           layers:
@@ -236,7 +234,7 @@ chapters:
             - {depth: 8, content: clear }
         action:
           - {cmd: ctanlee.gohome}
-          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+          - {cmd: sound.fadeout, data: {duration: 500, slot: ambience} }
         ux:
           components:
             -
@@ -254,6 +252,7 @@ chapters:
     slides:
       # 2 Dialogue Electronic Attack ==========================================
       -
+        action: {cmd: playsound, data:{content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         movie:
           layers:
             - {depth: 6, content: $pacsBuild, jumpToEnd: true, cache: true }
@@ -275,7 +274,7 @@ chapters:
       -
         fid: ep2-ch2-sektimus
         title: A Disturbance
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 7600, volume: 0.15, loop: true, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, delay: 7600, volume: 0.15, loop: true, slot: ambience} }
         sfx:
           - {content: ~3/CIN_Quarantine.mp3?sfx, delay: 33700, volume: .1 }
         movie:
@@ -422,6 +421,7 @@ chapters:
       -
         fid: ep2-ch2-a
         title: Electronic Attacks
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         movie:
           layers:
             - {depth: 7, content: clear }
@@ -446,6 +446,7 @@ chapters:
           - {content: ~2/CIN_PhysicalAttack_Screams.mp3?sfx, delay: 29000, volume: .4 }
           - {content: ~2/CIN_PhysicalAttack_Screams.mp3?sfx, delay: 32000, volume: .4 }
           - {content: ~2/SFX_AssetExplosion.mp3?sfx, delay: 35900, volume: .4 }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, volume: 0.1, loop: true, slot: ambience} }
         movie:
           layers:
             - {depth: 7, content: kettle_e_attack_pngs.json, vcr: true }
@@ -487,7 +488,7 @@ chapters:
         title: Electronic Attacks
         action:
           - {cmd: ctanlee.gohome}
-          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+          - {cmd: playsound, data: {content: ~g/MU_Ambient_Facility.mp3?amb, loop: true, volume: 0.05, slot: ambience} }
         movie:
           layers:
             - {depth: 7, content: clear }
@@ -628,7 +629,7 @@ chapters:
         duration: {kind: ux }
       # 2 Simulator - Firewall Upper ==========================================
       -
-        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
+        action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3?amb, delay: 1000, volume: 0.1, loop: true, slot: ambience} }
         movie:
           layers:
             - {depth: 7, content: clear }
@@ -751,7 +752,7 @@ chapters:
         title: Duties
         action:
           - {cmd: ctanlee.gohome}
-          - {cmd: sound.fadeout, data: {duration: 500, slot: music} }
+          - {cmd: sound.fadeout, data: {duration: 500, slot: ambience} }
         movie:
           layers:
             - {depth: 9, content: clear }

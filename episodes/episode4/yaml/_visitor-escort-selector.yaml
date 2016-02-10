@@ -42,7 +42,7 @@ ux:
                   visitor: log_book
                   visitorBuild: ~4/log_book_build.json
                   visitorPass: ~4/log_book_pass.json
-                  visitorSFX: ~4/SFX_VisitorEscortSystem_GuestLogBook.mp3
+                  visitorSFX: ~4/SFX_VisitorEscortSystem_GuestLogBook.mp3?sfx
             btnTxt: Guest Log Book
             icon: mini-log-book
             blurb: "<span>Self-expression:</span> -100% <br/><span>Risk of theft:</span> 0%"
@@ -57,7 +57,7 @@ ux:
                   visitor: escort_leash
                   visitorBuild: ~4/escort_leash_build.json
                   visitorPass: ~4/escort_leash_pass.json
-                  visitorSFX: ~4/SFX_VisitorEscortSystem_EscortLeash.mp3
+                  visitorSFX: ~4/SFX_VisitorEscortSystem_EscortLeash.mp3?sfx
             btnTxt: PSP Buddy Escort Leash
             icon: mini-escort-leash
             blurb: "<span>Length:</span> 1 Meter (normal), 3 Meters (stretched) <br/><span>Alternate Use:</span> Facility Roof Bungee Jumping"
@@ -72,7 +72,7 @@ ux:
                   visitor: tractor_beam
                   visitorBuild: ~4/tractor_beam_build.json
                   visitorPass: ~4/tractor_beam_pass.json
-                  visitorSFX: ~4/SFX_VisitorEscortSystem_VisitorTractorBeam.mp3
+                  visitorSFX: ~4/SFX_VisitorEscortSystem_VisitorTractorBeam.mp3?sfx
             btnTxt: Visitor Tractor Beam
             icon: mini-tractor-beam
             blurb: "To Boldly Go Where No Visitor Has Gone Before…"

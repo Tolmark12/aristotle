@@ -40,13 +40,13 @@ chapters:
             -
               kind: sound-test
               config:
-                sound: SFX_SoundTestButton.mp3
+                sound: SFX_SoundTestButton.mp3?sfx
 
         duration: {kind: ux}
       # Animation Load Warcore ==========================================
       -
         title: Load Warcore
-        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility_no_notes.mp3, loop: true, volume: 1, slot: ambience} }
+        action: {cmd: playsound, data: {content: ~g/MU_Ambient_Facility_no_notes.mp3?amb, loop: true, volume: 1, slot: ambience} }
         movie:
           layers:
             - {depth: 1, background: black, content: commandline.json,}
@@ -247,8 +247,8 @@ chapters:
           - {content: ~0/SFX_Sektimus_Fleet_Impacts.mp3?sfx, delay: 25000, volume: 1 }
         action:
           - {cmd: chrome.hide}
-          - {cmd: sound.fadeout, data: {delay: 15000, duration: 500, slot: ambience} }
-          - {cmd: playsound, data: {content: ~0/CIN_Intro_Sektimus.mp3, volume: .4, delay: 15000, slot: sektimus, destroy: true} }
+          - {cmd: sound.fadeout, data: {delay: 14000, duration: 500, slot: ambience} }
+          - {cmd: playsound, data: {content: ~0/CIN_Intro_Sektimus.mp3?amb, volume: .4, delay: 15000, slot: sektimus, destroy: true} }
         title: Sektimus
         movie:
           layers:
@@ -276,7 +276,7 @@ chapters:
         duration: {kind: dialogue }
       # Animation Robot Introduction  ==========================================
       -
-        action: {cmd: playsound, data: {content: ~0/SFX_Crater.mp3, volume: 1, slot: crater} }
+        action: {cmd: playsound, data: {content: ~0/SFX_Crater.mp3?sfx, volume: 1, slot: crater} }
         movie:
           layers:
             - {depth: 1, content: smoke1.json }

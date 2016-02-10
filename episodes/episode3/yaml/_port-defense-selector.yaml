@@ -42,7 +42,7 @@ ux:
                   portBuild: ~3/duct_tape_build.json
                   portInstall: ~3/duct_tape_install.json
                   portDefend: ~3/duct_tape_defend.json
-                  portSFX: ~3/SFX_PhysicalPortSecurity_DuctTape.mp3
+                  portSFX: ~3/SFX_PhysicalPortSecurity_DuctTape.mp3?sfx
             btnTxt: Port Duct Tape
             icon: mini-duct-tape
             blurb: "<span>Celebrity Sponsor:</span> MacGyver <br/><span>Also Fixes:</span> Everything"
@@ -58,7 +58,7 @@ ux:
                   portBuild: ~3/kragle_build.json
                   portInstall: ~3/kragle_install.json
                   portDefend: ~3/kragle_defend.json
-                  portSFX: ~3/SFX_PhysicalPortSecurity_TheKragle.mp3
+                  portSFX: ~3/SFX_PhysicalPortSecurity_TheKragle.mp3?sfx
             btnTxt: The Kragle
             icon: mini-kragle
             blurb: "<span>Variants:</span> Regular Glue, Super Glue,<br/>Ludicrous Glue. <br/><span>Other Uses:</span> Fixing Cuts, Fingernails, and Pantyhose Runs."
@@ -74,7 +74,7 @@ ux:
                   portBuild: ~3/umpire_build.json
                   portInstall: ~3/umpire_install.json
                   portDefend: ~3/umpire_defend.json
-                  portSFX: ~3/SFX_PhysicalPortSecurity_PortUmpie.mp3
+                  portSFX: ~3/SFX_PhysicalPortSecurity_PortUmpie.mp3?sfx
             btnTxt: Port Umpire
             icon: mini-umpire
             blurb: "<span>Ejections:</span> Too Many to Count <br/><span>Bad Calls:</span> Never!"
