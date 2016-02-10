@@ -19,9 +19,10 @@ module.exports = class AudioTrack
     aristotle.soundLib.on 'end', handle, @soundId
     @trackEventHandler 'end', handle
 
-  pause : ()-> aristotle.soundLib.pause @soundId
-  stop  : ()-> aristotle.soundLib.stop @soundId
-  loop  : ()-> aristotle.soundLib.loop @soundId
+  pausedPlay : ()-> aristotle.soundLib.pausedPlay @soundId
+  pause      : ()-> aristotle.soundLib.pause @soundId
+  stop       : ()-> aristotle.soundLib.stop @soundId
+  loop       : ()-> aristotle.soundLib.loop @soundId
 
   destroy : (doUnloadFromMemory)->
     @isDead = true

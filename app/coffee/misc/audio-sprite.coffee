@@ -31,12 +31,13 @@ module.exports = class AudioSprite
     @ids[id] = spriteName
     return id
 
-  pause  : (id)              -> @getSoundById( id ).pause id
-  stop   : (id)              -> @getSoundById( id ).stop id
-  volume : (volume, id)      -> @getSoundById( id ).volume volume, id
-  loop   : (id, doLoop=true) -> @getSoundById( id ).loop doLoop, id
-  on     : (event, fn, id)   -> @getSoundById( id ).on  event, fn, id
-  off    : (event, fn, id)   -> @getSoundById( id ).off event, fn, id
+  pausedPlay : (id)              -> @getSoundById( id ).play id # play when this is paused
+  pause      : (id)              -> @getSoundById( id ).pause id
+  stop       : (id)              -> @getSoundById( id ).stop id
+  volume     : (volume, id)      -> @getSoundById( id ).volume volume, id
+  loop       : (id, doLoop=true) -> @getSoundById( id ).loop doLoop, id
+  on         : (event, fn, id)   -> @getSoundById( id ).on  event, fn, id
+  off        : (event, fn, id)   -> @getSoundById( id ).off event, fn, id
 
   # ------------------------------------ Helpers
 
@@ -52,6 +53,9 @@ module.exports = class AudioSprite
       aristotle.throw "Couldn't find the sound `#{spriteName}` in any of the sprites, you probably forgot to add the sprite json file to the chapter.."
 
   isolateSpriteName : (fileName) ->
+    if typeof fileName != "string"
+      aristotle.throw "Trying to get a strange filename in the audio sprite machine, probably misnamed something."
+
     splits = fileName.split("?")
     if splits.length == 1
       return "dialogue"

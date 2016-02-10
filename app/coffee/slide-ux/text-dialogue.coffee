@@ -136,7 +136,7 @@ module.exports = class TextDialogue
     PubSub.publish "timers.pause"
 
   playTimeline  : () ->
-    @track?.play()
+    @track?.pausedPlay()
     @actor?.startTalking()
     PubSub.publish "timers.resume"
 

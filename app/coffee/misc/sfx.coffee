@@ -20,11 +20,12 @@ module.exports = class SoundFX
 
   vcrPause  : () ->
     for key, sfx of @sfx
-      sfx.track.sound.paused = true
+      sfx.track.pause()
 
   vcrPlay   : () ->
     for key, sfx of @sfx
-      sfx.track.sound.paused = false
+      sfx.track.pausedPlay()
+
 
   vcrReplay : () ->
     ar = []
