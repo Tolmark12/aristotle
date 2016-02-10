@@ -3,7 +3,9 @@ module.exports = class AudioSprite
   constructor: ( @loadedCb ) ->
     window.addEventListener "beforeunload", ()=> @unloadAudio()
     aristotle.soundLib = @
+    @createHowl()
 
+  createHowl : () ->
     data              = preloader.preloadQueue.getResult "~s/sprite.json"
     data.onload       = @onLoad
     data.onloaderror  = @onLoadError
