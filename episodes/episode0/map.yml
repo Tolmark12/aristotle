@@ -16,9 +16,9 @@ chapters:
       # Animation Split Screen Advance ==========================================
       -
         fid: intro
-        # sfx:
-          # - {content: ~g/Intro_Credits.mp3?sfx, volume: 0.2}
-          # - {content: ~0/SFX_Defender_Door_Open.mp3?sfx, delay: 7300, volume: 0.8 }
+        sfx:
+          - {content: ~g/Intro_Credits.mp3, volume: 0.2}
+          - {content: ~0/SFX_Defender_Door_Open.mp3?sfx, delay: 7300, volume: 0.8 }
         action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}, {cmd: chrome.hidename}, {cmd: chrome.hideicons}]
         movie:
           layers:

@@ -34,11 +34,7 @@ module.exports = class AudioSprite
   pause  : (id)              -> @getSoundById( id ).pause id
   stop   : (id)              -> @getSoundById( id ).stop id
   volume : (volume, id)      -> @getSoundById( id ).volume volume, id
-  loop   : (id, doLoop=true) ->
-    console.log doLoop, id
-    console.log @getSoundById( id ).playing()
-    console.log @getSoundById( id ).loop
-    @getSoundById( id ).loop doLoop, id
+  loop   : (id, doLoop=true) -> @getSoundById( id ).loop doLoop, id
   on     : (event, fn, id)   -> @getSoundById( id ).on  event, fn, id
   off    : (event, fn, id)   -> @getSoundById( id ).off event, fn, id
 

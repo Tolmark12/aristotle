@@ -1,6 +1,6 @@
 {
   "urls": [
-    "./episodes/sprites/episode3/chapter2/sprite.mp3"
+    "./sprites/episode3/chapter2/sprite.mp3"
   ],
   "sprite": {
     "CIN_Quarantine": [

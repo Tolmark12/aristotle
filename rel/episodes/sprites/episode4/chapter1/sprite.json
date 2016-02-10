@@ -1,6 +1,6 @@
 {
   "urls": [
-    "./episodes/sprites/episode4/chapter1/sprite.mp3"
+    "./sprites/episode4/chapter1/sprite.mp3"
   ],
   "sprite": {
     "~g/MU_Attack_Music.mp3": [

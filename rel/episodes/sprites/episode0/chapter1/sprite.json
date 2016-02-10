@@ -1,6 +1,6 @@
 {
   "urls": [
-    "./episodes/sprites/episode0/chapter1/sprite.mp3"
+    "./sprites/episode0/chapter1/sprite.mp3"
   ],
   "sprite": {
     "~g/Intro_Credits.mp3": [
