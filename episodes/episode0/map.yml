@@ -320,7 +320,7 @@ chapters:
       # Dialogue Gut Check  ==========================================
       -
         action:
-          - {cmd: sound.fadein, data: {delay: 1000, duration: 500, slot: ambience} }
+          - {cmd: sound.fadeout, data: {delay: 1000, duration: 500, slot: ambience} }
         title: Gut Check
         movie:
           layers:
