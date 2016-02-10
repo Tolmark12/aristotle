@@ -1,29 +1,63 @@
 module.exports = class AudioSprite
 
-  constructor: ( @loadedCb ) ->
+  constructor: ( @loadedCb, sprites ) ->
     window.addEventListener "beforeunload", ()=> @unloadAudio()
     aristotle.soundLib = @
-    @createHowl()
+    @sprites = {}
+    @ids     = {}
+    @makeSprites sprites
 
-  createHowl : () ->
-    data              = preloader.preloadQueue.getResult "~s/sprite.json"
+  makeSprites : (sprites) ->
+    for sprite in sprites
+      splits = sprite.split(".")[0].split "/"
+      name   = splits[ splits.length - 1 ]
+      @createSprite sprite, name
+
+  createSprite : (spriteJson, name) ->
+    data              = preloader.preloadQueue.getResult spriteJson
     data.onload       = @onLoad
     data.onloaderror  = @onLoadError
-    data.src          = [ aristotle.getAssetPath("~s/sprite.mp3") ]
-    delete data.urls
-    @sound            = new Howl data
+    sprite            = new Howl data
+    @sprites[name]    = sprite
 
   # Control
-  play   : (id)            -> @sound.play id
-  pause  : (id)            -> @sound.pause id
-  stop   : (id)            -> @sound.stop id
-  volume : (volume, id)    -> @sound.volume volume, id
-  on     : (event, fn, id) -> @sound.on  event, fn, id
-  off    : (event, fn, id) -> @sound.off event, fn, id
+  play   : (name)          ->
+    spriteName = @isolateSpriteName name
+    id = @getSpriteByName( spriteName ).play( name )
+    @ids[id] = spriteName
+    return id
+
+  pause  : (id)            -> @getSoundById( id ).pause id
+  stop   : (id)            -> @getSoundById( id ).stop id
+  volume : (volume, id)    -> @getSoundById( id ).volume volume, id
+  on     : (event, fn, id) -> @getSoundById( id ).on  event, fn, id
+  off    : (event, fn, id) -> @getSoundById( id ).off event, fn, id
+
+  # ------------------------------------ Helpers
+
+  # Get sound by the id returned from previous play
+  getSoundById : (id) -> @sprites[ @ids[id] ]
+
+  # Check each sprite json manifest to see if it has a sound with
+  # this id, if it does, return the sound that holds that id
+  getSpriteByName : (spriteName) ->
+    if @sprites[spriteName]?
+      return @sprites[spriteName]
+    else
+      aristotle.throw "Couldn't find the sound `#{name}` in any of the sprites!"
+
+  isolateSpriteName : (fileName) ->
+    splits = fileName.split("?")
+    if splits.length == 1
+      return "dialogue"
+    else
+      return splits[1]
 
   # Events
   onLoad      : () => @loadedCb()
   onLoadError : () -> console.log "Could not load the audio sprite"
 
   # Cleanup on episode end
-  unloadAudio : () => @sound.unload()
+  unloadAudio : () =>
+    for json in @soundJsons
+      json.sound.unload()

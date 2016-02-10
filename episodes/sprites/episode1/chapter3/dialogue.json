@@ -1,0 +1,39 @@
+{
+  "sprite": {
+    "~g/MU_Attack_Music.mp3": [
+      0,
+      27428.571428571428
+    ],
+    "Story_2_Ctanlee_12.mp3": [
+      28250,
+      3604.897959183674
+    ],
+    "Story_2_Ctanlee_X38.mp3": [
+      32500,
+      2011.4285714285743
+    ],
+    "Story_2_Ctanlee_X39.mp3": [
+      35750,
+      3944.489795918365
+    ],
+    "Story_2_Ctanlee_15.mp3": [
+      40000,
+      3970.612244897957
+    ],
+    "Story_2_Ctanlee_19.mp3": [
+      44250,
+      2768.979591836732
+    ],
+    "Story_2_Ctanlee_20.mp3": [
+      47500,
+      2977.9591836734694
+    ],
+    "Story_2_Ctanlee_21.mp3": [
+      50750,
+      7235.918367346941
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode1/chapter3/dialogue.mp3"
+  ]
+}

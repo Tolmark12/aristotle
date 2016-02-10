@@ -10,10 +10,8 @@ module.exports = class AssetPreloader
       @callback()
       return
 
-
-    # Preload the sprite json
+    @sprites = data.sprites
     @files = []
-    data.sprite = "~s/sprite.json"
 
     @lookForFiles data, @files
     @files = @removeDuplicates @files
@@ -40,7 +38,7 @@ module.exports = class AssetPreloader
 
 
   createAudioSprite : () ->
-    audioSprite = new AudioSprite @spriteLoadComplete
+    audioSprite = new AudioSprite @spriteLoadComplete, @sprites
 
   spriteLoadComplete : () =>
     @callback @data

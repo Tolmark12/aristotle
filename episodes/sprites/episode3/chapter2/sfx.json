@@ -1,0 +1,11 @@
+{
+  "sprite": {
+    "~3/CIN_Quarantine.mp3?sfx": [
+      0,
+      2377.1428571428573
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode3/chapter2/sfx.mp3"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "sprite": {
+    "~g/MU_Attack_Music.mp3": [
+      0,
+      27428.571428571428
+    ],
+    "Story_4_Ctanlee_19.mp3": [
+      28250,
+      6164.897959183676
+    ],
+    "Story_4_Ctanlee_20.mp3": [
+      35500,
+      6896.326530612242
+    ],
+    "Story_4_Ctanlee_21.mp3": [
+      42750,
+      3709.387755102043
+    ],
+    "Story_4_Ctanlee_22.mp3": [
+      47000,
+      2768.979591836732
+    ],
+    "Story_4_Ctanlee_23.mp3": [
+      50250,
+      3317.55102040816
+    ],
+    "Story_4_Ctanlee_24.mp3": [
+      54500,
+      2377.1428571428573
+    ],
+    "Story_4_Ctanlee_25.mp3": [
+      57750,
+      2455.5102040816337
+    ],
+    "Story_4_Ctanlee_26.mp3": [
+      61000,
+      1227.7551020408168
+    ],
+    "Story_4_Ctanlee_27.mp3": [
+      63250,
+      1959.183673469383
+    ],
+    "~3/SFX_AssetChangeTools_DoubleDeuce.mp3": [
+      65500,
+      2377.1428571428573
+    ],
+    "~3/SFX_AssetChangeTools_MyFusion.mp3": [
+      68750,
+      2377.1428571428573
+    ],
+    "~3/SFX_AssetChangeTools_The De-Materializer.mp3": [
+      72000,
+      2690.612244897963
+    ],
+    "Story_4_Ctanlee_28.mp3": [
+      75250,
+      5590.204081632649
+    ],
+    "Story_4_Ctanlee_29.mp3": [
+      81500,
+      4414.693877551016
+    ],
+    "Story_4_Ctanlee_30.mp3": [
+      86750,
+      4571.42857142857
+    ],
+    "Story_4_Ctanlee_31.mp3": [
+      92000,
+      8620.40816326531
+    ],
+    "Story_4_Ctanlee_32.mp3": [
+      101250,
+      5825.306122448978
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode3/chapter3/dialogue.mp3"
+  ]
+}

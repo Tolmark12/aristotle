@@ -1,0 +1,19 @@
+{
+  "sprite": {
+    "~g/SFX_AttackSlamdown_AuditBot.mp3?sfx": [
+      0,
+      2586.122448979592
+    ],
+    "~4/CIN_BlackOutGrid.mp3?sfx": [
+      3250,
+      1750.2040816326528
+    ],
+    "~g/SFX_Level_MasterCadet.mp3?sfx": [
+      5500,
+      7941.224489795918
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode4/chapter3/sfx.mp3"
+  ]
+}

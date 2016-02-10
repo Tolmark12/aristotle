@@ -1,0 +1,67 @@
+{
+  "sprite": {
+    "~g/MU_Attack_Music.mp3": [
+      0,
+      27428.571428571428
+    ],
+    "Story_3_Ctanlee_1.mp3": [
+      28250,
+      4101.224489795918
+    ],
+    "Story_3_Ctanlee_2.mp3": [
+      33500,
+      2795.1020408163245
+    ],
+    "Story_3_Ctanlee_3.mp3": [
+      36750,
+      4623.673469387753
+    ],
+    "Story_3_Ctanlee_4.mp3": [
+      42000,
+      1671.8367346938762
+    ],
+    "Story_3_Ctanlee_5.mp3": [
+      44250,
+      3474.2857142857133
+    ],
+    "Story_3_Ctanlee_6.mp3": [
+      48500,
+      2664.489795918371
+    ],
+    "~2/SFX_PhysicalAccessControlSystem_TheCardGuardXT.mp3": [
+      51750,
+      2690.612244897956
+    ],
+    "~2/SFX_PhysicalAccessControlSystem_HAL9000EyeScanner.mp3": [
+      55000,
+      3813.8775510204114
+    ],
+    "~2/SFX_PhysicalAccessControlSystem_WateryGraveKrakenSensor.mp3": [
+      59250,
+      2690.612244897956
+    ],
+    "Story_3_Ctanlee_7.mp3": [
+      62500,
+      13792.653061224484
+    ],
+    "Story_3_Ctanlee_8a.mp3": [
+      76750,
+      2089.795918367344
+    ],
+    "Story_3_Ctanlee_8b.mp3": [
+      80000,
+      3291.4285714285684
+    ],
+    "Story_3_Ctanlee_9.mp3": [
+      84250,
+      4153.469387755109
+    ],
+    "Story_3_Ctanlee_15.mp3": [
+      89500,
+      2533.87755102041
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode2/chapter1/dialogue.mp3"
+  ]
+}

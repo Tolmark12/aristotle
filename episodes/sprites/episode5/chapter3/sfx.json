@@ -1,0 +1,15 @@
+{
+  "sprite": {
+    "~5/CIN_FacilityRecovery.mp3?sfx": [
+      0,
+      12669.38775510204
+    ],
+    "~g/SFX_Level_Defender.mp3?sfx": [
+      13250,
+      7941.224489795918
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode5/chapter3/sfx.mp3"
+  ]
+}

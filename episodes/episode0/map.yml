@@ -11,13 +11,14 @@ chapters:
     ctanlee: !!inc/file ./episodes/global/_ctanlee.yaml
     title: Loading Introduction
     kind: intro
+    sprites: [~s/dialogue.json, ~s/sfx.json]
     slides:
       # Animation Split Screen Advance ==========================================
       -
         fid: intro
-        sfx:
-          - {content: ~g/Intro_Credits.mp3, volume: 0.2}
-          - {content: ~0/SFX_Defender_Door_Open.mp3, delay: 7300, volume: 0.8 }
+        # sfx:
+          # - {content: ~g/Intro_Credits.mp3?sfx, volume: 0.2}
+          # - {content: ~0/SFX_Defender_Door_Open.mp3?sfx, delay: 7300, volume: 0.8 }
         action: [{cmd: chrome.hide}, {cmd: ctanlee.hide}, {cmd: chrome.hidename}, {cmd: chrome.hideicons}]
         movie:
           layers:
@@ -243,7 +244,7 @@ chapters:
       # Animation Sektimus Launch  ==========================================
       -
         sfx:
-          - {content: ~0/SFX_Sektimus_Fleet_Impacts.mp3, delay: 26800, volume: 1 }
+          - {content: ~0/SFX_Sektimus_Fleet_Impacts.mp3?sfx, delay: 25000, volume: 1 }
         action:
           - {cmd: chrome.hide}
           - {cmd: sound.fadeout, data: {delay: 15000, duration: 500, slot: ambience} }
@@ -416,7 +417,7 @@ chapters:
       -
         action: {cmd: chrome.hide}
         sfx:
-          - {content: ~g/SFX_Level_Cadet.mp3, volume: 1}
+          - {content: ~g/SFX_Level_Cadet.mp3?sfx, volume: 1}
         movie:
           layers:
             - {depth: 0, background: black, content: ~g/cadet.json, events: [complete] }

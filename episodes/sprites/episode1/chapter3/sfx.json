@@ -1,0 +1,19 @@
+{
+  "sprite": {
+    "~1/SFX_Camera.mp3?sfx": [
+      0,
+      1149.3877551020407
+    ],
+    "~1/SFX_Tackle.mp3?sfx": [
+      2250,
+      1933.061224489796
+    ],
+    "~g/SFX_Level_CadetFirstClass.mp3?sfx": [
+      4500,
+      7941.224489795918
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode1/chapter3/sfx.mp3"
+  ]
+}

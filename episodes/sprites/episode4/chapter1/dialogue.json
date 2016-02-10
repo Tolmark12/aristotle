@@ -1,0 +1,95 @@
+{
+  "sprite": {
+    "~g/MU_Attack_Music.mp3": [
+      0,
+      27428.571428571428
+    ],
+    "Story_5_Ctanlee_1.mp3": [
+      28250,
+      14733.061224489795
+    ],
+    "Story_5_Ctanlee_2.mp3": [
+      43500,
+      3970.612244897957
+    ],
+    "Story_5_Ctanlee_3.mp3": [
+      47750,
+      2115.9183673469356
+    ],
+    "Story_5_Ctanlee_4.mp3": [
+      51000,
+      4336.326530612248
+    ],
+    "~3/Story_4_Ctanlee_3.mp3": [
+      56250,
+      1358.3673469387777
+    ],
+    "Story_5_Ctanlee_6.mp3": [
+      58500,
+      3552.6530612244896
+    ],
+    "Story_5_Ctanlee_7.mp3": [
+      62750,
+      2377.1428571428573
+    ],
+    "Story_5_Ctanlee_8.mp3": [
+      66000,
+      2246.5306122448965
+    ],
+    "~4/SFX_AccessControlSystem_BackgroundProbe.mp3": [
+      69250,
+      3317.55102040816
+    ],
+    "~4/SFX_AccessControlSystem_RiskDetector.mp3": [
+      73500,
+      2377.1428571428573
+    ],
+    "~4/SFX_AccessControlSystem_VoightKampfDetector.mp3": [
+      76750,
+      2377.1428571428573
+    ],
+    "Story_5_Ctanlee_9.mp3": [
+      80000,
+      3160.8163265306075
+    ],
+    "Story_5_Ctanlee_10.mp3": [
+      84250,
+      4466.938775510201
+    ],
+    "Story_5_Ctanlee_11.mp3": [
+      89500,
+      7392.653061224493
+    ],
+    "Story_5_Ctanlee_12.mp3": [
+      97750,
+      4414.693877551016
+    ],
+    "Story_5_Ctanlee_13.mp3": [
+      103000,
+      5015.510204081636
+    ],
+    "Story_5_Ctanlee_14.mp3": [
+      109250,
+      1515.1020408163304
+    ],
+    "Story_5_Ctanlee_15_alt.mp3": [
+      111500,
+      4075.1020408163326
+    ],
+    "Story_5_Ctanlee_16.mp3": [
+      116750,
+      3813.8775510204114
+    ],
+    "Story_5_Ctanlee_17.mp3": [
+      121000,
+      5720.81632653061
+    ],
+    "Story_5_Ctanlee_18.mp3": [
+      127250,
+      2377.1428571428714
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode4/chapter1/dialogue.mp3"
+  ]
+}

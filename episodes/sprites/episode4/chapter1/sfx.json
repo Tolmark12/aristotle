@@ -1,0 +1,27 @@
+{
+  "sprite": {
+    "~4/CIN_HumanExcited.mp3?sfx": [
+      0,
+      2063.673469387755
+    ],
+    "~g/SFX_AttackSlamdown_UnsavoryHuman.mp3?sfx": [
+      3250,
+      4571.428571428572
+    ],
+    "~4/CIN_RobotsMovingExplosion.mp3?sfx": [
+      8500,
+      5250.612244897959
+    ],
+    "~4/CIN_Typing.mp3?sfx": [
+      14750,
+      1593.4693877551033
+    ],
+    "~4/CIN_ScannerShock.mp3?sfx": [
+      17000,
+      5250.612244897959
+    ]
+  },
+  "src": [
+    "episodes/sprites/episode4/chapter1/sfx.mp3"
+  ]
+}

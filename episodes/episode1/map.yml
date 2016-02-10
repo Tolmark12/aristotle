@@ -14,6 +14,7 @@ chapters:
     title: Chapter 1
     subtitle: Facilities and Cyber Assets
     kind: chapter
+    sprites: [~s/dialogue.json]
     slides:
       # 1 Background Build in ==========================================
       -
@@ -336,6 +337,7 @@ chapters:
     title: Chapter 2
     subtitle: Defenders and Duties
     kind: chapter
+    sprites: [~s/dialogue.json]
     slides:
       # 2 Dialogue Defenders ==========================================
       -
@@ -539,6 +541,7 @@ chapters:
     title: Chapter 3
     subtitle: Our Regulators
     kind: chapter
+    sprites: [~s/dialogue.json, ~s/sfx.json]
     slides:
       # 3 Dialogue Regulators ==========================================
       -
@@ -561,14 +564,14 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 500, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~1/CIN_DoorOpen.mp3, delay: 1500, volume: 0.08 }
-          - {content: ~1/CIN_HumanWalking.mp3, delay: 2000, volume: 0.08 }
-          - {content: ~1/SFX_Camera.mp3, delay: 6000, volume: 1 }
-          # - {content: ~1/CIN_HumanWalking.mp3, delay: 7000, volume: 0.08, loop: 1 }
-          # - {content: ~1/CIN_DoorOpen.mp3, delay: 9500, volume: 0.08 }
-          # - {content: ~1/CIN_DoorOpen.mp3, delay: 12000, volume: 0.08 }
-          # - {content: ~1/CIN_HumanWalking.mp3, delay: 12800, volume: 0.08 }
-          # - {content: ~1/CIN_DoorOpen.mp3, delay: 13000, volume: 0.08 }
+          - {content: ~1/SFX_Camera.mp3?sfx, delay: 6000, volume: 1 }
+          #- {content: ~1/CIN_DoorOpen.mp3?sfx, delay: 1500, volume: 0.08 }
+          #- {content: ~1/CIN_HumanWalking.mp3?sfx, delay: 2000, volume: 0.08 }
+          #- {content: ~1/CIN_HumanWalking.mp3?sfx, delay: 7000, volume: 0.08, loop: 1 }
+          #- {content: ~1/CIN_DoorOpen.mp3?sfx, delay: 9500, volume: 0.08 }
+          #- {content: ~1/CIN_DoorOpen.mp3?sfx, delay: 12000, volume: 0.08 }
+          #- {content: ~1/CIN_HumanWalking.mp3?sfx, delay: 12800, volume: 0.08 }
+          #- {content: ~1/CIN_DoorOpen.mp3?sfx, delay: 13000, volume: 0.08 }
         movie:
           layers:
             - {depth: 6, content: violation.json, vcr: true }
@@ -628,10 +631,10 @@ chapters:
       # 3 Animation Good Catch ==========================================
       -
         sfx:
-          - {content: ~1/CIN_HumanWalking.mp3, delay: 500, volume: 0.08, loop: 1 }
-          - {content: ~1/SFX_Camera.mp3, delay: 7000, volume: 1 }
-          # - {content: ~1/CIN_HumanWalking.mp3, delay: 9100, volume: 0.08 }
-          - {content: ~1/SFX_Tackle.mp3, delay: 10500, volume: 1 }
+          #- {content: ~1/CIN_HumanWalking.mp3?sfx, delay: 500, volume: 0.08, loop: 1 }
+          - {content: ~1/SFX_Camera.mp3?sfx, delay: 7000, volume: 1 }
+          # - {content: ~1/CIN_HumanWalking.mp3?sfx, delay: 9100, volume: 0.08 }
+          - {content: ~1/SFX_Tackle.mp3?sfx, delay: 10500, volume: 1 }
         movie:
           layers:
             - {depth: 6, content: clear }
@@ -706,7 +709,7 @@ chapters:
       # 3 Rank Advance ==========================================
       -
         sfx:
-          - {content: ~g/SFX_Level_CadetFirstClass.mp3, volume:1}
+          - {content: ~g/SFX_Level_CadetFirstClass.mp3?sfx, volume:1}
         movie:
           layers:
             - {depth: 7, background: black, content: ~g/cadet_first_class.json, events: [complete] }
