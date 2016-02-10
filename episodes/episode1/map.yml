@@ -561,14 +561,14 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 500, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~1/CIN_DoorOpen.mp3, delay: 1500, volume: 0.08 }
-          - {content: ~1/CIN_HumanWalking.mp3, delay: 2000, volume: 0.08 }
+          #- {content: ~1/CIN_DoorOpen.mp3, delay: 1500, volume: 0.08 }
+          #- {content: ~1/CIN_HumanWalking.mp3, delay: 2000, volume: 0.08 }
           - {content: ~1/SFX_Camera.mp3, delay: 6000, volume: 1 }
-          # - {content: ~1/CIN_HumanWalking.mp3, delay: 7000, volume: 0.08, loop: 1 }
-          # - {content: ~1/CIN_DoorOpen.mp3, delay: 9500, volume: 0.08 }
-          # - {content: ~1/CIN_DoorOpen.mp3, delay: 12000, volume: 0.08 }
-          # - {content: ~1/CIN_HumanWalking.mp3, delay: 12800, volume: 0.08 }
-          # - {content: ~1/CIN_DoorOpen.mp3, delay: 13000, volume: 0.08 }
+          #- {content: ~1/CIN_HumanWalking.mp3, delay: 7000, volume: 0.08, loop: 1 }
+          #- {content: ~1/CIN_DoorOpen.mp3, delay: 9500, volume: 0.08 }
+          #- {content: ~1/CIN_DoorOpen.mp3, delay: 12000, volume: 0.08 }
+          #- {content: ~1/CIN_HumanWalking.mp3, delay: 12800, volume: 0.08 }
+          #- {content: ~1/CIN_DoorOpen.mp3, delay: 13000, volume: 0.08 }
         movie:
           layers:
             - {depth: 6, content: violation.json, vcr: true }
@@ -628,9 +628,9 @@ chapters:
       # 3 Animation Good Catch ==========================================
       -
         sfx:
-          - {content: ~1/CIN_HumanWalking.mp3, delay: 500, volume: 0.08, loop: 1 }
+          #- {content: ~1/CIN_HumanWalking.mp3, delay: 500, volume: 0.08, loop: 1 }
           - {content: ~1/SFX_Camera.mp3, delay: 7000, volume: 1 }
-          # - {content: ~1/CIN_HumanWalking.mp3, delay: 9100, volume: 0.08 }
+          #- {content: ~1/CIN_HumanWalking.mp3, delay: 9100, volume: 0.08 }
           - {content: ~1/SFX_Tackle.mp3, delay: 10500, volume: 1 }
         movie:
           layers:

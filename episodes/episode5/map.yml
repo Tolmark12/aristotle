@@ -349,7 +349,7 @@ chapters:
         fid: ep5-ch2-sektimus-normal-b
         sfx:
           - {content: ~g/SFX_AttackSlamdown_BotTron.mp3, delay: 12400, volume: .3 }
-          - {content: ~5/SFX_BotTron_Attack.mp3, delay: 20000, volume: 1 }
+          - {content: ~5/SFX_BotTron_Attack.mp3, delay: 35000, volume: 1 }
         movie:
           layers:
             - {depth: 0, content: red-sky.svg }
@@ -441,8 +441,6 @@ chapters:
     title: Chapter 3
     subtitle: Recovering From Battle
     kind: chapter
-    dev:
-      startIndex: 12
     slides:
       # 3 Dialogue Recovery Plan ==========================================
       -
@@ -521,7 +519,7 @@ chapters:
       -
         action:
           - {cmd: ctanlee.gohome}
-          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3, loop: true, volume: .2, slot: music} }
+          - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3, loop: true, volume: .1, slot: music} }
         sfx:
           - {content: $nercSFX, volume: 1}
         movie:

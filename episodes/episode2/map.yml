@@ -46,12 +46,12 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~2/CIN_RobotMovement.mp3, delay: 700, volume: 0.08 }
-          # - {content: ~2/CIN_RobotMovement.mp3, delay: 12000, volume: 0.1, loop: 3 }
+          #- {content: ~2/CIN_RobotMovement.mp3, delay: 700, volume: 0.08 }
+          #- {content: ~2/CIN_RobotMovement.mp3, delay: 12000, volume: 0.1, loop: 3 }
           - {content: ~g/SFX_AttackSlamdown_KettleHead.mp3, delay: 3400, volume: 0.2}
-          - {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3, delay: 12600, volume: 0.3}
+          #- {content: ~2/CIN_PhysicalAttack_DoorOpen.mp3, delay: 12600, volume: 0.3}
           - {content: ~2/CIN_PhysicalAttack_Screams.mp3, delay: 14500, volume: 0.2 }
-          - {content: ~2/CIN_RipServerFromWall.mp3, delay: 14500, volume: 0.1 }
+          #- {content: ~2/CIN_RipServerFromWall.mp3, delay: 14500, volume: 0.1 }
           - {content: ~2/CIN_PhysicalAttack_ServerCrash.mp3, delay: 15810, volume: 0.3 }
         movie:
           layers:
@@ -169,7 +169,7 @@ chapters:
       -
         action: {cmd: playsound, data: {content: ~g/MU_Attack_Music.mp3, delay: 1000, volume: 0.1, loop: true, slot: music} }
         sfx:
-          - {content: ~2/CIN_RobotMovement.mp3, delay: 3000, volume: 0.1, loop: 1 }
+          #- {content: ~2/CIN_RobotMovement.mp3, delay: 3000, volume: 0.1, loop: 1 }
           - {content: $pacsSFX, delay: 7200, volume: 0.3 }
           # - {content: ~2/CIN_RobotMovement.mp3, delay: 10500, volume: 0.1, loop: 3 }
           - {content: ~2/CIN_PhysicalAttack_DoorRipAndCrash, delay: 16000, volume: 0.1 }
