@@ -2,11 +2,13 @@
   "sprite": {
     "~g/MU_Ambient_Facility_no_notes.mp3?amb": [
       0,
-      145162.44897959183
+      145162.44897959183,
+      true
     ],
     "~0/CIN_Intro_Sektimus.mp3?amb": [
       146250,
-      89338.77551020407
+      89338.77551020407,
+      true
     ]
   },
   "src": [
