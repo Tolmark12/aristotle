@@ -175,13 +175,13 @@ chapters:
           #- {content: ~2/CIN_RobotMovement.mp3?sfx, delay: 3000, volume: 0.1, loop: 1 }
           - {content: $pacsSFX, delay: 7200, volume: 0.3 }
           # - {content: ~2/CIN_RobotMovement.mp3?sfx, delay: 10500, volume: 0.1, loop: 3 }
-          - {content: ~2/CIN_PhysicalAttack_DoorRipAndCrash.mp3?sfx, delay: 16000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3?sfx, delay: 17000, volume: 0.1 }
-          # - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3?sfx, delay: 19000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_RunningMen, delay: 21000, volume: 1 }
-          # - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3?sfx, delay: 21000, volume: 0.1 }
-          #- {content: ~2/CIN_PhysicalDefense_Laser.mp3?sfx, delay: 24000, volume: 0.1 }
-          - {content: ~2/CIN_PhysicalDefense_BlastedRobot.mp3?sfx, delay: 24400, volume: 0.05 }
+          - {content: ~2/CIN_PhysicalAttack_DoorRipAndCrash.mp3?sfx, delay: 17000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3?sfx, delay: 18000, volume: 0.1 }
+           - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3?sfx, delay: 20000, volume: 0.1 }
+          #- {content: ~2/CIN_PhysicalDefense_RunningMen.mp3?sfx, delay: 21000, volume: 1 }
+           - {content: ~2/CIN_PhysicalDefense_Klaxon.mp3?sfx, delay: 22000, volume: 0.1 }
+          - {content: ~2/CIN_PhysicalDefense_Laser.mp3?sfx, delay: 24000, volume: 0.1 }
+          #- {content: ~2/CIN_PhysicalDefense_BlastedRobot.mp3?sfx, delay: 24400, volume: 0.05 }
         movie:
           layers:
             - {depth: 6, content: clear }
