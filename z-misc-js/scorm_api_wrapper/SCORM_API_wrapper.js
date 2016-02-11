@@ -279,7 +279,6 @@ pipwerks.SCORM.connection.initialize = function () {
 
 				//Double-check that connection is active and working before returning 'true' boolean
 				errorCode = debug.getCode();
-				errorMsg = debug.getDiagnosticInfo(errorCode);
 
 				if (errorCode !== null && errorCode === 0) {
 
@@ -323,18 +322,17 @@ pipwerks.SCORM.connection.initialize = function () {
 				} else {
 
 					success = false;
-					trace(traceMsgPrefix + "failed. \nError code: " + errorCode + ". \nError info: " + debug.getInfo(errorCode)+ ". \nError Diag: " +errorMsg);
+					trace(traceMsgPrefix + "failed. \nError code: " + errorCode + " \nError info: " + debug.getInfo(errorCode));
 
 				}
 
 			} else {
 
 				errorCode = debug.getCode();
-				errorMsg = debug.getDiagnosticInfo(errorCode);
 
 				if (errorCode !== null && errorCode !== 0) {
 
-					trace(traceMsgPrefix + "failed. \nError code: " + errorCode + ". \nError info: " + debug.getInfo(errorCode)+ ". \nError Diag: " +errorMsg);
+					trace(traceMsgPrefix + "failed. \nError code: " + errorCode + " \nError info: " + debug.getInfo(errorCode));
 
 				} else {
 
@@ -436,8 +434,7 @@ pipwerks.SCORM.connection.terminate = function () {
 				} else {
 
 					errorCode = debug.getCode();
-					errorMsg = debug.getDiagnosticInfo(errorCode);
-					trace(traceMsgPrefix + "failed. \nError code: " + errorCode + ". \nError info: " + debug.getInfo(errorCode)+ ". \nError Diag: " +errorMsg);
+					trace(traceMsgPrefix + "failed. \nError code: " + errorCode + " \nError info: " + debug.getInfo(errorCode));
 
 				}
 
@@ -499,7 +496,6 @@ pipwerks.SCORM.data.get = function (parameter) {
 			}
 
 			errorCode = debug.getCode();
-			errorMsg = debug.getDiagnosticInfo(errorCode);
 
 			//GetValue returns an empty string on errors
 			//If value is an empty string, check errorCode to make sure there are no errors
@@ -524,7 +520,7 @@ pipwerks.SCORM.data.get = function (parameter) {
 
 			} else {
 
-				trace(traceMsgPrefix + "failed. \nError code: " + errorCode + ". \nError info: " + debug.getInfo(errorCode)+ ". \nError Diag: " +errorMsg);
+				trace(traceMsgPrefix + "failed. \nError code: " + errorCode + "\nError info: " + debug.getInfo(errorCode));
 
 			}
 
@@ -596,9 +592,8 @@ pipwerks.SCORM.data.set = function (parameter, value) {
 			} else {
 
 				errorCode = debug.getCode();
-				errorMsg = debug.getDiagnosticInfo(errorCode);
 
-				trace(traceMsgPrefix + "failed. \nError code: " + errorCode + ". \nError info: " + debug.getInfo(errorCode)+ ". \nError Diag: " +errorMsg);
+				trace(traceMsgPrefix + "failed. \nError code: " + errorCode + ". \nError info: " + debug.getInfo(errorCode));
 
 			}
 
@@ -1030,6 +1025,6 @@ elbScorm.handleError = function (msg) {
 };
 
 
-window.onload = function () {
-	elbScorm.initCourse();
-}
+// window.onload = function () {
+// 	elbScorm.initCourse();
+// }
