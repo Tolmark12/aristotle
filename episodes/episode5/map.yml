@@ -15,7 +15,7 @@ chapters:
     title: Chapter 1
     subtitle: Monitoring Our Defenses
     kind: chapter
-    sprites: [~s/amb.json, ~s/amb.json]
+    sprites: [~s/amb.json, ~s/sfx.json]
     slides:
       # 1 Background Build in ==========================================
       -
