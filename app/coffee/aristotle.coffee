@@ -23,10 +23,9 @@ SvgCartographer   = require 'misc/svg-cartographer'
 class Aristotle
 
   constructor: (@$el) ->
-    window.aristotle            = @
-    globals                     = new GlobalVars()
-    @localStorageProxy          = new LocalStorageProxy @letsGo
-    PubSub.immediateExceptions  = true
+    window.aristotle   = @
+    globals            = new GlobalVars()
+    @localStorageProxy = new LocalStorageProxy @letsGo
     PubSub.subscribe 'episode.goto', (m, data)=> @gotoLocationByTitle data.slide, data.chapter
 
   letsGo : () =>
