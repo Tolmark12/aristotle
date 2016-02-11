@@ -38,7 +38,7 @@ module.exports = class Movie
 
   reset : () ->
     @zoom {scale:1}
-    layer.destroy() for layer in @layers
+    layer?.destroy() for layer in @layers
     @layers = []
 
   populate: (data)->
