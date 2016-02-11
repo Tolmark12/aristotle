@@ -138,13 +138,11 @@ module.exports = class Layer
       200
 
   destroyDoomedAnimation : () ->
-    return if !@doomedAnimation?
-    @doomedAnimation.destroy()
+    @doomedAnimation?.destroy()
     @doomedAnimation = null
 
   destroyAnimation : () ->
-    return if !@animation?
-    @animation.destroy()
+    @animation?.destroy()
     @animation = null
 
   addFilter : (filterId) -> $("svg", @currentOnionLayer).css filter:"url(##{filterId})"

@@ -49,7 +49,7 @@ module.exports = class Quiz extends Component
                     choice            : selection.Selection
                     category          : category.ChoiceName
         catch error
-          # appInsights.trackException("error message1"); 
+          # appInsights.trackException("error message1");
           @decisionPercentages = false
 
 
@@ -80,7 +80,7 @@ module.exports = class Quiz extends Component
 
   onNextClick : () =>
     @hideNext()
-    @currentQuestion.destroy()
+    @currentQuestion?.destroy()
     if @questions.isAtLastItem()
       @showResults()
     else

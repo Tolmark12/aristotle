@@ -77,10 +77,10 @@ class Aristotle
     @movie       = new Movie    $(".movie",    $base)
 
   deleteOldAssets : () ->
-    @episode.destroy()
-    @chromeUI.destroy()
-    @slideUX.destroy()
-    @movie.destroy()
+    @episode?.destroy()
+    @chromeUI?.destroy()
+    @slideUX?.destroy()
+    @movie?.destroy()
     @$el.empty()
     @episode = @chromeUI = @slideUX = @movie = null
 

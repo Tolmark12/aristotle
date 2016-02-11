@@ -37,7 +37,7 @@ module.exports = class SoundFX
   flushSfxStore : () ->
     for key, sfx of @sfx
       if !sfx.track.isDead
-        sfx.track.destroy()
+        sfx.track?.destroy()
     @sfx = {}
 
   parseSFX : (data) ->
@@ -71,7 +71,7 @@ module.exports = class SoundFX
         delete me.slots[data.slot]
 
       # destroy the track and run any complete callbacks
-      track.destroy()
+      track?.destroy()
       if data.complete?
         aristotle.commander.do data.complete
 
@@ -101,8 +101,7 @@ module.exports = class SoundFX
 
   clearSlotIfNeeded : (data, track) ->
     # If there is audio in this slot, destroy it
-    if @slots[data.slot]?
-      @slots[data.slot].destroy()
+    @slots[data.slot]?.destroy()
 
     if track?
       @slots[data.slot] = track

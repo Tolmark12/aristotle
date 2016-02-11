@@ -25,5 +25,4 @@ module.exports = class BottomUiElements
     $(".#{clss}", @$node).removeClass 'hidden'
 
   destroy : () ->
-    if @progressMap?
-      @progressMap.destroy()
+    @progressMap?.destroy()

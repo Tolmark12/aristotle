@@ -57,11 +57,11 @@ module.exports = class SlideUX
 
   removeCurrentComponents : () ->
     for component in @components
-      component.destroy()
+      component?.destroy()
     @components = []
 
   destroy : () ->
     @removeCurrentComponents()
-    @labler.destroy()
-    @dialogue.destroy()
-    @genericUi.destroy()
+    @labler?.destroy()
+    @dialogue?.destroy()
+    @genericUi?.destroy()

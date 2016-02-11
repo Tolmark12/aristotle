@@ -117,7 +117,7 @@ module.exports = class Ctanlee
 
   destroyOldFace : () ->
     if @oldAnimation?
-      @oldAnimation.destroy()
+      @oldAnimation?.destroy()
       @$oldAnimDiv.remove()
       @$oldAnimDiv  = null
       @oldAnimation = null

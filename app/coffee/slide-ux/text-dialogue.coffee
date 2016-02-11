@@ -220,8 +220,8 @@ module.exports = class TextDialogue
     @data     = null
     @timeline = null
     @sequence = null
-    @ctanlee.destroy()
-    @cc.destroy()
+    @ctanlee?.destroy()
+    @cc?.destroy()
 
     if @track? then @track.stop()
     for token in @tokens

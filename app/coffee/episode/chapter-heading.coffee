@@ -22,7 +22,7 @@ module.exports = class ChapterHeading
 
   complete : ()=>
     @$node.addClass 'complete'
-    @destroy()
+    this?.destroy()
     @loadComplete()
 
   destroy : () ->

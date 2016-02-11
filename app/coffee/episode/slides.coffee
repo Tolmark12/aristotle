@@ -54,7 +54,7 @@ module.exports = class Slides
 
   destroy : () ->
     for slide in @slides.items
-      slide.destroy()
+      slide?.destroy()
 
     @slides = null
     PubSub.unsubscribe token for token in @subscriptionTokens

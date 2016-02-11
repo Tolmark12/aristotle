@@ -26,7 +26,7 @@ module.exports = class Chapter
 
   destroy : () ->
     if @slides?
-      @slides.destroy()
+      @slides?.destroy()
       @slides = null
 
   onSlidesComplete : () =>

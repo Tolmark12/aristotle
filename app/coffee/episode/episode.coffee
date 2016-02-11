@@ -148,4 +148,4 @@ module.exports = class Episode
   destroy : () ->
     # PubSub.unsubscribe @token1
     for chapter in @chapters.items
-      chapter.destroy()
+      chapter?.destroy()

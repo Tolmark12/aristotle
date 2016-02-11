@@ -19,7 +19,7 @@ module.exports = class ChromeUI
 
 
   destroy : () ->
-    @bottomUiElements.destroy()
-    @top.destroy()
+    @bottomUiElements?.destroy()
+    @top?.destroy()
     for token in @tokens
       PubSub.unsubscribe token
