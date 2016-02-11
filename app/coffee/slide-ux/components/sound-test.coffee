@@ -7,7 +7,9 @@ module.exports = class SoundTest extends Component
     @$node = $ jadeTemplate['slide-ux/components/sound-test']( data )
     @superInit $el, @$node, data
 
-    $("#sound-test", @$node).on "click", (e)->
+    $("#sound-test", @$node).on "click", (e)=>
+      return if @hasPlayed
+      @hasPlayed = true
       PubSub.publish 'playsound', {content: data.sound}
       PubSub.publish 'meta.activity', {activity: "Play Test Sound"}
 
