@@ -244,7 +244,7 @@ chapters:
       # Animation Sektimus Launch  ==========================================
       -
         sfx:
-          - {content: ~0/SFX_Sektimus_Fleet_Impacts.mp3?sfx, delay: 25000, volume: 1 }
+          - {content: ~0/SFX_Sektimus_Fleet_Impacts.mp3?sfx, delay: 21500, volume: 1 }
         action:
           - {cmd: chrome.hide}
           - {cmd: playsound, data: {content: ~0/CIN_Intro_Sektimus.mp3?amb, volume: .4, delay: 15000, slot: ambience, destroy: true} }

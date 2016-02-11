@@ -569,7 +569,7 @@ chapters:
       -
         movie:
           layers:
-            - {depth: 14, content: 6_3_2_rebuild_sektimus_dialogue_background.json }
+            - {depth: 14, content: 6_3_3_rebuild_sektimus_dialogue_background.json }
             - {depth: 15, content: sektimus_goodbye.json }
         dialogue:
           defaults:
