@@ -93,6 +93,9 @@ module.exports = class APIproxy
       }
       Chapters: [ chapterData ]
     }
+
+    @maybeObfuscate data
+
     @postData JSON.stringify(data)
 
 
@@ -157,6 +160,21 @@ module.exports = class APIproxy
 
     xhr.send JSON.stringify(obj)
 
+  convertStringToHash : (str)->
+    hash = 0
+    if (str.length == 0) then return hash
+    for i in [0..str.length-1]
+      hash  = ((hash << 5) - hash) + str.charCodeAt(i)
+      hash |= 0; # Convert to 32bit integer
+    hash
+
+  maybeObfuscate : (data) ->
+    return if !aristotle.obfuscate # Don't obfuscate unless this option is selected
+    data.LearningContext.StudentName = @convertStringToHash data.LearningContext.StudentName
+    data.LearningContext.StudentId   = @convertStringToHash data.LearningContext.StudentId
+
+  # ------------------------------------ FOR TESTING
+
   test : () ->
     console.log aristotle.globals.get "moduleId"
     xhr = new XMLHttpRequest()
@@ -184,6 +202,8 @@ module.exports = class APIproxy
       ]
     console.log JSON.stringify obj
     xhr.send JSON.stringify(obj)
+
+
 ###
 {"LearningContext":{"ModuleId":"MetaMythic.CipDefender.v1","ModuleAudience":"fake-module-audience","SessionId":"fake-session-id","StudentId":"abcdefg1234567","StudentName":"Ricks, Justin"},"Chapters":[{"EpisodeTitle":"Episode 1","ChapterName":"Chapter 1","LearningStartTimeUtc":1452557793466,"LearningEndTimeUtc":1452557808031,"DutyReviewStartTimeUtc":1452557808031,"DutyReviewEndTimeUtc":1452557811519,"Activities":[{"ActivityName":"Click : Asset Exploration - Filing Cabinets","EventTimeUtc":1452557803309},{"ActivityName":"Click : Asset Exploration - Mapboard","EventTimeUtc":1452557804086},{"ActivityName":"Click : Asset Exploration - Operator Monitors","EventTimeUtc":1452557805020}]}]}
   LearningRecord {

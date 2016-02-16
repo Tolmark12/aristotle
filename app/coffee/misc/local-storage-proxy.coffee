@@ -86,6 +86,7 @@ module.exports = class LocalStorageProxy
     aristotle.logstache     = @store.initParams.logstache
     aristotle.version       = @store.initParams.version
     aristotle.sound         = true #@store.initParams.sound
+    aristotle.obfuscate     = true #@store.initParams.obfuscate
 
   completeCourse     : ()     ->
     if @courseComplete then return # Only fire once
