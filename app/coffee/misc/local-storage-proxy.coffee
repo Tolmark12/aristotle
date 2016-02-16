@@ -9,6 +9,7 @@ module.exports = class LocalStorageProxy
     PubSub.subscribe 'slide.activated',    (m, data)=> @saveState data
     PubSub.subscribe 'chapter.started',    (m, data)=> @chapterTitle = data
     PubSub.subscribe 'refresh.on.chapter', (m, data)=> @refreshOnChapter data
+    PubSub.subscribe 'course.complete',    (m, data)=> @completeCourse()
 
     window.addEventListener 'message', (e)=> @receiveMessage(e)
 
@@ -86,7 +87,9 @@ module.exports = class LocalStorageProxy
     aristotle.version       = @store.initParams.version
     aristotle.sound         = true #@store.initParams.sound
 
-  completeCourse     : ()     -> @sendMessage "course.complete", ""
+  completeCourse     : ()     ->
+    if @courseComplete then return # Only fire once
+    @courseComplete = true
+    @sendMessage "course.complete", ""
   saveToLms          : (data) -> @sendMessage "persist.to.lms", data
   triggerRefresh     : ()     -> @sendMessage "refresh.window", ""
-

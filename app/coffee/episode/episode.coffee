@@ -138,7 +138,7 @@ module.exports = class Episode
 
   episodeComplete : () ->
     if @isLastEpisode
-      aristotle.localStorageProxy.completeCourse()
+      PubSub.publish 'course.complete'
     else
       newEpisodeNum = String(Number(aristotle.episodeNum) + 1)
       # aristotle.localStorageProxy.completeEpisode newEpisodeNum

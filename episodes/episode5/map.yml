@@ -630,7 +630,8 @@ chapters:
       # 4 Shutting Down slide ==========================================
       -
         action:
-          - {cmd: ctanlee.show}
+          - {cmd: course.complete }
+          - {cmd: ctanlee.show }
           - {cmd: playsound, data: {content: ~g/MU_BotTronDefenseMusic.mp3?amb, delay: 1000, volume: 0.08, loop: true, slot: ambience} }
         movie:
           layers:
