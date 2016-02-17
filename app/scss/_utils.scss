@@ -2,12 +2,12 @@
   $filePath : "../assets/fonts";
   @font-face {
       font-family:$fontName;
-      src: url("#{$filePath}/#{$fileName}-webfont.eot");
       src: url("#{$filePath}/#{$fileName}-webfont.eot?#iefix") format("embedded-opentype"),
            url("#{$filePath}/#{$fileName}-webfont.woff2") format("woff2"),
            url("#{$filePath}/#{$fileName}-webfont.woff") format("woff"),
            url("#{$filePath}/#{$fileName}-webfont.ttf") format("truetype"),
            url("#{$filePath}/#{$fileName}-webfont.svg##{$svg}") format("svg");
+      src: url("#{$filePath}/#{$fileName}-webfont.eot");
       font-weight: $weight;
       font-style: $style;
   }

@@ -6,8 +6,8 @@ class Master
 
   constructor: () ->
     # @targetDomain   = "http://localhost:5654"
-    # @targetDomain   = "http://twoway.gopagoda.io"
-    @targetDomain   = "https://cipv5web-t"
+    @targetDomain   = "http://twoway.gopagoda.io"
+    # @targetDomain   = "https://cipv5web-t"
 
     settingsConfig  = new SettingsConfig()
     @settings       = settingsConfig.getQueryVars()
