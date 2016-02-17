@@ -456,7 +456,7 @@ chapters:
                   -
                     hit: arnold
                     label: {text: Arnold, face: top}
-                    name: Arnold, Mr. Electrical Worker
+                    name: Arnold, Substation Worker
                     quote: This country was built by people wearing denim.
                     personal1: Proud of
                     personal2: Family, America, personal safety record, fixing things with his bare hands, and the big one that got away. REALLY! - it was THAT big!!
@@ -481,18 +481,18 @@ chapters:
                     personal1: Holds record for
                     personal2: Reviewing 247 resumes in one day
                     duties:
-                      - <span>Check backgrounds and criminal history of new employees</span> Dated personnel risk assessment records
-                      - <span>Notify when employees are terminated so their access can be disabled</span> Dated workflow with approvals
+                      - <span>Maintains employee record</span> Dated personnel risk assessment conducted by Corporate Security
+                      - <span>Coaches leaders to contact the Help Desk when employees are terminated so access can be terminated</span> Dated workflow with approvals
                   -
                     hit: brad
                     label: {text: Brad, face: right }
-                    name: Brad, Compliance Team Warrior
+                    name: Brad, Regulatory Team Member
                     quote: Compliance is just another way to say 'I love you'
                     personal1: Favorite possession
                     personal2: A list of CIP acronyms signed by all members of the CIP Drafting Committee.
                     duties:
                       - <span>Ensuring Compliance Requirements are documented in the Cyber Security Program</span> Signed and dated Cyber Security Program with accompanying processes
-                      - <span>Regular Review and Approvals of Facilities and Assets</span> Signed and dated lists of assets
+                      - <span>Facilitates review and approvals</span> Signed and dated lists of assets
                   -
                     hit: rod
                     label: {text: Rod, face: top, arrow: right}
