@@ -1,6 +1,6 @@
 {
   "config": {
-    "question-value": 120,  
+    "question-value": 120,
     "questions": [
       {
         "question": "It's OK to take pictures of PSPs, CRCAs and BCSI, as long as I don't share the pictures on Facebook",
@@ -85,7 +85,7 @@
         ]
       },
       {
-        "question": "(Finish the sentence) During the annual access privilege evaluation, our goal is to ensure that people who need access�",
+        "question": "(Finish the sentence) During the annual access privilege evaluation, our goal is to ensure that people who need access:",
         "answers": [
           {
             "a": "Have the minimum permissions needed to get their jobs done",

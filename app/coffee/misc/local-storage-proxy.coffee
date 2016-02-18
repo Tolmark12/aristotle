@@ -76,6 +76,7 @@ module.exports = class LocalStorageProxy
     @name = "#{x[1]} #{x[0]}"
 
   setAristotleVars : () ->
+    console.log "LOADING : #{@store.initParams.configFile}"
     aristotle.configFile    = @store.initParams.configFile
     aristotle.devEpisodeNum = @store.initParams.episode
     aristotle.episodesDir   = @store.initParams.episodeRoot

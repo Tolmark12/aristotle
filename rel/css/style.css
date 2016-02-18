@@ -33,64 +33,55 @@ h1, h2 {
 
 @font-face {
   font-family: 'Function';
-  src: url("../assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.woff") format("woff"), url("../assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.svg#function_probook") format("svg");
-  src: url("../assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.eot");
+  src: url("../assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.woff") format("woff"), url("../assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.svg#function_probook") format("svg"), url("../assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.eot"), url("../assets/fonts/functionpro_book_macroman/FunctionPro-Book-webfont.eot?#iefix") format("embedded-opentype");
   font-weight: 100;
   font-style: normal; }
 
 @font-face {
   font-family: 'Function';
-  src: url("../assets/fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.woff") format("woff"), url("../assets/fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.svg#function_promedium") format("svg");
-  src: url("../assets/fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.eot");
+  src: url("../assets/fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.woff") format("woff"), url("../assets/fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.svg#function_promedium") format("svg"), url("../assets/fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.eot"), url("../assets/fonts/functionpro_medium_macroman/FunctionPro-Medium-webfont.eot?#iefix") format("embedded-opentype");
   font-weight: 200;
   font-style: normal; }
 
 @font-face {
   font-family: 'Function Condensed';
-  src: url("../assets/fonts/functionpro_mediumcondensed_macroman/FunctionPro-Condensed-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_mediumcondensed_macroman/FunctionPro-Condensed-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_mediumcondensed_macroman/FunctionPro-Condensed-webfont.woff") format("woff"), url("../assets/fonts/functionpro_mediumcondensed_macroman/FunctionPro-Condensed-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_mediumcondensed_macroman/FunctionPro-Condensed-webfont.svg#function_promedium_condensed") format("svg");
-  src: url("../assets/fonts/functionpro_mediumcondensed_macroman/FunctionPro-Condensed-webfont.eot");
+  src: url("../assets/fonts/functionpro_mediumcondensed_macroman/FunctionPro-Condensed-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_mediumcondensed_macroman/FunctionPro-Condensed-webfont.woff") format("woff"), url("../assets/fonts/functionpro_mediumcondensed_macroman/FunctionPro-Condensed-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_mediumcondensed_macroman/FunctionPro-Condensed-webfont.svg#function_promedium_condensed") format("svg"), url("../assets/fonts/functionpro_mediumcondensed_macroman/FunctionPro-Condensed-webfont.eot"), url("../assets/fonts/functionpro_mediumcondensed_macroman/FunctionPro-Condensed-webfont.eot?#iefix") format("embedded-opentype");
   font-weight: 200;
   font-style: normal; }
 
 @font-face {
   font-family: 'Function Condensed';
-  src: url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.woff") format("woff"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.svg#function_proMdCnOb") format("svg");
-  src: url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.eot");
+  src: url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.woff") format("woff"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.svg#function_proMdCnOb") format("svg"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.eot"), url("../assets/fonts/functionpro_mediumcondensedoblique_macroman/FunctionPro-CondensedOblique-webfont.eot?#iefix") format("embedded-opentype");
   font-weight: 300;
   font-style: italic; }
 
 @font-face {
   font-family: 'Function';
-  src: url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.woff") format("woff"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.svg#function_prodemi") format("svg");
-  src: url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.eot");
+  src: url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.woff") format("woff"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.svg#function_prodemi") format("svg"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.eot"), url("../assets/fonts/functionpro_demi_macroman/FunctionPro-Demi-webfont.eot?#iefix") format("embedded-opentype");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
   font-family: 'Function';
-  src: url("../assets/fonts/functionpro_bold_macroman/FunctionPro-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_bold_macroman/FunctionPro-Bold-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_bold_macroman/FunctionPro-Bold-webfont.woff") format("woff"), url("../assets/fonts/functionpro_bold_macroman/FunctionPro-Bold-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_bold_macroman/FunctionPro-Bold-webfont.svg#function_pro_bookbold") format("svg");
-  src: url("../assets/fonts/functionpro_bold_macroman/FunctionPro-Bold-webfont.eot");
+  src: url("../assets/fonts/functionpro_bold_macroman/FunctionPro-Bold-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_bold_macroman/FunctionPro-Bold-webfont.woff") format("woff"), url("../assets/fonts/functionpro_bold_macroman/FunctionPro-Bold-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_bold_macroman/FunctionPro-Bold-webfont.svg#function_pro_bookbold") format("svg"), url("../assets/fonts/functionpro_bold_macroman/FunctionPro-Bold-webfont.eot"), url("../assets/fonts/functionpro_bold_macroman/FunctionPro-Bold-webfont.eot?#iefix") format("embedded-opentype");
   font-weight: 500;
   font-style: normal; }
 
 @font-face {
   font-family: 'Function Condensed';
-  src: url("../assets/fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.woff") format("woff"), url("../assets/fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.svg#function_probold_condensed") format("svg");
-  src: url("../assets/fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.eot");
+  src: url("../assets/fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.woff") format("woff"), url("../assets/fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.svg#function_probold_condensed") format("svg"), url("../assets/fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.eot"), url("../assets/fonts/functionpro_boldcondensed_macroman/FunctionPro-CondensedBold-webfont.eot?#iefix") format("embedded-opentype");
   font-weight: 500;
   font-style: normal; }
 
 @font-face {
   font-family: 'Function Condensed';
-  src: url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.woff") format("woff"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.svg#function_proBldCnOb") format("svg");
-  src: url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.eot");
+  src: url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.woff") format("woff"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.svg#function_proBldCnOb") format("svg"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.eot"), url("../assets/fonts/functionpro_boldcondensedoblique_macroman/FunctionPro-CondensedBoldObl-webfont.eot?#iefix") format("embedded-opentype");
   font-weight: 500;
   font-style: italic; }
 
 @font-face {
   font-family: 'Function Condensed';
-  src: url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.woff") format("woff"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.svg#function_proExBldCnOb") format("svg");
-  src: url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.eot");
+  src: url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.woff2") format("woff2"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.woff") format("woff"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.ttf") format("truetype"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.svg#function_proExBldCnOb") format("svg"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.eot"), url("../assets/fonts/functionpro_extraboldcondensedoblique_macroman/FunctionPro-CondExtraBoldObl-webfont.eot?#iefix") format("embedded-opentype");
   font-weight: 600;
   font-style: italic; }
 

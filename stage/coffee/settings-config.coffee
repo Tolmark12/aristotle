@@ -14,7 +14,13 @@ module.exports = class SettingsConfig
       episodeRoot : "episodes"
       localRoot   : "local"
 
-    switch @getQueryVariable('role')
+    role = @getQueryVariable('role')
+
+    if window.trainingRole?
+      console.log "WINDOW SET ROLE AS : #{window.trainingRole}"
+      role = window.trainingRole
+      
+    switch role
       when "cip-general-awareness" then queryVars.configFile = "config-cip-general-awareness.json"
       when "cip-sustainers"        then queryVars.configFile = "config-cip-sustainers.json"
       when "cip-users"             then queryVars.configFile = "config-cip-users.json"
