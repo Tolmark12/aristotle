@@ -6,6 +6,8 @@ module.exports = class Top
     token4  = PubSub.subscribe "chrome.showepisodes", (m, data)=> @showIcons()
     token5  = PubSub.subscribe "chrome.hidename",     (m, data)=> @hideName()
     token6  = PubSub.subscribe "chrome.hideepisodes", (m, data)=> @hideIcons()
+    token6  = PubSub.subscribe "chrome.hideLocation", (m, data)=> @hideLocation()
+    token6  = PubSub.subscribe "chrome.showLocation", (m, data)=> @showLocation()
     token7  = PubSub.subscribe "meta.chapter.start",  (m, data)=> @setTitle aristotle.episode.trainingData.subtitle, data.subtitle
     @tokens = [token2, token3, token4, token5, token6, token7 ]
     @build()
@@ -34,12 +36,14 @@ module.exports = class Top
     $("h2", @$mode).text chapterTitle
     @showMode()
 
-  showName  : () -> @$name.css( {display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}
-  hideName  : () -> @$name.css  {display:"none"}
-  showIcons : () -> @$icons.css({display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}
-  hideIcons : () -> @$icons.css {display:"none"}
-  hideMode  : () -> @$mode.addClass "hidden"
-  showMode  : () -> @$mode.removeClass "hidden"
+  showName:     () -> @$name.css( {display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}
+  hideName:     () -> @$name.css  {display:"none"}
+  showIcons:    () -> @$icons.css({display:"flex", opacity:0}).velocity {opacity:1}, {duration:500}
+  hideIcons:    () -> @$icons.css {display:"none"}
+  hideLocation: () -> @$mode.addClass "hidden"
+  showLocation: () -> @$mode.removeClass "hidden"
+  hideMode:     () -> @$mode.addClass "hidden"
+  showMode:     () -> @$mode.removeClass "hidden"
 
   # ------------------------------------ Events
 
