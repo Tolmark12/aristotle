@@ -8,7 +8,8 @@ class Master
     # @targetDomain   = "http://localhost:5654"
     # @targetDomain   = "http://twoway.gopagoda.io"
     # @targetDomain   = "https://cipv5web-t"
-    @targetDomain   = "https://cipv5web"
+    # @targetDomain   = "https://cipv5web"
+    @targetDomain   = "https://cipdefenderapi.azurewebsites.net"
 
     settingsConfig  = new SettingsConfig()
     @settings       = settingsConfig.getQueryVars()
