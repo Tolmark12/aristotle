@@ -22,7 +22,7 @@ open         = require "gulp-open"
 plumber      = require 'gulp-plumber'
 rimraf       = require 'rimraf'
 sass         = require 'gulp-sass'
-shadow       = require 'gulp-shadow-library'
+shadow       = require 'gulp-shadow-icons'
 uglify       = require 'gulp-uglify'
 usemin       = require 'gulp-usemin'
 watch        = require 'gulp-watch'
@@ -31,6 +31,9 @@ wrap         = require 'gulp-wrap'
 yaml         = require('gulp-yaml')
 yamlinc      = require('gulp-yaml-include')
 argv         = require('yargs').argv
+
+del          = require 'del'
+
 
 # Paths to source files
 
@@ -50,6 +53,7 @@ episodeAssetPath  = ['episodes/**/*.!(yml|yaml)','!**/*/sounds/**/*.mp3' ]
 localAssetPath    = 'local/**/*'
 randomJs          = 'stage/*.coffee'
 htaccessPath      = 'stage/.htaccess'
+staticJsLibsPath  = 'z-misc-js/**/*'
 
 # If run with --dev, use less files to speeeed it up :-)
 if argv.dev
@@ -149,6 +153,11 @@ localAssets = (destination, cb)->
 
 copyHtaccess = (destination, cb)->
   gulp.src htaccessPath
+    .pipe gulp.dest(destination)
+    .on('end', cb)
+
+copyStaticJsLibs = (destination, cb)->
+  gulp.src staticJsLibsPath
     .pipe gulp.dest(destination)
     .on('end', cb)
 
@@ -252,16 +261,17 @@ launchAPIsimulator = -> require('./APISimulator.coffee')
 
 # ----------- MAIN ----------- #
 
-gulp.task 'nock',                   ()   -> #launchAPIsimulator()
-gulp.task 'clean',  ['nock'],       (cb) -> rimraf './server', cb
-gulp.task 'bowerLibs', ['clean'],   ()   -> copyBowerLibs()
-gulp.task 'compile', ['bowerLibs'], (cb) -> compileFiles(true, cb)
-gulp.task 'server', ['compile'],    (cb) -> server(); launch();
+gulp.task 'nock',                    ()   -> #launchAPIsimulator()
+gulp.task 'clean',  ['nock'],        ()   -> del ['./server/**/*']
+gulp.task 'copy-misc',['clean'],     ()   -> copyStaticJsLibs('./server/static-js-libs', ->)
+gulp.task 'bowerLibs', ['copy-misc'],()   -> copyBowerLibs()
+gulp.task 'compile', ['bowerLibs'],  (cb) -> compileFiles(true, cb)
+gulp.task 'server', ['compile'],     (cb) -> server(); launch();
 gulp.task 'default', ['server']
 
 # ----------- BUILD (rel) ----------- #
 
-gulp.task 'rel:clean',                                  (cb)  -> rimraf './rel', cb
+gulp.task 'rel:clean',                                  ()    -> del ['./rel/**/*']
 gulp.task 'bumpVersion',                                ()    -> bumpBowerVersion()
 gulp.task 'copyFonts', ['bowerLibs'],                   ()    -> fonts('rel/assets/fonts', ->)
 gulp.task 'copyEpisodeScripts', ['copyFonts'],          ()    -> episodeScript('rel/episodes', ->)

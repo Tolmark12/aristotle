@@ -9,7 +9,7 @@ module.exports = class DevTools
   go : (devConfig, items) ->
     if !@isDevMode or !devConfig? then return
     if devConfig.skipSlate? then @skipSlate = devConfig.skipSlate
-    @skip devConfig, items
+    @removeSkippedSlides devConfig, items
     @preventAnimationAsNeeded devConfig, items
     @addIndexesToItems devConfig, items
     if devConfig.volume?
@@ -25,7 +25,7 @@ module.exports = class DevTools
 
   # This one can be a bit confusing, but it's used for skipping slides by removing
   # them from the slides array.
-  skip : (devConfig, items) ->
+  removeSkippedSlides : (devConfig, items) ->
     if !@isDevMode then return
     # Remove all slides before the start slide index
     if devConfig.startIndex?
@@ -95,4 +95,3 @@ module.exports = class DevTools
     @stats.begin()
     #  monitored code goes here
     requestAnimationFrame( @update );
-

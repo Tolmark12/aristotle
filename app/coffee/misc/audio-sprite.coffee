@@ -54,7 +54,7 @@ module.exports = class AudioSprite
 
   isolateSpriteName : (fileName) ->
     if typeof fileName != "string"
-      aristotle.throw "Trying to get a strange filename in the audio sprite machine, probably misnamed something."
+      aristotle.throw "Trying to get a strange filename in the audio sprite machine, you probably misnamed something."
 
     splits = fileName.split("?")
     if splits.length == 1

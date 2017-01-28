@@ -1,22 +1,22 @@
 {
   "name": "aristotle",
-  "version": "0.0.248",
+  "version": "0.0.250",
   "dependencies": {
-    "bodymovin": "bodymovin/bodymovin",
+    "PreloadJS": "createjs-preloadjs#~0.6.2",
+    "SVG.toDataURL": "Tolmark12/SVG.toDataURL",
+    "bodymovin": "bodymovin/bodymovin#5a0669929b4a7c1eb551531d063c031ce9bcf92c",
     "canvas2image": "hongru/canvas2image",
     "canvg": "gabelerner/canvg",
     "createjs-soundjs": "~0.6.1",
+    "howler.js": "goldfire/howler.js#60ddfa3f2ec09996bbd619fa6259be6176242e7d",
     "html2canvas": "niklasvh/html2canvas#master",
     "jquery": "~2.1.1",
     "jquery.easing": "~1.3.0",
-    "PreloadJS": "createjs-preloadjs#~0.6.2",
-    "pubsub-js": "~1.5.0",
-    "shadow-icons-library": "https://tolmark12@bitbucket.org/pagodabox-js-libs/shadow-icons-library.git",
-    "SVG.toDataURL": "Tolmark12/SVG.toDataURL",
-    "velocity": "~1.1.0",
     "ms-analytics": "./z-misc-js/ms-analytics",
+    "pubsub-js": "~1.5.0",
     "scorm-api-wrapper": "./z-misc-js/scorm_api_wrapper",
-    "howler.js": "https://github.com/goldfire/howler.js.git#2.0"
+    "shadow-icons-library": "https://tolmark12@bitbucket.org/pagodabox-js-libs/shadow-icons-library.git",
+    "velocity": "~1.1.0"
   },
   "ignore": [
     "app",
@@ -34,6 +34,7 @@
     "stats.js": "*"
   },
   "resolutions": {
-    "howler.js": "2.0"
+    "howler.js": "60ddfa3f2ec09996bbd619fa6259be6176242e7d",
+    "bodymovin": "5a0669929b4a7c1eb551531d063c031ce9bcf92c"
   }
 }

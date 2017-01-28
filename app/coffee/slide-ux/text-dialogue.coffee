@@ -57,7 +57,7 @@ module.exports = class TextDialogue
     # If there is audio, play it
     if audio?
 
-      # If there is an old undestroyed track, take care of it
+      # If there is an old undestroyed track still in existence, destroy it
       if @track?
         @track.stop()
         @track.destroy()
@@ -118,11 +118,11 @@ module.exports = class TextDialogue
     else
       @actor.hideNext()
 
-    # In the strange event there there is no audio, but next is audio..
+    # In the strange event that audio doesn't exist, but next == 'audio'..
     if next == 'audio' && !audio?
       @playNextAction()
 
-    # If "next" param is a number, count that many milliseconds and play next
+    # If "next" param is a number, count that many milliseconds and play next action
     if typeof next == "number"
       @timeoutDuration = next
       aristotle.timeout ()=>

@@ -1,22 +1,15 @@
-☐ EP4-CIP.json line 88
-✔ Call 'course.complete' on the slide before the end of the last episode @done(2016-02-18 10:14)
-✔ Add hashing of user id @done(2016-02-18 10:14)
+Working - Nov
+In Theory working Jan 8th - https://github.com/bodymovin/bodymovin/issues/52
 
 
------------------------------------- ------------------------------------ ------------------------------------
+☐ Audio Dev vs Production
+☐ Documentation
+☐ Total Separation of training player from content
+☐ General cleanup and restructuring
+☐
 
-
-Crashing :
-
-Episode 2, ch1
-------------------------------------
-Crashed on the loading
 ------------------------------------
 
-☐ Pause is Broken
-☐ Implement something that says don't close / relaunch
-
---------------------------------------  --------------------------------------
 
 Saturday:
   ☐ Add the metamythic API integration

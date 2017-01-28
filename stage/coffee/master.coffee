@@ -1,15 +1,13 @@
 LMSProxy       = require 'lms-proxy'
 SettingsConfig = require 'settings-config'
 WindowManager  = require 'window-manager'
+IframeCreator  = require 'iframe-creator'
 
 class Master
 
   constructor: () ->
-    # @targetDomain   = "http://localhost:5654"
-    # @targetDomain   = "http://twoway.gopagoda.io"
-    # @targetDomain   = "https://cipv5web-t"
-    @targetDomain   = "https://cipv5web"
-
+    iframeCreator   = new IframeCreator()
+    @targetDomain   = iframeCreator.makeIframe $('#holder')
     settingsConfig  = new SettingsConfig()
     @settings       = settingsConfig.getQueryVars()
     @windowManager  = new WindowManager @targetDomain, @begin

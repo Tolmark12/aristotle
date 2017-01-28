@@ -9,16 +9,14 @@ html(lang="en")
     link(href="stage/css/stage.css", rel="stylesheet")
     // endbuild
     
-    script(src="role.js")
+    //- script(src="settings-config.js")
     
   body()
 
     #holder
       //- iframe#iframe(src="index.html" width="100%" height="768px" scrolling="no")
-      //- iframe#iframe(src="http://twoway.gopagoda.io/index.html" width="100%" height="768px" scrolling="no")
-      //- iframe#iframe(src="https://cipv5web-t/index.html" width="100%" height="768px" scrolling="no")
-      iframe#iframe(src="https://cipv5web/index.html" width="100%" height="768px" scrolling="no")
     
+    //- The app is started from master.coffee
     // build:js lms.js
     script(src="bower-libs/jquery/dist/jquery.js")
     script(src="bower-libs/scorm-api-wrapper/index.js")
@@ -26,6 +24,6 @@ html(lang="en")
     // build
     
     // build:remove 
-    script(src="http://localhost:35729/livereload.js")
+    script(src="//192.168.99.76:35729/livereload.js")
     // endbuild
     

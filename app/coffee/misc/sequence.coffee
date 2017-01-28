@@ -55,5 +55,3 @@ module.exports = class Sequence
     @items[ @getIndexByParam(param, val) ]
 
   reset : () -> @currentItemIndex = 0
-
-
