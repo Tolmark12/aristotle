@@ -7,7 +7,7 @@ The easiest way to run / deploy aristotle is to using [nanobox](http://nanobox.i
 
 ### Running the app
 
-1) Download Nanobox
+1) Download [Nanobox](http://nanobox.io/download)
 
 2) Clone the repo `git clone git@github.com:Tolmark12/aristotle.git`
 
