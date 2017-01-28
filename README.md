@@ -16,7 +16,6 @@ $ nanobox dns add local warcore.dev
 # Fire up a virtual machine and install everything needed
 $ nanobox run                          
 # This will drop you into the virtual machine where you can run:
-$ gulp
-```
+$ gulp```
 4. visit http://warcore.dev:5654/lms.html?local=true&dev=true&sudo=true to view your live app
 5. Changes you make to the code base are automatically compiled and shuttled into the VM and the webpage will be refreshed to show the changes.
